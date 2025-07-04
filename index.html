@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>DebateCraft - Empower students through the art of debate</title>
+ <style>
+  /* Combined CSS from all files */
+  * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+  }
+
+  body {
+   font-family: 'Roboto', Arial, sans-serif;
+   line-height: 1.6;
+   color: #333;
+  }
+
+  #root {
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+  }
+
+  .main-content {
+   flex: 1;
+  }
+
+  .container {
+   width: 100%;
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 0 20px;
+  }
+
+  .btn {
+   display: inline-block;
+   padding: 12px 24px;
+   border: none;
+   border-radius: 4px;
+   font-weight: 600;
+   text-decoration: none;
+   cursor: pointer;
+   transition: all 0.3s ease;
+  }
+
+  .btn-primary {
+   background-color: #2a5298;
+   color: white;
+  }
+
+  .btn-primary:hover {
+   background-color: #1c3c7a;
+  }
+
+  .btn-secondary {
+   background-color: #f5f5f5;
+   color: #333;
+   border: 1px solid #ddd;
+  }
+
+  .btn-secondary:hover {
+   background-color: #e8e8e8;
+  }
+
+  section {
+   padding: 60px 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+   margin-bottom: 20px;
+   line-height: 1.2;
+  }
+
+  p {
+   margin-bottom: 20px;
+  }
+
+  /* Header Styles */
+  .header {
+   background-color: white;
+   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+   position: sticky;
+   top: 0;
+   z-index: 1000;
+  }
+
+  .header .container {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 15px 20px;
+  }
+
+  .logo h1 {
+   font-size: 24px;
+   color: #2a5298;
+   margin: 0;
+  }
+
+  .logo a {
+   text-decoration: none;
+  }
+
+  .main-nav ul {
+   display: flex;
+   list-style: none;
+  }
+
+  .main-nav li {
+   margin-left: 30px;
+  }
+
+  .main-nav a {
+   text-decoration: none;
+   color: #333;
+   font-weight: 500;
+   transition: color 0.3s ease;
+  }
+
+  .main-nav a:hover {
+   color: #2a5298;
+  }
+
+  .mobile-menu-button {
+   display: none;
+   flex-direction: column;
+   justify-content: space-between;
+   width: 30px;
+   height: 21px;
+   cursor: pointer;
+  }
+
+  .mobile-menu-button span {
+   height: 3px;
+   width: 100%;
+   background-color: #333;
+   border-radius: 3px;
+  }
+
+  /* Footer Styles */
+  .footer {
+   background-color: #2a5298;
+   color: white;
+   padding: 60px 0 20px;
+  }
+
+  .footer-content {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+   gap: 40px;
+   margin-bottom: 40px;
+  }
+
+  .footer-logo h2 {
+   font-size: 24px;
+   margin-bottom: 15px;
+  }
+
+  .footer-links h3,
+  .footer-contact h3 {
+   font-size: 18px;
+   margin-bottom: 20px;
+   position: relative;
+  }
+
+  .footer-links h3::after,
+  .footer-contact h3::after {
+   content: '';
+   position: absolute;
+   bottom: -8px;
+   left: 0;
+   height: 2px;
+   width: 50px;
+   background-color: white;
+  }
+
+  .footer-links ul {
+   list-style: none;
+  }
+
+  .footer-links li {
+   margin-bottom: 10px;
+  }
+
+  .footer-links a,
+  .social-links a {
+   color: #fff;
+   text-decoration: none;
+   transition: opacity 0.3s ease;
+  }
+
+  .footer-links a:hover,
+  .social-links a:hover {
+   opacity: 0.8;
+  }
+
+  .social-links {
+   display: flex;
+   gap: 15px;
+   margin-top: 20px;
+  }
+
+  .footer-bottom {
+   text-align: center;
+   padding-top: 20px;
+   border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Home Page Styles */
+  .hero {
+   background-color: #2a5298;
+   color: white;
+   text-align: center;
+   padding: 100px 0;
+  }
+
+  .hero h1 {
+   font-size: 48px;
+   margin-bottom: 20px;
+  }
+
+  .hero h2 {
+   font-size: 24px;
+   font-weight: 400;
+   margin-bottom: 40px;
+   max-width: 700px;
+   margin-left: auto;
+   margin-right: auto;
+  }
+
+  .hero-buttons {
+   display: flex;
+   justify-content: center;
+   gap: 20px;
+  }
+
+  .mission-section {
+   background-color: #f9f9f9;
+  }
+
+  .mission-cards {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   gap: 30px;
+   margin-top: 40px;
+  }
+
+  .mission-card {
+   background-color: white;
+   border-radius: 8px;
+   padding: 30px;
+   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  }
+
+  .mission-card h3 {
+   color: #2a5298;
+  }
+
+  .stats-section {
+   text-align: center;
+  }
+
+  .stats-container {
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+   gap: 60px;
+   margin-top: 40px;
+  }
+
+  .stat-item h3 {
+   font-size: 48px;
+   color: #2a5298;
+   margin-bottom: 10px;
+  }
+
+  .cta-section {
+   background-color: #2a5298;
+   color: white;
+   text-align: center;
+  }
+
+  .cta-section p {
+   max-width: 600px;
+   margin: 0 auto 30px;
+  }
+
+  /* About Page Styles */
+  .page-header {
+   background-color: #2a5298;
+   color: white;
+   text-align: center;
+   padding: 60px 0;
+  }
+
+  .about-intro {
+   text-align: center;
+  }
+
+  .about-intro p {
+   max-width: 800px;
+   margin: 0 auto;
+  }
+
+  .mission-item {
+   margin-bottom: 40px;
+  }
+
+  .mission-item h3 {
+   color: #2a5298;
+   margin-bottom: 15px;
+  }
+
+  .impact-section {
+   text-align: center;
+  }
+
+  .impact-stats {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+   gap: 30px;
+   margin-top: 40px;
+  }
+
+  .stat {
+   background-color: white;
+   border-radius: 8px;
+   padding: 30px;
+   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  }
+
+  .stat h3 {
+   font-size: 36px;
+   color: #2a5298;
+   margin-bottom: 10px;
+  }
+
+  /* Team Page Styles */
+  .team-intro {
+   text-align: center;
+  }
+
+  .team-intro p {
+   max-width: 800px;
+   margin: 0 auto;
+  }
+
+  .team-grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+   gap: 30px;
+   margin-top: 40px;
+  }
+
+  .team-card {
+   background-color: white;
+   border-radius: 8px;
+   overflow: hidden;
+   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  }
+
+  .member-image {
+   height: 250px;
+   overflow: hidden;
+  }
+
+  .placeholder-image {
+   width: 100%;
+   height: 100%;
+   background-color: #ddd;
+  }
+
+  .team-card h3,
+  .team-card h4,
+  .team-card p {
+   padding: 0 20px;
+  }
+
+  .team-card h3 {
+   margin-top: 20px;
+   color: #2a5298;
+  }
+
+  .team-card h4 {
+   color: #777;
+   font-weight: 500;
+   margin-bottom: 15px;
+  }
+
+  .team-card p {
+   padding-bottom: 20px;
+  }
+
+  .join-team {
+   background-color: #f9f9f9;
+   text-align: center;
+  }
+
+  .join-team p {
+   max-width: 700px;
+   margin: 0 auto 30px;
+  }
+
+  /* Courses Page Styles */
+  .curriculum-intro {
+   text-align: center;
+  }
+
+  .curriculum-intro p {
+   max-width: 800px;
+   margin: 0 auto 20px;
+  }
+
+  .courses-grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   gap: 30px;
+   margin-top: 40px;
+  }
+
+  .course-card {
+   background-color: white;
+   border-radius: 8px;
+   overflow: hidden;
+   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+   display: flex;
+   flex-direction: column;
+  }
+
+  .course-header {
+   background-color: #2a5298;
+   color: white;
+   padding: 20px;
+  }
+
+  .course-header h3 {
+   margin-bottom: 10px;
+  }
+
+  .course-meta {
+   display: flex;
+   gap: 15px;
+  }
+
+  .level,
+  .age {
+   font-size: 14px;
+   background-color: rgba(255, 255, 255, 0.2);
+   padding: 3px 10px;
+   border-radius: 4px;
+  }
+
+  .course-content {
+   padding: 20px;
+   flex: 1;
+  }
+
+  .course-content h4 {
+   margin: 20px 0 10px;
+  }
+
+  .course-content ul {
+   padding-left: 20px;
+  }
+
+  .course-content li {
+   margin-bottom: 10px;
+  }
+
+  .course-footer {
+   padding: 20px;
+   display: flex;
+   gap: 15px;
+  }
+
+  .enrollment-cta {
+   background-color: #f9f9f9;
+   text-align: center;
+  }
+
+  .enrollment-cta p {
+   max-width: 700px;
+   margin: 0 auto 30px;
+  }
+
+  /* Blog Page Styles */
+  .blog-grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   gap: 30px;
+   margin-top: 40px;
+  }
+
+  .blog-card {
+   background-color: white;
+   border-radius: 8px;
+   overflow: hidden;
+   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  }
+
+  .blog-image {
+   height: 200px;
+   overflow: hidden;
+  }
+
+  .blog-text {
+   padding: 20px;
+  }
+
+  .blog-text h2 {
+   font-size: 22px;
+   margin-bottom: 10px;
+  }
+
+  .blog-meta {
+   display: flex;
+   justify-content: space-between;
+   color: #777;
+   font-size: 14px;
+   margin-bottom: 15px;
+  }
+
+  .newsletter-section {
+   background-color: #f9f9f9;
+   text-align: center;
+  }
+
+  .newsletter-form {
+   display: flex;
+   max-width: 500px;
+   margin: 30px auto 0;
+  }
+
+  .newsletter-form input {
+   flex: 1;
+   padding: 12px 15px;
+   border: 1px solid #ddd;
+   border-radius: 4px 0 0 4px;
+   font-size: 16px;
+  }
+
+  .newsletter-form button {
+   border-radius: 0 4px 4px 0;
+  }
+
+  /* Tab Navigation */
+  .tab-nav {
+   display: flex;
+   justify-content: center;
+   background-color: #f5f5f5;
+   padding: 10px 0;
+  }
+
+  .tab-nav button {
+   padding: 10px 20px;
+   margin: 0 5px;
+   background: none;
+   border: none;
+   cursor: pointer;
+   font-weight: 500;
+   border-bottom: 2px solid transparent;
+  }
+
+  .tab-nav button.active {
+   border-bottom: 2px solid #2a5298;
+   color: #2a5298;
+  }
+
+  .page {
+   display: none;
+  }
+
+  .page.active {
+   display: block;
+  }
+
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+   .mobile-menu-button {
+    display: flex;
+   }
+
+   .main-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease;
+   }
+
+   .main-nav.open {
+    height: auto;
+   }
+
+   .main-nav ul {
+    flex-direction: column;
+    padding: 20px;
+   }
+
+   .main-nav li {
+    margin: 15px 0;
+   }
+
+   section {
+    padding: 40px 0;
+   }
+
+   .hero {
+    padding: 60px 0;
+   }
+
+   .hero h1 {
+    font-size: 36px;
+   }
+
+   .hero h2 {
+    font-size: 20px;
+   }
+
+   .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+   }
+
+   .btn {
+    padding: 10px 20px;
+   }
+
+   .stats-container {
+    gap: 30px;
+   }
+
+   .stat-item h3 {
+    font-size: 36px;
+   }
+
+   .page-header {
+    padding: 40px 0;
+   }
+
+   .team-grid {
+    gap: 20px;
+   }
+
+   .member-image {
+    height: 200px;
+   }
+
+   .courses-grid {
+    gap: 20px;
+   }
+
+   .course-footer {
+    flex-direction: column;
+   }
+
+   .blog-grid {
+    gap: 20px;
+   }
+
+   .newsletter-form {
+    flex-direction: column;
+   }
+
+   .newsletter-form input {
+    border-radius: 4px;
+    margin-bottom: 10px;
+   }
+
+   .newsletter-form button {
+    border-radius: 4px;
+   }
+  }
+ </style>
+</head>
+
+<body>
+ <div id="root">
+  <header class="header">
+   <div class="container">
+    <div class="logo">
+     <a href="#" onclick="showPage('home')">
+      <h1>DebateCraft</h1>
+     </a>
+    </div>
+    <div class="mobile-menu-button" id="mobileMenuButton">
+     <span></span>
+     <span></span>
+     <span></span>
+    </div>
+    <nav class="main-nav" id="mainNav">
+     <ul>
+      <li><a href="#" onclick="showPage('home')">Home</a></li>
+      <li><a href="#" onclick="showPage('about')">About</a></li>
+      <li><a href="#" onclick="showPage('team')">Our Team</a></li>
+      <li><a href="#" onclick="showPage('courses')">Courses</a></li>
+      <li><a href="#" onclick="showPage('blog')">Blog</a></li>
+     </ul>
+    </nav>
+   </div>
+  </header>
+
+  <main class="main-content">
+   <!-- Home Page -->
+   <div id="home" class="page active">
+    <section class="hero">
+     <div class="container">
+      <h1>DebateCraft</h1>
+      <h2>Empowering students through the art of debate for a brighter future.</h2>
+      <div class="hero-buttons">
+       <a href="#" onclick="showPage('courses')" class="btn btn-primary">Explore Courses</a>
+       <a href="#" onclick="showPage('about')" class="btn btn-secondary">Learn More</a>
+      </div>
+     </div>
+    </section>
+
+    <section class="mission-section">
+     <div class="container">
+      <h2>Our Mission</h2>
+      <div class="mission-cards">
+       <div class="mission-card">
+        <h3>Empowering Students</h3>
+        <p>Our mission centers on empowering students by providing them with the tools of debate. Through our programs, we nurture confidence, self-expression, and critical thinking.</p>
+       </div>
+       <div class="mission-card">
+        <h3>Increasing Accessibility</h3>
+        <p>We strive to make debate education accessible to all, especially for students from underrepresented backgrounds.</p>
+       </div>
+       <div class="mission-card">
+        <h3>Beyond Debate Rounds</h3>
+        <p>Debate skills extend beyond the classroom. By mastering argumentation and public speaking, students enhance their academic performance and become more confident individuals.</p>
+       </div>
+      </div>
+     </div>
+    </section>
+
+    <section class="stats-section">
+     <div class="container">
+      <h2>Program Overview</h2>
+      <div class="stats-container">
+       <div class="stat-item">
+        <h3>30+</h3>
+        <p>Students engaged in HK, China, and US</p>
+       </div>
+       <div class="stat-item">
+        <h3>80</h3>
+        <p>Hours of teaching this summer</p>
+       </div>
+       <div class="stat-item">
+        <h3>25+</h3>
+        <p>Years of experience in our coaching team</p>
+       </div>
+      </div>
+     </div>
+    </section>
+
+    <section class="cta-section">
+     <div class="container">
+      <h2>Ready to Join DebateCraft?</h2>
+      <p>Discover our programs and unleash your potential through the power of debate.</p>
+      <a href="#" onclick="showPage('courses')" class="btn btn-primary">View Our Courses</a>
+     </div>
+    </section>
+   </div>
+
+   <!-- About Page -->
+   <div id="about" class="page">
+    <section class="page-header">
+     <div class="container">
+      <h1>About DebateCraft</h1>
+     </div>
+    </section>
+
+    <section class="about-intro">
+     <div class="container">
+      <h2>Our Story</h2>
+      <p>DebateCraft is a nonprofit initiative designed to empower middle and high school students. Our focus is on equipping them with essential skills in argumentation, advocacy, and public speaking. We aim to provide high-quality debate education to under-resourced and underrepresented students, empowering them to excel academically and in life.</p>
+     </div>
+    </section>
+
+    <section class="mission-section">
+     <div class="container">
+      <h2>Mission Statement</h2>
+      <div class="mission-item">
+       <h3>Empowering students</h3>
+       <p>Our mission centers on empowering students by providing them with the tools of debate. Through our programs, we nurture confidence, self-expression, and critical thinking, allowing students to articulate their thoughts and ideas effectively in academic settings and beyond.</p>
+      </div>
+      <div class="mission-item">
+       <h3>Increasing Accessibility</h3>
+       <p>We strive to make debate education accessible to all, especially for students from underrepresented backgrounds. By breaking down barriers, we create opportunities for these students to develop skills that enhance their public speaking and argumentation abilities, leading to increased success in their academic and future professional lives.</p>
+      </div>
+      <div class="mission-item">
+       <h3>Beyond debate rounds</h3>
+       <p>Debate skills extend beyond the classroom. By mastering argumentation and public speaking, students enhance their academic performance and become more confident individuals. They learn to engage in constructive discussions, solve problems creatively, and advocate for themselves and their peers, preparing them for success in all areas of life.</p>
+      </div>
+     </div>
+    </section>
+
+    <section class="impact-section">
+     <div class="container">
+      <h2>Our Impact</h2>
+      <div class="impact-stats">
+       <div class="stat">
+        <h3>30+</h3>
+        <p>Students engaged in HK, China, and US</p>
+       </div>
+       <div class="stat">
+        <h3>80</h3>
+        <p>Hours of teaching this summer through group and private classes</p>
+       </div>
+       <div class="stat">
+        <h3>25+</h3>
+        <p>Years of experience within our coaching team</p>
+       </div>
+      </div>
+     </div>
+    </section>
+   </div>
+
+   <!-- Team Page -->
+   <div id="team" class="page">
+    <section class="page-header">
+     <div class="container">
+      <h1>Our Team</h1>
+      <p>Meet the passionate educators and debaters behind DebateCraft</p>
+     </div>
+    </section>
+
+    <section class="team-intro">
+     <div class="container">
+      <h2>About Our Team</h2>
+      <p>Our dedicated coaching staff, composed of competitive debaters from prestigious institutions, brings a wealth of knowledge and firsthand experience to inspire and educate students. We have now a team of high school and university students collectively with 25+ years of debating experience.</p>
+     </div>
+    </section>
+
+    <section class="team-members">
+     <div class="container">
+      <h2>Meet Our Coaches</h2>
+      <div class="team-grid">
+       <div class="team-card">
+        <div class="member-image">
+         <div class="placeholder-image"></div>
+        </div>
+        <h3>Adrian Chan</h3>
+        <h4>Executive Director</h4>
+        <p>Experienced Educator with 5 years of international debate experience, including achievements such as ICYD International Finalist (2023), Oxford Schools Break (2025), and 3rd Best Speaker at Team Canada Fundraiser (2025).</p>
+       </div>
+       <div class="team-card">
+        <div class="member-image">
+         <div class="placeholder-image"></div>
+        </div>
+        <h3>Gavin Zhao</h3>
+        <h4>Executive Director</h4>
+        <p>Experienced debater who is a nationally ranked Public Forum debater and competed at Oxford Schools this year. </p>
+       </div>
+       <div class="team-card">
+        <div class="member-image">
+         <div class="placeholder-image"></div>
+        </div>
+        <h3>Eric Jin</h3>
+        <h4>Debate Instructor</h4>
+        <p>Competitive debater who recently came third in Team Canada Fundraiser 2025.</p>
+       </div>
+       <div class="team-card">
+        <div class="member-image">
+         <div class="placeholder-image"></div>
+        </div>
+        <h3>Andre Chan</h3>
+        <h4>Curriculum developer</h4>
+        <p>High school debater with multiple years of experience in WSDC and BP.</p>
+       </div>
+      </div>
+     </div>
+    </section>
+
+    <section class="join-team">
+     <div class="container">
+      <h2>Join Our Team</h2>
+      <p>Are you passionate about debate and education? We're always looking for dedicated instructors to join our mission.</p>
+      <button class="btn btn-primary"><a href="google.com">Join Us</a>
+      </button>
+     </div>
+    </section>
+   </div>
+
+   <!-- Courses Page -->
+   <div id="courses" class="page">
+    <section class="page-header">
+     <div class="container">
+      <h1>Our Courses</h1>
+      <p>Comprehensive debate education for students of all levels</p>
+     </div>
+    </section>
+
+    <section class="curriculum-intro">
+     <div class="container">
+      <h2>Curriculum Development</h2>
+      <p>Our curriculum has been thoughtfully crafted in collaboration with experienced educators, advised by former HKU debate coach, World University Debate Finalist, and a debate coach of over 20 years teaching at multiple international schools.</p>
+      <p>Our dedicated coaching staff, composed of competitive debaters from prestigious institutions, brings a wealth of knowledge and firsthand experience to inspire and educate students.</p>
+     </div>
+    </section>
+
+    <section class="courses-section">
+     <div class="container">
+      <h2>Available Programs</h2>
+      <div class="courses-grid">
+       <div class="course-card">
+        <div class="course-header">
+         <h3>Introduction to Debate</h3>
+         <div class="course-meta">
+          <span class="level">Level 1</span>
+          <span class="age">8-11 years old</span>
+         </div>
+        </div>
+        <div class="course-content">
+         <p>For those new to debate, we will go all the way back to Socrates and learn about logic, argumentation and refutation so that students develop the essential foundation for debate and critical thinking. We will combine this with public speaking drills so that students will leave the course confident in speaking in front of others and able to speak for long durations by themselves.</p>
+         <h4>Key Features:</h4>
+         <ul>
+          <li>Foundation in logic and critical thinking</li>
+          <li>Public speaking fundamentals</li>
+          <li>Confidence building exercises</li>
+          <li>Introduction to basic debate concepts</li>
+         </ul>
+        </div>
+        <div class="course-footer">
+         <button class="btn btn-primary">Enroll Now</button>
+        </div>
+       </div>
+       <div class="course-card">
+        <div class="course-header">
+         <h3>British Parliamentary Debate</h3>
+         <div class="course-meta">
+          <span class="level">Level 2</span>
+          <span class="age">12-14 years old</span>
+         </div>
+        </div>
+        <div class="course-content">
+         <p>For those with some prior debate experience, we will introduce the British Parliamentary debate format (the most common debate format globally) and start going into the nuances of argumentation, characterizing key individuals in a debate motion, and doing regular mock debates.</p>
+         <h4>Key Features:</h4>
+         <ul>
+          <li>British Parliamentary debate format</li>
+          <li>Advanced argumentation techniques</li>
+          <li>Regular mock debates with feedback</li>
+          <li>Exposure to diverse debate topics</li>
+         </ul>
+        </div>
+        <div class="course-footer">
+         <button class="btn btn-primary">Enroll Now</button>
+        </div>
+       </div>
+       <div class="course-card">
+        <div class="course-header">
+         <h3>Advanced Debate Techniques</h3>
+         <div class="course-meta">
+          <span class="level">Level 3</span>
+          <span class="age">15+ years old</span>
+         </div>
+        </div>
+        <div class="course-content">
+         <p>For those with extensive debate experience, we will be having advanced university level content lectures based on students' interests and high-level debate rounds with comprehensive feedback on both argumentation, refutation, manner, and strategy.</p>
+         <h4>Key Features:</h4>
+         <ul>
+          <li>University-level debate content</li>
+          <li>Customized curriculum based on interests</li>
+          <li>High-level debate rounds</li>
+          <li>Comprehensive feedback and coaching</li>
+         </ul>
+        </div>
+        <div class="course-footer">
+         <button class="btn btn-primary">Enroll Now</button>
+        </div>
+       </div>
+       <div class="course-card">
+        <div class="course-header">
+         <h3>Private Claases</h3>
+         <div class="course-meta">
+          <span class="level">Any Level</span>
+          <span class="age">All ages</span>
+         </div>
+        </div>
+        <div class="course-content">
+         <p>A unique opportunity for students aged 8 to 18 to explore the world of debate with a dedicated coach. This free online program exposes participants to everything from foundational concepts and skills to advanced debate strategies tailored to the student's goals.</p>
+         <h4>Key Features:</h4>
+         <ul>
+          <li>Free online program</li>
+          <li>Interactive lessons and activities</li>
+          <li>Tailored debate Experience</li>
+          <li>Accessible to students of all backgrounds</li>
+         </ul>
+        </div>
+        <div class="course-footer">
+         <button class="btn btn-primary">Enroll Now</button>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+
+    <section class="enrollment-cta">
+     <div class="container">
+      <h2>Ready to Develop Your Debate Skills?</h2>
+      <p>Join our programs and discover the power of effective communication and critical thinking.</p>
+      <button class="btn btn-primary">Contact Us for Enrollment</button>
+     </div>
+    </section>
+   </div>
+
+   <!-- Blog Page -->
+   <div id="blog" class="page">
+    <section class="page-header">
+     <div class="container">
+      <h1>DebateCraft Blog</h1>
+      <p>Insights, tips, and stories from the world of debate education</p>
+     </div>
+    </section>
+
+    <section class="blog-content">
+     <div class="container">
+      <div class="blog-grid">
+       <div class="blog-card">
+        <div class="blog-image">
+         <div class="placeholder-image"></div>
+        </div>
+        <div class="blog-text">
+         <h2>The Importance of Debate Skills in the Digital Age</h2>
+         <div class="blog-meta">
+          <span class="date">June 15, 2025</span>
+          <span class="author">By Debate Coach</span>
+         </div>
+         <p>In an era dominated by AI and automation, the ability to construct logical arguments and think critically is more important than ever...</p>
+         <button class="btn btn-secondary">Read More</button>
+        </div>
+       </div>
+       <div class="blog-card">
+        <div class="blog-image">
+         <div class="placeholder-image"></div>
+        </div>
+        <div class="blog-text">
+         <h2>How Debate Enhances Academic Performance</h2>
+         <div class="blog-meta">
+          <span class="date">May 28, 2025</span>
+          <span class="author">By Education Specialist</span>
+         </div>
+         <p>Research shows that students who participate in debate programs show significant improvements in reading comprehension, critical thinking, and academic confidence...</p>
+         <button class="btn btn-secondary">Read More</button>
+        </div>
+       </div>
+       <div class="blog-card">
+        <div class="blog-image">
+         <div class="placeholder-image"></div>
+        </div>
+        <div class="blog-text">
+         <h2>Spotlight: Our Summer Debate Series Success</h2>
+         <div class="blog-meta">
+          <span class="date">May 10, 2025</span>
+          <span class="author">By Program Director</span>
+         </div>
+         <p>This summer, our free Debate Exposure Series reached over 30 students across three countries. Here's what they learned and how it impacted them...</p>
+         <button class="btn btn-secondary">Read More</button>
+        </div>
+       </div>
+       <div class="blog-card">
+        <div class="blog-image">
+         <div class="placeholder-image"></div>
+        </div>
+        <div class="blog-text">
+         <h2>Debate Techniques for Everyday Conversations</h2>
+         <div class="blog-meta">
+          <span class="date">April 22, 2025</span>
+          <span class="author">By Communications Expert</span>
+         </div>
+         <p>The skills learned in formal debate can be applied to everyday conversations. Here's how you can use these techniques to communicate more effectively...</p>
+         <button class="btn btn-secondary">Read More</button>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+
+    <section class="newsletter-section">
+     <div class="container">
+      <h2>Stay Updated</h2>
+      <p>Subscribe to our newsletter for the latest debate tips, program updates, and educational resources.</p>
+      <div class="newsletter-form">
+       <input type="email" placeholder="Your email address" />
+       <button class="btn btn-primary">Subscribe</button>
+      </div>
+     </div>
+    </section>
+   </div>
+  </main>
+
+  <footer class="footer">
+   <div class="container">
+    <div class="footer-content">
+     <div class="footer-logo">
+      <h2>DebateCraft</h2>
+      <p>Empower students through the art of debate for a brighter future.</p>
+     </div>
+     <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+       <li><a href="#" onclick="showPage('home')">Home</a></li>
+       <li><a href="#" onclick="showPage('about')">About Us</a></li>
+       <li><a href="#" onclick="showPage('team')">Our Team</a></li>
+       <li><a href="#" onclick="showPage('courses')">Courses</a></li>
+       <li><a href="#" onclick="showPage('blog')">Blog</a></li>
+      </ul>
+     </div>
+     <div class="footer-contact">
+      <h3>Contact Us</h3>
+      <p>Email: debatecraftacademy@outlook.com</p>
+      <div class="social-links">
+       <a href="https://www.facebook.com/profile.php?id=61577761071956" target="_blank" rel="noopener noreferrer">Facebook</a>
+       <a href="https://www.instagram.com/debate_craft/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </div>
+     </div>
+    </div>
+    <div class="footer-bottom">
+     <p>&copy; 2025 DebateCraft. All rights reserved.</p>
+    </div>
+   </div>
+  </footer>
+ </div>
+
+ <script>
+  // Mobile menu toggle
+  const mobileMenuButton = document.getElementById('mobileMenuButton');
+  const mainNav = document.getElementById('mainNav');
+  mobileMenuButton.addEventListener('click', function() {
+   mainNav.classList.toggle('open');
+  });
+  // Page navigation
+  function showPage(pageId) {
+   // Hide all pages
+   const pages = document.querySelectorAll('.page');
+   pages.forEach(page => {
+    page.classList.remove('active');
+   });
+   // Show the selected page
+   document.getElementById(pageId).classList.add('active');
+   // Close mobile menu if open
+   mainNav.classList.remove('open');
+   // Scroll to top
+   window.scrollTo(0, 0);
+   return false;
+  }
+ </script>
+</body>
+
+</html>

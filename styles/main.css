@@ -10,6 +10,8 @@
   --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
   --success-gradient: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
   --warning-gradient: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  --purple-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --orange-gradient: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
   
   /* Neutral Colors */
   --neutral-900: #1a1a2e;
@@ -741,7 +743,7 @@ p {
   gap: 15px;
 }
 
-/* Courses Page Styles */
+/* Courses Page Styles - Enhanced with Color Variety */
 .curriculum-intro {
   text-align: center;
 }
@@ -766,6 +768,35 @@ p {
   overflow: hidden;
 }
 
+/* Varied gradient colors for different courses */
+.course-card:nth-child(1) .course-header {
+  background: var(--primary-gradient);
+}
+
+.course-card:nth-child(2) .course-header {
+  background: var(--secondary-gradient);
+}
+
+.course-card:nth-child(3) .course-header {
+  background: var(--accent-gradient);
+}
+
+.course-card:nth-child(4) .course-header {
+  background: var(--success-gradient);
+}
+
+.course-card:nth-child(5) .course-header {
+  background: var(--warning-gradient);
+}
+
+.course-card:nth-child(6) .course-header {
+  background: var(--purple-gradient);
+}
+
+.course-card:nth-child(n+7) .course-header {
+  background: var(--orange-gradient);
+}
+
 .course-header::before {
   content: '';
   position: absolute;
@@ -778,6 +809,18 @@ p {
   transform: translate(30px, -30px);
 }
 
+/* Fix for course header h3 - Make them white and override gradient */
+.course-header h3 {
+  color: white !important;
+  font-size: 24px;
+  margin-bottom: 15px;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: unset !important;
+  background-clip: unset !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 .level, .age {
   font-size: 12px;
   background: rgba(255, 255, 255, 0.2);
@@ -786,6 +829,30 @@ p {
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 0.5px;
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+/* Add visual interest with subtle patterns */
+.course-card:nth-child(odd) .course-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.course-card:nth-child(even) .course-header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.3);
 }
 
 /* Newsletter Section */
@@ -857,6 +924,15 @@ p {
 .tab-nav button:not(.active):hover {
   background: var(--glass-bg);
   transform: translateY(-2px);
+}
+
+/* Add subtle alternating backgrounds to sections */
+section:nth-child(even) {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+section:nth-child(odd) {
+  background: rgba(248, 250, 252, 0.8);
 }
 
 /* Responsive Enhancements */

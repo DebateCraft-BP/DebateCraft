@@ -3,7 +3,7 @@
   /* Primary Color Palette - Blue Focus */
   --primary-gradient: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
   --primary-dark: #1e40af;
-  --primary-light: #3b82f6;
+  --primary-light: #e7ecf4;
   
   /* Secondary Colors */
   --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
@@ -74,7 +74,7 @@ a {
 }
 
 a:hover {
-  color: var(--primary-light);
+  color: white;
 }
 
 /* Enhanced Button Styles */
@@ -135,7 +135,7 @@ a:hover {
 .btn-accent {
   background: var(--accent-gradient);
   color: white;
-  box-shadow: 0 8px 25px rgba(79, 172, 254, 0.3);
+  box-shadow: 0 8px 25px rgba(254, 79, 137, 0.3);
 }
 
 .btn-accent:hover {
@@ -163,12 +163,12 @@ p {
 
 /* Header Styles with Blue Gradient Background for ALL Pages */
 .header {
-  background: var(--primary-gradient);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--neutral-800);
+  /* border-bottom: 1px solid rgba(255, 255, 255, 0.1); */
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); */
 }
 
 .header .container {
@@ -369,9 +369,9 @@ p {
 
 /* Hero Section with Blue Primary */
 .hero {
-  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 50%, #1e40af 100%);
+  
   color: white;
-  text-align: center;
+  text-align: left;
   padding: 120px 0;
   position: relative;
   overflow: hidden;
@@ -384,7 +384,7 @@ p {
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.1)" points="0,0 1000,300 1000,1000 0,700"/></svg>');
+  background-color: var(--neutral-800);
   background-size: cover;
 }
 
@@ -396,9 +396,10 @@ p {
 .hero h1 {
   font-size: 56px;
   margin-bottom: 25px;
-  font-weight: 800;
-  color: white !important;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  font-weight: 600;
+  color: rgb(255, 255, 255) !important;
+  text-align: left;
+  /* text-shadow: 0 4px 20px hwb(188 62% 9% / 0.3); */
   animation: fadeInUp 1s ease-out;
   background: none;
   -webkit-background-clip: unset;
@@ -406,13 +407,17 @@ p {
   background-clip: unset;
 }
 
+.hero .emphasis {
+  color: rgb(202, 238, 255);
+  font-weight: 400;
+  font-style: italic;
+}
+
 .hero h2 {
   font-size: 24px;
   font-weight: 400;
   margin-bottom: 40px;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 600px;
   color: rgba(255, 255, 255, 0.9) !important;
   animation: fadeInUp 1s ease-out 0.2s both;
   background: none;
@@ -423,9 +428,20 @@ p {
 
 .hero-buttons {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   gap: 25px;
   animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+.hero-highlights {
+  list-style: none;
+  padding: 0;
+  margin-top: 30px;
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: fadeInUp 1s ease-out 0.6s both;
 }
 
 @keyframes fadeInUp {
@@ -587,7 +603,7 @@ p {
 
 /* Page Header - Now uses the same gradient background as main header */
 .page-header {
-  background: var(--primary-gradient);
+  background: var(--neutral-800);
   color: white;
   text-align: center;
   padding: 80px 0;
@@ -944,25 +960,27 @@ section:nth-child(odd) {
   .main-nav {
     position: absolute;
     top: 100%;
-    left: 0;
     right: 0;
-    background: var(--primary-gradient);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 0 0 20px 20px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    height: 0;
+    background: var(--neutral-800);
+    /* border-top: 1px solid rgba(255, 255, 255, 0.1); */
+    border-radius: 0 0 0px 20px;
+    box-shadow: rgba(220, 214, 214, 0.1) 0px 22px 30px;
+    max-height: 0;
+    font-size: larger;
     overflow: hidden;
-    transition: height 0.3s ease;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);;
+    text-align: right;
+    max-width: auto;
   }
 
   .main-nav.open {
-    height: auto;
+    max-height: 500px;
   }
 
   .main-nav ul {
     flex-direction: column;
     padding: 30px;
-    gap: 15px;
+    gap: 22px;
   }
 
   section {

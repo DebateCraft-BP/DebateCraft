@@ -564,7 +564,7 @@ p {
 }
 
 .stat-item p {
-  color: var(--neutral-300);
+  color: #25d0fe;
   font-size: 18px;
   font-weight: 500;
 }
@@ -598,7 +598,7 @@ p {
   max-width: 600px;
   margin: 0 auto 40px;
   font-size: 18px;
-  color: rgba(255, 255, 255, 0.9);
+  color: #1e51db;
 }
 
 /* Page Header - Now uses the same gradient background as main header */

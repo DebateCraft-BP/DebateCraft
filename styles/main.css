@@ -151,7 +151,14 @@ section {
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: 20px;
   line-height: 1.2;
-  background: var(--primary-gradient);
+  background: var(--primary-dark);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+h4, h5, h6 {
+  background: var(--neutral-900);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -510,7 +517,7 @@ p {
   left: 0;
   right: 0;
   height: 4px;
-  background: var(--primary-gradient);
+  background: var(--primary-dark);
   transform: scaleX(0);
   transition: transform 0.3s ease;
 }
@@ -525,7 +532,7 @@ p {
 }
 
 .mission-card h3 {
-  background: var(--primary-gradient);
+  /* background: var(--primary-gradient); */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -533,9 +540,16 @@ p {
   margin-bottom: 15px;
 }
 
+.mission-item h3 {
+  background: var(--neutral-800);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 /* Stats Section */
 .stats-section {
-  text-align: center;
+  text-align: left;
   background: var(--neutral-900);
   color: white;
 }
@@ -553,9 +567,12 @@ p {
   position: relative;
 }
 
+.stats-section h1 {
+  padding: 10px;
+}
 .stat-item h3 {
   font-size: 64px;
-  background: var(--accent-gradient);
+  background: rgb(46, 46, 63);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -564,9 +581,10 @@ p {
 }
 
 .stat-item p {
-  color: #25d0fe;
+  color: var(--neutral-900);
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 600;
+  max-width: 450px;
 }
 
 /* CTA Section */
@@ -598,12 +616,12 @@ p {
   max-width: 600px;
   margin: 0 auto 40px;
   font-size: 18px;
-  color: #1e51db;
+  color: var(--neutral-900);
 }
 
 /* Page Header - Now uses the same gradient background as main header */
 .page-header {
-  background: var(--neutral-800);
+  background: var(--neutral-900) !important;
   color: white;
   text-align: center;
   padding: 80px 0;
@@ -712,6 +730,7 @@ p {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   border-radius: 20px;
+  padding: 30px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -934,7 +953,7 @@ p {
 .tab-nav button.active {
   background: var(--primary-gradient);
   color: white;
-  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 4px 15px rgba(199, 212, 239, 0.3);
 }
 
 .tab-nav button:not(.active):hover {
@@ -943,11 +962,11 @@ p {
 }
 
 /* Add subtle alternating backgrounds to sections */
-section:nth-child(even) {
-  background: rgba(255, 255, 255, 0.5);
+section:nth-child(odd) {
+  background: rgba(223, 236, 255, 0.5);
 }
 
-section:nth-child(odd) {
+section:nth-child(even) {
   background: rgba(248, 250, 252, 0.8);
 }
 

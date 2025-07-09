@@ -549,9 +549,14 @@ p {
 
 /* Stats Section */
 .stats-section {
-  text-align: left;
+  text-align: center;
   background: var(--neutral-900);
   color: white;
+}
+
+.stats-buttons {
+  text-align: center;
+  margin-top: 50px;
 }
 
 .stats-container {
@@ -636,7 +641,7 @@ p {
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300"><polygon fill="rgba(255,255,255,0.1)" points="0,0 1000,0 1000,250 0,300"/></svg>');
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300"><polygon fill="rgba(255,255,255,0.1)" points="0,0 1000,0 1000,210 0,300"/></svg>');
   background-size: cover;
 }
 

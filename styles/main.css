@@ -546,7 +546,46 @@ p {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+.calendar-section {
+  padding: 60px 0;
+  background-color: #f9fafb;
+  text-align: center;
+}
 
+.calendar-table {
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+.calendar-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+  min-width: 700px;
+}
+
+.calendar-table th,
+.calendar-table td {
+  border: 1px solid #d1d5db;
+  padding: 12px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.calendar-table th {
+  background-color: #1d4ed8;
+  color: white;
+  font-weight: 600;
+}
+
+.calendar-table td {
+  background-color: white;
+}
+
+.calendar-table td:empty::after {
+  content: '—';
+  color: #9ca3af;
+}
 /* Stats Section */
 .stats-section {
   text-align: center;

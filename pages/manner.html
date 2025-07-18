@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep8 Speaking</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'sand': '#FDF6E3',
+                        'slate-dark': '#2c3e50',   // Dark Slate Blue for sidebar/text
+                        'slate-medium': '#34495e', // Lighter Slate for secondary heads
+                        'slate-light': '#95a5a6',  // Icon color
+                        'burnt-orange': '#F97316', // Primary Accent
+                    },
+                    fontFamily: {
+                        'sans': ['Poppins', 'sans-serif'],
+                        'serif': ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        .slider-thumb::-webkit-slider-thumb {
+            -webkit-appearance: none; appearance: none;
+            width: 24px; height: 24px;
+            background: #F97316; cursor: pointer; border-radius: 50%;
+            border: 4px solid #fff; box-shadow: 0 0 5px rgba(0,0,0,0.2);
+            margin-top: -8px; 
+        }
+        .slider-thumb::-moz-range-thumb {
+            width: 24px; height: 24px;
+            background: #F97316; cursor: pointer; border-radius: 50%;
+            border: 4px solid #fff; box-shadow: 0 0 5px rgba(0,0,0,0.2);
+        }
+        .slider-track { height: 8px; background-color: #e5e7eb; }
+        .fade-in { animation: fadeIn 0.5s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .emphasis-word { cursor: pointer; transition: all 0.2s ease-in-out; padding: 2px 4px; }
+        .emphasis-word.active { background-color: #fef3c7; color: #d97706; font-weight: 700; transform: scale(1.05); border-radius: 6px; }
+        .sidebar { transition: transform 0.3s ease-in-out; }
+    </style>
+</head>
+<body class="bg-sand text-slate-dark">
+
+    <div class="relative min-h-screen md:flex">
+        <!-- Overlay for mobile menu -->
+        <div id="sidebar-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-20 hidden md:hidden"></div>
+
+        <!-- Mobile Header -->
+        <div class="md:hidden flex justify-between items-center p-4 bg-slate-dark text-white shadow-lg sticky top-0 z-10">
+            <h1 class="text-xl font-serif">Deep<span class="text-burnt-orange">8</span> Speaking</h1>
+            <button id="mobile-menu-button" class="focus:outline-none z-30">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Sidebar Navigation -->
+        <aside id="sidebar" class="sidebar bg-slate-dark text-white w-64 space-y-6 py-7 px-2 fixed inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 z-30 flex flex-col h-screen overflow-y-auto">
+            <div class="flex items-center px-4">
+                <i class="fas fa-comment-dots text-2xl text-burnt-orange"></i>
+                <h1 class="text-xl font-serif ml-3 whitespace-nowrap">Deep<span class="text-burnt-orange">8</span> Speaking</h1>
+            </div>
+            <nav id="sidebar-nav" class="flex-grow px-2 space-y-2">
+                <!-- Nav items injected here -->
+            </nav>
+            <div class="px-4 mt-auto">
+                <p class="text-xs text-slate-light/50">&copy; Deep8 Creations. All rights reserved.</p>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main id="main-content" class="flex-1 p-6 sm:p-8 md:p-10">
+            <!-- Page content injected here -->
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- DATA ---
+            const spectrums = {
+                volume: { label: 'Volume', icon: 'fa-volume-high', levels: ['Very Soft', 'Soft', 'Conversational', 'Loud', 'Yelling'], why_it_matters: "Appropriate volume ensures you are heard and respected. It's a fundamental tool for conveying confidence and matching the energy of your environment." },
+                tone: { label: 'Tone', icon: 'fa-microphone-lines', levels: ['Monotone', 'Flat', 'Expressive', 'Emphatic', 'Dramatic'], why_it_matters: "Tone is the primary way we convey emotion and intent. A mismatched tone can confuse your audience, while a rich, expressive tone builds connection." },
+                pace: { label: 'Pace & Pauses', icon: 'fa-gauge-high', levels: ['Rushed', 'Deliberate', 'Moderate', 'Strategic', 'Masterful'], why_it_matters: "Pacing controls the flow of information. A varied pace keeps listeners engaged, while strategic pauses can build suspense or emphasize a crucial point." },
+                articulation: { label: 'Articulation', icon: 'fa-comment-dots', levels: ['Mumbled', 'Poor', 'Adequate', 'Clear', 'Pristine'], why_it_matters: "If your audience can't understand your words, your message is lost. Crisp articulation conveys intelligence and builds credibility." },
+                emphasis: { label: 'Emphasis', icon: 'fa-star', levels: ['Monotonous', 'Weak', 'Moderate', 'Strong', 'Exaggerated'], why_it_matters: "Emphasis is your tool for guiding your listener's interpretation. It directs their focus and can completely change the meaning of a sentence." },
+                certainty: { label: 'Certainty', icon: 'fa-circle-check', levels: ['Very Uncertain', 'Uncertain', 'Neutral', 'Certain', 'Very Certain'], why_it_matters: "People are persuaded by confidence. A certain delivery makes your arguments more compelling and makes you appear as a credible authority." },
+                gestures: { label: 'Gestures', icon: 'fa-hands-asl-interpreting', levels: ['Stiff', 'Subtle', 'Expressive', 'Animated', 'Distracting'], why_it_matters: "Purposeful gestures make you appear more dynamic and can help illustrate complex ideas. Random movements can distract from your message." },
+                eyeContact: { label: 'Eye Contact', icon: 'fa-eye', levels: ['Avoidant', 'Glancing', 'Conversational', 'Sustained', 'Intense'], why_it_matters: "Eye contact is a cornerstone of trust and connection. It tells your audience that you are present, confident, and speaking directly to them." }
+            };
+            const archetypes = {
+                'The Polished TED Speaker': { volume: 3, tone: 3, pace: 4, articulation: 4, emphasis: 3, certainty: 4, gestures: 3, eyeContact: 4 },
+                'The Classic Politician': { volume: 4, tone: 4, pace: 4, articulation: 4, emphasis: 4, certainty: 5, gestures: 4, eyeContact: 4 },
+                'The Boring Professor': { volume: 3, tone: 1, pace: 2, articulation: 4, emphasis: 1, certainty: 4, gestures: 1, eyeContact: 2 },
+                'The Stand-up Comedian': { volume: 4, tone: 5, pace: 4, articulation: 4, emphasis: 4, certainty: 3, gestures: 4, eyeContact: 4 },
+                'The Machine Gun': { volume: 3, tone: 2, pace: 1, articulation: 2, emphasis: 2, certainty: 4, gestures: 2, eyeContact: 2 },
+                'The Angry Philosopher': { volume: 5, tone: 4, pace: 4, articulation: 4, emphasis: 5, certainty: 5, gestures: 4, eyeContact: 5 },
+                'The Mumbling Student': { volume: 1, tone: 1, pace: 3, articulation: 1, emphasis: 1, certainty: 2, gestures: 1, eyeContact: 1 },
+            };
+            const analysisComments = {
+                volume: [ { s: [], w: ["Your volume is very soft, making you hard to hear."], ex: "Whispering a shocking secret in a story to draw the audience in." }, { s: [], w: ["A soft volume can create intimacy, but you risk being unheard."], ex: "Sharing a personal, vulnerable story in a small group." }, { s: ["A conversational volume is perfect for most situations."], w: [], ex: "Giving a presentation in a typical classroom or boardroom." }, { s: ["A loud, projecting voice is great for large rooms."], w: [], ex: "Addressing a crowd in an auditorium without a microphone." }, { s: [], w: ["Yelling can feel aggressive and should be used sparingly."], ex: "An actor portraying a moment of extreme anger on stage." } ],
+                tone: [ { s: [], w: ["A monotone delivery can bore your audience."], ex: "Reading a legal document aloud with no emotional inflection." }, { s: [], w: ["A flat tone lacks emotional color and can seem disengaged."], ex: "A news anchor delivering a factual but unemotional report." }, { s: ["An expressive tone conveys emotion and keeps your audience hooked."], w: [], ex: "Telling an exciting story to friends, with varied pitch." }, { s: ["An emphatic tone is powerful for persuasive speaking."], w: [], ex: "A politician passionately arguing for a new policy." }, { s: [], w: ["A highly dramatic tone can feel insincere if overused."], ex: "A stage magician creating an atmosphere of wonder and mystery." } ],
+                pace: [ { s: [], w: ["A rushed pace is hard to follow and signals nervousness."], ex: "A student rushing through a presentation to finish quickly." }, { s: [], w: ["A deliberate, slow pace can add weight, but risks dragging."], ex: "A judge reading a solemn verdict in a courtroom." }, { s: ["A moderate pace is conversational and easy to follow."], w: [], ex: "A teacher explaining a new concept clearly to their class." }, { s: ["Using strategic pauses adds impact to your words."], w: [], ex: "A CEO pausing for effect right before revealing record profits." }, { s: ["Masterful pacing can be incredibly powerful and captivating."], w: [], ex: "A skilled orator pausing for a long moment before delivering the final, powerful line of a speech." } ],
+                articulation: [ { s: [], w: ["Mumbled speech is impossible to understand."], ex: "Trying to talk with a mouth full of food." }, { s: [], w: ["Poor articulation can make you hard to understand."], ex: "Someone speaking too quickly and not moving their lips much." }, { s: ["Adequate articulation is fine for casual chats, but could be clearer for formal speeches."], w: [], ex: "Speaking with friends in a relaxed, informal setting." }, { s: ["Clear articulation boosts your credibility."], w: [], ex: "A professional newsreader delivering the evening broadcast." }, { s: ["Pristine articulation sounds professional and intelligent."], w: [], ex: "A classically trained actor performing Shakespeare." } ],
+                emphasis: [ { s: [], w: ["A monotonous delivery sounds flat and uninteresting."], ex: "Reciting a list of numbers without any variation." }, { s: [], w: ["Weak emphasis causes important points to be missed."], ex: "A debater failing to stress their key arguments, making them all sound equal." }, { s: ["Moderate emphasis guides your listeners naturally."], w: [], ex: "A storyteller emphasizing certain words to build suspense or create character voices." }, { s: ["Strong emphasis is a powerful tool for persuasion."], w: [], ex: "An activist stressing words like 'justice' and 'change' in a passionate plea." }, { s: [], w: ["Exaggerated emphasis can sound unnatural if not for a specific effect."], ex: "A cartoon voice actor creating a zany, over-the-top character." } ],
+                certainty: [ { s: [], w: ["Expressing high uncertainty undermines your message."], ex: "A presenter saying 'I'm not really sure, but maybe...' before every point." }, { s: [], w: ["Sounding uncertain can make you less persuasive."], ex: "Using hesitant language like 'perhaps' or 'it could be' for your main arguments." }, { s: ["A neutral stance is good for objective reporting, but can lack persuasive power."], w: [], ex: "A scientist presenting data and findings without personal bias." }, { s: ["High certainty conveys confidence and is very persuasive."], w: [], ex: "An expert witness stating their professional conclusions with conviction." }, { s: [], w: ["Absolute certainty is powerful but can seem arrogant if not backed by facts."], ex: "A drill sergeant giving an order that allows for no doubt or question." } ],
+                gestures: [ { s: [], w: ["A stiff posture with no gestures can seem robotic or nervous."], ex: "A speaker clutching a lectern with both hands for the entire speech." }, { s: ["Subtle gestures add a touch of naturalness."], w: [], ex: "Using small hand movements to count off points on your fingers." }, { s: ["Expressive gestures help illustrate your points."], w: [], ex: "Spreading your hands wide to indicate something large." }, { s: ["Animated gestures show passion and captivate an audience."], w: [], ex: "A motivational speaker using energetic, open gestures to fill the stage." }, { s: [], w: ["Distracting movements pull focus from your words."], ex: "Constantly fidgeting with a pen, adjusting glasses, or pacing aimlessly." } ],
+                eyeContact: [ { s: [], w: ["Avoiding eye contact can seem untrustworthy."], ex: "Reading your entire speech from your notes or staring at the floor." }, { s: [], w: ["Quick, fleeting glances are better than none, but lack connection."], ex: "Looking up briefly at the end of each sentence before looking down again." }, { s: ["Conversational eye contact builds rapport."], w: [], ex: "Moving your gaze around the room, resting on different people for a few seconds each." }, { s: ["Sustained eye contact makes you appear confident and connected."], w: [], ex: "Looking at one person for a full thought or sentence before moving to another." }, { s: [], w: ["Intense staring can make people uncomfortable."], ex: "Locking eyes with one person for an uncomfortably long time." } ]
+            };
+
+            // --- DOM ELEMENTS & STATE ---
+            const sidebar = document.getElementById('sidebar');
+            const sidebarNav = document.getElementById('sidebar-nav');
+            const sidebarOverlay = document.getElementById('sidebar-overlay');
+            const mainContent = document.getElementById('main-content');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            
+            function init() {
+                buildNav();
+                renderPage('home');
+                addEventListeners();
+            }
+            
+            function buildNav() {
+                let navHTML = `<a href="#home" class="nav-link flex items-center px-4 py-3 rounded-lg hover:bg-slate-medium/50 transition-colors"><i class="fas fa-home w-8 text-center text-xl"></i><span class="ml-3 font-semibold">Home</span></a><p class="px-4 pt-4 pb-2 text-sm font-bold text-slate-light/70 uppercase tracking-wider">Spectrums</p>`;
+                for(const key in spectrums) {
+                    navHTML += `<a href="#${key}" class="nav-link flex items-center px-4 py-3 rounded-lg hover:bg-slate-medium/50 transition-colors"><i class="fas ${spectrums[key].icon} w-8 text-center text-xl"></i><span class="ml-3 font-semibold">${spectrums[key].label}</span></a>`;
+                }
+                navHTML += `<p class="px-4 pt-4 pb-2 text-sm font-bold text-slate-light/70 uppercase tracking-wider">Tools</p><a href="#profileLab" class="nav-link flex items-center px-4 py-3 rounded-lg hover:bg-slate-medium/50 transition-colors"><i class="fas fa-flask-vial w-8 text-center text-xl"></i><span class="ml-3 font-semibold">Profile Lab</span></a>`;
+                sidebarNav.innerHTML = navHTML;
+            }
+
+            function renderPage(pageKey) {
+                mainContent.innerHTML = pages[pageKey] ? pages[pageKey]() : (spectrums[pageKey] ? createSpectrumPage(pageKey) : pages['home']());
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.classList.remove('bg-burnt-orange');
+                    if (link.getAttribute('href') === `#${pageKey}`) link.classList.add('bg-burnt-orange');
+                });
+                if (window.innerWidth < 768) {
+                    sidebar.classList.add('-translate-x-full');
+                    sidebarOverlay.classList.add('hidden');
+                }
+                addPageSpecificListeners(pageKey);
+                if(spectrums[pageKey]) updateSingleAnalysis(pageKey);
+                if(pageKey === 'profileLab') updateFullAnalysis();
+            }
+
+            function addEventListeners() {
+                sidebarNav.addEventListener('click', (e) => {
+                    const link = e.target.closest('.nav-link');
+                    if(link) { e.preventDefault(); renderPage(link.getAttribute('href').substring(1)); }
+                });
+                const toggleSidebar = () => {
+                    sidebar.classList.toggle('-translate-x-full');
+                    sidebarOverlay.classList.toggle('hidden');
+                };
+                mobileMenuButton.addEventListener('click', toggleSidebar);
+                sidebarOverlay.addEventListener('click', toggleSidebar);
+            }
+            
+            // --- PAGE TEMPLATES ---
+            const pages = {
+                home: () => `
+                    <div class="fade-in"><h1 class="font-serif text-5xl md:text-7xl font-bold text-burnt-orange mb-6">Manner Matters!</h1><p class="text-lg md:text-xl text-slate-dark/80 mb-10 leading-relaxed">Welcome to Deep8 Speaking! Great speaking isn't just about the words you choose, but the <span class="font-bold">manner</span> in which you deliver them. Your volume, tone, and pace can change the entire meaning of your message.</p><div class="bg-white p-6 md:p-8 rounded-2xl shadow-lg"><h2 class="font-serif text-3xl md:text-4xl font-bold text-slate-medium mb-6">The Power of Emphasis</h2><p class="text-slate-dark/90 mb-6 text-lg">Notice how stressing a different word in the sentence below changes its entire implication. Click each word to see.</p><div id="emphasis-sentence" class="text-2xl md:text-3xl text-center p-6 bg-sand rounded-lg select-none mb-6"><span class="emphasis-word" data-meaning="It's me, specifically, who feels this way, not someone else.">I</span> <span class="emphasis-word" data-meaning="This is a deep, heartfelt feeling, not just a casual liking.">love</span> <span class="emphasis-word" data-meaning="It's your mother's cooking, not your cousin's or anyone else's.">your</span> <span class="emphasis-word" data-meaning="I love the cooking from this specific family member.">mother’s</span> <span class="emphasis-word" data-meaning="I admire this specific skill of hers; not other qualities.">cooking</span>.</div><div id="emphasis-meaning" class="text-center text-xl md:text-2xl font-semibold text-burnt-orange h-10"></div></div></div>`,
+                profileLab: () => {
+                    let slidersHTML = '', archetypesHTML = '';
+                    for (const key in spectrums) { slidersHTML += `<div class="slider-group"><label for="${key}-slider-lab" class="font-bold text-slate-dark">${spectrums[key].label}</label><div class="flex items-center gap-4 mt-1"><input type="range" id="${key}-slider-lab" name="${key}" min="1" max="5" value="3" class="w-full appearance-none cursor-pointer slider-thumb slider-track rounded-lg"><span id="${key}-value-lab" class="font-semibold text-burnt-orange text-base w-36 text-center">${spectrums[key].levels[2]}</span></div></div>`; }
+                    for (const name in archetypes) { archetypesHTML += `<button data-archetype="${name}" class="archetype-btn w-full text-left bg-gray-200 hover:bg-burnt-orange hover:text-white text-slate-dark font-semibold py-2 px-4 rounded-lg transition-colors duration-300 text-sm">${name}</button>`; }
+                    return `<div class="fade-in grid grid-cols-1 lg:grid-cols-5 gap-8"><div class="lg:col-span-3 space-y-8"><div class="bg-white p-6 md:p-8 rounded-2xl shadow-lg"><h2 class="font-serif text-3xl md:text-4xl font-bold mb-2 text-burnt-orange">Profile Lab</h2><p class="text-slate-dark/90 mb-8 text-lg">Create a profile, or select an archetype below to see how different styles are formed.</p><div id="sliders-container-lab" class="space-y-8">${slidersHTML}</div></div></div><div class="lg:col-span-2 space-y-8"><div class="bg-white p-6 rounded-2xl shadow-lg"><h2 class="font-serif text-2xl font-bold mb-4 text-burnt-orange">Archetype Explorer</h2><div id="archetypes-container" class="space-y-3">${archetypesHTML}</div></div><div class="bg-white p-6 rounded-2xl shadow-lg sticky top-8"><h2 class="font-serif text-2xl font-bold mb-4 text-burnt-orange">Profile Analysis</h2><div id="analysis-output-lab" class="space-y-4 text-base"></div></div></div></div>`;
+                }
+            };
+
+            const createSpectrumPage = (key) => {
+                const spectrum = spectrums[key];
+                return `<div class="fade-in max-w-4xl mx-auto"><h1 class="font-serif text-4xl md:text-6xl font-bold text-burnt-orange mb-8">${spectrum.label}</h1><div class="bg-white p-6 md:p-8 rounded-2xl shadow-lg"><h2 class="font-serif text-2xl md:text-3xl text-slate-medium font-bold mb-4">Why It Matters</h2><p class="text-base md:text-lg text-slate-dark/90 mb-8 leading-relaxed">${spectrum.why_it_matters}</p><hr class="my-8 border-gray-200"><h2 class="font-serif text-2xl md:text-3xl text-slate-medium font-bold mb-6">Experiment Below</h2><div class="slider-group"><div class="flex flex-col sm:flex-row items-center gap-4 mt-1"><input type="range" id="${key}-slider" name="${key}" min="1" max="5" value="3" class="w-full appearance-none cursor-pointer slider-thumb slider-track rounded-lg"><span id="${key}-value" class="font-semibold text-burnt-orange text-lg w-40 text-center mt-4 sm:mt-0">${spectrum.levels[2]}</span></div></div><div id="${key}-analysis" class="mt-8 space-y-4 text-base"></div></div></div>`;
+            };
+            
+            // --- EVENT LISTENERS & LOGIC ---
+            function addPageSpecificListeners(pageKey) {
+                if (pageKey === 'home') {
+                    const sentence = document.getElementById('emphasis-sentence');
+                    if (sentence) sentence.addEventListener('click', (e) => {
+                        if (e.target.classList.contains('emphasis-word')) {
+                            sentence.querySelectorAll('.emphasis-word').forEach(word => word.classList.remove('active'));
+                            e.target.classList.add('active');
+                            document.getElementById('emphasis-meaning').textContent = e.target.dataset.meaning;
+                        }
+                    });
+                } else if (spectrums[pageKey]) {
+                    document.getElementById(`${pageKey}-slider`).addEventListener('input', () => updateSingleAnalysis(pageKey));
+                } else if (pageKey === 'profileLab') {
+                     document.querySelectorAll('#sliders-container-lab input').forEach(slider => slider.addEventListener('input', () => updateFullAnalysis()));
+                     document.querySelectorAll('.archetype-btn').forEach(button => button.addEventListener('click', (e) => {
+                        const profile = archetypes[e.currentTarget.dataset.archetype];
+                        for (const key in profile) { document.getElementById(`${key}-slider-lab`).value = profile[key]; }
+                        updateFullAnalysis();
+                     }));
+                }
+            }
+            
+            function updateSingleAnalysis(key) {
+                const slider = document.getElementById(`${key}-slider`);
+                const value = parseInt(slider.value, 10);
+                document.getElementById(`${key}-value`).textContent = spectrums[key].levels[value - 1];
+                const analysis = analysisComments[key][value - 1];
+                let html = `<div class="bg-sand p-4 rounded-lg"><h4 class="font-bold text-slate-dark mb-2">Example Scenario:</h4><p class="text-slate-dark/80 italic">"${analysis.ex}"</p></div>`;
+                if(analysis.w.length) html += `<div class="fade-in mt-4"><h3 class="font-bold text-lg text-red-600">Things to Watch Out For</h3><p class="text-slate-dark/90 mt-1">${analysis.w[0]}</p></div>`;
+                if(analysis.s.length) html += `<div class="fade-in mt-4"><h3 class="font-bold text-lg text-green-600">Potential Strengths</h3><p class="text-slate-dark/90 mt-1">${analysis.s[0]}</p></div>`;
+                document.getElementById(`${key}-analysis`).innerHTML = html;
+            }
+            
+            function updateFullAnalysis() {
+                let strengths = [], weaknesses = [];
+                document.querySelectorAll('#sliders-container-lab input').forEach(slider => {
+                    const key = slider.name;
+                    const value = parseInt(slider.value, 10);
+                    document.getElementById(`${key}-value-lab`).textContent = spectrums[key].levels[value - 1];
+                    const analysis = analysisComments[key][value - 1];
+                    strengths.push(...analysis.s); weaknesses.push(...analysis.w);
+                });
+                let html = '';
+                if(strengths.length) html += `<div class="fade-in"><h3 class="font-bold text-lg text-green-600">Strengths</h3><ul class="list-disc list-inside text-slate-dark/90 space-y-1 mt-2">${strengths.map(s => `<li>${s}</li>`).join('')}</ul></div>`;
+                if(weaknesses.length) html += `<div class="fade-in mt-4"><h3 class="font-bold text-lg text-red-600">Things to Watch Out For</h3><ul class="list-disc list-inside text-slate-dark/90 space-y-1 mt-2">${weaknesses.map(w => `<li>${w}</li>`).join('')}</ul></div>`;
+                document.getElementById('analysis-output-lab').innerHTML = html || '<p class="text-slate-dark/50 italic">Your analysis will appear here.</p>';
+            }
+
+            init();
+        });
+    </script>
+</body>
+</html>

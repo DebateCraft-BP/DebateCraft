@@ -684,38 +684,72 @@ p {
   margin-top: 50px;
 }
 
+/* --- Stats layout: 2 columns x 2 rows, centered --- */
+/* ensure grid cells in each row stretch to the same height */
 .stats-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 80px;
-  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(240px, 1fr));
+  gap: 32px 48px;
+  justify-items: center;
+  /* make grid items stretch to fill their row's track */
+  align-items: stretch;
+  margin: 50px 30px;
 }
 
+/* let wrappers disappear so .stat-item are direct grid items */
+.stat-row { display: contents; }
+
+/* fill the grid cell and use flex column so content can be aligned inside */
 .stat-item {
+  height: 100%;                 /* fill the grid cell (important) */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  position: relative;
+  padding: 22px;
+  border-radius: 12px;
+  width: 100%;
+  background-color: #e0ebfa;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
 }
 
-.stats-section h1 {
-  padding: 10px;
+/* make paragraph take remaining space or push footer/buttons to bottom */
+.stat-item p {
+  margin-top: 12px;
+  flex: 0 1 auto;      /* default - keeps paragraph natural size */
 }
+
+/* if you keep .stat-row wrappers, let them disappear into the grid */
+.stat-row {
+  display: contents; /* lets children (.stat-item) become direct grid items */
+}
+
+/* title + copy */
 .stat-item h3 {
-  font-size: 64px;
-  background: rgb(46, 46, 63);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 10px;
+  font-size: 48px;
+  margin: 6px 0 10px;
   font-weight: 800;
+  color: white;                /* big number color */
+  line-height: 1;
 }
 
 .stat-item p {
   color: var(--neutral-900);
-  font-size: 18px;
+  font-size: 16px;
+  max-width: 440px;
+  margin: 0;
   font-weight: 600;
-  max-width: 450px;
 }
+
+/* Responsive: single column on small screens */
+@media (max-width: 640px) {
+  .stats-container {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .stat-item h3 { font-size: 40px; }
+}
+
 
 /* CTA Section */
 .cta-section {

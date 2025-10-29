@@ -20,7 +20,7 @@
       },
       {
         "name": "Arthur Zhang",
-        "role": "Head of PF",
+        "role": "Head PF Coach",
         "school": "Winchester College, UK",
         "bio": "A top-performing PF debater: 2nd Place Team and Top Speaker at the 2023 Harvard International PF Tournament (Open Division), with past top finishes in 2022 and 2021. NSDA Global Excellent Debater (2020) and 1st Place at Wincheste College’s Inter-boarding house Debating Competition(Yaw Pot). Arthur brings his wealth of experience to lead our upcoming Public Forum course."
       },
@@ -32,9 +32,22 @@
       },
       {
         "name": "Andre Chan",
-        "role": "Head of Coach Training",
+        "role": "Assistant Curriculum Developer",
         "school": "Winchester College, UK",
         "bio": "A seasoned debater with experience in both WSDC and BP formats. Andre contributes to curriculum design and training with his 4+ years of experience."
+      },
+      {
+        "name": "Raul Laszlo-Louro",
+        "role": "Level 3 Coach",
+        "school": "Winchester College, UK",
+        "image": "/Raul.png",
+        "bio": "An accomplished BP debater with experience at ICYD and Imperial Schools. Raul has been a finalist in multiple intra-school tournaments and mentors younger debaters."
+      },
+      {
+        "name": "Cici Chen",
+        "role": "Level 3 Coach",
+        "school": "Phillips Exeter Academy, US",
+        "bio": "A member of the Team China WSDC Development Team and Advanced Debate Team at Phillips Exeter Academy, she has had numerous successes across Asian circuits and brings a wealth of debate knowledge."
       },
       {
         "name": "Eric Jin",
@@ -42,13 +55,6 @@
         "school": "Phillips Exeter Academy, US",
         "image": "/Eric.png",
         "bio": "A BP debater who recently placed 3rd at the Team Canada Fundraiser 2025. Eric empathetically supports new debaters."
-      },
-      {
-        "name": "Raul Laszlo-Louro",
-        "role": "Coach",
-        "school": "Winchester College, UK",
-        "image": "/Raul.png",
-        "bio": "An accomplished BP debater with experience at ICYD and Imperial Schools. Raul has been a finalist in multiple intra-school tournaments and mentors younger debaters."
       },
       {
         "name": "Winston Chan",
@@ -61,12 +67,6 @@
         "role": "Coach",
         "school": "Epsom College, UK",
         "bio": "Aloysius supports both coaching and program logistics."
-      },
-            {
-        "name": "Cici Chen",
-        "role": "Coach",
-        "school": "Phillips Exeter Academy, US",
-        "bio": "A member of the Team China WSDC Development Team and Advanced Debate Team at Phillips Exeter Academy, she has had numerous successes across Asian circuits and brings a wealth of debate knowledge."
       },
       {
         "name": "Luke Chon",
@@ -87,6 +87,18 @@
         "bio": "A member of the Advanced Debate Team at Phillips Exeter Academy, she has had numerous successes within the DANEIS circuit."
       },
       {
+        "name": "Jayden Su",
+        "role": "Administrator",
+        "school": "Phillips Exeter Academy, US",
+        "bio": "A leading member of several student-led organizations and charities, Jayden brings extensive administrative and operational experience."
+      },
+      {
+        "name": "Theo Okolo",
+        "role": "Debate Content Creator",
+        "school": "Winchester College, UK",
+        "bio": "With a background in entrepreneurship and marketing, Theo drives the team’s outreach strategy and engagement efforts."
+      },
+      {
         "name": "Vivien Shang",
         "role": "Social Media Manager",
         "school": "Phillips Exeter Academy, US",
@@ -97,18 +109,6 @@
         "role": "Social Media Manager",
         "school": "Phillips Exeter Academy, US",
         "bio": "Works on digital outreach and visual media, helping expand our online presence."
-      },
-      {
-        "name": "Jayden Su",
-        "role": "Administrator",
-        "school": "Phillips Exeter Academy, US",
-        "bio": "A leading member of several student-led organizations and charities, Jayden brings extensive administrative and operational experience."
-      },
-      {
-        "name": "Theo Okolo",
-        "role": "Adminstrator",
-        "school": "Winchester College, UK",
-        "bio": "With a background in entrepreneurship and marketing, Theo drives the team’s outreach strategy and engagement efforts."
       },
       {
         "name": "Aaditiya Bilakanti",

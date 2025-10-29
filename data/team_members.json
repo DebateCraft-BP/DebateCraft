@@ -19,18 +19,6 @@
         "bio": "A competitive debater with four years of BP debating and adjudication experience. Matthew has competed at ICYD and Cambridge Schools, and currently serves as a Debate Society captain at Winchester. He brings over two years of coaching experience and extensive politics, economics, and international relations experience."
       },
       {
-        "name": "Andre Chan",
-        "role": "Curriculum Developer",
-        "school": "Winchester College, UK",
-        "bio": "A seasoned debater with experience in both WSDC and BP formats. Andre contributes to curriculum design and training with his 4+ years of experience."
-      },
-      {
-        "name": "Jayden Su",
-        "role": "Administrator",
-        "school": "Phillips Exeter Academy, US",
-        "bio": "A leading member of several student-led organizations and charities, Jayden brings extensive administrative and operational experience."
-      },
-      {
         "name": "Arthur Zhang",
         "role": "Head of PF",
         "school": "Winchester College, UK",
@@ -41,6 +29,12 @@
         "role": "Head Private Coach",
         "school": "Phillips Exeter Academy, US",
         "bio": "The youngest member of the Team Hong Kong Development Squad, with experience in both BP and WSDC formats. He recently won the U17 finals of Oxford WSDC 2025 and was the 13th-best speaker in the Hong Kong Debate Open."
+      },
+      {
+        "name": "Andre Chan",
+        "role": "Head of Coach Training",
+        "school": "Winchester College, UK",
+        "bio": "A seasoned debater with experience in both WSDC and BP formats. Andre contributes to curriculum design and training with his 4+ years of experience."
       },
       {
         "name": "Eric Jin",
@@ -82,27 +76,33 @@
       },
       {
         "name": "Aloysius Yeung",
-        "role": "Administrator",
+        "role": "Coach",
         "school": "Epsom College, UK",
         "bio": "Aloysius supports both coaching and program logistics."
       },
       {
-        "name": "Theo Okolo",
-        "role": "Outreach Lead",
-        "school": "Winchester College, UK",
-        "bio": "With a background in entrepreneurship and marketing, Theo drives the team’s outreach strategy and engagement efforts."
-      },
-      {
         "name": "Vivien Shang",
-        "role": "Outreach Lead",
+        "role": "Social Media Manager",
         "school": "Phillips Exeter Academy, US",
         "bio": "Creates engaging content across social media platforms to achieve our mission of democratizing access to debate through free content."
       },
       {
         "name": "Andy Liu",
-        "role": "Outreach Lead",
+        "role": "Social Media Manager",
         "school": "Phillips Exeter Academy, US",
         "bio": "Works on digital outreach and visual media, helping expand our online presence."
+      },
+      {
+        "name": "Jayden Su",
+        "role": "Administrator",
+        "school": "Phillips Exeter Academy, US",
+        "bio": "A leading member of several student-led organizations and charities, Jayden brings extensive administrative and operational experience."
+      },
+      {
+        "name": "Theo Okolo",
+        "role": "Adminstrator",
+        "school": "Winchester College, UK",
+        "bio": "With a background in entrepreneurship and marketing, Theo drives the team’s outreach strategy and engagement efforts."
       },
       {
         "name": "Aaditiya Bilakanti",

@@ -96,10 +96,24 @@
         "bio": "A leading member of several student-led organizations and charities, Jayden brings extensive administrative and operational experience. He was previously on the VSA and WIS Chinese debate teams."
       },
       {
+        "name": "Emmanuel Zhang",
+        "role": "Outreach Coordinator",
+        "school": "Phillips Exeter Academy, US",
+        "image": "/Emmanuel.png",
+        "bio": "Emmanuel is a debater at Phillips Exeter Academy. He embodies the DebateCraft mission to democratize debating for all students."
+      },
+      {
         "name": "Theo Okolo",
-        "role": "Debate Content Creator",
+        "role": "Outreach Coordinator",
         "school": "Winchester College, UK",
         "bio": "With a background in entrepreneurship and marketing, Theo drives the team’s outreach strategy and engagement efforts."
+      },
+            {
+        "name": "Kevin Chen",
+        "role": "Debate Content Creator",
+        "school": "Phillips Exeter Academy, US",
+        "image": "/Kevin.png",
+        "bio": "Works on digital outreach and debate content creation, helping expand our online presence."
       },
       {
         "name": "Vivien Shang",
@@ -112,13 +126,6 @@
         "role": "Social Media Manager",
         "school": "Phillips Exeter Academy, US",
         "bio": "Works on digital outreach and visual media, helping reach new students. He brings experience from his web design role on the Exonian Web Board."
-      },
-      {
-        "name": "Kevin Chen",
-        "role": "Social Media Manager",
-        "school": "Phillips Exeter Academy, US",
-        "image": "/Kevin.png",
-        "bio": "Works on digital outreach and debate content creation, helping expand our online presence."
       },
       {
         "name": "Aaditiya Bilakanti",

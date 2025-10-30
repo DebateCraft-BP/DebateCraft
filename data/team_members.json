@@ -55,7 +55,7 @@
         "role": "Coach",
         "school": "Phillips Exeter Academy, US",
         "image": "/Eric.png",
-        "bio": "A BP debater who recently placed 3rd at the Team Canada Fundraiser 2025. Eric empathetically supports new debaters."
+        "bio": "A BP debater who recently placed 3rd at the Team Canada Fundraiser 2025 and at the Carroll College(University) Fundraiser 2025. Eric empathetically supports new debaters."
       },
       {
         "name": "Winston Chan",
@@ -91,7 +91,7 @@
         "name": "Jayden Su",
         "role": "Administrator",
         "school": "Phillips Exeter Academy, US",
-        "bio": "A leading member of several student-led organizations and charities, Jayden brings extensive administrative and operational experience."
+        "bio": "A leading member of several student-led organizations and charities, Jayden brings extensive administrative and operational experience. He was previously on the VSA and WIS Chinese debate teams."
       },
       {
         "name": "Theo Okolo",
@@ -109,18 +109,24 @@
         "name": "Andy Liu",
         "role": "Social Media Manager",
         "school": "Phillips Exeter Academy, US",
-        "bio": "Works on digital outreach and visual media, helping expand our online presence."
+        "bio": "Works on digital outreach and visual media, helping reach new students. He brings experience from his web design role on the Exonian Web Board."
+      },
+      {
+        "name": "Kevin Chen",
+        "role": "Social Media Manager",
+        "school": "Phillips Exeter Academy, US",
+        "bio": "Works on digital outreach and debate content creation, helping expand our online presence."
       },
       {
         "name": "Aaditiya Bilakanti",
         "role": "Web Developer",
         "school": "Phillips Exeter Academy, US",
-        "bio": "Plays a critical role in updating our website and is working on exciting AI debate tools."
+        "bio": "Plays a critical role in updating our website and is working on exciting AI debate tools. He has PF debate experience"
       },
       {
         "name": "Andrew Chen",
         "role": "Administrator",
         "school": "Phillips Exeter Academy, US",
-        "bio": "Supports the creation debate content as well as interacting with parents."
+        "bio": "Supports the creation debate content as well as interacting with parents. He has PF debate experience."
       }
 ]

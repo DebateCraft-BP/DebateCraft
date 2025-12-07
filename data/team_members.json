@@ -56,17 +56,17 @@
         "bio": "A member of the Team China WSDC Development Team and Advanced Debate Team at Phillips Exeter Academy, she has had numerous successes across Asian circuits and brings a wealth of debate knowledge."
       },
       {
+        "name": "Eric Jin",
+        "role": "Senior Coach",
+        "school": "Phillips Exeter Academy, US",
+        "image": "Images/Eric.png",
+        "bio": "A BP debater who recently placed 3rd at the Team Canada Fundraiser 2025 and at the Carroll College(University) Fundraiser 2025."
+      },
+      {
         "name": "Aaryav Khaderia",
         "role": "Coach",
         "school": "Hong Kong International School, HK",
         "bio": "A decorated debater as the 4th best speaker in the Hong Kong Junior Schools Debating Championship 2024, and a member of the HK WSDC development team."
-      },
-      {
-        "name": "Eric Jin",
-        "role": "Coach",
-        "school": "Phillips Exeter Academy, US",
-        "image": "Images/Eric.png",
-        "bio": "A BP debater who recently placed 3rd at the Team Canada Fundraiser 2025 and at the Carroll College(University) Fundraiser 2025."
       },
       {
         "name": "Rylan Wang",
@@ -88,6 +88,13 @@
         "school": "Southridge School, Canada",
         "image": "",
         "bio": "Semifinalist for Hart House Debate Tournament 2025 and UBC Summer HST 2025 where she was the 9th place speaker. Finalist in YPC HST 2025 and Debateability Summer Championships 2025"
+      },
+        {
+        "name": "Matthew Hao",
+        "role": "Coach",
+        "school": "Phillips Exeter Academy, US",
+        "image": "",
+        "bio": "Matthew is a proficient PF debater regularly breaking quarterfinals and above in the NSDA China circuit."
       },
       {
         "name": "Jade Yoo",
@@ -186,5 +193,19 @@
         "school": "Phillips Exeter Academy, US",
         "image": "Images/Diddy.png",
         "bio": "Plays a critical role in updating our website and is working on exciting AI debate tools. He has PF debate experience"
+      },
+      {
+        "name": "Dowan Kim",
+        "role": "Administrator",
+        "school": "Phillips Exeter Academy, US",
+        "image": "",
+        "bio": "Dowan has WSDC experience having competed in local WSDC competitions in Korea"
+      },
+              {
+        "name": "Oliver Choi",
+        "role": "Administrator",
+        "school": "Phillips Exeter Academy, US",
+        "image": "",
+        "bio": ""
       }
 ]

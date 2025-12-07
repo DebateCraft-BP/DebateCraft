@@ -2484,3 +2484,42 @@ section:nth-child(even) {
   background-color: #1e2d5c;
   color: #fff;
 }
+.team-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin: 1.5rem 0 2rem;
+}
+
+.filter-btn {
+  border-radius: 999px; /* big pill / oval */
+  padding: 0.6rem 1.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.18); /* translucent */
+  color: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  outline: none;
+  transition:
+    background 0.2s ease,
+    transform 0.1s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+  backdrop-filter: blur(8px); /* glassy if supported */
+}
+
+.filter-btn:hover {
+  background: rgba(255, 255, 255, 0.28);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.filter-btn.active {
+  background: var(--accent-color, #1f4fff);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.16);
+}

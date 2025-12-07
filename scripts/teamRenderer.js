@@ -1,23 +1,29 @@
-export function renderTeamGrid(members, category) {
+export function renderTeamGrid(members, category = null) {
   const grid = document.querySelector('.team-grid');
   if (!grid) return;
 
+  // Clear any existing cards
   grid.innerHTML = '';
 
-  const normalizedCategory = category ? category.toLowerCase() : null;
+  const normalizedCategory = category ? String(category).toLowerCase() : null;
 
   const filteredMembers = normalizedCategory
-    ? members.filter((m) =>
-        Array.isArray(m.categories)
-          ? m.categories
-              .map((c) => c.toLowerCase())
-              .includes(normalizedCategory)
-          : false
-      )
+    ? members.filter((m) => {
+        // Prefer `categories` (array)
+        if (Array.isArray(m.categories)) {
+          return m.categories.some(
+            (c) => String(c).toLowerCase() === normalizedCategory
+          );
+        }
+        // Fallback if some entries still have a single `category` string
+        if (m.category) {
+          return String(m.category).toLowerCase() === normalizedCategory;
+        }
+        return false;
+      })
     : members;
 
-
-  if (filteredMembers.length === 0) {
+  if (!filteredMembers.length) {
     grid.insertAdjacentHTML(
       'beforeend',
       '<p class="no-members">No team members found in this section yet. Check back soon!</p>'
@@ -56,7 +62,6 @@ export function renderTeamGrid(members, category) {
 export function initTeamFilters(members) {
   const filterContainer = document.querySelector('.team-filters');
 
-  // If there are no filter buttons for some reason, just render everyone.
   if (!filterContainer) {
     renderTeamGrid(members);
     return;
@@ -70,14 +75,19 @@ export function initTeamFilters(members) {
     buttons.forEach((b) => b.classList.remove('active'));
     btn.classList.add('active');
 
-    renderTeamGrid(members, category);
+    // "All" => no filtering
+    if (!category || category.toLowerCase() === 'all') {
+      renderTeamGrid(members, null);
+    } else {
+      renderTeamGrid(members, category);
+    }
   };
 
   buttons.forEach((btn) => {
     btn.addEventListener('click', () => handleClick(btn));
   });
 
-  // Initial render: use the button already marked active, or the first button.
+  // Initial: use active button or first
   const defaultButton =
     filterContainer.querySelector('.filter-btn.active') || buttons[0];
 

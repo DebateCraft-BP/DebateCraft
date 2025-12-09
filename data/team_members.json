@@ -32,12 +32,12 @@
         "bio": "A top-performing PF debater: 2nd Place Team and Top Speaker at the 2023 Harvard International PF Tournament (Open Division), with past top finishes in 2022 and 2021. NSDA Global Excellent Debater (2020) and 1st Place at Wincheste College’s Inter-boarding house Debating Competition(Yaw Pot). Arthur brings his wealth of experience to lead our upcoming Public Forum course."
       },
       {
-        "name": "Valmik Dangayach",
-        "role": "Head Private Coach",
+        "name": "Jayden Su",
+        "role": "Head Administrator",
         "school": "Phillips Exeter Academy, US",
-        "image": "Images/Valmik.png",
-        "categories": ["coaching"],
-        "bio": "The youngest member of the Team Hong Kong Development Squad, with experience in both BP and WSDC formats. He recently won the U17 finals of Oxford WSDC 2025 and was the 13th-best speaker in the Hong Kong Debate Open."
+        "image": "Images/Jayden.png",
+        "categories": ["executive","outreach"],
+        "bio": "A leading member of several student-led organizations and charities, Jayden brings extensive administrative and operational experience. He was previously on the VSA and WIS Chinese debate teams."
       },
       {
         "name": "Andre Chan",
@@ -46,6 +46,14 @@
         "image": "Images/Andre.png",
         "categories": ["executive","coaching"],
         "bio": "A seasoned debater with experience in both WSDC and BP formats. Andre contributes to curriculum design and training with his 4+ years of experience."
+      },
+      {
+        "name": "Valmik Dangayach",
+        "role": "Head Private Coach",
+        "school": "Phillips Exeter Academy, US",
+        "image": "Images/Valmik.png",
+        "categories": ["coaching"],
+        "bio": "The youngest member of the Team Hong Kong Development Squad, with experience in both BP and WSDC formats. He recently won the U17 finals of Oxford WSDC 2025 and was the 13th-best speaker in the Hong Kong Debate Open."
       },
       {
         "name": "Raul Laszlo-Louro",
@@ -65,7 +73,7 @@
       },
       {
         "name": "Eric Jin",
-        "role": "Senior Coach",
+        "role": "Coach",
         "school": "Phillips Exeter Academy, US",
         "image": "Images/Eric.png",
         "categories": ["coaching"],
@@ -102,13 +110,21 @@
         "categories": ["coaching"],
         "bio": "Semifinalist for Hart House Debate Tournament 2025 and UBC Summer HST 2025 where she was the 9th place speaker. Finalist in YPC HST 2025 and Debateability Summer Championships 2025"
       },
-        {
-        "name": "Matthew Hao",
+      {
+        "name": "Dowan Kim",
         "role": "Coach",
         "school": "Phillips Exeter Academy, US",
-        "image": "",
+        "image": "Images/Dowan.png",
+        "categories": ["coaching","outreach"],
+        "bio": "Dowan has WSDC experience having competed in local WSDC competitions in Korea"
+      },
+      {
+        "name": "Srisha Boinapalli",
+        "role": "PF Coach",
+        "school": "Phillips Exeter Academy, US",
+        "image": "Images/Srisha.png",
         "categories": ["coaching","PF"],
-        "bio": "Matthew is a proficient PF debater regularly breaking quarterfinals and above in the NSDA China circuit."
+        "bio": "4 years of PF experience and 6 months of LD experience, Varsity National Circuit debater for both PF and LD, Qualified for Middle School NSDA nationals for PF."
       },
       {
         "name": "Jade Yoo",
@@ -133,14 +149,6 @@
         "image": "Images/Winston.png",
         "categories": ["coaching"],
         "bio": "Winston has debate and moot experience from both DBS and Winchester College. He specializes in helping new ESL debaters."
-      },
-      {
-        "name": "Jayden Su",
-        "role": "Head Administrator",
-        "school": "Phillips Exeter Academy, US",
-        "image": "Images/Jayden.png",
-        "categories": ["executive","outreach"],
-        "bio": "A leading member of several student-led organizations and charities, Jayden brings extensive administrative and operational experience. He was previously on the VSA and WIS Chinese debate teams."
       },
       {
         "name": "Aloysius Yeung",
@@ -183,8 +191,16 @@
         "bio": "With a background in entrepreneurship and marketing, Theo drives the team’s outreach strategy and engagement efforts."
       },
       {
+        "name": "Mehar Singh",
+        "role": "Outreach Coordinator",
+        "school": "Bakersfield Christian High School, US",
+        "image": "Images/Mehar.png",
+        "categories": ["outreach"],
+        "bio": "With three years of oral interpretation and language, she supports our outreach efforts."
+      },
+      {
         "name": "Vivien Shang",
-        "role": "Social Media Manager",
+        "role": "Social Media Designer",
         "school": "Phillips Exeter Academy, US",
         "image": "Images/Vivien.png",
         "categories": ["outreach"],
@@ -192,7 +208,7 @@
       },
       {
         "name": "Andy Liu",
-        "role": "Social Media Manager",
+        "role": "Social Media Designer",
         "school": "Phillips Exeter Academy, US",
         "image": "Images/Andy.png",
         "categories": ["outreach"],
@@ -200,7 +216,7 @@
       },
       {
         "name": "Mukiibi Calvin",
-        "role": "Social Media Manager",
+        "role": "Social Media Designer",
         "school": "Seeta High School, Uganda",
         "image": "Images/Calvin.png",
         "categories": ["outreach"],
@@ -222,14 +238,15 @@
         "categories": ["outreach","PF"],
         "bio": "Plays a critical role in updating our website and is working on exciting AI debate tools. He has PF debate experience"
       },
-      {
-        "name": "Dowan Kim",
-        "role": "Administrator",
+              {
+        "name": "Matthew Hao",
+        "role": "Web Developer",
         "school": "Phillips Exeter Academy, US",
         "image": "",
-        "categories": ["outreach"],
-        "bio": "Dowan has WSDC experience having competed in local WSDC competitions in Korea"
+        "categories": ["outreach","PF"],
+        "bio": "Matthew is a proficient PF debater regularly breaking quarterfinals and above in the NSDA China circuit."
       },
+
               {
         "name": "Oliver Choi",
         "role": "Administrator",

@@ -72,6 +72,14 @@
         "bio": "A member of the Team China WSDC Development Team and Advanced Debate Team at Phillips Exeter Academy, she has had numerous successes across Asian circuits and brings a wealth of debate knowledge."
       },
       {
+        "name": "Dowan Kim",
+        "role": "Curriculum Developer",
+        "school": "Phillips Exeter Academy, US",
+        "image": "Images/Dowan.png",
+        "categories": ["coaching","outreach"],
+        "bio": "Dowan has WSDC experience having competed in local WSDC competitions in Korea"
+      },
+      {
         "name": "Eric Jin",
         "role": "Coach",
         "school": "Phillips Exeter Academy, US",
@@ -109,14 +117,6 @@
         "image": "",
         "categories": ["coaching"],
         "bio": "Semifinalist for Hart House Debate Tournament 2025 and UBC Summer HST 2025 where she was the 9th place speaker. Finalist in YPC HST 2025 and Debateability Summer Championships 2025"
-      },
-      {
-        "name": "Dowan Kim",
-        "role": "Coach",
-        "school": "Phillips Exeter Academy, US",
-        "image": "Images/Dowan.png",
-        "categories": ["coaching","outreach"],
-        "bio": "Dowan has WSDC experience having competed in local WSDC competitions in Korea"
       },
       {
         "name": "Srisha Boinapalli",

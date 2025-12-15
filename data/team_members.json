@@ -68,7 +68,7 @@
         "role": "Senior Coach",
         "school": "Phillips Exeter Academy, US",
         "image": "Images/Cici.png",
-        "categories": ["coaching"],
+        "categories": ["coaching","outreach"],
         "bio": "A member of the Team China WSDC Development Team and Advanced Debate Team at Phillips Exeter Academy, she has had numerous successes across Asian circuits and brings a wealth of debate knowledge."
       },
       {
@@ -131,7 +131,7 @@
         "role": "PF Coach",
         "school": "Phillips Exeter Academy, US",
         "image": "Images/Srisha.png",
-        "categories": ["coaching","PF"],
+        "categories": ["coaching","PF","outreach"],
         "bio": "4 years of PF experience and 6 months of LD experience, Varsity National Circuit debater for both PF and LD, Qualified for Middle School NSDA nationals for PF."
       },
       {
@@ -163,7 +163,7 @@
         "role": "Administrator",
         "school": "Epsom College, UK",
         "image": "Images/Aloy.png",
-        "categories": ["coaching","outreach"],
+        "categories": ["outreach"],
         "bio": "Aloysius supports both coaching and program logistics."
       },
       {

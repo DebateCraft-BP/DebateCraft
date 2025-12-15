@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&family=Black+Ops+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                        display: ['"Black Ops One"', 'cursive'],
+                    },
+                    colors: {
+                        deep: {
+                            bg: '#020617',
+                            blue: '#2563eb',
+                            orange: '#f97316',
+                            red: '#ef4444',
+                            surface: '#0f172a'
+                        }
+                    },
+                    animation: {
+                        'shake': 'shake 0.5s cubic-bezier(.36,.07,.19,.97) both',
+                        'pulse-fast': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'pop-in': 'popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards',
+                    },
+                    keyframes: {
+                        shake: {
+                            '10%, 90%': { transform: 'translate3d(-1px, 0, 0)' },
+                            '20%, 80%': { transform: 'translate3d(2px, 0, 0)' },
+                            '30%, 50%, 70%': { transform: 'translate3d(-4px, 0, 0)' },
+                            '40%, 60%': { transform: 'translate3d(4px, 0, 0)' }
+                        },
+                        popIn: {
+                            '0%': { opacity: '0', transform: 'scale(0.5)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #020617;
+            color: white;
+            overflow: hidden;
+            touch-action: none;
+        }
+        
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-card {
+            transition: all 0.15s ease-out;
+            border: 1px solid rgba(37, 99, 235, 0.2);
+        }
+        .btn-card:active {
+            transform: scale(0.98);
+        }
+        
+        .custom-scroll::-webkit-scrollbar { width: 4px; }
+        .custom-scroll::-webkit-scrollbar-track { background: #0f172a; }
+        .custom-scroll::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 2px; }
+
+        .holo-box {
+            background: rgba(2, 6, 23, 0.9);
+            border: 1px solid rgba(249, 115, 22, 0.4);
+            box-shadow: 0 0 15px rgba(249, 115, 22, 0.1), inset 0 0 20px rgba(249, 115, 22, 0.05);
+            position: relative;
+        }
+        .holo-box::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            background-size: 100% 2px, 3px 100%;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .diff-btn {
+            clip-path: polygon(5% 0, 100% 0, 100% 80%, 95% 100%, 0 100%, 0 20%);
+            transition: all 0.2s ease;
+        }
+        .diff-btn:hover { transform: translateY(-2px); filter: brightness(1.2); }
+    </style>
+</head>
+
+<body class="h-screen w-screen flex flex-col md:flex-row font-sans bg-deep-bg">
+
+    <!-- === GAME VIEWPORT === -->
+    <div id="game-viewport" class="relative h-[35%] md:h-full w-full md:w-3/5 border-b md:border-b-0 md:border-r border-gray-800 overflow-hidden shrink-0">
+        <canvas id="starfield" class="absolute inset-0"></canvas>
+        
+        <!-- HUD -->
+        <div class="absolute top-0 left-0 w-full p-3 md:p-4 z-20 flex justify-between items-start pointer-events-none">
+            <div>
+                <h1 class="font-display text-xs md:text-xl text-gray-400 tracking-wider">INTEGRITY</h1>
+                <div class="w-24 md:w-48 h-2 md:h-3 bg-gray-900 rounded border border-gray-700 overflow-hidden mt-1">
+                    <div id="health-bar" class="h-full bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.6)]" style="width: 100%"></div>
+                </div>
+            </div>
+            
+            <!-- Progress Indicator (NEW) -->
+            <div class="absolute left-1/2 -translate-x-1/2 top-3 bg-black/50 px-3 py-1 rounded-full border border-gray-700 backdrop-blur-sm">
+                <span id="progress-text" class="font-mono text-xs text-gray-300">WAVE 1/8</span>
+            </div>
+
+            <div class="text-right">
+                <h2 class="font-display text-xs md:text-xl text-deep-orange">SCORE</h2>
+                <p id="score-display" class="font-mono text-xl md:text-3xl font-bold text-white">0</p>
+            </div>
+        </div>
+
+        <!-- Argument Box -->
+        <div class="absolute inset-0 flex flex-col items-center justify-center z-20 px-4 pt-4">
+            <div id="argument-panel" class="holo-box w-full max-w-2xl p-4 md:p-8 rounded-lg transform transition-all duration-300 opacity-0 scale-95 flex flex-col shadow-2xl">
+                <div class="flex justify-between items-center mb-2 border-b border-gray-800 pb-1">
+                    <span class="text-[10px] md:text-xs font-mono text-deep-orange animate-pulse uppercase tracking-widest"><i class="fas fa-crosshairs mr-1"></i>Incoming Argument</span>
+                    <span id="timer-text" class="text-[10px] md:text-xs font-mono text-gray-400">__:__</span>
+                </div>
+                <div class="flex-1 flex items-center justify-center min-h-[60px] md:min-h-[100px]">
+                    <p id="argument-text" class="font-mono text-sm md:text-2xl text-white font-bold leading-tight text-center drop-shadow-md">Loading...</p>
+                </div>
+                <div class="w-full h-1 md:h-2 bg-gray-900 rounded-full mt-3 overflow-hidden relative">
+                    <div id="timer-line" class="h-full bg-green-500 w-full"></div>
+                </div>
+            </div>
+
+            <!-- Feedback Overlay -->
+            <div id="feedback-container" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none text-center z-30 opacity-0 transition-opacity duration-200 w-full">
+                <h1 id="feedback-title" class="font-display text-4xl md:text-7xl drop-shadow-[0_0_15px_rgba(0,0,0,1)] transform scale-110">HIT</h1>
+                <div class="mt-1"><span id="feedback-sub" class="font-mono text-[10px] md:text-sm bg-black/80 border border-gray-700 px-3 py-1 rounded text-gray-200">Descriptor</span></div>
+                <p id="score-popup" class="font-display text-lg md:text-xl text-green-400 mt-1">+0</p>
+            </div>
+        </div>
+        <div id="shield-effect" class="absolute inset-0 pointer-events-none z-10 transition-colors duration-300"></div>
+    </div>
+
+    <!-- === CONTROL DECK === -->
+    <div id="control-deck" class="relative flex-1 md:h-full md:w-2/5 bg-deep-surface flex flex-col z-30 shadow-[0_-10px_40px_rgba(0,0,0,0.5)] overflow-hidden">
+        <div class="h-8 bg-gray-900/80 border-b border-gray-800 flex items-center justify-between px-4 shrink-0">
+            <span class="font-mono text-[10px] text-gray-500">TACTICAL RESPONSE INTERFACE</span>
+            <span id="difficulty-label" class="font-mono text-[10px] text-deep-blue font-bold">WAITING...</span>
+        </div>
+        <div id="cards-container" class="flex-1 p-3 md:p-6 flex flex-col gap-2 md:gap-3 overflow-y-auto custom-scroll"></div>
+    </div>
+
+    <!-- === SPLASH SCREEN (START) === -->
+    <div id="splash-screen" class="fixed inset-0 bg-deep-bg z-50 flex flex-col items-center justify-center p-4 overflow-y-auto">
+        <div class="text-center mb-6 relative shrink-0">
+            <i class="fas fa-shield-halved text-5xl text-deep-blue mb-2 drop-shadow-[0_0_15px_rgba(37,99,235,0.5)]"></i>
+            <h1 class="font-display text-4xl md:text-6xl text-white tracking-tighter mb-1">
+                <span class="text-deep-blue">EVEN</span> IF
+            </h1>
+            <p class="font-mono text-gray-400 text-xs max-w-xs mx-auto">Mitigate Claims; Practice Defensive Strategy</p>
+        </div>
+        <div class="grid grid-cols-1 gap-3 w-full max-w-md px-2 pb-10">
+            <button onclick="game.init(30, 'RECRUIT')" class="diff-btn bg-gray-800 hover:bg-green-900/20 border border-gray-700 hover:border-green-500 p-4 text-left group relative overflow-hidden">
+                <div class="absolute inset-0 bg-green-500/5 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-300"></div>
+                <div class="flex justify-between items-center mb-1 relative z-10">
+                    <span class="font-display text-lg text-green-500">RECRUIT</span>
+                    <span class="font-mono text-white font-bold">30s</span>
+                </div>
+                <div class="text-[10px] text-gray-400 font-mono relative z-10">Basic Topics. 8 Rounds.</div>
+            </button>
+            <button onclick="game.init(18, 'VETERAN')" class="diff-btn bg-gray-800 hover:bg-blue-900/20 border border-gray-700 hover:border-blue-500 p-4 text-left group relative overflow-hidden">
+                <div class="absolute inset-0 bg-blue-500/5 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-300"></div>
+                <div class="flex justify-between items-center mb-1 relative z-10">
+                    <span class="font-display text-lg text-blue-500">VETERAN</span>
+                    <span class="font-mono text-white font-bold">18s</span>
+                </div>
+                <div class="text-[10px] text-gray-400 font-mono relative z-10">Policy Topics. Standard Speed.</div>
+            </button>
+            <button onclick="game.init(10, 'LEGEND')" class="diff-btn bg-gray-800 hover:bg-deep-orange/20 border border-gray-700 hover:border-deep-orange p-4 text-left group relative overflow-hidden">
+                <div class="absolute inset-0 bg-deep-orange/5 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-300"></div>
+                <div class="flex justify-between items-center mb-1 relative z-10">
+                    <span class="font-display text-lg text-deep-orange">LEGEND</span>
+                    <span class="font-mono text-white font-bold">10s</span>
+                </div>
+                <div class="text-[10px] text-gray-400 font-mono relative z-10">Complex Topics. Panic Mode.</div>
+            </button>
+            <a href="resources.html" class="diff-btn-link">
+  <button
+    type="button"
+    class="diff-btn bg-gray-800 hover:bg-deep-orange/20 border border-gray-700 hover:border-deep-orange p-4 text-left group relative overflow-hidden text-white"
+  >
+    <div class="absolute inset-0 bg-deep-orange/5 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-300"></div>
+
+    <div class="flex justify-between items-center mb-1 relative z-10">
+      <span class="font-display text-lg text-white">RETURN TO RESOURCES</span>
+      <span class="font-mono text-white font-bold"></span>
+    </div>
+  </button>
+</a>
+        </div>
+    </div>
+
+    <!-- === GAME OVER (FAILURE) === -->
+    <div id="game-over-screen" class="hidden fixed inset-0 bg-black/95 z-50 flex flex-col items-center justify-center p-6 text-center backdrop-blur-lg">
+        <div class="max-w-md w-full bg-gray-900 border border-gray-800 rounded-lg p-6 shadow-2xl relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-red-500 to-transparent"></div>
+            <h1 class="font-display text-3xl md:text-5xl text-white mb-1">SYSTEM FAILURE</h1>
+            <p class="font-mono text-red-400 mb-6 text-xs">SHIELD INTEGRITY ZERO</p>
+            <button onclick="location.reload()" class="w-full py-3 bg-deep-blue hover:bg-blue-600 text-white font-display tracking-widest rounded transition-colors text-sm">RETRY MISSION</button>
+        </div>
+    </div>
+
+    <!-- === MISSION COMPLETE (VICTORY) === -->
+    <div id="victory-screen" class="hidden fixed inset-0 bg-black/95 z-50 flex flex-col items-center justify-center p-4 text-center backdrop-blur-lg overflow-y-auto">
+        <div class="max-w-md w-full bg-gray-900 border border-yellow-500/30 rounded-lg p-6 shadow-[0_0_50px_rgba(234,179,8,0.2)] relative overflow-hidden animate-pop-in">
+            <!-- Header -->
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-yellow-500 to-transparent"></div>
+            <i class="fas fa-medal text-6xl text-yellow-400 mb-4 drop-shadow-[0_0_15px_rgba(250,204,21,0.6)]"></i>
+            <h1 class="font-display text-3xl md:text-5xl text-white mb-2">MISSION COMPLETE</h1>
+            <p class="font-mono text-yellow-200/80 text-xs mb-8 tracking-widest uppercase">Defense Protocols Successful</p>
+
+            <!-- Score Card -->
+            <div class="grid grid-cols-2 gap-4 mb-6">
+                <div class="bg-black/40 p-4 rounded border border-gray-800">
+                    <div class="text-[10px] text-gray-500 font-mono uppercase">Final Score</div>
+                    <div id="vic-score" class="text-2xl font-display text-white">0</div>
+                </div>
+                <div class="bg-black/40 p-4 rounded border border-gray-800">
+                    <div class="text-[10px] text-gray-500 font-mono uppercase">Max Streak</div>
+                    <div id="vic-streak" class="text-2xl font-display text-deep-orange">0</div>
+                </div>
+            </div>
+
+            <!-- Rank Badge -->
+            <div class="mb-8">
+                <div class="text-[10px] text-gray-500 font-mono uppercase mb-2">Performance Rating</div>
+                <div id="vic-rank" class="text-6xl font-display text-white drop-shadow-lg">S</div>
+                <div id="vic-msg" class="text-xs font-mono text-gray-400 mt-2">Perfect Strategy.</div>
+            </div>
+
+            <!-- Actions -->
+            <div class="flex gap-3">
+                <button onclick="location.reload()" class="flex-1 py-3 bg-gray-800 hover:bg-gray-700 text-white font-mono text-xs rounded transition-colors">MENU</button>
+                <button onclick="location.reload()" class="flex-1 py-3 bg-deep-blue hover:bg-blue-600 text-white font-display tracking-widest rounded transition-colors text-sm shadow-[0_0_15px_rgba(37,99,235,0.4)]">NEXT MISSION</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- CURRICULUM DATA (8 Questions Per Tier) ---
+        const DATA = {
+            RECRUIT: [
+                { t: "Banning homework improves student mental health.", o: [{ type: "TURN", text: "Actually, homework reinforces inequality because rich parents help while poor parents can't." }, { type: "MITIGATE", text: "Most teachers barely grade it, so the stress impact is minimal." }, { type: "TRAP", text: "Homework is boring and nobody likes it." }]},
+                { t: "Schools should ban junk food to stop obesity.", o: [{ type: "TURN", text: "Banning it at school makes kids binge-eat it at home due to the 'forbidden fruit' effect." }, { type: "MITIGATE", text: "Kids only eat one meal at school, so it doesn't change their overall diet." }, { type: "TRAP", text: "Vegetables taste bad." }]},
+                { t: "Social media makes teenagers insecure.", o: [{ type: "TURN", text: "For marginalized teens, it provides a vital community they don't have in real life." }, { type: "MITIGATE", text: "Teens have always been insecure; social media is just the current medium." }, { type: "TRAP", text: "Phones are too expensive." }]},
+                { t: "Zoos are cruel prisons for animals.", o: [{ type: "TURN", text: "Good zoos fund conservation projects that save wild animals from extinction." }, { type: "MITIGATE", text: "Animals in captivity live longer and don't face predators." }, { type: "TRAP", text: "Tickets are too expensive." }]},
+                { t: "School uniforms stop bullying.", o: [{ type: "TURN", text: "They remove visible status symbols, so bullies just target physical traits or race instead." }, { type: "MITIGATE", text: "Bullying happens online now, so clothes don't matter much." }, { type: "TRAP", text: "Uniforms are ugly." }]},
+                { t: "Voting should be mandatory.", o: [{ type: "TURN", text: "Forcing people to vote creates uneducated 'random' voting, which hurts democracy." }, { type: "MITIGATE", text: "You can spoil your ballot, so you aren't actually forced to pick a side." }, { type: "TRAP", text: "I don't like politics." }]},
+                { t: "Violent video games cause real violence.", o: [{ type: "TURN", text: "They act as a cathartic release, actually lowering aggression in the real world." }, { type: "MITIGATE", text: "Millions play them, but violent crime rates are going down." }, { type: "TRAP", text: "Graphics aren't realistic." }]},
+                { t: "We should ban plastic bags completely.", o: [{ type: "TURN", text: "Cotton tote bags require 20,000 uses to equal the carbon footprint of one plastic bag." }, { type: "MITIGATE", text: "Plastic bags are a tiny fraction of global waste compared to industry." }, { type: "TRAP", text: "Paper bags tear easily." }]}
+            ],
+            VETERAN: [
+                { t: "The Death Penalty deters crime.", o: [{ type: "TURN", text: "It creates a 'brutalization effect' where state killing legitimizes violence in society." }, { type: "MITIGATE", text: "Criminals don't expect to get caught, so the punishment severity doesn't change behavior." }, { type: "TRAP", text: "It's mean to kill people." }]},
+                { t: "AI will destroy human employment.", o: [{ type: "TURN", text: "AI lowers the cost of goods, increasing real wages and creating demand for new service jobs." }, { type: "MITIGATE", text: "It only automates repetitive tasks; human judgment is still legally required." }, { type: "TRAP", text: "Robots are scary." }]},
+                { t: "Free speech should include hate speech.", o: [{ type: "TURN", text: "Allowing hate speech silences minorities, effectively reducing the total amount of speech." }, { type: "MITIGATE", text: "Hate speech is social taboo, so even if legal, people won't say it." }, { type: "TRAP", text: "Words can't hurt you." }]},
+                { t: "We should ban private cars in cities.", o: [{ type: "TURN", text: "Banning cars hurts the disabled and elderly who cannot use public transit." }, { type: "MITIGATE", text: "Electric cars solve the pollution issue without needing a ban." }, { type: "TRAP", text: "Walking is tiring." }]},
+                { t: "Universities should be free for everyone.", o: [{ type: "TURN", text: "Free tuition subsidizes the rich (who go to uni) at the expense of the poor (who pay taxes)." }, { type: "MITIGATE", text: "Degrees are losing value, so people will choose trade schools anyway." }, { type: "TRAP", text: "Students party too much." }]},
+                { t: "Animal testing is necessary for medicine.", o: [{ type: "TURN", text: "Animal biology is different, leading to misleading data that actually delays human cures." }, { type: "MITIGATE", text: "Computer modeling is replacing most animal tests rapidly." }, { type: "TRAP", text: "Bunnies are cute." }]},
+                { t: "Nuclear energy is unsafe.", o: [{ type: "TURN", text: "Fossil fuels kill millions annually via air pollution; nuclear saves those lives." }, { type: "MITIGATE", text: "New Gen-4 reactors physically cannot melt down." }, { type: "TRAP", text: "The Simpsons showed it glowing green." }]},
+                { t: "Cashless societies are the future.", o: [{ type: "TURN", text: "Going cashless excludes the homeless and unbanked from the economy entirely." }, { type: "MITIGATE", text: "People will just use barter or crypto if cash is banned." }, { type: "TRAP", text: "I like holding coins." }]}
+            ],
+            LEGEND: [
+                { t: "Sanctions on dictatorships work.", o: [{ type: "TURN", text: "Sanctions starve the people, making them more dependent on the dictator for rations." }, { type: "MITIGATE", text: "Dictators have offshore accounts, so they aren't personally affected." }, { type: "TRAP", text: "Dictators are bad guys." }]},
+                { t: "Globalization helps the poor.", o: [{ type: "TURN", text: "It creates a 'race to the bottom' where countries cut labor rights to attract corporations." }, { type: "MITIGATE", text: "Protectionist policies are rising, reversing globalization anyway." }, { type: "TRAP", text: "McDonald's is everywhere." }]},
+                { t: "Invading to stop human rights abuses is just.", o: [{ type: "TURN", text: "Invasion destabilizes the region, leading to civil war and *more* rights abuses." }, { type: "MITIGATE", text: "The UN usually blocks invasions, so they rarely happen." }, { type: "TRAP", text: "War costs money." }]},
+                { t: "High taxes discourage hard work.", o: [{ type: "TURN", text: "Taxes fund the education and roads that allow businesses to exist in the first place." }, { type: "MITIGATE", text: "People seek status and power, not just marginal income." }, { type: "TRAP", text: "Rich people are greedy." }]},
+                { t: "Private healthcare is more efficient.", o: [{ type: "TURN", text: "It incentivizes treating symptoms for profit rather than curing diseases permanently." }, { type: "MITIGATE", text: "Emergency care is always treated regardless of payment." }, { type: "TRAP", text: "Doctors are smart." }]},
+                { t: "Art requires human intent.", o: [{ type: "TURN", text: "AI art forces humans to become 'curators' of meaning, elevating the intellectual role of art." }, { type: "MITIGATE", text: "Viewers create the meaning, so the origin doesn't matter." }, { type: "TRAP", text: "Computers can't feel love." }]},
+                { t: "Patents promote innovation.", o: [{ type: "TURN", text: "Patent trolls buy ideas to sue others, actually stopping new products from launching." }, { type: "MITIGATE", text: "Most tech is open-source now anyway." }, { type: "TRAP", text: "Inventors need money." }]},
+                { t: "Gentrification ruins neighborhoods.", o: [{ type: "TURN", text: "It increases the tax base, funding better schools for the long-term residents who stay." }, { type: "MITIGATE", text: "Displacement happens very slowly over decades." }, { type: "TRAP", text: "Coffee shops are expensive." }]}
+            ]
+        };
+
+        // --- GAME ENGINE ---
+        const game = {
+            config: { timeLimit: 30, difficultyName: 'RECRUIT', totalRounds: 8 },
+            state: { score: 0, streak: 0, health: 100, timeLeft: 0, playlist: [], isPlaying: false, timerId: null, isRoundActive: false, currentRound: 0, maxStreak: 0 },
+            
+            els: {
+                splash: document.getElementById('splash-screen'),
+                gameOver: document.getElementById('game-over-screen'),
+                victory: document.getElementById('victory-screen'),
+                argPanel: document.getElementById('argument-panel'),
+                argText: document.getElementById('argument-text'),
+                cards: document.getElementById('cards-container'),
+                timerLine: document.getElementById('timer-line'),
+                timerText: document.getElementById('timer-text'),
+                healthBar: document.getElementById('health-bar'),
+                score: document.getElementById('score-display'),
+                progress: document.getElementById('progress-text'),
+                feedback: { box: document.getElementById('feedback-container'), title: document.getElementById('feedback-title'), sub: document.getElementById('feedback-sub'), score: document.getElementById('score-popup') },
+                shield: document.getElementById('shield-effect'),
+                vicStats: { score: document.getElementById('vic-score'), streak: document.getElementById('vic-streak'), rank: document.getElementById('vic-rank'), msg: document.getElementById('vic-msg') }
+            },
+
+            init: function(seconds, name) {
+                this.config.timeLimit = seconds;
+                this.config.difficultyName = name;
+                document.getElementById('difficulty-label').textContent = `LEVEL: ${name}`;
+                
+                // Shuffle Playlist & Reset Stats
+                const rawQuestions = DATA[name];
+                this.state.playlist = [...rawQuestions].sort(() => Math.random() - 0.5);
+                this.state.currentRound = 0;
+                this.state.score = 0;
+                this.state.streak = 0;
+                this.state.maxStreak = 0;
+                this.state.health = 100;
+                this.state.isPlaying = true;
+                
+                this.els.splash.classList.add('hidden');
+                this.updateHUD();
+                this.nextRound();
+            },
+
+            nextRound: function() {
+                if (this.state.health <= 0) return this.endGame(false);
+                
+                // VICTORY CONDITION: No more questions
+                if (this.state.playlist.length === 0) {
+                    return this.endGame(true);
+                }
+
+                const scenario = this.state.playlist.pop();
+                this.state.isRoundActive = true;
+                this.state.currentRound++;
+                this.els.progress.textContent = `WAVE ${this.state.currentRound}/${this.config.totalRounds}`;
+
+                // Visual Reset
+                this.els.argPanel.classList.remove('opacity-0', 'scale-95');
+                this.els.shield.className = "absolute inset-0 pointer-events-none z-10 transition-colors duration-300";
+                this.els.argText.textContent = `"${scenario.t}"`;
+
+                // Generate Cards
+                this.els.cards.innerHTML = '';
+                const shuffledOpts = [...scenario.o].sort(() => Math.random() - 0.5);
+                shuffledOpts.forEach(opt => {
+                    const btn = document.createElement('button');
+                    btn.className = "btn-card w-full p-3 md:p-4 rounded text-left bg-gray-800/50 hover:bg-deep-blue/20 group relative overflow-hidden shrink-0";
+                    btn.innerHTML = `<div class="relative z-10"><div class="text-gray-200 font-medium text-xs md:text-base leading-snug group-hover:text-white transition-colors">${opt.text}</div></div>`;
+                    btn.onclick = () => this.handleAnswer(opt);
+                    this.els.cards.appendChild(btn);
+                });
+
+                // Start Timer
+                this.state.timeLeft = this.config.timeLimit;
+                this.startTimer();
+            },
+
+            startTimer: function() {
+                if (this.state.timerId) cancelAnimationFrame(this.state.timerId);
+                const tick = () => {
+                    if (!this.state.isPlaying || !this.state.isRoundActive) return;
+                    this.state.timeLeft -= 0.016; 
+                    const pct = (this.state.timeLeft / this.config.timeLimit) * 100;
+                    this.els.timerLine.style.width = `${pct}%`;
+                    
+                    if (pct > 66) this.els.timerLine.className = "h-full bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.5)]";
+                    else if (pct > 33) this.els.timerLine.className = "h-full bg-yellow-500 shadow-[0_0_10px_rgba(234,179,8,0.5)]";
+                    else this.els.timerLine.className = "h-full bg-red-500 shadow-[0_0_10px_rgba(239,68,68,0.5)]";
+
+                    this.els.timerText.textContent = `${Math.ceil(this.state.timeLeft)}s`;
+                    if (this.state.timeLeft <= 0) this.handleTimeOut();
+                    else this.state.timerId = requestAnimationFrame(tick);
+                };
+                this.state.timerId = requestAnimationFrame(tick);
+            },
+
+            handleAnswer: function(opt) {
+                if (!this.state.isRoundActive) return;
+                this.state.isRoundActive = false;
+                cancelAnimationFrame(this.state.timerId);
+                
+                const ratio = Math.max(0, this.state.timeLeft / this.config.timeLimit);
+                let type = "", points = 0;
+
+                if (opt.type === "TURN") {
+                    const base = 1000;
+                    points = Math.floor(base + (base * ratio));
+                    this.state.streak++;
+                    this.state.score += points + (this.state.streak * 50);
+                    this.state.health = Math.min(100, this.state.health + 5);
+                    type = "TURN";
+                } else if (opt.type === "MITIGATE") {
+                    const base = 500;
+                    points = Math.floor(base + (base * ratio));
+                    this.state.score += points;
+                    type = "MITIGATE";
+                } else {
+                    this.state.health -= 25;
+                    this.state.streak = 0;
+                    type = "FAIL";
+                }
+                if(this.state.streak > this.state.maxStreak) this.state.maxStreak = this.state.streak;
+
+                this.showFeedback(type, points);
+                this.updateHUD();
+                setTimeout(() => this.nextRound(), 1200);
+            },
+
+            handleTimeOut: function() {
+                this.state.isRoundActive = false;
+                this.state.health -= 25;
+                this.state.streak = 0;
+                this.showFeedback("FAIL", 0);
+                this.updateHUD();
+                setTimeout(() => this.nextRound(), 1200);
+            },
+
+            showFeedback: function(type, points) {
+                const { box, title, sub, score } = this.els.feedback;
+                score.textContent = points > 0 ? `+${points}` : "";
+
+                if (type === "TURN") {
+                    title.textContent = "CRITICAL HIT"; title.className = "font-display text-4xl md:text-7xl text-deep-orange drop-shadow-[0_0_25px_rgba(249,115,22,0.8)]";
+                    sub.textContent = "Strategic Turn!";
+                    this.els.shield.className = "absolute inset-0 z-10 bg-deep-orange/20 animate-pulse-fast";
+                } else if (type === "MITIGATE") {
+                    title.textContent = "DEFLECTED"; title.className = "font-display text-3xl md:text-6xl text-deep-blue drop-shadow-[0_0_25px_rgba(37,99,235,0.8)]";
+                    sub.textContent = "Impact Reduced.";
+                    this.els.shield.className = "absolute inset-0 z-10 bg-deep-blue/20";
+                } else {
+                    title.textContent = "BREACHED"; title.className = "font-display text-3xl md:text-6xl text-red-600 drop-shadow-[0_0_25px_rgba(239,68,68,0.8)]";
+                    sub.textContent = "Defense Failed.";
+                    this.els.argPanel.parentElement.classList.add('animate-shake');
+                    this.els.shield.className = "absolute inset-0 z-10 bg-red-600/20";
+                }
+                box.classList.remove('opacity-0');
+                setTimeout(() => { box.classList.add('opacity-0'); this.els.argPanel.parentElement.classList.remove('animate-shake'); }, 1000);
+            },
+
+            updateHUD: function() {
+                this.els.score.textContent = this.state.score.toLocaleString();
+                this.els.healthBar.style.width = `${Math.max(0, this.state.health)}%`;
+                if (this.state.health < 30) this.els.healthBar.classList.add('bg-red-500');
+                else this.els.healthBar.classList.remove('bg-red-500');
+            },
+
+            endGame: function(isVictory) {
+                this.state.isPlaying = false;
+                cancelAnimationFrame(this.state.timerId);
+                
+                if (isVictory) {
+                    // Calculate Rank
+                    this.els.vicStats.score.textContent = this.state.score.toLocaleString();
+                    this.els.vicStats.streak.textContent = this.state.maxStreak;
+                    
+                    let rank = "D";
+                    let msg = "You survived. Just.";
+                    // Basic logic: Max possible is around 15,000
+                    if (this.state.score > 12000) { rank = "S"; msg = "Legendary Strategy!"; }
+                    else if (this.state.score > 9000) { rank = "A"; msg = "Expert Defense."; }
+                    else if (this.state.score > 6000) { rank = "B"; msg = "Solid Performance."; }
+                    else if (this.state.score > 3000) { rank = "C"; msg = "Acceptable."; }
+                    
+                    // Set Rank Color
+                    const rEl = this.els.vicStats.rank;
+                    rEl.textContent = rank;
+                    if(rank === "S") rEl.className = "text-6xl font-display text-yellow-400 drop-shadow-[0_0_15px_rgba(250,204,21,0.8)]";
+                    else if(rank === "A") rEl.className = "text-6xl font-display text-green-400";
+                    else if(rank === "B") rEl.className = "text-6xl font-display text-blue-400";
+                    else rEl.className = "text-6xl font-display text-gray-400";
+                    
+                    this.els.vicStats.msg.textContent = msg;
+                    this.els.victory.classList.remove('hidden');
+                } else {
+                    this.els.gameOver.classList.remove('hidden');
+                }
+            }
+        };
+
+        // --- FX ---
+        const canvas = document.getElementById('starfield');
+        const ctx = canvas.getContext('2d');
+        let stars = [];
+        function resizeCanvas() { if(canvas.parentElement) { canvas.width = canvas.parentElement.clientWidth; canvas.height = canvas.parentElement.clientHeight; } }
+        function initStars() { stars = Array.from({length:100}, () => ({ x: Math.random() * canvas.width, y: Math.random() * canvas.height, speed: Math.random() * 0.5 + 0.1, size: Math.random() * 1.5 })); }
+        function animateStars() {
+            ctx.fillStyle = '#020617'; ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#ffffff';
+            stars.forEach(s => {
+                s.y += s.speed; if (s.y > canvas.height) s.y = 0;
+                ctx.globalAlpha = Math.random() * 0.6 + 0.2;
+                ctx.beginPath(); ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2); ctx.fill();
+            });
+            requestAnimationFrame(animateStars);
+        }
+        window.addEventListener('resize', () => { resizeCanvas(); initStars(); });
+        setTimeout(() => { resizeCanvas(); initStars(); animateStars(); }, 100);
+
+    </script>
+</body>
+</html>

@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DebateCraft - Students empowering students through the art of debate</title>
-    <link rel="stylesheet" href="../styles/main.css" />
-        <script src="https://cdn.tailwindcss.com"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep8 Speaking</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -19,7 +18,7 @@
                         'slate-dark': '#2c3e50',   // Dark Slate Blue for sidebar/text
                         'slate-medium': '#34495e', // Lighter Slate for secondary heads
                         'slate-light': '#95a5a6',  // Icon color
-                        'burnt-orange': '#1e40af', // Primary Accent
+                        'burnt-orange': '#F97316', // Primary Accent
                     },
                     fontFamily: {
                         'sans': ['Poppins', 'sans-serif'],
@@ -34,58 +33,22 @@
         .slider-thumb::-webkit-slider-thumb {
             -webkit-appearance: none; appearance: none;
             width: 24px; height: 24px;
-            background: #1e40af; cursor: pointer; border-radius: 50%;
+            background: #F97316; cursor: pointer; border-radius: 50%;
             border: 4px solid #fff; box-shadow: 0 0 5px rgba(0,0,0,0.2);
             margin-top: -8px; 
         }
         .slider-thumb::-moz-range-thumb {
             width: 24px; height: 24px;
-            background: #1e40af; cursor: pointer; border-radius: 50%;
+            background: #F97316; cursor: pointer; border-radius: 50%;
             border: 4px solid #fff; box-shadow: 0 0 5px rgba(0,0,0,0.2);
         }
         .slider-track { height: 8px; background-color: #e5e7eb; }
         .fade-in { animation: fadeIn 0.5s ease-in-out; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         .emphasis-word { cursor: pointer; transition: all 0.2s ease-in-out; padding: 2px 4px; }
-        .emphasis-word.active { background-color: #fef3c7; color: #1e40af; font-weight: 700; transform: scale(1.05); border-radius: 6px; }
+        .emphasis-word.active { background-color: #fef3c7; color: #d97706; font-weight: 700; transform: scale(1.05); border-radius: 6px; }
         .sidebar { transition: transform 0.3s ease-in-out; }
     </style>
-  </head>
-
-  <body>
-    <div id="root">
-      <header class="header">
-        <div class="container">
-          <div class="logo">
-            <a href="../index.html">
-              <h1>DebateCraft</h1>
-            </a>
-          </div>
-          <div class="mobile-menu-button" id="mobileMenuButton">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <nav class="main-nav" id="mainNav">
-            <ul>
-              <li><a href="../index.html">Home</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="team.html">Our Team</a></li>
-              <li><a href="courses.html">Courses</a></li>
-    <li class="dropdown">
-      <a href="resources.html" class="dropbtn">Resources ▾</a>
-      <ul class="dropdown-content">
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="guides.html">Guides</a></li>
-        <li><a href="manner.html">Public Speaking</a></li>
-        <li><a href="Even if.html">Mitigation</a></li>
-      </ul>
-    </li>
-              <li><a href="cnresources.html">中文 (繁體)</a></li>
-            </ul>
-          </nav>
-        </div>
-      </header>
 </head>
 <body class="bg-sand text-slate-dark">
 
@@ -93,12 +56,33 @@
         <!-- Overlay for mobile menu -->
         <div id="sidebar-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-20 hidden md:hidden"></div>
 
+        <!-- Mobile Header -->
+        <div class="md:hidden flex justify-between items-center p-4 bg-slate-dark text-white shadow-lg sticky top-0 z-10">
+            <h1 class="text-xl font-serif">Deep<span class="text-burnt-orange">8</span> Speaking</h1>
+            <button id="mobile-menu-button" class="focus:outline-none z-30">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+
         <!-- Sidebar Navigation -->
         <aside id="sidebar" class="sidebar bg-slate-dark text-white w-64 space-y-6 py-7 px-2 fixed inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 z-30 flex flex-col h-screen overflow-y-auto">
             <div class="flex items-center px-4">
+                <i class="fas fa-comment-dots text-2xl text-burnt-orange"></i>
+                <h1 class="text-xl font-serif ml-3 whitespace-nowrap">Deep<span class="text-burnt-orange">8</span> Speaking</h1>
+            </div>
             <nav id="sidebar-nav" class="flex-grow px-2 space-y-2">
                 <!-- Nav items injected here -->
             </nav>
+            <div class="px-4 mt-auto">
+              <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="team.html">Our Team</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="manner.html">.</a></li>
+                <p class="text-xs text-slate-light/50">&copy; Licensed from Deep8 Creations. All rights reserved.</p>
+              </ul>
             </div>
         </aside>
 

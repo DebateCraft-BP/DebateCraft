@@ -95,28 +95,36 @@
         "bio": "A decorated debater as the 4th best speaker in the Hong Kong Junior Schools Debating Championship 2024, and a member of the HK WSDC development team."
       },
       {
-        "name": "Rylan Wang",
-        "role": "Coach",
-        "school": "Arizona College Preparatory High School, US",
-        "image": "",
-        "categories": ["coaching","PF"],
-        "bio": "Taiwan National Speech & Debate Association (TNSDA) 2025 Champion and 4th Place, TNSDA – Congressional Debate"
-      },
-      {
         "name": "Hirannya Kumaresan",
         "role": "Coach",
         "school": "DPS Modern Indian School, Qatar",
-        "image": "",
-        "categories": ["coaching"],
+        "image": "Images/Hirannya.jpeg",
+        "categories": ["coaching", "outreach"],
         "bio": "Grand finalist of Qatar Prep Schools Debate League and octofinalist in international competitions"
       },
       {
         "name": "Tanvi Myneni",
         "role": "Coach",
         "school": "Southridge School, Canada",
-        "image": "",
-        "categories": ["coaching"],
+        "image": "Images/Tanvi.png",
+        "categories": ["coaching", "outreach"],
         "bio": "Semifinalist for Hart House Debate Tournament 2025 and UBC Summer HST 2025 where she was the 9th place speaker. Finalist in YPC HST 2025 and Debateability Summer Championships 2025"
+      },
+      {
+        "name": "Theodore Wang",
+        "role": "Coach",
+        "school": "Hong Kong International School, HK",
+        "image": "Images/TheoW.png",
+        "categories": ["coaching"],
+        "bio": "Trainer at Chongqing WSDC workshop 2024, Judged at Nanjing WSDC 2025,3rd best speaker at the 2025 Vietnam Asian Schools Debating Championships, and consistently broken at several other tournaments."
+      },
+      {
+        "name": "Rylan Wang",
+        "role": "Coach",
+        "school": "Arizona College Preparatory High School, US",
+        "image": "",
+        "categories": ["coaching","PF"],
+        "bio": "Taiwan National Speech & Debate Association (TNSDA) 2025 Champion and 4th Place, TNSDA – Congressional Debate"
       },
       {
         "name": "Srisha Boinapalli",
@@ -216,11 +224,11 @@
       },
       {
         "name": "Sophia Chen",
-        "role": "Social Media Designer",
+        "role": "Outreach Coordinator",
         "school": "Phillips Exeter Academy, US",
-        "image": "",
+        "image": "Images/Sophia.png",
         "categories": ["outreach"],
-        "bio": ""
+        "bio": "Through music-based outreach activities with elderly individuals and creating supply packages for community members for MLK Day, Sophia has develop strong communication skills by interacting with individuals seeking support and connection."
       },
       {
         "name": "Mukiibi Calvin",
@@ -255,8 +263,16 @@
         "bio": "Matthew is a proficient PF debater regularly breaking quarterfinals and above in the NSDA China circuit."
       },
       {
+        "name": "Piers Ko",
+        "role": "Coach",
+        "school": "HK",
+        "image": "",
+        "categories": ["coaching"],
+        "bio": "Member of Team HK WSDC Development team and author of a daily current affairs newsletter"
+      },
+      {
         "name": "Oliver Choi",
-        "role": "",
+        "role": "Outreach Coordinator",
         "school": "Phillips Exeter Academy, US",
         "image": "",
         "categories": ["outreach"],

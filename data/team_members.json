@@ -120,6 +120,14 @@
         "bio": "Trainer at Chongqing WSDC workshop 2024, Judged at Nanjing WSDC 2025,3rd best speaker at the 2025 Vietnam Asian Schools Debating Championships, and consistently broken at several other tournaments."
       },
       {
+        "name": "Piers Ko",
+        "role": "Coach",
+        "school": "HK",
+        "image": "Images/Piers.png",
+        "categories": ["coaching"],
+        "bio": "Member of Team HK WSDC Development team and author of a daily current affairs newsletter"
+      },
+      {
         "name": "Rylan Wang",
         "role": "Coach",
         "school": "Arizona College Preparatory High School, US",
@@ -262,14 +270,6 @@
         "image": "",
         "categories": ["outreach","PF"],
         "bio": "Matthew is a proficient PF debater regularly breaking quarterfinals and above in the NSDA China circuit."
-      },
-      {
-        "name": "Piers Ko",
-        "role": "Coach",
-        "school": "HK",
-        "image": "",
-        "categories": ["coaching"],
-        "bio": "Member of Team HK WSDC Development team and author of a daily current affairs newsletter"
       },
       {
         "name": "Oliver Choi",

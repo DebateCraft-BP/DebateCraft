@@ -128,14 +128,6 @@
         "bio": "Member of Team HK WSDC Development team and author of a daily current affairs newsletter"
       },
       {
-        "name": "Rylan Wang",
-        "role": "Coach",
-        "school": "Arizona College Preparatory High School, US",
-        "image": "",
-        "categories": ["coaching","PF"],
-        "bio": "Taiwan National Speech & Debate Association (TNSDA) 2025 Champion and 4th Place, TNSDA – Congressional Debate"
-      },
-      {
         "name": "Srisha Boinapalli",
         "role": "PF Coach",
         "school": "Phillips Exeter Academy, US",
@@ -270,6 +262,14 @@
         "image": "",
         "categories": ["outreach","PF"],
         "bio": "Matthew is a proficient PF debater regularly breaking quarterfinals and above in the NSDA China circuit."
+      },
+      {
+        "name": "Rylan Wang",
+        "role": "Coach",
+        "school": "Arizona College Preparatory High School, US",
+        "image": "",
+        "categories": ["coaching","PF"],
+        "bio": "Taiwan National Speech & Debate Association (TNSDA) 2025 Champion and 4th Place, TNSDA – Congressional Debate"
       },
       {
         "name": "Oliver Choi",

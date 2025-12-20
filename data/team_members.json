@@ -4,7 +4,7 @@
         "role": "Executive Director",
         "school": "Phillips Exeter Academy, US",
         "image": "Images/Adrian.png",
-        "categories": ["executive","coaching","outreach"],
+        "categories": ["executive","coaching","bioethics","outreach"],
         "bio": "An experienced educator with over five years of international debate experience. Adrian is an ICYD International Finalist (2023), broke Oxford Schools (2025), and was the 3rd Best Speaker at the Team Canada Fundraiser (2025). He has condensed his debate knowledge into a debate accelerator used by over 100 debaters in Hong Kong, the UK, and the US."
       },
       {
@@ -44,7 +44,7 @@
         "role": "Founding Coach and Curriculum Developer",
         "school": "Winchester College, UK",
         "image": "Images/Andre.png",
-        "categories": ["executive","coaching"],
+        "categories": ["executive","bioethics","coaching"],
         "bio": "A seasoned debater with experience in both WSDC and BP formats. Andre contributes to curriculum design and training with his 4+ years of experience."
       },
       {
@@ -76,7 +76,7 @@
         "role": "Curriculum Developer",
         "school": "Phillips Exeter Academy, US",
         "image": "Images/Dowan.png",
-        "categories": ["coaching","outreach"],
+        "categories": ["coaching","bioethics","outreach"],
         "bio": "Dowan has WSDC experience having competed in local WSDC competitions in Korea"
       },
       {
@@ -160,6 +160,14 @@
         "bio": "Winston has debate and moot experience from both DBS and Winchester College. He specializes in helping new ESL debaters."
       },
       {
+        "name": "Reya Satam",
+        "role": "Bioethics Instructor",
+        "school": "Phillips Exeter Academy, US",
+        "image": "Images/Reya.png",
+        "categories": ["bioethics","outreach"],
+        "bio": "Performed multiple sclerosis research that will be published in the Journal of High School Science alongside a genetics professor from University of Notre Dame, wrote a literature review on artificial protein chaperones and their ethical implications, accepted speaker at the Neurology World Conference and Max Planck Neuro Symposium"
+      },
+      {
         "name": "Aloysius Yeung",
         "role": "Administrator",
         "school": "Epsom College, UK",
@@ -172,7 +180,7 @@
         "role": "Administrator",
         "school": "Phillips Exeter Academy, US",
         "image": "Images/Andrew.png",
-        "categories": ["outreach","PF"],
+        "categories": ["outreach","PF","bioethics"],
         "bio": "Supports the creation debate content as well as interacting with parents. He has PF debate experience."
       },
       {
@@ -188,7 +196,7 @@
         "role": "Outreach Coordinator",
         "school": "Phillips Exeter Academy, US",
         "image": "Images/Emmanuel.png",
-        "categories": ["outreach"],
+        "categories": ["outreach","bioethics"],
         "bio": "Emmanuel is a debater at Phillips Exeter Academy. He embodies the DebateCraft mission to democratize debating for all students."
       },
       {
@@ -268,7 +276,7 @@
         "role": "Outreach Coordinator",
         "school": "Phillips Exeter Academy, US",
         "image": "",
-        "categories": ["outreach"],
+        "categories": ["outreach","bioethics"],
         "bio": ""
       }
 ]

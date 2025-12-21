@@ -32,14 +32,6 @@
         "bio": "A competitive debater with four years of BP debating and adjudication experience. Matthew has competed at ICYD and Cambridge Schools, and currently serves as a Debate Society captain at Winchester. He brings over two years of coaching experience and extensive politics, economics, and international relations experience."
       },
       {
-        "name": "Arthur Zhang",
-        "role": "Head PF Coach",
-        "school": "Winchester College, UK",
-        "image": "Images/Arthur.png",
-        "categories": ["coaching","PF"],
-        "bio": "A top-performing PF debater: 2nd Place Team and Top Speaker at the 2023 Harvard International PF Tournament (Open Division), with past top finishes in 2022 and 2021. NSDA Global Excellent Debater (2020) and 1st Place at Wincheste College’s Inter-boarding house Debating Competition(Yaw Pot). Arthur brings his wealth of experience to lead our upcoming Public Forum course."
-      },
-      {
         "name": "Jayden Su",
         "role": "Head Administrator",
         "school": "Phillips Exeter Academy, US",
@@ -48,12 +40,12 @@
         "bio": "A leading member of several student-led organizations and charities, Jayden brings extensive administrative and operational experience. He was previously on the VSA and WIS Chinese debate teams."
       },
       {
-        "name": "Andre Chan",
-        "role": "Founding Coach and Curriculum Developer",
+        "name": "Arthur Zhang",
+        "role": "Head PF Coach",
         "school": "Winchester College, UK",
-        "image": "Images/Andre.png",
-        "categories": ["executive","bioethics","coaching"],
-        "bio": "A seasoned debater with experience in both WSDC and BP formats. Andre contributes to curriculum design and training with his 4+ years of experience."
+        "image": "Images/Arthur.png",
+        "categories": ["coaching","PF"],
+        "bio": "A top-performing PF debater: 2nd Place Team and Top Speaker at the 2023 Harvard International PF Tournament (Open Division), with past top finishes in 2022 and 2021. NSDA Global Excellent Debater (2020) and 1st Place at Wincheste College’s Inter-boarding house Debating Competition(Yaw Pot). Arthur brings his wealth of experience to lead our upcoming Public Forum course."
       },
       {
         "name": "Valmik Dangayach",
@@ -62,6 +54,14 @@
         "image": "Images/Valmik.png",
         "categories": ["coaching"],
         "bio": "The youngest member of the Team Hong Kong Development Squad, with experience in both BP and WSDC formats. He recently won the U17 finals of Oxford WSDC 2025 and was the 13th-best speaker in the Hong Kong Debate Open."
+      },
+      {
+        "name": "Andre Chan",
+        "role": "Founding Coach and Curriculum Developer",
+        "school": "Winchester College, UK",
+        "image": "Images/Andre.png",
+        "categories": ["executive","bioethics","coaching"],
+        "bio": "A seasoned debater with experience in both WSDC and BP formats. Andre contributes to curriculum design and training with his 4+ years of experience."
       },
       {
         "name": "Raul Laszlo-Louro",
@@ -80,28 +80,36 @@
         "bio": "A member of the Team China WSDC Development Team and Advanced Debate Team at Phillips Exeter Academy, she has had numerous successes across Asian circuits and brings a wealth of debate knowledge."
       },
       {
+        "name": "Theodore Wang",
+        "role": "Senior Coach",
+        "school": "Hong Kong International School, HK",
+        "image": "Images/TheoW.png",
+        "categories": ["coaching"],
+        "bio": "Trainer at Chongqing WSDC workshop 2024, Judged at Nanjing WSDC 2025,3rd best speaker at the 2025 Vietnam Asian Schools Debating Championships, and consistently broken at several other tournaments."
+      },
+      {
+        "name": "Piers Ko",
+        "role": "Senior Coach",
+        "school": "HK",
+        "image": "Images/Piers.png",
+        "categories": ["coaching"],
+        "bio": "Member of Team HK WSDC Development team and author of a daily current affairs newsletter"
+      },
+      {
+        "name": "Aaryav Khaderia",
+        "role": "Senior Coach",
+        "school": "Hong Kong International School, HK",
+        "image": "Images/Aaryav.png",
+        "categories": ["coaching"],
+        "bio": "A decorated debater as the 4th best speaker in the Hong Kong Junior Schools Debating Championship 2024, and a member of the HK WSDC development team."
+      },
+      {
         "name": "Dowan Kim",
         "role": "Curriculum Developer",
         "school": "Phillips Exeter Academy, US",
         "image": "Images/Dowan.png",
         "categories": ["coaching","bioethics","outreach"],
         "bio": "Dowan has WSDC experience having competed in local WSDC competitions in Korea"
-      },
-      {
-        "name": "Eric Jin",
-        "role": "Coach",
-        "school": "Phillips Exeter Academy, US",
-        "image": "Images/Eric.png",
-        "categories": ["coaching"],
-        "bio": "A BP debater who recently placed 3rd at the Team Canada Fundraiser 2025 and at the Carroll College(University) Fundraiser 2025."
-      },
-      {
-        "name": "Aaryav Khaderia",
-        "role": "Coach",
-        "school": "Hong Kong International School, HK",
-        "image": "Images/Aaryav.png",
-        "categories": ["coaching"],
-        "bio": "A decorated debater as the 4th best speaker in the Hong Kong Junior Schools Debating Championship 2024, and a member of the HK WSDC development team."
       },
       {
         "name": "Hirannya Kumaresan",
@@ -112,6 +120,14 @@
         "bio": "Grand finalist of Qatar Prep Schools Debate League and octofinalist in international competitions"
       },
       {
+        "name": "Eric Jin",
+        "role": "Coach",
+        "school": "Phillips Exeter Academy, US",
+        "image": "Images/Eric.png",
+        "categories": ["coaching"],
+        "bio": "A BP debater who recently placed 3rd at the Team Canada Fundraiser 2025 and at the Carroll College(University) Fundraiser 2025."
+      },
+      {
         "name": "Tanvi Myneni",
         "role": "Coach",
         "school": "Southridge School, Canada",
@@ -120,36 +136,28 @@
         "bio": "Semifinalist for Hart House Debate Tournament 2025 and UBC Summer HST 2025 where she was the 9th place speaker. Finalist in YPC HST 2025 and Debateability Summer Championships 2025"
       },
       {
-        "name": "Theodore Wang",
-        "role": "Coach",
-        "school": "Hong Kong International School, HK",
-        "image": "Images/TheoW.png",
-        "categories": ["coaching"],
-        "bio": "Trainer at Chongqing WSDC workshop 2024, Judged at Nanjing WSDC 2025,3rd best speaker at the 2025 Vietnam Asian Schools Debating Championships, and consistently broken at several other tournaments."
-      },
-      {
-        "name": "Piers Ko",
-        "role": "Coach",
-        "school": "HK",
-        "image": "Images/Piers.png",
-        "categories": ["coaching"],
-        "bio": "Member of Team HK WSDC Development team and author of a daily current affairs newsletter"
-      },
-      {
         "name": "Srisha Boinapalli",
-        "role": "PF Coach",
+        "role": "Public Forum Coach",
         "school": "Phillips Exeter Academy, US",
         "image": "Images/Srisha.png",
         "categories": ["coaching","PF","outreach"],
         "bio": "4 years of PF experience and 6 months of LD experience, Varsity National Circuit debater for both PF and LD, Qualified for Middle School NSDA nationals for PF."
       },
       {
-        "name": "Jade Yoo",
-        "role": "Coach",
+        "name": "Matthew Hao",
+        "role": "Public Forum Coach",
         "school": "Phillips Exeter Academy, US",
-        "image": "Images/Jade.png",
-        "categories": ["coaching"],
-        "bio": "A member of the Advanced Debate Team at Phillips Exeter Academy, she has had numerous successes within the DANEIS circuit."
+        "image": "",
+        "categories": ["outreach","PF"],
+        "bio": "Matthew is a proficient PF debater regularly breaking quarterfinals and above in the NSDA China circuit."
+      },
+      {
+        "name": "Rylan Wang",
+        "role": "Coach",
+        "school": "Arizona College Preparatory High School, US",
+        "image": "",
+        "categories": ["coaching","PF"],
+        "bio": "Taiwan National Speech & Debate Association (TNSDA) 2025 Champion and 4th Place, TNSDA – Congressional Debate"
       },
       {
         "name": "Luke Chon",
@@ -174,6 +182,22 @@
         "image": "Images/Reya.png",
         "categories": ["bioethics","outreach"],
         "bio": "Performed multiple sclerosis research that will be published in the Journal of High School Science alongside a genetics professor from University of Notre Dame, wrote a literature review on artificial protein chaperones and their ethical implications, accepted speaker at the Neurology World Conference and Max Planck Neuro Symposium"
+      },
+      {
+        "name": "Oliver Choi",
+        "role": "Bioethics Instructor",
+        "school": "Phillips Exeter Academy, US",
+        "image": "",
+        "categories": ["outreach","bioethics"],
+        "bio": ""
+      },
+      {
+        "name": "Jade Yoo",
+        "role": "Administrator",
+        "school": "Phillips Exeter Academy, US",
+        "image": "Images/Jade.png",
+        "categories": ["coaching"],
+        "bio": "A member of the Advanced Debate Team at Phillips Exeter Academy, she has had numerous successes within the DANEIS circuit."
       },
       {
         "name": "Aloysius Yeung",
@@ -263,29 +287,5 @@
         "image": "Images/Diddy.png",
         "categories": ["outreach","PF"],
         "bio": "Plays a critical role in updating our website and is working on exciting AI debate tools. He has PF debate experience"
-      },
-              {
-        "name": "Matthew Hao",
-        "role": "Web Developer",
-        "school": "Phillips Exeter Academy, US",
-        "image": "",
-        "categories": ["outreach","PF"],
-        "bio": "Matthew is a proficient PF debater regularly breaking quarterfinals and above in the NSDA China circuit."
-      },
-      {
-        "name": "Oliver Choi",
-        "role": "Web Developer",
-        "school": "Phillips Exeter Academy, US",
-        "image": "",
-        "categories": ["outreach","bioethics"],
-        "bio": ""
-      },
-      {
-        "name": "Rylan Wang",
-        "role": "Coach",
-        "school": "Arizona College Preparatory High School, US",
-        "image": "",
-        "categories": ["coaching","PF"],
-        "bio": "Taiwan National Speech & Debate Association (TNSDA) 2025 Champion and 4th Place, TNSDA – Congressional Debate"
       }
 ]

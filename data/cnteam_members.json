@@ -2,265 +2,289 @@
   {
     "name": "Adrian Chan",
     "role": "執行總監",
-    "school": "Phillips Exeter Academy, 美國",
+    "school": "Phillips Exeter Academy，美国",
     "image": "Images/Adrian.png",
-    "categories": ["executive", "coaching", "outreach"],
-    "bio": "擁有五年以上國際辯論經驗的資深教育者。Adrian 曾於 2023 年晉身 ICYD 國際總決賽、2025 年突破 Oxford Schools，並在 2025 年 Team Canada Fundraiser 中獲得季軍及第三最佳辯手。他將多年辯論心得濃縮成教學架構，已幫助超過 100 位來自香港、英國及美國的辯手提升水平。"
+    "categories": ["executive", "coaching", "bioethics", "outreach"],
+    "bio": "擁有超過五年國際辯論經驗嘅資深教育工作者。Adrian 曾喺 2023 年打入 ICYD 國際總決賽、2025 年喺 Oxford Schools 突破，並喺 2025 年 Team Canada Fundraiser 奪得季軍同第三最佳辯手。他將多年辯論心得整理成系統化教學架構，已經幫助超過一百位來自香港、英國同美國嘅辯手穩定提升表現。"
   },
   {
     "name": "Gavin Zhao",
     "role": "執行總監",
-    "school": "Phillips Exeter Academy, 美國",
+    "school": "Phillips Exeter Academy，美国",
     "image": "Images/Gavin.png",
     "categories": ["executive", "coaching", "PF"],
-    "bio": "全國級 Public Forum 辯手，在中國 PF 賽區擁有亮眼成績並有五年辯論經驗。Gavin 曾兩度晉級 TOC（2022、2023），並參加 Oxford Schools 2025。他負責團隊營運管理、網站開發及中文外展工作。"
+    "bio": "全國級 Public Forum 辯手，喺中國 PF 賽區一直有好出色嘅成績，同時累積咗五年辯論經驗。Gavin 先後兩次晉級 TOC（2022、2023），亦有參加 Oxford Schools 2025。佢主要負責團隊營運、網站開發同中文外展，推動 DebateCraft 走入更多社群。"
+  },
+  {
+    "name": "Sandeep Chulani",
+    "role": "顧問兼課程總監",
+    "school": "",
+    "image": "Images/Sandeep.png",
+    "categories": ["executive", "coaching", "advisor"],
+    "bio": "常駐香港嘅辯論教練同教育工作者，擁有超過二十年辯論、教學同評審經驗，多次喺亞洲英式辯論錦標賽入選為亞洲前十評審，亦係 HKBPDC 聯合創辦人。曾出任香港校際辯論及公共演講社群主席，培訓學生入選香港代表隊，到 WSDC、WIDPSC 同 Oxford Schools 等大型國際賽出戰。"
   },
   {
     "name": "Matthew Wong",
     "role": "課程開發主管",
-    "school": "Winchester College, 英國",
+    "school": "Winchester College，英國",
     "image": "Images/Matthew.png",
     "categories": ["executive", "coaching"],
-    "bio": "具四年 BP 辯論及評審經驗的競技辯手，曾參加 ICYD 與 Cambridge Schools。現為 Winchester 辯論隊隊長，擁有兩年以上教練經驗，並對政治、經濟及國際關係有深入理解。"
-  },
-  {
-    "name": "Arthur Zhang",
-    "role": "PF 壇主任教練",
-    "school": "Winchester College, 英國",
-    "image": "Images/Arthur.png",
-    "categories": ["coaching", "PF"],
-    "bio": "世界級 PF 辯手：2023 年哈佛國際公開組亞軍及最佳辯手，並於 2021、2022 年多次獲得佳績。Arthur 亦為 NSDA 2020 全球優秀辯手及 Winchester 校內辯論冠軍。他將帶領我們的 Public Forum 課程。"
+    "bio": "具備四年 BP 辯論同評審經驗嘅競技辯手，曾經出戰 ICYD 同 Cambridge Schools。Matthew 而家喺 Winchester 擔任辯論學會隊長，擁有超過兩年教練經驗，對政治、經濟同國際關係都有相當深入嘅了解。"
   },
   {
     "name": "Jayden Su",
     "role": "行政統籌",
-    "school": "Phillips Exeter Academy, 美國",
+    "school": "Phillips Exeter Academy，美国",
     "image": "Images/Jayden.png",
     "categories": ["executive", "outreach"],
-    "bio": "多個學生組織及慈善項目的核心成員，具備豐富行政及活動運作經驗。曾任 VSA 及 WIS 中文辯論隊成員，對教育項目管理極具熱忱。"
+    "bio": "多年喺唔同學生組織同慈善計劃入面擔任核心角色，累積咗豐富行政同活動統籌經驗。曾經係 VSA 同 WIS 中文辯論隊成員，對點樣用教育項目連結學生同社群特別有熱誠。"
   },
   {
-    "name": "Andre Chan",
-    "role": "創辦教練兼課程開發",
-    "school": "Winchester College, 英國",
-    "image": "Images/Andre.png",
-    "categories": ["executive", "coaching"],
-    "bio": "具備 WSDC 與 BP 豐富比賽經驗的資深辯手，擁有四年以上教學與課程設計經驗，致力推動辯論教育。"
+    "name": "Arthur Zhang",
+    "role": "PF 壇主任教練",
+    "school": "Winchester College，英國",
+    "image": "Images/Arthur.png",
+    "categories": ["coaching", "PF"],
+    "bio": "世界級 PF 辯手：喺 2023 年哈佛國際 PF 公開組奪得隊伍亞軍同最佳辯手，並且喺 2021、2022 年多次取得頂尖名次。Arthur 亦係 2020 年 NSDA Global Excellent Debater，同 Winchester 校內宿舍辯論賽（Yaw Pot）冠軍。佢會帶領 DebateCraft 嘅 Public Forum 課程，分享實戰級別嘅經驗。"
   },
   {
     "name": "Valmik Dangayach",
     "role": "首席私人教練",
-    "school": "Phillips Exeter Academy, 美國",
+    "school": "Phillips Exeter Academy，美国",
     "image": "Images/Valmik.png",
     "categories": ["coaching"],
-    "bio": "香港代表隊發展隊最年輕成員，具 BP 與 WSDC 雙賽制經驗。曾奪 Oxford WSDC U17 冠軍（2025），並於香港辯論公開賽獲第 13 最佳辯手。"
+    "bio": "香港代表隊發展隊入面最年輕嘅成員之一，擁有 BP 同 WSDC 雙賽制經驗。最近喺 2025 年 Oxford WSDC U17 奪冠，亦喺香港辯論公開賽獲得第十三最佳辯手，擅長一對一幫學生拆解自身盲點。"
+  },
+  {
+    "name": "Andre Chan",
+    "role": "創辦教練兼課程開發",
+    "school": "Winchester College，英國",
+    "image": "Images/Andre.png",
+    "categories": ["executive", "bioethics", "coaching"],
+    "bio": "具備 WSDC 同 BP 豐富實戰經驗嘅資深辯手，擁有超過四年教學同課程設計經驗。Andre 喺 DebateCraft 負責課綱設計同教練培訓，特別注重將批判思維、生物倫理同辯論技巧結合，畀學生有更全面嘅成長。"
   },
   {
     "name": "Raul Laszlo-Louro",
     "role": "高級教練",
-    "school": "Winchester College, 英國",
+    "school": "Winchester College，英國",
     "image": "Images/Raul.png",
     "categories": ["coaching"],
-    "bio": "優秀 BP 辯手，曾於 ICYD 與 Imperial Schools 參賽，多次晉身校內決賽，並積極指導年輕辯手。"
+    "bio": "表現出色嘅 BP 辯手，曾參加 ICYD 同 Imperial Schools 等比賽，多次喺校內賽打入決賽。Raul 長期指導低年級辯手，由基本功開始幫佢哋建立穩定嘅辯論框架。"
   },
   {
     "name": "Cici Chen",
     "role": "高級教練",
-    "school": "Phillips Exeter Academy, 美國",
+    "school": "Phillips Exeter Academy，美国",
     "image": "Images/Cici.png",
-    "categories": ["coaching"],
-    "bio": "曾為中國及香港 WSDC 發展隊成員，亦是 Phillips Exeter Advanced Debate Team 成員。於亞洲賽區屢獲佳績，教學經驗豐富。"
-  },
-  {
-    "name": "Dowan Kim",
-    "role": "課程開發",
-    "school": "Phillips Exeter Academy, 美國",
-    "image": "Images/Dowan.png",
     "categories": ["coaching", "outreach"],
-    "bio": "擁有 WSDC 相關比賽經驗，曾於韓國多場 WSDC 賽事中參賽。"
+    "bio": "Team China WSDC 發展隊成員，同時係 Phillips Exeter Advanced Debate Team 一員，喺亞洲唔同賽區都有好亮眼嘅成績。Cici 教學經驗豐富，擅長用清晰示範同具體 feedback 幫學生進步。"
   },
   {
-    "name": "Eric Jin",
-    "role": "教練",
-    "school": "Phillips Exeter Academy, 美國",
-    "image": "Images/Eric.png",
+    "name": "Theodore Wang",
+    "role": "高級教練",
+    "school": "Hong Kong International School，香港",
+    "image": "Images/TheoW.png",
     "categories": ["coaching"],
-    "bio": "BP 辯手，曾於 Team Canada Fundraiser 2025 獲季軍及第三最佳辯手。擅長耐心引導初學者建立自信。"
+    "bio": "曾喺 2024 年重慶 WSDC 工作坊擔任訓練員，2025 年出任南京 WSDC 評審。喺 2025 年越南亞洲中學辯論錦標賽獲得第三最佳辯手，並且喺多個賽事中持續突破，對比賽節奏掌握好有經驗。"
+  },
+  {
+    "name": "Piers Ko",
+    "role": "高級教練",
+    "school": "香港",
+    "image": "Images/Piers.png",
+    "categories": ["coaching"],
+    "bio": "香港 WSDC 發展隊成員，同時係每日時事通訊嘅作者，長期關注國際同本地議題。Piers 擅長將新聞同資料分析變成辯論訓練，幫學生提升時事觸覺同論證深度。"
   },
   {
     "name": "Aaryav Khaderia",
     "role": "教練",
-    "school": "Hong Kong International School, 香港",
-    "image": "",
+    "school": "Hong Kong International School，香港",
+    "image": "Images/Aaryav.png",
     "categories": ["coaching"],
-    "bio": "曾獲香港初中辯論錦標賽第四最佳辯手，並為香港 WSDC 發展隊成員，具有紮實辯論基礎。"
+    "bio": "喺 2024 年香港初中學界辯論錦標賽中獲得第四最佳辯手，並且係香港 WSDC 發展隊成員。Aaryav 具備紮實基礎同豐富比賽經驗，特別了解本地學生面對嘅實際需要。"
   },
   {
-    "name": "Rylan Wang",
-    "role": "教練",
-    "school": "Arizona College Preparatory High School, 美國",
-    "image": "",
-    "categories": ["coaching", "PF"],
-    "bio": "2025 年台灣 TNSDA 冠軍及第四名得主，擅長 Congressional Debate，表現亮眼。"
+    "name": "Dowan Kim",
+    "role": "課程開發",
+    "school": "Phillips Exeter Academy，美国",
+    "image": "Images/Dowan.png",
+    "categories": ["coaching", "bioethics", "outreach"],
+    "bio": "擁有 WSDC 賽制比賽經驗，曾喺韓國多場 WSDC 賽事出戰。Dowan 而家專注喺課程開發同生物倫理相關辯題設計，幫學生喺技術以外建立更完整嘅觀點。"
   },
   {
     "name": "Hirannya Kumaresan",
     "role": "教練",
-    "school": "DPS Modern Indian School, 卡塔爾",
-    "image": "",
+    "school": "DPS Modern Indian School，卡塔爾",
+    "image": "Images/Hirannya.jpeg",
+    "categories": ["coaching", "outreach"],
+    "bio": "Qatar Prep Schools Debate League 總決賽選手，亦多次喺國際辯論賽打入八強。Hirannya 專注同初中段學生合作，強調把基本技巧打好，再逐步加強進階策略。"
+  },
+  {
+    "name": "Eric Jin",
+    "role": "教練",
+    "school": "Phillips Exeter Academy，美国",
+    "image": "Images/Eric.png",
     "categories": ["coaching"],
-    "bio": "Qatar Prep Schools Debate League 總決賽選手，並曾於多個國際賽事中晉級八強。"
+    "bio": "BP 辯手，喺 Team Canada Fundraiser 2025 同 Carroll College Fundraiser 2025 都奪得季軍。Eric 擅長用清晰框架加上細緻講評，幫學生快速掌握 round 入面嘅關鍵。"
   },
   {
     "name": "Tanvi Myneni",
     "role": "教練",
-    "school": "Southridge School, 加拿大",
-    "image": "",
-    "categories": ["coaching"],
-    "bio": "於 Hart House 2025、UBC Summer HST 2025、YPC HST 2025 及 Debateability Summer Championships 2025 多次晉級，並獲 第 9 最佳辯手等成績。"
+    "school": "Southridge School，加拿大",
+    "image": "Images/Tanvi.png",
+    "categories": ["coaching", "outreach"],
+    "bio": "曾喺 2025 年 Hart House Debate Tournament 同 UBC Summer HST 打入準決賽，並獲得第九最佳辯手；亦係 YPC HST 2025 同 Debateability Summer Championships 2025 嘅決賽選手。Tanvi 對培養學生嘅自信同表達風格特別有心得。"
   },
   {
     "name": "Srisha Boinapalli",
     "role": "PF 教練",
-    "school": "Phillips Exeter Academy, 美國",
+    "school": "Phillips Exeter Academy，美国",
     "image": "Images/Srisha.png",
-    "categories": ["coaching", "PF"],
-    "bio": "擁有四年 PF 及半年 LD 經驗，為 Varsity 級別國家巡迴賽辯手，並曾入選全國中學 NSDA。"
+    "categories": ["coaching", "PF", "outreach"],
+    "bio": "擁有四年 PF 同半年 LD 經驗，係 Varsity 級別國家巡迴賽辯手，並喺初中階段已經取得 NSDA 全國賽資格。Srisha 熟悉美國國家線路節奏，可以幫學生適應高強度賽事。"
   },
   {
-    "name": "Jade Yoo",
+    "name": "Matthew Hao",
+    "role": "PF 教練",
+    "school": "Phillips Exeter Academy，美国",
+    "image": "",
+    "categories": ["outreach", "PF"],
+    "bio": "實力派 PF 辯手，喺 NSDA China 賽區多次打入八強甚至更高名次。Matthew 熟悉中國同國際賽事規則同評分文化，訓練上尤其著重實戰同策略安排。"
+  },
+  {
+    "name": "Rylan Wang",
     "role": "教練",
-    "school": "Phillips Exeter Academy, 美國",
-    "image": "Images/Jade.png",
-    "categories": ["coaching"],
-    "bio": "Phillips Exeter Advanced Debate Team 成員，在 DANEIS 賽區屢獲佳績，深受學生喜愛。"
+    "school": "Arizona College Preparatory High School，美国",
+    "image": "",
+    "categories": ["coaching", "PF"],
+    "bio": "2025 年台灣 National Speech & Debate Association（TNSDA）賽事嘅冠軍及季軍隊成員之一，並喺 Congressional Debate 中奪得第四名。Rylan 擅長國會辯論同 PF 內容架構，幫學生整理清楚論點。"
   },
   {
     "name": "Luke Chon",
     "role": "教練",
-    "school": "Phillips Exeter Academy, 美國",
+    "school": "Phillips Exeter Academy，美国",
     "image": "Images/Luke.png",
     "categories": ["coaching"],
-    "bio": "積極參與辯論及模擬聯合國活動，教學風格結合沉穩與同理心。"
+    "bio": "Phillips Exeter 辯手，曾參加第 75 屆 Harvard Model United Nations。Luke 嘅教學風格穩陣而有條理，特別重視學生對國際議題嘅理解同分析。"
   },
   {
     "name": "Winston Chan",
     "role": "教練",
-    "school": "Winchester College, 英國",
+    "school": "Winchester College，英國",
     "image": "Images/Winston.png",
     "categories": ["coaching"],
-    "bio": "具 DBS 與 Winchester 辯論經驗，擅長協助 ESL 學生建立語言與辯論能力。"
+    "bio": "擁有 DBS 同 Winchester 嘅辯論同模擬法庭（moot）經驗，尤其擅長幫 ESL 學生提升英文表達同臨場反應，循序漸進建立自信。"
+  },
+  {
+    "name": "Reya Satam",
+    "role": "生物倫理課程講師",
+    "school": "Phillips Exeter Academy，美国",
+    "image": "Images/Reya.png",
+    "categories": ["bioethics", "outreach"],
+    "bio": "曾參與多發性硬化症研究，並同聖母大學嘅遺傳學教授合作，研究成果將發表喺《Journal of High School Science》。Reya 亦撰寫過關於人工蛋白伴侶及其倫理影響嘅文獻綜述，並獲邀喺 Neurology World Conference 同 Max Planck Neuro Symposium 作演講。"
+  },
+  {
+    "name": "Oliver Choi",
+    "role": "生物倫理課程講師",
+    "school": "Phillips Exeter Academy，美国",
+    "image": "",
+    "categories": ["outreach", "bioethics"],
+    "bio": ""
+  },
+  {
+    "name": "Jade Yoo",
+    "role": "教練",
+    "school": "Phillips Exeter Academy，美国",
+    "image": "Images/Jade.png",
+    "categories": ["coaching"],
+    "bio": "Phillips Exeter Advanced Debate Team 成員，喺 DANEIS 賽區多次取得好成績。Jade 擅長營造支持性強、互動度高嘅課堂環境，令學生可以放心試錯同發問。"
   },
   {
     "name": "Aloysius Yeung",
     "role": "行政統籌",
-    "school": "Epsom College, 英國",
+    "school": "Epsom College，英國",
     "image": "Images/Aloy.png",
-    "categories": ["coaching", "outreach"],
-    "bio": "負責課程行政、後勤管理及教學支援，協助團隊順利運作。"
+    "categories": ["outreach"],
+    "bio": "負責課程行政、後勤安排同日常營運支援，確保課程同活動可以順利進行，等教練同學生專心喺教與學上面。"
   },
   {
     "name": "Andrew Chen",
     "role": "行政統籌",
-    "school": "Phillips Exeter Academy, 美國",
+    "school": "Phillips Exeter Academy，美国",
     "image": "Images/Andrew.png",
-    "categories": ["outreach", "PF"],
-    "bio": "協助撰寫辯論內容、處理家長溝通及平台運營，具 PF 辯論經驗。"
+    "categories": ["outreach", "PF", "bioethics"],
+    "bio": "協助撰寫辯論教材同生物倫理相關內容，同時負責同家長、學生保持溝通。Andrew 本身有 PF 辯論經驗，理解學生喺備賽上面遇到嘅實際壓力。"
   },
   {
     "name": "Ana Trujillo",
     "role": "行政統籌",
-    "school": "JLM Christian Academy, 巴拿馬",
+    "school": "JLM Christian Academy，巴拿馬",
     "image": "Images/Ana.png",
     "categories": ["outreach", "PF"],
-    "bio": "熱心幫助同學，有一年 Public Forum 經驗，積極參與各項外展與教育活動。"
+    "bio": "學生領袖之一，擁有約一年 Public Forum 經驗，對幫助初學者入門特別有耐性。Ana 喺外展同行政工作上一路穩定支持團隊，令項目運作更順。"
   },
   {
     "name": "Emmanuel Zhang",
     "role": "外展策劃",
-    "school": "Phillips Exeter Academy, 美國",
+    "school": "Phillips Exeter Academy，美国",
     "image": "Images/Emmanuel.png",
-    "categories": ["outreach"],
-    "bio": "Phillips Exeter 的辯手，致力推動 DebateCraft 的使命：讓所有學生都能接觸辯論。"
+    "categories": ["outreach", "bioethics"],
+    "bio": "Phillips Exeter 辯手，親身實踐 DebateCraft「畀每位學生都有機會接觸辯論」嘅理念，積極參與對外合作同社群推廣。"
   },
   {
     "name": "Theo Okolo",
     "role": "外展策劃",
-    "school": "Winchester College, 英國",
+    "school": "Winchester College，英國",
     "image": "Images/Theo.png",
     "categories": ["outreach"],
-    "bio": "具創業及市場推廣背景，負責制定外展策略與社群互動。"
+    "bio": "有創業同市場推廣背景，主要負責外展策略、品牌定位同社交媒體互動，幫 DebateCraft 接觸更多學校同地區。"
   },
   {
     "name": "Mehar Singh",
     "role": "外展策劃",
-    "school": "Bakersfield Christian High School, 美國",
+    "school": "Bakersfield Christian High School，美国",
     "image": "Images/Mehar.png",
     "categories": ["outreach"],
-    "bio": "具三年口語表達及語文比賽經驗，積極協助團隊外展與教育推廣工作。"
+    "bio": "擁有大約三年口語表演同語文比賽經驗，協助連繫合作機構同學校，推動唔同地區嘅辯論教育計劃。"
   },
   {
     "name": "Vivien Shang",
-    "role": "社交媒體設計師",
-    "school": "Phillips Exeter Academy, 美國",
+    "role": "社交媒體主管",
+    "school": "Phillips Exeter Academy，美国",
     "image": "Images/Vivien.png",
     "categories": ["outreach"],
-    "bio": "創作高質素社交媒體內容，推廣免費辯論資源，並曾擔任助教，具備教學與學生支援經驗。"
+    "bio": "負責統籌同創作社交媒體內容，推廣免費辯論資源。Vivien 曾喺暑假擔任助教，對點樣照顧學生需要同保持課堂投入感有相當多實戰經驗。"
+  },
+  {
+    "name": "Sophia Chen",
+    "role": "社交媒體主管",
+    "school": "Phillips Exeter Academy，美国",
+    "image": "Images/Sophia.png",
+    "categories": ["outreach"],
+    "bio": "透過同長者嘅音樂外展活動，同喺 MLK 日為社區準備物資包等服務計劃，累積咗好豐富嘅溝通同社區服務經驗。Sophia 而家專注用故事同影像，拉近學生同辯論世界嘅距離。"
   },
   {
     "name": "Andy Liu",
     "role": "社交媒體設計師",
-    "school": "Phillips Exeter Academy, 美國",
+    "school": "Phillips Exeter Academy，美国",
     "image": "Images/Andy.png",
     "categories": ["outreach"],
-    "bio": "負責數碼外展與視覺設計，並曾於 Exonian Web Board 擔任網站開發角色。"
-  },
-  {
-    "name": "Sophia Chen",
-    "role": "社交媒體設計師",
-    "school": "Phillips Exeter Academy, 美國",
-    "image": "",
-    "categories": ["outreach"],
-    "bio": "積極參與團隊社交媒體製作與推廣，協助提升學生對辯論的興趣與接觸面。"
-  },
-  {
-    "name": "Mukiibi Calvin",
-    "role": "社交媒體設計師",
-    "school": "Seeta High School, 烏干達",
-    "image": "Images/Calvin.png",
-    "categories": ["outreach"],
-    "bio": "擁有五年 BP 及 WSDF 經驗，對辯論充滿熱情，並以創意方式推動社交媒體內容。"
+    "bio": "負責數碼外展同視覺設計，協助提升 DebateCraft 嘅品牌形象，同時帶住佢喺 Exonian Web Board 擔任網站開發嘅經驗，優化網上內容呈現。"
   },
   {
     "name": "Kevin Chen",
-    "role": "辯論內容創作者",
-    "school": "Phillips Exeter Academy, 美國",
+    "role": "社交媒體設計師",
+    "school": "Phillips Exeter Academy，美国",
     "image": "Images/Kevin.png",
     "categories": ["outreach"],
-    "bio": "負責製作辯論教材及線上宣傳內容，並具 Exonian Web Board 的網站經驗。"
+    "bio": "專注數碼外展同辯論內容創作，幫手擴大網上曝光度。Kevin 同樣有喺 Exonian Web Board 做網站設計嘅背景，熟悉線上平台營運。"
   },
   {
     "name": "Aaditiya Bilakanti",
     "role": "網站開發員",
-    "school": "Phillips Exeter Academy, 美國",
+    "school": "Phillips Exeter Academy，美国",
     "image": "Images/Diddy.png",
     "categories": ["outreach", "PF"],
-    "bio": "負責網站更新維護，並參與開發創新的 AI 辯論工具。他同時具備 PF 辯論經驗。"
-  },
-  {
-    "name": "Matthew Hao",
-    "role": "網站開發員",
-    "school": "Phillips Exeter Academy, 美國",
-    "image": "",
-    "categories": ["outreach", "PF"],
-    "bio": "實力 PF 辯手，於 NSDA China 賽區多次晉級八強及以上，技術與辯論能力兼備。"
-  },
-  {
-    "name": "Oliver Choi",
-    "role": "外展助理",
-    "school": "Phillips Exeter Academy, 美國",
-    "image": "",
-    "categories": ["outreach"],
-    "bio": "積極支援外展工作與學生協助，致力推動辯論活動發展。"
+    "bio": "負責網站更新同技術維護，亦正開發創新嘅 AI 辯論工具。Aaditiya 本身有 PF 辯論經驗，可以喺介面設計上更貼近辯手實際需要。"
   }
 ]

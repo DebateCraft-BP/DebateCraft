@@ -16,8 +16,16 @@
         "bio": "A nationally ranked Public Forum debater with a strong track record on the China PF circuit and five years of experience. Gavin reached Tournament of Champions(TOC) in both 2022 and 2023, and competed at Oxford Schools 2025. In his role as Executive Director, Gavin co-leads the team’s operations, spearheads the web development, and Chinese Outreach."
       },
       {
+        "name": "Sandeep Chulani",
+        "role": "Advisor to DebateCraft and Head Curriculumn Developer",
+        "school": "",
+        "image": "Images/Sandeep.png",
+        "categories": ["executive","coaching","advisor"],
+        "bio": "Sandeep Chulani is a Hong Kong-based debate coach and educator with over 20 years of involvement in competitive debating, adjudication, and tournament organisation. As a debater, he was Best Speaker at the Hong Kong Joint University Debating Championships from 2006 to 2009, Champion of the Hong Kong JUDC in 2007–2008, Best Speaker at the East Asian Debating Championships in 2009, and a quarterfinalist at the World Universities Debating Championships (Assumption Worlds) in 2008.​ In adjudication and leadership, he has served on the Adjudication Core of the United Asian Debating Championships (2015), been ranked among the Top 10 judges in Asia at ABP Beijing 2012 and ABP Kuching 2013 and co-founded and served as Chief Adjudicator of the Hong Kong British Parliamentary Debating Championships from 2012 to 2019. He also chaired the Hong Kong Schools Debating and Public Speaking Community, previously served as its Tournaments Director, and organised the Hong Kong qualifiers for Oxford Schools and the International Competition for Young Debaters.​ Sandeep convened and organised the Hong Kong Parliamentary Debate Society tournaments in 2007 and 2008, and from 2014 to 2019 co-founded and adjudication-cored the Hong Kong British Parliamentary Debating Championships for secondary students. His students have represented Hong Kong at the World Schools Debating Championships and the World Individual Debating and Public Speaking Championships, as well as competing at Oxford Schools. He has been involved in every tournament role from tab runner to manual and digital tab management, and is widely recognised as one of the only locally born Hong Kong debate coaches to have both represented and coached at top regional and global levels. As an advisor and head curriculum developer at DebateCraft, Sandeep supports the design and refinement of DebateCraft’s free, accessibility-focused programs, drawing on his experience running major schools’ circuits to help build structured BP curricula, training materials, and coach development systems that advance the mission of “students empowering students.”"
+      },
+      {
         "name": "Matthew Wong",
-        "role": "Curriculum Development Lead",
+        "role": "Head Coach",
         "school": "Winchester College, UK",
         "image": "Images/Matthew.png",
         "categories": ["executive","coaching"],
@@ -217,11 +225,19 @@
       },
       {
         "name": "Vivien Shang",
-        "role": "Social Media Designer",
+        "role": "Head of Social Media",
         "school": "Phillips Exeter Academy, US",
         "image": "Images/Vivien.png",
         "categories": ["outreach"],
         "bio": "Creates engaging content across social media platforms to achieve our mission of democratizing access to debate through free content. Vivien spent the summer TAing students and has experience in both teaching and encouraging students."
+      },
+      {
+        "name": "Sophia Chen",
+        "role": "Head of Social Media",
+        "school": "Phillips Exeter Academy, US",
+        "image": "Images/Sophia.png",
+        "categories": ["outreach"],
+        "bio": "Through music-based outreach activities with elderly individuals and creating supply packages for community members for MLK Day, Sophia has develop strong communication skills by interacting with individuals seeking support and connection."
       },
       {
         "name": "Andy Liu",
@@ -231,17 +247,10 @@
         "categories": ["outreach"],
         "bio": "Works on digital outreach and visual media, helping reach new students. He brings experience from the Exonian Web Board."
       },
-      {
-        "name": "Sophia Chen",
-        "role": "Outreach Coordinator",
-        "school": "Phillips Exeter Academy, US",
-        "image": "Images/Sophia.png",
-        "categories": ["outreach"],
-        "bio": "Through music-based outreach activities with elderly individuals and creating supply packages for community members for MLK Day, Sophia has develop strong communication skills by interacting with individuals seeking support and connection."
-      },
+
       {
         "name": "Kevin Chen",
-        "role": "Debate Content Creator",
+        "role": "Social Media Designer",
         "school": "Phillips Exeter Academy, US",
         "image": "Images/Kevin.png",
         "categories": ["outreach"],
@@ -264,19 +273,19 @@
         "bio": "Matthew is a proficient PF debater regularly breaking quarterfinals and above in the NSDA China circuit."
       },
       {
+        "name": "Oliver Choi",
+        "role": "Web Developer",
+        "school": "Phillips Exeter Academy, US",
+        "image": "",
+        "categories": ["outreach","bioethics"],
+        "bio": ""
+      },
+      {
         "name": "Rylan Wang",
         "role": "Coach",
         "school": "Arizona College Preparatory High School, US",
         "image": "",
         "categories": ["coaching","PF"],
         "bio": "Taiwan National Speech & Debate Association (TNSDA) 2025 Champion and 4th Place, TNSDA – Congressional Debate"
-      },
-      {
-        "name": "Oliver Choi",
-        "role": "Outreach Coordinator",
-        "school": "Phillips Exeter Academy, US",
-        "image": "",
-        "categories": ["outreach","bioethics"],
-        "bio": ""
       }
 ]

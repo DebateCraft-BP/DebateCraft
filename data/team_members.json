@@ -25,7 +25,7 @@
       },
       {
         "name": "Matthew W",
-        "role": "Head Coach",
+        "role": "Head of Programs",
         "school": "Winchester College, UK",
         "image": "Images/Matthew.png",
         "categories": ["executive","coaching"],
@@ -33,18 +33,42 @@
       },
       {
         "name": "Jayden S",
-        "role": "Head Administrator",
+        "role": "Head of Operations",
         "school": "Phillips Exeter Academy, US",
         "image": "Images/Jayden.png",
         "categories": ["executive","outreach"],
         "bio": "A leading member of several student-led organizations and charities, Jayden brings extensive administrative and operational experience. He was previously on the VSA and WIS Chinese debate teams."
+      },
+            {
+        "name": "Jade Y",
+        "role": "Head of Operations",
+        "school": "Phillips Exeter Academy, US",
+        "image": "Images/Jade.png",
+        "categories": ["executive","outreach"],
+        "bio": "A member of the Advanced Debate Team at Phillips Exeter Academy, she has had numerous successes within the DANEIS circuit."
+      },
+      {
+        "name": "Kevin C",
+        "role": "Head of Design",
+        "school": "Phillips Exeter Academy, US",
+        "image": "Images/Kevin.png",
+        "categories": ["executive","outreach"],
+        "bio": "Works on digital outreach and debate content creation, helping expand our online presence. He brings experience from his web design role on the Exonian Web Board."
+      },
+            {
+        "name": "Cici C",
+        "role": "Deputy Head Coach",
+        "school": "Phillips Exeter Academy, US",
+        "image": "Images/Cici.png",
+        "categories": ["executive","coaching","outreach"],
+        "bio": "A member of the Team China WSDC Development Team and Advanced Debate Team at Phillips Exeter Academy, she has had numerous successes across Asian circuits and brings a wealth of debate knowledge."
       },
       {
         "name": "Arthur Z",
         "role": "Head PF Coach",
         "school": "Winchester College, UK",
         "image": "Images/Arthur.png",
-        "categories": ["coaching","PF"],
+        "categories": ["executive","coaching","PF"],
         "bio": "A top-performing PF debater: 2nd Place Team and Top Speaker at the 2023 Harvard International PF Tournament (Open Division), with past top finishes in 2022 and 2021. NSDA Global Excellent Debater (2020) and 1st Place at Wincheste College’s Inter-boarding house Debating Competition(Yaw Pot). Arthur brings his wealth of experience to lead our upcoming Public Forum course."
       },
       {
@@ -52,7 +76,7 @@
         "role": "Head Private Coach",
         "school": "Phillips Exeter Academy, US",
         "image": "Images/Valmik.png",
-        "categories": ["coaching"],
+        "categories": ["executive","coaching"],
         "bio": "The youngest member of the Team Hong Kong Development Squad, with experience in both BP and WSDC formats. He recently won the U17 finals of Oxford WSDC 2025 and was the 13th-best speaker in the Hong Kong Debate Open."
       },
       {
@@ -72,14 +96,6 @@
         "bio": "An accomplished BP debater with experience at ICYD and Imperial Schools. Raul has been a finalist in multiple intra-school tournaments and mentors younger debaters."
       },
       {
-        "name": "Cici C",
-        "role": "Senior Coach",
-        "school": "Phillips Exeter Academy, US",
-        "image": "Images/Cici.png",
-        "categories": ["coaching","outreach"],
-        "bio": "A member of the Team China WSDC Development Team and Advanced Debate Team at Phillips Exeter Academy, she has had numerous successes across Asian circuits and brings a wealth of debate knowledge."
-      },
-      {
         "name": "Theodore W",
         "role": "Senior Coach",
         "school": "Hong Kong International School, HK",
@@ -96,28 +112,20 @@
         "bio": "Member of Team HK WSDC Development team and author of a daily current affairs newsletter"
       },
       {
-        "name": "Aaryav K",
-        "role": "Senior Coach",
-        "school": "Hong Kong International School, HK",
-        "image": "Images/Aaryav.png",
-        "categories": ["coaching"],
-        "bio": "A decorated debater as the 4th best speaker in the Hong Kong Junior Schools Debating Championship 2024, and a member of the HK WSDC development team."
-      },
-      {
-        "name": "Dowan K",
-        "role": "Curriculum Developer",
-        "school": "Phillips Exeter Academy, US",
-        "image": "Images/Dowan.png",
-        "categories": ["coaching","bioethics","outreach"],
-        "bio": "Dowan has WSDC experience having competed in local WSDC competitions in Korea"
-      },
-      {
         "name": "Hirannya K",
         "role": "Coach",
         "school": "DPS Modern Indian School, Qatar",
         "image": "Images/Hirannya.jpeg",
         "categories": ["coaching", "outreach"],
         "bio": "Grand finalist of Qatar Prep Schools Debate League and octofinalist in international competitions"
+      },
+            {
+        "name": "Aaryav K",
+        "role": "Coach",
+        "school": "Hong Kong International School, HK",
+        "image": "Images/Aaryav.png",
+        "categories": ["coaching","bioethics"],
+        "bio": "A decorated debater as the 4th best speaker in the Hong Kong Junior Schools Debating Championship 2024, and a member of the HK WSDC development team."
       },
       {
         "name": "Eric Jin",
@@ -126,6 +134,14 @@
         "image": "Images/Eric.png",
         "categories": ["coaching"],
         "bio": "A BP debater who recently placed 3rd at the Team Canada Fundraiser 2025 and at the Carroll College(University) Fundraiser 2025."
+      },
+      {
+        "name": "Dowan K",
+        "role": "Bioethics Instructor",
+        "school": "Phillips Exeter Academy, US",
+        "image": "Images/Dowan.png",
+        "categories": ["coaching","bioethics","outreach"],
+        "bio": "Dowan has WSDC experience having competed in local WSDC competitions in Korea"
       },
       {
         "name": "Tanvi M",
@@ -184,16 +200,16 @@
         "bio": "A passionate biophysicist with published papers, Oliver regularly interacts with and discusses bioethical issues."
       },
       {
-        "name": "Jade Y",
-        "role": "Administrator",
+        "name": "Emmanuel Z",
+        "role": "Bioethics Instructor",
         "school": "Phillips Exeter Academy, US",
-        "image": "Images/Jade.png",
-        "categories": ["coaching"],
-        "bio": "A member of the Advanced Debate Team at Phillips Exeter Academy, she has had numerous successes within the DANEIS circuit."
+        "image": "Images/Emmanuel.png",
+        "categories": ["outreach","bioethics"],
+        "bio": "Emmanuel is a debater at Phillips Exeter Academy. He embodies the DebateCraft mission to democratize debating for all students."
       },
       {
         "name": "Aloysius Y",
-        "role": "Administrator",
+        "role": "Program Scheduler",
         "school": "Epsom College, UK",
         "image": "Images/Aloy.png",
         "categories": ["outreach"],
@@ -210,18 +226,10 @@
       {
         "name": "Ana T",
         "role": "Administrator",
-        "school": "JLM Christian Academy, Panama",
+        "school": "Acellus Academy, Panama",
         "image": "Images/Ana.png",
         "categories": ["outreach","PF"],
         "bio": "A student leader with a year of Public Forum (PF) debate experience, she’s passionate about helping others learn and contributes to every team with focus, energy, and a steady drive to grow."
-      },
-      {
-        "name": "Emmanuel Z",
-        "role": "Outreach Coordinator",
-        "school": "Phillips Exeter Academy, US",
-        "image": "Images/Emmanuel.png",
-        "categories": ["outreach","bioethics"],
-        "bio": "Emmanuel is a debater at Phillips Exeter Academy. He embodies the DebateCraft mission to democratize debating for all students."
       },
       {
         "name": "Theo O",
@@ -241,7 +249,7 @@
       },
       {
         "name": "Vivien S",
-        "role": "Head of Social Media",
+        "role": "Social Media Designer",
         "school": "Phillips Exeter Academy, US",
         "image": "Images/Vivien.png",
         "categories": ["outreach"],
@@ -249,7 +257,7 @@
       },
       {
         "name": "Sophia C",
-        "role": "Head of Social Media",
+        "role": "Social Media Designer",
         "school": "Phillips Exeter Academy, US",
         "image": "Images/Sophia.png",
         "categories": ["outreach"],
@@ -262,15 +270,6 @@
         "image": "Images/Andy.png",
         "categories": ["outreach"],
         "bio": "Works on digital outreach and visual media, helping reach new students. He brings experience from the Exonian Web Board."
-      },
-
-      {
-        "name": "Kevin C",
-        "role": "Social Media Designer",
-        "school": "Phillips Exeter Academy, US",
-        "image": "Images/Kevin.png",
-        "categories": ["outreach"],
-        "bio": "Works on digital outreach and debate content creation, helping expand our online presence. He brings experience from his web design role on the Exonian Web Board."
       },
       {
         "name": "Aaditiya B",

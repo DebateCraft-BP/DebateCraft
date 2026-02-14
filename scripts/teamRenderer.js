@@ -43,6 +43,7 @@ export function renderTeamGrid(members, category = null) {
             alt="Photo of ${m.name}"
             loading="lazy" decoding="async"
             onerror="this.onerror=null;this.src='../Images/placeholder.jpg'"
+            style="--member-focus:${m.imageFocus || '50% 20%'}"
             class="member-image">`
               : '<div class="placeholder-image"></div>'
           }

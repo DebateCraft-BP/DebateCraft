@@ -3,284 +3,113 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DebateCraft - Students empowering students through the art of debate</title>
+    <title>DebateCraft - Guides</title>
     <link rel="stylesheet" href="../styles/main.css" />
+    <style>
+      .guides-page .guide-columns{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+      .guides-page .guide-block{border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:18px;background:rgba(255,255,255,.04)}
+      .guides-page .guide-item{padding:12px 0;border-top:1px solid rgba(255,255,255,.1)}
+      .guides-page .guide-item:first-of-type{border-top:none;padding-top:0}
+      .guides-page .video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px}
+      .guides-page iframe{width:100%;height:190px;border:0;border-radius:12px}
+      .guides-page .hero-buttons .btn{min-width:180px}
+    </style>
   </head>
-
   <body>
-    <div id="root">
+    <div id="root" class="guides-page">
       <header class="header">
         <div class="container">
-          <div class="logo">
-            <a href="../index.html">
-              <h1>DebateCraft</h1>
-            </a>
-          </div>
-          <div class="mobile-menu-button" id="mobileMenuButton">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
+          <div class="logo"><a href="../index.html"><h1>DebateCraft</h1></a></div>
+          <div class="mobile-menu-button" id="mobileMenuButton"><span></span><span></span><span></span></div>
           <nav class="main-nav" id="mainNav">
             <ul>
               <li><a href="../index.html">Home</a></li>
               <li><a href="about.html">About</a></li>
               <li><a href="team.html">Our Team</a></li>
               <li><a href="courses.html">Courses</a></li>
-    <li class="dropdown">
-      <a href="resources.html" class="dropbtn">Resources ▾</a>
-      <ul class="dropdown-content">
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="guides.html">Guides</a></li>
-        <li><a href="manner.html">Public Speaking</a></li>
-        <li><a href="manner.html">Mitigation</a></li>
-      </ul>
-    </li>
+              <li class="dropdown">
+                <a href="resources.html" class="dropbtn">Resources ▾</a>
+                <ul class="dropdown-content">
+                  <li><a href="blog.html">Blog</a></li>
+                  <li><a href="guides.html">Guides</a></li>
+                  <li><a href="manner.html">Public Speaking</a></li>
+                </ul>
+              </li>
               <li><a href="cnresources.html">中文 (繁體)</a></li>
             </ul>
           </nav>
         </div>
       </header>
 
-      <main class="main-content">
-        <div id="blog" class="page">
-          <section class="page-header">
-            <div class="container">
-              <h1>Guides</h1>
-              <p> The Best Debate Guides created by our coaching team and renown debaters globally
-              </p>
+      <main class="main-content page">
+        <section class="hero">
+          <div class="container">
+            <h1>Guides Library</h1>
+            <p>Download practical resources and model materials for prep, speech structure, and strategy.</p>
+            <div class="hero-buttons">
+              <a class="btn btn-primary" href="https://form.jotform.com/253312462736455" target="_blank" rel="noopener noreferrer">Get Coaching Support</a>
+              <a class="btn btn-secondary" href="resources.html">Back to Resources</a>
             </div>
-            <button class="btn btn-primary"><a href="https://form.jotform.com/253312462736455">Sign up now</a></button>
-          </section>
-                    <!-- PDF Guides Section -->
-          <section class="resources-section pdf-resources">
-            <div class="container">
-              <h2>PDF Guides</h2>
-              <p>
-                Download our curated drill sheets, lecture notes, and round prep materials created by DebateCraft coaches.
-              </p>
+          </div>
+        </section>
 
-              <div class="resource-list">
-                <h2>Intro to Debate Guides</h2>
-                <article class="resource-card">
-                  <h3>Actor Analysis</h3>
-                  <p>How to identify and analyze different actors within a debate motion</p>
-                  <button class="btn btn-primary"><a href="https://drive.google.com/file/d/1s3Pxih9tYPR0wxWfwcMtbMbb0baq2v8C/view?usp=drive_link">View PDF</a></button>
-                </article>
-                <article class="resource-card">
-                  <h3>POIs</h3>
-                  <p>What are POIs and how can we use them strategically?</p>
-                  <button class="btn btn-primary"><a href="https://drive.google.com/file/d/1t1_pRtyKPTS2FcdXMI_kIOZXaomlFjnm/view?usp=drive_link">View PDF</a></button>
-                </article>
-                <article class="resource-card">
-                  <h3>ESU introduction to WSDC</h3>
-                  <p></p>
-                  <button class="btn btn-primary"><a href="https://drive.google.com/file/d/1c-I9MElNcUhFFxk7wuZs9kh_bJae287w/view?usp=drive_link">View PDF</a></button>
-                </article>
-                <article class="resource-card">
-                  <h3>DebateCraft WSDC Motion Prep document</h3>
-                  <p>A document that can help debaters use their prep time fully</p>
-                  <button class="btn btn-primary"><a href="https://drive.google.com/file/d/1bIUDilinW43CM-aeis_wz_jBvgZKC3or/view?usp=drive_link">View PDF</a></button>
-                </article>
-
-                <h2>Intermediate Debate Guides</h2>
-                <article class="resource-card">
-                  <h3>DebateCraft's Accelerated Introduction to Debate</h3>
-                  <p>Intermediate guide to framing, mechanization, impacting, and BP.</p>
-                  <button class="btn btn-primary"><a href="https://docs.google.com/document/d/1dCh-skFd872tflOcMX-SEJP0ZogdVy-n1679vK5HSkY/edit?usp=sharing">View PDF</a></button>
-                </article>
-                <article class="resource-card">
-                  <h3>WSDC 2026 Debater Handbook</h3>
-                  <p>A guide to key elements of the World Schools Debating Championships (WSDC) format, speeches, judging, and common terminology.</p>
-                  <button class="btn btn-primary"><a href="https://docs.google.com/document/d/10I7HdhOEDC2JtekXl-xQ--5DIlMrxegWXWwlL7z9DIs/edit?tab=t.5q6m8rewq23a">View PDF</a></button>
-                </article>
-                <article class="resource-card">
-                  <h3>DebateCraft BP Opening Teams Motion Prep document</h3>
-                  <p>A document that can help debaters use their prep time fully</p>
-                  <button class="btn btn-primary"><a href="https://drive.google.com/file/d/1v6DSFjK0cAoFp53lSCuOIqqrJm5ktXDT/view?usp=drive_link">View PDF</a></button>
-                </article>
-                <article class="resource-card">
-                  <h3>DebateCraft BP Closing Teams Motion Prep document</h3>
-                  <p>A document that can help debaters use their prep time fully</p>
-                  <button class="btn btn-primary"><a href="https://drive.google.com/file/d/10yxAV9gZMj0BEGYdt-1nCK4E3cC1OMaY/view?usp=drive_link">View PDF</a></button>
-                </article>
-                <h2>Advanced Debate Guides Guides</h2>
-                <article class="resource-card">
-                  <h3>Winning Debates</h3>
-                  <p>Winning Debates by Steven L. Johnson is a canon debate guide that eloquently describes mechanization, impacting, strategy and more</p>
-                  <button class="btn btn-primary"><a href="https://drive.google.com/file/d/1OsQDt1PaoY6hrrJD_DQX904cRXse8g54/view?usp=drive_link">View PDF</a></button>
-                </article>
-                <article class="resource-card">
-                  <h3>Ryan Lafferty's Summer Workshops Resources</h3>
-                  <p></p>
-                  <button class="btn btn-primary"><a href="https://docs.google.com/document/d/1yZnTmzlvEZW61lgA5RWzdaM3Yb9_KsWWy0vjNuyl1Dc/edit?tab=t.0">View PDF</a></button>
-                </article>
-              </div>
+        <section>
+          <div class="container">
+            <div class="guide-columns">
+              <article class="guide-block"><h3>Start Fast</h3><p>New here? Begin with POIs and Actor Analysis before moving to advanced packs.</p><a class="btn btn-primary" href="https://drive.google.com/file/d/1t1_pRtyKPTS2FcdXMI_kIOZXaomlFjnm/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Open POIs Guide</a></article>
+              <article class="guide-block"><h3>Need Round Prep?</h3><p>Use our prep templates before each practice debate to organize burdens and clash.</p><a class="btn btn-primary" href="https://drive.google.com/file/d/1bIUDilinW43CM-aeis_wz_jBvgZKC3or/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Open Prep Template</a></article>
             </div>
-          </section>
+          </div>
+        </section>
 
-          <!-- Video Library Section (YouTube embeds) -->
-          <section class="resources-section video-resources">
-            <div class="container">
-              <h2>Video Library</h2>
-              <p>
-                Watch recorded workshops, demo rounds, and lectures chosen by DebateCraft coaches.
-              </p>
+        <section>
+          <div class="container guide-columns">
+            <article class="guide-block">
+              <h3>Beginner Guides</h3>
+              <div class="guide-item"><h4>Actor Analysis</h4><p>Identify and compare stakeholders clearly.</p><a class="btn btn-primary" href="https://drive.google.com/file/d/1s3Pxih9tYPR0wxWfwcMtbMbb0baq2v8C/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Open PDF</a></div>
+              <div class="guide-item"><h4>POIs</h4><p>Learn when and how to use POIs effectively.</p><a class="btn btn-primary" href="https://drive.google.com/file/d/1t1_pRtyKPTS2FcdXMI_kIOZXaomlFjnm/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Open PDF</a></div>
+            </article>
+            <article class="guide-block">
+              <h3>Intermediate Guides</h3>
+              <div class="guide-item"><h4>Accelerated Intro to Debate</h4><p>Framing, impact work, and comparative analysis.</p><a class="btn btn-primary" href="https://docs.google.com/document/d/1dCh-skFd872tflOcMX-SEJP0ZogdVy-n1679vK5HSkY/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Open Guide</a></div>
+              <div class="guide-item"><h4>WSDC 2026 Handbook</h4><p>Format essentials and common adjudication standards.</p><a class="btn btn-primary" href="https://docs.google.com/document/d/10I7HdhOEDC2JtekXl-xQ--5DIlMrxegWXWwlL7z9DIs/edit?tab=t.5q6m8rewq23a" target="_blank" rel="noopener noreferrer">Open Guide</a></div>
+            </article>
+            <article class="guide-block">
+              <h3>Advanced Guides</h3>
+              <div class="guide-item"><h4>Winning Debates</h4><p>High-level strategy and deep mechanism analysis.</p><a class="btn btn-primary" href="https://drive.google.com/file/d/1OsQDt1PaoY6hrrJD_DQX904cRXse8g54/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Open PDF</a></div>
+              <div class="guide-item"><h4>Summer Workshops Pack</h4><p>Exercises and topic packs for advanced training.</p><a class="btn btn-primary" href="https://docs.google.com/document/d/1yZnTmzlvEZW61lgA5RWzdaM3Yb9_KsWWy0vjNuyl1Dc/edit?tab=t.0" target="_blank" rel="noopener noreferrer">Open Pack</a></div>
+            </article>
+          </div>
+        </section>
 
-              <div class="resource-list">
-                <!-- Example Video 1 -->
-                <article class="resource-card">
-                  <h3>Burdens of Proof by Katharina Margareta Jansen</h3>
-                  <div class="video-wrapper">
-                  <iframe width="560" height="315" src="https://www.youtube.com/embed/gihbX8zt8kM?si=gQaOlyt-As2VXWKX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                  </div>
-                </article>
-                <article class="resource-card">
-                  <h3>Manchester Debating Union Workshops</h3>
-                  <div class="video-wrapper">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Xd_8jrid_mk?si=TpgUizL63HMH8_7l" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/hN55gM0f4dw?si=EIAZQbN8lHoqTkWW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/t2-RrvOtf0M?si=wKU_BnfgpjztS03V" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </article>
-                <!-- Example Video 2 -->
-                <article class="resource-card">
-                  <h3>UChicago BP Debate Workshops</h3>
-                  <iframe width="560" height="315" src="https://www.youtube.com/embed/zJz94XG9kkc?si=Ei-xtz1hlxYwI2p7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                  </div>
-                  <iframe width="560" height="315" src="https://www.youtube.com/embed/EpLqPTdHy80?si=u3h6hBKfe1W5UTdp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                  <iframe width="560" height="315" src="https://www.youtube.com/embed/-oicMC4_ylE?si=Nn5j0ukpmGBA42kq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                
-                </article>
-                <!-- Example Video 3 -->
-                <article class="resource-card">
-                  <h3>SUNDO Workshops</h3>
-                  <div class="video-wrapper">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/5RSVnsywbfA?si=Hcdv5Ceviw57NNwO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                  </div>
-                </article>
-                <article class="resource-card">
-                  <h3> Debate Rounds to Watch</h3>
-                  <h4> WSDC 2025 Grand Final</h4>
-                  <div class="video-wrapper">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/_kjeQW-RNyw?si=33RNaAEGOqvl_BbN&amp;start=420" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <button class="btn btn-primary"><a href="https://debating404.com/full-debate-panama-wsdc-2025-grand-final-india-vs-australia-th-prefers-a-world-with-a-strong-belief-in-seriti/">Read Transcript</a></button>
-                  <h4> WSDC 2024 Grand Final</h4>
-                  <div class="video-wrapper">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/1xohrV5pheM?si=OLexTKI1jW9tc2Ft&amp;start=218" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <button class="btn btn-primary"><a href="https://debating404.com/serbia-wsdc-2024-grand-final-scotland-vs-bulgaria/">Read Transcript</a></button>
-                    <h4> WSDC 2017 Grand Final</h4>
-                  <div class="video-wrapper">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/4HUFM3JZaLQ?si=a15LLPLnlL08gwD8&amp;start=351" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                    
-                    <button class="btn btn-primary"><a href="https://debating404.com/full-indonesia-wsdc-2017-grand-final-england-vs-singapore/">Read Transcript</a></button>
-
-                </article>
-              </div>
+        <section>
+          <div class="container">
+            <h2>Watch & Analyze</h2>
+            <p>Use transcripts alongside full rounds to learn speech sequencing and weighing structure.</p>
+            <div class="video-grid">
+              <article class="guide-block">
+                <iframe src="https://www.youtube.com/embed/_kjeQW-RNyw?start=420" title="WSDC 2025 Final" allowfullscreen></iframe>
+                <h4>WSDC 2025 Grand Final</h4>
+                <a class="btn btn-primary" href="https://debating404.com/full-debate-panama-wsdc-2025-grand-final-india-vs-australia-th-prefers-a-world-with-a-strong-belief-in-seriti/" target="_blank" rel="noopener noreferrer">Read Transcript</a>
+              </article>
+              <article class="guide-block">
+                <iframe src="https://www.youtube.com/embed/1xohrV5pheM?start=218" title="WSDC 2024 Final" allowfullscreen></iframe>
+                <h4>WSDC 2024 Grand Final</h4>
+                <a class="btn btn-primary" href="https://debating404.com/serbia-wsdc-2024-grand-final-scotland-vs-bulgaria/" target="_blank" rel="noopener noreferrer">Read Transcript</a>
+              </article>
             </div>
-          </section>
-
-          <!-- Audio Library Section
-          <section class="resources-section audio-resources">
-            <div class="container">
-              <h2>Audio Library</h2>
-              <p>
-                Listen to practice speeches, drills, and commentary on the go.
-              </p>
-
-              <div class="resource-list">
-                <article class="resource-card">
-                  <h3>Speaking Drills – Level 1</h3>
-                  <p>Foundations of fluency and pacing for new debaters.</p>
-                  <audio controls>
-                    <source src="../assets/audio/speaking-drills-level1.mp3" type="audio/mpeg" />
-                    Your browser does not support the audio element.
-                  </audio>
-                </article>
-
-                <article class="resource-card">
-                  <h3>Rebuttal Practice – Level 2</h3>
-                  <p>Targeted exercises to improve clash and responsiveness.</p>
-                  <audio controls>
-                    <source src="../assets/audio/rebuttal-practice-level2.mp3" type="audio/mpeg" />
-                    Your browser does not support the audio element.
-                  </audio>
-                </article>
-
-                <article class="resource-card">
-                  <h3>POI Drill Set</h3>
-                  <p>Short prompts to practice quick, incisive questions.</p>
-                  <audio controls>
-                    <source src="../assets/audio/poi-drills.mp3" type="audio/mpeg" />
-                    Your browser does not support the audio element.
-                  </audio>
-                </article>
-              </div>
-            </div>
-          </section>-->
-          <section class="cta-section">
-            <div class="container">
-              <h2>Ready to Join DebateCraft?</h2>
-              <p>
-                Discover our programs and unleash your potential through the
-                power of debate.
-              </p>
-              <button class="btn btn-primary"><a href="https://forms.gle/9GCJgoyH3nX8YKq69">Sign up now</a></button>
-            </div>
-          </section>
-          <section class="newsletter-section">
-            <div class="container">
-              <h2>Stay Updated</h2>
-              <p>
-                Subscribe to our newsletter for the latest debate tips, program
-                updates, and educational resources.
-              </p>
-              <div class="newsletter-form">
-                <input type="email" placeholder="Your email address" />
-                <button class="btn btn-primary"><a href="https://debatecraft.substack.com/subscribe?params=%5Bobject%20Object%5D">Subscribe</a></button>
-              </div>
-            </div>
-          </section>
-        </div>
+          </div>
+        </section>
       </main>
 
       <footer class="footer">
         <div class="container">
           <div class="footer-content">
-            <div class="footer-logo">
-              <h2>DebateCraft</h2>
-              <p>
-                Students empowering students through the art of debate for a brighter
-                future.
-              </p>
-            </div>
-            <div class="footer-links">
-              <h3>Quick Links</h3>
-              <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="team.html">Our Team</a></li>
-                <li><a href="courses.html">Courses</a></li>
-                <li><a href="resources.html">Resources</a></li>
-                <!--<li><a href="manner.html">Manner</a></li>-->
-              </ul>
-            </div>
-            <div class="footer-contact">
-              <h3>Contact Us</h3>
-              <a href="mailto:info@debatecraft.org">info@debatecraft.org</a>
-              <div class="social-links">
-                <a
-                  href="https://www.facebook.com/profile.php?id=61577761071956"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Facebook</a
-                >
-                <a
-                  href="https://www.instagram.com/debate_craft/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Instagram</a
-                >
-              </div>
-            </div>
+            <div class="footer-logo"><h2>DebateCraft</h2><p>Students empowering students through the art of debate for a brighter future.</p></div>
+            <div class="footer-links"><h3>Quick Links</h3><ul><li><a href="../index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="team.html">Our Team</a></li><li><a href="courses.html">Courses</a></li><li><a href="resources.html">Resources</a></li></ul></div>
+            <div class="footer-contact"><h3>Contact Us</h3><a href="mailto:info@debatecraft.org">info@debatecraft.org</a></div>
           </div>
-          <div class="footer-bottom">
-            <p>&copy; 2025 DebateCraft. All rights reserved.</p>
-          </div>
+          <div class="footer-bottom"><p>&copy; 2025 DebateCraft. All rights reserved.</p></div>
         </div>
       </footer>
     </div>

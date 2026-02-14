@@ -271,6 +271,24 @@ a:hover { color: var(--primary); }
   border-color: rgba(40, 188, 236, 0.40);
 }
 
+
+
+/* Keep button text consistently black across the site */
+.btn,
+.btn:visited,
+.btn:hover,
+.btn:focus,
+.btn:active,
+.btn a,
+.btn a:visited,
+.btn a:hover,
+.filter-btn,
+.filter-btn.active,
+.tab-nav button,
+.tab-nav button.active {
+  color: #0B0F14 !important;
+}
+
 /* Sections */
 section {
   padding: 72px 0;

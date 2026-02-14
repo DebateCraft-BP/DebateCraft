@@ -1,287 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Debate Games - DebateCraft</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DebateCraft - Games</title>
+    <link rel="stylesheet" href="../styles/main.css" />
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        /* Tailwind-ish Utilities */
-        :root { --primary: #000; --bg-light: #f9fafb; --border: #e5e7eb; --success-bg: #f0fdf4; --success-text: #15803d; --error-bg: #fef2f2; --error-text: #b91c1c; }
-        body { font-family: system-ui, -apple-system, sans-serif; color: #1f2937; background: var(--bg-light); }
-        h1, h2, h3 { font-family: Constantia, Georgia, serif; color: var(--primary); }
-        
-        .container { max-width: 1000px; margin: 0 auto; padding: 2rem 1.5rem; }
-        .hero { text-align: center; padding: 6rem 1.5rem 4rem; background: linear-gradient(to bottom, #f9fafb, #fff); }
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-        
-        /* Game Cards */
-        .game-card { background: #fff; padding: 2rem; border-radius: 1.5rem; border: 1px solid var(--border); cursor: pointer; transition: all 0.2s; }
-        .game-card:hover { transform: translateY(-4px); box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1); }
-        .icon-box { width: 4rem; height: 4rem; background: #000; color: white; border-radius: 1rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; }
-
-        /* Game Interface */
-        #game-interface, #game-result { display: none; max-width: 800px; margin: 0 auto; }
-        .question-box { background: #000; color: #fff; padding: 2rem; border-radius: 1rem; margin-bottom: 2rem; font-family: Constantia, Georgia, serif; font-size: 1.25rem; }
-        
-        .options-grid { display: grid; gap: 1rem; }
-        .option-btn { width: 100%; text-align: left; padding: 1.25rem; background: #fff; border: 2px solid var(--border); border-radius: 1rem; cursor: pointer; font-size: 1rem; transition: all 0.2s; display: flex; align-items: center; gap: 0.5rem; }
-        .option-btn:hover:not(:disabled) { border-color: #000; background: #f9fafb; }
-        .option-btn:disabled { cursor: default; }
-
-        /* Feedback States */
-        .option-btn.correct { border-color: #22c55e; background: var(--success-bg); color: var(--success-text); }
-        .option-btn.wrong { border-color: #ef4444; background: var(--error-bg); color: var(--error-text); }
-
-        .explanation-box { background: #eff6ff; border: 1px solid #dbeafe; padding: 1.5rem; border-radius: 1rem; margin-top: 1.5rem; display: none; }
-        .stats-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; }
-        .badge { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; background: #fff; border: 1px solid var(--border); border-radius: 2rem; font-weight: 600; }
-        
-        .btn-primary { background: #000; color: #fff; border: none; padding: 1rem 2rem; border-radius: 2rem; cursor: pointer; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; }
-        .btn-primary:hover { opacity: 0.9; }
+      .games-page .mode-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+      .games-page .mode-card{border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:20px;background:rgba(255,255,255,.04);cursor:pointer}
+      .games-page .mode-card:hover{transform:translateY(-2px)}
+      .games-page .stage{display:none}
+      .games-page .stage.active{display:block}
+      .games-page .question-card{border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:18px;background:rgba(255,255,255,.04)}
+      .games-page .option-btn{width:100%;text-align:left;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.03);padding:12px 14px;border-radius:12px;cursor:pointer;margin-bottom:10px;color:var(--text)}
+      .games-page .option-btn:hover{background:rgba(255,255,255,.08)}
+      .games-page .option-btn.correct{border-color:#22c55e;background:rgba(34,197,94,.15)}
+      .games-page .option-btn.wrong{border-color:#ef4444;background:rgba(239,68,68,.14)}
+      .games-page .meta{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+      .games-page .chip{padding:7px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.05)}
+      .games-page .mitigation-box{border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:16px;background:rgba(255,255,255,.03)}
+      .games-page textarea{width:100%;min-height:130px;border-radius:12px;border:1px solid rgba(255,255,255,.15);background:rgba(2,6,23,.7);color:var(--text);padding:12px}
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <div id="root" class="games-page">
+      <header class="header">
+        <div class="container">
+          <div class="logo"><a href="../index.html"><h1>DebateCraft</h1></a></div>
+          <div class="mobile-menu-button" id="mobileMenuButton"><span></span><span></span><span></span></div>
+          <nav class="main-nav" id="mainNav"><ul><li><a href="../index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="team.html">Our Team</a></li><li><a href="courses.html">Courses</a></li><li><a href="resources.html">Resources</a></li><li><a href="cnresources.html">中文 (繁體)</a></li></ul></nav>
+        </div>
+      </header>
 
-    <header style="background:white; border-bottom:1px solid #eee;">
-        <nav class="navbar" style="max-width:1200px; margin:0 auto; padding:1rem; display:flex; justify-content:space-between; align-items:center;">
-            <div class="logo"><a href="../index.html" style="text-decoration:none; font-weight:bold; color:black; font-size:1.2rem;">DebateCraft</a></div>
-            <a href="../index.html" style="text-decoration:none; color:#666;">Back to Home</a>
-        </nav>
-    </header>
+      <main class="main-content page">
+        <section class="hero"><div class="container"><h1>Debate Games</h1><p>Fast, high-repetition training for rebuttal, fallacies, and motion analysis.</p><div class="hero-buttons"><a class="btn btn-primary" href="../index.html">Return Home</a><a class="btn btn-secondary" href="resources.html">Browse Resources</a></div></div></section>
 
-    <main>
-        <section id="game-selection">
-            <div class="hero">
-                <i data-lucide="gamepad-2" style="width:64px; height:64px; margin-bottom:1rem;"></i>
-                <h1>Debate Games</h1>
-                <p>Sharpen your debate skills with interactive challenges.</p>
-            </div>
-            <div class="container">
-                <div class="grid-3">
-                    <div class="game-card" onclick="startGame('fallacy')">
-                        <div class="icon-box"><i data-lucide="shield"></i></div>
-                        <h3>Fallacy Fighter</h3>
-                        <p style="color:#666; margin-bottom:1.5rem;">Identify logical fallacies in arguments to defend your position.</p>
-                        <span style="font-weight:600; display:flex; align-items:center; gap:0.5rem;">Play Now <i data-lucide="chevron-right" width="16"></i></span>
-                    </div>
-                    <div class="game-card" onclick="startGame('motion')">
-                        <div class="icon-box"><i data-lucide="brain"></i></div>
-                        <h3>Motion Master</h3>
-                        <p style="color:#666; margin-bottom:1.5rem;">Classify debate motions by type and identify key burdens.</p>
-                        <span style="font-weight:600; display:flex; align-items:center; gap:0.5rem;">Play Now <i data-lucide="chevron-right" width="16"></i></span>
-                    </div>
-                    <div class="game-card" onclick="startGame('rebuttal')">
-                        <div class="icon-box"><i data-lucide="zap"></i></div>
-                        <h3>Rebuttal Rush</h3>
-                        <p style="color:#666; margin-bottom:1.5rem;">Practice identifying the best counter-arguments rapidly.</p>
-                        <span style="font-weight:600; display:flex; align-items:center; gap:0.5rem;">Play Now <i data-lucide="chevron-right" width="16"></i></span>
-                    </div>
-                </div>
-            </div>
+        <section id="mode-select" class="stage active">
+          <div class="container mode-grid">
+            <article class="mode-card" onclick="startGame('fallacy')"><h3>Fallacy Fighter</h3><p>Identify flawed reasoning and classify it quickly.</p><button class="btn btn-primary">Play Mode</button></article>
+            <article class="mode-card" onclick="startGame('motion')"><h3>Motion Master</h3><p>Spot the burden and the likely angle of clash.</p><button class="btn btn-primary">Play Mode</button></article>
+            <article class="mode-card" onclick="startGame('rebuttal')"><h3>Rebuttal Rush</h3><p>Pick the strongest response under time pressure.</p><button class="btn btn-primary">Play Mode</button></article>
+            <article class="mode-card" onclick="window.location.href='Even if.html'"><h3>Even If Arcade</h3><p>Play the original mitigation game in full arcade mode.</p><button class="btn btn-primary">Launch Arcade</button></article>
+          </div>
         </section>
 
-        <section id="game-interface" class="container" style="padding-top:2rem;">
-            <div class="stats-bar">
-                <button onclick="exitGame()" style="background:none; border:none; cursor:pointer; display:flex; align-items:center; gap:0.5rem; color:#666;">
-                    <i data-lucide="arrow-left" width="16"></i> Exit
-                </button>
-                <div style="display:flex; gap:1rem;">
-                    <div class="badge"><i data-lucide="trophy" width="16"></i> <span id="score-display">0</span></div>
-                    <div class="badge"><i data-lucide="clock" width="16"></i> <span id="timer-display">30s</span></div>
-                </div>
+        <section id="quiz-stage" class="stage">
+          <div class="container" style="max-width:860px">
+            <div class="meta"><span id="game-title" class="chip">Mode</span><span id="tracker" class="chip">Question 1</span><span id="timer" class="chip">30s</span><span id="score" class="chip">Score: 0</span></div>
+            <div class="question-card">
+              <h3 id="question">Question text</h3>
+              <div id="options"></div>
+              <div id="explain" class="mitigation-box" style="display:none;margin-top:8px"></div>
+              <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap"><button class="btn btn-primary" onclick="nextQuestion()">Next</button><button class="btn btn-secondary" onclick="exitToModes()">Exit</button><a class="btn btn-secondary" href="../index.html">Return Home</a></div>
             </div>
-
-            <div style="margin-bottom:1rem; display:flex; justify-content:space-between; font-size:0.9rem; color:#666;">
-                <span id="question-tracker">Question 1 of 5</span>
-                <span id="game-title-display">Game Name</span>
-            </div>
-
-            <div class="question-box" id="question-text">
-                Loading question...
-            </div>
-            <p id="instruction-text" style="margin-bottom:1.5rem; font-weight:500;">Select the correct answer:</p>
-            
-            <div class="options-grid" id="options-container">
-                </div>
-
-            <div id="explanation-box" class="explanation-box">
-                <div style="display:flex; gap:0.75rem;">
-                    <i data-lucide="lightbulb" style="color:#2563eb;"></i>
-                    <div>
-                        <strong style="display:block; margin-bottom:0.25rem;">Explanation</strong>
-                        <p id="explanation-text" style="color:#4b5563; line-height:1.5;"></p>
-                    </div>
-                </div>
-                <div style="margin-top:1.5rem;">
-                    <button id="next-btn" class="btn-primary" style="width:100%; justify-content:center;" onclick="nextQuestion()">
-                        Next Question <i data-lucide="chevron-right" width="16"></i>
-                    </button>
-                </div>
-            </div>
+          </div>
         </section>
+      </main>
 
-        <section id="game-result" class="container" style="text-align:center; padding-top:4rem;">
-            <div style="background:#fff; padding:3rem; border-radius:2rem; border:1px solid var(--border);">
-                <i data-lucide="trophy" style="width:80px; height:80px; margin:0 auto 1.5rem; color:gold;"></i>
-                <h2 style="font-size:2.5rem; margin-bottom:0.5rem;">Game Complete!</h2>
-                <p style="color:#666; margin-bottom:2rem;">Great job practicing.</p>
-                
-                <div style="background:#f9fafb; padding:2rem; border-radius:1rem; margin-bottom:2rem;">
-                    <div style="font-size:4rem; font-weight:bold; font-family:Constantia;" id="final-score">0</div>
-                    <p>points scored</p>
-                </div>
+      <footer class="footer"><div class="container"><div class="footer-content"><div class="footer-logo"><h2>DebateCraft</h2><p>Students empowering students through the art of debate for a brighter future.</p></div><div class="footer-links"><h3>Quick Links</h3><ul><li><a href="../index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="team.html">Our Team</a></li><li><a href="courses.html">Courses</a></li><li><a href="resources.html">Resources</a></li></ul></div><div class="footer-contact"><h3>Contact Us</h3><a href="mailto:info@debatecraft.org">info@debatecraft.org</a></div></div><div class="footer-bottom"><p>&copy; 2025 DebateCraft. All rights reserved.</p></div></div></footer>
+    </div>
 
-                <div style="display:flex; gap:1rem; justify-content:center;">
-                    <button class="btn-primary" onclick="restartGame()">Play Again</button>
-                    <button class="btn-primary" style="background:#fff; color:#000; border:1px solid #e5e7eb;" onclick="exitGame()">Choose Game</button>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
+    <script src="../scripts/main.js"></script>
     <script>
-        // Data derived from your React code
-        const gamesData = {
-            fallacy: {
-                name: 'Fallacy Fighter',
-                questions: [
-                    { t: "You can't trust John's opinion on climate change. He's not even a scientist!", a: 'Ad Hominem', opts: ['Ad Hominem', 'Straw Man', 'False Dilemma', 'Appeal to Authority'], exp: 'This attacks the person rather than the argument.' },
-                    { t: "Everyone is buying this new phone, so it must be the best.", a: 'Bandwagon', opts: ['Slippery Slope', 'Bandwagon', 'Red Herring', 'Circular Reasoning'], exp: 'Assumes something is good just because it is popular.' },
-                    { t: "If we allow students to redo one test, soon they'll want to redo every assignment!", a: 'Slippery Slope', opts: ['Slippery Slope', 'False Cause', 'Straw Man', 'Hasty Generalization'], exp: 'Assumes one action leads to extreme consequences without proof.' },
-                    { t: "My grandfather smoked his whole life and lived to 95, so smoking isn't bad.", a: 'Hasty Generalization', opts: ['Appeal to Emotion', 'Hasty Generalization', 'False Dilemma', 'Ad Hominem'], exp: 'Draws a broad conclusion from a single example.' }
-                ]
-            },
-            motion: {
-                name: 'Motion Master',
-                questions: [
-                    { t: "This House Would ban single-use plastics.", a: 'Policy', opts: ['Policy', 'Value', 'Fact', 'Comparison'], exp: '"This House Would" indicates a plan of action.' },
-                    { t: "This House Believes that the ends justify the means.", a: 'Value', opts: ['Policy', 'Value', 'Fact', 'Actor'], exp: 'Evaluates principles or ethics.' },
-                    { t: "This House prefers a world with no religion.", a: 'Comparison', opts: ['Policy', 'Value', 'Fact', 'Comparison'], exp: 'Compares two different worlds/scenarios.' }
-                ]
-            },
-            rebuttal: {
-                name: 'Rebuttal Rush',
-                questions: [
-                    { t: "We should ban social media for teenagers because it causes mental health issues.", a: "Mental health issues have multiple causes; targeting social media alone ignores other factors.", opts: ["That's not true, teenagers love social media.", "Mental health issues have multiple causes; targeting social media alone ignores other factors.", "Adults use social media too.", "Banning things never works."], exp: 'The best rebuttal addresses the causal link directly.' },
-                    { t: "Raising minimum wage will help reduce poverty.", a: "Higher minimum wages may lead to reduced hours or job losses.", opts: ["Companies make enough profit.", "Higher minimum wages may lead to reduced hours or job losses.", "Poverty has always existed.", "People should just get better jobs."], exp: 'This addresses the economic trade-off mechanism.' }
-                ]
-            }
-        };
+      const data = {
+        fallacy: [
+          { q: "You can’t trust her tax policy ideas, she failed economics in high school.", a: "Ad Hominem", o: ["Ad Hominem", "Slippery Slope", "False Dilemma", "Bandwagon"], e: "This attacks the person rather than policy merits." },
+          { q: "If we allow one homework extension, soon deadlines will disappear entirely.", a: "Slippery Slope", o: ["Hasty Generalization", "Slippery Slope", "Appeal to Emotion", "Circular Reasoning"], e: "It assumes a chain of extreme consequences without proof." }
+        ],
+        motion: [
+          { q: "THW ban targeted political advertising on social media.", a: "Principled + practical burdens", o: ["Pure value motion", "Principled + practical burdens", "Only definitional burden", "No clash motion"], e: "Teams must justify rights impacts and real-world outcomes." },
+          { q: "THBT celebrities should avoid political endorsements.", a: "Influence and democratic quality", o: ["Tax burden only", "Influence and democratic quality", "Climate burden", "Foreign policy only"], e: "Main clash centers on legitimacy and informed democratic choice." }
+        ],
+        rebuttal: [
+          { q: "Opp says: UBI is too expensive.", a: "Even with fiscal cost, poverty reduction and health outcomes justify spending.", o: ["That’s wrong.", "Even with fiscal cost, poverty reduction and health outcomes justify spending.", "Everyone supports us.", "Taxes are fine."], e: "Best rebuttal weighs impact and compares trade-offs." },
+          { q: "Opp says social media causes all youth anxiety.", a: "Mental health is multi-causal, so blanket claims over-attribute causation.", o: ["Phones are bad", "Mental health is multi-causal, so blanket claims over-attribute causation.", "Teenagers disagree", "They are biased"], e: "Strong rebuttal challenges mechanism and over-claiming." }
+        ]
+      };
 
-        let state = {
-            gameId: null,
-            qIndex: 0,
-            score: 0,
-            timer: 30,
-            timerInterval: null,
-            answered: false
-        };
-
-        function startGame(gameId) {
-            state = { gameId, qIndex: 0, score: 0, timer: 30, timerInterval: null, answered: false };
-            document.getElementById('game-selection').style.display = 'none';
-            document.getElementById('game-result').style.display = 'none';
-            document.getElementById('game-interface').style.display = 'block';
-            document.getElementById('game-title-display').innerText = gamesData[gameId].name;
-            loadQuestion();
-            startTimer();
-        }
-
-        function loadQuestion() {
-            const game = gamesData[state.gameId];
-            const q = game.questions[state.qIndex];
-            
-            document.getElementById('question-tracker').innerText = `Question ${state.qIndex + 1} of ${game.questions.length}`;
-            document.getElementById('question-text').innerText = `"${q.t}"`;
-            document.getElementById('explanation-box').style.display = 'none';
-            state.answered = false;
-
-            const container = document.getElementById('options-container');
-            container.innerHTML = '';
-            
-            q.opts.forEach(opt => {
-                const btn = document.createElement('button');
-                btn.className = 'option-btn';
-                btn.innerText = opt;
-                btn.onclick = () => handleAnswer(btn, opt, q.a, q.exp);
-                container.appendChild(btn);
-            });
-            lucide.createIcons();
-        }
-
-        function startTimer() {
-            state.timer = 30;
-            document.getElementById('timer-display').innerText = '30s';
-            clearInterval(state.timerInterval);
-            state.timerInterval = setInterval(() => {
-                state.timer--;
-                document.getElementById('timer-display').innerText = state.timer + 's';
-                if (state.timer <= 0) handleTimeout();
-            }, 1000);
-        }
-
-        function handleAnswer(btn, selected, correct, explanation) {
-            if (state.answered) return;
-            state.answered = true;
-            clearInterval(state.timerInterval);
-
-            const buttons = document.querySelectorAll('.option-btn');
-            buttons.forEach(b => {
-                b.disabled = true;
-                if (b.innerText === correct) b.classList.add('correct');
-                if (b.innerText === selected && selected !== correct) b.classList.add('wrong');
-            });
-
-            if (selected === correct) {
-                state.score += (state.timer + 10);
-                document.getElementById('score-display').innerText = state.score;
-            }
-
-            document.getElementById('explanation-text').innerText = explanation;
-            document.getElementById('explanation-box').style.display = 'block';
-            lucide.createIcons();
-        }
-
-        function handleTimeout() {
-            if (state.answered) return;
-            // Force select nothing, show correct
-            const game = gamesData[state.gameId];
-            const q = game.questions[state.qIndex];
-            handleAnswer(null, null, q.a, "Time's up! " + q.exp);
-        }
-
-        function nextQuestion() {
-            state.qIndex++;
-            if (state.qIndex < gamesData[state.gameId].questions.length) {
-                loadQuestion();
-                startTimer();
-            } else {
-                showResults();
-            }
-        }
-
-        function showResults() {
-            document.getElementById('game-interface').style.display = 'none';
-            document.getElementById('game-result').style.display = 'block';
-            document.getElementById('final-score').innerText = state.score;
-        }
-
-        function restartGame() {
-            startGame(state.gameId);
-        }
-
-        function exitGame() {
-            clearInterval(state.timerInterval);
-            document.getElementById('game-interface').style.display = 'none';
-            document.getElementById('game-result').style.display = 'none';
-            document.getElementById('game-selection').style.display = 'block';
-        }
-
-        // Initialize icons on load
+      let game=''; let idx=0; let score=0; let timer=30; let tInt=null; let answered=false;
+      const stage = (id) => document.getElementById(id);
+      function switchStage(id){['mode-select','quiz-stage'].forEach(s=>stage(s).classList.remove('active')); stage(id).classList.add('active');}
+      function startGame(mode){ game=mode; idx=0; score=0; switchStage('quiz-stage'); renderQuestion(); }
+      function renderQuestion(){
+        const q = data[game][idx]; answered=false; timer=30;
+        document.getElementById('game-title').textContent = game.toUpperCase();
+        document.getElementById('tracker').textContent = `Question ${idx+1} / ${data[game].length}`;
+        document.getElementById('score').textContent = `Score: ${score}`;
+        document.getElementById('question').textContent = q.q;
+        document.getElementById('explain').style.display='none';
+        const box = document.getElementById('options'); box.innerHTML='';
+        q.o.forEach(opt=>{const b=document.createElement('button');b.className='option-btn';b.textContent=opt;b.onclick=()=>answer(opt,q);box.appendChild(b);});
+        clearInterval(tInt);
+        tInt=setInterval(()=>{ timer--; document.getElementById('timer').textContent=`${timer}s`; if(timer<=0){clearInterval(tInt); reveal(q,null);} },1000);
+        document.getElementById('timer').textContent='30s';
+      }
+      function answer(opt,q){ if(answered) return; clearInterval(tInt); reveal(q,opt); }
+      function reveal(q,opt){
+        answered=true;
+        [...document.querySelectorAll('.option-btn')].forEach(b=>{ b.disabled=true; if(b.textContent===q.a) b.classList.add('correct'); if(opt && b.textContent===opt && opt!==q.a) b.classList.add('wrong'); });
+        if(opt===q.a){ score += (timer+10); document.getElementById('score').textContent=`Score: ${score}`; }
+        const ex=document.getElementById('explain'); ex.style.display='block'; ex.textContent=q.e;
+      }
+      function nextQuestion(){ if(!game) return; idx++; if(idx>=data[game].length){ alert(`Mode complete! Final score: ${score}`); return exitToModes(); } renderQuestion(); }
+      function exitToModes(){ clearInterval(tInt); game=''; switchStage('mode-select'); }
+      document.addEventListener('DOMContentLoaded',()=>{
         lucide.createIcons();
+      });
     </script>
-</body>
+  </body>
 </html>

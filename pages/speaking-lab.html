@@ -1,472 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Speaking Lab - DebateCraft</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/main.css">
-    <script src="https://unpkg.com/lucide@latest"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DebateCraft - Speaking Lab</title>
+    <link rel="stylesheet" href="../styles/main.css" />
     <style>
-        /* CSS Variables & Utilities */
-        :root {
-            --primary: #000;
-            --bg-light: #f9fafb;
-            --border: #e5e7eb;
-            --active-tab-bg: #000;
-            --active-tab-text: #fff;
-        }
-
-        body { font-family: system-ui, -apple-system, sans-serif; color: #1f2937; background: #fff; margin: 0; }
-        h1, h2, h3, h4 { font-family: Constantia, Georgia, serif; color: var(--primary); }
-        
-        .container { max-width: 1000px; margin: 0 auto; padding: 0 1.5rem; }
-        
-        /* Hero Section */
-        .hero { text-align: center; padding: 6rem 1.5rem 4rem; background: linear-gradient(to bottom, #f9fafb, #fff); }
-        
-        /* Tabs Navigation */
-        .tabs-nav {
-            display: flex;
-            justify-content: center;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-            background: #f9fafb;
-            padding: 0.5rem;
-            border-radius: 1rem;
-            border: 1px solid var(--border);
-            margin-bottom: 3rem;
-            max-width: fit-content;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .tab-btn {
-            background: transparent;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.75rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.2s;
-            color: #6b7280;
-        }
-
-        .tab-btn.active {
-            background: linear-gradient(135deg, var(--brand-orange), #FFB26A);
-            color: #0B0F14;
-        }
-
-        /* Tab Content Logic */
-        .tab-content { display: none; animation: fadeIn 0.3s ease-in-out; }
-        .tab-content.active { display: block; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
-        /* Spectrum Carousel Styles */
-        .spectrum-card { background: #f9fafb; border-radius: 1.5rem; padding: 3rem; border: 1px solid var(--border); position: relative; }
-        .spectrum-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem; }
-        .nav-btn { background: rgba(255,255,255,0.7); border: 1px solid var(--border); cursor: pointer; padding: 0.65rem; border-radius: 50%; }
-        .nav-btn:disabled { opacity: 0.3; cursor: not-allowed; }
-        
-        .spectrum-icon-box { width: 4rem; height: 4rem; background: #000; border-radius: 1rem; display: flex; align-items: center; justify-content: center; color: white; margin: 0 auto 1rem; }
-        
-        /* Custom Range Slider */
-        input[type=range] {
-            width: 100%;
-            height: 6px;
-            background: #e5e7eb;
-            border-radius: 3px;
-            outline: none;
-            -webkit-appearance: none;
-            margin-bottom: 1.5rem;
-        }
-        input[type=range]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            width: 20px;
-            height: 20px;
-            background: #000;
-            border-radius: 50%;
-            cursor: pointer;
-            border: 2px solid #fff;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        }
-
-        .levels-grid { display: grid; grid-template-columns: repeat(5, 1fr); text-align: center; font-size: 0.75rem; color: #9ca3af; }
-        .level-label.active { color: #000; font-weight: bold; }
-
-        /* Exercise Grid */
-        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 1.5rem; }
-        .card { background: #f9fafb; border: 1px solid var(--border); border-radius: 1.5rem; padding: 2rem; transition: transform 0.2s; }
-        .card:hover { transform: translateY(-4px); box-shadow: 0 10px 20px -5px rgba(0,0,0,0.1); }
-        
-        .badge { font-size: 0.75rem; padding: 0.25rem 0.75rem; border-radius: 1rem; font-weight: 600; display: inline-block; margin-bottom: 0.5rem; }
-        .badge.Beginner { background: #dcfce7; color: #166534; }
-        .badge.Intermediate { background: #fef9c3; color: #854d0e; }
-        .badge.Advanced { background: #fee2e2; color: #991b1b; }
-
-        .step-list { list-style: none; padding: 0; margin: 0; }
-        .step-list li { display: flex; gap: 0.75rem; margin-bottom: 0.75rem; font-size: 0.9rem; color: #374151; }
-        .step-num { background: #000; color: white; width: 1.5rem; height: 1.5rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; flex-shrink: 0; }
-
-        /* Quote Box */
-        .quote-box { background: #000; color: white; padding: 2rem; border-radius: 1rem; margin-bottom: 1.5rem; font-family: Constantia, Georgia, serif; font-size: 1.125rem; line-height: 1.6; }
-        
-        /* Indicators */
-        .dots { display: flex; justify-content: center; gap: 0.5rem; margin-top: 2rem; }
-        .dot { width: 0.5rem; height: 0.5rem; background: #d1d5db; border-radius: 50%; cursor: pointer; transition: all 0.2s; }
-        .dot.active { width: 2rem; background: #000; border-radius: 1rem; }
-
+      .lab-page .tab-panel{display:none}
+      .lab-page .tab-panel.active{display:block}
+      .lab-page .lab-card{border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:18px;background:rgba(255,255,255,.04)}
+      .lab-page .layout{display:grid;grid-template-columns:1.2fr .8fr;gap:16px}
+      .lab-page .scale-labels{display:grid;grid-template-columns:repeat(5,1fr);font-size:12px;color:var(--muted)}
+      .lab-page input[type=range]{width:100%}
+      .lab-page .drill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+      @media(max-width:900px){.lab-page .layout{grid-template-columns:1fr}}
     </style>
-</head>
-<body>
-
-    <div id="root">
+  </head>
+  <body>
+    <div id="root" class="lab-page">
       <header class="header">
         <div class="container">
           <div class="logo"><a href="../index.html"><h1>DebateCraft</h1></a></div>
           <div class="mobile-menu-button" id="mobileMenuButton"><span></span><span></span><span></span></div>
-          <nav class="main-nav" id="mainNav">
-            <ul>
-              <li><a href="../index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="team.html">Our Team</a></li><li><a href="courses.html">Courses</a></li><li><a href="resources.html">Resources</a></li><li><a href="cnresources.html">中文 (繁體)</a></li>
-            </ul>
-          </nav>
+          <nav class="main-nav" id="mainNav"><ul><li><a href="../index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="team.html">Our Team</a></li><li><a href="courses.html">Courses</a></li><li><a href="resources.html">Resources</a></li><li><a href="cnresources.html">中文 (繁體)</a></li></ul></nav>
         </div>
       </header>
 
-      <main class="main-content">
-      <section class="hero">
-        <i data-lucide="mic" style="width:64px; height:64px; margin-bottom:1.5rem;"></i>
-        <h1 style="font-size:3rem; margin:0 0 1.5rem;">Speaking Lab</h1>
-        <p style="color:#4b5563; font-size:1.25rem; max-width:600px; margin:0 auto;">
-            Master the art of public speaking with interactive exercises and techniques used by world-class debaters.
-        </p>
-    </section>
+      <main class="main-content page">
+        <section class="hero"><div class="container"><h1>Speaking Lab</h1><p>Build controlled delivery with practical drills for pace, tone, and emphasis.</p></div></section>
 
-    <section class="container" style="padding-bottom: 5rem;">
-        
-        <div class="tabs-nav">
-            <button class="tab-btn active" onclick="openTab('spectrums', this)">Voice Spectrums</button>
-            <button class="tab-btn" onclick="openTab('exercises', this)">Exercises</button>
-            <button class="tab-btn" onclick="openTab('practice', this)">Practice Texts</button>
-        </div>
-
-        <div id="spectrums" class="tab-content active">
-            <div style="max-width: 800px; margin: 0 auto;">
-                <div class="spectrum-card">
-                    <div class="spectrum-header">
-                        <button class="nav-btn" onclick="prevSpectrum()" id="btn-prev">
-                            <i data-lucide="chevron-left"></i>
-                        </button>
-                        
-                        <div style="text-align: center;">
-                            <div class="spectrum-icon-box" id="spec-icon-container">
-                                </div>
-                            <h3 style="font-size: 1.5rem; margin: 0;" id="spec-label">Volume</h3>
-                        </div>
-
-                        <button class="nav-btn" onclick="nextSpectrum()" id="btn-next">
-                            <i data-lucide="chevron-right"></i>
-                        </button>
-                    </div>
-
-                    <p style="text-align: center; color: #4b5563; margin-bottom: 2.5rem; line-height: 1.6;" id="spec-desc">
-                        Appropriate volume ensures you are heard and respected.
-                    </p>
-
-                    <div style="padding: 0 1rem; margin-bottom: 2.5rem;">
-                        <input type="range" id="spec-slider" min="0" max="100" value="50" oninput="updateLevels(this.value)">
-                        <div class="levels-grid" id="spec-levels">
-                            </div>
-                    </div>
-
-                    <div style="background: white; border-radius: 1rem; padding: 1.5rem;">
-                        <h4 style="margin: 0 0 1rem; display: flex; align-items: center; gap: 0.5rem;">
-                            <i data-lucide="info" width="18"></i> Tips
-                        </h4>
-                        <ul class="step-list" id="spec-tips">
-                            </ul>
-                    </div>
-                </div>
-
-                <div class="dots" id="spec-dots">
-                    </div>
+        <section>
+          <div class="container">
+            <div class="tab-nav" role="tablist">
+              <button class="active" data-tab="spectrums" type="button">Voice Spectrums</button>
+              <button data-tab="drills" type="button">Drills</button>
+              <button data-tab="practice" type="button">Practice Texts</button>
             </div>
-        </div>
 
-        <div id="exercises" class="tab-content">
-            <div class="grid-2">
-                <div class="card">
-                    <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
-                        <span class="badge Beginner">Beginner</span>
-                        <span style="color: #6b7280; font-size: 0.875rem; display: flex; align-items: center; gap: 4px;">
-                            <i data-lucide="timer" width="14"></i> 3 min
-                        </span>
-                    </div>
-                    <h3 style="font-size: 1.25rem; margin: 0 0 0.75rem;">The Breath Foundation</h3>
-                    <p style="color: #4b5563; font-size: 0.875rem; margin-bottom: 1.5rem;">Proper breathing is the foundation of good vocal projection and helps reduce nervousness.</p>
-                    <ul class="step-list">
-                        <li><span class="step-num">1</span> Stand or sit with good posture</li>
-                        <li><span class="step-num">2</span> Breathe in for 4 counts through nose</li>
-                        <li><span class="step-num">3</span> Hold for 2 counts</li>
-                        <li><span class="step-num">4</span> Breathe out for 6 counts through mouth</li>
-                        <li><span class="step-num">5</span> Repeat 5 times before speaking</li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
-                        <span class="badge Beginner">Beginner</span>
-                        <span style="color: #6b7280; font-size: 0.875rem; display: flex; align-items: center; gap: 4px;">
-                            <i data-lucide="timer" width="14"></i> 5 min
-                        </span>
-                    </div>
-                    <h3 style="font-size: 1.25rem; margin: 0 0 0.75rem;">Tongue Twisters</h3>
-                    <p style="color: #4b5563; font-size: 0.875rem; margin-bottom: 1.5rem;">Improve articulation and clarity under pressure.</p>
-                    <ul class="step-list">
-                        <li><span class="step-num">1</span> Start: "Peter Piper picked a peck..."</li>
-                        <li><span class="step-num">2</span> Increase speed while keeping clarity</li>
-                        <li><span class="step-num">3</span> Try: "She sells seashells by the seashore"</li>
-                        <li><span class="step-num">4</span> Repeat each 5 times</li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
-                        <span class="badge Intermediate">Intermediate</span>
-                        <span style="color: #6b7280; font-size: 0.875rem; display: flex; align-items: center; gap: 4px;">
-                            <i data-lucide="timer" width="14"></i> 5 min
-                        </span>
-                    </div>
-                    <h3 style="font-size: 1.25rem; margin: 0 0 0.75rem;">Volume Scaling</h3>
-                    <p style="color: #4b5563; font-size: 0.875rem; margin-bottom: 1.5rem;">Control volume dynamically without straining.</p>
-                    <ul class="step-list">
-                        <li><span class="step-num">1</span> Choose a simple sentence</li>
-                        <li><span class="step-num">2</span> Say at whisper level (1/10)</li>
-                        <li><span class="step-num">3</span> Increase to conversational (5/10)</li>
-                        <li><span class="step-num">4</span> Push to presentation level (7/10)</li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
-                        <span class="badge Advanced">Advanced</span>
-                        <span style="color: #6b7280; font-size: 0.875rem; display: flex; align-items: center; gap: 4px;">
-                            <i data-lucide="timer" width="14"></i> 5 min
-                        </span>
-                    </div>
-                    <h3 style="font-size: 1.25rem; margin: 0 0 0.75rem;">The Pause Power</h3>
-                    <p style="color: #4b5563; font-size: 0.875rem; margin-bottom: 1.5rem;">Master strategic silence to create impact.</p>
-                    <ul class="step-list">
-                        <li><span class="step-num">1</span> Prepare a 30-second argument</li>
-                        <li><span class="step-num">2</span> Pause 2s before main claim</li>
-                        <li><span class="step-num">3</span> Pause 1s after evidence</li>
-                        <li><span class="step-num">4</span> Practice until natural</li>
-                    </ul>
-                </div>
+            <div id="spectrums" class="tab-panel active">
+              <div class="layout">
+                <article class="lab-card">
+                  <h3 id="spec-title">Volume</h3>
+                  <p id="spec-desc">Project enough to command attention without shouting.</p>
+                  <input id="spec-range" type="range" min="0" max="4" value="2" />
+                  <div id="spec-labels" class="scale-labels"></div>
+                  <div style="display:flex;gap:10px;margin-top:12px"><button class="btn btn-secondary" onclick="prevSpec()">Previous</button><button class="btn btn-primary" onclick="nextSpec()">Next</button></div>
+                </article>
+                <article class="lab-card">
+                  <h3>Coaching Notes</h3>
+                  <ul id="spec-tips"></ul>
+                </article>
+              </div>
             </div>
-        </div>
 
-        <div id="practice" class="tab-content">
-            <div style="max-width: 800px; margin: 0 auto; display: grid; gap: 2rem;">
-                
-                <div class="card">
-                    <h3 style="font-size: 1.25rem; margin: 0 0 1rem;">Opening Statement</h3>
-                    <div class="quote-box">
-                        "Ladies and gentlemen, today we stand at a crossroads. The decision before us will shape our community for generations to come. I urge you to consider not just the immediate benefits, but the lasting legacy we will leave."
-                    </div>
-                    <div style="color: #4b5563; font-size: 0.9rem; display: flex; gap: 0.5rem;">
-                        <i data-lucide="sparkles" width="16" style="margin-top:2px;"></i>
-                        <span><strong>Focus:</strong> Practice building dramatic tension and using pauses for effect.</span>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3 style="font-size: 1.25rem; margin: 0 0 1rem;">Evidence Presentation</h3>
-                    <div class="quote-box">
-                        "According to a 2023 study by Harvard University, 78% of participants showed significant improvement when given access to these resources. This isn't just a marginal gain—it's a transformation."
-                    </div>
-                    <div style="color: #4b5563; font-size: 0.9rem; display: flex; gap: 0.5rem;">
-                        <i data-lucide="sparkles" width="16" style="margin-top:2px;"></i>
-                        <span><strong>Focus:</strong> Emphasize statistics and source credibility.</span>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3 style="font-size: 1.25rem; margin: 0 0 1rem;">Logical Argument</h3>
-                    <div class="quote-box">
-                        "If we accept that education improves outcomes, and we accept that outcomes drive economic growth, then we must conclude that investing in education is investing in our economy."
-                    </div>
-                    <div style="color: #4b5563; font-size: 0.9rem; display: flex; gap: 0.5rem;">
-                        <i data-lucide="sparkles" width="16" style="margin-top:2px;"></i>
-                        <span><strong>Focus:</strong> Maintain clarity and use pace to help audience follow logic.</span>
-                    </div>
-                </div>
-
+            <div id="drills" class="tab-panel">
+              <div class="drill-grid">
+                <article class="lab-card"><h3>Breath Ladder (3 min)</h3><p>Inhale 4, hold 2, exhale 6. Repeat while maintaining posture.</p></article>
+                <article class="lab-card"><h3>Pace Contrast (5 min)</h3><p>Deliver the same paragraph at rushed, moderate, and strategic pace.</p></article>
+                <article class="lab-card"><h3>Emphasis Markup (6 min)</h3><p>Underline 5 keywords in your speech and stress only those words.</p></article>
+                <article class="lab-card"><h3>Clarity Sprint (4 min)</h3><p>Read a complex argument slowly, then at round speed while staying clear.</p></article>
+              </div>
             </div>
-        </div>
 
-    </section>
-
-    <script>
-        // --- Data ---
-        const spectrums = [
-            {
-                id: 'volume',
-                label: 'Volume',
-                icon: 'volume-2',
-                levels: ['Very Soft', 'Soft', 'Conversational', 'Loud', 'Yelling'],
-                tips: [
-                    'Match your volume to the room size',
-                    'Increase volume for emphasis, not aggression',
-                    'Project from your diaphragm, not your throat',
-                    'Practice in spaces of different sizes'
-                ],
-                description: 'Appropriate volume ensures you are heard and respected. It conveys confidence and matches the energy of your environment.'
-            },
-            {
-                id: 'tone',
-                label: 'Tone',
-                icon: 'message-square',
-                levels: ['Monotone', 'Flat', 'Expressive', 'Emphatic', 'Dramatic'],
-                tips: [
-                    'Vary your tone to maintain interest',
-                    'Match tone to content emotionally',
-                    'Use rising tone for questions',
-                    'Lower tone for serious points'
-                ],
-                description: 'Tone is the primary way we convey emotion and intent. A rich, expressive tone builds connection with your audience.'
-            },
-            {
-                id: 'pace',
-                label: 'Pace & Pauses',
-                icon: 'gauge',
-                levels: ['Rushed', 'Deliberate', 'Moderate', 'Strategic', 'Masterful'],
-                tips: [
-                    'Pause before key points for emphasis',
-                    'Speed up for less important details',
-                    'Slow down for complex arguments',
-                    'Use silence as a powerful tool'
-                ],
-                description: 'Pacing controls the flow of information. A varied pace keeps listeners engaged, while strategic pauses build emphasis.'
-            },
-            {
-                id: 'emphasis',
-                label: 'Emphasis',
-                icon: 'star',
-                levels: ['Monotonous', 'Weak', 'Moderate', 'Strong', 'Exaggerated'],
-                tips: [
-                    'Emphasize key words in each sentence',
-                    'Use contrast to highlight importance',
-                    'Physical gestures can reinforce emphasis',
-                    'Practice marking emphasis in your notes'
-                ],
-                description: 'Emphasis guides your listener\'s interpretation. It directs their focus and can completely change the meaning of a sentence.'
-            }
-        ];
-
-        // --- Tabs Logic ---
-        function openTab(tabId, btnEl) {
-            // Hide all contents
-            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-            // Remove active class from all buttons
-            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
-            
-            // Show selected
-            document.getElementById(tabId).classList.add('active');
-            // Highlight button
-            if (btnEl) btnEl.classList.add('active');
-        }
-
-        // --- Carousel Logic ---
-        let currentSpectrumIndex = 0;
-
-        function renderSpectrum() {
-            const data = spectrums[currentSpectrumIndex];
-            
-            // Update Text
-            document.getElementById('spec-label').innerText = data.label;
-            document.getElementById('spec-desc').innerText = data.description;
-            
-            // Update Icon
-            const iconContainer = document.getElementById('spec-icon-container');
-            iconContainer.innerHTML = `<i data-lucide="${data.icon}" width="32" height="32"></i>`;
-            
-            // Update Tips
-            const tipsList = document.getElementById('spec-tips');
-            tipsList.innerHTML = data.tips.map(tip => `
-                <li>
-                    <div style="width:6px; height:6px; background:black; border-radius:50%; margin-top:8px; flex-shrink:0;"></div>
-                    ${tip}
-                </li>
-            `).join('');
-
-            // Update Levels (Visuals)
-            const slider = document.getElementById('spec-slider');
-            // Reset slider to middle on switch for better UX
-            slider.value = 50; 
-            updateLevels(50);
-
-            // Update Dots
-            const dotsContainer = document.getElementById('spec-dots');
-            dotsContainer.innerHTML = spectrums.map((_, i) => `
-                <div class="dot ${i === currentSpectrumIndex ? 'active' : ''}" onclick="goToSpectrum(${i})"></div>
-            `).join('');
-
-            // Button States
-            document.getElementById('btn-prev').disabled = currentSpectrumIndex === 0;
-            document.getElementById('btn-next').disabled = currentSpectrumIndex === spectrums.length - 1;
-
-            // Re-render icons since we injected HTML
-            lucide.createIcons();
-        }
-
-        function updateLevels(value) {
-            const data = spectrums[currentSpectrumIndex];
-            const levelsContainer = document.getElementById('spec-levels');
-            const activeIndex = Math.floor(value / 21); // Approx mapping 0-100 to 0-4
-            
-            levelsContainer.innerHTML = data.levels.map((level, i) => `
-                <span class="level-label ${i === activeIndex ? 'active' : ''}">${level}</span>
-            `).join('');
-        }
-
-        function nextSpectrum() {
-            if(currentSpectrumIndex < spectrums.length - 1) {
-                currentSpectrumIndex++;
-                renderSpectrum();
-            }
-        }
-
-        function prevSpectrum() {
-            if(currentSpectrumIndex > 0) {
-                currentSpectrumIndex--;
-                renderSpectrum();
-            }
-        }
-
-        function goToSpectrum(index) {
-            currentSpectrumIndex = index;
-            renderSpectrum();
-        }
-
-        // --- Init ---
-        document.addEventListener('DOMContentLoaded', () => {
-            renderSpectrum();
-        });
-
-        </script>
-      </main>
-      <footer class="footer">
-        <div class="container">
-          <div class="footer-content">
-            <div class="footer-logo"><h2>DebateCraft</h2><p>Students empowering students through the art of debate for a brighter future.</p></div>
-            <div class="footer-links"><h3>Quick Links</h3><ul><li><a href="../index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="team.html">Our Team</a></li><li><a href="courses.html">Courses</a></li><li><a href="resources.html">Resources</a></li></ul></div>
-            <div class="footer-contact"><h3>Contact Us</h3><a href="mailto:info@debatecraft.org">info@debatecraft.org</a></div>
+            <div id="practice" class="tab-panel">
+              <article class="lab-card">
+                <h3>Practice Paragraph</h3>
+                <p id="practice-text">This House would introduce universal basic income for all adults. Your task: weigh fiscal cost against dignity, security, and long-term productivity.</p>
+                <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn btn-primary" onclick="nextPractice()">New Prompt</button><button class="btn btn-secondary" onclick="copyPrompt()">Copy Text</button></div>
+              </article>
+            </div>
           </div>
-          <div class="footer-bottom"><p>&copy; 2025 DebateCraft. All rights reserved.</p></div>
-        </div>
-      </footer>
+        </section>
+      </main>
+
+      <footer class="footer"><div class="container"><div class="footer-content"><div class="footer-logo"><h2>DebateCraft</h2><p>Students empowering students through the art of debate for a brighter future.</p></div><div class="footer-links"><h3>Quick Links</h3><ul><li><a href="../index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="team.html">Our Team</a></li><li><a href="courses.html">Courses</a></li><li><a href="resources.html">Resources</a></li></ul></div><div class="footer-contact"><h3>Contact Us</h3><a href="mailto:info@debatecraft.org">info@debatecraft.org</a></div></div><div class="footer-bottom"><p>&copy; 2025 DebateCraft. All rights reserved.</p></div></div></footer>
     </div>
 
     <script src="../scripts/main.js"></script>
-</body>
+    <script>
+      const specs=[
+        {title:'Volume',desc:'Project enough to command attention without shouting.',levels:['Too soft','Soft','Balanced','Strong','Overpowering'],tips:['Use diaphragm support, not throat force.','Match room size and judge distance.']},
+        {title:'Tone',desc:'Tone signals confidence, urgency, and empathy.',levels:['Flat','Limited','Varied','Expressive','Dramatic'],tips:['Drop pitch on conclusions.','Use tonal contrast between claims and weighing.']},
+        {title:'Pace',desc:'Vary pace to prioritize your biggest impacts.',levels:['Rushed','Fast','Moderate','Measured','Too slow'],tips:['Slow down for mechanisms.','Pause before key comparative lines.']},
+        {title:'Emphasis',desc:'Stress key words so judges remember the right idea.',levels:['None','Weak','Targeted','Strong','Overdone'],tips:['Emphasize verbs and impacts.','Avoid emphasizing every sentence equally.']}
+      ];
+      const practice=[
+        'THW require all social media platforms to verify political advertising claims before publication.',
+        'THBT universities should prioritize need-based scholarships over merit-based scholarships.',
+        'THW ban child influencers from monetized social media content.'
+      ];
+      let sIdx=0,pIdx=0;
+      function renderSpec(){
+        const s=specs[sIdx];
+        document.getElementById('spec-title').textContent=s.title;
+        document.getElementById('spec-desc').textContent=s.desc;
+        document.getElementById('spec-labels').innerHTML=s.levels.map(v=>`<span>${v}</span>`).join('');
+        document.getElementById('spec-tips').innerHTML=s.tips.map(t=>`<li>${t}</li>`).join('');
+        document.getElementById('spec-range').value=2;
+      }
+      function nextSpec(){sIdx=(sIdx+1)%specs.length;renderSpec();}
+      function prevSpec(){sIdx=(sIdx-1+specs.length)%specs.length;renderSpec();}
+      function nextPractice(){pIdx=(pIdx+1)%practice.length;document.getElementById('practice-text').textContent=practice[pIdx];}
+      async function copyPrompt(){await navigator.clipboard.writeText(document.getElementById('practice-text').textContent);}
+
+      document.querySelectorAll('.tab-nav button').forEach(btn=>btn.addEventListener('click',()=>{
+        document.querySelectorAll('.tab-nav button').forEach(b=>b.classList.remove('active'));
+        document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(btn.dataset.tab).classList.add('active');
+      }));
+      renderSpec();
+    </script>
+  </body>
 </html>

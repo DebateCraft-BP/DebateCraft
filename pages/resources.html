@@ -6,93 +6,24 @@
     <title>DebateCraft - Resources</title>
     <link rel="stylesheet" href="../styles/main.css" />
     <style>
-      .resource-hub-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 16px;
-      }
-
-      .resource-hub-link {
-        text-decoration: none;
-      }
-
-      .resource-hub-card {
-        min-height: 170px;
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        border-radius: 18px;
-        padding: 22px;
-        background: rgba(255, 255, 255, 0.04);
-        backdrop-filter: blur(10px);
-        transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
-      }
-
-      .resource-hub-card:hover {
-        transform: translateY(-2px);
-        border-color: rgba(40, 188, 236, 0.4);
-        box-shadow: var(--shadow-md);
-      }
-
-      .resource-pill {
-        width: 40px;
-        height: 40px;
-        border-radius: 10px;
-        display: grid;
-        place-items: center;
-        font-size: 20px;
-        margin-bottom: 10px;
-        background: linear-gradient(135deg, rgba(40, 188, 236, 0.2), rgba(244, 152, 53, 0.2));
-      }
-
-      .resources-tabs { max-width: 1100px; margin: 0 auto; }
-      .resource-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 14px;
-      }
-
-      .resource-card {
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        border-radius: 16px;
-        padding: 16px;
-        background: rgba(255, 255, 255, 0.03);
-      }
-
-      .video-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 14px;
-      }
-
-      .video-card {
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        border-radius: 16px;
-        overflow: hidden;
-        background: rgba(255, 255, 255, 0.03);
-      }
-
-      .video-card iframe {
-        width: 100%;
-        height: 200px;
-        border: 0;
-      }
-
-      .video-card-body { padding: 14px; }
-
-      .tab-panel { display: none; }
-      .tab-panel.active { display: block; }
+      .resources-page .hero-copy { max-width: 760px; }
+      .resources-page .resource-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; }
+      .resources-page .resource-tile { border:1px solid rgba(255,255,255,.12); border-radius:18px; padding:20px; background:rgba(255,255,255,.04); }
+      .resources-page .resource-tile h3 { margin-bottom:8px; }
+      .resources-page .resource-tile .btn { margin-top:10px; }
+      .resources-page .section-head { margin-bottom:18px; }
+      .resources-page .video-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:16px; }
+      .resources-page .video-card { border:1px solid rgba(255,255,255,.12); border-radius:16px; overflow:hidden; background:rgba(255,255,255,.04); }
+      .resources-page iframe { width:100%; height:190px; border:0; }
+      .resources-page .video-body { padding:14px; }
     </style>
   </head>
-
   <body>
-    <div id="root">
+    <div id="root" class="resources-page">
       <header class="header">
         <div class="container">
-          <div class="logo">
-            <a href="../index.html"><h1>DebateCraft</h1></a>
-          </div>
-          <div class="mobile-menu-button" id="mobileMenuButton">
-            <span></span><span></span><span></span>
-          </div>
+          <div class="logo"><a href="../index.html"><h1>DebateCraft</h1></a></div>
+          <div class="mobile-menu-button" id="mobileMenuButton"><span></span><span></span><span></span></div>
           <nav class="main-nav" id="mainNav">
             <ul>
               <li><a href="../index.html">Home</a></li>
@@ -105,7 +36,7 @@
                   <li><a href="blog.html">Blog</a></li>
                   <li><a href="guides.html">Guides</a></li>
                   <li><a href="manner.html">Public Speaking</a></li>
-                  <li><a href="Even if.html">Mitigation</a></li>
+                  <li><a href="games.html#mitigation-lab">Mitigation Lab</a></li>
                 </ul>
               </li>
               <li><a href="cnresources.html">中文 (繁體)</a></li>
@@ -114,142 +45,60 @@
         </div>
       </header>
 
-      <main class="main-content">
-        <div class="page">
-          <section class="page-header">
-            <div class="container">
-              <h1>Resources</h1>
-              <p>Comprehensive guides, videos, and tools curated by our coaching team and global debaters.</p>
+      <main class="main-content page">
+        <section class="hero">
+          <div class="container hero-copy">
+            <h1>Resources Hub</h1>
+            <p>Everything in one place: structured guides, speaking tools, games, and curated round footage to accelerate your debate growth.</p>
+          </div>
+        </section>
+
+        <section>
+          <div class="container">
+            <div class="section-head">
+              <h2>Practice Paths</h2>
+              <p>Pick a mode based on what you want to improve today.</p>
             </div>
-          </section>
-
-          <section>
-            <div class="container resource-hub-grid">
-              <a class="resource-hub-link" href="guides.html">
-                <article class="resource-hub-card">
-                  <div class="resource-pill">📚</div>
-                  <h3>Guides</h3>
-                  <p>Lecture notes, prep templates, and curated PDFs for every level.</p>
-                </article>
-              </a>
-              <a class="resource-hub-link" href="speaking-lab.html">
-                <article class="resource-hub-card">
-                  <div class="resource-pill">🎤</div>
-                  <h3>Speaking Lab</h3>
-                  <p>Interactive public speaking exercises and delivery-focused drills.</p>
-                </article>
-              </a>
-              <a class="resource-hub-link" href="games.html">
-                <article class="resource-hub-card">
-                  <div class="resource-pill">🎮</div>
-                  <h3>Debate Games</h3>
-                  <p>Practice with short, engaging challenges to sharpen strategy.</p>
-                </article>
-              </a>
+            <div class="resource-grid">
+              <article class="resource-tile"><h3>Guides Library</h3><p>Lecture notes, prep templates, and skill breakdowns.</p><a class="btn btn-primary" href="guides.html">Open Guides</a></article>
+              <article class="resource-tile"><h3>Speaking Lab</h3><p>Voice, pacing, and delivery drills with interactive controls.</p><a class="btn btn-primary" href="speaking-lab.html">Open Speaking Lab</a></article>
+              <article class="resource-tile"><h3>Debate Games</h3><p>Quick decision rounds for fallacies, rebuttal, and motion analysis.</p><a class="btn btn-primary" href="games.html">Open Games</a></article>
+              <article class="resource-tile"><h3>Mitigation Lab</h3><p>Train “even if” responses and reduce opponent impact clearly.</p><a class="btn btn-primary" href="games.html#mitigation-lab">Start Mitigation Lab</a></article>
             </div>
-          </section>
+          </div>
+        </section>
 
-          <section>
-            <div class="container resources-tabs">
-              <h2>PDF Guides by Level</h2>
-              <p>Browse topic packs and tools based on your current level.</p>
-
-              <div class="tab-nav" role="tablist" aria-label="Resource levels">
-                <button class="active" data-tab="beginner" type="button">Beginner</button>
-                <button data-tab="intermediate" type="button">Intermediate</button>
-                <button data-tab="advanced" type="button">Advanced</button>
-              </div>
-
-              <div id="beginner" class="tab-panel active">
-                <div class="resource-grid">
-                  <article class="resource-card"><h3>Actor Analysis</h3><p>Identify and compare key actors in a motion.</p><a class="btn btn-primary" href="https://drive.google.com/file/d/1s3Pxih9tYPR0wxWfwcMtbMbb0baq2v8C/view?usp=drive_link" target="_blank" rel="noopener noreferrer">View PDF</a></article>
-                  <article class="resource-card"><h3>POIs</h3><p>Use points of information strategically and efficiently.</p><a class="btn btn-primary" href="https://drive.google.com/file/d/1t1_pRtyKPTS2FcdXMI_kIOZXaomlFjnm/view?usp=drive_link" target="_blank" rel="noopener noreferrer">View PDF</a></article>
-                  <article class="resource-card"><h3>Intro to WSDC</h3><p>Foundations of structure, roles, and judging in WSDC.</p><a class="btn btn-primary" href="https://drive.google.com/file/d/1c-I9MElNcUhFFxk7wuZs9kh_bJae287w/view?usp=drive_link" target="_blank" rel="noopener noreferrer">View PDF</a></article>
-                </div>
-              </div>
-
-              <div id="intermediate" class="tab-panel">
-                <div class="resource-grid">
-                  <article class="resource-card"><h3>Accelerated Intro to Debate</h3><p>Framing, mechanization, impacting, and BP basics.</p><a class="btn btn-primary" href="https://docs.google.com/document/d/1dCh-skFd872tflOcMX-SEJP0ZogdVy-n1679vK5HSkY/edit?usp=sharing" target="_blank" rel="noopener noreferrer">View PDF</a></article>
-                  <article class="resource-card"><h3>WSDC 2026 Handbook</h3><p>A practical guide to speeches, POIs, and adjudication.</p><a class="btn btn-primary" href="https://docs.google.com/document/d/10I7HdhOEDC2JtekXl-xQ--5DIlMrxegWXWwlL7z9DIs/edit?tab=t.5q6m8rewq23a" target="_blank" rel="noopener noreferrer">View PDF</a></article>
-                  <article class="resource-card"><h3>Motion Prep Template</h3><p>A framework to maximize prep-time in practice rounds.</p><a class="btn btn-primary" href="https://drive.google.com/file/d/1bIUDilinW43CM-aeis_wz_jBvgZKC3or/view?usp=drive_link" target="_blank" rel="noopener noreferrer">View PDF</a></article>
-                </div>
-              </div>
-
-              <div id="advanced" class="tab-panel">
-                <div class="resource-grid">
-                  <article class="resource-card"><h3>Winning Debates</h3><p>Classic material on strategy, impact analysis, and framing.</p><a class="btn btn-primary" href="https://drive.google.com/file/d/1OsQDt1PaoY6hrrJD_DQX904cRXse8g54/view?usp=drive_link" target="_blank" rel="noopener noreferrer">View PDF</a></article>
-                  <article class="resource-card"><h3>Summer Workshop Pack</h3><p>High-level drills and thematic prep resources.</p><a class="btn btn-primary" href="https://docs.google.com/document/d/1yZnTmzlvEZW61lgA5RWzdaM3Yb9_KsWWy0vjNuyl1Dc/edit?tab=t.0" target="_blank" rel="noopener noreferrer">View PDF</a></article>
-                </div>
-              </div>
+        <section>
+          <div class="container">
+            <div class="section-head">
+              <h2>Featured Round Footage</h2>
+              <p>Watch elite rounds, then read transcripts to review strategy.</p>
             </div>
-          </section>
-
-          <section>
-            <div class="container">
-              <h2>Featured Debate Videos</h2>
-              <p>Watch top rounds and review strategic patterns from elite teams.</p>
-              <div class="video-grid">
-                <article class="video-card">
-                  <iframe src="https://www.youtube.com/embed/P1Q2lWfHvn4" title="WSDC 2025 Grand Final" allowfullscreen></iframe>
-                  <div class="video-card-body"><h3>WSDC 2025 Grand Final</h3><a class="btn btn-primary" href="https://debating404.com/full-debate-panama-wsdc-2025-grand-final-india-vs-australia-th-prefers-a-world-with-a-strong-belief-in-seriti/" target="_blank" rel="noopener noreferrer">Read Transcript</a></div>
-                </article>
-                <article class="video-card">
-                  <iframe src="https://www.youtube.com/embed/1xohrV5pheM?start=218" title="WSDC 2024 Grand Final" allowfullscreen></iframe>
-                  <div class="video-card-body"><h3>WSDC 2024 Grand Final</h3><a class="btn btn-primary" href="https://debating404.com/serbia-wsdc-2024-grand-final-scotland-vs-bulgaria/" target="_blank" rel="noopener noreferrer">Read Transcript</a></div>
-                </article>
-              </div>
+            <div class="video-grid">
+              <article class="video-card">
+                <iframe src="https://www.youtube.com/embed/_kjeQW-RNyw?start=420" title="WSDC 2025 Final" allowfullscreen></iframe>
+                <div class="video-body"><h3>WSDC 2025 Grand Final</h3><a class="btn btn-primary" href="https://debating404.com/full-debate-panama-wsdc-2025-grand-final-india-vs-australia-th-prefers-a-world-with-a-strong-belief-in-seriti/" target="_blank" rel="noopener noreferrer">Read Transcript</a></div>
+              </article>
+              <article class="video-card">
+                <iframe src="https://www.youtube.com/embed/1xohrV5pheM?start=218" title="WSDC 2024 Final" allowfullscreen></iframe>
+                <div class="video-body"><h3>WSDC 2024 Grand Final</h3><a class="btn btn-primary" href="https://debating404.com/serbia-wsdc-2024-grand-final-scotland-vs-bulgaria/" target="_blank" rel="noopener noreferrer">Read Transcript</a></div>
+              </article>
             </div>
-          </section>
-        </div>
+          </div>
+        </section>
       </main>
 
       <footer class="footer">
         <div class="container">
           <div class="footer-content">
-            <div class="footer-logo">
-              <h2>DebateCraft</h2>
-              <p>Students empowering students through the art of debate for a brighter future.</p>
-            </div>
-            <div class="footer-links">
-              <h3>Quick Links</h3>
-              <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="team.html">Our Team</a></li>
-                <li><a href="courses.html">Courses</a></li>
-                <li><a href="resources.html">Resources</a></li>
-              </ul>
-            </div>
-            <div class="footer-contact">
-              <h3>Contact Us</h3>
-              <a href="mailto:info@debatecraft.org">info@debatecraft.org</a>
-              <div class="social-links">
-                <a href="https://www.facebook.com/profile.php?id=61577761071956" target="_blank" rel="noopener noreferrer">Facebook</a>
-                <a href="https://www.instagram.com/debate_craft/" target="_blank" rel="noopener noreferrer">Instagram</a>
-              </div>
-            </div>
+            <div class="footer-logo"><h2>DebateCraft</h2><p>Students empowering students through the art of debate for a brighter future.</p></div>
+            <div class="footer-links"><h3>Quick Links</h3><ul><li><a href="../index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="team.html">Our Team</a></li><li><a href="courses.html">Courses</a></li><li><a href="resources.html">Resources</a></li></ul></div>
+            <div class="footer-contact"><h3>Contact Us</h3><a href="mailto:info@debatecraft.org">info@debatecraft.org</a></div>
           </div>
           <div class="footer-bottom"><p>&copy; 2025 DebateCraft. All rights reserved.</p></div>
         </div>
       </footer>
     </div>
-
     <script src="../scripts/main.js"></script>
-    <script>
-      const tabButtons = document.querySelectorAll('.tab-nav button');
-      const tabPanels = document.querySelectorAll('.tab-panel');
-
-      tabButtons.forEach((button) => {
-        button.addEventListener('click', () => {
-          const target = button.dataset.tab;
-          tabButtons.forEach((btn) => btn.classList.remove('active'));
-          tabPanels.forEach((panel) => panel.classList.remove('active'));
-          button.classList.add('active');
-          const panel = document.getElementById(target);
-          if (panel) panel.classList.add('active');
-        });
-      });
-    </script>
   </body>
 </html>

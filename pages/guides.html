@@ -5,6 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DebateCraft - Students empowering students through the art of debate</title>
     <link rel="stylesheet" href="../styles/main.css" />
+    <style>
+      .guides-grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 1.5rem;
+      }
+      .grid-item {
+        background-color: #1a202c;
+        border-radius: 0.5rem;
+        padding: 1.5rem;
+        transition: transform 0.2s;
+      }
+      .grid-item:hover {
+        transform: translateY(-5px);
+      }
+      .grid-item h2, .grid-item h3 {
+        margin-bottom: 1rem;
+      }
+      .grid-item.title-card {
+        grid-column: span 12;
+        background-color: transparent;
+        padding: 0;
+      }
+      .grid-item.guide-card {
+        grid-column: span 4;
+      }
+      .grid-item.video-card {
+        grid-column: span 6;
+      }
+      .video-wrapper {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 */
+        height: 0;
+        overflow: hidden;
+        border-radius: 0.5rem;
+        margin-bottom: 1rem;
+      }
+      .video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+
   </head>
 
   <body>
@@ -60,57 +106,64 @@
                 Download our curated drill sheets, lecture notes, and round prep materials created by DebateCraft coaches.
               </p>
 
-              <div class="resource-list">
-                <h2>Intro to Debate Guides</h2>
-                <article class="resource-card">
+              <div class="guides-grid">
+                <div class="grid-item title-card">
+                  <h2>Intro to Debate Guides</h2>
+                </div>
+                <article class="grid-item guide-card">
                   <h3>Actor Analysis</h3>
                   <p>How to identify and analyze different actors within a debate motion</p>
                   <button class="btn btn-primary"><a href="https://drive.google.com/file/d/1s3Pxih9tYPR0wxWfwcMtbMbb0baq2v8C/view?usp=drive_link">View PDF</a></button>
                 </article>
-                <article class="resource-card">
+                <article class="grid-item guide-card">
                   <h3>POIs</h3>
                   <p>What are POIs and how can we use them strategically?</p>
                   <button class="btn btn-primary"><a href="https://drive.google.com/file/d/1t1_pRtyKPTS2FcdXMI_kIOZXaomlFjnm/view?usp=drive_link">View PDF</a></button>
                 </article>
-                <article class="resource-card">
+                <article class="grid-item guide-card">
                   <h3>ESU introduction to WSDC</h3>
                   <p></p>
                   <button class="btn btn-primary"><a href="https://drive.google.com/file/d/1c-I9MElNcUhFFxk7wuZs9kh_bJae287w/view?usp=drive_link">View PDF</a></button>
                 </article>
-                <article class="resource-card">
+                <article class="grid-item guide-card">
                   <h3>DebateCraft WSDC Motion Prep document</h3>
                   <p>A document that can help debaters use their prep time fully</p>
                   <button class="btn btn-primary"><a href="https://drive.google.com/file/d/1bIUDilinW43CM-aeis_wz_jBvgZKC3or/view?usp=drive_link">View PDF</a></button>
                 </article>
 
-                <h2>Intermediate Debate Guides</h2>
-                <article class="resource-card">
+                <div class="grid-item title-card">
+                  <h2>Intermediate Debate Guides</h2>
+                </div>
+                <article class="grid-item guide-card">
                   <h3>DebateCraft's Accelerated Introduction to Debate</h3>
                   <p>Intermediate guide to framing, mechanization, impacting, and BP.</p>
                   <button class="btn btn-primary"><a href="https://docs.google.com/document/d/1dCh-skFd872tflOcMX-SEJP0ZogdVy-n1679vK5HSkY/edit?usp=sharing">View PDF</a></button>
                 </article>
-                <article class="resource-card">
+                <article class="grid-item guide-card">
                   <h3>WSDC 2026 Debater Handbook</h3>
                   <p>A guide to key elements of the World Schools Debating Championships (WSDC) format, speeches, judging, and common terminology.</p>
                   <button class="btn btn-primary"><a href="https://docs.google.com/document/d/10I7HdhOEDC2JtekXl-xQ--5DIlMrxegWXWwlL7z9DIs/edit?tab=t.5q6m8rewq23a">View PDF</a></button>
                 </article>
-                <article class="resource-card">
+                <article class="grid-item guide-card">
                   <h3>DebateCraft BP Opening Teams Motion Prep document</h3>
                   <p>A document that can help debaters use their prep time fully</p>
                   <button class="btn btn-primary"><a href="https://drive.google.com/file/d/1v6DSFjK0cAoFp53lSCuOIqqrJm5ktXDT/view?usp=drive_link">View PDF</a></button>
                 </article>
-                <article class="resource-card">
+                <article class="grid-item guide-card">
                   <h3>DebateCraft BP Closing Teams Motion Prep document</h3>
                   <p>A document that can help debaters use their prep time fully</p>
                   <button class="btn btn-primary"><a href="https://drive.google.com/file/d/10yxAV9gZMj0BEGYdt-1nCK4E3cC1OMaY/view?usp=drive_link">View PDF</a></button>
                 </article>
-                <h2>Advanced Debate Guides Guides</h2>
-                <article class="resource-card">
+
+                <div class="grid-item title-card">
+                  <h2>Advanced Debate Guides</h2>
+                </div>
+                <article class="grid-item guide-card">
                   <h3>Winning Debates</h3>
                   <p>Winning Debates by Steven L. Johnson is a canon debate guide that eloquently describes mechanization, impacting, strategy and more</p>
                   <button class="btn btn-primary"><a href="https://drive.google.com/file/d/1OsQDt1PaoY6hrrJD_DQX904cRXse8g54/view?usp=drive_link">View PDF</a></button>
                 </article>
-                <article class="resource-card">
+                <article class="grid-item guide-card">
                   <h3>Ryan Lafferty's Summer Workshops Resources</h3>
                   <p></p>
                   <button class="btn btn-primary"><a href="https://docs.google.com/document/d/1yZnTmzlvEZW61lgA5RWzdaM3Yb9_KsWWy0vjNuyl1Dc/edit?tab=t.0">View PDF</a></button>
@@ -127,48 +180,64 @@
                 Watch recorded workshops, demo rounds, and lectures chosen by DebateCraft coaches.
               </p>
 
-              <div class="resource-list">
+              <div class="guides-grid">
                 <!-- Example Video 1 -->
-                <article class="resource-card">
+                <article class="grid-item video-card">
                   <h3>Burdens of Proof by Katharina Margareta Jansen</h3>
                   <div class="video-wrapper">
                   <iframe width="560" height="315" src="https://www.youtube.com/embed/gihbX8zt8kM?si=gQaOlyt-As2VXWKX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                  </div>
                 </article>
-                <article class="resource-card">
+                <article class="grid-item video-card">
                   <h3>Manchester Debating Union Workshops</h3>
                   <div class="video-wrapper">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/Xd_8jrid_mk?si=TpgUizL63HMH8_7l" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  </div>
+                  <div class="video-wrapper">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/hN55gM0f4dw?si=EIAZQbN8lHoqTkWW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  </div>
+                  <div class="video-wrapper">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/t2-RrvOtf0M?si=wKU_BnfgpjztS03V" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  </div>
                 </article>
                 <!-- Example Video 2 -->
-                <article class="resource-card">
+                <article class="grid-item video-card">
                   <h3>UChicago BP Debate Workshops</h3>
-                  <iframe width="560" height="315" src="https://www.youtube.com/embed/zJz94XG9kkc?si=Ei-xtz1hlxYwI2p7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                  </div>
-                  <iframe width="560" height="315" src="https://www.youtube.com/embed/EpLqPTdHy80?si=u3h6hBKfe1W5UTdp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                  <iframe width="560" height="315" src="https://www.youtube.com/embed/-oicMC4_ylE?si=Nn5j0ukpmGBA42kq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                
+                  <div class="video-wrapper">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/zJz94XG9kkc?si=Ei-xtz1hlxYwI2p7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                  </div>
+                  <div class="video-wrapper">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/EpLqPTdHy80?si=u3h6hBKfe1W5UTdp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  </div>
+                  <div class="video-wrapper">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/-oicMC4_ylE?si=Nn5j0ukpmGBA42kq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  </div>
                 </article>
                 <!-- Example Video 3 -->
-                <article class="resource-card">
+                <article class="grid-item video-card">
                   <h3>SUNDO Workshops</h3>
                   <div class="video-wrapper">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/5RSVnsywbfA?si=Hcdv5Ceviw57NNwO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                  </div>
                 </article>
-                <article class="resource-card">
+                <article class="grid-item video-card">
                   <h3> Debate Rounds to Watch</h3>
                   <h4> WSDC 2025 Grand Final</h4>
                   <div class="video-wrapper">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/_kjeQW-RNyw?si=33RNaAEGOqvl_BbN&amp;start=420" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <button class="btn btn-primary"><a href="https://debating404.com/full-debate-panama-wsdc-2025-grand-final-india-vs-australia-th-prefers-a-world-with-a-strong-belief-in-seriti/">Read Transcript</a></button>
+                  </div>
+                  <button class="btn btn-primary"><a href="https://debating404.com/full-debate-panama-wsdc-2025-grand-final-india-vs-australia-th-prefers-a-world-with-a-strong-belief-in-seriti/">Read Transcript</a></button>
+                </article>
+                <article class="grid-item video-card">
                   <h4> WSDC 2024 Grand Final</h4>
                   <div class="video-wrapper">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/1xohrV5pheM?si=OLexTKI1jW9tc2Ft&amp;start=218" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <button class="btn btn-primary"><a href="https://debating404.com/serbia-wsdc-2024-grand-final-scotland-vs-bulgaria/">Read Transcript</a></button>
-                    <h4> WSDC 2017 Grand Final</h4>
+                  </div>
+                  <button class="btn btn-primary"><a href="https://debating404.com/serbia-wsdc-2024-grand-final-scotland-vs-bulgaria/">Read Transcript</a></button>
+                </article>
+                <article class="grid-item video-card">
+                  <h4> WSDC 2017 Grand Final</h4>
                   <div class="video-wrapper">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/4HUFM3JZaLQ?si=a15LLPLnlL08gwD8&amp;start=351" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                    
-                    <button class="btn btn-primary"><a href="https://debating404.com/full-indonesia-wsdc-2017-grand-final-england-vs-singapore/">Read Transcript</a></button>
-
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/4HUFM3JZaLQ?si=a15LLPLnlL08gwD8&amp;start=351" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  </div>
+                  <button class="btn btn-primary"><a href="https://debating404.com/full-indonesia-wsdc-2017-grand-final-england-vs-singapore/">Read Transcript</a></button>
                 </article>
               </div>
             </div>

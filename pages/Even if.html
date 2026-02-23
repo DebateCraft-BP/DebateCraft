@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&family=Black+Ops+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/main.css" />
 
     <script>
         tailwind.config = {
@@ -96,10 +97,49 @@
             transition: all 0.2s ease;
         }
         .diff-btn:hover { transform: translateY(-2px); filter: brightness(1.2); }
+        
+        /* Navigation bar styles for game page */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(2, 6, 23, 0.95) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        body {
+            padding-top: 80px; /* Space for fixed header */
+        }
     </style>
 </head>
 
 <body class="h-screen w-screen flex flex-col md:flex-row font-sans bg-deep-bg">
+    <header class="header">
+      <div class="container">
+        <div class="logo">
+          <a href="../index.html">
+            <h1>DebateCraft</h1>
+          </a>
+        </div>
+        <div class="mobile-menu-button" id="mobileMenuButton">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <nav class="main-nav" id="mainNav">
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./team.html">Our Team</a></li>
+            <li><a href="./courses.html">Courses</a></li>
+            <li><a href="./resources.html">Resources</a></li>
+            <li><a href="../cnindex.html">中文 (繁體)</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
     <!-- === GAME VIEWPORT === -->
     <div id="game-viewport" class="relative h-[35%] md:h-full w-full md:w-3/5 border-b md:border-b-0 md:border-r border-gray-800 overflow-hidden shrink-0">
@@ -193,7 +233,7 @@
                 </div>
                 <div class="text-[10px] text-gray-400 font-mono relative z-10">Complex Topics. Panic Mode.</div>
             </button>
-            <a href="resources.html" class="diff-btn-link">
+            <a href="./resources.html" class="diff-btn-link">
   <button
     type="button"
     class="diff-btn bg-gray-800 hover:bg-deep-orange/20 border border-gray-700 hover:border-deep-orange p-4 text-left group relative overflow-hidden text-white"
@@ -508,5 +548,6 @@
         setTimeout(() => { resizeCanvas(); initStars(); animateStars(); }, 100);
 
     </script>
-</body>
+    <script src="../scripts/main.js"></script>
+  </body>
 </html>

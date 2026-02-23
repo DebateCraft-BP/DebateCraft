@@ -7,4 +7,13 @@ document.addEventListener("DOMContentLoaded", function () {
       mainNav.classList.toggle("open");
     });
   }
+
+  const dropdown = document.querySelector(".dropdown");
+  const dropdownContent = document.querySelector(".dropdown-content");
+
+  if (dropdown && dropdownContent) {
+    dropdown.addEventListener("click", function () {
+      dropdownContent.classList.toggle("show");
+    });
+  }
 });

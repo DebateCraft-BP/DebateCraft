@@ -12,21 +12,38 @@
         gap: 1.5rem;
       }
       .grid-item {
-        background-color: #1a202c;
+        background-color: #243447;
         border-radius: 0.5rem;
         padding: 1.5rem;
         transition: transform 0.2s;
+        color: #f8fafc;
       }
       .grid-item:hover {
         transform: translateY(-5px);
       }
-      .grid-item h2, .grid-item h3 {
+      .grid-item h2, .grid-item h3, .grid-item h4 {
         margin-bottom: 1rem;
+        color: #ffffff !important;
+        background: none !important;
+        -webkit-background-clip: unset !important;
+        -webkit-text-fill-color: #ffffff !important;
+        background-clip: unset !important;
+      }
+      .grid-item p {
+        color: #e2e8f0;
+      }
+      .grid-item .btn a {
+        color: #ffffff;
       }
       .grid-item.title-card {
         grid-column: span 12;
         background-color: transparent;
         padding: 0;
+        color: inherit;
+      }
+      .grid-item.title-card h2 {
+        color: #ffffff !important;
+        -webkit-text-fill-color: #ffffff !important;
       }
       .grid-item.guide-card {
         grid-column: span 4;

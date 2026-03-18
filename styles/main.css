@@ -850,6 +850,9 @@ p {
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   object-fit: cover;
+  object-position: center;  /* Ensures focus on image centers */
+  display: block;  /* Prevents layout gaps */
+
 }
 
 .placeholder-image{

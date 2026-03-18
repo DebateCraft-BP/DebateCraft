@@ -57,12 +57,13 @@ body {
 
 .main-content {
   flex: 1;
+  
 }
 
 .container {
-  width: 100%;
+  width: 94%;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0px auto;
   padding: 0 20px;
 }
 
@@ -178,6 +179,15 @@ p {
   /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); */
 }
 
+.header.sticky-header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
 .header .container {
   display: flex;
   justify-content: space-between;
@@ -203,6 +213,14 @@ p {
 
 .logo a:hover {
   color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.resources-logo h1 {
+  font-family: 'DM Sans', 'Lato', 'Segoe UI', Tahoma, sans-serif;
+}
+
+.resources-header {
+  font-family: 'DM Sans', 'Lato', 'Segoe UI', Tahoma, sans-serif;
 }
 
 .main-nav ul {
@@ -862,7 +880,6 @@ p {
 }
 
 
-
 .team-card h3,
 .team-card h4,
 .team-card p {
@@ -1226,15 +1243,17 @@ section:nth-child(even) {
 /* Dropdown content — vertical menu & slow fade */
 .dropdown-content {
   position: absolute;
-  top: calc(100% + 30px);  /* Floats further below nav bar */
+  top: 100%;
   left: 0;
   background-color: #16213e;
+  /* border: 1.5px solid rgba(255, 255, 255, 0.6); */
   box-shadow: 0 8px 20px rgba(0,0,0,0.25);
   min-width: 220px;
   border-radius: 8px;
   overflow: hidden;
   z-index: 2000;
   padding: 10px 0;
+  padding-bottom: 40px;
   display: flex;
   flex-direction: column;  /* Makes menu vertical */
   opacity: 0;
@@ -1255,13 +1274,14 @@ section:nth-child(even) {
 
 /* Each dropdown item */
 .dropdown-content li {
+  height: 30px;
   width: 100%;
 }
 .dropdown-content li a {
   display: block;
   width: 100%;
   padding: 14px 24px;
-  color: white;
+  color: #fff !important;
   text-decoration: none;
   font-weight: 600;
   transition: background 0.2s ease, color 0.2s ease;

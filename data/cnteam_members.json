@@ -4,7 +4,7 @@
     "role": "執行總監",
     "school": "Phillips Exeter Academy，美国",
     "image": "Images/Adrian.png",
-    "categories": ["executive", "coaching", "bioethics", "outreach"],
+    "categories": ["executive", "coaching", "epi", "outreach"],
     "bio": "擁有超過五年國際辯論經驗嘅資深教育工作者。Adrian 曾喺 2023 年打入 ICYD 國際總決賽、2025 年喺 Oxford Schools 突破，並喺 2025 年 Team Canada Fundraiser 奪得季軍同第三最佳辯手。他將多年辯論心得整理成系統化教學架構，已經幫助超過一百位來自香港、英國同美國嘅辯手穩定提升表現。"
   },
   {
@@ -12,7 +12,7 @@
     "role": "執行總監",
     "school": "Phillips Exeter Academy，美国",
     "image": "Images/Gavin.png",
-    "categories": ["executive", "coaching", "PF"],
+    "categories": ["executive", "coaching", "PF","private"],
     "bio": "全國級 Public Forum 辯手，喺中國 PF 賽區一直有好出色嘅成績，同時累積咗五年辯論經驗。Gavin 先後兩次晉級 TOC（2022、2023），亦有參加 Oxford Schools 2025。佢主要負責團隊營運、網站開發同中文外展，推動 DebateCraft 走入更多社群。"
   },
   {
@@ -28,7 +28,7 @@
     "role": "課程開發主管",
     "school": "Winchester College，英國",
     "image": "Images/Matthew.png",
-    "categories": ["executive", "coaching"],
+    "categories": ["executive", "coaching","private"],
     "bio": "具備四年 BP 辯論同評審經驗嘅競技辯手，曾經出戰 ICYD 同 Cambridge Schools。Matthew 而家喺 Winchester 擔任辯論學會隊長，擁有超過兩年教練經驗，對政治、經濟同國際關係都有相當深入嘅了解。"
   },
   {
@@ -52,7 +52,7 @@
     "role": "首席私人教練",
     "school": "Phillips Exeter Academy，美国",
     "image": "Images/Valmik.png",
-    "categories": ["coaching"],
+    "categories": ["coaching","private"],
     "bio": "香港代表隊發展隊入面最年輕嘅成員之一，擁有 BP 同 WSDC 雙賽制經驗。最近喺 2025 年 Oxford WSDC U17 奪冠，亦喺香港辯論公開賽獲得第十三最佳辯手，擅長一對一幫學生拆解自身盲點。"
   },
   {
@@ -60,7 +60,7 @@
     "role": "創辦教練兼課程開發",
     "school": "Winchester College，英國",
     "image": "Images/Andre.png",
-    "categories": ["executive", "bioethics", "coaching"],
+    "categories": ["executive", "epi", "coaching"],
     "bio": "具備 WSDC 同 BP 豐富實戰經驗嘅資深辯手，擁有超過四年教學同課程設計經驗。Andre 喺 DebateCraft 負責課綱設計同教練培訓，特別注重將批判思維、生物倫理同辯論技巧結合，畀學生有更全面嘅成長。"
   },
   {
@@ -68,7 +68,7 @@
     "role": "高級教練",
     "school": "Winchester College，英國",
     "image": "Images/Raul.png",
-    "categories": ["coaching"],
+    "categories": ["coaching","private"],
     "bio": "表現出色嘅 BP 辯手，曾參加 ICYD 同 Imperial Schools 等比賽，多次喺校內賽打入決賽。Raul 長期指導低年級辯手，由基本功開始幫佢哋建立穩定嘅辯論框架。"
   },
   {
@@ -76,7 +76,7 @@
     "role": "高級教練",
     "school": "Phillips Exeter Academy，美国",
     "image": "Images/Cici.png",
-    "categories": ["coaching", "outreach"],
+    "categories": ["coaching", "outreach","private"],
     "bio": "Team Hong Kong WSDC 發展隊成員，同時係 Phillips Exeter Advanced Debate Team 一員，喺亞洲唔同賽區都有好亮眼嘅成績。Cici 教學經驗豐富，擅長用清晰示範同具體 feedback 幫學生進步。"
   },
   {
@@ -92,7 +92,7 @@
     "role": "高級教練",
     "school": "Hong Kong International School，香港",
     "image": "Images/Piers.png",
-    "categories": ["coaching"],
+    "categories": ["coaching","private"],
     "bio": "香港 WSDC 發展隊成員，同時係每日時事通訊嘅作者，長期關注國際同本地議題。Piers 擅長將新聞同資料分析變成辯論訓練，幫學生提升時事觸覺同論證深度。"
   },
   {
@@ -100,7 +100,7 @@
     "role": "課程開發",
     "school": "Phillips Exeter Academy，美国",
     "image": "Images/Dowan.png",
-    "categories": ["coaching", "bioethics", "outreach"],
+    "categories": ["coaching", "epi", "outreach"],
     "bio": "擁有 WSDC 賽制比賽經驗，曾喺韓國多場 WSDC 賽事出戰。Dowan 而家專注喺課程開發同生物倫理相關辯題設計，幫學生喺技術以外建立更完整嘅觀點。"
   },
   {
@@ -108,7 +108,7 @@
     "role": "教練",
     "school": "DPS Modern Indian School，卡塔爾",
     "image": "Images/Hirannya.jpeg",
-    "categories": ["coaching", "outreach"],
+    "categories": ["coaching", "outreach","private"],
     "bio": "Qatar Prep Schools Debate League 總決賽選手，亦多次喺國際辯論賽打入八強。Hirannya 專注同初中段學生合作，強調把基本技巧打好，再逐步加強進階策略。"
   },
   {
@@ -124,7 +124,7 @@
     "role": "教練",
     "school": "Southridge School，加拿大",
     "image": "Images/Tanvi.png",
-    "categories": ["coaching", "outreach"],
+    "categories": ["coaching", "outreach","private"],
     "bio": "曾喺 2025 年 Hart House Debate Tournament 同 UBC Summer HST 打入準決賽，並獲得第九最佳辯手；亦係 YPC HST 2025 同 Debateability Summer Championships 2025 嘅決賽選手。Tanvi 對培養學生嘅自信同表達風格特別有心得。"
   },
   {
@@ -164,7 +164,7 @@
     "role": "生物倫理課程講師",
     "school": "Phillips Exeter Academy，美国",
     "image": "Images/Reya.png",
-    "categories": ["bioethics", "outreach"],
+    "categories": ["epi", "outreach"],
     "bio": "曾參與多發性硬化症研究，並同聖母大學嘅遺傳學教授合作，研究成果將發表喺《Journal of High School Science》。Reya 亦撰寫過關於人工蛋白伴侶及其倫理影響嘅文獻綜述，並獲邀喺 Neurology World Conference 同 Max Planck Neuro Symposium 作演講。"
   },
   {
@@ -172,7 +172,7 @@
     "role": "生物倫理課程講師",
     "school": "Phillips Exeter Academy，美国",
     "image": "Images/OC.png",
-    "categories": ["outreach", "bioethics"],
+    "categories": ["outreach", "epi"],
     "bio": ""
   },
   {

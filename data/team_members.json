@@ -52,7 +52,7 @@
         "role": "Head of Design",
         "school": "Phillips Exeter Academy, US",
         "image": "Images/Kevin.png",
-        "categories": ["executive","outreach"],
+        "categories": ["outreach"],
         "bio": "Works on digital outreach and debate content creation, helping expand our online presence. He brings experience from his web design role on the Exonian Web Board."
       },
       {
@@ -76,7 +76,7 @@
         "role": "Deputy Head Coach",
         "school": "Phillips Exeter Academy, US",
         "image": "Images/Cici.png",
-        "categories": ["executive","coaching","outreach","private"],
+        "categories": ["coaching","outreach","private"],
         "bio": "A member of the Team Hong Kong WSDC Development Team and Advanced Debate Team at Phillips Exeter Academy, she has had numerous successes across Asian circuits and brings a wealth of debate knowledge."
       },
       {
@@ -92,7 +92,7 @@
         "role": "Founding Coach and Curriculum Developer",
         "school": "Winchester College, UK",
         "image": "Images/Andre.png",
-        "categories": ["executive","epi","coaching","private"],
+        "categories": ["epi","coaching","private"],
         "bio": "A seasoned debater with experience in both WSDC and BP formats. Andre contributes to curriculum design and training with his 4+ years of experience."
       },
       {
@@ -108,8 +108,8 @@
         "role": "Senior Coach",
         "school": "German Swiss International School，HK",
         "image": "Images/Rachel.png",
-        "categories": ["coaching"],
-        "bio": "Member of Team HK WSDC Development team and author of a daily current affairs newsletter"
+        "categories": ["coaching","private"],
+        "bio": "The captain of the German Swiss International School Debate Team, Rachel brings both individual and team successes most recently semifinalist at the Hong Kong Junior Schools Debating Competition 2026, individually the seventh best speaker, open-quarterfinalist in Indo-Pacific WSDO 2025, and U14 Champion in Indo-Pacific WSDO 2024. She  "
       },
       {
         "name": "Raul L",

@@ -55,14 +55,6 @@
         "categories": ["executive","outreach"],
         "bio": "Works on digital outreach and debate content creation, helping expand our online presence. He brings experience from his web design role on the Exonian Web Board."
       },
-            {
-        "name": "Cici C",
-        "role": "Deputy Head Coach",
-        "school": "Phillips Exeter Academy, US",
-        "image": "Images/Cici.png",
-        "categories": ["executive","coaching","outreach","private"],
-        "bio": "A member of the Team Hong Kong WSDC Development Team and Advanced Debate Team at Phillips Exeter Academy, she has had numerous successes across Asian circuits and brings a wealth of debate knowledge."
-      },
       {
         "name": "Arthur Z",
         "role": "Head PF Coach",
@@ -80,12 +72,44 @@
         "bio": "The youngest member of the Team Hong Kong Development Squad, with experience in both BP and WSDC formats. He recently won the U17 finals of Oxford WSDC 2025 and was the 13th-best speaker in the Hong Kong Debate Open."
       },
       {
+        "name": "Cici C",
+        "role": "Deputy Head Coach",
+        "school": "Phillips Exeter Academy, US",
+        "image": "Images/Cici.png",
+        "categories": ["executive","coaching","outreach","private"],
+        "bio": "A member of the Team Hong Kong WSDC Development Team and Advanced Debate Team at Phillips Exeter Academy, she has had numerous successes across Asian circuits and brings a wealth of debate knowledge."
+      },
+      {
+        "name": "Jaiden K",
+        "role": "Head Epidemiology Instructor",
+        "school": "Phillips Exeter Academy, US",
+        "image": "Images/Jaiden.png",
+        "categories": ["epi"],
+        "bio": "A two time USABO semifininalist, Jaiden brings a depth of conceptual understanding that complements his role in designing Epidemiology programming"
+      },
+      {
         "name": "Andre C",
         "role": "Founding Coach and Curriculum Developer",
         "school": "Winchester College, UK",
         "image": "Images/Andre.png",
         "categories": ["executive","epi","coaching","private"],
         "bio": "A seasoned debater with experience in both WSDC and BP formats. Andre contributes to curriculum design and training with his 4+ years of experience."
+      },
+      {
+        "name": "Piers K",
+        "role": "Senior Coach",
+        "school": "Hong Kong International School，HK",
+        "image": "Images/Piers.png",
+        "categories": ["coaching"],
+        "bio": "Member of Team HK WSDC Development team and author of a daily current affairs newsletter"
+      },
+      {
+        "name": "Rachel R",
+        "role": "Senior Coach",
+        "school": "German Swiss International School，HK",
+        "image": "Images/Rachel.png",
+        "categories": ["coaching"],
+        "bio": "Member of Team HK WSDC Development team and author of a daily current affairs newsletter"
       },
       {
         "name": "Raul L",
@@ -102,14 +126,6 @@
         "image": "Images/TheoW.png",
         "categories": ["coaching","private"],
         "bio": "Trainer at Chongqing WSDC workshop 2024, Judged at Nanjing WSDC 2025,3rd best speaker at the 2025 Vietnam Asian Schools Debating Championships, and consistently broken at several other tournaments."
-      },
-      {
-        "name": "Piers K",
-        "role": "Senior Coach",
-        "school": "Hong Kong International School，HK",
-        "image": "Images/Piers.png",
-        "categories": ["coaching"],
-        "bio": "Member of Team HK WSDC Development team and author of a daily current affairs newsletter"
       },
       {
         "name": "Hirannya K",
@@ -166,14 +182,6 @@
         "image": "Images/Winston.png",
         "categories": ["coaching"],
         "bio": "Winston has debate and moot experience from both DBS and Winchester College. He specializes in helping new ESL debaters."
-      },
-      {
-        "name": "Jaiden K",
-        "role": "Head Epidemiology Instructor",
-        "school": "Phillips Exeter Academy, US",
-        "image": "Images/Jaiden.png",
-        "categories": ["epi"],
-        "bio": "A two time USABO semifininalist, Jaiden brings a depth of conceptual understanding that complements his role in designing Epidemiology programming"
       },
       {
         "name": "Reya S",

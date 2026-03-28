@@ -837,6 +837,41 @@ p {
   background-clip: unset;
 }
 
+.contact-section {
+  padding: 60px 0 80px;
+}
+
+.contact-section .container {
+  max-width: 760px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(15, 52, 96, 0.08);
+  border-radius: 20px;
+  box-shadow: 0 18px 40px rgba(15, 52, 96, 0.08);
+  padding: 40px;
+}
+
+.contact-section h2 {
+  color: var(--neutral-900);
+  margin: 24px 0 8px;
+}
+
+.contact-section h2:first-child {
+  margin-top: 0;
+}
+
+.contact-section p {
+  color: var(--neutral-700);
+}
+
+.contact-section a {
+  color: var(--primary-dark);
+  font-weight: 600;
+}
+
+.contact-section a:hover {
+  color: var(--neutral-700);
+}
+
 /* Team Page Styles - Reverted to Simple Format */
 .team-intro {
   text-align: center;

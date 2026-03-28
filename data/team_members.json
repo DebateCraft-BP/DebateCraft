@@ -32,19 +32,11 @@
         "bio": "A competitive debater with four years of BP debating and adjudication experience. Matthew has competed at ICYD and Cambridge Schools, and currently serves as a Debate Society captain at Winchester. He brings over two years of coaching experience and extensive politics, economics, and international relations experience."
       },
       {
-        "name": "Kevin C",
-        "role": "Head of Design",
-        "school": "Phillips Exeter Academy, US",
-        "image": "Images/Kevin.png",
-        "categories": ["outreach"],
-        "bio": "Works on digital outreach and debate content creation, helping expand our online presence. He brings experience from his web design role on the Exonian Web Board."
-      },
-      {
         "name": "Arthur Z",
         "role": "Head PF Coach",
         "school": "Winchester College, UK",
         "image": "Images/Arthur.png",
-        "categories": ["executive","coaching","PF"],
+        "categories": ["coaching","PF"],
         "bio": "A top-performing PF debater: 2nd Place Team and Top Speaker at the 2023 Harvard International PF Tournament (Open Division), with past top finishes in 2022 and 2021. NSDA Global Excellent Debater (2020) and 1st Place at Wincheste College’s Inter-boarding house Debating Competition(Yaw Pot). Arthur brings his wealth of experience to lead our upcoming Public Forum course."
       },
       {
@@ -52,7 +44,7 @@
         "role": "Head Private Coach",
         "school": "Phillips Exeter Academy, US",
         "image": "Images/Valmik.png",
-        "categories": ["executive","coaching","private"],
+        "categories": ["coaching","private"],
         "bio": "The youngest member of the Team Hong Kong Development Squad, with experience in both BP and WSDC formats. He recently won the U17 finals of Oxford WSDC 2025 and was the 13th-best speaker in the Hong Kong Debate Open."
       },
       {
@@ -72,12 +64,28 @@
         "bio": "A two time USABO semifininalist, Jaiden brings a depth of conceptual understanding that complements his role in designing Epidemiology programming"
       },
       {
+        "name": "Kevin C",
+        "role": "Head of Design",
+        "school": "Phillips Exeter Academy, US",
+        "image": "Images/Kevin.png",
+        "categories": ["outreach"],
+        "bio": "Works on digital outreach and debate content creation, helping expand our online presence. He brings experience from his web design role on the Exonian Web Board."
+      },
+      {
         "name": "Andre C",
-        "role": "Founding Coach and Curriculum Developer",
+        "role": "Curriculum Developer",
         "school": "Winchester College, UK",
         "image": "Images/Andre.png",
         "categories": ["epi","coaching","private"],
         "bio": "A seasoned debater with experience in both WSDC and BP formats. Andre contributes to curriculum design and training with his 4+ years of experience."
+      },
+      {
+        "name": "Raul L",
+        "role": "Senior Coach",
+        "school": "Winchester College, UK",
+        "image": "Images/Raul.png",
+        "categories": ["coaching","private"],
+        "bio": "An accomplished BP debater with experience at ICYD and Imperial Schools. Raul has been a finalist in multiple intra-school tournaments and mentors younger debaters."
       },
       {
         "name": "Piers K",
@@ -96,16 +104,8 @@
         "bio": "The captain of the German Swiss International School Debate Team, Rachel brings both individual and team successes most recently semifinalist at the Hong Kong Junior Schools Debating Competition 2026, individually the seventh best speaker, open-quarterfinalist in Indo-Pacific WSDO 2025, and U14 Champion in Indo-Pacific WSDO 2024. She  "
       },
       {
-        "name": "Raul L",
-        "role": "Senior Coach",
-        "school": "Winchester College, UK",
-        "image": "Images/Raul.png",
-        "categories": ["coaching","private"],
-        "bio": "An accomplished BP debater with experience at ICYD and Imperial Schools. Raul has been a finalist in multiple intra-school tournaments and mentors younger debaters."
-      },
-      {
         "name": "Theodore W",
-        "role": "Senior Coach",
+        "role": "Level 3 Coach",
         "school": "Hong Kong International School, HK",
         "image": "Images/TheoW.png",
         "categories": ["coaching","private"],
@@ -118,6 +118,14 @@
         "image": "Images/H.png",
         "categories": ["coaching", "outreach","private"],
         "bio": "Grand finalist of Qatar Prep Schools Debate League and octofinalist in international competitions"
+      },
+      {
+        "name": "Tanvi M",
+        "role": "Level 2 Coach",
+        "school": "Southridge School, Canada",
+        "image": "Images/Tanvi.png",
+        "categories": ["coaching", "outreach","private"],
+        "bio": "Semifinalist for Hart House Debate Tournament 2025 and UBC Summer HST 2025 where she was the 9th place speaker. Finalist in YPC HST 2025 and Debateability Summer Championships 2025"
       },
       {
         "name": "Vera H",
@@ -136,7 +144,7 @@
         "bio":  "Running and captaining training sessions for the GSIS junior school team, Larissa's record includes being the CISWSDC Grand Champion and U16 Best Speaker. She broke 1st (U16) at MIWSDC 2024 and was a semifinalist at both the Asia Pacific WSDC and the 2026 Junior Schools Debating Championship."
       },
       {
-        "name": "Eric Jin",
+        "name": "Eric J",
         "role": "Level 2 Coach",
         "school": "Phillips Exeter Academy, US",
         "image": "Images/Eric.png",
@@ -144,12 +152,11 @@
         "bio": "A BP debater who recently placed 3rd at the Team Canada Fundraiser 2025 and at the Carroll College(University) Fundraiser 2025."
       },
       {
-        "name": "Tanvi M",
+        "name": "Calvin M",
         "role": "Level 2 Coach",
-        "school": "Southridge School, Canada",
-        "image": "Images/Tanvi.png",
-        "categories": ["coaching", "outreach","private"],
-        "bio": "Semifinalist for Hart House Debate Tournament 2025 and UBC Summer HST 2025 where she was the 9th place speaker. Finalist in YPC HST 2025 and Debateability Summer Championships 2025"
+        "image": "Images/Calvin.png",
+        "categories": ["coaching"],
+        "bio": "A BP debater who recently placed 3rd at the Team Canada Fundraiser 2025 and at the Carroll College(University) Fundraiser 2025."
       },
       {
         "name": "Srisha B",
@@ -177,7 +184,7 @@
       },
       {
         "name": "Reya S",
-        "role": "Epidemiology Instructor",
+        "role": "Senior Epidemiology Instructor",
         "school": "Phillips Exeter Academy, US",
         "image": "Images/Reya.png",
         "categories": ["epi","outreach"],

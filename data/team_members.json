@@ -32,22 +32,6 @@
         "bio": "A competitive debater with four years of BP debating and adjudication experience. Matthew has competed at ICYD and Cambridge Schools, and currently serves as a Debate Society captain at Winchester. He brings over two years of coaching experience and extensive politics, economics, and international relations experience."
       },
       {
-        "name": "Jayden S",
-        "role": "Head of Operations",
-        "school": "Phillips Exeter Academy, US",
-        "image": "Images/Jayden.png",
-        "categories": ["executive","outreach"],
-        "bio": "A leading member of several student-led organizations and charities, Jayden brings extensive administrative and operational experience. He was previously on the VSA and WIS Chinese debate teams."
-      },
-            {
-        "name": "Jade Y",
-        "role": "Head of Operations",
-        "school": "Phillips Exeter Academy, US",
-        "image": "Images/Jade.png",
-        "categories": ["executive","outreach"],
-        "bio": "A member of the Advanced Debate Team at Phillips Exeter Academy, she has had numerous successes within the DANEIS circuit."
-      },
-      {
         "name": "Kevin C",
         "role": "Head of Design",
         "school": "Phillips Exeter Academy, US",
@@ -182,14 +166,6 @@
         "image": "Images/Hao.png",
         "categories": ["outreach","PF"],
         "bio": "Matthew is a proficient PF debater regularly breaking quarterfinals and above in the NSDA China circuit."
-      },
-      {
-        "name": "Luke C",
-        "role": "Level 1 Coach",
-        "school": "Phillips Exeter Academy, US",
-        "image": "Images/Luke.png",
-        "categories": ["coaching"],
-        "bio": "Luke is a debater at Phillips Exeter Academy. He competed at the Harvard Model United Nations 75th Session."
       },
       {
         "name": "Winston C",

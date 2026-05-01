@@ -1,0 +1,14 @@
+{
+  "name": "debatecraft",
+  "version": "1.0.0",
+  "description": "DebateCraft - Students empowering students through the art of debate",
+  "scripts": {
+    "install-insights": "npm install @vercel/speed-insights"
+  },
+  "keywords": ["debate", "education", "students"],
+  "author": "DebateCraft",
+  "license": "MIT",
+  "dependencies": {
+    "@vercel/speed-insights": "^1.0.15"
+  }
+}

@@ -3,7 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DebateCraft — 網站革新</title>
+  <link rel="icon" type="image/png" href="Images/Logo.png">
+  <link rel="apple-touch-icon" href="Images/Logo.png">
+  <title>DebateCraft | 免費辯論及生物倫理課程</title>
+  <meta name="description" content="DebateCraft 是由學生營運的非牟利教育項目，為三至十二年級學生提供免費辯論及生物倫理課程，連結 12+ 國家和地區學生。" />
+  <link rel="canonical" href="https://debatecraft.org/cnindex.html" />
+  <link rel="alternate" hreflang="en" href="https://debatecraft.org/" />
+  <link rel="alternate" hreflang="zh-HK" href="https://debatecraft.org/cnindex.html" />
+  <link rel="alternate" hreflang="x-default" href="https://debatecraft.org/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="DebateCraft | 免費辯論及生物倫理課程" />
+  <meta property="og:description" content="由學生營運、費用全免的辯論及生物倫理課程，服務三至十二年級學生。" />
+  <meta property="og:url" content="https://debatecraft.org/cnindex.html" />
+  <meta property="og:site_name" content="DebateCraft" />
+  <meta property="og:image" content="https://debatecraft.org/Images/Logo-white-transparent.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="DebateCraft | 免費辯論及生物倫理課程" />
+  <meta name="twitter:description" content="免費、學生營運、全球 12+ 國家和地區的辯論及生物倫理教育。" />
+  <meta name="twitter:image" content="https://debatecraft.org/Images/Logo-white-transparent.png" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
@@ -23,9 +40,52 @@
     @keyframes countUp { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
     @keyframes pulse   { 0%,100% { opacity:1; } 50% { opacity:0.3; } }
     .serif { font-family: 'Playfair Display', Georgia, serif; }
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+      outline: 3px solid #3DC3E8;
+      outline-offset: 3px;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.001ms !important;
+      }
+    }
   </style>
   <meta name="google-site-verification" content="1faWU-2_Ie7rmnChub7yajNTgBV3IaTW3AKgFoQNuRk" />
   <meta name="google-site-verification" content="ChRZlOIxn4CmlfnKJ2_9izXVD4fcmGPvWz0nQ7D2J7s" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://debatecraft.org/#organization",
+          "name": "DebateCraft",
+          "url": "https://debatecraft.org/",
+          "logo": "https://debatecraft.org/Images/Logo-white-transparent.png",
+          "email": "info@debatecraft.org",
+          "sameAs": [
+            "https://www.instagram.com/debate_craft/",
+            "https://www.facebook.com/profile.php?id=61577761071956"
+          ]
+        },
+        {
+          "@type": "Course",
+          "name": "DebateCraft Debate Courses",
+          "description": "免費辯論課程，涵蓋入門、中級、Public Forum、WSDC、BP 和高階辯論訓練。",
+          "provider": { "@id": "https://debatecraft.org/#organization" }
+        },
+        {
+          "@type": "Course",
+          "name": "生物倫理：科學與醫學未來",
+          "description": "探討現代生物、基因和醫療科技倫理問題的免費討論、寫作與研究課程。",
+          "provider": { "@id": "https://debatecraft.org/#organization" }
+        }
+      ]
+    }
+  </script>
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-59QCKK1FZC"></script>
@@ -73,17 +133,17 @@ const SKILLS = [
   { n:'01', title:'堅定自信',       desc:"公眾演講嘅恐懼係世界上最普遍嘅恐懼。我哋嘅結構化練習會將猶豫永久轉化為攝人風采。" },
   { n:'02', title:'學業飛躍',       desc:'研究證實，恆常辯論嘅學生喺寫作、閱讀理解同標準化考試中表現更佳。' },
   { n:'03', title:'全球視野',          desc:'我哋嘅學生橫跨全球12多個國家，同背景差異極大嘅同儕辯論現實世界議題。' },
-  { n:'04', title:'塑造事業嘅資歷', desc:'舊生表示辯論經驗係大學取錄同工作面試中脫穎而出嘅關鍵。無可置疑嘅思辨能力。' },
+  { n:'04', title:'可展示嘅能力', desc:'辯論訓練讓學生在寫作、面試、課堂討論和比賽中展示清晰推理、證據分析和有力表達。' },
 ];
 
-const TESTIMONIALS = [
-  { quote:'DebateCraft 完全改變咗我個女處理論點嘅方式。佢而家會諗清楚先開口 — 而當佢一開口，人人都會留心聽。',    attr:'家長 — 香港班' },
-  { quote:'我由最初驚到唔敢講嘢，到四個月後贏得第一個比賽。教練用最好嘅方式推你走出舒適區。', attr:'學生，15歲 — 美國班' },
-  { quote:'課程內容真係大學級數。作為前牛津大學辯論員，DebateCraft 提供嘅學術嚴謹性令我印象深刻 — 仲要係免費。', attr:'學校合作夥伴 — 英國' },
+const TRUST_SIGNALS = [
+  { title:'學生營運非牟利項目', desc:'DebateCraft 由有辯論、教練、研究和課程設計經驗嘅學生共同建立及教授。' },
+  { title:'世界級辯論課程支援', desc:'課程設計曾獲 Sandeep Chulani 和 Angga Djovanka 等資深教練支援和建議。' },
+  { title:'生物倫理導師深度', desc:'生物倫理課程由 Phillips Exeter 學生帶領，包括 USABO 表現優秀者、醫學期刊作者和寫作獎項入圍者。' },
 ];
 
 const COUNTRIES = ['加拿大','美國','巴拿馬','英國','巴基斯坦','印度','卡塔爾','印尼','越南','南韓','中國','香港'];
-const STUDENT_FORM_URL = 'https://forms.gle/P6WfeGH7V9zEAoU6A';
+const STUDENT_FORM_URL = 'https://form.jotform.com/261003548067049';
 const COURSE_INTEREST_FORM_URL = 'https://form.jotform.com/261003548067049';
 const COACH_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfombgLTJ0oDbWfCaSumrnLAjkdvT_K9FW1KJakbr9ZAQxwnQ/viewform?usp=header';
 const DONATE_URL = 'https://buymeacoffee.com/debatecraft';
@@ -92,9 +152,16 @@ const DONATE_URL = 'https://buymeacoffee.com/debatecraft';
 function Nav({ page, setPage }) {
   const [isOpen, setIsOpen]       = React.useState(false);
   const [isExpanded, setIsExpanded] = React.useState(false);
+  const [isCompact, setIsCompact] = React.useState(() => window.innerWidth < 760);
   const navRef   = React.useRef();
   const cardsRef = React.useRef([]);
   const tlRef    = React.useRef();
+
+  React.useEffect(() => {
+    const onResize = () => setIsCompact(window.innerWidth < 760);
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
 
   const loadGSAP = () => new Promise(res => {
     if (window.gsap) { res(window.gsap); return; }
@@ -111,12 +178,12 @@ function Nav({ page, setPage }) {
       gsap.set(navEl, { height:60, overflow:'hidden' });
       gsap.set(cardsRef.current.filter(Boolean), { y:40, opacity:0 });
       const tl = gsap.timeline({ paused:true });
-      tl.to(navEl, { height:260, duration:0.42, ease:'power3.out' });
+      tl.to(navEl, { height:isCompact ? 430 : 260, duration:0.42, ease:'power3.out' });
       tl.to(cardsRef.current.filter(Boolean), { y:0, opacity:1, duration:0.38, ease:'power3.out', stagger:0.07 }, '-=0.15');
       tlRef.current = tl;
     });
     return () => tlRef.current?.kill();
-  }, []);
+  }, [isCompact]);
 
   const toggle = () => {
     const tl = tlRef.current;
@@ -144,19 +211,19 @@ function Nav({ page, setPage }) {
   return (
     <div style={{ position:'sticky', top:0, zIndex:200 }}>
       <nav ref={navRef} style={{ background:NAVY, borderBottom:'1px solid rgba(255,255,255,0.07)', overflow:'hidden' }}>
-        <div style={{ height:60, display:'flex', alignItems:'center', padding:'0 28px', gap:12 }}>
-          <div onClick={toggle} style={{ width:26, height:18, display:'flex', flexDirection:'column', justifyContent:'space-between', cursor:'pointer', flexShrink:0, padding:'1px 0' }}>
+        <div style={{ height:60, display:'flex', alignItems:'center', padding:isCompact ? '0 18px' : '0 28px', gap:12 }}>
+          <button type="button" onClick={toggle} aria-label="開關導覽選單" aria-expanded={isOpen} style={{ width:26, height:18, display:'flex', flexDirection:'column', justifyContent:'space-between', cursor:'pointer', flexShrink:0, padding:'1px 0', background:'transparent', border:0 }}>
             <div style={{ height:2, background:WHITE, borderRadius:1, transition:'all 0.3s', transform:isOpen?'rotate(45deg) translateY(8px)':'none' }}></div>
             <div style={{ height:2, background:WHITE, borderRadius:1, transition:'all 0.3s', opacity:isOpen?0:1 }}></div>
             <div style={{ height:2, background:WHITE, borderRadius:1, transition:'all 0.3s', transform:isOpen?'rotate(-45deg) translateY(-8px)':'none' }}></div>
-          </div>
+          </button>
           <a href="../../index.html" style={{ display:'flex', alignItems:'center', gap:10, cursor:'pointer', marginLeft:4, textDecoration:'none' }}>
-            <img src="../../Images/Logo-white-transparent.png" alt="" width={28} height={28} style={{ objectFit:'contain' }}/>
+            <img src="../../Images/Logo-white-transparent.png" alt="DebateCraft 標誌" width={28} height={28} style={{ objectFit:'contain' }}/>
             <span style={{ fontFamily:'Playfair Display,Georgia,serif', fontSize:18, fontWeight:700, color:WHITE }}>
               DebateCraft
             </span>
           </a>
-          <div style={{ display:'flex', alignItems:'center', gap:2, marginLeft:'auto' }}>
+          <div style={{ display:isCompact ? 'none' : 'flex', alignItems:'center', gap:2, marginLeft:'auto' }}>
             {[{label:'參與我哋',href:'../../pages/cnget-involved.html'},{label:'聯絡我哋',href:'../../pages/cncontact.html'}].map(l => (
               <a key={l.label} href={l.href}
                 style={{ color:'rgba(255,255,255,0.62)', fontSize:12, fontWeight:600, padding:'7px 12px', cursor:'pointer', letterSpacing:'0.04em', textDecoration:'none' }}>{l.label}</a>
@@ -171,7 +238,7 @@ function Nav({ page, setPage }) {
             </a>
           </div>
         </div>
-        <div style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:10, padding:'0 28px 18px' }}>
+        <div style={{ display:'grid', gridTemplateColumns:isCompact ? '1fr' : 'repeat(3,1fr)', gap:10, padding:isCompact ? '0 18px 18px' : '0 28px 18px' }}>
           {NAV_CARDS.map((card, i) => (
             <div key={i} ref={el => { if(el) cardsRef.current[i]=el; }}
               style={{ background:card.bg, borderRadius:8, padding:'16px 18px', opacity:0,
@@ -279,17 +346,23 @@ void main(){
 /* ── 英雄區（文字粵語化）────────────────────── */
 function Hero({ setPage }) {
   const [vis, setVis] = React.useState(false);
+  const [isCompact, setIsCompact] = React.useState(() => window.innerWidth < 760);
   React.useEffect(() => { const t = setTimeout(() => setVis(true), 60); return () => clearTimeout(t); }, []);
+  React.useEffect(() => {
+    const onResize = () => setIsCompact(window.innerWidth < 760);
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
   return (
     <section style={{ background:NAVY2, position:'relative', overflow:'hidden' }}>
       <HeroCanvas />
-      <div style={{ maxWidth:1200, margin:'0 auto', padding:'80px 32px 72px', display:'grid', gridTemplateColumns:'1fr 280px', gap:40, alignItems:'center', position:'relative', zIndex:2 }}>
+      <div style={{ maxWidth:1200, margin:'0 auto', padding:isCompact ? '76px 32px 48px' : '80px 32px 72px', display:'grid', gridTemplateColumns:isCompact ? '1fr' : '1fr 280px', gap:40, alignItems:'center', position:'relative', zIndex:2 }}>
         <div>
           <div style={{ display:'flex', alignItems:'center', gap:12, marginBottom:20, opacity:vis?1:0, animation:vis?'fadeUp 0.55s ease both':'none' }}>
             <div style={{ width:28, height:2, background:ORANGE, flexShrink:0 }}></div>
             <span style={{ fontSize:11, fontWeight:700, color:ORANGE, letterSpacing:'0.14em', textTransform:'uppercase' }}>學生營運 · 免費 · 全球</span>
           </div>
-          <h1 className="serif" style={{ fontSize:72, fontWeight:800, color:WHITE, lineHeight:1.0, marginBottom:22, opacity:vis?1:0, animation:vis?'fadeUp 0.6s ease 0.08s both':'none' }}>
+          <h1 className="serif" style={{ fontSize:isCompact ? 44 : 72, fontWeight:800, color:WHITE, lineHeight:isCompact ? 1.12 : 1.0, marginBottom:22, opacity:vis?1:0, animation:vis?'fadeUp 0.6s ease 0.08s both':'none' }}>
             每個學生都<br />值得擁有<br /><em style={{ color:ORANGE, fontStyle:'italic' }}>自己嘅聲音</em>
           </h1>
           <p style={{ fontSize:16, color:'rgba(255,255,255,0.62)', lineHeight:1.72, maxWidth:480, marginBottom:24, opacity:vis?1:0, animation:vis?'fadeUp 0.6s ease 0.16s both':'none' }}>
@@ -305,9 +378,10 @@ function Hero({ setPage }) {
           </div>
           <div style={{ display:'flex', gap:12, opacity:vis?1:0, animation:vis?'fadeUp 0.6s ease 0.3s both':'none' }}>
             <a href={STUDENT_FORM_URL} style={{ background:ORANGE, color:NAVY, border:'none', borderRadius:5, padding:'13px 26px', fontFamily:'DM Sans,sans-serif', fontWeight:700, fontSize:13, cursor:'pointer', letterSpacing:'0.06em', textTransform:'uppercase', boxShadow:`0 8px 28px rgba(247,162,52,0.35)`, textDecoration:'none', display:'inline-flex', alignItems:'center' }}>免費申請 →</a>
+            <a href="../../pages/cnofferings.html" style={{ background:'rgba(255,255,255,0.08)', color:WHITE, border:'1.5px solid rgba(255,255,255,0.22)', borderRadius:5, padding:'13px 26px', fontFamily:'DM Sans,sans-serif', fontWeight:700, fontSize:13, cursor:'pointer', letterSpacing:'0.06em', textTransform:'uppercase', textDecoration:'none', display:'inline-flex', alignItems:'center' }}>瀏覽課程</a>
           </div>
         </div>
-        <div style={{ display:'flex', alignItems:'center', justifyContent:'center', opacity:vis?1:0, animation:vis?'fadeIn 1s ease 0.4s both':'none' }}>
+        <div style={{ display:isCompact ? 'none' : 'flex', alignItems:'center', justifyContent:'center', opacity:vis?1:0, animation:vis?'fadeIn 1s ease 0.4s both':'none' }}>
           <svg width="240" height="240" viewBox="0 0 320 320" fill="none">
             <circle cx="160" cy="160" r="128" stroke={ORANGE} strokeWidth="20" strokeLinecap="round" strokeDasharray="560 250" style={{ transformOrigin:'160px 160px', animation:'arcSpin 20s linear infinite' }}/>
             <circle cx="160" cy="160" r="86"  stroke={SKY}    strokeWidth="16" strokeLinecap="round" strokeDasharray="290 260" style={{ transformOrigin:'160px 160px', animation:'arcSpin2 14s linear infinite' }}/>
@@ -321,11 +395,45 @@ function Hero({ setPage }) {
   );
 }
 
+/* ── 快速加入流程 ───────────────────────── */
+function HowToJoinMini() {
+  const [isCompact, setIsCompact] = React.useState(() => window.innerWidth < 760);
+  React.useEffect(() => {
+    const onResize = () => setIsCompact(window.innerWidth < 760);
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
+  const steps=[
+    {title:'申請',desc:'填寫免費學生興趣表格。'},
+    {title:'安排班級',desc:'我哋會按程度和目標安排合適小班。'},
+    {title:'加入小班',desc:'在重視回饋和練習嘅小班中學習。'},
+  ];
+  return (
+    <section style={{ background:WHITE, padding:'42px 0' }}>
+      <div style={{ maxWidth:1200, margin:'0 auto', padding:'0 32px', display:'grid', gridTemplateColumns:isCompact ? '1fr' : '220px 1fr auto', gap:24, alignItems:'center' }}>
+        <div>
+          <div style={{ fontSize:11, fontWeight:700, color:ORANGE, letterSpacing:'0.14em', textTransform:'uppercase', marginBottom:8 }}>點樣加入</div>
+          <h2 className="serif" style={{ fontSize:32, lineHeight:1.1, color:NAVY }}>免費開始。</h2>
+        </div>
+        <div style={{ display:'grid', gridTemplateColumns:isCompact ? '1fr' : 'repeat(3,1fr)', gap:14 }}>
+          {steps.map((s,i)=>(
+            <div key={s.title} style={{ borderLeft:`4px solid ${i===0?ORANGE:i===1?SKY:NAVY}`, padding:'8px 0 8px 14px' }}>
+              <div style={{ fontSize:14, fontWeight:800, color:NAVY, marginBottom:4 }}>{s.title}</div>
+              <div style={{ fontSize:13, lineHeight:1.55, color:'rgba(17,29,60,0.58)' }}>{s.desc}</div>
+            </div>
+          ))}
+        </div>
+        <a href={STUDENT_FORM_URL} style={{ background:NAVY, color:WHITE, border:'none', borderRadius:5, padding:'13px 20px', fontFamily:'DM Sans,sans-serif', fontWeight:700, fontSize:12, cursor:'pointer', letterSpacing:'0.07em', textTransform:'uppercase', textDecoration:'none', whiteSpace:'nowrap' }}>免費申請 →</a>
+      </div>
+    </section>
+  );
+}
+
 /* ── 統計欄（文字）───────────────────────── */
 function StatsBar() {
   const [vis,setVis]=React.useState(false); const ref=React.useRef();
   React.useEffect(()=>{ const obs=new IntersectionObserver(([e])=>{ if(e.isIntersecting)setVis(true); },{threshold:0.3}); if(ref.current)obs.observe(ref.current); return()=>obs.disconnect(); },[]);
-  const stats=[{n:'220+',l:'全球學生',s:'橫跨12+地區'},{n:'200+',l:'教授時數',s:'頂尖教學'},{n:'100+',l:'合共年資',s:'教練經驗'},{n:'100%',l:'學生推薦',s:'滿意度'}];
+  const stats=[{n:'220+',l:'全球學生',s:'橫跨12+地區'},{n:'12+',l:'國家/地區',s:'全球社群'},{n:'200+',l:'教授時數',s:'高質素教學'},{n:'學生營運',l:'非牟利',s:'費用全免'}];
   return (
     <div ref={ref} style={{ background:ORANGE }}>
       <div style={{ maxWidth:1200, margin:'0 auto', padding:'0 32px', display:'grid', gridTemplateColumns:'repeat(4,1fr)' }}>
@@ -401,7 +509,7 @@ function GlobalMap() {
             <div style={{ width:1, height:40, background:'rgba(255,255,255,0.1)' }}></div>
             <div style={{ textAlign:'center' }}><div className="serif" style={{ fontSize:36, fontWeight:800, color:SKY }}>220+</div><div style={{ fontSize:10, fontWeight:600, color:'rgba(255,255,255,0.4)', letterSpacing:'0.08em', textTransform:'uppercase' }}>學生</div></div>
             <div style={{ width:1, height:40, background:'rgba(255,255,255,0.1)' }}></div>
-            <div style={{ textAlign:'center' }}><div className="serif" style={{ fontSize:36, fontWeight:800, color:WHITE }}>100%</div><div style={{ fontSize:10, fontWeight:600, color:'rgba(255,255,255,0.4)', letterSpacing:'0.08em', textTransform:'uppercase' }}>推薦</div></div>
+            <div style={{ textAlign:'center' }}><div className="serif" style={{ fontSize:30, fontWeight:800, color:WHITE }}>學生營運</div><div style={{ fontSize:10, fontWeight:600, color:'rgba(255,255,255,0.4)', letterSpacing:'0.08em', textTransform:'uppercase' }}>非牟利</div></div>
           </div>
         </div>
         <div style={{ background:'rgba(255,255,255,0.03)', borderRadius:8, overflow:'hidden', padding:'12px' }}>
@@ -479,6 +587,7 @@ function Programs({ setPage }) {
             <h2 className="serif" style={{ fontSize:52, fontWeight:800, color:NAVY, lineHeight:1.08 }}>世界級訓練，<br /><em style={{ color:ORANGE, fontStyle:'italic' }}>費用全免。</em></h2>
           </div>
           <a href="../../pages/cnofferings.html" style={{ background:NAVY, color:WHITE, border:'none', borderRadius:5, padding:'13px 22px', fontFamily:'DM Sans,sans-serif', fontWeight:700, fontSize:12, cursor:'pointer', letterSpacing:'0.08em', textTransform:'uppercase', flexShrink:0, textDecoration:'none', display:'inline-flex', alignItems:'center' }}>瀏覽所有課程</a>
+          <a href="../../pages/cnresources.html" style={{ background:'rgba(17,29,60,0.08)', color:NAVY, border:'1.5px solid rgba(17,29,60,0.18)', borderRadius:5, padding:'13px 22px', fontFamily:'DM Sans,sans-serif', fontWeight:700, fontSize:12, cursor:'pointer', letterSpacing:'0.08em', textTransform:'uppercase', flexShrink:0, textDecoration:'none', display:'inline-flex', alignItems:'center' }}>探索資源</a>
         </div>
         <div style={{ display:'grid', gridTemplateColumns:'repeat(2,1fr)', gap:16 }}>
           {PROGRAMS.map(p=>{
@@ -490,7 +599,7 @@ function Programs({ setPage }) {
                   <h3 className="serif" style={{ fontSize:20, fontWeight:700, color:c.color, lineHeight:1.2, marginBottom:5 }}>{p.title}</h3>
                   <div style={{ fontSize:9, fontWeight:700, color:'rgba(17,29,60,0.38)', letterSpacing:'0.09em', textTransform:'uppercase', marginBottom:10 }}>{p.meta}</div>
                   <p style={{ fontSize:13, color:'rgba(17,29,60,0.6)', lineHeight:1.65, flex:1, marginBottom:16 }}>{p.desc}</p>
-                  <a href={COURSE_INTEREST_FORM_URL} style={{ fontSize:11, fontWeight:700, color:c.color, letterSpacing:'0.07em', textTransform:'uppercase', cursor:'pointer', paddingTop:12, borderTop:`1px solid ${c.bg}`, textDecoration:'none', display:'block' }}>立即報名 →</a>
+                  <a href={COURSE_INTEREST_FORM_URL} style={{ fontSize:11, fontWeight:700, color:c.color, letterSpacing:'0.07em', textTransform:'uppercase', cursor:'pointer', paddingTop:12, borderTop:`1px solid ${c.bg}`, textDecoration:'none', display:'block' }}>{p.key==='bioethics'?'申請生物倫理':'申請辯論'} →</a>
                 </div>
               </div>
             );
@@ -531,21 +640,22 @@ function MissionCards() {
   );
 }
 
-/* ── 感言 ────────────────────────────── */
-function Testimonials() {
+/* ── 信任證明 ────────────────────────────── */
+function Credibility() {
   return (
     <section style={{ background:NAVY2, padding:'88px 0' }}>
       <div style={{ maxWidth:1200, margin:'0 auto', padding:'0 32px' }}>
         <div style={{ textAlign:'center', marginBottom:56 }}>
-          <div style={{ fontSize:11, fontWeight:700, color:ORANGE, letterSpacing:'0.14em', textTransform:'uppercase', marginBottom:14 }}>學生同家長心聲</div>
-          <h2 className="serif" style={{ fontSize:48, fontWeight:800, color:WHITE, lineHeight:1.1 }}>我哋社群嘅<em style={{ color:SKY, fontStyle:'italic' }}>心聲。</em></h2>
+          <div style={{ fontSize:11, fontWeight:700, color:ORANGE, letterSpacing:'0.14em', textTransform:'uppercase', marginBottom:14 }}>點解可以信任 DebateCraft</div>
+          <h2 className="serif" style={{ fontSize:48, fontWeight:800, color:WHITE, lineHeight:1.1 }}>由有實戰經驗嘅學生<em style={{ color:SKY, fontStyle:'italic' }}>建立。</em></h2>
+          <p style={{ maxWidth:720, margin:'18px auto 0', color:'rgba(255,255,255,0.58)', fontSize:15, lineHeight:1.7 }}>未有正式 testimonial 和合作夥伴文案前，呢一區只使用目前已知嘅課程資料和導師資歷。</p>
         </div>
         <div style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:20 }}>
-          {TESTIMONIALS.map((t,i)=>(
+          {TRUST_SIGNALS.map((t,i)=>(
             <div key={i} style={{ background:NAVY, borderRadius:4, padding:'30px 26px', borderBottom:`3px solid ${i===0?ORANGE:i===1?SKY:'rgba(255,255,255,0.2)'}` }}>
-              <div style={{ display:'flex', gap:2, marginBottom:14 }}>{[...Array(5)].map((_,j)=><span key={j} style={{ color:ORANGE, fontSize:13 }}>★</span>)}</div>
-              <p className="serif" style={{ fontSize:15, color:WHITE, lineHeight:1.75, fontStyle:'italic', marginBottom:22 }}>「{t.quote}」</p>
-              <div style={{ fontSize:11, fontWeight:700, color:'rgba(255,255,255,0.38)', letterSpacing:'0.09em', textTransform:'uppercase' }}>{t.attr}</div>
+              <div style={{ fontSize:11, fontWeight:700, color:ORANGE, letterSpacing:'0.12em', textTransform:'uppercase', marginBottom:14 }}>{`證明 0${i+1}`}</div>
+              <h3 style={{ fontSize:18, color:WHITE, marginBottom:10 }}>{t.title}</h3>
+              <p style={{ fontSize:14, color:'rgba(255,255,255,0.58)', lineHeight:1.7 }}>{t.desc}</p>
             </div>
           ))}
         </div>
@@ -698,7 +808,7 @@ function App() {
 
   const renderPage=()=>{
     switch(page){
-      case 'home': return (<><Hero setPage={navigate}/><StatsBar/><GlobalMap/><FourSteps/><Skills/><Programs setPage={navigate}/><MissionCards/><Testimonials/><CTABand setPage={navigate}/></>);
+      case 'home': return (<><Hero setPage={navigate}/><HowToJoinMini/><StatsBar/><GlobalMap/><FourSteps/><Skills/><Programs setPage={navigate}/><MissionCards/><Credibility/><CTABand setPage={navigate}/></>);
       default: return <PageStub title={page.replace(/-/g,' ').replace(/\b\w/g,c=>c.toUpperCase())} setPage={navigate}/>;
     }
   };

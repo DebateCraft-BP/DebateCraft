@@ -1,293 +1,724 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-  name="description"
-  content="DebateCraft turns quiet ideas into commanding voices—led entirely by students, for students.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DebateCraft - Students empowering students through the art of debate</title>
-    <link rel="stylesheet" href="./styles/main.css" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DebateCraft — Website Redesign</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: #0d1730; color: #111d3c; min-height: 100vh; }
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: #0d1730; }
+    ::-webkit-scrollbar-thumb { background: #F7A234; border-radius: 3px; }
+    @keyframes fadeUp  { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes fadeIn  { from { opacity:0; } to { opacity:1; } }
+    @keyframes arcSpin { from { transform-origin:50% 50%; transform:rotate(0deg); } to { transform-origin:50% 50%; transform:rotate(360deg); } }
+    @keyframes arcSpin2{ from { transform-origin:50% 50%; transform:rotate(0deg); } to { transform-origin:50% 50%; transform:rotate(-360deg); } }
+    @keyframes pillPop { from { opacity:0; transform:scale(0.85); } to { opacity:1; transform:scale(1); } }
+    @keyframes countUp { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes pulse   { 0%,100% { opacity:1; } 50% { opacity:0.3; } }
+    .serif { font-family: 'Playfair Display', Georgia, serif; }
+  </style>
     <meta name="google-site-verification" content="1faWU-2_Ie7rmnChub7yajNTgBV3IaTW3AKgFoQNuRk" />
     <meta name="google-site-verification" content="ChRZlOIxn4CmlfnKJ2_9izXVD4fcmGPvWz0nQ7D2J7s" />
   </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-59QCKK1FZC"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<body>
+<div id="root"></div>
+<script type="text/babel">
 
-  gtag('config', 'G-59QCKK1FZC');
-</script>
-  <body>
-    <div id="root">
-      <header class="header">
-        <div class="container">
-          <div class="logo">
-            <a href="index.html">
-              <h1>DebateCraft</h1>
+/* ── TOKENS ──────────────────────────────────── */
+const NAVY   = '#111d3c';
+const NAVY2  = '#0d1730';
+const ORANGE = '#F7A234';
+const SKY    = '#3DC3E8';
+const CREAM  = '#f5f0e8';
+const WHITE  = '#ffffff';
+
+const PROGRAM_COLORS = {
+  level1:    { color:'#2563eb', bg:'#eef2ff' },
+  level2:    { color:'#e07b2a', bg:'#fff4eb' },
+  bioethics: { color:'#0d9488', bg:'#f0fdfa' },
+  pf:        { color:'#764ba2', bg:'#f5f3ff' },
+  wsdc:      { color:'#dc2626', bg:'#fef2f2' },
+  bp:        { color:'#3DC3E8', bg:'#ecfeff' },
+  level4:    { color:'#4f46e5', bg:'#eef2ff' },
+};
+
+const PROGRAMS = [
+  { key:'level1',    tag:'Level 1 · Ages 9+',        title:'Introduction to Debate', meta:'Beginner · 13 Sessions · 8 Students',       desc:'A gentle but rigorous start for younger beginners, building logic, Socratic reasoning, PEEL argumentation, and public speaking confidence.' },
+  { key:'level2',    tag:'Level 2 · Intermediate',   title:'Intermediate Debate',    meta:'Prior DebateCraft or Up to 1 Year',        desc:'A faster-paced progression into sharper rebuttal technique, structured argumentation, and strategic motion analysis.' },
+  { key:'bioethics', tag:'Bioethics · Ages 13+',     title:'Science and Medicine',   meta:'10 One-Hour Sessions · 10 Students',       desc:'Explore science and ethics through Harkness discussions on moral dilemmas in medicine, biology, law, and philosophy.' },
+  { key:'pf',        tag:'Public Forum · Ages 13+',  title:'PF Mastery',             meta:'Prior Experience · 10 Two-Hour Sessions', desc:'Balance evidence-based research with persuasive delivery while refining crossfire technique and summary speeches.' },
+  { key:'wsdc',      tag:'Level 3 · WSDC',           title:'WSDC Mastery',            meta:'Ages 13+ · 2+ Years · Team HK Coaches',   desc:'A high-performance World Schools track for experienced debaters mastering five-minute speeches and international strategy.' },
+  { key:'bp',        tag:'Level 3 · BP',             title:'BP Competitive Track',    meta:'Ages 13+ · 2+ Years · 8 Students',        desc:'University-style British Parliamentary training focused on extensions, POIs, rapid analysis, and weekly Saturday Lab practice.' },
+  { key:'level4',    tag:'Level 4 · Ages 15+',       title:'Advanced Debate Seminar', meta:'5+ Years · Tournament Track Record',      desc:'An elite seminar for advanced case-building, deep matter-loading, nuanced motion analysis, and international competition prep.' },
+];
+
+const STEPS = [
+  { n:'01', title:'Apply Online',    desc:'Complete our free 2-minute interest form. No audition, no prerequisites, no cost — ever.' },
+  { n:'02', title:'Get Placed',      desc:'Our team assesses your experience level and places you in the ideal cohort for your goals.' },
+  { n:'03', title:'Attend Sessions', desc:'Join live online sessions with world-class coaches and a global community of debaters.' },
+  { n:'04', title:'Transform',       desc:'Compete, grow, and develop the critical thinking skills that define future leaders.' },
+];
+
+const SKILLS = [
+  { n:'01', title:'Unshakable Confidence',       desc:"Public speaking is the world's most common fear. Our structured drills permanently transform hesitation into commanding presence." },
+  { n:'02', title:'Academic Acceleration',       desc:'Students who debate consistently outperform peers in writing, reading comprehension, and standardized tests — backed by decades of research.' },
+  { n:'03', title:'Global Perspective',          desc:'Engaging 160+ students across 12+ countries, our students debate real-world issues with peers from vastly different contexts.' },
+  { n:'04', title:'Career-Defining Credentials', desc:'Alumni report debate experience was the defining differentiator in university admissions and job interviews. The reasoning skills are unmistakable.' },
+];
+
+const TESTIMONIALS = [
+  { quote:'DebateCraft completely transformed how my daughter approaches arguments. She now thinks before she speaks — and when she does, everyone listens.',    attr:'Parent — Hong Kong Cohort' },
+  { quote:'I went from terrified to speak to winning my first tournament in four months. The coaches push you past your comfort zone in the best possible way.', attr:'Student, Age 15 — United States Cohort' },
+  { quote:'The curriculum is genuinely university-level. As a former Oxford debater, I was impressed by the intellectual rigor DebateCraft provides — for free.', attr:'School Partner — United Kingdom' },
+];
+
+const COUNTRIES = ['Canada','United States','Panama','United Kingdom','Pakistan','India','Qatar','Indonesia','Vietnam','South Korea','China','Hong Kong'];
+const STUDENT_FORM_URL = 'https://form.jotform.com/261003548067049';
+const COURSE_INTEREST_FORM_URL = 'https://form.jotform.com/261003548067049';
+const COACH_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfombgLTJ0oDbWfCaSumrnLAjkdvT_K9FW1KJakbr9ZAQxwnQ/viewform?usp=header';
+const DONATE_URL = 'https://buymeacoffee.com/debatecraft';
+
+/* ── CARD NAV (GSAP) ─────────────────────────── */
+function Nav({ page, setPage }) {
+  const [isOpen, setIsOpen]       = React.useState(false);
+  const [isExpanded, setIsExpanded] = React.useState(false);
+  const navRef   = React.useRef();
+  const cardsRef = React.useRef([]);
+  const tlRef    = React.useRef();
+
+  const loadGSAP = () => new Promise(res => {
+    if (window.gsap) { res(window.gsap); return; }
+    const s = document.createElement('script');
+    s.src = 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js';
+    s.onload = () => res(window.gsap);
+    document.head.appendChild(s);
+  });
+
+  React.useEffect(() => {
+    loadGSAP().then(gsap => {
+      const navEl = navRef.current;
+      if (!navEl) return;
+      gsap.set(navEl, { height:60, overflow:'hidden' });
+      gsap.set(cardsRef.current.filter(Boolean), { y:40, opacity:0 });
+      const tl = gsap.timeline({ paused:true });
+      tl.to(navEl, { height:260, duration:0.42, ease:'power3.out' });
+      tl.to(cardsRef.current.filter(Boolean), { y:0, opacity:1, duration:0.38, ease:'power3.out', stagger:0.07 }, '-=0.15');
+      tlRef.current = tl;
+    });
+    return () => tlRef.current?.kill();
+  }, []);
+
+  const toggle = () => {
+    const tl = tlRef.current;
+    if (!tl) return;
+    if (!isExpanded) {
+      setIsOpen(true); setIsExpanded(true); tl.play(0);
+    } else {
+      setIsOpen(false);
+      tl.eventCallback('onReverseComplete', () => setIsExpanded(false));
+      tl.reverse();
+    }
+  };
+
+  const Arrow = () => (
+    <svg width="11" height="11" viewBox="0 0 12 12" fill="none" style={{ flexShrink:0 }}>
+      <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  );
+
+  const NAV_CARDS = [
+    { label:'About',        bg:NAVY,    text:'rgba(255,255,255,0.9)', links:[{label:'Our Mission',href:'../../pages/story.html'},{label:'Our Team',href:'../../pages/team.html'},{label:'Partnership',href:'../../pages/partnership.html'}] },
+    { label:'Programs',     bg:NAVY2,   text:'rgba(255,255,255,0.9)', links:[{label:'Debate Courses',href:'../../pages/offerings.html'},{label:'Bioethics',href:'../../pages/biology.html'},{label:'WSDC & BP Tracks',href:'../../pages/offerings.html'}] },
+    { label:'Get Involved', bg:ORANGE, text:'#111d3c', links:[{label:'Apply as Student',href:STUDENT_FORM_URL},{label:'Become a Coach',href:COACH_FORM_URL},{label:'Donate',href:DONATE_URL}] },  ];
+
+  return (
+    <div style={{ position:'sticky', top:0, zIndex:200 }}>
+      <nav ref={navRef} style={{ background:NAVY, borderBottom:'1px solid rgba(255,255,255,0.07)', overflow:'hidden' }}>
+        {/* Top bar */}
+        <div style={{ height:60, display:'flex', alignItems:'center', padding:'0 28px', gap:12 }}>
+          {/* Hamburger */}
+          <div onClick={toggle} style={{ width:26, height:18, display:'flex', flexDirection:'column', justifyContent:'space-between', cursor:'pointer', flexShrink:0, padding:'1px 0' }}>
+            <div style={{ height:2, background:WHITE, borderRadius:1, transition:'all 0.3s', transform:isOpen?'rotate(45deg) translateY(8px)':'none' }}></div>
+            <div style={{ height:2, background:WHITE, borderRadius:1, transition:'all 0.3s', opacity:isOpen?0:1 }}></div>
+            <div style={{ height:2, background:WHITE, borderRadius:1, transition:'all 0.3s', transform:isOpen?'rotate(-45deg) translateY(-8px)':'none' }}></div>
+          </div>
+          {/* Logo */}
+          <a href="../../index.html" style={{ display:'flex', alignItems:'center', gap:10, cursor:'pointer', marginLeft:4, textDecoration:'none' }}>
+            <img src="../../Images/Logo-white-transparent.png" alt="" width={28} height={28} style={{ objectFit:'contain' }}/>
+            <span style={{ fontFamily:'Playfair Display,Georgia,serif', fontSize:18, fontWeight:700, color:WHITE }}>
+              DebateCraft
+            </span>
+          </a>
+          {/* Right links */}
+          <div style={{ display:'flex', alignItems:'center', gap:2, marginLeft:'auto' }}>
+            {[{label:'Get Involved',href:'../../pages/get-involved.html'},{label:'Contact Us',href:'../../pages/contact.html'}].map(l => (
+              <a key={l.label} href={l.href}
+                style={{ color:'rgba(255,255,255,0.62)', fontSize:12, fontWeight:600, padding:'7px 12px', cursor:'pointer', letterSpacing:'0.04em', textDecoration:'none' }}>{l.label}</a>
+            ))}
+            <div style={{ width:1, height:16, background:'rgba(255,255,255,0.12)', margin:'0 6px' }}></div>
+            <a href="../../cnindex.html" style={{ color:'rgba(255,255,255,0.35)', fontSize:11, padding:'7px 10px', cursor:'pointer', textDecoration:'none' }}>中文 (繁體)</a>
+            <a href={STUDENT_FORM_URL}
+              style={{ background:ORANGE, color:NAVY, border:'none', borderRadius:5, padding:'8px 16px',
+                fontFamily:'DM Sans,sans-serif', fontWeight:700, fontSize:12, cursor:'pointer',
+                letterSpacing:'0.07em', textTransform:'uppercase', marginLeft:6, whiteSpace:'nowrap', textDecoration:'none', display:'inline-block' }}>
+              Apply Free →
             </a>
           </div>
-          <div class="mobile-menu-button" id="mobileMenuButton">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <nav class="main-nav" id="mainNav">
-            <ul>
-              <li class="dropdown">
-                <a href="#" class="dropbtn">About ▾</a>
-                <ul class="dropdown-content">
-                  <li><a href="./pages/story.html">Our Mission</a></li>
-                  <li><a href="./pages/team.html">Our Team</a></li>
-                </ul>
-              </li>
-              <li class="dropdown">
-                <a href="#" class="dropbtn">Offerings ▾</a>
-                <ul class="dropdown-content">
-                  <li><a href="./pages/offerings.html">Debate</a></li>
-                  <li><a href="./pages/biology.html">Biology</a></li>
-                </ul>
-              </li>
-              <li><a href="./pages/partnership.html">Partnership</a></li>
-              <li><a href="./pages/get-involved.html">Get Involved</a></li>
-              <li><a href="./pages/contact.html">Contact Us</a></li>
-              <li><a href="cnindex.html">中文 (繁體)</a></li>
-            </ul>
-          </nav>
         </div>
-      </header>
-      <main class="main-content">
-        <div id="home" class="page active">
-          <section class="hero">
-            <div class="container">
-              <h1>Every Student Deserves a Voice.</h1>
-              <h2>
-                DebateCraft turns quiet ideas into commanding voices—led entirely by students, for students.
-              </h2>
-              <ul class="hero-highlights">
-                <li>Free group & private debate classes for grades 3-12. </li>
-                <li>Led by national-circuit champions</li>
-                <li>Open to all backgrounds and experience levels</li>
-              </ul>
-              <!-- TODO: Put Image -->
-              <div class="hero-buttons">
-                <a href="./pages/offerings.html" class="btn btn-primary"
-                  >Explore Debate</a
-                >
-                <a href="./pages/biology.html" class="btn btn-primary"
-                  >Explore Biology</a
-                >
-                <a href="./pages/story.html" class="btn btn-secondary">Learn More</a>
+        {/* Expanded cards */}
+        <div style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:10, padding:'0 28px 18px' }}>
+          {NAV_CARDS.map((card, i) => (
+            <div key={i} ref={el => { if(el) cardsRef.current[i]=el; }}
+              style={{ background:card.bg, borderRadius:8, padding:'16px 18px', opacity:0,
+                border: card.bg===NAVY2 ? '1px solid rgba(255,255,255,0.08)' : 'none' }}>
+              <div style={{ fontSize:10, fontWeight:700, letterSpacing:'0.14em', textTransform:'uppercase',
+                color: card.bg===ORANGE ? 'rgba(17,29,60,0.5)' : 'rgba(255,255,255,0.35)', marginBottom:12 }}>
+                {card.label}
               </div>
+              {card.links.map((lnk, j) => (
+                <a key={j} href={lnk.href}
+                  style={{ display:'flex', alignItems:'center', gap:8, padding:'8px 0',
+                    borderBottom: j < card.links.length-1 ? `1px solid ${card.bg===ORANGE?'rgba(17,29,60,0.1)':'rgba(255,255,255,0.07)'}` : 'none',
+                    cursor:'pointer', color:card.text, fontSize:14, fontWeight:500, textDecoration:'none' }}>
+                  <Arrow />
+                  {lnk.label}
+                </a>
+              ))}
             </div>
-          </section>
-                    <!--<section class="calendar-section">
-  <div class="container">
-    <h2>Upcoming Courses</h2>
-    <div class="calendar-table">
-      <table>
-        <thead>
-          <tr>
-            <th>WSDC</th>
-            <th>PF</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>12/23, 12/24, 12/29, 12/30, 1/2 at 4:30-5:30pm HKT/8:30-10:30am UKT</td>
-            <td>12/27, 12/28, 12/29,1/4 at 5-7pm HKT/9-11am UKT</td>
-          </tr>
-          <tr>
-            <td>Taught by Head Private Coach Valmik Dagayach and Senior Coach Cici Chen</td>
-            <td>Taught by Head of PF Arthur Zhang</td>
-          </tr>
-          <tr>
-            <td>Class Full</td>
-            <td>Class Full</td>
-          </tr>
-        </tbody>
-      </table>
+          ))}
+        </div>
+      </nav>
     </div>
-  </div>
-</section>-->
+  );
+}
 
-                    <section class="cta-section">
-            <div class="container">
-              <h2>Ready to Join DebateCraft?</h2>
-              <p>
-                Discover our programs and unleash your potential through the
-                power of debate.
-              </p>
-              <button class="btn btn-primary"><a href="https://forms.gle/9GCJgoyH3nX8YKq69">Sign up now</a></button>
-              <br>
-              <br>
-              <button class="btn btn-primary"><a href="https://form.jotform.com/253297599452473">Join our team</a></button>
+/* ── LIGHT RAYS HERO CANVAS ──────────────────── */
+const hexToRgb = hex => {
+  const m = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  return m ? [parseInt(m[1],16)/255,parseInt(m[2],16)/255,parseInt(m[3],16)/255] : [1,1,1];
+};
 
-            </div>
-          </section>
-          <section class="stats-section">
-            <div class="container">
-              <h2>Program Overview</h2>
-              <div class="stats-container">
-                <div class="stat-row">
-                  <div class="stat-item">
-                    <h3>160+</h3>
-                    <p>Students engaged in Canada, China, Hong Kong, India, Indonesia, Pakistan, Panama, Qatar, South Korea, the United States, the United Kingdom, and Vietnam</p>
-                  </div>
-                  <div class="stat-item">
-                    <h3>200+</h3>
-                    <p>Hours of teaching</p>
-                  </div>
-                </div>
-                <div class="stat-row">
-                  <div class="stat-item">
-                    <h3>100+</h3>
-                    <p>Years of experience in our coaching team</p>
-                  </div>
-                  <!-- A button directing you to the Teams page -->
-                  <div class="stat-item">
-                    <h3>100%</h3>
-                    <p>Students would recommend DebateCraft to a friend</p>
-                  </div>
-                </div>
+function HeroCanvas() {
+  const containerRef = React.useRef();
+  const stateRef = React.useRef({});
+  React.useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+    let cancelled = false;
+    const loadOGL = () => new Promise(res => {
+      if (window.__OGL__) { res(window.__OGL__); return; }
+      const s = document.createElement('script');
+      s.src = 'https://cdn.jsdelivr.net/npm/ogl@1.0.8/dist/ogl.umd.js';
+      s.onload = () => { window.__OGL__ = window.OGL; res(window.OGL); };
+      document.head.appendChild(s);
+    });
+    loadOGL().then(OGL => {
+      if (cancelled || !container) return;
+      const { Renderer, Program, Triangle, Mesh } = OGL;
+      const renderer = new Renderer({ dpr:Math.min(devicePixelRatio,2), alpha:true });
+      const gl = renderer.gl;
+      gl.canvas.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;pointer-events:none;';
+      container.appendChild(gl.canvas);
+      const vert = `attribute vec2 position;varying vec2 vUv;void main(){vUv=position*0.5+0.5;gl_Position=vec4(position,0.0,1.0);}`;
+      const frag = `precision highp float;
+uniform float iTime;uniform vec2 iResolution;uniform vec2 rayPos;uniform vec2 rayDir;
+uniform vec3 raysColor;uniform float raysSpeed;uniform float lightSpread;uniform float rayLength;
+uniform float fadeDistance;uniform vec2 mousePos;uniform float mouseInfluence;varying vec2 vUv;
+float rayStrength(vec2 src,vec2 refDir,vec2 coord,float sA,float sB,float spd){
+  vec2 toCoord=coord-src;vec2 dn=normalize(toCoord);float ca=dot(dn,refDir);
+  float spread=pow(max(ca,0.0),1.0/max(lightSpread,0.001));
+  float dist=length(toCoord);float maxD=iResolution.x*rayLength;
+  float lFall=clamp((maxD-dist)/maxD,0.0,1.0);
+  float fFall=clamp((iResolution.x*fadeDistance-dist)/(iResolution.x*fadeDistance),0.4,1.0);
+  float base=clamp((0.45+0.15*sin(ca*sA+iTime*spd))+(0.3+0.2*cos(-ca*sB+iTime*spd)),0.0,1.0);
+  return base*lFall*fFall*spread;}
+void main(){
+  vec2 coord=vec2(gl_FragCoord.x,iResolution.y-gl_FragCoord.y);
+  vec2 finalDir=rayDir;
+  if(mouseInfluence>0.0){vec2 mPos=mousePos*iResolution.xy;finalDir=normalize(mix(rayDir,normalize(mPos-rayPos),mouseInfluence));}
+  vec4 r1=vec4(1.0)*rayStrength(rayPos,finalDir,coord,36.2214,21.11349,1.5*raysSpeed);
+  vec4 r2=vec4(1.0)*rayStrength(rayPos,finalDir,coord,22.3991,18.0234,1.1*raysSpeed);
+  vec4 col=r1*0.5+r2*0.4;
+  float t=coord.y/iResolution.y;
+  col.rgb*=mix(vec3(0.97,0.64,0.2),vec3(0.24,0.76,0.91),t*0.7);
+  col.rgb*=raysColor;gl_FragColor=col;}`;
+      const uniforms = {
+        iTime:{value:0},iResolution:{value:[1,1]},rayPos:{value:[0,0]},rayDir:{value:[0,1]},
+        raysColor:{value:[1,1,1]},raysSpeed:{value:0.8},lightSpread:{value:1.8},
+        rayLength:{value:2.0},fadeDistance:{value:1.0},mousePos:{value:[0.5,0.5]},mouseInfluence:{value:0.12},
+      };
+      const mesh = new Mesh(gl,{ geometry:new Triangle(gl), program:new Program(gl,{vertex:vert,fragment:frag,uniforms}) });
+      const resize = () => {
+        const w=container.clientWidth,h=container.clientHeight;
+        renderer.setSize(w,h);
+        const dpr=renderer.dpr;
+        uniforms.iResolution.value=[w*dpr,h*dpr];
+        uniforms.rayPos.value=[w*dpr*0.5,-0.2*h*dpr];
+        uniforms.rayDir.value=[0,1];
+      };
+      const mouse={x:0.5,y:0.5},smooth={x:0.5,y:0.5};
+      const onMouse=e=>{ const r=container.getBoundingClientRect(); mouse.x=(e.clientX-r.left)/r.width; mouse.y=(e.clientY-r.top)/r.height; };
+      window.addEventListener('mousemove',onMouse);
+      window.addEventListener('resize',resize);
+      resize();
+      let raf;
+      const loop=t=>{ if(cancelled)return; uniforms.iTime.value=t*0.001; smooth.x=smooth.x*0.93+mouse.x*0.07; smooth.y=smooth.y*0.93+mouse.y*0.07; uniforms.mousePos.value=[smooth.x,smooth.y]; renderer.render({scene:mesh}); raf=requestAnimationFrame(loop); };
+      raf=requestAnimationFrame(loop);
+      stateRef.current.cleanup=()=>{ cancelled=true; cancelAnimationFrame(raf); window.removeEventListener('mousemove',onMouse); window.removeEventListener('resize',resize); try{ gl.getExtension('WEBGL_lose_context')?.loseContext(); gl.canvas.parentNode?.removeChild(gl.canvas); }catch(e){} };
+    });
+    return ()=>{ cancelled=true; stateRef.current.cleanup?.(); };
+  },[]);
+  return <div ref={containerRef} style={{ position:'absolute', inset:0, pointerEvents:'none' }}/>;
+}
 
-              </div>
-              <div class="stats-buttons">
-                  <a href="./pages/team.html" class="btn btn-primary"
-                    >Check out our world-class team</a
-                  >
-              </div>
-            </div>
-          </section>
-
-          <section class="gallery-section">
-            <div class="container">
-              <h2>Our Students in Action</h2>
-              <div id="carousel" class="stack-container">
-                <button class="arrow left" onclick="scrollContent('left')">❮</button>
-                <div class="item" style="background-image: url('./Images/Image1.jpeg');" data-text="Tailored&#10;Private&#10;Lessons" onclick="window.location.href='./pages/courses.html'"></div>
-                <div class="item" style="background-image: url('./Images/Image2.jpeg');" data-text="Interactive&#10;Online&#10;Sessions" onclick="window.location.href='./pages/courses.html'"></div>
-                <div class="item" style="background-image: url('./Images/Image3.png');" data-text="Engaging&#10;Debate&#10;Rounds" onclick="window.location.href='./pages/courses.html'"></div>
-                <div class="item" style="background-image: url('./Images/Image4.png');" data-text="Strong&#10;Debate&#10;Foundations" onclick="window.location.href='./pages/courses.html'"></div>
-                <div class="item" style="background-image: url('./Images/Image5.png');" data-text="Empowering&#10;Critical&#10;Thinkers" onclick="window.location.href='./pages/courses.html'"></div>
-                <div class="item" style="background-image: url('./Images/Image6.png');" data-text="Encouraging&#10;Multiple&#10;Perspectives" onclick="window.location.href='./pages/courses.html'"></div>
-                <div class="item" style="background-image: url('./Images/Image7.png');" data-text="Practical&#10;Debate&#10;Examples" onclick="window.location.href='./pages/courses.html'"></div>
-                <button class="arrow right" onclick="scrollContent('right')">❯</button>
-                <div class="progress-bar"></div>
-              </div>
-            </div>
-          </section>
-          
-                    <section class="mission-section">
-            <div class="container">
-              <h2>Our Mission</h2>
-              <div class="mission-cards">
-                <div class="mission-card">
-                  <h3>Empowering Students</h3>
-                  <p>
-                    Our mission centers on students empowering students by providing them
-                    with the tools of debate. Through our programs, we nurture
-                    confidence, self-expression, and critical thinking.
-                  </p>
-                </div>
-                <div class="mission-card">
-                  <h3>Increasing Accessibility</h3>
-                  <p>
-                    We strive to make debate education accessible to all,
-                    especially for students from underrepresented backgrounds.
-                  </p>
-                </div>
-                <div class="mission-card">
-                  <h3>Beyond Debate Rounds</h3>
-                  <p>
-                    Debate skills extend beyond the classroom. By mastering
-                    argumentation and public speaking, students enhance their
-                    academic performance and become more confident individuals.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-                    <section class="mission-section">
-            <div class="container">
-              <h2>Our Offerings</h2>
-              <div class="mission-cards">
-                <div class="mission-card">
-                  <h3>School Partnerships</h3>
-                  <p>
-                    Aiming to make debate education accessible to all, we are starting to offer in-person events for students in schools where debate otherwise wouldn't be offered. 
-                  </p>
-                </div>
-                <div class="mission-card">
-                  <h3>Holiday Group Classes</h3>
-                  <p>
-                    Continuing on the success of our Summer Debate Exposure Series and Winter MasterClasses, we will be announcing free online debate group courses for all levels during school breaks. These courses will be using our unique debate curriculum developed in conjunction with internationally recognized debate coaches.  
-                  </p>
-                </div>
-                <div class="mission-card">
-                  <h3>Free Debate Materials</h3>
-                  <p>
-                    Debate skills shouldn't be locked behind a pay wall, and we are working on creating original debate content to allow students to take the next step in their debate careers.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-        </div>
-      </main>
-
-      <footer class="footer">
-        <div class="container">
-          <div class="footer-content">
-            <div class="footer-logo">
-              <h2>DebateCraft</h2>
-              <p>
-                Students empowering students through the art of debate for a brighter
-                future.
-              </p>
-            </div>
-            <div class="footer-links">
-              <h3>Quick Links</h3>
-              <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="./pages/story.html">Our Mission</a></li>
-                <li><a href="./pages/offerings.html">Debate</a></li>
-                <li><a href="biology.html">Biology</a></li>
-                <li><a href="./pages/get-involved.html">Get Involved</a></li>
-                <li><a href="./pages/contact.html">Contact Us</a></li>
-              </ul>
-            </div>
-            <div class="footer-contact">
-              <h3>Contact Us</h3>
-              <a href="mailto:info@debatecraft.org">info@debatecraft.org</a>
-              <div class="social-links">
-                <a
-                  href="https://www.facebook.com/profile.php?id=61577761071956"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Facebook</a
-                >
-                <a
-                  href="https://www.instagram.com/debate_craft/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Instagram</a
-                >
-              </div>
-            </div>
+/* ── HERO ────────────────────────────────────── */
+function Hero({ setPage }) {
+  const [vis, setVis] = React.useState(false);
+  React.useEffect(() => { const t = setTimeout(() => setVis(true), 60); return () => clearTimeout(t); }, []);
+  return (
+    <section style={{ background:NAVY2, position:'relative', overflow:'hidden' }}>
+      <HeroCanvas />
+      <div style={{ maxWidth:1200, margin:'0 auto', padding:'80px 32px 72px', display:'grid', gridTemplateColumns:'1fr 280px', gap:40, alignItems:'center', position:'relative', zIndex:2 }}>
+        <div>
+          <div style={{ display:'flex', alignItems:'center', gap:12, marginBottom:20, opacity:vis?1:0, animation:vis?'fadeUp 0.55s ease both':'none' }}>
+            <div style={{ width:28, height:2, background:ORANGE, flexShrink:0 }}></div>
+            <span style={{ fontSize:11, fontWeight:700, color:ORANGE, letterSpacing:'0.14em', textTransform:'uppercase' }}>Student-run · Free · Global</span>
           </div>
-          <div class="footer-bottom">
-            <p>&copy; 2026 DebateCraft. All rights reserved.</p>
+          <h1 className="serif" style={{ fontSize:72, fontWeight:800, color:WHITE, lineHeight:1.0, marginBottom:22, opacity:vis?1:0, animation:vis?'fadeUp 0.6s ease 0.08s both':'none' }}>
+            Every Student<br />Deserves<br /><em style={{ color:ORANGE, fontStyle:'italic' }}>a Voice.</em>
+          </h1>
+          <p style={{ fontSize:16, color:'rgba(255,255,255,0.62)', lineHeight:1.72, maxWidth:480, marginBottom:24, opacity:vis?1:0, animation:vis?'fadeUp 0.6s ease 0.16s both':'none' }}>
+            Free debate &amp; science programs — led entirely by students, for students across 12+ countries worldwide.
+          </p>
+          {/* Key facts strip */}
+          <div style={{ display:'flex', gap:0, marginBottom:32, borderTop:'1px solid rgba(255,255,255,0.1)', borderBottom:'1px solid rgba(255,255,255,0.1)', opacity:vis?1:0, animation:vis?'fadeUp 0.6s ease 0.22s both':'none' }}>
+            {[['Grades 3–12','Free for all students'],['National Champions','Led by circuit veterans'],['All Backgrounds','No experience needed']].map(([heading,sub],i) => (
+              <div key={i} style={{ flex:1, padding:'14px 18px', borderRight:i<2?'1px solid rgba(255,255,255,0.1)':'none' }}>
+                <div style={{ fontSize:13, fontWeight:700, color:WHITE, marginBottom:3 }}>{heading}</div>
+                <div style={{ fontSize:12, color:'rgba(255,255,255,0.42)', fontWeight:400 }}>{sub}</div>
+              </div>
+            ))}
+          </div>
+          <div style={{ display:'flex', gap:12, opacity:vis?1:0, animation:vis?'fadeUp 0.6s ease 0.3s both':'none' }}>
+            <a href={STUDENT_FORM_URL} style={{ background:ORANGE, color:NAVY, border:'none', borderRadius:5, padding:'13px 26px', fontFamily:'DM Sans,sans-serif', fontWeight:700, fontSize:13, cursor:'pointer', letterSpacing:'0.06em', textTransform:'uppercase', boxShadow:`0 8px 28px rgba(247,162,52,0.35)`, textDecoration:'none', display:'inline-flex', alignItems:'center' }}>Apply Free →</a>
           </div>
         </div>
-      </footer>
+        {/* Arc column */}
+        <div style={{ display:'flex', alignItems:'center', justifyContent:'center', opacity:vis?1:0, animation:vis?'fadeIn 1s ease 0.4s both':'none' }}>
+          <svg width="240" height="240" viewBox="0 0 320 320" fill="none">
+            <circle cx="160" cy="160" r="128" stroke={ORANGE} strokeWidth="20" strokeLinecap="round" strokeDasharray="560 250" style={{ transformOrigin:'160px 160px', animation:'arcSpin 20s linear infinite' }}/>
+            <circle cx="160" cy="160" r="86"  stroke={SKY}    strokeWidth="16" strokeLinecap="round" strokeDasharray="290 260" style={{ transformOrigin:'160px 160px', animation:'arcSpin2 14s linear infinite' }}/>
+            <circle cx="160" cy="160" r="18" fill={NAVY2}/>
+            <circle cx="160" cy="160" r="11" fill={WHITE} opacity="0.9"/>
+          </svg>
+        </div>
+      </div>
+      <div style={{ height:1, background:'rgba(255,255,255,0.07)' }}></div>
+    </section>
+  );
+}
+
+/* ── STATS BAR ───────────────────────────────── */
+function StatsBar() {
+  const [vis,setVis]=React.useState(false); const ref=React.useRef();
+  React.useEffect(()=>{ const obs=new IntersectionObserver(([e])=>{ if(e.isIntersecting)setVis(true); },{threshold:0.3}); if(ref.current)obs.observe(ref.current); return()=>obs.disconnect(); },[]);
+  const stats=[{n:'220+',l:'Students Worldwide',s:'Across 12+ Countries'},{n:'200+',l:'Hours Taught',s:'Premium Instruction'},{n:'100+',l:'Years Experience',s:'Combined Coaching'},{n:'100%',l:'Recommendation',s:'Student Rate'}];
+  return (
+    <div ref={ref} style={{ background:ORANGE }}>
+      <div style={{ maxWidth:1200, margin:'0 auto', padding:'0 32px', display:'grid', gridTemplateColumns:'repeat(4,1fr)' }}>
+        {stats.map((s,i)=>(
+          <div key={i} style={{ textAlign:'center', padding:'36px 16px', borderRight:i<3?'1px solid rgba(17,29,60,0.15)':'none', opacity:vis?1:0, animation:vis?`countUp 0.5s ease ${i*0.1}s both`:'none' }}>
+            <div className="serif" style={{ fontSize:52, fontWeight:800, color:NAVY, lineHeight:1, marginBottom:5 }}>{s.n}</div>
+            <div style={{ fontSize:11, fontWeight:700, color:NAVY, letterSpacing:'0.09em', textTransform:'uppercase', opacity:0.7, lineHeight:1.5 }}>{s.l}<br/>{s.s}</div>
+          </div>
+        ))}
+      </div>
     </div>
+  );
+}
 
-    <script src="./scripts/main.js"></script>
-    <script src="./scripts/statAnimation.js"></script>\
-    <script src="./scripts/gallery.js"></script>
-  </body>
+/* ── GLOBAL MAP (D3) ─────────────────────────── */
+function GlobalMap() {
+  const [vis,setVis]=React.useState(false); const mapRef=React.useRef(); const sectionRef=React.useRef();
+  React.useEffect(()=>{ const obs=new IntersectionObserver(([e])=>{ if(e.isIntersecting)setVis(true); },{threshold:0.15}); if(sectionRef.current)obs.observe(sectionRef.current); return()=>obs.disconnect(); },[]);
+  React.useEffect(()=>{
+    if(!vis||!mapRef.current)return;
+    const el=mapRef.current;
+    const PINS=[
+      {name:'Canada',       lat:56,   lon:-96,  flag:'🇨🇦',labelDir:'above'},
+      {name:'United States',lat:37,   lon:-98,  flag:'🇺🇸',labelDir:'below'},
+      {name:'Panama',       lat:9,    lon:-80,  flag:'🇵🇦',labelDir:'below'},
+      {name:'United Kingdom',lat:54,  lon:-2,   flag:'🇬🇧',labelDir:'above'},
+      {name:'Pakistan',     lat:30,   lon:69,   flag:'🇵🇰',labelDir:'above'},
+      {name:'India',        lat:22,   lon:80,   flag:'🇮🇳',labelDir:'below'},
+      {name:'Qatar',        lat:25.3, lon:51.2, flag:'🇶🇦',labelDir:'above'},
+      {name:'Indonesia',    lat:-4,   lon:118,  flag:'🇮🇩',labelDir:'below'},
+      {name:'Vietnam',      lat:14,   lon:106,  flag:'🇻🇳',labelDir:'below'},
+      {name:'South Korea',  lat:37,   lon:128,  flag:'🇰🇷',labelDir:'above'},
+      {name:'China',        lat:36,   lon:100,  flag:'🇨🇳',labelDir:'above'},
+      {name:'Hong Kong',    lat:21.5, lon:119,  flag:'🇭🇰',labelDir:'above'},
+    ];
+    const loadScript=(src,check)=>new Promise(res=>{ if(window[check]){res();return;} const s=document.createElement('script'); s.src=src; s.onload=res; document.head.appendChild(s); });
+    Promise.all([
+      loadScript('https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js','d3'),
+      loadScript('https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js','topojson'),
+    ]).then(()=>{
+      const W=el.parentElement.clientWidth||620, H=Math.round(W*0.62);
+      const svg=d3.select(el).attr('viewBox',`0 0 ${W} ${H}`).attr('width',W).attr('height',H);
+      svg.selectAll('*').remove();
+      const proj=d3.geoNaturalEarth1().scale(W/6.3).translate([W/2,H/2]);
+      const path=d3.geoPath().projection(proj);
+      svg.append('path').datum({type:'Sphere'}).attr('d',path).attr('fill','rgba(255,255,255,0.03)').attr('stroke','rgba(255,255,255,0.08)').attr('stroke-width',0.5);
+      fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json').then(r=>r.json()).then(world=>{
+        const countries=topojson.feature(world,world.objects.countries);
+        svg.append('path').datum(d3.geoGraticule()()).attr('d',path).attr('fill','none').attr('stroke','rgba(255,255,255,0.04)').attr('stroke-width',0.4);
+        svg.append('g').selectAll('path').data(countries.features).join('path').attr('d',path).attr('fill','rgba(255,255,255,0.07)').attr('stroke','rgba(255,255,255,0.18)').attr('stroke-width',0.5);
+        PINS.forEach((pin,i)=>{
+          const coords=proj([pin.lon,pin.lat]); if(!coords)return;
+          const [x,y]=coords; const above=pin.labelDir==='above';
+          const g=svg.append('g').attr('opacity',0).style('animation',`pillPop 0.45s ease ${i*0.07}s both`);
+          g.append('text').attr('x',x).attr('y',y+6).attr('text-anchor','middle').attr('font-size',14).attr('font-family','Apple Color Emoji,Segoe UI Emoji,sans-serif').style('cursor','default').text(pin.flag);
+          const labelY=above?y-8:y+22; const labelW=pin.name.length*5.2+12;
+          g.append('rect').attr('x',x-labelW/2).attr('y',labelY-9).attr('width',labelW).attr('height',12).attr('rx',3).attr('fill','rgba(13,23,48,0.82)');
+          g.append('text').attr('x',x).attr('y',labelY).attr('text-anchor','middle').attr('fill','rgba(255,255,255,0.9)').attr('font-size',7.5).attr('font-family','DM Sans,sans-serif').attr('font-weight',600).text(pin.name);
+        });
+      });
+    });
+  },[vis]);
+  return (
+    <section ref={sectionRef} style={{ background:NAVY, padding:'80px 0' }}>
+      <div style={{ maxWidth:1200, margin:'0 auto', padding:'0 32px', display:'flex', flexDirection:'column', gap:36 }}>
+        <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between', gap:32, flexWrap:'wrap' }}>
+          <div>
+            <div style={{ fontSize:11, fontWeight:700, color:ORANGE, letterSpacing:'0.14em', textTransform:'uppercase', marginBottom:12 }}>Global Community</div>
+            <h2 className="serif" style={{ fontSize:44, fontWeight:800, color:WHITE, lineHeight:1.08 }}>Debate Has No <em style={{ color:SKY, fontStyle:'italic' }}>Borders.</em></h2>
+          </div>
+          <div style={{ display:'flex', gap:32, alignItems:'center' }}>
+            <div style={{ textAlign:'center' }}><div className="serif" style={{ fontSize:36, fontWeight:800, color:ORANGE }}>12+</div><div style={{ fontSize:10, fontWeight:600, color:'rgba(255,255,255,0.4)', letterSpacing:'0.08em', textTransform:'uppercase' }}>Countries</div></div>
+            <div style={{ width:1, height:40, background:'rgba(255,255,255,0.1)' }}></div>
+            <div style={{ textAlign:'center' }}><div className="serif" style={{ fontSize:36, fontWeight:800, color:SKY }}>220+</div><div style={{ fontSize:10, fontWeight:600, color:'rgba(255,255,255,0.4)', letterSpacing:'0.08em', textTransform:'uppercase' }}>Students</div></div>
+            <div style={{ width:1, height:40, background:'rgba(255,255,255,0.1)' }}></div>
+            <div style={{ textAlign:'center' }}><div className="serif" style={{ fontSize:36, fontWeight:800, color:WHITE }}>100%</div><div style={{ fontSize:10, fontWeight:600, color:'rgba(255,255,255,0.4)', letterSpacing:'0.08em', textTransform:'uppercase' }}>Referrals</div></div>
+          </div>
+        </div>
+        <div style={{ background:'rgba(255,255,255,0.03)', borderRadius:8, overflow:'hidden', padding:'12px' }}>
+          <svg ref={mapRef} style={{ width:'100%', display:'block' }}></svg>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ── FOUR STEPS ──────────────────────────────── */
+function FourSteps() {
+  return (
+    <section style={{ background:CREAM, padding:'88px 0' }}>
+      <div style={{ maxWidth:1200, margin:'0 auto', padding:'0 32px' }}>
+        <div style={{ textAlign:'center', marginBottom:60 }}>
+          <div style={{ fontSize:11, fontWeight:700, color:ORANGE, letterSpacing:'0.14em', textTransform:'uppercase', marginBottom:14 }}>How It Works</div>
+          <h2 className="serif" style={{ fontSize:52, fontWeight:800, color:NAVY, lineHeight:1.08 }}>Join in <em style={{ color:ORANGE, fontStyle:'italic' }}>Four Steps.</em></h2>
+        </div>
+        <div style={{ display:'grid', gridTemplateColumns:'repeat(4,1fr)', gap:24, position:'relative' }}>
+          <div style={{ position:'absolute', top:28, left:'12.5%', right:'12.5%', height:1, background:'rgba(17,29,60,0.12)' }}></div>
+          {STEPS.map((s,i)=>(
+            <div key={i} style={{ textAlign:'center', position:'relative', zIndex:1 }}>
+              <div style={{ width:56, height:56, borderRadius:'50%', background:NAVY, display:'flex', alignItems:'center', justifyContent:'center', margin:'0 auto 22px', boxShadow:`0 0 0 6px ${CREAM}` }}>
+                <span style={{ fontSize:12, fontWeight:700, color:ORANGE, letterSpacing:'0.06em' }}>{s.n}</span>
+              </div>
+              <h3 style={{ fontSize:16, fontWeight:700, color:NAVY, marginBottom:8 }}>{s.title}</h3>
+              <p style={{ fontSize:13, color:'rgba(17,29,60,0.58)', lineHeight:1.65 }}>{s.desc}</p>
+            </div>
+          ))}
+        </div>
+        <div style={{ textAlign:'center', marginTop:52 }}>
+          <a href={STUDENT_FORM_URL} style={{ background:NAVY, color:WHITE, border:'none', borderRadius:5, padding:'13px 28px', fontFamily:'DM Sans,sans-serif', fontWeight:700, fontSize:13, cursor:'pointer', letterSpacing:'0.06em', textTransform:'uppercase', textDecoration:'none', display:'inline-flex', alignItems:'center' }}>Apply Free Now →</a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ── SKILLS ──────────────────────────────────── */
+function Skills() {
+  return (
+    <section style={{ background:NAVY2, padding:'88px 0' }}>
+      <div style={{ maxWidth:1200, margin:'0 auto', padding:'0 32px', display:'grid', gridTemplateColumns:'1fr 1.3fr', gap:72, alignItems:'start' }}>
+        <div style={{ position:'sticky', top:80 }}>
+          <div style={{ fontSize:11, fontWeight:700, color:ORANGE, letterSpacing:'0.14em', textTransform:'uppercase', marginBottom:18 }}>Why Debate Matters</div>
+          <h2 className="serif" style={{ fontSize:52, fontWeight:800, color:WHITE, lineHeight:1.08, marginBottom:22 }}>Skills That Last<br />a <em style={{ color:ORANGE, fontStyle:'italic' }}>Lifetime.</em></h2>
+          <p style={{ fontSize:15, color:'rgba(255,255,255,0.58)', lineHeight:1.75, marginBottom:32 }}>Debate is the only discipline that simultaneously trains critical reasoning, public courage, empathy, and strategic thinking — skills that define leaders and changemakers.</p>
+          <a href="../../pages/story.html" style={{ background:ORANGE, color:NAVY, border:'none', borderRadius:5, padding:'12px 22px', fontFamily:'DM Sans,sans-serif', fontWeight:700, fontSize:12, cursor:'pointer', letterSpacing:'0.08em', textTransform:'uppercase', textDecoration:'none', display:'inline-flex', alignItems:'center' }}>Learn Why Debate →</a>
+        </div>
+        <div>
+          {SKILLS.map((sk,i)=>(
+            <div key={i} style={{ display:'grid', gridTemplateColumns:'48px 1fr', gap:14, padding:'26px 0', borderBottom:i<SKILLS.length-1?'1px solid rgba(255,255,255,0.08)':'none', alignItems:'start' }}>
+              <div className="serif" style={{ fontSize:28, fontWeight:700, color:'rgba(255,255,255,0.15)', lineHeight:1, paddingTop:3 }}>{sk.n}</div>
+              <div>
+                <div style={{ fontSize:16, fontWeight:700, color:WHITE, marginBottom:7 }}>{sk.title}</div>
+                <div style={{ fontSize:14, color:'rgba(255,255,255,0.55)', lineHeight:1.65 }}>{sk.desc}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ── PROGRAMS ────────────────────────────────── */
+function Programs({ setPage }) {
+  return (
+    <section style={{ background:CREAM, padding:'88px 0' }}>
+      <div style={{ maxWidth:1200, margin:'0 auto', padding:'0 32px' }}>
+        <div style={{ display:'flex', alignItems:'flex-end', justifyContent:'space-between', marginBottom:52, flexWrap:'wrap', gap:20 }}>
+          <div>
+            <div style={{ fontSize:11, fontWeight:700, color:ORANGE, letterSpacing:'0.14em', textTransform:'uppercase', marginBottom:14 }}>Summer 2026 Programs</div>
+            <h2 className="serif" style={{ fontSize:52, fontWeight:800, color:NAVY, lineHeight:1.08 }}>World-Class Training,<br /><em style={{ color:ORANGE, fontStyle:'italic' }}>Completely Free.</em></h2>
+          </div>
+          <a href="../../pages/offerings.html" style={{ background:NAVY, color:WHITE, border:'none', borderRadius:5, padding:'13px 22px', fontFamily:'DM Sans,sans-serif', fontWeight:700, fontSize:12, cursor:'pointer', letterSpacing:'0.08em', textTransform:'uppercase', flexShrink:0, textDecoration:'none', display:'inline-flex', alignItems:'center' }}>View All Programs</a>
+        </div>
+        <div style={{ display:'grid', gridTemplateColumns:'repeat(2,1fr)', gap:16 }}>
+          {PROGRAMS.map(p=>{
+            const c=PROGRAM_COLORS[p.key];
+            return (
+              <div key={p.key} style={{ background:WHITE, borderRadius:4, display:'flex', flexDirection:'column', overflow:'hidden', borderTop:`5px solid ${c.color}` }}>
+                <div style={{ padding:'22px 22px', flex:1, display:'flex', flexDirection:'column' }}>
+                  <div style={{ fontSize:9, fontWeight:700, letterSpacing:'0.1em', textTransform:'uppercase', color:c.color, background:c.bg, borderRadius:999, padding:'4px 10px', display:'inline-block', marginBottom:12, width:'fit-content' }}>{p.tag}</div>
+                  <h3 className="serif" style={{ fontSize:20, fontWeight:700, color:c.color, lineHeight:1.2, marginBottom:5 }}>{p.title}</h3>
+                  <div style={{ fontSize:9, fontWeight:700, color:'rgba(17,29,60,0.38)', letterSpacing:'0.09em', textTransform:'uppercase', marginBottom:10 }}>{p.meta}</div>
+                  <p style={{ fontSize:13, color:'rgba(17,29,60,0.6)', lineHeight:1.65, flex:1, marginBottom:16 }}>{p.desc}</p>
+                  <a href={COURSE_INTEREST_FORM_URL} style={{ fontSize:11, fontWeight:700, color:c.color, letterSpacing:'0.07em', textTransform:'uppercase', cursor:'pointer', paddingTop:12, borderTop:`1px solid ${c.bg}`, textDecoration:'none', display:'block' }}>Enroll Now →</a>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ── MISSION CARDS ───────────────────────────── */
+function MissionCards() {
+  const items=[
+    {title:'Empowering Students',     desc:'Our mission centers on students empowering students — nurturing confidence, self-expression, and critical thinking.'},
+    {title:'Increasing Accessibility',desc:'We strive to make debate education accessible to all, especially students from underrepresented backgrounds.'},
+    {title:'Beyond Debate Rounds',    desc:'Debate skills extend far beyond the classroom, enhancing academic performance and building confident individuals.'},
+  ];
+  return (
+    <section style={{ background:WHITE, padding:'88px 0' }}>
+      <div style={{ maxWidth:1200, margin:'0 auto', padding:'0 32px' }}>
+        <div style={{ textAlign:'center', marginBottom:52 }}>
+          <div style={{ fontSize:11, fontWeight:700, color:ORANGE, letterSpacing:'0.14em', textTransform:'uppercase', marginBottom:14 }}>What We Stand For</div>
+          <h2 className="serif" style={{ fontSize:52, fontWeight:800, color:NAVY, lineHeight:1.08 }}>Our <em style={{ color:ORANGE, fontStyle:'italic' }}>Mission.</em></h2>
+        </div>
+        <div style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:24 }}>
+          {items.map((item,i)=>(
+            <div key={i} style={{ borderTop:`4px solid ${i===0?ORANGE:i===1?SKY:NAVY}`, padding:'28px 24px', background:CREAM, borderRadius:'0 0 4px 4px' }}>
+              <div style={{ width:32, height:32, borderRadius:'50%', background:i===0?ORANGE:i===1?SKY:NAVY, display:'flex', alignItems:'center', justifyContent:'center', marginBottom:16 }}>
+                <span style={{ fontSize:12, fontWeight:800, color:WHITE }}>{`0${i+1}`}</span>
+              </div>
+              <h3 style={{ fontSize:18, fontWeight:700, color:NAVY, marginBottom:10 }}>{item.title}</h3>
+              <p style={{ fontSize:14, color:'rgba(17,29,60,0.62)', lineHeight:1.65 }}>{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ── TESTIMONIALS ────────────────────────────── */
+function Testimonials() {
+  return (
+    <section style={{ background:NAVY2, padding:'88px 0' }}>
+      <div style={{ maxWidth:1200, margin:'0 auto', padding:'0 32px' }}>
+        <div style={{ textAlign:'center', marginBottom:56 }}>
+          <div style={{ fontSize:11, fontWeight:700, color:ORANGE, letterSpacing:'0.14em', textTransform:'uppercase', marginBottom:14 }}>Student & Parent Voices</div>
+          <h2 className="serif" style={{ fontSize:48, fontWeight:800, color:WHITE, lineHeight:1.1 }}>What Our Community <em style={{ color:SKY, fontStyle:'italic' }}>Says.</em></h2>
+        </div>
+        <div style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:20 }}>
+          {TESTIMONIALS.map((t,i)=>(
+            <div key={i} style={{ background:NAVY, borderRadius:4, padding:'30px 26px', borderBottom:`3px solid ${i===0?ORANGE:i===1?SKY:'rgba(255,255,255,0.2)'}` }}>
+              <div style={{ display:'flex', gap:2, marginBottom:14 }}>{[...Array(5)].map((_,j)=><span key={j} style={{ color:ORANGE, fontSize:13 }}>★</span>)}</div>
+              <p className="serif" style={{ fontSize:15, color:WHITE, lineHeight:1.75, fontStyle:'italic', marginBottom:22 }}>"{t.quote}"</p>
+              <div style={{ fontSize:11, fontWeight:700, color:'rgba(255,255,255,0.38)', letterSpacing:'0.09em', textTransform:'uppercase' }}>{t.attr}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ── CTA BAND ────────────────────────────────── */
+function CTABand({ setPage }) {
+  return (
+    <section style={{ background:ORANGE, padding:'64px 0' }}>
+      <div style={{ maxWidth:1200, margin:'0 auto', padding:'0 32px', display:'grid', gridTemplateColumns:'1fr auto', gap:40, alignItems:'center' }}>
+        <div>
+          <h2 className="serif" style={{ fontSize:42, fontWeight:800, color:NAVY, marginBottom:10, lineHeight:1.1 }}>Ready to Find Your <em style={{ fontStyle:'italic' }}>Voice?</em></h2>
+          <p style={{ fontSize:15, color:'rgba(17,29,60,0.72)', lineHeight:1.65 }}>Join 220+ students across 12 countries — free, world-class debate education, starting this summer.</p>
+        </div>
+        <div style={{ display:'flex', gap:12, flexShrink:0 }}>
+          <a href={STUDENT_FORM_URL} style={{ background:NAVY, color:WHITE, border:'none', borderRadius:5, padding:'14px 28px', fontFamily:'DM Sans,sans-serif', fontWeight:700, fontSize:13, cursor:'pointer', letterSpacing:'0.07em', textTransform:'uppercase', whiteSpace:'nowrap', textDecoration:'none', display:'inline-flex', alignItems:'center' }}>Apply as Student →</a>
+          <a href={COACH_FORM_URL} style={{ background:'rgba(17,29,60,0.1)', color:NAVY, border:'1.5px solid rgba(17,29,60,0.25)', borderRadius:5, padding:'14px 28px', fontFamily:'DM Sans,sans-serif', fontWeight:600, fontSize:13, cursor:'pointer', whiteSpace:'nowrap', textDecoration:'none', display:'inline-flex', alignItems:'center' }}>Become a Coach</a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ── FOOTER ──────────────────────────────────── */
+function Footer({ setPage }) {
+  const cols=[
+    {title:'Programs',     links:[
+      {label:'Debate Courses', href:'../../pages/offerings.html'},
+      {label:'Bioethics',      href:'../../pages/biology.html'},
+      {label:'Resources',      href:'../../pages/resources.html'},
+    ]},
+    {title:'Organisation', links:[
+      {label:'Our Mission',  href:'../../pages/story.html'},
+      {label:'Our Team',     href:'../../pages/team.html'},
+      {label:'Partnership',  href:'../../pages/partnership.html'},
+    ]},
+    {title:'Get Involved', links:[
+      {label:'Apply as Student', href:STUDENT_FORM_URL},
+      {label:'Become a Coach',   href:COACH_FORM_URL},
+      {label:'Donate',           href:DONATE_URL},
+    ]},
+    {title:'Contact',      links:[
+      {label:'info@debatecraft.org', href:'mailto:info@debatecraft.org'},
+      {label:'Instagram',            href:'https://www.instagram.com/debate_craft/'},
+      {label:'Facebook',             href:'https://www.facebook.com/profile.php?id=61577761071956'},
+    ]},
+  ];
+  return (
+    <footer style={{ background:NAVY }}>
+      <div style={{ borderBottom:'1px solid rgba(255,255,255,0.07)', padding:'32px 32px' }}>
+        <div style={{ maxWidth:1200, margin:'0 auto', display:'flex', alignItems:'center', justifyContent:'space-between', gap:24 }}>
+          <a href="../../index.html" style={{ display:'flex', alignItems:'center', gap:12, textDecoration:'none' }}>
+            <img src="../../Images/Logo-white-transparent.png" alt="" width={40} height={40} style={{ objectFit:'contain' }}/>
+            <div style={{ fontFamily:'Playfair Display,Georgia,serif', fontSize:20, fontWeight:700, color:WHITE }}>
+              <span style={{ color:ORANGE }}>Debate</span><span style={{ color:SKY }}>Craft</span>
+            </div>
+          </a>
+          <div style={{ fontSize:13, color:'rgba(255,255,255,0.32)', maxWidth:320, textAlign:'right', lineHeight:1.6 }}>Free debate &amp; science programs for Grades 3–12 across 12+ countries.</div>
+        </div>
+      </div>
+      <div style={{ maxWidth:1200, margin:'0 auto' }}>
+        <div style={{ display:'grid', gridTemplateColumns:'repeat(4,1fr)', borderBottom:'1px solid rgba(255,255,255,0.07)' }}>
+          {cols.map((col,i)=>(
+            <div key={i} style={{ padding:'32px 32px', borderRight:i<3?'1px solid rgba(255,255,255,0.06)':'none' }}>
+              <div style={{ fontSize:10, fontWeight:700, letterSpacing:'0.14em', textTransform:'uppercase', color:'rgba(255,255,255,0.32)', marginBottom:16 }}>{col.title}</div>
+              <div style={{ display:'flex', flexDirection:'column', gap:9 }}>
+                {col.links.map(l=>(
+                  <a key={l.label} href={l.href}
+                    style={{ fontSize:13, color:'rgba(255,255,255,0.65)', cursor:'pointer', textDecoration:'none' }}>{l.label}</a>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div style={{ maxWidth:1200, margin:'0 auto', padding:'16px 32px', display:'flex', justifyContent:'space-between', alignItems:'center' }}>
+        <span style={{ fontSize:11, color:'rgba(255,255,255,0.22)' }}>© 2026 DebateCraft. All rights reserved.</span>
+        <span style={{ fontSize:11, color:'rgba(255,255,255,0.22)', letterSpacing:'0.06em', textTransform:'uppercase' }}>Student-run · Nonprofit · Free</span>
+      </div>
+    </footer>
+  );
+}
+
+/* ── PAGE STUB ───────────────────────────────── */
+function PageStub({ title, setPage }) {
+  return (
+    <div style={{ background:CREAM, minHeight:'60vh', display:'flex', alignItems:'center', justifyContent:'center' }}>
+      <div style={{ textAlign:'center', padding:40 }}>
+        <div style={{ fontSize:11, fontWeight:700, color:ORANGE, letterSpacing:'0.14em', textTransform:'uppercase', marginBottom:14 }}>Page Preview</div>
+        <h1 className="serif" style={{ fontSize:48, fontWeight:800, color:NAVY, marginBottom:12 }}>{title}</h1>
+        <p style={{ fontSize:14, color:'rgba(17,29,60,0.5)', marginBottom:28 }}>Full page design in progress</p>
+        <button onClick={()=>setPage('home')} style={{ background:NAVY, color:WHITE, border:'none', borderRadius:5, padding:'12px 22px', fontFamily:'DM Sans,sans-serif', fontWeight:700, fontSize:13, cursor:'pointer' }}>← Back to Home</button>
+      </div>
+    </div>
+  );
+}
+
+/* ── TWEAKS PANEL ────────────────────────────── */
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "accentColor": "#F7A234",
+  "heroSize": "72",
+  "showTestimonials": true
+}/*EDITMODE-END*/;
+
+function TweaksPanel({ tweaks, setTweak, page, setPage, onClose }) {
+  const pages={home:'Home',story:'Mission',offerings:'Programs','get-involved':'Get Involved'};
+  return (
+    <div style={{ position:'fixed', bottom:24, right:24, zIndex:9999, background:WHITE, borderRadius:12, padding:'18px 20px', boxShadow:'0 12px 48px rgba(0,0,0,0.2)', minWidth:240, fontFamily:'DM Sans,sans-serif' }}>
+      <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:14 }}>
+        <span style={{ fontWeight:700, fontSize:13, color:NAVY }}>Tweaks</span>
+        <button onClick={onClose} style={{ background:'none', border:'none', cursor:'pointer', fontSize:17, color:'#7c7c8a' }}>×</button>
+      </div>
+      <div style={{ fontSize:10, fontWeight:700, color:'#7c7c8a', textTransform:'uppercase', letterSpacing:'0.07em', marginBottom:8 }}>Accent Color</div>
+      <div style={{ display:'flex', gap:8, marginBottom:14 }}>
+        {[ORANGE,'#3DC3E8','#dc2626','#764ba2'].map(c=>(
+          <div key={c} onClick={()=>setTweak('accentColor',c)} style={{ width:26, height:26, borderRadius:'50%', background:c, cursor:'pointer', border:tweaks.accentColor===c?`3px solid ${NAVY}`:'2px solid transparent', transition:'border 0.15s' }}></div>
+        ))}
+      </div>
+      <div style={{ fontSize:10, fontWeight:700, color:'#7c7c8a', textTransform:'uppercase', letterSpacing:'0.07em', marginBottom:8 }}>Navigate</div>
+      <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:5 }}>
+        {Object.entries(pages).map(([key,label])=>(
+          <button key={key} onClick={()=>setPage(key)} style={{ background:page===key?NAVY:'#f5f0e8', color:page===key?WHITE:NAVY, border:`1px solid ${page===key?NAVY:'#e4e4e7'}`, borderRadius:5, padding:'6px 8px', fontSize:11, fontWeight:600, cursor:'pointer', fontFamily:'inherit' }}>{label}</button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/* ── APP ─────────────────────────────────────── */
+function App() {
+  const [page,setPage]=React.useState('home');
+  const [tweaks,setTweaksState]=React.useState(TWEAK_DEFAULTS);
+  const [tweakVisible,setTweakVisible]=React.useState(false);
+
+  React.useEffect(()=>{
+    const handler=e=>{ if(e.data?.type==='__activate_edit_mode') setTweakVisible(true); if(e.data?.type==='__deactivate_edit_mode') setTweakVisible(false); };
+    window.addEventListener('message',handler);
+    window.parent.postMessage({type:'__edit_mode_available'},'*');
+    return()=>window.removeEventListener('message',handler);
+  },[]);
+
+  const setTweak=(key,val)=>{ setTweaksState(p=>({...p,[key]:val})); window.parent.postMessage({type:'__edit_mode_set_keys',edits:{[key]:val}},'*'); };
+  const navigate=p=>{ setPage(p); document.getElementById('scroll-root')?.scrollTo(0,0); };
+
+  const renderPage=()=>{
+    switch(page){
+      case 'home': return (<><Hero setPage={navigate}/><StatsBar/><GlobalMap/><FourSteps/><Skills/><Programs setPage={navigate}/><MissionCards/><Testimonials/><CTABand setPage={navigate}/></>);
+      default: return <PageStub title={page.replace(/-/g,' ').replace(/\b\w/g,c=>c.toUpperCase())} setPage={navigate}/>;
+    }
+  };
+
+  return (
+    <div style={{ display:'flex', flexDirection:'column', height:'100vh', overflow:'hidden' }}>
+      {tweakVisible && <TweaksPanel tweaks={tweaks} setTweak={setTweak} page={page} setPage={navigate} onClose={()=>{ setTweakVisible(false); window.parent.postMessage({type:'__edit_mode_dismissed'},'*'); }}/>}
+      <Nav page={page} setPage={navigate}/>
+      <div id="scroll-root" style={{ flex:1, overflowY:'auto' }}>
+        {renderPage()}
+        <Footer setPage={navigate}/>
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body>
 </html>

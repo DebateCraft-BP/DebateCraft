@@ -15,14 +15,6 @@
         "categories": ["executive","coaching","PF","private"],
         "bio": "A nationally ranked Public Forum debater with a strong track record on the China PF circuit and five years of experience. Gavin reached Tournament of Champions(TOC) in both 2022 and 2023, and competed at Oxford Schools 2025. In his role as Executive Director, Gavin co-leads the team’s operations, spearheads the web development, and Chinese Outreach."
       },
-            {
-        "name": "Andrew C",
-        "role": "Supreme Gaylord",
-        "school": "Phillips Exeter Academy, US",
-        "image": "Images/Andrew.png",
-        "categories": ["outreach","PF","epi"],
-        "bio": "Supports the creation debate content as well as interacting with parents. He has PF debate experience."
-      },
       {
         "name": "Sandeep C",
         "role": "Advisor to DebateCraft and Head Curriculumn Developer",
@@ -215,22 +207,6 @@
         "bio": "A passionate biophysicist with published papers, Oliver regularly interacts with and discusses bioethical issues."
       },
       {
-        "name": "Reya S",
-        "role": "Bioethics Instructor",
-        "school": "Phillips Exeter Academy, US",
-        "image": "Images/Reya.png",
-        "categories": ["epi","outreach"],
-        "bio": "Performed multiple sclerosis research that will be published in the Journal of High School Science alongside a genetics professor from University of Notre Dame, wrote a literature review on artificial protein chaperones and their ethical implications, accepted speaker at the Neurology World Conference and Max Planck Neuro Symposium"
-      },
-      {
-        "name": "Jaiden K",
-        "role": "Bioethics Instructor",
-        "school": "Phillips Exeter Academy, US",
-        "image": "Images/Jaiden.png",
-        "categories": ["epi"],
-        "bio": "A two time USABO semifininalist, Jaiden brings a depth of conceptual understanding that complements his role in designing bioethics programming"
-      },
-      {
         "name": "Emmanuel Z",
         "role": "Bioethics Instructor",
         "school": "Phillips Exeter Academy, US",
@@ -271,14 +247,6 @@
         "bio": "With a background in entrepreneurship and marketing, Theo drives the team’s outreach strategy and engagement efforts."
       },
       {
-        "name": "Mehar S",
-        "role": "Outreach Coordinator",
-        "school": "Bakersfield Christian High School, US",
-        "image": "",
-        "categories": ["outreach"],
-        "bio": "With three years of oral interpretation and language, she supports our outreach efforts."
-      },
-      {
         "name": "Max L",
         "role": "Social Media Designer",
         "school": "Phillips Exeter Academy, US",
@@ -310,13 +278,5 @@
         "image": "Images/Andy.png",
         "categories": ["outreach"],
         "bio": "Works on digital outreach and visual media, helping reach new students. He brings experience from the Exonian Web Board."
-      },
-      {
-        "name": "Aaditiya B",
-        "role": "Web Developer",
-        "school": "Phillips Exeter Academy, US",
-        "image": "Images/Diddy.png",
-        "categories": ["outreach","PF"],
-        "bio": "Plays a critical role in updating our website and is working on exciting AI debate tools. He has PF debate experience"
       }
 ]

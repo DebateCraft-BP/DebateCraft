@@ -207,22 +207,6 @@
     "bio": "熱衷 biophysics，並有論文發表經驗。Oliver 經常探討生物倫理議題，能夠引導學生將科學知識同倫理分析連結起嚟。"
   },
   {
-    "name": "Reya S",
-    "role": "生物倫理導師",
-    "school": "Phillips Exeter Academy，美國",
-    "image": "Images/Reya.png",
-    "categories": ["epi", "outreach"],
-    "bio": "曾進行多發性硬化症研究，相關成果將與 University of Notre Dame 遺傳學教授合作發表於 Journal of High School Science。Reya 亦撰寫過人工蛋白伴侶及其倫理影響嘅文獻綜述，並獲邀於 Neurology World Conference 同 Max Planck Neuro Symposium 演講。"
-  },
-  {
-    "name": "Jaiden K",
-    "role": "生物倫理導師",
-    "school": "Phillips Exeter Academy，美國",
-    "image": "Images/Jaiden.png",
-    "categories": ["epi"],
-    "bio": "兩度入選 USABO semifinalist。Jaiden 具備紮實生物概念理解，並將呢種學術深度帶入生物倫理課程設計。"
-  },
-  {
     "name": "Emmanuel Z",
     "role": "生物倫理導師",
     "school": "Phillips Exeter Academy，美國",
@@ -271,14 +255,6 @@
     "bio": "具備創業同市場推廣背景，Theo 負責推動 DebateCraft 嘅外展策略同社群互動，幫助團隊接觸更多學生、學校同地區。"
   },
   {
-    "name": "Mehar S",
-    "role": "外展統籌",
-    "school": "Bakersfield Christian High School，美國",
-    "image": "",
-    "categories": ["outreach"],
-    "bio": "Mehar 擁有三年 oral interpretation 同語言相關經驗，支援 DebateCraft 外展工作，協助團隊連結更多合作機構同學生社群。"
-  },
-  {
     "name": "Max L",
     "role": "社交媒體設計",
     "school": "Phillips Exeter Academy，美國",
@@ -309,13 +285,5 @@
     "image": "Images/Andy.png",
     "categories": ["outreach"],
     "bio": "Andy 負責數碼外展同視覺媒體，協助接觸新學生。佢亦有 Exonian Web Board 經驗，熟悉網站內容、版面同視覺呈現。"
-  },
-  {
-    "name": "Aaditiya B",
-    "role": "網站開發",
-    "school": "Phillips Exeter Academy，美國",
-    "image": "Images/Diddy.png",
-    "categories": ["outreach", "PF"],
-    "bio": "Aaditiya 負責網站更新同技術維護，亦正開發 AI 辯論工具。佢有 PF 辯論經驗，因此能夠從辯手實際需要出發設計網站功能。"
   }
 ]

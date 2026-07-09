@@ -102,7 +102,7 @@
     blog: "blog.html",
     manner: "manner.html",
     mannernew: "mannernew.html",
-    "even-if": "Even%20if.html",
+    "even-if": "even-if.html",
     others: "others.html",
     calendar: "calendar.html",
     cncalendar: "cncalendar.html",
@@ -386,6 +386,13 @@
     .teaching-label{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:${SKY};margin-bottom:8px}
     .teaching-chips{display:flex;flex-wrap:wrap;gap:8px}
     .teaching-chip{display:inline-block;border-radius:999px;background:rgba(61,195,232,.12);color:${NAVY};font-size:12px;font-weight:600;padding:6px 12px}
+    .faq-list{display:grid;gap:12px;max-width:760px;margin:0 auto}
+    .faq-item{background:${WHITE};border:1px solid rgba(17,29,60,.1);border-radius:8px;padding:0;overflow:hidden}
+    .faq-item summary{cursor:pointer;list-style:none;padding:18px 22px;font-weight:700;color:${NAVY};font-size:15px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .faq-item summary::-webkit-details-marker{display:none}
+    .faq-item summary:after{content:"+";flex-shrink:0;font-size:20px;font-weight:400;color:${ORANGE};transition:transform .2s ease}
+    .faq-item[open] summary:after{transform:rotate(45deg)}
+    .faq-item .faq-answer{padding:0 22px 20px;color:rgba(17,29,60,.68);font-size:14px;line-height:1.7}
     .teaching-chip:hover{background:rgba(61,195,232,.22)}
     .resource-row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0;border-bottom:1px solid rgba(17,29,60,.08)}
     .resource-row:last-child{border-bottom:0}
@@ -1706,8 +1713,73 @@
     );
   }
 
+  const FAQ_ITEMS = [
+    {
+      q: { en: "Is DebateCraft really free?", zh: "DebateCraft 係咪真係免費？" },
+      a: {
+        en: "Yes. All DebateCraft courses are completely free, with no audition, essay, or hidden costs — ever.",
+        zh: "係。DebateCraft 所有課程完全免費，無需試鏡、文章，亦無任何隱藏費用。"
+      }
+    },
+    {
+      q: { en: "What ages and experience levels can join?", zh: "邊個年齡同程度可以參加？" },
+      a: {
+        en: "Programs are open to students roughly Grades 3-12 (ages 8-18). Level 1 is designed for beginners with no prior experience, while WSDC, BP, Public Forum, and Bioethics tracks are for students 13+ with some debate background.",
+        zh: "課程適合大約 3 至 12 年級（8 至 18 歲）學生。Level 1 專為完全冇經驗嘅初學者而設，WSDC、BP、Public Forum 同生物倫理課程則適合 13 歲以上、有一定辯論基礎嘅學生。"
+      }
+    },
+    {
+      q: { en: "How do classes work?", zh: "上堂形式係點㗎？" },
+      a: {
+        en: "Classes run live online in small groups of 5-10 students, so every student gets real speaking practice and direct feedback from coaches.",
+        zh: "所有堂都係線上直播小班教學，每班 5 至 10 人，確保每個學生都有充分練習機會同教練直接嘅回饋。"
+      }
+    },
+    {
+      q: { en: "When does the program run and how do I apply?", zh: "課程幾時開始？點樣申請？" },
+      a: {
+        en: "Summer 2026 cohorts run across 8 weeks with rolling enrollment — new cohorts start most weeks from June through August. Apply with our free 2-minute interest form and DebateCraft will place you in the right cohort based on your age, experience, and goals.",
+        zh: "2026 夏季課程為期 8 星期，持續招生——由 6 月到 8 月幾乎每個星期都有新班開始。填寫免費嘅 2 分鐘申請表，DebateCraft 會根據你嘅年齡、經驗同目標，安排合適嘅班別。"
+      }
+    },
+    {
+      q: { en: "Who teaches the courses?", zh: "邊個教呢啲課程？" },
+      a: {
+        en: "Courses are taught by experienced coaches and competitive debaters, including students from Phillips Exeter Academy, with curriculum support from experienced coaches in the debate community.",
+        zh: "課程由經驗豐富嘅教練同競技辯手任教，包括嚟自 Phillips Exeter Academy 嘅學生，課程亦得到辯論界資深教練嘅支援。"
+      }
+    },
+    {
+      q: { en: "Can I get involved beyond taking a course?", zh: "除咗上堂，仲可以點樣參與？" },
+      a: {
+        en: "Yes — you can apply to coach, bring DebateCraft to your school as a partner, or support the program with a donation.",
+        zh: "可以——你可以申請做教練、將 DebateCraft 帶入你嘅學校成為合作夥伴，或者以捐款支持課程運作。"
+      }
+    }
+  ];
+
+  function FAQSection() {
+    return h(
+      Section,
+      { cream: true },
+      h(TitleBlock, { eyebrow: isZh ? "常見問題" : "FAQ", title: isZh ? "常見" : "Frequently Asked", emphasis: isZh ? "問題。" : "Questions.", center: true }),
+      h(
+        "div",
+        { className: "faq-list" },
+        FAQ_ITEMS.map((item, i) =>
+          h(
+            "details",
+            { className: "faq-item", key: i },
+            h("summary", null, isZh ? item.q.zh : item.q.en),
+            h("div", { className: "faq-answer" }, isZh ? item.a.zh : item.a.en)
+          )
+        )
+      )
+    );
+  }
+
   function GetInvolvedPage() {
-    return h(React.Fragment, null, h(PageHeader, { eyebrow: isZh ? "參與我哋" : "Get Involved", title: isZh ? "用你嘅聲音" : "Use Your Voice", emphasis: isZh ? "改變更多人。" : "To Help Others.", subtitle: isZh ? "無論你係學生、教練、學校或支持者，都可以參與。" : "Whether you are a student, coach, partner, or supporter, there is a clear way to help." }), h(Section, null, h("div", { className: "grid grid-4" }, [[isZh ? "成為學生" : "Apply as Student", isZh ? "加入免費課程，建立辯論和表達能力。" : "Join a free cohort and build debate skills.", STUDENT_FORM_URL], [isZh ? "成為教練" : "Become a Coach", isZh ? "用你嘅經驗支持下一代辯手。" : "Use your experience to support younger debaters.", "https://docs.google.com/forms/d/e/1FAIpQLSfombgLTJ0oDbWfCaSumrnLAjkdvT_K9FW1KJakbr9ZAQxwnQ/viewform?usp=header"], [isZh ? "學校合作" : "Partner With Us", isZh ? "為你嘅學校或機構建立課程。" : "Bring DebateCraft to your school or organization.", "partnership.html"], [isZh ? "捐款支持" : "Donate", isZh ? "支持免費教育資源持續運作。" : "Support free education and operating costs.", "https://buymeacoffee.com/debatecraft"]].map(([title, text, href]) => h(InfoCard, { key: title, title, text }, h("div", { style: { marginTop: 20 } }, h(Button, { href }, isZh ? "前往 →" : "Start →")))))), h(StatsBand, { stats: commonStats }));
+    return h(React.Fragment, null, h(PageHeader, { eyebrow: isZh ? "參與我哋" : "Get Involved", title: isZh ? "用你嘅聲音" : "Use Your Voice", emphasis: isZh ? "改變更多人。" : "To Help Others.", subtitle: isZh ? "無論你係學生、教練、學校或支持者，都可以參與。" : "Whether you are a student, coach, partner, or supporter, there is a clear way to help." }), h(Section, null, h("div", { className: "grid grid-4" }, [[isZh ? "成為學生" : "Apply as Student", isZh ? "加入免費課程，建立辯論和表達能力。" : "Join a free cohort and build debate skills.", STUDENT_FORM_URL], [isZh ? "成為教練" : "Become a Coach", isZh ? "用你嘅經驗支持下一代辯手。" : "Use your experience to support younger debaters.", "https://docs.google.com/forms/d/e/1FAIpQLSfombgLTJ0oDbWfCaSumrnLAjkdvT_K9FW1KJakbr9ZAQxwnQ/viewform?usp=header"], [isZh ? "學校合作" : "Partner With Us", isZh ? "為你嘅學校或機構建立課程。" : "Bring DebateCraft to your school or organization.", "partnership.html"], [isZh ? "捐款支持" : "Donate", isZh ? "支持免費教育資源持續運作。" : "Support free education and operating costs.", "https://buymeacoffee.com/debatecraft"]].map(([title, text, href]) => h(InfoCard, { key: title, title, text }, h("div", { style: { marginTop: 20 } }, h(Button, { href }, isZh ? "前往 →" : "Start →")))))), h(StatsBand, { stats: commonStats }), h(FAQSection));
   }
 
   function DonatePage() {

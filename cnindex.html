@@ -22,8 +22,8 @@
   <meta name="twitter:description" content="免費、學生營運、全球 12+ 國家和地區的辯論及生物倫理教育。" />
   <meta name="twitter:image" content="https://debatecraft.org/Images/Logo-white-transparent.png" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" integrity="sha384-DGyLxAyjq0f9SPpVevD6IgztCFlnMF6oW/XQGmfe+IsZ8TqEiDrcHkMLKI6fiB/Z" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" integrity="sha384-gTGxhz21lVGYNMcdJOyq01Edg0jhn/c22nsx0kyqP0TxaV5WVdsSH1fSDUf5YJj1" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -169,13 +169,27 @@ const CALENDAR_ROWS = [
   { label:'L3 WSDC B', color:'sky', start:6, span:2 },
   { label:'PF B', color:'sky', start:6, span:2 },
 ];
-const FIRST_CLASS_START = '2026-06-22T00:00:00+08:00';
+const WEEK_START_DATES = [
+  '2026-06-22T00:00:00+08:00',
+  '2026-06-29T00:00:00+08:00',
+  '2026-07-06T00:00:00+08:00',
+  '2026-07-13T00:00:00+08:00',
+  '2026-07-20T00:00:00+08:00',
+  '2026-07-27T00:00:00+08:00',
+  '2026-08-03T00:00:00+08:00',
+  '2026-08-10T00:00:00+08:00',
+];
 
-function getFirstClassCountdown() {
-  const target = new Date(FIRST_CLASS_START).getTime();
-  const diff = Math.max(0, target - Date.now());
+function getNextCohortCountdown() {
+  const now = Date.now();
+  const nextIndex = WEEK_START_DATES.findIndex(d => new Date(d).getTime() > now);
+  const allStarted = nextIndex === -1;
+  const target = allStarted ? now : new Date(WEEK_START_DATES[nextIndex]).getTime();
+  const diff = Math.max(0, target - now);
   return {
-    started: target <= Date.now(),
+    allStarted,
+    nextIndex,
+    nextLabel: allStarted ? null : CALENDAR_WEEKS[nextIndex],
     days: Math.floor(diff / 86400000),
     hours: Math.floor((diff % 86400000) / 3600000),
     minutes: Math.floor((diff % 3600000) / 60000),
@@ -388,6 +402,7 @@ void main(){
 function Hero({ setPage }) {
   const [vis, setVis] = React.useState(false);
   const [isCompact, setIsCompact] = React.useState(() => window.innerWidth < 760);
+  const cohort = React.useMemo(getNextCohortCountdown, []);
   React.useEffect(() => { const t = setTimeout(() => setVis(true), 60); return () => clearTimeout(t); }, []);
   React.useEffect(() => {
     const onResize = () => setIsCompact(window.innerWidth < 760);
@@ -410,7 +425,7 @@ function Hero({ setPage }) {
             免費網上辯論及生物倫理暑期課程。幾分鐘完成申請，我哋會按年齡、經驗和目標安排合適小班。
           </p>
           <div style={{ display:'flex', gap:0, marginBottom:32, borderTop:'1px solid rgba(255,255,255,0.1)', borderBottom:'1px solid rgba(255,255,255,0.1)', opacity:vis?1:0, animation:vis?'fadeUp 0.6s ease 0.22s both':'none' }}>
-            {[['6月22日開始','2026 夏季小班'],['5–10人小班','更多練習和回饋'],['費用全免','無需試鏡或文章']].map(([heading,sub],i) => (
+            {[[cohort.allStarted ? '持續招生中' : `${cohort.nextLabel}開始`,'2026 夏季小班'],['5–10人小班','更多練習和回饋'],['費用全免','無需試鏡或文章']].map(([heading,sub],i) => (
               <div key={i} style={{ flex:1, padding:'14px 18px', borderRight:i<2?'1px solid rgba(255,255,255,0.1)':'none' }}>
                 <div style={{ fontSize:13, fontWeight:700, color:WHITE, marginBottom:3 }}>{heading}</div>
                 <div style={{ fontSize:12, color:'rgba(255,255,255,0.42)', fontWeight:400 }}>{sub}</div>
@@ -472,9 +487,9 @@ function HowToJoinMini() {
 
 /* ── 第一堂倒數 ──────────────────── */
 function FirstClassCountdown() {
-  const [remaining, setRemaining] = React.useState(getFirstClassCountdown);
+  const [remaining, setRemaining] = React.useState(getNextCohortCountdown);
   React.useEffect(() => {
-    const timer = setInterval(() => setRemaining(getFirstClassCountdown()), 1000);
+    const timer = setInterval(() => setRemaining(getNextCohortCountdown()), 1000);
     return () => clearInterval(timer);
   }, []);
 
@@ -490,11 +505,12 @@ function FirstClassCountdown() {
       <div style={{ maxWidth:1200, margin:'0 auto', padding:'0 32px' }}>
         <div style={{ background:NAVY, color:WHITE, borderTop:`4px solid ${ORANGE}`, borderRadius:8, padding:'28px clamp(22px,4vw,38px)', display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(260px, 1fr))', gap:28, alignItems:'center', boxShadow:'0 18px 46px rgba(17,29,60,0.16)' }}>
           <div>
-            <div style={{ fontSize:10, fontWeight:800, color:ORANGE, letterSpacing:'0.14em', textTransform:'uppercase', marginBottom:10 }}>{remaining.started ? '夏季配對開放中' : '第一批夏季小班開始'}</div>
-            <h2 className="serif" style={{ fontSize:'clamp(30px,5vw,44px)', lineHeight:1.05, marginBottom:10 }}>第一個開課日：2026年6月22日。</h2>
-            <p style={{ color:'rgba(255,255,255,0.62)', fontSize:14, lineHeight:1.7, maxWidth:560 }}>家長可以先免費申請，由 DebateCraft 按學生年齡、經驗和目標安排班級。小班人數有限，先申請比慢慢揀班更實際。</p>
+            <div style={{ fontSize:10, fontWeight:800, color:ORANGE, letterSpacing:'0.14em', textTransform:'uppercase', marginBottom:10 }}>{remaining.allStarted ? '持續招生中' : '下一批小班即將開始'}</div>
+            <h2 className="serif" style={{ fontSize:'clamp(30px,5vw,44px)', lineHeight:1.05, marginBottom:10 }}>{remaining.allStarted ? '夏季小班持續開班。' : `下一個開課日：${remaining.nextLabel}。`}</h2>
+            <p style={{ color:'rgba(255,255,255,0.62)', fontSize:14, lineHeight:1.7, maxWidth:560 }}>{remaining.allStarted ? '家長可以先免費申請，DebateCraft 會安排你加入下一個開放嘅小班。' : '家長可以先免費申請，由 DebateCraft 按學生年齡、經驗和目標安排班級。小班人數有限，先申請比慢慢揀班更實際。'}</p>
           </div>
           <div>
+            {!remaining.allStarted && (
             <div style={{ display:'grid', gridTemplateColumns:'repeat(4, minmax(0,1fr))', gap:10, marginBottom:16 }}>
               {units.map(unit => (
                 <div key={unit.label} style={{ background:'rgba(255,255,255,0.07)', border:'1px solid rgba(255,255,255,0.09)', borderRadius:6, padding:'16px 10px', textAlign:'center' }}>
@@ -503,6 +519,7 @@ function FirstClassCountdown() {
                 </div>
               ))}
             </div>
+            )}
             <a href={STUDENT_FORM_URL} style={{ width:'100%', background:ORANGE, color:NAVY, borderRadius:5, padding:'13px 18px', fontSize:12, fontWeight:800, letterSpacing:'0.08em', textTransform:'uppercase', textDecoration:'none', display:'inline-flex', justifyContent:'center', alignItems:'center' }}>預留免費配對 →</a>
           </div>
         </div>

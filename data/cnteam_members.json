@@ -154,6 +154,29 @@
     "bio": "頂尖 PF 辯手，曾喺 2023 年 Harvard International PF Tournament Open Division 獲得團隊亞軍同最佳辯手，並於 2021、2022 年多次取得高位名次。Arthur 亦係 2020 年 NSDA Global Excellent Debater，同 Winchester College 宿舍辯論賽 Yaw Pot 冠軍。"
   },
   {
+    "name": "Aarohan S",
+    "role": "外展主管",
+    "image": "Images/Aarohan.png",
+    "categories": [
+      "coaching",
+      "private",
+      "outreach"
+    ],
+    "achievements": [
+      "Asia Pre-WSDC 2026 半決賽選手，第一名/70隊，最佳辯手",
+      "McMaster HST 2026 決賽，2/75+隊，第三最佳開放組辯手，次二開放組小組",
+      "EDS Spring Capital Cup 2026 決賽，3/30+隊，第二最佳開放組辯手，第三開放組小組",
+      "Queen's HST 2026 半決賽，6/45隊，第十最佳開放組辯手，第六開放組小組",
+      "EDC 2025 半決賽，第11最佳辯手，第5小組",
+      "Ridge 2025 半決賽，第3小組，第9最佳辯手",
+      "SEED 2025 少年決賽，第1少年小組，第1最佳少年辯手",
+      "QHST 2025 少年半決賽，第1少年小組，第11最佳少年辯手",
+      "UBC Summer HST 2025 少年決賽，第8少年小組，半決賽晉級決賽",
+      "HHWO 2025 少年八強，第13少年小組"
+    ],
+    "bio": "Aarohan戰績遍及 Asia Pre-WSDC、McMaster HST、EDS Spring Capital Cup、Queen's HST、EDC、Ridge、SEED、QHST、UBC Summer HST 同 HHWO 等多個賽事。作為外展主管，佢將優秀嘅比賽成績同拓展 DebateCraft 影響力嘅熱誠結合埋一齊。"
+  },
+  {
     "name": "Kevin C",
     "role": "設計主管",
     "school": "Phillips Exeter Academy，美國",
@@ -165,6 +188,39 @@
       "Exonian Web Board 網頁設計經驗"
     ],
     "bio": "負責數碼外展同辯論內容設計，協助擴大 DebateCraft 嘅網上影響力。Kevin 亦有 Exonian Web Board 網頁設計經驗，熟悉點樣將內容清晰呈現畀學生同家長。"
+  },
+  {
+    "name": "Alston G",
+    "role": "人力資源主管",
+    "image": "Images/Alston.png",
+    "categories": [
+      "coaching",
+      "private",
+      "outreach"
+    ],
+    "achievements": [
+      "2026年 Asia WSDC 準決賽及最佳開放組破隊",
+      "2026年 South Asia Schools BP 公開組總冠軍兼第二最佳辯手",
+      "出戰 2026年 McMaster High School BP Tournament",
+      "2026年 Vietnam InterVarsity Debate Championships 公開組準決賽",
+      "2025年 Hart House Summer Open 公開組決賽選手"
+    ],
+    "bio": "作為 2026年 South Asia Schools BP 公開組總冠軍兼第二最佳辯手、2025年 Hart House Summer Open 決賽選手，以及 McMaster High School BP Tournament 參賽者，Alston 具備豐富嘅比賽成績同精湛嘅賽事判斷力，能夠帶領我哋最頂尖嘅辯手邁向辯論生涯嘅下一個高峰。"
+  },
+  {
+    "name": "Issac Y",
+    "role": "行政主管",
+    "image": "Images/Issac.png",
+    "categories": [
+      "coaching",
+      "outreach",
+      "private"
+    ],
+    "achievements": [
+      "代表加拿大出戰 2026年 US Nationals",
+      "2025年 Western Winter HST Oxford Qualifier 少年組冠軍"
+    ],
+    "bio": "Issac 代表加拿大出戰 2026年 US Nationals，係國際知名嘅辯手，長期穩守最佳辯手排名前列。佢可以支援有志衝擊最高水平嘅學生，同時具備教練同行政嘅雙重經驗。"
   },
   {
     "name": "Piers K",

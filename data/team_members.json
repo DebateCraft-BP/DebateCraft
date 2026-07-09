@@ -160,13 +160,18 @@
       "outreach"
     ],
     "achievements": [
-      "Semifinalist and Top Open Breaking Team, Asia WSDC (2026)",
-      "Open Grand Champion & 2nd Open Speaker, South Asia Schools BP (2026)",
-      "Competed at McMaster High School BP Tournament(2026)",
-      "Open Semifinalist, Vietnam InterVarsity Debate Championships(2026)",
-      "Open Grand Finalist, Hart House Summer Open (2025)"
+      "1st/70 teams, Top Speaker, Semifinalist, Asia Pre-WSDC (2026)",
+      "Grand Finals, 2/75+ teams, 3rd Open Speaker, 2nd Open Break, McMaster HST (2026)",
+      "Grand Finals, 3/30+ teams, 2nd Open Speaker, 3rd Open Break, EDS Spring Capital Cup (2026)",
+      "Semifinals, 6/45 teams, 10th Open Speaker, 6th Open Break, Queen's HST (2026)",
+      "Semifinalist, 11th Speaker, 5th Break, EDC (2025)",
+      "Semifinalist, 3rd Break, 9th Speaker, Ridge (2025)",
+      "Junior Finalist, 1st Junior Break, 1st Speaker, SEED (2025)",
+      "Junior Semifinalist, 1st Junior Break, 11th Junior Speaker, QHST (2025)",
+      "Junior Finalist, 8th Junior Break, UBC Summer HST (2025)",
+      "Junior Quarterfinalist, 13th Junior Break, HHWO (2025)"
     ],
-    "bio": "As Open Grand Champion, 2nd Open Speaker at South Asia Schools BP 2026, Open Grand Finalist, 2025 Hart House Summer Open, and McMaster High School BP Tournament, Alston brings a wealth of debating competitiveness success and expert round vision that can support our most advanced debaters to reach the next level of their debating careers."
+    "bio": "Aarohan is a highly accomplished competitor with results spanning Asia Pre-WSDC, McMaster HST, EDS Spring Capital Cup, Queen's HST, EDC, Ridge, SEED, QHST, UBC Summer HST, and HHWO. As Head of Outreach, he combines strong competitive credentials with a drive to expand DebateCraft's reach to new students and schools."
   },
   {
     "name": "Kevin C",
@@ -531,6 +536,22 @@
       "outreach"
     ],
     "bio": "Aloysius supports both coaching and program logistics."
+  },
+  {
+    "name": "Andrew C",
+    "role": "Administrator",
+    "school": "Phillips Exeter Academy, US",
+    "image": "Images/Andrew.png",
+    "categories": [
+      "outreach",
+      "PF",
+      "epi"
+    ],
+    "achievements": [
+      "Supports debate content creation",
+      "Has PF debate experience"
+    ],
+    "bio": "Andrew supports debate content creation and helps maintain communication with parents. He has his own PF debate experience, giving him an understanding of the practical needs students face while preparing and learning."
   },
   {
     "name": "Ana T",

@@ -362,8 +362,7 @@
     .filter-row button.active{background:${NAVY};color:${WHITE}}
     .team-search{width:100%;border:1px solid rgba(17,29,60,.12);background:${WHITE};color:${NAVY};border-radius:8px;padding:11px 14px;font-size:14px;outline:none}
     .team-search:focus{border-color:${SKY};box-shadow:0 0 0 3px rgba(61,195,232,.16)}
-    .team-grid{grid-auto-rows:1fr}
-    .team-card{display:flex;flex-direction:column;min-height:100%}
+    .team-card{display:flex;flex-direction:column;height:100%}
     .team-card-body{display:flex;flex-direction:column;flex:1}
     .team-badge{display:inline-flex;align-self:flex-start;align-items:center;gap:5px;background:rgba(17,29,60,.06);color:rgba(17,29,60,.56);border-radius:999px;padding:5px 11px;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px}
     .team-achievements{list-style:none;margin:2px 0 14px;padding:0;display:grid;gap:6px}

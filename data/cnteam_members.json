@@ -72,14 +72,6 @@
     "bio": "負責數碼外展同辯論內容設計，協助擴大 DebateCraft 嘅網上影響力。Kevin 亦有 Exonian Web Board 網頁設計經驗，熟悉點樣將內容清晰呈現畀學生同家長。"
   },
   {
-    "name": "Cici C",
-    "role": "高級教練",
-    "school": "Phillips Exeter Academy，美國",
-    "image": "Images/Cici.png",
-    "categories": ["coaching", "outreach", "private"],
-    "bio": "Team Hong Kong WSDC Development Team 成員，同時係 Phillips Exeter Advanced Debate Team 成員。Cici 喺亞洲賽區有多次亮眼成績，能夠以清晰示範同具體 feedback 幫學生穩步進步。"
-  },
-  {
     "name": "Piers K",
     "role": "高級教練",
     "school": "Hong Kong International School，香港",
@@ -95,17 +87,17 @@
     "categories": ["coaching", "private"],
     "bio": "German Swiss International School Debate Team 隊長，具備個人同團隊比賽成績。Rachel 最近喺 Hong Kong Junior Schools Debating Competition 2026 打入準決賽並獲第七最佳辯手，亦曾於 Indo-Pacific WSDO 2025 打入公開組八強，並於 Indo-Pacific WSDO 2024 成為 U14 冠軍。"
   },
-  {
-    "name": "Andre C",
-    "role": "Level 3 教練",
-    "school": "Winchester College，英國",
-    "image": "Images/Andre.png",
-    "categories": ["epi", "coaching", "private"],
-    "bio": "具備 WSDC 同 BP 經驗嘅資深辯手，擁有超過四年教學同課程設計經驗。Andre 參與 DebateCraft 課程設計同訓練安排，特別擅長將批判思維、生物倫理同辯論技巧結合。"
+    {
+    "name": "Cici C",
+    "role": "高級教練",
+    "school": "Phillips Exeter Academy，美國",
+    "image": "Images/Cici.png",
+    "categories": ["coaching", "outreach", "private"],
+    "bio": "Team Hong Kong WSDC Development Team 成員，同時係 Phillips Exeter Advanced Debate Team 成員。Cici 喺亞洲賽區有多次亮眼成績，能夠以清晰示範同具體 feedback 幫學生穩步進步。"
   },
   {
     "name": "Theodore W",
-    "role": "Level 3 教練",
+    "role": "Level 4 教練",
     "school": "Hong Kong International School，香港",
     "image": "Images/TheoW.png",
     "categories": ["coaching", "private"],
@@ -113,7 +105,7 @@
   },
   {
     "name": "Hirannya K",
-    "role": "Level 2 教練",
+    "role": "Level 3 教練",
     "school": "DPS Modern Indian School，卡塔爾",
     "image": "Images/H.png",
     "categories": ["coaching", "outreach", "private"],
@@ -121,7 +113,7 @@
   },
   {
     "name": "Tanvi M",
-    "role": "Level 2 教練",
+    "role": "Level 3 教練",
     "school": "Southridge School，加拿大",
     "image": "Images/Tanvi.png",
     "categories": ["coaching", "outreach", "private"],
@@ -129,7 +121,7 @@
   },
   {
     "name": "Vera H",
-    "role": "Level 2 教練",
+    "role": "Level 3 教練",
     "school": "German Swiss International School，香港",
     "image": "Images/Vera.png",
     "categories": ["coaching", "private"],
@@ -137,7 +129,7 @@
   },
   {
     "name": "Larissa V",
-    "role": "Level 2 教練",
+    "role": "Level 3 教練",
     "school": "German Swiss International School，香港",
     "image": "Images/Larissa.png",
     "categories": ["coaching", "private"],
@@ -145,11 +137,19 @@
   },
   {
     "name": "Sanaya S",
-    "role": "Level 2 教練",
+    "role": "Level 3 教練",
     "school": "German Swiss International School，香港",
     "image": "Images/Sanaya.png",
     "categories": ["coaching", "outreach", "private"],
     "bio": "German Swiss International School Debate Club 聯合負責人，過去三年均有參加 Junior Schools Debating Championships。Sanaya 特別擅長訓練學生可以即時應用喺比賽入面嘅 micro-skills。"
+  },
+    {
+    "name": "Andre C",
+    "role": "Level 2 教練",
+    "school": "Phillips Exeter Academy，美國",
+    "image": "Images/Andre.png",
+    "categories": ["coaching", "private"],
+    "bio": "具備 WSDC 同 BP 經驗嘅資深辯手，擁有超過四年教學同課程設計經驗。Andre 參與 DebateCraft 課程設計同訓練安排，特別擅長將批判思維、生物倫理同辯論技巧結合。"
   },
   {
     "name": "Eric J",

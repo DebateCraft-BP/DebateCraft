@@ -13,6 +13,13 @@
   const lang = pageId.startsWith("cn") ? "zh" : "en";
   const isZh = lang === "zh";
   const slugify = (value = "") => value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  const AMBIGUOUS_FIRST_NAMES = new Set(["Matthew"]);
+  const displayName = (value = "") => {
+    const parts = value.trim().split(" ");
+    if (parts.length < 2) return value;
+    const first = parts.slice(0, -1).join(" ");
+    return AMBIGUOUS_FIRST_NAMES.has(first) ? value : first;
+  };
 
   const cn = {
     nav: {
@@ -1633,12 +1640,12 @@
               h(
                 "div",
                 { className: "team-card-body", style: { padding: "22px 20px 26px" } },
-                h("h3", null, m.name),
+                h("h3", null, displayName(m.name)),
                 h("div", { style: { fontSize: 12, fontWeight: 700, color: ORANGE, letterSpacing: ".08em", textTransform: "uppercase", marginBottom: 8 } }, m.role),
                 m.badge && h("div", { className: "team-badge" }, m.badge),
                 m.school && h("p", { style: { fontWeight: 700, marginBottom: 10 } }, m.school),
                 hasAch && h("ul", { className: "team-achievements" }, m.achievements.map((a, i) => h("li", { key: i }, a))),
-                hasBio && h("button", { type: "button", className: "team-bio-btn", onClick: () => setActive(m), "aria-label": isZh ? `查看 ${m.name} 完整簡介` : `View full bio for ${m.name}` }, isZh ? "完整簡介 →" : "Full bio →")
+                hasBio && h("button", { type: "button", className: "team-bio-btn", onClick: () => setActive(m), "aria-label": isZh ? `查看 ${displayName(m.name)} 完整簡介` : `View full bio for ${displayName(m.name)}` }, isZh ? "完整簡介 →" : "Full bio →")
               )
             );
           })
@@ -1650,10 +1657,10 @@
           { className: "bio-modal-backdrop", onClick: () => setActive(null) },
           h(
             "div",
-            { className: "bio-modal", role: "dialog", "aria-modal": "true", "aria-label": active.name, onClick: (e) => e.stopPropagation() },
+            { className: "bio-modal", role: "dialog", "aria-modal": "true", "aria-label": displayName(active.name), onClick: (e) => e.stopPropagation() },
             h("button", { type: "button", className: "bio-modal-close", onClick: () => setActive(null), "aria-label": isZh ? "關閉" : "Close" }, "×"),
             active.image && h("img", { className: "bio-modal-img", src: `../${active.image}`, alt: active.name, onError: (e) => (e.currentTarget.style.display = "none") }),
-            h("h3", { className: "serif", style: { fontSize: 26, marginBottom: 4 } }, active.name),
+            h("h3", { className: "serif", style: { fontSize: 26, marginBottom: 4 } }, displayName(active.name)),
             h("div", { style: { fontSize: 12, fontWeight: 700, color: ORANGE, letterSpacing: ".08em", textTransform: "uppercase", marginBottom: 8 } }, active.role),
             active.badge && h("div", { className: "team-badge", style: { marginBottom: 10 } }, active.badge),
             active.school && h("p", { style: { fontWeight: 700, marginBottom: 14 } }, active.school),
@@ -2913,10 +2920,10 @@
         list.map((profile) =>
           h(
             "a",
-            { className: "calendar-head-coach", href: teamHrefForCoach(profile), key: profile.name, "aria-label": isZh ? `前往團隊頁面查看 ${profile.name}` : `View ${profile.name} on the team page` },
+            { className: "calendar-head-coach", href: teamHrefForCoach(profile), key: profile.name, "aria-label": isZh ? `前往團隊頁面查看 ${displayName(profile.name)}` : `View ${displayName(profile.name)} on the team page` },
             h("span", { className: "calendar-head-title" }, profile.role),
             " ",
-            h("span", null, profile.name)
+            h("span", null, displayName(profile.name))
           )
         )
       );

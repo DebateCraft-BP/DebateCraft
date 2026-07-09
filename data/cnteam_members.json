@@ -4,7 +4,17 @@
     "role": "執行總監",
     "school": "Phillips Exeter Academy，美國",
     "image": "Images/Adrian.png",
-    "categories": ["executive", "coaching", "epi", "outreach"],
+    "categories": [
+      "executive",
+      "coaching",
+      "epi",
+      "outreach"
+    ],
+    "achievements": [
+      "2023年 ICYD 國際總決賽入圍",
+      "2025年 Oxford Schools break",
+      "2025年 Team Canada Fundraiser 第三最佳辯手"
+    ],
     "bio": "擁有超過五年國際辯論經驗嘅教育工作者。Adrian 曾入圍 2023 年 ICYD 國際總決賽、喺 2025 年 Oxford Schools break，並喺 2025 年 Team Canada Fundraiser 獲得第三最佳辯手。佢將多年辯論經驗整理成加速訓練框架，已幫助香港、英國同美國超過一百位辯手提升表現。"
   },
   {
@@ -12,7 +22,20 @@
     "role": "執行總監",
     "school": "Phillips Exeter Academy，美國",
     "image": "Images/Gavin.png",
-    "categories": ["executive", "coaching", "PF", "private"],
+    "categories": [
+      "executive",
+      "coaching",
+      "PF",
+      "private"
+    ],
+    "achievements": [
+      "2022、2023年晉級 Tournament of Champions（TOC）",
+      "參加 Oxford Schools 2025",
+      "中國 PF 賽區全國級辯手"
+    ],
+    "classes": [
+      "PF A"
+    ],
     "bio": "全國級 Public Forum 辯手，喺中國 PF 賽區有穩定而出色嘅成績，累積五年辯論經驗。Gavin 曾於 2022、2023 年晉級 Tournament of Champions（TOC），亦參加 Oxford Schools 2025。作為執行總監，佢共同負責團隊營運、網站開發同中文外展。"
   },
   {
@@ -20,7 +43,16 @@
     "role": "DebateCraft 顧問兼課程總監",
     "school": "",
     "image": "Images/Sandeep.png",
-    "categories": ["executive", "coaching", "advisor"],
+    "categories": [
+      "executive",
+      "coaching",
+      "advisor"
+    ],
+    "achievements": [
+      "多次於 Asian British Parliamentary Championships 獲評亞洲前十評審",
+      "HKBPDC 聯合創辦人",
+      "前香港校際辯論及公共演講社群主席"
+    ],
     "bio": "Sandeep Chulani 係常駐香港嘅辯論教練同教育工作者，擁有超過二十年辯論、教練同評審經驗，曾多次喺 Asian British Parliamentary Championships 被評為亞洲前十評審，亦係 HKBPDC 聯合創辦人。佢曾任香港校際辯論及公共演講社群主席，曾培訓學生入選香港代表隊並出戰 WSDC、WIDPSC 同 Oxford Schools。"
   },
   {
@@ -28,7 +60,20 @@
     "role": "課程主管",
     "school": "Winchester College，英國",
     "image": "Images/Matthew.png",
-    "categories": ["executive", "coaching", "private"],
+    "categories": [
+      "executive",
+      "coaching",
+      "private"
+    ],
+    "achievements": [
+      "曾出戰 ICYD 同 Cambridge Schools",
+      "Winchester 辯論學會隊長",
+      "超過兩年教練經驗"
+    ],
+    "classes": [
+      "Level 1 D",
+      "Level 3 BP"
+    ],
     "bio": "具備四年 BP 辯論同評審經驗嘅競技辯手，曾出戰 ICYD 同 Cambridge Schools，目前係 Winchester 辯論學會隊長。Matthew 擁有超過兩年教練經驗，亦熟悉政治、經濟同國際關係內容訓練。"
   },
   {
@@ -36,7 +81,16 @@
     "role": "營運主管",
     "school": "Shawnigan Lake School，加拿大",
     "image": "",
-    "categories": ["executive", "coaching", "outreach", "private"],
+    "categories": [
+      "executive",
+      "coaching",
+      "outreach",
+      "private"
+    ],
+    "achievements": [
+      "第 40 屆 Stanford Invitational 2026 冠軍",
+      "UBC Spring HST 2026 決賽選手"
+    ],
     "bio": "Bella 曾同隊友贏得第 40 屆 Stanford Invitational 2026，亦係 UBC Spring HST 2026 決賽選手。佢帶住紮實比賽經驗同教練能力加入團隊，負責協助課程營運同學生支援。"
   },
   {
@@ -44,7 +98,19 @@
     "role": "總教練",
     "school": "Winchester College，英國",
     "image": "Images/Raul.png",
-    "categories": ["coaching", "private"],
+    "categories": [
+      "coaching",
+      "private"
+    ],
+    "achievements": [
+      "曾參加 ICYD 同 Imperial Schools",
+      "多次校內賽決賽選手"
+    ],
+    "classes": [
+      "Level 1 A",
+      "Level 2 C",
+      "Level 3 BP"
+    ],
     "bio": "表現出色嘅 BP 辯手，曾參加 ICYD 同 Imperial Schools，亦多次喺校內賽打入決賽。Raul 長期指導年輕辯手，擅長由基本框架開始幫學生建立穩定而清晰嘅辯論習慣。"
   },
   {
@@ -52,7 +118,20 @@
     "role": "總教練",
     "school": "Phillips Exeter Academy，美國",
     "image": "Images/Valmik.png",
-    "categories": ["coaching", "private"],
+    "categories": [
+      "coaching",
+      "private"
+    ],
+    "badge": "香港 WSDC 發展隊",
+    "achievements": [
+      "香港代表隊發展隊最年輕成員",
+      "2025年 Oxford WSDC U17 決賽冠軍",
+      "香港辯論公開賽第十三最佳辯手"
+    ],
+    "classes": [
+      "Level 2B WSDC",
+      "Level 3 WSDC A"
+    ],
     "bio": "香港代表隊發展隊最年輕成員之一，具備 BP 同 WSDC 雙賽制經驗。佢最近贏得 2025 年 Oxford WSDC U17 決賽，亦喺香港辯論公開賽獲得第十三最佳辯手。"
   },
   {
@@ -60,7 +139,18 @@
     "role": "PF 主任教練",
     "school": "Winchester College，英國",
     "image": "Images/Arthur.png",
-    "categories": ["coaching", "PF"],
+    "categories": [
+      "coaching",
+      "PF"
+    ],
+    "achievements": [
+      "2023年 Harvard International PF Tournament Open Division 團隊亞軍兼最佳辯手",
+      "2020年 NSDA Global Excellent Debater",
+      "Winchester College Yaw Pot 冠軍"
+    ],
+    "classes": [
+      "PF B"
+    ],
     "bio": "頂尖 PF 辯手，曾喺 2023 年 Harvard International PF Tournament Open Division 獲得團隊亞軍同最佳辯手，並於 2021、2022 年多次取得高位名次。Arthur 亦係 2020 年 NSDA Global Excellent Debater，同 Winchester College 宿舍辯論賽 Yaw Pot 冠軍。"
   },
   {
@@ -68,7 +158,12 @@
     "role": "設計主管",
     "school": "Phillips Exeter Academy，美國",
     "image": "Images/Kevin.png",
-    "categories": ["outreach"],
+    "categories": [
+      "outreach"
+    ],
+    "achievements": [
+      "Exonian Web Board 網頁設計經驗"
+    ],
     "bio": "負責數碼外展同辯論內容設計，協助擴大 DebateCraft 嘅網上影響力。Kevin 亦有 Exonian Web Board 網頁設計經驗，熟悉點樣將內容清晰呈現畀學生同家長。"
   },
   {
@@ -76,7 +171,18 @@
     "role": "高級教練",
     "school": "Hong Kong International School，香港",
     "image": "Images/Piers.png",
-    "categories": ["coaching"],
+    "categories": [
+      "coaching"
+    ],
+    "badge": "香港 WSDC 發展隊",
+    "achievements": [
+      "Team HK WSDC Development Team 成員",
+      "每日時事通訊作者"
+    ],
+    "classes": [
+      "Level 1 B",
+      "Level 2 A"
+    ],
     "bio": "Team HK WSDC Development Team 成員，亦係每日時事通訊作者。Piers 長期關注國際同本地議題，擅長將新聞、資料同賽制策略結合成實用辯論訓練。"
   },
   {
@@ -84,15 +190,40 @@
     "role": "高級教練",
     "school": "German Swiss International School，香港",
     "image": "Images/Rachel.png",
-    "categories": ["coaching", "private"],
+    "categories": [
+      "coaching",
+      "private"
+    ],
+    "achievements": [
+      "German Swiss International School Debate Team 隊長",
+      "2026年 Hong Kong Junior Schools Debating Competition 準決賽及第七最佳辯手",
+      "2025年 Indo-Pacific WSDO 公開組八強",
+      "2024年 Indo-Pacific WSDO U14 冠軍"
+    ],
+    "classes": [
+      "L3 WSDC B"
+    ],
     "bio": "German Swiss International School Debate Team 隊長，具備個人同團隊比賽成績。Rachel 最近喺 Hong Kong Junior Schools Debating Competition 2026 打入準決賽並獲第七最佳辯手，亦曾於 Indo-Pacific WSDO 2025 打入公開組八強，並於 Indo-Pacific WSDO 2024 成為 U14 冠軍。"
   },
-    {
+  {
     "name": "Cici C",
     "role": "高級教練",
     "school": "Phillips Exeter Academy，美國",
     "image": "Images/Cici.png",
-    "categories": ["coaching", "outreach", "private"],
+    "categories": [
+      "coaching",
+      "outreach",
+      "private"
+    ],
+    "badge": "香港 WSDC 發展隊",
+    "achievements": [
+      "Team Hong Kong WSDC Development Team 成員",
+      "Phillips Exeter Advanced Debate Team 成員"
+    ],
+    "classes": [
+      "Level 1 C",
+      "L3 WSDC B"
+    ],
     "bio": "Team Hong Kong WSDC Development Team 成員，同時係 Phillips Exeter Advanced Debate Team 成員。Cici 喺亞洲賽區有多次亮眼成績，能夠以清晰示範同具體 feedback 幫學生穩步進步。"
   },
   {
@@ -100,7 +231,15 @@
     "role": "Level 4 教練",
     "school": "Hong Kong International School，香港",
     "image": "Images/TheoW.png",
-    "categories": ["coaching", "private"],
+    "categories": [
+      "coaching",
+      "private"
+    ],
+    "achievements": [
+      "2024年重慶 WSDC 工作坊 trainer",
+      "2025年南京 WSDC 評審",
+      "2025年 Vietnam Asian Schools Debating Championships 第三最佳辯手"
+    ],
     "bio": "曾於 2024 年重慶 WSDC 工作坊擔任 trainer，並於 2025 年南京 WSDC 擔任評審。Theodore 喺 2025 年 Vietnam Asian Schools Debating Championships 獲得第三最佳辯手，並多次喺大型賽事 break。"
   },
   {
@@ -108,7 +247,19 @@
     "role": "Level 3 教練",
     "school": "DPS Modern Indian School，卡塔爾",
     "image": "Images/H.png",
-    "categories": ["coaching", "outreach", "private"],
+    "categories": [
+      "coaching",
+      "outreach",
+      "private"
+    ],
+    "achievements": [
+      "Qatar Prep Schools Debate League 總決賽選手",
+      "國際賽事十六強"
+    ],
+    "classes": [
+      "Level 1 A",
+      "Level 1 C"
+    ],
     "bio": "Qatar Prep Schools Debate League 總決賽選手，亦曾於國際賽打入十六強。Hirannya 擅長同初中學生合作，幫佢哋打好基本功再逐步進入更高階策略。"
   },
   {
@@ -116,7 +267,20 @@
     "role": "Level 3 教練",
     "school": "Southridge School，加拿大",
     "image": "Images/Tanvi.png",
-    "categories": ["coaching", "outreach", "private"],
+    "categories": [
+      "coaching",
+      "outreach",
+      "private"
+    ],
+    "achievements": [
+      "2025年 Hart House Debate Tournament 準決賽",
+      "UBC Summer HST 2025 第九最佳辯手",
+      "YPC HST 同 Debateability Summer Championships 2025 決賽選手"
+    ],
+    "classes": [
+      "Level 1 B",
+      "Level 1 D"
+    ],
     "bio": "曾於 2025 年 Hart House Debate Tournament 同 UBC Summer HST 打入準決賽，並於 UBC Summer HST 獲得第九最佳辯手。Tanvi 亦係 YPC HST 2025 同 Debateability Summer Championships 2025 決賽選手。"
   },
   {
@@ -124,7 +288,15 @@
     "role": "Level 3 教練",
     "school": "German Swiss International School，香港",
     "image": "Images/Vera.png",
-    "categories": ["coaching", "private"],
+    "categories": [
+      "coaching",
+      "private"
+    ],
+    "achievements": [
+      "2026年 Hong Kong Junior Schools Debate Competition 準決賽及第八最佳辯手",
+      "2025年 Indo-Pacific WSDO U14 冠軍",
+      "World Forensics League WSDC Spring Qualifiers 決賽及第二最佳辯手"
+    ],
     "bio": "經驗豐富嘅 WSDC 辯手，最近喺 Hong Kong Junior Schools Debate Competition 2026 打入準決賽並獲第八最佳辯手，亦係 Indo-Pacific WSDO 2025 U14 冠軍，並曾於 World Forensics League WSDC Spring Qualifiers 打入決賽及獲第二最佳辯手。"
   },
   {
@@ -132,7 +304,18 @@
     "role": "Level 3 教練",
     "school": "German Swiss International School，香港",
     "image": "Images/Larissa.png",
-    "categories": ["coaching", "private"],
+    "categories": [
+      "coaching",
+      "private"
+    ],
+    "achievements": [
+      "CISWSDC Grand Champion 同 U16 Best Speaker",
+      "2024年 MIWSDC U16 組別第一名 break",
+      "Asia Pacific WSDC 同 2026 Junior Schools Debating Championship 準決賽"
+    ],
+    "classes": [
+      "Level 2 A"
+    ],
     "bio": "Larissa 曾帶領並主持 GSIS junior school team 訓練。佢係 CISWSDC Grand Champion 同 U16 Best Speaker，亦曾於 MIWSDC 2024 U16 組以第一名 break，並喺 Asia Pacific WSDC 同 2026 Junior Schools Debating Championship 打入準決賽。"
   },
   {
@@ -140,15 +323,34 @@
     "role": "Level 3 教練",
     "school": "German Swiss International School，香港",
     "image": "Images/Sanaya.png",
-    "categories": ["coaching", "outreach", "private"],
+    "categories": [
+      "coaching",
+      "outreach",
+      "private"
+    ],
+    "achievements": [
+      "GSIS Debate Club 聯合負責人",
+      "連續三年參加 Junior Schools Debating Championships"
+    ],
+    "classes": [
+      "Level 1 E",
+      "Level 2B WSDC"
+    ],
     "bio": "German Swiss International School Debate Club 聯合負責人，過去三年均有參加 Junior Schools Debating Championships。Sanaya 特別擅長訓練學生可以即時應用喺比賽入面嘅 micro-skills。"
   },
-    {
+  {
     "name": "Andre C",
     "role": "Level 2 教練",
     "school": "Phillips Exeter Academy，美國",
     "image": "Images/Andre.png",
-    "categories": ["coaching", "private"],
+    "categories": [
+      "coaching",
+      "private"
+    ],
+    "achievements": [
+      "超過四年 WSDC 同 BP 經驗",
+      "參與課程設計同訓練安排"
+    ],
     "bio": "具備 WSDC 同 BP 經驗嘅資深辯手，擁有超過四年教學同課程設計經驗。Andre 參與 DebateCraft 課程設計同訓練安排，特別擅長將批判思維、生物倫理同辯論技巧結合。"
   },
   {
@@ -156,14 +358,26 @@
     "role": "Level 2 教練",
     "school": "Phillips Exeter Academy，美國",
     "image": "Images/Eric.png",
-    "categories": ["coaching"],
+    "categories": [
+      "coaching"
+    ],
+    "achievements": [
+      "2025年 Team Canada Fundraiser 季軍",
+      "2025年 Carroll College Fundraiser 季軍"
+    ],
     "bio": "BP 辯手，最近喺 Team Canada Fundraiser 2025 同 Carroll College Fundraiser 2025 均獲得季軍。Eric 擅長用清晰框架同細緻講評，幫學生快速掌握 round 入面嘅關鍵。"
   },
   {
     "name": "Calvin M",
     "role": "Level 2 教練",
     "image": "Images/Calvin.png",
-    "categories": ["coaching"],
+    "categories": [
+      "coaching"
+    ],
+    "achievements": [
+      "2025年 Team Canada Fundraiser 季軍",
+      "2025年 Carroll College Fundraiser 季軍"
+    ],
     "bio": "BP 辯手，最近喺 Team Canada Fundraiser 2025 同 Carroll College Fundraiser 2025 均獲得季軍。Calvin 熟悉 BP 賽制節奏，能夠幫學生建立清晰、可執行嘅分析框架。"
   },
   {
@@ -171,7 +385,18 @@
     "role": "Public Forum 教練",
     "school": "Cary Academy，美國",
     "image": "Images/Chelsea.png",
-    "categories": ["coaching", "PF", "outreach"],
+    "categories": [
+      "coaching",
+      "PF",
+      "outreach"
+    ],
+    "achievements": [
+      "Harvard National Speech and Debate Tournament JV Lincoln-Douglas 八強",
+      "DSDL 3 Lincoln-Douglas 第六名"
+    ],
+    "classes": [
+      "PF B"
+    ],
     "bio": "曾於 Harvard National Speech and Debate Tournament JV Lincoln-Douglas 組打入八強，亦於 DSDL 3 Lincoln-Douglas 獲得第六名。Chelsea 將準備型辯論嘅研究、立論同表達經驗帶入 DebateCraft。"
   },
   {
@@ -179,7 +404,16 @@
     "role": "Public Forum 教練",
     "school": "Phillips Exeter Academy，美國",
     "image": "Images/Hao.png",
-    "categories": ["outreach", "PF"],
+    "categories": [
+      "outreach",
+      "PF"
+    ],
+    "achievements": [
+      "NSDA China 賽區經常打入八強或以上"
+    ],
+    "classes": [
+      "PF A"
+    ],
     "bio": "Matthew 係熟練嘅 PF 辯手，經常喺 NSDA China 賽區打入八強或更高名次。佢熟悉中國同國際賽事規則同評分文化，訓練上尤其重視實戰策略。"
   },
   {
@@ -187,7 +421,12 @@
     "role": "Level 1 教練",
     "school": "Winchester College，英國",
     "image": "Images/Winston.png",
-    "categories": ["coaching"],
+    "categories": [
+      "coaching"
+    ],
+    "achievements": [
+      "DBS 同 Winchester College 辯論及 moot 經驗"
+    ],
     "bio": "Winston 擁有 DBS 同 Winchester College 嘅辯論及 moot 經驗，特別擅長幫新手 ESL 辯手建立英文表達、自信同臨場反應。"
   },
   {
@@ -195,7 +434,18 @@
     "role": "生物倫理導師",
     "school": "Phillips Exeter Academy，美國",
     "image": "Images/Dowan.png",
-    "categories": ["coaching", "epi", "outreach"],
+    "categories": [
+      "coaching",
+      "epi",
+      "outreach"
+    ],
+    "achievements": [
+      "曾參加韓國本地 WSDC 賽事"
+    ],
+    "classes": [
+      "Bioethics A",
+      "Bioethics B"
+    ],
     "bio": "Dowan 曾參加韓國本地 WSDC 賽事，具備 WSDC 經驗。佢將辯論訓練同生物倫理議題設計結合，幫學生喺技術以外建立更完整嘅觀點。"
   },
   {
@@ -203,7 +453,17 @@
     "role": "生物倫理導師",
     "school": "Phillips Exeter Academy，美國",
     "image": "Images/OC.png",
-    "categories": ["outreach", "epi"],
+    "categories": [
+      "outreach",
+      "epi"
+    ],
+    "achievements": [
+      "Biophysics 論文發表經驗"
+    ],
+    "classes": [
+      "Bioethics A",
+      "Bioethics B"
+    ],
     "bio": "熱衷 biophysics，並有論文發表經驗。Oliver 經常探討生物倫理議題，能夠引導學生將科學知識同倫理分析連結起嚟。"
   },
   {
@@ -211,7 +471,13 @@
     "role": "生物倫理導師",
     "school": "Phillips Exeter Academy，美國",
     "image": "Images/Emmanuel.png",
-    "categories": ["outreach", "epi"],
+    "categories": [
+      "outreach",
+      "epi"
+    ],
+    "achievements": [
+      "香港大學癌症研究經驗"
+    ],
     "bio": "Phillips Exeter Academy 辯手，曾於香港大學進行癌症研究。Emmanuel 實踐 DebateCraft 普及科學研究教育嘅使命，幫助更多學生接觸高質素科學討論。"
   },
   {
@@ -219,7 +485,15 @@
     "role": "生物倫理導師",
     "school": "Phillips Exeter Academy，美國",
     "image": "Images/Jessica.png",
-    "categories": ["outreach", "epi", "PF"],
+    "categories": [
+      "outreach",
+      "epi",
+      "PF"
+    ],
+    "achievements": [
+      "PF Silver Tournament of Champions",
+      "USABO Semifinalist"
+    ],
     "bio": "曾於 PF 達到 Silver Tournament of Champions 水平，亦係 USABO semifinalist。Jessica 係投入而知識紮實嘅教練，能夠連結辯論、生命科學同倫理分析。"
   },
   {
@@ -227,7 +501,12 @@
     "role": "課程排程",
     "school": "Epsom College，英國",
     "image": "Images/Aloy.png",
-    "categories": ["outreach"],
+    "categories": [
+      "outreach"
+    ],
+    "achievements": [
+      "支援教練安排同課程後勤"
+    ],
     "bio": "Aloysius 支援教練安排同課程後勤，協助團隊維持穩定課程節奏，令教練同學生可以更專注於教學本身。"
   },
   {
@@ -235,7 +514,15 @@
     "role": "行政統籌",
     "school": "Phillips Exeter Academy，美國",
     "image": "Images/Andrew.png",
-    "categories": ["outreach", "PF", "epi"],
+    "categories": [
+      "outreach",
+      "PF",
+      "epi"
+    ],
+    "achievements": [
+      "支援辯論內容製作",
+      "具備 PF 辯論經驗"
+    ],
     "bio": "Andrew 支援辯論內容製作，同時協助同家長溝通。佢本身有 PF 辯論經驗，理解學生喺備賽同學習過程中會遇到嘅實際需要。"
   },
   {
@@ -243,7 +530,13 @@
     "role": "行政統籌",
     "school": "Acellus Academy，巴拿馬",
     "image": "Images/Ana.png",
-    "categories": ["outreach", "PF"],
+    "categories": [
+      "outreach",
+      "PF"
+    ],
+    "achievements": [
+      "一年 Public Forum 辯論經驗"
+    ],
     "bio": "Ana 係學生領袖，擁有一年 Public Forum 經驗，熱衷幫助其他學生學習。佢喺團隊中以專注、穩定同持續成長嘅態度支援各項工作。"
   },
   {
@@ -251,7 +544,16 @@
     "role": "外展統籌",
     "school": "Winchester College，英國",
     "image": "Images/Theo.png",
-    "categories": ["outreach"],
+    "categories": [
+      "outreach"
+    ],
+    "achievements": [
+      "創業同市場推廣背景"
+    ],
+    "classes": [
+      "Level 2 C",
+      "Level 3 WSDC A"
+    ],
     "bio": "具備創業同市場推廣背景，Theo 負責推動 DebateCraft 嘅外展策略同社群互動，幫助團隊接觸更多學生、學校同地區。"
   },
   {
@@ -259,7 +561,14 @@
     "role": "社交媒體設計",
     "school": "Phillips Exeter Academy，美國",
     "image": "Images/Max.png",
-    "categories": ["outreach"],
+    "categories": [
+      "outreach"
+    ],
+    "achievements": [
+      "營運多個專業社交媒體帳號",
+      "為 The Exonian 拍攝影片",
+      "資深攝影愛好者"
+    ],
     "bio": "Max 有多個專業社交媒體帳號營運經驗，曾為 The Exonian 拍攝影片，亦係有經驗嘅攝影愛好者。佢為 DebateCraft 社交媒體內容創作帶嚟豐富視覺經驗。"
   },
   {
@@ -267,7 +576,12 @@
     "role": "社交媒體設計",
     "school": "Phillips Exeter Academy，美國",
     "image": "Images/Vivien.png",
-    "categories": ["outreach"],
+    "categories": [
+      "outreach"
+    ],
+    "achievements": [
+      "暑期助教經驗"
+    ],
     "bio": "Vivien 負責製作社交媒體內容，推動 DebateCraft 透過免費內容普及辯論教育。佢曾於暑期擔任助教，具備教學同鼓勵學生參與嘅經驗。"
   },
   {
@@ -275,7 +589,13 @@
     "role": "社交媒體設計",
     "school": "Phillips Exeter Academy，美國",
     "image": "Images/Sophia.png",
-    "categories": ["outreach"],
+    "categories": [
+      "outreach"
+    ],
+    "achievements": [
+      "音樂外展活動服務長者",
+      "MLK Day 社區物資包籌備"
+    ],
     "bio": "Sophia 曾透過音樂外展活動同長者互動，亦曾於 MLK Day 為社區成員準備物資包。呢啲服務經驗令佢具備良好溝通能力，能夠用故事同影像拉近學生同辯論世界嘅距離。"
   },
   {
@@ -283,7 +603,12 @@
     "role": "社交媒體設計",
     "school": "Phillips Exeter Academy，美國",
     "image": "Images/Andy.png",
-    "categories": ["outreach"],
+    "categories": [
+      "outreach"
+    ],
+    "achievements": [
+      "Exonian Web Board 網頁經驗"
+    ],
     "bio": "Andy 負責數碼外展同視覺媒體，協助接觸新學生。佢亦有 Exonian Web Board 經驗，熟悉網站內容、版面同視覺呈現。"
   }
 ]

@@ -360,6 +360,27 @@
     .filter-row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:30px 0}
     .filter-row button{border:1px solid rgba(17,29,60,.12);background:${WHITE};color:${NAVY};border-radius:999px;padding:9px 16px;font-size:12px;font-weight:700;cursor:pointer}
     .filter-row button.active{background:${NAVY};color:${WHITE}}
+    .team-search{width:100%;border:1px solid rgba(17,29,60,.12);background:${WHITE};color:${NAVY};border-radius:8px;padding:11px 14px;font-size:14px;outline:none}
+    .team-search:focus{border-color:${SKY};box-shadow:0 0 0 3px rgba(61,195,232,.16)}
+    .team-grid{grid-auto-rows:1fr}
+    .team-card{display:flex;flex-direction:column;min-height:100%}
+    .team-card-body{display:flex;flex-direction:column;flex:1}
+    .team-badge{display:inline-flex;align-self:flex-start;align-items:center;gap:5px;background:rgba(17,29,60,.06);color:rgba(17,29,60,.56);border-radius:999px;padding:5px 11px;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px}
+    .team-achievements{list-style:none;margin:2px 0 14px;padding:0;display:grid;gap:6px}
+    .team-achievements li{position:relative;padding-left:16px;font-size:13px;line-height:1.5;color:rgba(17,29,60,.68)}
+    .team-achievements li:before{content:"▸";position:absolute;left:0;color:${ORANGE};font-weight:700}
+    .team-bio-btn{display:inline-block;border:0;background:transparent;padding:0;color:${ORANGE};font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;margin-top:auto;align-self:flex-start}
+    .team-bio-btn:hover{text-decoration:underline}
+    .bio-modal-backdrop{position:fixed;inset:0;background:rgba(13,23,48,.6);display:flex;align-items:center;justify-content:center;z-index:400;padding:24px;animation:fadeUp .25s ease both}
+    .bio-modal{position:relative;background:${WHITE};max-width:560px;width:100%;max-height:88vh;overflow-y:auto;border-radius:8px;border-top:4px solid ${ORANGE};padding:32px 28px;box-shadow:0 30px 70px rgba(13,23,48,.35)}
+    .bio-modal-close{position:absolute;top:14px;right:14px;width:32px;height:32px;border:0;border-radius:999px;background:${CREAM};color:${NAVY};font-size:20px;line-height:1;cursor:pointer}
+    .bio-modal-close:hover{background:rgba(17,29,60,.12)}
+    .bio-modal-img{width:100%;max-height:260px;object-fit:cover;border-radius:6px;margin-bottom:18px;background:${CREAM}}
+    .teaching-block{margin-top:20px;padding-top:16px;border-top:1px solid rgba(17,29,60,.1)}
+    .teaching-label{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:${SKY};margin-bottom:8px}
+    .teaching-chips{display:flex;flex-wrap:wrap;gap:8px}
+    .teaching-chip{display:inline-block;border-radius:999px;background:rgba(61,195,232,.12);color:${NAVY};font-size:12px;font-weight:600;padding:6px 12px}
+    .teaching-chip:hover{background:rgba(61,195,232,.22)}
     .resource-row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0;border-bottom:1px solid rgba(17,29,60,.08)}
     .resource-row:last-child{border-bottom:0}
     .lab-panel{background:${WHITE};border-radius:4px;border-top:4px solid ${ORANGE};padding:28px;box-shadow:0 4px 14px rgba(17,29,60,.06)}
@@ -484,6 +505,8 @@
       .range-row{grid-template-columns:1fr}
       .range-label{text-align:left}
       .motion-display{font-size:23px}
+      .bio-modal-backdrop{padding:0}
+      .bio-modal{max-width:100%;width:100%;height:100%;max-height:100%;border-radius:0;padding:24px 18px}
     }
   `;
 
@@ -1510,6 +1533,8 @@
   function TeamPage() {
     const [members, setMembers] = useState([]);
     const [filter, setFilter] = useState("all");
+    const [query, setQuery] = useState("");
+    const [active, setActive] = useState(null);
     useEffect(() => {
       fetch(`${isZh ? "../data/cnteam_members.json" : "../data/team_members.json"}?v=react-pages`)
         .then((r) => r.json())
@@ -1521,15 +1546,53 @@
           ])
         );
     }, []);
+
+    // Deep-link in: open the matching member's modal from the URL hash once members load.
+    useEffect(() => {
+      if (!members.length) return;
+      const openFromHash = () => {
+        const hash = window.location.hash.replace(/^#member-/, "");
+        if (!hash) return;
+        const match = members.find((m) => slugify(m.name) === hash);
+        if (match) setActive(match);
+      };
+      openFromHash();
+      window.addEventListener("hashchange", openFromHash);
+      return () => window.removeEventListener("hashchange", openFromHash);
+    }, [members]);
+
+    // Deep-link out + Esc-to-close + scroll-lock while a modal is open.
+    useEffect(() => {
+      if (!active) return;
+      const memberHash = `#member-${slugify(active.name)}`;
+      window.history.replaceState(null, "", memberHash);
+      const prevOverflow = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+      const onKey = (e) => {
+        if (e.key === "Escape") setActive(null);
+      };
+      window.addEventListener("keydown", onKey);
+      return () => {
+        document.body.style.overflow = prevOverflow;
+        window.removeEventListener("keydown", onKey);
+        if (window.location.hash === memberHash) {
+          window.history.replaceState(null, "", window.location.pathname + window.location.search);
+        }
+      };
+    }, [active]);
+
     const filters = [
       ["all", isZh ? "全部" : "All"],
       ["executive", isZh ? "核心團隊" : "Executive"],
       ["coaching", isZh ? "教練" : "Coaching"],
       ["private", isZh ? "私人教練" : "Private"],
       ["PF", "PF"],
-      ["epi", isZh ? "生物倫理" : "Epidemiology"],
+      ["epi", isZh ? "生物倫理" : "Bioethics"],
     ];
-    const visible = filter === "all" ? members : members.filter((m) => (m.categories || []).includes(filter));
+    const byCategory = filter === "all" ? members : members.filter((m) => (m.categories || []).includes(filter));
+    const q = query.trim().toLowerCase();
+    const visible = q ? byCategory.filter((m) => m.name.toLowerCase().includes(q)) : byCategory;
+
     return h(
       React.Fragment,
       null,
@@ -1544,20 +1607,73 @@
         Section,
         { cream: true },
         h(TitleBlock, { eyebrow: isZh ? "成員" : "Members", title: isZh ? "認識我哋嘅" : "Meet Our", emphasis: isZh ? "團隊。" : "Team.", center: true }),
-        h("div", { className: "filter-row" }, filters.map(([key, label]) => h("button", { key, className: filter === key ? "active" : "", onClick: () => setFilter(key) }, label))),
         h(
           "div",
-          { className: "grid grid-3" },
-          visible.map((m) =>
-            h(
+          { style: { maxWidth: 360, margin: "0 auto 18px" } },
+          h("input", {
+            type: "text",
+            className: "team-search",
+            placeholder: isZh ? "搜尋姓名…" : "Search by name…",
+            value: query,
+            onChange: (e) => setQuery(e.target.value),
+            "aria-label": isZh ? "搜尋團隊成員姓名" : "Search team members by name",
+          })
+        ),
+        h("div", { className: "filter-row" }, filters.map(([key, label]) => h("button", { key, className: filter === key ? "active" : "", onClick: () => setFilter(key) }, label))),
+        !visible.length && h("p", { className: "no-members", style: { textAlign: "center", color: "rgba(17,29,60,.5)" } }, isZh ? "搵唔到相關成員。" : "No team members match your search."),
+        h(
+          "div",
+          { className: "grid grid-3 team-grid" },
+          visible.map((m) => {
+            const hasAch = Array.isArray(m.achievements) && m.achievements.length > 0;
+            const hasBio = Boolean(m.bio) || hasAch;
+            return h(
               "article",
-              { id: `member-${slugify(m.name)}`, className: "card", key: `${m.name}-${m.role}`, style: { padding: 0, overflow: "hidden" } },
+              { id: `member-${slugify(m.name)}`, className: "card team-card", key: `${m.name}-${m.role}`, style: { padding: 0, overflow: "hidden" } },
               m.image && h("img", { className: "team-img", src: `../${m.image}`, alt: m.name, onError: (e) => (e.currentTarget.style.display = "none") }),
-              h("div", { style: { padding: "22px 20px 26px" } }, h("h3", null, m.name), h("div", { style: { fontSize: 12, fontWeight: 700, color: ORANGE, letterSpacing: ".08em", textTransform: "uppercase", marginBottom: 8 } }, m.role), m.school && h("p", { style: { fontWeight: 700, marginBottom: 10 } }, m.school), h("p", null, m.bio || ""))
-            )
+              h(
+                "div",
+                { className: "team-card-body", style: { padding: "22px 20px 26px" } },
+                h("h3", null, m.name),
+                h("div", { style: { fontSize: 12, fontWeight: 700, color: ORANGE, letterSpacing: ".08em", textTransform: "uppercase", marginBottom: 8 } }, m.role),
+                m.badge && h("div", { className: "team-badge" }, m.badge),
+                m.school && h("p", { style: { fontWeight: 700, marginBottom: 10 } }, m.school),
+                hasAch && h("ul", { className: "team-achievements" }, m.achievements.map((a, i) => h("li", { key: i }, a))),
+                hasBio && h("button", { type: "button", className: "team-bio-btn", onClick: () => setActive(m), "aria-label": isZh ? `查看 ${m.name} 完整簡介` : `View full bio for ${m.name}` }, isZh ? "完整簡介 →" : "Full bio →")
+              )
+            );
+          })
+        )
+      ),
+      active &&
+        h(
+          "div",
+          { className: "bio-modal-backdrop", onClick: () => setActive(null) },
+          h(
+            "div",
+            { className: "bio-modal", role: "dialog", "aria-modal": "true", "aria-label": active.name, onClick: (e) => e.stopPropagation() },
+            h("button", { type: "button", className: "bio-modal-close", onClick: () => setActive(null), "aria-label": isZh ? "關閉" : "Close" }, "×"),
+            active.image && h("img", { className: "bio-modal-img", src: `../${active.image}`, alt: active.name, onError: (e) => (e.currentTarget.style.display = "none") }),
+            h("h3", { className: "serif", style: { fontSize: 26, marginBottom: 4 } }, active.name),
+            h("div", { style: { fontSize: 12, fontWeight: 700, color: ORANGE, letterSpacing: ".08em", textTransform: "uppercase", marginBottom: 8 } }, active.role),
+            active.badge && h("div", { className: "team-badge", style: { marginBottom: 10 } }, active.badge),
+            active.school && h("p", { style: { fontWeight: 700, marginBottom: 14 } }, active.school),
+            Array.isArray(active.achievements) && active.achievements.length > 0 && h("ul", { className: "team-achievements" }, active.achievements.map((a, i) => h("li", { key: i }, a))),
+            active.bio && h("p", { style: { marginTop: 16, lineHeight: 1.7, color: "rgba(17,29,60,.7)" } }, active.bio),
+            Array.isArray(active.classes) &&
+              active.classes.length > 0 &&
+              h(
+                "div",
+                { className: "teaching-block" },
+                h("div", { className: "teaching-label" }, isZh ? "本季任教課程" : "Teaching this summer"),
+                h(
+                  "div",
+                  { className: "teaching-chips" },
+                  active.classes.map((c) => h("a", { key: c, className: "teaching-chip", href: `${isZh ? "cncalendar.html" : "calendar.html"}#cohort-${slugify(c)}` }, c))
+                )
+              )
           )
         )
-      )
     );
   }
 
@@ -2566,6 +2682,8 @@
       .calendar-cohorts th.num, .calendar-cohorts td.num { text-align:left; }
       .calendar-cohorts td { padding:16px; color:var(--cal-navy); font-size:14px; border-bottom:1px solid var(--cal-hair); vertical-align:middle; }
       .calendar-cohorts tr.has-head-coach td { background:rgba(247,162,52,.08); }
+      .calendar-cohorts tr { scroll-margin-top: 90px; }
+      .calendar-cohorts tr:target td { background:rgba(61,195,232,.14); }
       .calendar-cohorts td.cohort { font-weight:800; white-space:nowrap; }
       .calendar-cohorts td.cohort .calendar-swatch { margin-right:8px; vertical-align:middle; transform:translateY(-1px); }
       .calendar-cohorts td.dates, .calendar-cohorts td.time, .calendar-cohorts td.head { color:rgba(17,29,60,.68); font-size:13px; font-weight:700; }
@@ -2647,54 +2765,36 @@
       ["PF B", "blue", 6, 2],
     ];
 
-    const [teamRoleMap, setTeamRoleMap] = useState({});
+    const [classCoaches, setClassCoaches] = useState({});
     useEffect(() => {
       fetch(`../data/${isZh ? "cnteam_members" : "team_members"}.json?v=calendar`)
         .then((r) => r.json())
         .then((members) => {
-          const map = {};
+          const byClass = {};
           members.forEach((member) => {
-            const parts = member.name.split(" ");
-            const keys = [member.name, parts[0]];
-            if (parts.length > 1) keys.push(`${parts[0]} ${parts[1][0]}`);
-            keys.forEach((key) => {
-              map[key] = { name: member.name, role: member.role };
+            (member.classes || []).forEach((classId) => {
+              if (!byClass[classId]) byClass[classId] = [];
+              byClass[classId].push({ name: member.name, role: member.role });
             });
           });
-          setTeamRoleMap(map);
+          setClassCoaches(byClass);
         })
-        .catch(() => setTeamRoleMap({}));
+        .catch(() => setClassCoaches({}));
     }, []);
 
     const headCoachKeys = ["Valmik", "Matthew W", "Arthur", "Gavin"];
-    const headCoachFallbacks = isZh
-      ? {
-          Valmik: { name: "Valmik D", role: "總教練" },
-          "Matthew W": { name: "Matthew W", role: "課程主管" },
-          Arthur: { name: "Arthur Z", role: "PF 主任教練" },
-          Gavin: { name: "Gavin Z", role: "執行總監" },
-        }
-      : {
-          Valmik: { name: "Valmik D", role: "Head Coach" },
-          "Matthew W": { name: "Matthew W", role: "Head of Programs" },
-          Arthur: { name: "Arthur Z", role: "Head PF Coach" },
-          Gavin: { name: "Gavin Z", role: "Executive Director" },
-        };
     const cleanCoachName = (name = "") => name.replace(/\?$/, "").trim();
     const isHeadCoach = (name = "") => headCoachKeys.includes(cleanCoachName(name));
-    const coachProfile = (name) => {
-      const key = cleanCoachName(name);
-      return teamRoleMap[key] || headCoachFallbacks[key] || { name: key, role: isZh ? "主教練" : "Head Coach" };
-    };
     const teamHrefForCoach = (profile) => `${isZh ? "cnteam.html" : "team.html"}#member-${slugify(profile.name)}`;
     const cohort = (nameEn, nameZh, datesEn, datesZh, time, teachers, backup, capacity) => {
       const teacherList = Array.isArray(teachers) ? teachers : [teachers].filter(Boolean);
       const visibleHeadCoaches = teacherList.filter(isHeadCoach);
       return {
+        key: nameEn,
+        cohortId: `cohort-${slugify(nameEn)}`,
         name: isZh ? nameZh || nameEn : nameEn,
         dates: isZh ? datesZh : datesEn,
         time,
-        headCoaches: visibleHeadCoaches,
         classSize: String(capacity).includes("/") ? String(capacity).split("/").pop() : capacity,
         hasHeadCoach: visibleHeadCoaches.length > 0,
       };
@@ -2805,22 +2905,21 @@
         )
       );
 
-    const HeadCoachList = ({ names }) => {
-      const list = names && names.length ? names : [];
+    const HeadCoachList = ({ coaches }) => {
+      const list = coaches && coaches.length ? coaches : [];
       if (!list.length) return h("span", { className: "calendar-muted" }, "—");
       return h(
         "div",
         { className: "calendar-head-list" },
-        list.map((name) => {
-          const profile = coachProfile(name);
-          return h(
+        list.map((profile) =>
+          h(
             "a",
-            { className: "calendar-head-coach", href: teamHrefForCoach(profile), key: name, "aria-label": isZh ? `前往團隊頁面查看 ${profile.name}` : `View ${profile.name} on the team page` },
+            { className: "calendar-head-coach", href: teamHrefForCoach(profile), key: profile.name, "aria-label": isZh ? `前往團隊頁面查看 ${profile.name}` : `View ${profile.name} on the team page` },
             h("span", { className: "calendar-head-title" }, profile.role),
             " ",
             h("span", null, profile.name)
-          );
-        })
+          )
+        )
       );
     };
 
@@ -2843,11 +2942,11 @@
           course.cohorts.map((item) =>
             h(
               "tr",
-              { key: item.name, className: item.hasHeadCoach ? "has-head-coach" : "" },
+              { id: item.cohortId, key: item.cohortId, className: item.hasHeadCoach ? "has-head-coach" : "" },
               h("td", { className: "cohort" }, h("span", { className: `calendar-swatch ${course.color}`, "aria-hidden": true }), item.name),
               h("td", { className: "dates" }, item.dates),
               h("td", { className: "time" }, item.time),
-              h("td", { className: "head" }, h(HeadCoachList, { names: item.headCoaches })),
+              h("td", { className: "head" }, h(HeadCoachList, { coaches: classCoaches[item.key] })),
               h("td", { className: "num" }, item.classSize)
             )
           )

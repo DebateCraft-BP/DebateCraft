@@ -163,12 +163,13 @@ const CALENDAR_ROWS = [
   { label:'Level 1 B', color:'orange', start:4, span:3 },
   { label:'Level 1 C', color:'orange', start:4, span:3 },
   { label:'Level 3 BP', color:'sky', start:4, span:2 },
-  { label:'Bioethics A', color:'bio', start:5, span:2 },
+  { label:'Bioethics A', color:'bio', start:3, span:2 },
   { label:'Level 1 D', color:'orange', start:5, span:3 },
   { label:'Level 1 E', color:'orange', start:5, span:3 },
   { label:'Level 2 C', color:'ink', start:5, span:2 },
   { label:'PF A', color:'sky', start:5, span:2 },
-  { label:'Bioethics B', color:'bio', start:6, span:2 },
+  { label:'Bioethics B', color:'bio', start:5, span:2 },
+  { label:'Bioethics C', color:'bio', start:6, span:2 },
   { label:'L3 WSDC B', color:'sky', start:6, span:2 },
   { label:'PF B', color:'sky', start:6, span:2 },
 ];
@@ -220,7 +221,7 @@ const HOME_SEARCH_PAGES = [
   { title:'Resources', desc:"Use DebateCraft's free debate resource hub with guides, framework drills, speaking practice, videos, and mitigation games.", href:'../../pages/resources.html' },
   { title:'Guides', desc:"Browse DebateCraft's debate guides, WSDC and BP resources, motion preparation materials, and practice tools.", href:'../../pages/guides.html' },
   { title:'Blog', desc:'Read DebateCraft updates, debate education reflections, and student learning resources.', href:'../../pages/blog.html' },
-  { title:'Summer 2026 Programme Calendar', desc:'Fifteen scheduled cohorts, debate and bioethics courses, eight weeks, entirely free.', href:'../../pages/calendar.html' },
+  { title:'Summer 2026 Programme Calendar', desc:'Sixteen scheduled cohorts, debate and bioethics courses, eight weeks, entirely free.', href:'../../pages/calendar.html' },
 ];
 
 function buildHomeSearchIndex() {
@@ -693,7 +694,7 @@ function CalendarVisual() {
         <div style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-end', gap:24, flexWrap:'wrap', marginBottom:34 }}>
           <div>
             <div style={{ fontSize:11, fontWeight:700, color:ORANGE, letterSpacing:'0.14em', textTransform:'uppercase', marginBottom:14 }}>Summer 2026 Calendar</div>
-            <h2 className="serif" style={{ fontSize:52, fontWeight:800, color:WHITE, lineHeight:1.08 }}>Eight Weeks,<br /><em style={{ color:ORANGE, fontStyle:'italic' }}>Fifteen Cohorts.</em></h2>
+            <h2 className="serif" style={{ fontSize:52, fontWeight:800, color:WHITE, lineHeight:1.08 }}>Eight Weeks,<br /><em style={{ color:ORANGE, fontStyle:'italic' }}>Sixteen Cohorts.</em></h2>
           </div>
         </div>
 

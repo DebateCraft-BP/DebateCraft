@@ -18,6 +18,9 @@
       "2025年卡羅爾大學籌款賽季軍",
       "2025年牛津學校辯論賽晉級淘汰賽"
     ],
+    "classes": [
+      "Bioethics A"
+    ],
     "bio": "擁有超過五年國際辯論經驗的資深教育工作者。Adrian 是 2023年 ICYD 國際賽決賽選手，於 2025年牛津學校辯論賽晉級淘汰賽，並獲 2025年加拿大代表隊籌款賽季軍最佳辯手。他將自身的辯論知識濃縮成一套辯論加速課程，現已有超過100名來自香港、英國及美國的辯手使用。"
   },
   {
@@ -283,6 +286,10 @@
       "2025年南京 WSDC 評判",
       "2025年越南亞洲學校辯論錦標賽季軍最佳辯手"
     ],
+    "classes": [
+      "Level 2 C",
+      "Level 3 WSDC A"
+    ],
     "bio": "2024年重慶 WSDC 工作坊導師、2025年南京 WSDC 評判、2025年越南亞洲學校辯論錦標賽季軍最佳辯手，並於多項其他賽事中持續晉級淘汰賽。"
   },
   {
@@ -295,6 +302,9 @@
       "private"
     ],
     "achievements": [],
+    "classes": [
+      "Level 2B WSDC"
+    ],
     "bio": "經驗豐富的辯手，具備 WSDC 及 BP 兩種賽制經驗。Andre 憑藉其四年以上的經驗，為課程設計及訓練作出貢獻。"
   },
   {
@@ -403,6 +413,9 @@
       "2025年加拿大代表隊籌款賽季軍",
       "2025年卡羅爾大學籌款賽季軍"
     ],
+    "classes": [
+      "Level 1 E"
+    ],
     "bio": "BP 辯手，最近於 2025年加拿大代表隊籌款賽及 2025年卡羅爾大學籌款賽中獲得季軍。"
   },
   {
@@ -467,7 +480,8 @@
     ],
     "classes": [
       "Bioethics A",
-      "Bioethics B"
+      "Bioethics B",
+      "Bioethics C"
     ],
     "bio": "Dowan 擁有 WSDC 經驗，曾參加韓國本地 WSDC 比賽。"
   },
@@ -484,8 +498,8 @@
       "發表生物物理學研究論文"
     ],
     "classes": [
-      "Bioethics A",
-      "Bioethics B"
+      "Bioethics B",
+      "Bioethics C"
     ],
     "bio": "熱衷於生物物理學並已發表論文的 Oliver，經常接觸並探討生命倫理議題。"
   },
@@ -500,6 +514,9 @@
     ],
     "achievements": [
       "於香港大學進行癌症研究"
+    ],
+    "classes": [
+      "Bioethics A"
     ],
     "bio": "Emmanuel 是 Phillips Exeter Academy 的辯手。於香港大學進行癌症研究後，他體現了 DebateCraft 讓所有學生都能平等接觸科學研究的使命。"
   },
@@ -558,10 +575,6 @@
     "image": "Images/Theo.png",
     "categories": [
       "outreach"
-    ],
-    "classes": [
-      "Level 2 C",
-      "Level 3 WSDC A"
     ],
     "bio": "擁有創業及市場營銷背景，Theo 推動團隊的外展策略及互動工作。"
   },

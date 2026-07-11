@@ -141,8 +141,8 @@
     mannernew: "Explore DebateCraft's React resource library for debate frameworks, guides, and practice drills.",
     "even-if": "Train mitigation and turn responses through DebateCraft's Even If debate practice game.",
     others: "Preview additional DebateCraft public speaking, research, and interdisciplinary programs in development.",
-    calendar: "DebateCraft Summer 2026 programme calendar: fifteen scheduled cohorts, debate and bioethics courses, eight weeks, entirely free.",
-    cncalendar: "DebateCraft 2026 夏季課程日程：十五個已排小班、辯論及生物倫理課程、八個星期，費用全免。",
+    calendar: "DebateCraft Summer 2026 programme calendar: sixteen scheduled cohorts, debate and bioethics courses, eight weeks, entirely free.",
+    cncalendar: "DebateCraft 2026 夏季課程日程：十六個已排小班、辯論及生物倫理課程、八個星期，費用全免。",
     cnabout: "了解 DebateCraft 如何為學生免費提供辯論、倡議、公開演說和科學倫理教育。",
     cnstory: "了解 DebateCraft 學生營運非牟利使命、全球學生社群和今年夏天的新課程。",
     cnteam: "認識 DebateCraft 背後的學生領袖、競技辯手、教練和科學導師。",
@@ -2172,7 +2172,7 @@
         cohort("Level 1 B", null, "20 Jul → 07 Aug", "7月20日 → 8月7日", "10:00 – 11:00", ["Piers", "Tanvi"], ["Cici"], "7/8"),
         cohort("Level 1 C", null, "20 Jul → 07 Aug", "7月20日 → 8月7日", "16:00 – 17:00", ["Cici", "Hirannya"], ["Vera"], "4/8"),
         cohort("Level 1 D", null, "27 Jul → 14 Aug", "7月27日 → 8月14日", "11:00 – 12:00", ["Matthew W", "Tanvi"], ["TBC"], "8/8"),
-        cohort("Level 1 E", null, "27 Jul → 14 Aug", "7月27日 → 8月14日", "16:00 – 17:00", ["Cheryl", "Sanaya"], ["Cici"], "5/8"),
+        cohort("Level 1 E", null, "27 Jul → 14 Aug", "7月27日 → 8月14日", "16:00 – 17:00", ["Cheryl", "Sanaya", "Eric"], ["Cici"], "5/8"),
       ],
     },
     {
@@ -2186,7 +2186,7 @@
         : "A natural progression for graduates of Level 1. Faster pace and deeper rebuttal work, with more demanding motion analysis.",
       cohorts: [
         cohort("Level 2 A", null, "22 Jun → 03 Jul", "6月22日 → 7月3日", "15:00 – 16:00", ["Piers", "Larissa"], ["Calvin"], "7/10"),
-        cohort("Level 2 C", null, "27 Jul → 07 Aug", "7月27日 → 8月7日", "15:00 – 16:00", ["Raul", "Theo"], ["Hirannya"], "5/10"),
+        cohort("Level 2 C", null, "27 Jul → 07 Aug", "7月27日 → 8月7日", "15:00 – 16:00", ["Raul", "Theo W"], ["Hirannya"], "5/10"),
       ],
     },
     {
@@ -2199,8 +2199,8 @@
         ? "面向準備高階 World Schools 訓練嘅學生，集中訓練五分鐘演講、策略準備、style 同 content。"
         : "World Schools training for students ready to sharpen five-minute speeches, strategic preparation, style, and content.",
       cohorts: [
-        cohort("Level 2B WSDC", null, "06 Jul → 17 Jul", "7月6日 → 7月17日", "16:00 – 18:00", ["Valmik", "Sanaya?"], [], "6/10"),
-        cohort("Level 3 WSDC A", null, "06 Jul → 17 Jul", "7月6日 → 7月17日", "10:00 – 12:00", ["Theo", "Valmik"], ["Cici"], "6/10"),
+        cohort("Level 2B WSDC", null, "06 Jul → 17 Jul", "7月6日 → 7月17日", "16:00 – 18:00", ["Valmik", "Sanaya?", "Andre"], [], "6/10"),
+        cohort("Level 3 WSDC A", null, "06 Jul → 17 Jul", "7月6日 → 7月17日", "10:00 – 12:00", ["Theo W", "Valmik"], ["Cici"], "6/10"),
         cohort("L3 WSDC B", null, "03 Aug → 14 Aug", "8月3日 → 8月14日", "17:00 – 19:00", ["Rachel", "Cici"], ["Valmik"], "6/10"),
       ],
     },
@@ -2239,8 +2239,9 @@
         ? "探索科學與倫理嘅交界，分析現代研究人員面對嘅道德困境。"
         : "Where science meets ethics. Students confront moral dilemmas in modern research and medicine.",
       cohorts: [
-        cohort("Bioethics A", "生物倫理 A", "27 Jul → 07 Aug", "7月27日 → 8月7日", "10:00 – 11:00", ["Dowan", "Oliver"], ["Cici"], "8/8"),
-        cohort("Bioethics B", "生物倫理 B", "03 Aug → 14 Aug", "8月3日 → 8月14日", "20:00 – 21:00", ["Oliver", "Dowan"], ["Adrian"], "5/8"),
+        cohort("Bioethics A", "生物倫理 A", "13 Jul → 24 Jul", "7月13日 → 7月24日", "20:00 – 21:00", ["Adrian", "Dowan", "Emmanuel"], [], "0/8"),
+        cohort("Bioethics B", "生物倫理 B", "27 Jul → 07 Aug", "7月27日 → 8月7日", "10:00 – 11:00", ["Dowan", "Oliver"], ["Cici"], "8/8"),
+        cohort("Bioethics C", "生物倫理 C", "03 Aug → 14 Aug", "8月3日 → 8月14日", "20:00 – 21:00", ["Oliver", "Dowan"], ["Adrian"], "5/8"),
       ],
     },
   ];
@@ -3187,13 +3188,13 @@
           ["日期", h(React.Fragment, null, "6月22日 ", h("span", { className: "dim" }, "→"), " 8月14日")],
           ["形式", "網上 · Zoom"],
           ["費用", "免費 · 開放申請"],
-          ["小班數目", "15"],
+          ["小班數目", "16"],
         ]
       : [
           ["Window", h(React.Fragment, null, "22 Jun ", h("span", { className: "dim" }, "→"), " 14 Aug")],
           ["Format", "Online · Zoom"],
           ["Cost", "Free · Open to All"],
-          ["Cohorts", "15"],
+          ["Cohorts", "16"],
         ];
 
     const weeks = isZh
@@ -3207,12 +3208,13 @@
       ["Level 1 B", "orange", 4, 3],
       ["Level 1 C", "orange", 4, 3],
       ["Level 3 BP", "blue", 4, 2],
-      [isZh ? "生物倫理 A" : "Bioethics A", "bio", 5, 2],
+      [isZh ? "生物倫理 A" : "Bioethics A", "bio", 3, 2],
       ["Level 1 D", "orange", 5, 3],
       ["Level 1 E", "orange", 5, 3],
       ["Level 2 C", "ink", 5, 2],
       ["PF A", "blue", 5, 2],
-      [isZh ? "生物倫理 B" : "Bioethics B", "bio", 6, 2],
+      [isZh ? "生物倫理 B" : "Bioethics B", "bio", 5, 2],
+      [isZh ? "生物倫理 C" : "Bioethics C", "bio", 6, 2],
       ["L3 WSDC B", "blue", 6, 2],
       ["PF B", "blue", 6, 2],
     ];
@@ -3326,7 +3328,7 @@
           { className: "calendar-hero" },
           h("h1", { className: "calendar-title" }, isZh ? "夏季 " : "Summer ", h("span", { className: "year" }, "2026")),
           h("div", { className: "calendar-title sub", role: "heading", "aria-level": 2 }, isZh ? "課程日程" : "Programme Calendar"),
-          h("p", { className: "calendar-subtitle" }, isZh ? "十五個已排小班 · 辯論及生物倫理課程 · 八個星期 · 費用全免。" : "Fifteen scheduled cohorts · Debate and bioethics courses · Eight weeks · Entirely free."),
+          h("p", { className: "calendar-subtitle" }, isZh ? "十六個已排小班 · 辯論及生物倫理課程 · 八個星期 · 費用全免。" : "Sixteen scheduled cohorts · Debate and bioethics courses · Eight weeks · Entirely free."),
           h(
             "div",
             { className: "calendar-facts" },

@@ -28,6 +28,8 @@
       programs: "課程",
       involved: "參與我哋",
       contact: "聯絡我哋",
+      search: "搜尋",
+      searchPlaceholder: "搜尋課程、教練、指南……",
       lang: "English",
       langHref: pageId.replace(/^cn/, "") ? `${pageId.replace(/^cn/, "")}.html` : "../index.html",
       cta: "免費申請 →",
@@ -42,6 +44,8 @@
       programs: "Programs",
       involved: "Get Involved",
       contact: "Contact Us",
+      search: "Search",
+      searchPlaceholder: "Search courses, coaches, guides…",
       lang: "中文 (繁體)",
       langHref: pageId === "even-if" ? "../cnindex.html" : `cn${pageId}.html`,
       cta: "Apply Free →",
@@ -290,12 +294,29 @@
     .dc-brand{display:flex;align-items:center;gap:10px;margin-left:4px;color:${WHITE}}
     .dc-brand img{width:28px;height:28px;object-fit:contain}
     .dc-wordmark{font-family:'Playfair Display',Georgia,serif;font-size:18px;font-weight:700;line-height:1}
-    .dc-right-links{display:flex;align-items:center;gap:2px;margin-left:auto}
+    .dc-search-btn{margin-left:auto;flex-shrink:0;width:34px;height:34px;display:flex;align-items:center;justify-content:center;border-radius:999px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.05);color:rgba(255,255,255,.72);cursor:pointer;transition:background .2s ease,color .2s ease}
+    .dc-search-btn:hover{background:rgba(255,255,255,.12);color:${WHITE}}
+    .dc-right-links{display:flex;align-items:center;gap:2px}
     .dc-right-links a{color:rgba(255,255,255,.62);font-size:12px;font-weight:600;padding:7px 12px;letter-spacing:.04em;white-space:nowrap}
     .dc-right-links a:hover{color:${WHITE}}
     .dc-divider{width:1px;height:16px;background:rgba(255,255,255,.12);margin:0 6px}
     .dc-lang{color:rgba(255,255,255,.35)!important;font-size:11px!important}
     .dc-top-cta{background:${ORANGE};color:${NAVY}!important;border-radius:5px;padding:8px 16px!important;font-weight:700!important;font-size:12px!important;letter-spacing:.07em!important;text-transform:uppercase;margin-left:6px}
+    .dc-search-overlay{position:fixed;inset:0;background:rgba(13,23,48,.62);display:flex;align-items:flex-start;justify-content:center;padding:12vh 24px 24px;z-index:500;animation:fadeUp .2s ease both}
+    .dc-search-panel{width:100%;max-width:620px;max-height:74vh;display:flex;flex-direction:column;background:${WHITE};border-radius:10px;border-top:4px solid ${ORANGE};box-shadow:0 30px 70px rgba(13,23,48,.4);overflow:hidden}
+    .dc-search-input-row{display:flex;align-items:center;gap:10px;padding:16px 18px;border-bottom:1px solid rgba(17,29,60,.1);color:rgba(17,29,60,.4);flex-shrink:0}
+    .dc-search-input{flex:1;border:0;outline:0;font-size:16px;color:${NAVY};background:transparent}
+    .dc-search-input::placeholder{color:rgba(17,29,60,.35)}
+    .dc-search-close{border:0;background:transparent;color:rgba(17,29,60,.4);font-size:22px;line-height:1;cursor:pointer;padding:0 2px}
+    .dc-search-close:hover{color:${NAVY}}
+    .dc-search-results{overflow-y:auto;padding:8px 10px 14px}
+    .dc-search-hint,.dc-search-empty{padding:26px 14px;text-align:center;color:rgba(17,29,60,.45);font-size:13px;line-height:1.6}
+    .dc-search-group{margin-top:10px}
+    .dc-search-group-label{padding:6px 10px;font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:rgba(17,29,60,.4)}
+    .dc-search-result{display:block;padding:9px 12px;border-radius:6px;text-decoration:none}
+    .dc-search-result:hover,.dc-search-result:focus-visible{background:rgba(247,162,52,.1)}
+    .dc-search-result-title{font-size:14px;font-weight:700;color:${NAVY}}
+    .dc-search-result-subtitle{margin-top:2px;font-size:12px;color:rgba(17,29,60,.55);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
     .dc-nav-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:0 28px 18px}
     .dc-nav-card{border-radius:8px;padding:16px 18px;opacity:0;transform:translateY(40px);transition:opacity .38s ease,transform .38s ease;background:${NAVY}}
     .dc-nav.open .dc-nav-card{opacity:1;transform:translateY(0)}
@@ -520,6 +541,8 @@
       .motion-display{font-size:23px}
       .bio-modal-backdrop{padding:0}
       .bio-modal{max-width:100%;width:100%;height:100%;max-height:100%;border-radius:0;padding:24px 18px}
+      .dc-search-overlay{padding:0}
+      .dc-search-panel{max-width:100%;width:100%;height:100%;max-height:100%;border-radius:0}
     }
   `;
 
@@ -592,10 +615,141 @@
     );
   }
 
+  function SearchIcon() {
+    return h(
+      "svg",
+      { width: 17, height: 17, viewBox: "0 0 20 20", fill: "none" },
+      h("circle", { cx: 9, cy: 9, r: 6.5, stroke: "currentColor", strokeWidth: "1.6" }),
+      h("path", { d: "M18 18L13.7 13.7", stroke: "currentColor", strokeWidth: "1.6", strokeLinecap: "round" })
+    );
+  }
+
+  const SEARCH_TYPE_LABELS = {
+    page: { en: "Pages", zh: "頁面" },
+    person: { en: "Team", zh: "團隊成員" },
+    course: { en: "Programs", zh: "課程" },
+    cohort: { en: "Summer Cohorts", zh: "暑期小班" },
+    guide: { en: "Guides", zh: "指南" },
+    video: { en: "Videos", zh: "影片" },
+    framework: { en: "Frameworks", zh: "框架練習" },
+    faq: { en: "FAQ", zh: "常見問題" },
+  };
+  const SEARCH_TYPE_ORDER = ["page", "person", "course", "cohort", "guide", "video", "framework", "faq"];
+  const SEARCH_RESULTS_PER_GROUP = 6;
+
+  function SearchOverlay({ open, onClose }) {
+    const [query, setQuery] = useState("");
+    const [members, setMembers] = useState([]);
+    const inputRef = useRef(null);
+
+    useEffect(() => {
+      if (!open) return;
+      fetch(`${isZh ? "../data/cnteam_members.json" : "../data/team_members.json"}?v=search`)
+        .then((r) => r.json())
+        .then(setMembers)
+        .catch(() => setMembers([]));
+    }, [open]);
+
+    const index = useMemo(() => buildSearchIndex(members), [members]);
+
+    useEffect(() => {
+      if (!open) return;
+      setQuery("");
+      const focusTimer = setTimeout(() => inputRef.current && inputRef.current.focus(), 60);
+      const prevOverflow = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+      const onKey = (e) => {
+        if (e.key === "Escape") onClose();
+      };
+      window.addEventListener("keydown", onKey);
+      return () => {
+        clearTimeout(focusTimer);
+        document.body.style.overflow = prevOverflow;
+        window.removeEventListener("keydown", onKey);
+      };
+    }, [open]);
+
+    if (!open) return null;
+
+    const q = query.trim().toLowerCase();
+    const results = q ? index.filter((r) => r.keywords.includes(q)) : [];
+    const grouped = SEARCH_TYPE_ORDER.map((type) => ({
+      type,
+      label: isZh ? SEARCH_TYPE_LABELS[type].zh : SEARCH_TYPE_LABELS[type].en,
+      items: results.filter((r) => r.type === type).slice(0, SEARCH_RESULTS_PER_GROUP),
+    })).filter((g) => g.items.length > 0);
+    const totalShown = grouped.reduce((sum, g) => sum + g.items.length, 0);
+
+    return h(
+      "div",
+      { className: "dc-search-overlay", onClick: onClose },
+      h(
+        "div",
+        { className: "dc-search-panel", role: "dialog", "aria-modal": "true", "aria-label": t.nav.search, onClick: (e) => e.stopPropagation() },
+        h(
+          "div",
+          { className: "dc-search-input-row" },
+          h(SearchIcon),
+          h("input", {
+            ref: inputRef,
+            type: "text",
+            className: "dc-search-input",
+            placeholder: t.nav.searchPlaceholder,
+            value: query,
+            onChange: (e) => setQuery(e.target.value),
+          }),
+          h("button", { type: "button", className: "dc-search-close", onClick: onClose, "aria-label": isZh ? "關閉" : "Close" }, "×")
+        ),
+        h(
+          "div",
+          { className: "dc-search-results" },
+          !q && h("div", { className: "dc-search-hint" }, isZh ? "輸入關鍵字搜尋頁面、課程、教練、指南同常見問題。" : "Start typing to search pages, programs, coaches, guides, and FAQ."),
+          q && totalShown === 0 && h("div", { className: "dc-search-empty" }, isZh ? `搵唔到「${query}」嘅結果。` : `No results for "${query}".`),
+          grouped.map((g) =>
+            h(
+              "div",
+              { className: "dc-search-group", key: g.type },
+              h("div", { className: "dc-search-group-label" }, g.label),
+              g.items.map((item, i) =>
+                h(
+                  "a",
+                  {
+                    key: `${g.type}-${i}`,
+                    className: "dc-search-result",
+                    href: item.href,
+                    ...(item.external ? extProps(item.href) : { onClick: onClose }),
+                  },
+                  h("div", { className: "dc-search-result-title" }, item.title),
+                  item.subtitle && h("div", { className: "dc-search-result-subtitle" }, item.subtitle)
+                )
+              )
+            )
+          )
+        )
+      )
+    );
+  }
+
   function Nav() {
     const [open, setOpen] = useState(false);
     const [navHeight, setNavHeight] = useState(60);
     const navRef = useRef(null);
+    const [searchOpen, setSearchOpen] = useState(false);
+    useEffect(() => {
+      const onKey = (e) => {
+        const tag = (document.activeElement && document.activeElement.tagName) || "";
+        const typing = tag === "INPUT" || tag === "TEXTAREA" || document.activeElement?.isContentEditable;
+        if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
+          e.preventDefault();
+          setSearchOpen(true);
+        } else if (e.key === "/" && !typing) {
+          e.preventDefault();
+          setSearchOpen(true);
+        }
+      };
+      window.addEventListener("keydown", onKey);
+      return () => window.removeEventListener("keydown", onKey);
+    }, []);
     const navCards = isZh
       ? [
           { label: "關於我哋", links: [["我哋嘅使命", "cnstory.html"], ["我哋嘅團隊", "cnteam.html"], ["合作夥伴", "cnpartnership.html"]] },
@@ -629,6 +783,7 @@
           { className: "dc-nav-top" },
           h("button", { className: "dc-burger", onClick: () => setOpen(!open), "aria-label": isZh ? "開關導覽選單" : "Toggle navigation", "aria-expanded": open }, h("span"), h("span"), h("span")),
           h(Brand),
+          h("button", { type: "button", className: "dc-search-btn", onClick: () => setSearchOpen(true), "aria-label": t.nav.search }, h(SearchIcon)),
           h(
             "div",
             { className: "dc-right-links" },
@@ -651,7 +806,8 @@
             )
           )
         )
-      )
+      ),
+      h(SearchOverlay, { open: searchOpen, onClose: () => setSearchOpen(false) })
     );
   }
 
@@ -1984,6 +2140,213 @@
     ["m22", "THW prioritize climate adaptation over climate mitigation in developing countries.", "本院會要求發展中國家優先處理氣候適應，而非氣候減緩。", "Hard", "WSDC", "Environment"],
   ].map(([id, motion, zhMotion, difficulty, format, theme]) => ({ id, motion, zhMotion, difficulty, format, theme }));
 
+  const headCoachKeys = ["Valmik", "Matthew W", "Arthur", "Gavin"];
+  const cleanCoachName = (name = "") => name.replace(/\?$/, "").trim();
+  const isHeadCoach = (name = "") => headCoachKeys.includes(cleanCoachName(name));
+  const cohort = (nameEn, nameZh, datesEn, datesZh, time, teachers, backup, capacity) => {
+    const teacherList = Array.isArray(teachers) ? teachers : [teachers].filter(Boolean);
+    const visibleHeadCoaches = teacherList.filter(isHeadCoach);
+    return {
+      key: nameEn,
+      cohortId: `cohort-${slugify(nameEn)}`,
+      name: isZh ? nameZh || nameEn : nameEn,
+      dates: isZh ? datesZh : datesEn,
+      time,
+      classSize: String(capacity).includes("/") ? String(capacity).split("/").pop() : capacity,
+      hasHeadCoach: visibleHeadCoaches.length > 0,
+    };
+  };
+
+  const courses = [
+    {
+      tone: "beginner",
+      color: "orange",
+      name: isZh ? "Level 1 · 辯論入門" : "Level 1 · Introduction to Debate",
+      tagline: isZh ? "9歲以上 · 無需辯論經驗" : "Ages 9+ · No prior experience required",
+      meta: isZh ? "5班 · 15節課 · 班級人數：8" : "5 cohorts · 15 sessions · Class Size: 8",
+      blurb: isZh
+        ? "為年輕初學者設計嘅嚴謹入門課程，帶學生由邏輯同蘇格拉底式推理開始，透過適齡而高互動嘅模擬辯論掌握 PEEL 立論方法。"
+        : "A rigorous introduction to logic and Socratic reasoning for younger beginners. Students master the PEEL argumentation method through high-energy mock debates on age-appropriate motions.",
+      cohorts: [
+        cohort("Level 1 A", null, "13 Jul → 31 Jul", "7月13日 → 7月31日", "15:00 – 16:00", ["Hirannya", "Raul"], ["TBC"], "7/8"),
+        cohort("Level 1 B", null, "20 Jul → 07 Aug", "7月20日 → 8月7日", "10:00 – 11:00", ["Piers", "Tanvi"], ["Cici"], "7/8"),
+        cohort("Level 1 C", null, "20 Jul → 07 Aug", "7月20日 → 8月7日", "16:00 – 17:00", ["Cici", "Hirannya"], ["Vera"], "4/8"),
+        cohort("Level 1 D", null, "27 Jul → 14 Aug", "7月27日 → 8月14日", "11:00 – 12:00", ["Matthew W", "Tanvi"], ["TBC"], "8/8"),
+        cohort("Level 1 E", null, "27 Jul → 14 Aug", "7月27日 → 8月14日", "16:00 – 17:00", ["Cheryl", "Sanaya"], ["Cici"], "5/8"),
+      ],
+    },
+    {
+      tone: "intermediate",
+      color: "ink",
+      name: isZh ? "Level 2 · 中級辯論" : "Level 2 · Intermediate Debate",
+      tagline: isZh ? "延續課程 · 約一年經驗或完成 Level 1" : "Continuing students · ~1 year experience or Level 1 completion",
+      meta: isZh ? "2班 · 班級人數：10" : "2 cohorts · Class Size: 10",
+      blurb: isZh
+        ? "適合完成 Level 1 或已有基礎嘅學生。課程節奏更快，深入訓練反駁、辯題分析同更嚴謹嘅邏輯。"
+        : "A natural progression for graduates of Level 1. Faster pace and deeper rebuttal work, with more demanding motion analysis.",
+      cohorts: [
+        cohort("Level 2 A", null, "22 Jun → 03 Jul", "6月22日 → 7月3日", "15:00 – 16:00", ["Piers", "Larissa"], ["Calvin"], "7/10"),
+        cohort("Level 2 C", null, "27 Jul → 07 Aug", "7月27日 → 8月7日", "15:00 – 16:00", ["Raul", "Theo"], ["Hirannya"], "5/10"),
+      ],
+    },
+    {
+      tone: "advanced",
+      color: "blue",
+      name: isZh ? "WSDC · World Schools 訓練" : "WSDC · World Schools Training",
+      tagline: isZh ? "13歲以上 · WSDC / 高階辯論訓練" : "Ages 13+ · WSDC and advanced World Schools training",
+      meta: isZh ? "3班 · 班級人數：10" : "3 cohorts · Class Size: 10",
+      blurb: isZh
+        ? "面向準備高階 World Schools 訓練嘅學生，集中訓練五分鐘演講、策略準備、style 同 content。"
+        : "World Schools training for students ready to sharpen five-minute speeches, strategic preparation, style, and content.",
+      cohorts: [
+        cohort("Level 2B WSDC", null, "06 Jul → 17 Jul", "7月6日 → 7月17日", "16:00 – 18:00", ["Valmik", "Sanaya?"], [], "6/10"),
+        cohort("Level 3 WSDC A", null, "06 Jul → 17 Jul", "7月6日 → 7月17日", "10:00 – 12:00", ["Theo", "Valmik"], ["Cici"], "6/10"),
+        cohort("L3 WSDC B", null, "03 Aug → 14 Aug", "8月3日 → 8月14日", "17:00 – 19:00", ["Rachel", "Cici"], ["Valmik"], "6/10"),
+      ],
+    },
+    {
+      tone: "advanced",
+      color: "blue",
+      name: isZh ? "Level 3 · British Parliamentary (BP)" : "Level 3 · British Parliamentary (BP)",
+      tagline: isZh ? "13歲以上 · 2年以上經驗 · 大學式辯論" : "Ages 13+ · 2+ years experience · University-style debate",
+      meta: isZh ? "1班 · 10節兩小時課 · 班級人數：8" : "1 cohort · 10 × 2-hr sessions · Class Size: 8",
+      blurb: isZh
+        ? "訓練快速批判思考、五分鐘演講、extensions 同 Points of Information。"
+        : "Trains rapid critical thinking and five-minute speech delivery, with mastery of extensions and Points of Information.",
+      cohorts: [cohort("Level 3 BP", null, "20 Jul → 31 Jul", "7月20日 → 7月31日", "17:00 – 19:00", ["Matthew W", "Raul"], ["Cici"], "5/8")],
+    },
+    {
+      tone: "advanced",
+      color: "blue",
+      name: isZh ? "Public Forum · PF Mastery" : "Public Forum · PF Mastery",
+      tagline: isZh ? "13歲以上 · 需要有辯論經驗" : "Ages 13+ · Prior debate experience required",
+      meta: isZh ? "2班 · 班級人數：8" : "2 cohorts · Class Size: 8",
+      blurb: isZh
+        ? "美式競技辯論重點賽制，平衡嚴謹證據研究同有說服力嘅表達。"
+        : "The flagship American competitive format, balancing evidence-based research with persuasive delivery.",
+      cohorts: [
+        cohort("PF A", null, "27 Jul → 07 Aug", "7月27日 → 8月7日", "20:00 – 21:30", ["Gavin", "Matthew H"], ["Jessica"], "6/8"),
+        cohort("PF B", null, "03 Aug → 14 Aug", "8月3日 → 8月14日", "19:00 – 20:30", ["Arthur", "Chelsea"], ["Gavin"], "6/8"),
+      ],
+    },
+    {
+      tone: "specialty",
+      color: "bio",
+      name: isZh ? "生物倫理" : "Bioethics",
+      tagline: isZh ? "13歲以上 · 跨學科 · Harkness 討論方法" : "Ages 13+ · Interdisciplinary · Harkness method",
+      meta: isZh ? "2班 · 10節一小時課 · 班級人數：8" : "2 cohorts · 10 × 1-hr sessions · Class Size: 8",
+      blurb: isZh
+        ? "探索科學與倫理嘅交界，分析現代研究人員面對嘅道德困境。"
+        : "Where science meets ethics. Students confront moral dilemmas in modern research and medicine.",
+      cohorts: [
+        cohort("Bioethics A", "生物倫理 A", "27 Jul → 07 Aug", "7月27日 → 8月7日", "10:00 – 11:00", ["Dowan", "Oliver"], ["Cici"], "8/8"),
+        cohort("Bioethics B", "生物倫理 B", "03 Aug → 14 Aug", "8月3日 → 8月14日", "20:00 – 21:00", ["Oliver", "Dowan"], ["Adrian"], "5/8"),
+      ],
+    },
+  ];
+
+  function buildSearchIndex(members = []) {
+    const norm = (...parts) =>
+      parts
+        .flat()
+        .filter(Boolean)
+        .join(" ")
+        .toLowerCase();
+    const records = [];
+
+    Object.keys(pageTitles)
+      .filter((id) => id.startsWith("cn") === isZh)
+      .forEach((id) => {
+        const title = pageTitles[id];
+        const description = pageDescriptions[id] || "";
+        records.push({
+          type: "page",
+          title,
+          subtitle: description,
+          href: pageFileMap[id] || `${id}.html`,
+          keywords: norm(title, description),
+        });
+      });
+
+    programs.forEach((p) => {
+      records.push({
+        type: "course",
+        title: p.title,
+        subtitle: p.tag,
+        href: isZh ? "cncourses.html" : "offerings.html",
+        keywords: norm(p.title, p.tag, p.text, p.details),
+      });
+    });
+
+    courses.forEach((group) => {
+      group.cohorts.forEach((c) => {
+        records.push({
+          type: "cohort",
+          title: c.name,
+          subtitle: `${group.name} · ${c.dates} · ${c.time}`,
+          href: `${isZh ? "cncalendar.html" : "calendar.html"}#${c.cohortId}`,
+          keywords: norm(c.name, group.name, group.tagline, c.dates),
+        });
+      });
+    });
+
+    guideResources.forEach((g) => {
+      records.push({
+        type: "guide",
+        title: g.title,
+        subtitle: g.text,
+        href: g.href,
+        external: true,
+        keywords: norm(g.title, g.text, g.group),
+      });
+    });
+
+    videoResources.forEach((v) => {
+      records.push({
+        type: "video",
+        title: v.title,
+        subtitle: v.text,
+        href: v.embed.includes("/embed/") ? `https://www.youtube.com/watch?v=${v.embed.match(/\/embed\/([^?]+)/)[1]}` : v.embed,
+        external: true,
+        keywords: norm(v.title, v.text, v.group),
+      });
+    });
+
+    frameworkLessons.forEach((f) => {
+      records.push({
+        type: "framework",
+        title: f.title,
+        subtitle: f.lead,
+        href: `mannernew.html#${f.id}`,
+        keywords: norm(f.title, f.lead, f.sections?.map((s) => s.join(" "))),
+      });
+    });
+
+    FAQ_ITEMS.forEach((item) => {
+      const q = isZh ? item.q.zh : item.q.en;
+      const a = isZh ? item.a.zh : item.a.en;
+      records.push({
+        type: "faq",
+        title: q,
+        subtitle: a,
+        href: isZh ? "cnget-involved.html" : "get-involved.html",
+        keywords: norm(q, a),
+      });
+    });
+
+    members.forEach((m) => {
+      records.push({
+        type: "person",
+        title: displayName(m.name),
+        subtitle: m.role,
+        href: `${isZh ? "cnteam.html" : "team.html"}#member-${slugify(m.name)}`,
+        keywords: norm(m.name, m.role, m.school, m.bio, m.achievements),
+      });
+    });
+
+    return records;
+  }
+
   const deliverySpectrums = {
     volume: { label: "Volume", levels: ["Very Soft", "Soft", "Conversational", "Loud", "Yelling"], why: "Appropriate volume ensures you are heard and respected. It conveys confidence and matches the room." },
     tone: { label: "Tone", levels: ["Monotone", "Flat", "Expressive", "Emphatic", "Dramatic"], why: "Tone conveys emotion and intent. A mismatched tone can confuse your audience, while a rich tone builds connection." },
@@ -2187,10 +2550,21 @@
   }
 
   function FrameworkLibrary() {
-    const [activeLesson, setActiveLesson] = useState(frameworkLessons[0].id);
+    const [activeLesson, setActiveLesson] = useState(() => {
+      const hash = window.location.hash.replace("#", "");
+      return frameworkLessons.some((item) => item.id === hash) ? hash : frameworkLessons[0].id;
+    });
     const [openAnswer, setOpenAnswer] = useState("");
     const [difficulty, setDifficulty] = useState("All");
     const [generated, setGenerated] = useState("Click Generate Motion to get a practice topic.");
+    useEffect(() => {
+      const onHashChange = () => {
+        const hash = window.location.hash.replace("#", "");
+        if (frameworkLessons.some((item) => item.id === hash)) setActiveLesson(hash);
+      };
+      window.addEventListener("hashchange", onHashChange);
+      return () => window.removeEventListener("hashchange", onHashChange);
+    }, []);
     const lesson = frameworkLessons.find((item) => item.id === activeLesson) || frameworkLessons[0];
     const generateMotion = () => {
       const pool = motionBank.filter((item) => difficulty === "All" || item.difficulty === difficulty);
@@ -2860,111 +3234,7 @@
         .catch(() => setClassCoaches({}));
     }, []);
 
-    const headCoachKeys = ["Valmik", "Matthew W", "Arthur", "Gavin"];
-    const cleanCoachName = (name = "") => name.replace(/\?$/, "").trim();
-    const isHeadCoach = (name = "") => headCoachKeys.includes(cleanCoachName(name));
     const teamHrefForCoach = (profile) => `${isZh ? "cnteam.html" : "team.html"}#member-${slugify(profile.name)}`;
-    const cohort = (nameEn, nameZh, datesEn, datesZh, time, teachers, backup, capacity) => {
-      const teacherList = Array.isArray(teachers) ? teachers : [teachers].filter(Boolean);
-      const visibleHeadCoaches = teacherList.filter(isHeadCoach);
-      return {
-        key: nameEn,
-        cohortId: `cohort-${slugify(nameEn)}`,
-        name: isZh ? nameZh || nameEn : nameEn,
-        dates: isZh ? datesZh : datesEn,
-        time,
-        classSize: String(capacity).includes("/") ? String(capacity).split("/").pop() : capacity,
-        hasHeadCoach: visibleHeadCoaches.length > 0,
-      };
-    };
-
-    const courses = [
-      {
-        tone: "beginner",
-        color: "orange",
-        name: isZh ? "Level 1 · 辯論入門" : "Level 1 · Introduction to Debate",
-        tagline: isZh ? "9歲以上 · 無需辯論經驗" : "Ages 9+ · No prior experience required",
-        meta: isZh ? "5班 · 15節課 · 班級人數：8" : "5 cohorts · 15 sessions · Class Size: 8",
-        blurb: isZh
-          ? "為年輕初學者設計嘅嚴謹入門課程，帶學生由邏輯同蘇格拉底式推理開始，透過適齡而高互動嘅模擬辯論掌握 PEEL 立論方法。"
-          : "A rigorous introduction to logic and Socratic reasoning for younger beginners. Students master the PEEL argumentation method through high-energy mock debates on age-appropriate motions.",
-        cohorts: [
-          cohort("Level 1 A", null, "13 Jul → 31 Jul", "7月13日 → 7月31日", "15:00 – 16:00", ["Hirannya", "Raul"], ["TBC"], "7/8"),
-          cohort("Level 1 B", null, "20 Jul → 07 Aug", "7月20日 → 8月7日", "10:00 – 11:00", ["Piers", "Tanvi"], ["Cici"], "7/8"),
-          cohort("Level 1 C", null, "20 Jul → 07 Aug", "7月20日 → 8月7日", "16:00 – 17:00", ["Cici", "Hirannya"], ["Vera"], "4/8"),
-          cohort("Level 1 D", null, "27 Jul → 14 Aug", "7月27日 → 8月14日", "11:00 – 12:00", ["Matthew W", "Tanvi"], ["TBC"], "8/8"),
-          cohort("Level 1 E", null, "27 Jul → 14 Aug", "7月27日 → 8月14日", "16:00 – 17:00", ["Cheryl", "Sanaya"], ["Cici"], "5/8"),
-        ],
-      },
-      {
-        tone: "intermediate",
-        color: "ink",
-        name: isZh ? "Level 2 · 中級辯論" : "Level 2 · Intermediate Debate",
-        tagline: isZh ? "延續課程 · 約一年經驗或完成 Level 1" : "Continuing students · ~1 year experience or Level 1 completion",
-        meta: isZh ? "2班 · 班級人數：10" : "2 cohorts · Class Size: 10",
-        blurb: isZh
-          ? "適合完成 Level 1 或已有基礎嘅學生。課程節奏更快，深入訓練反駁、辯題分析同更嚴謹嘅邏輯。"
-          : "A natural progression for graduates of Level 1. Faster pace and deeper rebuttal work, with more demanding motion analysis.",
-        cohorts: [
-          cohort("Level 2 A", null, "22 Jun → 03 Jul", "6月22日 → 7月3日", "15:00 – 16:00", ["Piers", "Larissa"], ["Calvin"], "7/10"),
-          cohort("Level 2 C", null, "27 Jul → 07 Aug", "7月27日 → 8月7日", "15:00 – 16:00", ["Raul", "Theo"], ["Hirannya"], "5/10"),
-        ],
-      },
-      {
-        tone: "advanced",
-        color: "blue",
-        name: isZh ? "WSDC · World Schools 訓練" : "WSDC · World Schools Training",
-        tagline: isZh ? "13歲以上 · WSDC / 高階辯論訓練" : "Ages 13+ · WSDC and advanced World Schools training",
-        meta: isZh ? "3班 · 班級人數：10" : "3 cohorts · Class Size: 10",
-        blurb: isZh
-          ? "面向準備高階 World Schools 訓練嘅學生，集中訓練五分鐘演講、策略準備、style 同 content。"
-          : "World Schools training for students ready to sharpen five-minute speeches, strategic preparation, style, and content.",
-        cohorts: [
-          cohort("Level 2B WSDC", null, "06 Jul → 17 Jul", "7月6日 → 7月17日", "16:00 – 18:00", ["Valmik", "Sanaya?"], [], "6/10"),
-          cohort("Level 3 WSDC A", null, "06 Jul → 17 Jul", "7月6日 → 7月17日", "10:00 – 12:00", ["Theo", "Valmik"], ["Cici"], "6/10"),
-          cohort("L3 WSDC B", null, "03 Aug → 14 Aug", "8月3日 → 8月14日", "17:00 – 19:00", ["Rachel", "Cici"], ["Valmik"], "6/10"),
-        ],
-      },
-      {
-        tone: "advanced",
-        color: "blue",
-        name: isZh ? "Level 3 · British Parliamentary (BP)" : "Level 3 · British Parliamentary (BP)",
-        tagline: isZh ? "13歲以上 · 2年以上經驗 · 大學式辯論" : "Ages 13+ · 2+ years experience · University-style debate",
-        meta: isZh ? "1班 · 10節兩小時課 · 班級人數：8" : "1 cohort · 10 × 2-hr sessions · Class Size: 8",
-        blurb: isZh
-          ? "訓練快速批判思考、五分鐘演講、extensions 同 Points of Information。"
-          : "Trains rapid critical thinking and five-minute speech delivery, with mastery of extensions and Points of Information.",
-        cohorts: [cohort("Level 3 BP", null, "20 Jul → 31 Jul", "7月20日 → 7月31日", "17:00 – 19:00", ["Matthew W", "Raul"], ["Cici"], "5/8")],
-      },
-      {
-        tone: "advanced",
-        color: "blue",
-        name: isZh ? "Public Forum · PF Mastery" : "Public Forum · PF Mastery",
-        tagline: isZh ? "13歲以上 · 需要有辯論經驗" : "Ages 13+ · Prior debate experience required",
-        meta: isZh ? "2班 · 班級人數：8" : "2 cohorts · Class Size: 8",
-        blurb: isZh
-          ? "美式競技辯論重點賽制，平衡嚴謹證據研究同有說服力嘅表達。"
-          : "The flagship American competitive format, balancing evidence-based research with persuasive delivery.",
-        cohorts: [
-          cohort("PF A", null, "27 Jul → 07 Aug", "7月27日 → 8月7日", "20:00 – 21:30", ["Gavin", "Matthew H"], ["Jessica"], "6/8"),
-          cohort("PF B", null, "03 Aug → 14 Aug", "8月3日 → 8月14日", "19:00 – 20:30", ["Arthur", "Chelsea"], ["Gavin"], "6/8"),
-        ],
-      },
-      {
-        tone: "specialty",
-        color: "bio",
-        name: isZh ? "生物倫理" : "Bioethics",
-        tagline: isZh ? "13歲以上 · 跨學科 · Harkness 討論方法" : "Ages 13+ · Interdisciplinary · Harkness method",
-        meta: isZh ? "2班 · 10節一小時課 · 班級人數：8" : "2 cohorts · 10 × 1-hr sessions · Class Size: 8",
-        blurb: isZh
-          ? "探索科學與倫理嘅交界，分析現代研究人員面對嘅道德困境。"
-          : "Where science meets ethics. Students confront moral dilemmas in modern research and medicine.",
-        cohorts: [
-          cohort("Bioethics A", "生物倫理 A", "27 Jul → 07 Aug", "7月27日 → 8月7日", "10:00 – 11:00", ["Dowan", "Oliver"], ["Cici"], "8/8"),
-          cohort("Bioethics B", "生物倫理 B", "03 Aug → 14 Aug", "8月3日 → 8月14日", "20:00 – 21:00", ["Oliver", "Dowan"], ["Adrian"], "5/8"),
-        ],
-      },
-    ];
 
     const SectionHead = ({ title, meta }) =>
       h("div", { className: "calendar-section-head" }, h("div", { className: "calendar-section-title" }, title), h("div", { className: "calendar-section-num" }, meta));

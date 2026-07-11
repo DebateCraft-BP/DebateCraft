@@ -52,6 +52,10 @@
         transition-duration: 0.001ms !important;
       }
     }
+    @media (max-width: 560px) {
+      .dc-home-search-overlay { padding: 0 !important; }
+      .dc-home-search-panel { max-width: 100% !important; width: 100% !important; height: 100% !important; max-height: 100% !important; border-radius: 0 !important; }
+    }
   </style>
     <meta name="google-site-verification" content="1faWU-2_Ie7rmnChub7yajNTgBV3IaTW3AKgFoQNuRk" />
     <meta name="google-site-verification" content="ChRZlOIxn4CmlfnKJ2_9izXVD4fcmGPvWz0nQ7D2J7s" />
@@ -202,11 +206,116 @@ const COURSE_INTEREST_FORM_URL = 'https://form.jotform.com/261003548067049';
 const COACH_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfombgLTJ0oDbWfCaSumrnLAjkdvT_K9FW1KJakbr9ZAQxwnQ/viewform?usp=header';
 const DONATE_URL = 'https://buymeacoffee.com/debatecraft';
 
+/* ── SITE SEARCH (lightweight: pages + programs only) ── */
+const HOME_SEARCH_PAGES = [
+  { title:'About DebateCraft', desc:'Learn how DebateCraft gives students free access to debate, advocacy, public speaking, and science ethics education.', href:'../../pages/about.html' },
+  { title:'Our Mission', desc:"Explore DebateCraft's student-run nonprofit mission, global reach, and expanded summer course offerings.", href:'../../pages/story.html' },
+  { title:'Our Team', desc:'Meet the student leaders, competitive debaters, coaches, and science instructors behind DebateCraft.', href:'../../pages/team.html' },
+  { title:'Debate Programs', desc:"Compare DebateCraft's free debate courses, from beginner PEEL argumentation to PF, WSDC, BP, and advanced debate seminars.", href:'../../pages/offerings.html' },
+  { title:'Bioethics', desc:'A free Bioethics course on genetics, CRISPR, AI in healthcare, medical decision-making, and final expert panel projects.', href:'../../pages/biology.html' },
+  { title:'Partnership', desc:'Partner with DebateCraft to bring free debate coaching and public speaking education to students and communities.', href:'../../pages/partnership.html' },
+  { title:'Get Involved', desc:'Apply as a student, become a coach, partner with DebateCraft, or support free debate education.', href:'../../pages/get-involved.html' },
+  { title:'Donate', desc:"Support DebateCraft's free student-run nonprofit programs, teaching resources, and student access.", href:'../../pages/donate.html' },
+  { title:'Contact Us', desc:'Contact DebateCraft for free course questions, student support, partnerships, press, or outreach.', href:'../../pages/contact.html' },
+  { title:'Resources', desc:"Use DebateCraft's free debate resource hub with guides, framework drills, speaking practice, videos, and mitigation games.", href:'../../pages/resources.html' },
+  { title:'Guides', desc:"Browse DebateCraft's debate guides, WSDC and BP resources, motion preparation materials, and practice tools.", href:'../../pages/guides.html' },
+  { title:'Blog', desc:'Read DebateCraft updates, debate education reflections, and student learning resources.', href:'../../pages/blog.html' },
+  { title:'Summer 2026 Programme Calendar', desc:'Fifteen scheduled cohorts, debate and bioethics courses, eight weeks, entirely free.', href:'../../pages/calendar.html' },
+];
+
+function buildHomeSearchIndex() {
+  const pages = HOME_SEARCH_PAGES.map(p => ({
+    type:'page', title:p.title, subtitle:p.desc, href:p.href,
+    keywords:`${p.title} ${p.desc}`.toLowerCase(),
+  }));
+  const courses = PROGRAMS.map(p => ({
+    type:'course', title:p.title, subtitle:p.tag, href:'../../pages/offerings.html',
+    keywords:`${p.title} ${p.tag} ${p.desc}`.toLowerCase(),
+  }));
+  return [...pages, ...courses];
+}
+
+const SEARCH_INDEX = buildHomeSearchIndex();
+const SEARCH_TYPE_LABELS = { page:'Pages', course:'Programs' };
+
+function SearchIcon() {
+  return (
+    <svg width="17" height="17" viewBox="0 0 20 20" fill="none">
+      <circle cx="9" cy="9" r="6.5" stroke="currentColor" strokeWidth="1.6"/>
+      <path d="M18 18L13.7 13.7" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/>
+    </svg>
+  );
+}
+
+function SearchOverlay({ open, onClose }) {
+  const [query, setQuery] = React.useState('');
+  const inputRef = React.useRef(null);
+
+  React.useEffect(() => {
+    if (!open) return;
+    setQuery('');
+    const focusTimer = setTimeout(() => inputRef.current && inputRef.current.focus(), 60);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    const onKey = e => { if (e.key === 'Escape') onClose(); };
+    window.addEventListener('keydown', onKey);
+    return () => {
+      clearTimeout(focusTimer);
+      document.body.style.overflow = prevOverflow;
+      window.removeEventListener('keydown', onKey);
+    };
+  }, [open]);
+
+  if (!open) return null;
+
+  const q = query.trim().toLowerCase();
+  const results = q ? SEARCH_INDEX.filter(r => r.keywords.includes(q)) : [];
+  const grouped = ['page','course']
+    .map(type => ({ type, label:SEARCH_TYPE_LABELS[type], items:results.filter(r => r.type === type).slice(0, 8) }))
+    .filter(g => g.items.length > 0);
+  const totalShown = grouped.reduce((sum, g) => sum + g.items.length, 0);
+
+  return (
+    <div className="dc-home-search-overlay" onClick={onClose} style={{ position:'fixed', inset:0, background:'rgba(13,23,48,0.62)', display:'flex', alignItems:'flex-start', justifyContent:'center', padding:'12vh 24px 24px', zIndex:500, animation:'fadeUp 0.2s ease both' }}>
+      <div className="dc-home-search-panel" role="dialog" aria-modal="true" aria-label="Search" onClick={e => e.stopPropagation()}
+        style={{ width:'100%', maxWidth:620, maxHeight:'74vh', display:'flex', flexDirection:'column', background:WHITE, borderRadius:10, borderTop:`4px solid ${ORANGE}`, boxShadow:'0 30px 70px rgba(13,23,48,0.4)', overflow:'hidden' }}>
+        <div style={{ display:'flex', alignItems:'center', gap:10, padding:'16px 18px', borderBottom:'1px solid rgba(17,29,60,0.1)', color:'rgba(17,29,60,0.4)', flexShrink:0 }}>
+          <SearchIcon />
+          <input ref={inputRef} type="text" value={query} onChange={e => setQuery(e.target.value)}
+            placeholder="Search pages and programs…"
+            style={{ flex:1, border:0, outline:0, fontSize:16, color:NAVY, background:'transparent' }}/>
+          <button type="button" onClick={onClose} aria-label="Close"
+            style={{ border:0, background:'transparent', color:'rgba(17,29,60,0.4)', fontSize:22, lineHeight:1, cursor:'pointer', padding:'0 2px' }}>×</button>
+        </div>
+        <div style={{ overflowY:'auto', padding:'8px 10px 14px' }}>
+          {!q && <div style={{ padding:'26px 14px', textAlign:'center', color:'rgba(17,29,60,0.45)', fontSize:13, lineHeight:1.6 }}>Start typing to search pages and programs. For guides, team, and the full calendar, open any page's search.</div>}
+          {q && totalShown === 0 && <div style={{ padding:'26px 14px', textAlign:'center', color:'rgba(17,29,60,0.45)', fontSize:13, lineHeight:1.6 }}>No results for "{query}".</div>}
+          {grouped.map(g => (
+            <div key={g.type} style={{ marginTop:10 }}>
+              <div style={{ padding:'6px 10px', fontSize:10, fontWeight:800, letterSpacing:'0.1em', textTransform:'uppercase', color:'rgba(17,29,60,0.4)' }}>{g.label}</div>
+              {g.items.map((item, i) => (
+                <a key={`${g.type}-${i}`} href={item.href} onClick={onClose}
+                  style={{ display:'block', padding:'9px 12px', borderRadius:6, textDecoration:'none' }}
+                  onMouseEnter={e => e.currentTarget.style.background='rgba(247,162,52,0.1)'}
+                  onMouseLeave={e => e.currentTarget.style.background='transparent'}>
+                  <div style={{ fontSize:14, fontWeight:700, color:NAVY }}>{item.title}</div>
+                  {item.subtitle && <div style={{ marginTop:2, fontSize:12, color:'rgba(17,29,60,0.55)', overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap' }}>{item.subtitle}</div>}
+                </a>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 /* ── CARD NAV (GSAP) ─────────────────────────── */
 function Nav({ page, setPage }) {
   const [isOpen, setIsOpen]       = React.useState(false);
   const [isExpanded, setIsExpanded] = React.useState(false);
   const [isCompact, setIsCompact] = React.useState(() => window.innerWidth < 760);
+  const [searchOpen, setSearchOpen] = React.useState(false);
   const navRef   = React.useRef();
   const cardsRef = React.useRef([]);
   const tlRef    = React.useRef();
@@ -215,6 +324,22 @@ function Nav({ page, setPage }) {
     const onResize = () => setIsCompact(window.innerWidth < 760);
     window.addEventListener('resize', onResize);
     return () => window.removeEventListener('resize', onResize);
+  }, []);
+
+  React.useEffect(() => {
+    const onKey = e => {
+      const tag = (document.activeElement && document.activeElement.tagName) || '';
+      const typing = tag === 'INPUT' || tag === 'TEXTAREA' || document.activeElement?.isContentEditable;
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        setSearchOpen(true);
+      } else if (e.key === '/' && !typing) {
+        e.preventDefault();
+        setSearchOpen(true);
+      }
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
   }, []);
 
   const loadGSAP = () => new Promise(res => {
@@ -280,8 +405,13 @@ function Nav({ page, setPage }) {
               DebateCraft
             </span>
           </a>
+          {/* Search */}
+          <button type="button" onClick={() => setSearchOpen(true)} aria-label="Search"
+            style={{ marginLeft:'auto', flexShrink:0, width:34, height:34, display:'flex', alignItems:'center', justifyContent:'center', borderRadius:999, border:'1px solid rgba(255,255,255,0.14)', background:'rgba(255,255,255,0.05)', color:'rgba(255,255,255,0.72)', cursor:'pointer' }}>
+            <SearchIcon />
+          </button>
           {/* Right links */}
-          <div style={{ display:isCompact ? 'none' : 'flex', alignItems:'center', gap:2, marginLeft:'auto' }}>
+          <div style={{ display:isCompact ? 'none' : 'flex', alignItems:'center', gap:2 }}>
             {[{label:'Get Involved',href:'../../pages/get-involved.html'},{label:'Contact Us',href:'../../pages/contact.html'}].map(l => (
               <a key={l.label} href={l.href}
                 style={{ color:'rgba(255,255,255,0.62)', fontSize:12, fontWeight:600, padding:'7px 12px', cursor:'pointer', letterSpacing:'0.04em', textDecoration:'none' }}>{l.label}</a>
@@ -319,6 +449,7 @@ function Nav({ page, setPage }) {
           ))}
         </div>
       </nav>
+      <SearchOverlay open={searchOpen} onClose={() => setSearchOpen(false)} />
     </div>
   );
 }

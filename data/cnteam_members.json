@@ -286,6 +286,18 @@
     "bio": "2024年重慶 WSDC 工作坊導師、2025年南京 WSDC 評判、2025年越南亞洲學校辯論錦標賽季軍最佳辯手，並於多項其他賽事中持續晉級淘汰賽。"
   },
   {
+    "name": "Andre C",
+    "role": "第四級教練",
+    "school": "Phillips Exeter Academy, 美國",
+    "image": "Images/Andre.png",
+    "categories": [
+      "coaching",
+      "private"
+    ],
+    "achievements": [],
+    "bio": "經驗豐富的辯手，具備 WSDC 及 BP 兩種賽制經驗。Andre 憑藉其四年以上的經驗，為課程設計及訓練作出貢獻。"
+  },
+  {
     "name": "Hirannya K",
     "role": "第三級教練",
     "image": "Images/H.png",
@@ -377,18 +389,6 @@
       "世界演講與辯論聯盟 WSDC 春季資格賽決賽選手及亞軍最佳辯手"
     ],
     "bio": "經驗豐富的 WSDC 辯手，最近於 2026年香港初中學校辯論比賽晉級準決賽，個人獲第八名最佳辯手，2025年印太 WSDO U14 冠軍，以及世界演講與辯論聯盟 WSDC 春季資格賽決賽選手及亞軍最佳辯手。"
-  },
-  {
-    "name": "Andre C",
-    "role": "第二級教練",
-    "school": "Phillips Exeter Academy, 美國",
-    "image": "Images/Andre.png",
-    "categories": [
-      "coaching",
-      "private"
-    ],
-    "achievements": [],
-    "bio": "經驗豐富的辯手，具備 WSDC 及 BP 兩種賽制經驗。Andre 憑藉其四年以上的經驗，為課程設計及訓練作出貢獻。"
   },
   {
     "name": "Eric J",

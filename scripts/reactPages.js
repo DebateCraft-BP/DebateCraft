@@ -269,7 +269,7 @@
   const style = `
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
-    body{font-family:'DM Sans',sans-serif;background:${CREAM};color:${NAVY};min-height:100vh}
+    body{font-family:'Source Sans 3',sans-serif;background:${CREAM};color:${NAVY};min-height:100vh}
     a{color:inherit;text-decoration:none}
     button,input,select,textarea{font:inherit}
     a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid ${SKY};outline-offset:3px}
@@ -277,7 +277,7 @@
     ::-webkit-scrollbar{width:5px}
     ::-webkit-scrollbar-track{background:${NAVY2}}
     ::-webkit-scrollbar-thumb{background:${ORANGE};border-radius:3px}
-    .serif{font-family:'Playfair Display',Georgia,serif}
+    .serif{font-family:'Source Serif 4',Georgia,serif}
     @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
     @keyframes countUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
     @keyframes pillPop{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:scale(1)}}
@@ -293,7 +293,7 @@
     .dc-nav.open .dc-burger span:nth-child(3){transform:rotate(-45deg) translateY(-8px)}
     .dc-brand{display:flex;align-items:center;gap:10px;margin-left:4px;color:${WHITE}}
     .dc-brand img{width:28px;height:28px;object-fit:contain}
-    .dc-wordmark{font-family:'Playfair Display',Georgia,serif;font-size:18px;font-weight:700;line-height:1}
+    .dc-wordmark{font-family:'Source Serif 4',Georgia,serif;font-size:18px;font-weight:700;line-height:1}
     .dc-search-btn{margin-left:auto;flex-shrink:0;width:34px;height:34px;display:flex;align-items:center;justify-content:center;border-radius:999px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.05);color:rgba(255,255,255,.72);cursor:pointer;transition:background .2s ease,color .2s ease}
     .dc-search-btn:hover{background:rgba(255,255,255,.12);color:${WHITE}}
     .dc-right-links{display:flex;align-items:center;gap:2px}
@@ -335,7 +335,7 @@
     .band-dark{background:${NAVY2};color:${WHITE}}
     .inner{width:94%;max-width:1200px;margin:0 auto;padding:0 32px}
     .eyebrow{font-size:11px;font-weight:700;color:${ORANGE};letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px}
-    .title{font-family:'Playfair Display',Georgia,serif;font-size:52px;font-weight:800;line-height:1.08;color:${NAVY};margin-bottom:20px}
+    .title{font-family:'Source Serif 4',Georgia,serif;font-size:52px;font-weight:800;line-height:1.08;color:${NAVY};margin-bottom:20px}
     .band-dark .title{color:${WHITE}}
     .lead{font-size:16px;line-height:1.75;color:rgba(17,29,60,.66);max-width:760px}
     .band-dark .lead{color:rgba(255,255,255,.62)}
@@ -361,7 +361,7 @@
     .stats-grid{display:grid;grid-template-columns:repeat(4,1fr)}
     .stat{padding:40px 16px;text-align:center;border-right:1px solid rgba(17,29,60,.15);animation:countUp .5s ease both}
     .stat:last-child{border-right:0}
-    .stat strong{display:block;font-family:'Playfair Display',Georgia,serif;font-size:clamp(34px,4.4vw,52px);line-height:1;font-weight:800;margin-bottom:6px}
+    .stat strong{display:block;font-family:'Source Serif 4',Georgia,serif;font-size:clamp(34px,4.4vw,52px);line-height:1;font-weight:800;margin-bottom:6px}
     .stat span{font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;opacity:.72;line-height:1.5}
     .proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
     .proof-grid.two{grid-template-columns:repeat(2,1fr)}
@@ -426,7 +426,7 @@
     .resource-tab span{font-size:10px;text-transform:uppercase;letter-spacing:.12em;opacity:.68}
     .resource-panel{min-width:0}
     .tool-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-end;flex-wrap:wrap;margin-bottom:24px}
-    .tool-head h2{font-family:'Playfair Display',Georgia,serif;font-size:38px;line-height:1.08;margin-bottom:10px}
+    .tool-head h2{font-family:'Source Serif 4',Georgia,serif;font-size:38px;line-height:1.08;margin-bottom:10px}
     .tool-head p{max-width:680px;color:rgba(17,29,60,.64);line-height:1.7}
     .segmented{display:flex;flex-wrap:wrap;gap:8px}
     .segmented button,.mini-btn{border:1px solid rgba(17,29,60,.12);background:${WHITE};color:${NAVY};border-radius:999px;padding:9px 14px;font-size:12px;font-weight:800;cursor:pointer}
@@ -453,8 +453,8 @@
     .lesson-box ul{padding-left:20px}
     .example-strip{background:${CREAM};border:1px dashed rgba(17,29,60,.18);border-radius:6px;padding:16px;margin:18px 0;text-align:center}
     .answer-box{background:rgba(13,148,136,.1);border:1px solid rgba(13,148,136,.2);border-radius:6px;padding:14px;margin-top:12px;color:${NAVY};font-size:14px;line-height:1.6}
-    .motion-display{background:${NAVY};color:${WHITE};border-radius:6px;padding:30px;text-align:center;min-height:150px;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',Georgia,serif;font-size:28px;line-height:1.2}
-    .emphasis-sentence{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;background:${CREAM};border-radius:6px;padding:22px;margin:18px 0;font-family:'Playfair Display',Georgia,serif;font-size:30px}
+    .motion-display{background:${NAVY};color:${WHITE};border-radius:6px;padding:30px;text-align:center;min-height:150px;display:flex;align-items:center;justify-content:center;font-family:'Source Serif 4',Georgia,serif;font-size:28px;line-height:1.2}
+    .emphasis-sentence{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;background:${CREAM};border-radius:6px;padding:22px;margin:18px 0;font-family:'Source Serif 4',Georgia,serif;font-size:30px}
     .emphasis-word{border:0;background:transparent;color:${NAVY};padding:4px 7px;border-radius:5px;cursor:pointer}
     .emphasis-word.active{background:${ORANGE};color:${NAVY};transform:translateY(-2px)}
     .spectrum-buttons{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
@@ -472,7 +472,7 @@
     .meter{height:9px;border-radius:999px;background:rgba(255,255,255,.12);overflow:hidden;margin-top:8px}
     .meter-fill{height:100%;border-radius:999px;background:${ORANGE};transition:width .25s ease}
     .game-argument{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:22px;margin:18px 0}
-    .game-argument h3{font-family:'Playfair Display',Georgia,serif;font-size:32px;line-height:1.15;color:${WHITE}}
+    .game-argument h3{font-family:'Source Serif 4',Georgia,serif;font-size:32px;line-height:1.15;color:${WHITE}}
     .option-card{width:100%;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.07);color:${WHITE};border-radius:6px;padding:15px 16px;text-align:left;cursor:pointer;line-height:1.5}
     .option-card:hover,.option-card.selected{border-color:${ORANGE};background:rgba(247,162,52,.16)}
     .feedback-card{background:${WHITE};color:${NAVY};border-left:4px solid ${ORANGE};border-radius:6px;padding:18px;margin-top:18px}
@@ -485,7 +485,7 @@
     .choice-btn{border:1px solid rgba(17,29,60,.12);background:${CREAM};color:${NAVY};border-radius:6px;padding:11px 12px;text-align:left;font-size:12px;font-weight:800;line-height:1.35;cursor:pointer}
     .choice-btn.active{background:${NAVY};border-color:${NAVY};color:${WHITE}}
     .finder-result{background:${NAVY2};color:${WHITE};border-radius:8px;padding:24px;position:sticky;top:86px}
-    .finder-result h3{font-family:'Playfair Display',Georgia,serif;font-size:30px;line-height:1.1;margin-bottom:8px;color:${WHITE}}
+    .finder-result h3{font-family:'Source Serif 4',Georgia,serif;font-size:30px;line-height:1.1;margin-bottom:8px;color:${WHITE}}
     .finder-result p{font-size:14px;line-height:1.65;color:rgba(255,255,255,.66)}
     .match-tag{display:inline-flex;border-radius:999px;background:rgba(247,162,52,.14);color:${ORANGE};padding:5px 10px;font-size:10px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px}
     .backup-list{display:grid;gap:9px;margin:16px 0}
@@ -508,7 +508,7 @@
     .prep-field{display:grid;gap:7px}
     .prep-field label{font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:${ORANGE}}
     .timer-face{background:${NAVY2};color:${WHITE};border-radius:8px;padding:24px;text-align:center}
-    .timer-time{font-family:'Playfair Display',Georgia,serif;font-size:clamp(50px,9vw,82px);font-weight:800;line-height:1;color:${WHITE};margin:10px 0}
+    .timer-time{font-family:'Source Serif 4',Georgia,serif;font-size:clamp(50px,9vw,82px);font-weight:800;line-height:1;color:${WHITE};margin:10px 0}
     .timer-status{font-size:12px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:${ORANGE}}
     .timer-track{height:11px;border-radius:999px;background:rgba(255,255,255,.12);overflow:hidden;margin:18px 0}
     .timer-fill{height:100%;background:${ORANGE};border-radius:999px;transition:width .25s ease}
@@ -1400,7 +1400,7 @@
                 const labelY = above ? y - 8 : y + 22;
                 const labelW = pin.name.length * 5.2 + 12;
                 group.append("rect").attr("x", x - labelW / 2).attr("y", labelY - 9).attr("width", labelW).attr("height", 12).attr("rx", 3).attr("fill", "rgba(13,23,48,.82)");
-                group.append("text").attr("x", x).attr("y", labelY).attr("text-anchor", "middle").attr("fill", "rgba(255,255,255,.9)").attr("font-size", 7.5).attr("font-family", "DM Sans, sans-serif").attr("font-weight", 600).text(pin.name);
+                group.append("text").attr("x", x).attr("y", labelY).attr("text-anchor", "middle").attr("fill", "rgba(255,255,255,.9)").attr("font-size", 7.5).attr("font-family", "Source Sans 3, sans-serif").attr("font-weight", 600).text(pin.name);
               });
             });
         })
@@ -3089,7 +3089,7 @@
       .calendar-poster * { box-sizing:border-box; }
       .calendar-hero { position:relative; overflow:hidden; padding:92px 32px 84px; background:radial-gradient(circle at 78% 10%,rgba(61,195,232,.22),transparent 30%),radial-gradient(circle at 18% 24%,rgba(247,162,52,.18),transparent 28%),linear-gradient(135deg,var(--cal-navy) 0%,var(--cal-navy-deep) 100%); color:var(--cal-white); text-align:center; }
       .calendar-hero::after { content:""; position:absolute; right:max(32px,calc((100vw - 1200px)/2)); top:54px; width:220px; height:220px; border:18px solid rgba(247,162,52,.52); border-right-color:transparent; border-radius:50%; opacity:.55; pointer-events:none; }
-      .calendar-title { position:relative; z-index:1; max-width:1100px; margin:0 auto 8px; font-family:'Playfair Display',Georgia,serif; font-size:clamp(52px,9vw,104px); font-weight:800; line-height:.98; letter-spacing:-.02em; }
+      .calendar-title { position:relative; z-index:1; max-width:1100px; margin:0 auto 8px; font-family:'Source Serif 4',Georgia,serif; font-size:clamp(52px,9vw,104px); font-weight:800; line-height:.98; letter-spacing:-.02em; }
       .calendar-title.sub { font-size:clamp(42px,6.5vw,78px); }
       .calendar-title .year { color:var(--cal-orange); }
       .calendar-subtitle { position:relative; z-index:1; max-width:720px; margin:18px auto 0; color:rgba(255,255,255,.68); font-size:17px; line-height:1.7; }
@@ -3097,10 +3097,10 @@
       .calendar-fact { padding:22px 18px; border-right:1px solid rgba(17,29,60,.15); text-align:center; }
       .calendar-fact:last-child { border-right:none; }
       .calendar-fact-label { color:rgba(17,29,60,.62); font-size:10px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; margin-bottom:4px; }
-      .calendar-fact-value { font-family:'Playfair Display',Georgia,serif; color:var(--cal-navy); font-size:28px; font-weight:800; line-height:1.05; }
+      .calendar-fact-value { font-family:'Source Serif 4',Georgia,serif; color:var(--cal-navy); font-size:28px; font-weight:800; line-height:1.05; }
       .calendar-fact-value .dim { color:rgba(17,29,60,.45); }
       .calendar-section-head { width:min(100%,1200px); margin:0 auto; padding:78px 32px 24px; display:flex; align-items:end; gap:24px; justify-content:space-between; }
-      .calendar-section-title { font-family:'Playfair Display',Georgia,serif; color:var(--cal-navy); font-size:clamp(34px,5vw,50px); font-weight:800; line-height:1.08; letter-spacing:-.01em; }
+      .calendar-section-title { font-family:'Source Serif 4',Georgia,serif; color:var(--cal-navy); font-size:clamp(34px,5vw,50px); font-weight:800; line-height:1.08; letter-spacing:-.01em; }
       .calendar-section-num { color:var(--cal-orange); font-size:11px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; }
       .calendar-gantt-wrap { width:min(100%,1200px); margin:0 auto; padding:0 32px 42px; overflow-x:auto; }
       .calendar-gantt { display:grid; min-width:960px; grid-template-columns:190px repeat(8,minmax(86px,1fr)); background:var(--cal-white); border:1px solid var(--cal-hair); border-top:4px solid var(--cal-orange); border-radius:8px; box-shadow:var(--cal-shadow); overflow:hidden; }
@@ -3126,7 +3126,7 @@
       .calendar-tier-head.intermediate { border-top:4px solid var(--cal-navy); }
       .calendar-tier-head.specialty { border-top:4px solid var(--cal-bio); }
       .calendar-tier-head.advanced { border-top:4px solid var(--cal-sky); }
-      .calendar-tier-name { font-family:'Playfair Display',Georgia,serif; color:var(--cal-navy); font-size:30px; font-weight:800; grid-row:1; grid-column:1; }
+      .calendar-tier-name { font-family:'Source Serif 4',Georgia,serif; color:var(--cal-navy); font-size:30px; font-weight:800; grid-row:1; grid-column:1; }
       .calendar-tier-tagline { color:var(--cal-muted); font-size:14px; line-height:1.55; grid-row:2; grid-column:1; }
       .calendar-tier-meta { align-self:center; padding:8px 12px; border:1px solid var(--cal-hair); border-radius:999px; background:var(--cal-cream); color:rgba(17,29,60,.68); font-size:10px; font-weight:800; letter-spacing:.11em; text-transform:uppercase; white-space:nowrap; grid-row:1/span 2; grid-column:2; }
       .calendar-tier-blurb { padding:20px 24px 4px; color:rgba(17,29,60,.68); font-size:15px; line-height:1.72; }
@@ -3150,7 +3150,7 @@
       .calendar-head-note { margin-top:16px; border:1px solid rgba(247,162,52,.35); border-left:4px solid var(--cal-orange); border-radius:8px; background:rgba(247,162,52,.1); padding:14px 16px; color:rgba(17,29,60,.68); font-size:13px; line-height:1.65; }
       .calendar-head-note strong { color:var(--cal-navy); }
       .calendar-cta { width:100%; padding:70px max(32px,calc((100vw - 1200px)/2 + 32px)); background:radial-gradient(circle at 80% 0%,rgba(61,195,232,.18),transparent 32%),linear-gradient(135deg,var(--cal-navy) 0%,var(--cal-navy-deep) 100%); color:var(--cal-white); display:grid; grid-template-columns:minmax(0,1fr) auto; gap:40px; align-items:center; }
-      .calendar-cta-title { font-family:'Playfair Display',Georgia,serif; color:var(--cal-white); font-size:clamp(40px,6vw,62px); font-weight:800; line-height:1.05; letter-spacing:-.01em; }
+      .calendar-cta-title { font-family:'Source Serif 4',Georgia,serif; color:var(--cal-white); font-size:clamp(40px,6vw,62px); font-weight:800; line-height:1.05; letter-spacing:-.01em; }
       .calendar-cta-title .accent { color:var(--cal-orange); font-style:italic; }
       .calendar-cta-sub { color:rgba(255,255,255,.65); margin-top:12px; font-size:15px; line-height:1.7; max-width:540px; }
       .calendar-actions { display:flex; gap:12px; flex-wrap:wrap; margin-top:24px; }
@@ -3159,7 +3159,7 @@
       .calendar-secondary { border:1px solid rgba(255,255,255,.16); color:var(--cal-white); }
       .calendar-cta-box { min-width:300px; padding:24px; border:1px solid rgba(255,255,255,.12); border-top:4px solid var(--cal-orange); border-radius:8px; background:rgba(255,255,255,.06); }
       .calendar-cta-box .label { color:rgba(255,255,255,.48); font-size:10px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; margin-bottom:8px; }
-      .calendar-cta-box .val { font-family:'Playfair Display',Georgia,serif; color:var(--cal-white); font-size:24px; font-weight:800; letter-spacing:-.01em; }
+      .calendar-cta-box .val { font-family:'Source Serif 4',Georgia,serif; color:var(--cal-white); font-size:24px; font-weight:800; letter-spacing:-.01em; }
       .calendar-cta-box .val + .label { margin-top:14px; }
       @media (max-width:900px) {
         .calendar-hero { padding:72px 24px 62px; }

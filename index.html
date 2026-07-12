@@ -21,14 +21,14 @@
   <meta name="twitter:title" content="DebateCraft | Free Debate and Bioethics Courses for Students" />
   <meta name="twitter:description" content="Free student-run debate and bioethics programs for Grades 3-12 across 12+ countries." />
   <meta name="twitter:image" content="https://debatecraft.org/Images/Logo-white-transparent.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,700;0,800;1,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" integrity="sha384-DGyLxAyjq0f9SPpVevD6IgztCFlnMF6oW/XQGmfe+IsZ8TqEiDrcHkMLKI6fiB/Z" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" integrity="sha384-gTGxhz21lVGYNMcdJOyq01Edg0jhn/c22nsx0kyqP0TxaV5WVdsSH1fSDUf5YJj1" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'DM Sans', sans-serif; background: #0d1730; color: #111d3c; min-height: 100vh; }
+    body { font-family: 'Source Sans 3', sans-serif; background: #0d1730; color: #111d3c; min-height: 100vh; }
     ::-webkit-scrollbar { width: 5px; }
     ::-webkit-scrollbar-track { background: #0d1730; }
     ::-webkit-scrollbar-thumb { background: #F7A234; border-radius: 3px; }
@@ -39,7 +39,7 @@
     @keyframes pillPop { from { opacity:0; transform:scale(0.85); } to { opacity:1; transform:scale(1); } }
     @keyframes countUp { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
     @keyframes pulse   { 0%,100% { opacity:1; } 50% { opacity:0.3; } }
-    .serif { font-family: 'Playfair Display', Georgia, serif; }
+    .serif { font-family: 'Source Serif 4', Georgia, serif; }
     a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
       outline: 3px solid #3DC3E8;
       outline-offset: 3px;
@@ -402,7 +402,7 @@ function Nav({ page, setPage }) {
           {/* Logo */}
           <a href="../../index.html" style={{ display:'flex', alignItems:'center', gap:10, cursor:'pointer', marginLeft:4, textDecoration:'none' }}>
             <img src="../../Images/Logo-white-transparent.png" alt="DebateCraft logo" width={28} height={28} style={{ objectFit:'contain' }}/>
-            <span style={{ fontFamily:'Playfair Display,Georgia,serif', fontSize:18, fontWeight:700, color:WHITE }}>
+            <span style={{ fontFamily:'Source Serif 4,Georgia,serif', fontSize:18, fontWeight:700, color:WHITE }}>
               DebateCraft
             </span>
           </a>
@@ -421,7 +421,7 @@ function Nav({ page, setPage }) {
             <a href="../../cnindex.html" style={{ color:'rgba(255,255,255,0.35)', fontSize:11, padding:'7px 10px', cursor:'pointer', textDecoration:'none' }}>中文 (繁體)</a>
             <a href={STUDENT_FORM_URL}
               style={{ background:ORANGE, color:NAVY, border:'none', borderRadius:5, padding:'8px 16px',
-                fontFamily:'DM Sans,sans-serif', fontWeight:700, fontSize:12, cursor:'pointer',
+                fontFamily:'Source Sans 3,sans-serif', fontWeight:700, fontSize:12, cursor:'pointer',
                 letterSpacing:'0.07em', textTransform:'uppercase', marginLeft:6, whiteSpace:'nowrap', textDecoration:'none', display:'inline-block' }}>
               Apply Free →
             </a>
@@ -570,8 +570,8 @@ function Hero({ setPage }) {
             ))}
           </div>
           <div style={{ display:'flex', gap:12, flexWrap:'wrap', opacity:vis?1:0, animation:vis?'fadeUp 0.6s ease 0.3s both':'none' }}>
-            <a href={STUDENT_FORM_URL} style={{ background:ORANGE, color:NAVY, border:'none', borderRadius:5, padding:'13px 26px', fontFamily:'DM Sans,sans-serif', fontWeight:800, fontSize:13, cursor:'pointer', letterSpacing:'0.06em', textTransform:'uppercase', boxShadow:`0 8px 28px rgba(247,162,52,0.35)`, textDecoration:'none', display:'inline-flex', alignItems:'center' }}>Apply Free for Summer →</a>
-            <a href="../../pages/calendar.html" style={{ background:'rgba(255,255,255,0.08)', color:WHITE, border:'1.5px solid rgba(255,255,255,0.22)', borderRadius:5, padding:'13px 26px', fontFamily:'DM Sans,sans-serif', fontWeight:700, fontSize:13, cursor:'pointer', letterSpacing:'0.06em', textTransform:'uppercase', textDecoration:'none', display:'inline-flex', alignItems:'center' }}>See Dates</a>
+            <a href={STUDENT_FORM_URL} style={{ background:ORANGE, color:NAVY, border:'none', borderRadius:5, padding:'13px 26px', fontFamily:'Source Sans 3,sans-serif', fontWeight:800, fontSize:13, cursor:'pointer', letterSpacing:'0.06em', textTransform:'uppercase', boxShadow:`0 8px 28px rgba(247,162,52,0.35)`, textDecoration:'none', display:'inline-flex', alignItems:'center' }}>Apply Free for Summer →</a>
+            <a href="../../pages/calendar.html" style={{ background:'rgba(255,255,255,0.08)', color:WHITE, border:'1.5px solid rgba(255,255,255,0.22)', borderRadius:5, padding:'13px 26px', fontFamily:'Source Sans 3,sans-serif', fontWeight:700, fontSize:13, cursor:'pointer', letterSpacing:'0.06em', textTransform:'uppercase', textDecoration:'none', display:'inline-flex', alignItems:'center' }}>See Dates</a>
           </div>
         </div>
         {/* Arc column */}
@@ -617,7 +617,7 @@ function HowToJoinMini() {
             </div>
           ))}
         </div>
-        <a href={STUDENT_FORM_URL} style={{ background:NAVY, color:WHITE, border:'none', borderRadius:5, padding:'13px 20px', fontFamily:'DM Sans,sans-serif', fontWeight:800, fontSize:12, cursor:'pointer', letterSpacing:'0.07em', textTransform:'uppercase', textDecoration:'none', whiteSpace:'nowrap' }}>Get Placed →</a>
+        <a href={STUDENT_FORM_URL} style={{ background:NAVY, color:WHITE, border:'none', borderRadius:5, padding:'13px 20px', fontFamily:'Source Sans 3,sans-serif', fontWeight:800, fontSize:12, cursor:'pointer', letterSpacing:'0.07em', textTransform:'uppercase', textDecoration:'none', whiteSpace:'nowrap' }}>Get Placed →</a>
       </div>
     </section>
   );
@@ -730,7 +730,7 @@ function CalendarVisual() {
           </div>
         </div>
         <div style={{ textAlign:'center', marginTop:28 }}>
-          <a href="pages/calendar.html" style={{ background:ORANGE, color:NAVY, border:'none', borderRadius:5, padding:'13px 24px', fontFamily:'DM Sans,sans-serif', fontWeight:800, fontSize:12, cursor:'pointer', letterSpacing:'0.08em', textTransform:'uppercase', textDecoration:'none', display:'inline-flex', alignItems:'center', justifyContent:'center' }}>View Full Calendar →</a>
+          <a href="pages/calendar.html" style={{ background:ORANGE, color:NAVY, border:'none', borderRadius:5, padding:'13px 24px', fontFamily:'Source Sans 3,sans-serif', fontWeight:800, fontSize:12, cursor:'pointer', letterSpacing:'0.08em', textTransform:'uppercase', textDecoration:'none', display:'inline-flex', alignItems:'center', justifyContent:'center' }}>View Full Calendar →</a>
         </div>
       </div>
     </section>
@@ -814,7 +814,7 @@ function GlobalMap() {
           g.append('text').attr('x',x).attr('y',y+6).attr('text-anchor','middle').attr('font-size',14).attr('font-family','Apple Color Emoji,Segoe UI Emoji,sans-serif').style('cursor','default').text(pin.flag);
           const labelY=above?y-8:y+22; const labelW=pin.name.length*5.2+12;
           g.append('rect').attr('x',x-labelW/2).attr('y',labelY-9).attr('width',labelW).attr('height',12).attr('rx',3).attr('fill','rgba(13,23,48,0.82)');
-          g.append('text').attr('x',x).attr('y',labelY).attr('text-anchor','middle').attr('fill','rgba(255,255,255,0.9)').attr('font-size',7.5).attr('font-family','DM Sans,sans-serif').attr('font-weight',600).text(pin.name);
+          g.append('text').attr('x',x).attr('y',labelY).attr('text-anchor','middle').attr('fill','rgba(255,255,255,0.9)').attr('font-size',7.5).attr('font-family','Source Sans 3,sans-serif').attr('font-weight',600).text(pin.name);
         });
       });
     });
@@ -865,7 +865,7 @@ function FourSteps() {
           ))}
         </div>
         <div style={{ textAlign:'center', marginTop:52 }}>
-          <a href={STUDENT_FORM_URL} style={{ background:NAVY, color:WHITE, border:'none', borderRadius:5, padding:'13px 28px', fontFamily:'DM Sans,sans-serif', fontWeight:700, fontSize:13, cursor:'pointer', letterSpacing:'0.06em', textTransform:'uppercase', textDecoration:'none', display:'inline-flex', alignItems:'center' }}>Apply Free Now →</a>
+          <a href={STUDENT_FORM_URL} style={{ background:NAVY, color:WHITE, border:'none', borderRadius:5, padding:'13px 28px', fontFamily:'Source Sans 3,sans-serif', fontWeight:700, fontSize:13, cursor:'pointer', letterSpacing:'0.06em', textTransform:'uppercase', textDecoration:'none', display:'inline-flex', alignItems:'center' }}>Apply Free Now →</a>
         </div>
       </div>
     </section>
@@ -881,7 +881,7 @@ function Skills() {
           <div style={{ fontSize:11, fontWeight:700, color:ORANGE, letterSpacing:'0.14em', textTransform:'uppercase', marginBottom:18 }}>Why Debate Matters</div>
           <h2 className="serif" style={{ fontSize:52, fontWeight:800, color:WHITE, lineHeight:1.08, marginBottom:22 }}>Skills That Last<br />a <em style={{ color:ORANGE, fontStyle:'italic' }}>Lifetime.</em></h2>
           <p style={{ fontSize:15, color:'rgba(255,255,255,0.58)', lineHeight:1.75, marginBottom:32 }}>Debate is the only discipline that simultaneously trains critical reasoning, public courage, empathy, and strategic thinking — skills that define leaders and changemakers.</p>
-          <a href="../../pages/story.html" style={{ background:ORANGE, color:NAVY, border:'none', borderRadius:5, padding:'12px 22px', fontFamily:'DM Sans,sans-serif', fontWeight:700, fontSize:12, cursor:'pointer', letterSpacing:'0.08em', textTransform:'uppercase', textDecoration:'none', display:'inline-flex', alignItems:'center' }}>Learn Why Debate →</a>
+          <a href="../../pages/story.html" style={{ background:ORANGE, color:NAVY, border:'none', borderRadius:5, padding:'12px 22px', fontFamily:'Source Sans 3,sans-serif', fontWeight:700, fontSize:12, cursor:'pointer', letterSpacing:'0.08em', textTransform:'uppercase', textDecoration:'none', display:'inline-flex', alignItems:'center' }}>Learn Why Debate →</a>
         </div>
         <div>
           {SKILLS.map((sk,i)=>(
@@ -917,8 +917,8 @@ function Programs({ setPage }) {
             <p style={{ maxWidth:610, marginTop:14, fontSize:15, lineHeight:1.7, color:'rgba(17,29,60,0.62)' }}>Not sure whether your child belongs in Level 1, Level 2, PF, WSDC, BP, or Bioethics? Apply free and we will place them into the right summer cohort.</p>
           </div>
           <div style={{ display:'flex', gap:10, flexWrap:'wrap' }}>
-            <a href={STUDENT_FORM_URL} style={{ background:NAVY, color:WHITE, border:'none', borderRadius:5, padding:'13px 22px', fontFamily:'DM Sans,sans-serif', fontWeight:800, fontSize:12, cursor:'pointer', letterSpacing:'0.08em', textTransform:'uppercase', flexShrink:0, textDecoration:'none', display:'inline-flex', alignItems:'center' }}>Apply for Placement</a>
-            <a href="../../pages/calendar.html" style={{ background:'rgba(17,29,60,0.08)', color:NAVY, border:'1.5px solid rgba(17,29,60,0.18)', borderRadius:5, padding:'13px 22px', fontFamily:'DM Sans,sans-serif', fontWeight:700, fontSize:12, cursor:'pointer', letterSpacing:'0.08em', textTransform:'uppercase', flexShrink:0, textDecoration:'none', display:'inline-flex', alignItems:'center' }}>View Dates</a>
+            <a href={STUDENT_FORM_URL} style={{ background:NAVY, color:WHITE, border:'none', borderRadius:5, padding:'13px 22px', fontFamily:'Source Sans 3,sans-serif', fontWeight:800, fontSize:12, cursor:'pointer', letterSpacing:'0.08em', textTransform:'uppercase', flexShrink:0, textDecoration:'none', display:'inline-flex', alignItems:'center' }}>Apply for Placement</a>
+            <a href="../../pages/calendar.html" style={{ background:'rgba(17,29,60,0.08)', color:NAVY, border:'1.5px solid rgba(17,29,60,0.18)', borderRadius:5, padding:'13px 22px', fontFamily:'Source Sans 3,sans-serif', fontWeight:700, fontSize:12, cursor:'pointer', letterSpacing:'0.08em', textTransform:'uppercase', flexShrink:0, textDecoration:'none', display:'inline-flex', alignItems:'center' }}>View Dates</a>
           </div>
         </div>
         <div style={{ display:'grid', gridTemplateColumns:isCompact ? '1fr' : 'repeat(2,1fr)', gap:16 }}>
@@ -1003,8 +1003,8 @@ function CTABand({ setPage }) {
           <p style={{ fontSize:15, color:'rgba(17,29,60,0.72)', lineHeight:1.65 }}>Apply free, tell us the student’s background, and let DebateCraft recommend the right cohort before the summer window fills.</p>
         </div>
         <div style={{ display:'flex', gap:12, flexShrink:0 }}>
-          <a href={STUDENT_FORM_URL} style={{ background:NAVY, color:WHITE, border:'none', borderRadius:5, padding:'14px 28px', fontFamily:'DM Sans,sans-serif', fontWeight:800, fontSize:13, cursor:'pointer', letterSpacing:'0.07em', textTransform:'uppercase', whiteSpace:'nowrap', textDecoration:'none', display:'inline-flex', alignItems:'center' }}>Apply Free →</a>
-          <a href={COACH_FORM_URL} style={{ background:'rgba(17,29,60,0.1)', color:NAVY, border:'1.5px solid rgba(17,29,60,0.25)', borderRadius:5, padding:'14px 28px', fontFamily:'DM Sans,sans-serif', fontWeight:600, fontSize:13, cursor:'pointer', whiteSpace:'nowrap', textDecoration:'none', display:'inline-flex', alignItems:'center' }}>Become a Coach</a>
+          <a href={STUDENT_FORM_URL} style={{ background:NAVY, color:WHITE, border:'none', borderRadius:5, padding:'14px 28px', fontFamily:'Source Sans 3,sans-serif', fontWeight:800, fontSize:13, cursor:'pointer', letterSpacing:'0.07em', textTransform:'uppercase', whiteSpace:'nowrap', textDecoration:'none', display:'inline-flex', alignItems:'center' }}>Apply Free →</a>
+          <a href={COACH_FORM_URL} style={{ background:'rgba(17,29,60,0.1)', color:NAVY, border:'1.5px solid rgba(17,29,60,0.25)', borderRadius:5, padding:'14px 28px', fontFamily:'Source Sans 3,sans-serif', fontWeight:600, fontSize:13, cursor:'pointer', whiteSpace:'nowrap', textDecoration:'none', display:'inline-flex', alignItems:'center' }}>Become a Coach</a>
         </div>
       </div>
     </section>
@@ -1041,7 +1041,7 @@ function Footer({ setPage }) {
         <div style={{ maxWidth:1200, margin:'0 auto', display:'flex', alignItems:'center', justifyContent:'space-between', gap:24 }}>
           <a href="../../index.html" style={{ display:'flex', alignItems:'center', gap:12, textDecoration:'none' }}>
             <img src="../../Images/Logo-white-transparent.png" alt="DebateCraft logo" width={40} height={40} style={{ objectFit:'contain' }}/>
-            <div style={{ fontFamily:'Playfair Display,Georgia,serif', fontSize:20, fontWeight:700, color:WHITE }}>
+            <div style={{ fontFamily:'Source Serif 4,Georgia,serif', fontSize:20, fontWeight:700, color:WHITE }}>
               <span style={{ color:ORANGE }}>Debate</span><span style={{ color:SKY }}>Craft</span>
             </div>
           </a>
@@ -1079,7 +1079,7 @@ function PageStub({ title, setPage }) {
         <div style={{ fontSize:11, fontWeight:700, color:ORANGE, letterSpacing:'0.14em', textTransform:'uppercase', marginBottom:14 }}>Page Preview</div>
         <h1 className="serif" style={{ fontSize:48, fontWeight:800, color:NAVY, marginBottom:12 }}>{title}</h1>
         <p style={{ fontSize:14, color:'rgba(17,29,60,0.5)', marginBottom:28 }}>Full page design in progress</p>
-        <button onClick={()=>setPage('home')} style={{ background:NAVY, color:WHITE, border:'none', borderRadius:5, padding:'12px 22px', fontFamily:'DM Sans,sans-serif', fontWeight:700, fontSize:13, cursor:'pointer' }}>← Back to Home</button>
+        <button onClick={()=>setPage('home')} style={{ background:NAVY, color:WHITE, border:'none', borderRadius:5, padding:'12px 22px', fontFamily:'Source Sans 3,sans-serif', fontWeight:700, fontSize:13, cursor:'pointer' }}>← Back to Home</button>
       </div>
     </div>
   );
@@ -1095,7 +1095,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 function TweaksPanel({ tweaks, setTweak, page, setPage, onClose }) {
   const pages={home:'Home',story:'Mission',offerings:'Programs','get-involved':'Get Involved'};
   return (
-    <div style={{ position:'fixed', bottom:24, right:24, zIndex:9999, background:WHITE, borderRadius:12, padding:'18px 20px', boxShadow:'0 12px 48px rgba(0,0,0,0.2)', minWidth:240, fontFamily:'DM Sans,sans-serif' }}>
+    <div style={{ position:'fixed', bottom:24, right:24, zIndex:9999, background:WHITE, borderRadius:12, padding:'18px 20px', boxShadow:'0 12px 48px rgba(0,0,0,0.2)', minWidth:240, fontFamily:'Source Sans 3,sans-serif' }}>
       <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:14 }}>
         <span style={{ fontWeight:700, fontSize:13, color:NAVY }}>Tweaks</span>
         <button onClick={onClose} style={{ background:'none', border:'none', cursor:'pointer', fontSize:17, color:'#7c7c8a' }}>×</button>

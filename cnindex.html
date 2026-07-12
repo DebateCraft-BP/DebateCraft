@@ -21,14 +21,14 @@
   <meta name="twitter:title" content="DebateCraft | 免費辯論及生物倫理課程" />
   <meta name="twitter:description" content="免費、學生營運、全球 12+ 國家和地區的辯論及生物倫理教育。" />
   <meta name="twitter:image" content="https://debatecraft.org/Images/Logo-white-transparent.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,700;0,800;1,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" integrity="sha384-DGyLxAyjq0f9SPpVevD6IgztCFlnMF6oW/XQGmfe+IsZ8TqEiDrcHkMLKI6fiB/Z" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" integrity="sha384-gTGxhz21lVGYNMcdJOyq01Edg0jhn/c22nsx0kyqP0TxaV5WVdsSH1fSDUf5YJj1" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'DM Sans', sans-serif; background: #0d1730; color: #111d3c; min-height: 100vh; }
+    body { font-family: 'Source Sans 3', sans-serif; background: #0d1730; color: #111d3c; min-height: 100vh; }
     ::-webkit-scrollbar { width: 5px; }
     ::-webkit-scrollbar-track { background: #0d1730; }
     ::-webkit-scrollbar-thumb { background: #F7A234; border-radius: 3px; }
@@ -39,7 +39,7 @@
     @keyframes pillPop { from { opacity:0; transform:scale(0.85); } to { opacity:1; transform:scale(1); } }
     @keyframes countUp { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
     @keyframes pulse   { 0%,100% { opacity:1; } 50% { opacity:0.3; } }
-    .serif { font-family: 'Playfair Display', Georgia, serif; }
+    .serif { font-family: 'Source Serif 4', Georgia, serif; }
     a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
       outline: 3px solid #3DC3E8;
       outline-offset: 3px;
@@ -275,7 +275,7 @@ function Nav({ page, setPage }) {
           </button>
           <a href="../../index.html" style={{ display:'flex', alignItems:'center', gap:10, cursor:'pointer', marginLeft:4, textDecoration:'none' }}>
             <img src="../../Images/Logo-white-transparent.png" alt="DebateCraft 標誌" width={28} height={28} style={{ objectFit:'contain' }}/>
-            <span style={{ fontFamily:'Playfair Display,Georgia,serif', fontSize:18, fontWeight:700, color:WHITE }}>
+            <span style={{ fontFamily:'Source Serif 4,Georgia,serif', fontSize:18, fontWeight:700, color:WHITE }}>
               DebateCraft
             </span>
           </a>
@@ -288,7 +288,7 @@ function Nav({ page, setPage }) {
             <a href="../../index.html" style={{ color:'rgba(255,255,255,0.35)', fontSize:11, padding:'7px 10px', cursor:'pointer', textDecoration:'none' }}>English</a>
             <a href={STUDENT_FORM_URL}
               style={{ background:ORANGE, color:NAVY, border:'none', borderRadius:5, padding:'8px 16px',
-                fontFamily:'DM Sans,sans-serif', fontWeight:700, fontSize:12, cursor:'pointer',
+                fontFamily:'Source Sans 3,sans-serif', fontWeight:700, fontSize:12, cursor:'pointer',
                 letterSpacing:'0.07em', textTransform:'uppercase', marginLeft:6, whiteSpace:'nowrap', textDecoration:'none', display:'inline-block' }}>
               免費申請 →
             </a>
@@ -434,8 +434,8 @@ function Hero({ setPage }) {
             ))}
           </div>
           <div style={{ display:'flex', gap:12, flexWrap:'wrap', opacity:vis?1:0, animation:vis?'fadeUp 0.6s ease 0.3s both':'none' }}>
-            <a href={STUDENT_FORM_URL} style={{ background:ORANGE, color:NAVY, border:'none', borderRadius:5, padding:'13px 26px', fontFamily:'DM Sans,sans-serif', fontWeight:800, fontSize:13, cursor:'pointer', letterSpacing:'0.06em', textTransform:'uppercase', boxShadow:`0 8px 28px rgba(247,162,52,0.35)`, textDecoration:'none', display:'inline-flex', alignItems:'center' }}>申請夏季免費名額 →</a>
-            <a href="../../pages/cncalendar.html" style={{ background:'rgba(255,255,255,0.08)', color:WHITE, border:'1.5px solid rgba(255,255,255,0.22)', borderRadius:5, padding:'13px 26px', fontFamily:'DM Sans,sans-serif', fontWeight:700, fontSize:13, cursor:'pointer', letterSpacing:'0.06em', textTransform:'uppercase', textDecoration:'none', display:'inline-flex', alignItems:'center' }}>查看日期</a>
+            <a href={STUDENT_FORM_URL} style={{ background:ORANGE, color:NAVY, border:'none', borderRadius:5, padding:'13px 26px', fontFamily:'Source Sans 3,sans-serif', fontWeight:800, fontSize:13, cursor:'pointer', letterSpacing:'0.06em', textTransform:'uppercase', boxShadow:`0 8px 28px rgba(247,162,52,0.35)`, textDecoration:'none', display:'inline-flex', alignItems:'center' }}>申請夏季免費名額 →</a>
+            <a href="../../pages/cncalendar.html" style={{ background:'rgba(255,255,255,0.08)', color:WHITE, border:'1.5px solid rgba(255,255,255,0.22)', borderRadius:5, padding:'13px 26px', fontFamily:'Source Sans 3,sans-serif', fontWeight:700, fontSize:13, cursor:'pointer', letterSpacing:'0.06em', textTransform:'uppercase', textDecoration:'none', display:'inline-flex', alignItems:'center' }}>查看日期</a>
           </div>
         </div>
         <div style={{ display:isCompact ? 'none' : 'flex', alignItems:'center', justifyContent:'center', opacity:vis?1:0, animation:vis?'fadeIn 1s ease 0.4s both':'none' }}>
@@ -480,7 +480,7 @@ function HowToJoinMini() {
             </div>
           ))}
         </div>
-        <a href={STUDENT_FORM_URL} style={{ background:NAVY, color:WHITE, border:'none', borderRadius:5, padding:'13px 20px', fontFamily:'DM Sans,sans-serif', fontWeight:800, fontSize:12, cursor:'pointer', letterSpacing:'0.07em', textTransform:'uppercase', textDecoration:'none', whiteSpace:'nowrap' }}>取得班級建議 →</a>
+        <a href={STUDENT_FORM_URL} style={{ background:NAVY, color:WHITE, border:'none', borderRadius:5, padding:'13px 20px', fontFamily:'Source Sans 3,sans-serif', fontWeight:800, fontSize:12, cursor:'pointer', letterSpacing:'0.07em', textTransform:'uppercase', textDecoration:'none', whiteSpace:'nowrap' }}>取得班級建議 →</a>
       </div>
     </section>
   );
@@ -626,7 +626,7 @@ function GlobalMap() {
           g.append('text').attr('x',x).attr('y',y+6).attr('text-anchor','middle').attr('font-size',14).attr('font-family','Apple Color Emoji,Segoe UI Emoji,sans-serif').style('cursor','default').text(pin.flag);
           const labelY=above?y-8:y+22; const labelW=pin.name.length*5.2+12;
           g.append('rect').attr('x',x-labelW/2).attr('y',labelY-9).attr('width',labelW).attr('height',12).attr('rx',3).attr('fill','rgba(13,23,48,0.82)');
-          g.append('text').attr('x',x).attr('y',labelY).attr('text-anchor','middle').attr('fill','rgba(255,255,255,0.9)').attr('font-size',7.5).attr('font-family','DM Sans,sans-serif').attr('font-weight',600).text(pin.name);
+          g.append('text').attr('x',x).attr('y',labelY).attr('text-anchor','middle').attr('fill','rgba(255,255,255,0.9)').attr('font-size',7.5).attr('font-family','Source Sans 3,sans-serif').attr('font-weight',600).text(pin.name);
         });
       });
     });
@@ -677,7 +677,7 @@ function FourSteps() {
           ))}
         </div>
         <div style={{ textAlign:'center', marginTop:52 }}>
-          <a href={STUDENT_FORM_URL} style={{ background:NAVY, color:WHITE, border:'none', borderRadius:5, padding:'13px 28px', fontFamily:'DM Sans,sans-serif', fontWeight:700, fontSize:13, cursor:'pointer', letterSpacing:'0.06em', textTransform:'uppercase', textDecoration:'none', display:'inline-flex', alignItems:'center' }}>立即免費申請 →</a>
+          <a href={STUDENT_FORM_URL} style={{ background:NAVY, color:WHITE, border:'none', borderRadius:5, padding:'13px 28px', fontFamily:'Source Sans 3,sans-serif', fontWeight:700, fontSize:13, cursor:'pointer', letterSpacing:'0.06em', textTransform:'uppercase', textDecoration:'none', display:'inline-flex', alignItems:'center' }}>立即免費申請 →</a>
         </div>
       </div>
     </section>
@@ -693,7 +693,7 @@ function Skills() {
           <div style={{ fontSize:11, fontWeight:700, color:ORANGE, letterSpacing:'0.14em', textTransform:'uppercase', marginBottom:18 }}>點解辯論咁重要</div>
           <h2 className="serif" style={{ fontSize:52, fontWeight:800, color:WHITE, lineHeight:1.08, marginBottom:22 }}>終身受用嘅<em style={{ color:ORANGE, fontStyle:'italic' }}>技巧。</em></h2>
           <p style={{ fontSize:15, color:'rgba(255,255,255,0.58)', lineHeight:1.75, marginBottom:32 }}>辯論係唯一能夠同時訓練批判思考、演說勇氣、同理心同戰略思維嘅活動 — 正正係領袖同改革者所需嘅特質。</p>
-          <a href="../../pages/cnstory.html" style={{ background:ORANGE, color:NAVY, border:'none', borderRadius:5, padding:'12px 22px', fontFamily:'DM Sans,sans-serif', fontWeight:700, fontSize:12, cursor:'pointer', letterSpacing:'0.08em', textTransform:'uppercase', textDecoration:'none', display:'inline-flex', alignItems:'center' }}>了解更多 →</a>
+          <a href="../../pages/cnstory.html" style={{ background:ORANGE, color:NAVY, border:'none', borderRadius:5, padding:'12px 22px', fontFamily:'Source Sans 3,sans-serif', fontWeight:700, fontSize:12, cursor:'pointer', letterSpacing:'0.08em', textTransform:'uppercase', textDecoration:'none', display:'inline-flex', alignItems:'center' }}>了解更多 →</a>
         </div>
         <div>
           {SKILLS.map((sk,i)=>(
@@ -729,8 +729,8 @@ function Programs({ setPage }) {
             <p style={{ maxWidth:610, marginTop:14, fontSize:15, lineHeight:1.7, color:'rgba(17,29,60,0.62)' }}>唔肯定學生適合 Level 1、Level 2、PF、WSDC、BP 定生物倫理？先免費申請，我哋會建議最合適嘅夏季小班。</p>
           </div>
           <div style={{ display:'flex', gap:10, flexWrap:'wrap' }}>
-            <a href={STUDENT_FORM_URL} style={{ background:NAVY, color:WHITE, border:'none', borderRadius:5, padding:'13px 22px', fontFamily:'DM Sans,sans-serif', fontWeight:800, fontSize:12, cursor:'pointer', letterSpacing:'0.08em', textTransform:'uppercase', flexShrink:0, textDecoration:'none', display:'inline-flex', alignItems:'center' }}>申請配對班級</a>
-            <a href="../../pages/cncalendar.html" style={{ background:'rgba(17,29,60,0.08)', color:NAVY, border:'1.5px solid rgba(17,29,60,0.18)', borderRadius:5, padding:'13px 22px', fontFamily:'DM Sans,sans-serif', fontWeight:700, fontSize:12, cursor:'pointer', letterSpacing:'0.08em', textTransform:'uppercase', flexShrink:0, textDecoration:'none', display:'inline-flex', alignItems:'center' }}>查看日期</a>
+            <a href={STUDENT_FORM_URL} style={{ background:NAVY, color:WHITE, border:'none', borderRadius:5, padding:'13px 22px', fontFamily:'Source Sans 3,sans-serif', fontWeight:800, fontSize:12, cursor:'pointer', letterSpacing:'0.08em', textTransform:'uppercase', flexShrink:0, textDecoration:'none', display:'inline-flex', alignItems:'center' }}>申請配對班級</a>
+            <a href="../../pages/cncalendar.html" style={{ background:'rgba(17,29,60,0.08)', color:NAVY, border:'1.5px solid rgba(17,29,60,0.18)', borderRadius:5, padding:'13px 22px', fontFamily:'Source Sans 3,sans-serif', fontWeight:700, fontSize:12, cursor:'pointer', letterSpacing:'0.08em', textTransform:'uppercase', flexShrink:0, textDecoration:'none', display:'inline-flex', alignItems:'center' }}>查看日期</a>
           </div>
         </div>
         <div style={{ display:'grid', gridTemplateColumns:isCompact ? '1fr' : 'repeat(2,1fr)', gap:16 }}>
@@ -800,7 +800,7 @@ function CalendarVisual() {
           </div>
         </div>
         <div style={{ textAlign:'center', marginTop:28 }}>
-          <a href="pages/cncalendar.html" style={{ background:ORANGE, color:NAVY, border:'none', borderRadius:5, padding:'13px 24px', fontFamily:'DM Sans,sans-serif', fontWeight:800, fontSize:12, cursor:'pointer', letterSpacing:'0.08em', textTransform:'uppercase', textDecoration:'none', display:'inline-flex', alignItems:'center', justifyContent:'center' }}>查看完整日程 →</a>
+          <a href="pages/cncalendar.html" style={{ background:ORANGE, color:NAVY, border:'none', borderRadius:5, padding:'13px 24px', fontFamily:'Source Sans 3,sans-serif', fontWeight:800, fontSize:12, cursor:'pointer', letterSpacing:'0.08em', textTransform:'uppercase', textDecoration:'none', display:'inline-flex', alignItems:'center', justifyContent:'center' }}>查看完整日程 →</a>
         </div>
       </div>
     </section>
@@ -871,8 +871,8 @@ function CTABand({ setPage }) {
           <p style={{ fontSize:15, color:'rgba(17,29,60,0.72)', lineHeight:1.65 }}>免費申請，提供學生背景，由 DebateCraft 在暑期時段額滿前建議最合適小班。</p>
         </div>
         <div style={{ display:'flex', gap:12, flexShrink:0 }}>
-          <a href={STUDENT_FORM_URL} style={{ background:NAVY, color:WHITE, border:'none', borderRadius:5, padding:'14px 28px', fontFamily:'DM Sans,sans-serif', fontWeight:800, fontSize:13, cursor:'pointer', letterSpacing:'0.07em', textTransform:'uppercase', whiteSpace:'nowrap', textDecoration:'none', display:'inline-flex', alignItems:'center' }}>免費申請 →</a>
-          <a href={COACH_FORM_URL} style={{ background:'rgba(17,29,60,0.1)', color:NAVY, border:'1.5px solid rgba(17,29,60,0.25)', borderRadius:5, padding:'14px 28px', fontFamily:'DM Sans,sans-serif', fontWeight:600, fontSize:13, cursor:'pointer', whiteSpace:'nowrap', textDecoration:'none', display:'inline-flex', alignItems:'center' }}>成為教練</a>
+          <a href={STUDENT_FORM_URL} style={{ background:NAVY, color:WHITE, border:'none', borderRadius:5, padding:'14px 28px', fontFamily:'Source Sans 3,sans-serif', fontWeight:800, fontSize:13, cursor:'pointer', letterSpacing:'0.07em', textTransform:'uppercase', whiteSpace:'nowrap', textDecoration:'none', display:'inline-flex', alignItems:'center' }}>免費申請 →</a>
+          <a href={COACH_FORM_URL} style={{ background:'rgba(17,29,60,0.1)', color:NAVY, border:'1.5px solid rgba(17,29,60,0.25)', borderRadius:5, padding:'14px 28px', fontFamily:'Source Sans 3,sans-serif', fontWeight:600, fontSize:13, cursor:'pointer', whiteSpace:'nowrap', textDecoration:'none', display:'inline-flex', alignItems:'center' }}>成為教練</a>
         </div>
       </div>
     </section>
@@ -910,7 +910,7 @@ function Footer({ setPage }) {
           <a href="../../index.html" style={{ display:'flex', alignItems:'center', gap:12, textDecoration:'none' }}>
             <img src="../../Images/Logo-white-transparent.png" alt="DebateCraft 標誌" width={40} height={40} style={{ objectFit:'contain' }}/>
             <div>
-              <div style={{ fontFamily:'Playfair Display,Georgia,serif', fontSize:20, fontWeight:700, color:WHITE }}>
+              <div style={{ fontFamily:'Source Serif 4,Georgia,serif', fontSize:20, fontWeight:700, color:WHITE }}>
                 <span style={{ color:ORANGE }}>Debate</span><span style={{ color:SKY }}>Craft</span>
               </div>
               <div style={{ fontSize:10, fontWeight:600, color:'rgba(255,255,255,0.32)', letterSpacing:'0.12em', textTransform:'uppercase', marginTop:2 }}>學生賦予學生力量</div>
@@ -950,7 +950,7 @@ function PageStub({ title, setPage }) {
         <div style={{ fontSize:11, fontWeight:700, color:ORANGE, letterSpacing:'0.14em', textTransform:'uppercase', marginBottom:14 }}>頁面預覽</div>
         <h1 className="serif" style={{ fontSize:48, fontWeight:800, color:NAVY, marginBottom:12 }}>{title}</h1>
         <p style={{ fontSize:14, color:'rgba(17,29,60,0.5)', marginBottom:28 }}>完整頁面設計進行中</p>
-        <button onClick={()=>setPage('home')} style={{ background:NAVY, color:WHITE, border:'none', borderRadius:5, padding:'12px 22px', fontFamily:'DM Sans,sans-serif', fontWeight:700, fontSize:13, cursor:'pointer' }}>← 返回主頁</button>
+        <button onClick={()=>setPage('home')} style={{ background:NAVY, color:WHITE, border:'none', borderRadius:5, padding:'12px 22px', fontFamily:'Source Sans 3,sans-serif', fontWeight:700, fontSize:13, cursor:'pointer' }}>← 返回主頁</button>
       </div>
     </div>
   );
@@ -966,7 +966,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 function TweaksPanel({ tweaks, setTweak, page, setPage, onClose }) {
   const pages={home:'主頁',story:'使命',offerings:'課程','get-involved':'參與我哋'};
   return (
-    <div style={{ position:'fixed', bottom:24, right:24, zIndex:9999, background:WHITE, borderRadius:12, padding:'18px 20px', boxShadow:'0 12px 48px rgba(0,0,0,0.2)', minWidth:240, fontFamily:'DM Sans,sans-serif' }}>
+    <div style={{ position:'fixed', bottom:24, right:24, zIndex:9999, background:WHITE, borderRadius:12, padding:'18px 20px', boxShadow:'0 12px 48px rgba(0,0,0,0.2)', minWidth:240, fontFamily:'Source Sans 3,sans-serif' }}>
       <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:14 }}>
         <span style={{ fontWeight:700, fontSize:13, color:NAVY }}>微調</span>
         <button onClick={onClose} style={{ background:'none', border:'none', cursor:'pointer', fontSize:17, color:'#7c7c8a' }}>×</button>

@@ -261,7 +261,7 @@ function Nav({ page, setPage }) {
 
   const NAV_CARDS = [
     { label:'關於我哋',        bg:NAVY,    text:'rgba(255,255,255,0.9)', links:[{label:'我哋嘅使命',href:'../../pages/cnstory.html'},{label:'我哋嘅團隊',href:'../../pages/cnteam.html'},{label:'合作夥伴',href:'../../pages/cnpartnership.html'}] },
-    { label:'課程',     bg:NAVY2,   text:'rgba(255,255,255,0.9)', links:[{label:'辯論課程',href:'../../pages/cnofferings.html'},{label:'生物倫理',href:'../../pages/cnbiology.html'},{label:'夏季日程',href:'../../pages/cncalendar.html'},{label:'WSDC & BP 課程',href:'../../pages/cnofferings.html'}] },
+    { label:'課程',     bg:NAVY2,   text:'rgba(255,255,255,0.9)', links:[{label:'辯論課程',href:'../../pages/cnofferings.html'},{label:'生物倫理',href:'../../pages/cnbiology.html'},{label:'WSDC & BP 課程',href:'../../pages/cnofferings.html'}] },
     { label:'參與我哋', bg:ORANGE, text:'#111d3c', links:[{label:'學生申請',href:STUDENT_FORM_URL},{label:'成為教練',href:COACH_FORM_URL},{label:'捐款',href:DONATE_URL}] },  ];
 
   return (
@@ -403,7 +403,6 @@ void main(){
 function Hero({ setPage }) {
   const [vis, setVis] = React.useState(false);
   const [isCompact, setIsCompact] = React.useState(() => window.innerWidth < 760);
-  const cohort = React.useMemo(getNextCohortCountdown, []);
   React.useEffect(() => { const t = setTimeout(() => setVis(true), 60); return () => clearTimeout(t); }, []);
   React.useEffect(() => {
     const onResize = () => setIsCompact(window.innerWidth < 760);
@@ -426,7 +425,7 @@ function Hero({ setPage }) {
             免費網上辯論及生物倫理暑期課程。幾分鐘完成申請，我哋會按年齡、經驗和目標安排合適小班。
           </p>
           <div style={{ display:'flex', gap:0, marginBottom:32, borderTop:'1px solid rgba(255,255,255,0.1)', borderBottom:'1px solid rgba(255,255,255,0.1)', opacity:vis?1:0, animation:vis?'fadeUp 0.6s ease 0.22s both':'none' }}>
-            {[[cohort.allStarted ? '持續招生中' : `${cohort.nextLabel}開始`,'2026 夏季小班'],['5–10人小班','更多練習和回饋'],['費用全免','無需試鏡或文章']].map(([heading,sub],i) => (
+            {[['5–10人小班','更多練習和回饋'],['費用全免','無需試鏡或文章'],['網上授課','隨時隨地學習']].map(([heading,sub],i) => (
               <div key={i} style={{ flex:1, padding:'14px 18px', borderRight:i<2?'1px solid rgba(255,255,255,0.1)':'none' }}>
                 <div style={{ fontSize:13, fontWeight:700, color:WHITE, marginBottom:3 }}>{heading}</div>
                 <div style={{ fontSize:12, color:'rgba(255,255,255,0.42)', fontWeight:400 }}>{sub}</div>
@@ -435,7 +434,6 @@ function Hero({ setPage }) {
           </div>
           <div style={{ display:'flex', gap:12, flexWrap:'wrap', opacity:vis?1:0, animation:vis?'fadeUp 0.6s ease 0.3s both':'none' }}>
             <a href={STUDENT_FORM_URL} style={{ background:ORANGE, color:NAVY, border:'none', borderRadius:5, padding:'13px 26px', fontFamily:'DM Sans,sans-serif', fontWeight:800, fontSize:13, cursor:'pointer', letterSpacing:'0.06em', textTransform:'uppercase', boxShadow:`0 8px 28px rgba(247,162,52,0.35)`, textDecoration:'none', display:'inline-flex', alignItems:'center' }}>申請夏季免費名額 →</a>
-            <a href="../../pages/cncalendar.html" style={{ background:'rgba(255,255,255,0.08)', color:WHITE, border:'1.5px solid rgba(255,255,255,0.22)', borderRadius:5, padding:'13px 26px', fontFamily:'DM Sans,sans-serif', fontWeight:700, fontSize:13, cursor:'pointer', letterSpacing:'0.06em', textTransform:'uppercase', textDecoration:'none', display:'inline-flex', alignItems:'center' }}>查看日期</a>
           </div>
         </div>
         <div style={{ display:isCompact ? 'none' : 'flex', alignItems:'center', justifyContent:'center', opacity:vis?1:0, animation:vis?'fadeIn 1s ease 0.4s both':'none' }}>
@@ -730,7 +728,6 @@ function Programs({ setPage }) {
           </div>
           <div style={{ display:'flex', gap:10, flexWrap:'wrap' }}>
             <a href={STUDENT_FORM_URL} style={{ background:NAVY, color:WHITE, border:'none', borderRadius:5, padding:'13px 22px', fontFamily:'DM Sans,sans-serif', fontWeight:800, fontSize:12, cursor:'pointer', letterSpacing:'0.08em', textTransform:'uppercase', flexShrink:0, textDecoration:'none', display:'inline-flex', alignItems:'center' }}>申請配對班級</a>
-            <a href="../../pages/cncalendar.html" style={{ background:'rgba(17,29,60,0.08)', color:NAVY, border:'1.5px solid rgba(17,29,60,0.18)', borderRadius:5, padding:'13px 22px', fontFamily:'DM Sans,sans-serif', fontWeight:700, fontSize:12, cursor:'pointer', letterSpacing:'0.08em', textTransform:'uppercase', flexShrink:0, textDecoration:'none', display:'inline-flex', alignItems:'center' }}>查看日期</a>
           </div>
         </div>
         <div style={{ display:'grid', gridTemplateColumns:isCompact ? '1fr' : 'repeat(2,1fr)', gap:16 }}>
@@ -798,9 +795,6 @@ function CalendarVisual() {
             <div style={{ display:'flex', alignItems:'center', gap:8 }}><span style={{ width:9, height:9, borderRadius:'50%', background:BIO }} />生物倫理</div>
             <div style={{ display:'flex', alignItems:'center', gap:8 }}><span style={{ width:9, height:9, borderRadius:'50%', background:SKY }} />高階 · L3 / PF</div>
           </div>
-        </div>
-        <div style={{ textAlign:'center', marginTop:28 }}>
-          <a href="pages/cncalendar.html" style={{ background:ORANGE, color:NAVY, border:'none', borderRadius:5, padding:'13px 24px', fontFamily:'DM Sans,sans-serif', fontWeight:800, fontSize:12, cursor:'pointer', letterSpacing:'0.08em', textTransform:'uppercase', textDecoration:'none', display:'inline-flex', alignItems:'center', justifyContent:'center' }}>查看完整日程 →</a>
         </div>
       </div>
     </section>
@@ -1005,7 +999,7 @@ function App() {
 
   const renderPage=()=>{
     switch(page){
-      case 'home': return (<><Hero setPage={navigate}/><FirstClassCountdown/><HowToJoinMini/><Programs setPage={navigate}/><CalendarVisual/><StatsBar/><LearningInAction/><Credibility/><GlobalMap/><MissionCards/><Skills/><CTABand setPage={navigate}/></>);
+      case 'home': return (<><Hero setPage={navigate}/><HowToJoinMini/><Programs setPage={navigate}/><StatsBar/><LearningInAction/><Credibility/><GlobalMap/><MissionCards/><Skills/><CTABand setPage={navigate}/></>);
       default: return <PageStub title={page.replace(/-/g,' ').replace(/\b\w/g,c=>c.toUpperCase())} setPage={navigate}/>;
     }
   };

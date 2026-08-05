@@ -74,8 +74,6 @@
     mannernew: "Debate Resource Library",
     "even-if": "Mitigation Trainer",
     others: "More Programs",
-    calendar: "Summer 2026 Programme Calendar",
-    cncalendar: "2026 夏季課程日程",
     cnabout: "關於 DebateCraft",
     cnstory: "我哋嘅使命",
     cnteam: "我哋嘅團隊",
@@ -108,8 +106,6 @@
     mannernew: "mannernew.html",
     "even-if": "even-if.html",
     others: "others.html",
-    calendar: "calendar.html",
-    cncalendar: "cncalendar.html",
     cnabout: "cnabout.html",
     cnstory: "cnstory.html",
     cnteam: "cnteam.html",
@@ -141,8 +137,6 @@
     mannernew: "Explore DebateCraft's React resource library for debate frameworks, guides, and practice drills.",
     "even-if": "Train mitigation and turn responses through DebateCraft's Even If debate practice game.",
     others: "Preview additional DebateCraft public speaking, research, and interdisciplinary programs in development.",
-    calendar: "DebateCraft Summer 2026 programme calendar: sixteen scheduled cohorts, debate and bioethics courses, eight weeks, entirely free.",
-    cncalendar: "DebateCraft 2026 夏季課程日程：十六個已排小班、辯論及生物倫理課程、八個星期，費用全免。",
     cnabout: "了解 DebateCraft 如何為學生免費提供辯論、倡議、公開演說和科學倫理教育。",
     cnstory: "了解 DebateCraft 學生營運非牟利使命、全球學生社群和今年夏天的新課程。",
     cnteam: "認識 DebateCraft 背後的學生領袖、競技辯手、教練和科學導師。",
@@ -169,7 +163,6 @@
     contact: "cncontact",
     resources: "cnresources",
     others: "cnothers",
-    calendar: "cncalendar",
     cnabout: "about",
     cnstory: "story",
     cnteam: "team",
@@ -182,7 +175,6 @@
     cncontact: "contact",
     cnresources: "resources",
     cnothers: "others",
-    cncalendar: "calendar",
   };
 
   function pageUrl(id = pageId) {
@@ -753,12 +745,12 @@
     const navCards = isZh
       ? [
           { label: "關於我哋", links: [["我哋嘅使命", "cnstory.html"], ["我哋嘅團隊", "cnteam.html"], ["合作夥伴", "cnpartnership.html"]] },
-          { label: "課程", links: [["辯論課程", "cncourses.html"], ["生物倫理", "cnbiology.html"], ["暑期日程", "cncalendar.html"], ["資源", "cnresources.html"]] },
+          { label: "課程", links: [["辯論課程", "cncourses.html"], ["生物倫理", "cnbiology.html"], ["資源", "cnresources.html"]] },
           { label: "參與我哋", links: [["學生申請", STUDENT_FORM_URL], ["成為教練", "https://docs.google.com/forms/d/e/1FAIpQLSfombgLTJ0oDbWfCaSumrnLAjkdvT_K9FW1KJakbr9ZAQxwnQ/viewform?usp=header"], ["捐款", "https://buymeacoffee.com/debatecraft"]] },
         ]
       : [
           { label: "About", links: [["Our Mission", "story.html"], ["Our Team", "team.html"], ["Partnership", "partnership.html"]] },
-          { label: "Programs", links: [["Debate Courses", "offerings.html"], ["Bioethics", "biology.html"], ["Summer Calendar", "calendar.html"], ["Resources", "resources.html"]] },
+          { label: "Programs", links: [["Debate Courses", "offerings.html"], ["Bioethics", "biology.html"], ["Resources", "resources.html"]] },
           { label: "Get Involved", links: [["Apply as Student", STUDENT_FORM_URL], ["Become a Coach", "https://docs.google.com/forms/d/e/1FAIpQLSfombgLTJ0oDbWfCaSumrnLAjkdvT_K9FW1KJakbr9ZAQxwnQ/viewform?usp=header"], ["Donate", "https://buymeacoffee.com/debatecraft"]] },
         ];
 
@@ -1838,7 +1830,7 @@
                 h(
                   "div",
                   { className: "teaching-chips" },
-                  active.classes.map((c) => h("a", { key: c, className: "teaching-chip", href: `${isZh ? "cncalendar.html" : "calendar.html"}#cohort-${slugify(c)}` }, c))
+                  active.classes.map((c) => h("span", { key: c, className: "teaching-chip" }, c))
                 )
               )
           )
@@ -2276,18 +2268,6 @@
         subtitle: p.tag,
         href: isZh ? "cncourses.html" : "offerings.html",
         keywords: norm(p.title, p.tag, p.text, p.details),
-      });
-    });
-
-    courses.forEach((group) => {
-      group.cohorts.forEach((c) => {
-        records.push({
-          type: "cohort",
-          title: c.name,
-          subtitle: `${group.name} · ${c.dates} · ${c.time}`,
-          href: `${isZh ? "cncalendar.html" : "calendar.html"}#${c.cohortId}`,
-          keywords: norm(c.name, group.name, group.tagline, c.dates),
-        });
       });
     });
 
@@ -3062,13 +3042,13 @@
   function Footer() {
     const cols = isZh
       ? [
-          ["課程", [["辯論課程", "cncourses.html"], ["生物倫理", "cnbiology.html"], ["暑期日程", "cncalendar.html"], ["資源", "cnresources.html"]]],
+          ["課程", [["辯論課程", "cncourses.html"], ["生物倫理", "cnbiology.html"], ["資源", "cnresources.html"]]],
           ["組織", [["我哋嘅使命", "cnstory.html"], ["我哋嘅團隊", "cnteam.html"], ["合作夥伴", "cnpartnership.html"]]],
           ["參與", [["學生申請", STUDENT_FORM_URL], ["成為教練", "https://docs.google.com/forms/d/e/1FAIpQLSfombgLTJ0oDbWfCaSumrnLAjkdvT_K9FW1KJakbr9ZAQxwnQ/viewform?usp=header"], ["捐款", "https://buymeacoffee.com/debatecraft"]]],
           ["聯絡", [["info@debatecraft.org", "mailto:info@debatecraft.org"], ["Instagram", "https://www.instagram.com/debate_craft/"], ["Facebook", "https://www.facebook.com/profile.php?id=61577761071956"]]],
         ]
       : [
-          ["Programs", [["Debate Courses", "offerings.html"], ["Bioethics", "biology.html"], ["Summer Calendar", "calendar.html"], ["Resources", "resources.html"]]],
+          ["Programs", [["Debate Courses", "offerings.html"], ["Bioethics", "biology.html"], ["Resources", "resources.html"]]],
           ["Organisation", [["Our Mission", "story.html"], ["Our Team", "team.html"], ["Partnership", "partnership.html"]]],
           ["Get Involved", [["Apply as Student", STUDENT_FORM_URL], ["Become a Coach", "https://docs.google.com/forms/d/e/1FAIpQLSfombgLTJ0oDbWfCaSumrnLAjkdvT_K9FW1KJakbr9ZAQxwnQ/viewform?usp=header"], ["Donate", "https://buymeacoffee.com/debatecraft"]]],
           ["Contact", [["info@debatecraft.org", "mailto:info@debatecraft.org"], ["Instagram", "https://www.instagram.com/debate_craft/"], ["Facebook", "https://www.facebook.com/profile.php?id=61577761071956"]]],
@@ -3388,7 +3368,7 @@
     if (["donate", "cndonate"].includes(pageId)) return h(DonatePage);
     if (["contact", "cncontact"].includes(pageId)) return h(ContactPage);
     if (["resources", "cnresources"].includes(pageId)) return h(ResourcesPage);
-    if (["calendar", "cncalendar"].includes(pageId)) return h(CalendarPage);
+    if (["calendar", "cncalendar"].includes(pageId)) return h(ProgramsPage);
     if (pageId === "mannernew") return h(ResourceHubPage, { initialTool: "learn" });
     if (pageId === "guides") return h(GuidesPage);
     if (pageId === "blog") return h(BlogPage);

@@ -154,53 +154,6 @@ const HOME_PROOF_IMAGES = [
 
 const PROOF_COPY = { testimonials: [], studentOutcomes: [], partnerBlurbs: [], partnerLogos: [] };
 
-const CALENDAR_WEEKS = ['Jun 22','Jun 29','Jul 6','Jul 13','Jul 20','Jul 27','Aug 3','Aug 10'];
-const CALENDAR_ROWS = [
-  { label:'Level 2 A', color:'ink', start:0, span:2 },
-  { label:'Level 2B WSDC', color:'sky', start:2, span:2 },
-  { label:'Level 3 WSDC A', color:'sky', start:2, span:2 },
-  { label:'Level 1 A', color:'orange', start:3, span:3 },
-  { label:'Level 1 B', color:'orange', start:4, span:3 },
-  { label:'Level 1 C', color:'orange', start:4, span:3 },
-  { label:'Level 3 BP', color:'sky', start:4, span:2 },
-  { label:'Bioethics A', color:'bio', start:3, span:2 },
-  { label:'Level 1 D', color:'orange', start:5, span:3 },
-  { label:'Level 1 E', color:'orange', start:5, span:3 },
-  { label:'Level 2 C', color:'ink', start:5, span:2 },
-  { label:'PF A', color:'sky', start:5, span:2 },
-  { label:'Bioethics B', color:'bio', start:5, span:2 },
-  { label:'Bioethics C', color:'bio', start:6, span:2 },
-  { label:'L3 WSDC B', color:'sky', start:6, span:2 },
-  { label:'PF B', color:'sky', start:6, span:2 },
-];
-const WEEK_START_DATES = [
-  '2026-06-22T00:00:00+08:00',
-  '2026-06-29T00:00:00+08:00',
-  '2026-07-06T00:00:00+08:00',
-  '2026-07-13T00:00:00+08:00',
-  '2026-07-20T00:00:00+08:00',
-  '2026-07-27T00:00:00+08:00',
-  '2026-08-03T00:00:00+08:00',
-  '2026-08-10T00:00:00+08:00',
-];
-
-function getNextCohortCountdown() {
-  const now = Date.now();
-  const nextIndex = WEEK_START_DATES.findIndex(d => new Date(d).getTime() > now);
-  const allStarted = nextIndex === -1;
-  const target = allStarted ? now : new Date(WEEK_START_DATES[nextIndex]).getTime();
-  const diff = Math.max(0, target - now);
-  return {
-    allStarted,
-    nextIndex,
-    nextLabel: allStarted ? null : CALENDAR_WEEKS[nextIndex],
-    days: Math.floor(diff / 86400000),
-    hours: Math.floor((diff % 86400000) / 3600000),
-    minutes: Math.floor((diff % 3600000) / 60000),
-    seconds: Math.floor((diff % 60000) / 1000),
-  };
-}
-
 const COUNTRIES = ['Canada','United States','Panama','United Kingdom','Pakistan','India','Qatar','Indonesia','Vietnam','South Korea','China','Hong Kong'];
 const STUDENT_FORM_URL = 'https://form.jotform.com/261003548067049';
 const COURSE_INTEREST_FORM_URL = 'https://form.jotform.com/261003548067049';
@@ -221,7 +174,6 @@ const HOME_SEARCH_PAGES = [
   { title:'Resources', desc:"Use DebateCraft's free debate resource hub with guides, framework drills, speaking practice, videos, and mitigation games.", href:'../../pages/resources.html' },
   { title:'Guides', desc:"Browse DebateCraft's debate guides, WSDC and BP resources, motion preparation materials, and practice tools.", href:'../../pages/guides.html' },
   { title:'Blog', desc:'Read DebateCraft updates, debate education reflections, and student learning resources.', href:'../../pages/blog.html' },
-  { title:'Summer 2026 Programme Calendar', desc:'Sixteen scheduled cohorts, debate and bioethics courses, eight weeks, entirely free.', href:'../../pages/calendar.html' },
 ];
 
 function buildHomeSearchIndex() {
@@ -289,7 +241,7 @@ function SearchOverlay({ open, onClose }) {
             style={{ border:0, background:'transparent', color:'rgba(17,29,60,0.4)', fontSize:22, lineHeight:1, cursor:'pointer', padding:'0 2px' }}>×</button>
         </div>
         <div style={{ overflowY:'auto', padding:'8px 10px 14px' }}>
-          {!q && <div style={{ padding:'26px 14px', textAlign:'center', color:'rgba(17,29,60,0.45)', fontSize:13, lineHeight:1.6 }}>Start typing to search pages and programs. For guides, team, and the full calendar, open any page's search.</div>}
+          {!q && <div style={{ padding:'26px 14px', textAlign:'center', color:'rgba(17,29,60,0.45)', fontSize:13, lineHeight:1.6 }}>Start typing to search pages and programs. For guides and team information, open any page's search.</div>}
           {q && totalShown === 0 && <div style={{ padding:'26px 14px', textAlign:'center', color:'rgba(17,29,60,0.45)', fontSize:13, lineHeight:1.6 }}>No results for "{query}".</div>}
           {grouped.map(g => (
             <div key={g.type} style={{ marginTop:10 }}>
@@ -385,7 +337,7 @@ function Nav({ page, setPage }) {
 
   const NAV_CARDS = [
     { label:'About',        bg:NAVY,    text:'rgba(255,255,255,0.9)', links:[{label:'Our Mission',href:'../../pages/story.html'},{label:'Our Team',href:'../../pages/team.html'},{label:'Partnership',href:'../../pages/partnership.html'}] },
-    { label:'Programs',     bg:NAVY2,   text:'rgba(255,255,255,0.9)', links:[{label:'Debate Courses',href:'../../pages/offerings.html'},{label:'Bioethics',href:'../../pages/biology.html'},{label:'Summer Calendar',href:'../../pages/calendar.html'},{label:'WSDC & BP Tracks',href:'../../pages/offerings.html'}] },
+    { label:'Programs',     bg:NAVY2,   text:'rgba(255,255,255,0.9)', links:[{label:'Debate Courses',href:'../../pages/offerings.html'},{label:'Bioethics',href:'../../pages/biology.html'},{label:'WSDC & BP Tracks',href:'../../pages/offerings.html'}] },
     { label:'Get Involved', bg:ORANGE, text:'#111d3c', links:[{label:'Apply as Student',href:STUDENT_FORM_URL},{label:'Become a Coach',href:COACH_FORM_URL},{label:'Donate',href:DONATE_URL}] },  ];
 
   return (
@@ -538,7 +490,6 @@ void main(){
 function Hero({ setPage }) {
   const [vis, setVis] = React.useState(false);
   const [isCompact, setIsCompact] = React.useState(() => window.innerWidth < 760);
-  const cohort = React.useMemo(getNextCohortCountdown, []);
   React.useEffect(() => { const t = setTimeout(() => setVis(true), 60); return () => clearTimeout(t); }, []);
   React.useEffect(() => {
     const onResize = () => setIsCompact(window.innerWidth < 760);
@@ -562,7 +513,7 @@ function Hero({ setPage }) {
           </p>
           {/* Key facts strip */}
           <div style={{ display:'flex', gap:0, marginBottom:32, borderTop:'1px solid rgba(255,255,255,0.1)', borderBottom:'1px solid rgba(255,255,255,0.1)', opacity:vis?1:0, animation:vis?'fadeUp 0.6s ease 0.22s both':'none' }}>
-            {[[cohort.allStarted ? 'Rolling Enrollment' : `Starts ${cohort.nextLabel}`,'Summer 2026 cohorts'],['5–10 Students','Small groups, more feedback'],['No Cost','No audition or essay']].map(([heading,sub],i) => (
+            {[['Small Groups','5–10 students, more feedback'],['No Cost','No audition or essay'],['Online','Learn from anywhere']].map(([heading,sub],i) => (
               <div key={i} style={{ flex:1, padding:'14px 18px', borderRight:i<2?'1px solid rgba(255,255,255,0.1)':'none' }}>
                 <div style={{ fontSize:13, fontWeight:700, color:WHITE, marginBottom:3 }}>{heading}</div>
                 <div style={{ fontSize:12, color:'rgba(255,255,255,0.42)', fontWeight:400 }}>{sub}</div>
@@ -571,7 +522,6 @@ function Hero({ setPage }) {
           </div>
           <div style={{ display:'flex', gap:12, flexWrap:'wrap', opacity:vis?1:0, animation:vis?'fadeUp 0.6s ease 0.3s both':'none' }}>
             <a href={STUDENT_FORM_URL} style={{ background:ORANGE, color:NAVY, border:'none', borderRadius:5, padding:'13px 26px', fontFamily:'DM Sans,sans-serif', fontWeight:800, fontSize:13, cursor:'pointer', letterSpacing:'0.06em', textTransform:'uppercase', boxShadow:`0 8px 28px rgba(247,162,52,0.35)`, textDecoration:'none', display:'inline-flex', alignItems:'center' }}>Apply Free for Summer →</a>
-            <a href="../../pages/calendar.html" style={{ background:'rgba(255,255,255,0.08)', color:WHITE, border:'1.5px solid rgba(255,255,255,0.22)', borderRadius:5, padding:'13px 26px', fontFamily:'DM Sans,sans-serif', fontWeight:700, fontSize:13, cursor:'pointer', letterSpacing:'0.06em', textTransform:'uppercase', textDecoration:'none', display:'inline-flex', alignItems:'center' }}>See Dates</a>
           </div>
         </div>
         {/* Arc column */}
@@ -642,100 +592,6 @@ function StatsBar() {
   );
 }
 
-/* ── FIRST CLASS COUNTDOWN ──────────────────── */
-function FirstClassCountdown() {
-  const [remaining, setRemaining] = React.useState(getNextCohortCountdown);
-  React.useEffect(() => {
-    const timer = setInterval(() => setRemaining(getNextCohortCountdown()), 1000);
-    return () => clearInterval(timer);
-  }, []);
-
-  const units = [
-    { label:'Days', value:remaining.days },
-    { label:'Hours', value:remaining.hours },
-    { label:'Minutes', value:remaining.minutes },
-    { label:'Seconds', value:remaining.seconds },
-  ];
-
-  return (
-    <section className="home-countdown" style={{ background:CREAM, padding:'38px 0 54px' }}>
-      <div style={{ maxWidth:1200, margin:'0 auto', padding:'0 32px' }}>
-        <div style={{ background:NAVY, color:WHITE, borderTop:`4px solid ${ORANGE}`, borderRadius:8, padding:'28px clamp(22px,4vw,38px)', display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(260px, 1fr))', gap:28, alignItems:'center', boxShadow:'0 18px 46px rgba(17,29,60,0.16)' }}>
-          <div>
-            <div style={{ fontSize:10, fontWeight:800, color:ORANGE, letterSpacing:'0.14em', textTransform:'uppercase', marginBottom:10 }}>{remaining.allStarted ? 'Rolling Enrollment' : 'Next Cohort Opens'}</div>
-            <h2 className="serif" style={{ fontSize:'clamp(30px,5vw,44px)', lineHeight:1.05, marginBottom:10 }}>{remaining.allStarted ? 'New Cohorts All Summer.' : `Next Cohort Starts ${remaining.nextLabel}!`}</h2>
-            <p style={{ color:'rgba(255,255,255,0.62)', fontSize:14, lineHeight:1.7, maxWidth:560 }}>{remaining.allStarted ? 'Apply now and DebateCraft will place you in the next available cohort.' : 'Apply now and start your debate journey with DebateCraft this summer!'}</p>
-          </div>
-          <div>
-            {!remaining.allStarted && (
-            <div style={{ display:'grid', gridTemplateColumns:'repeat(4, minmax(0,1fr))', gap:10, marginBottom:16 }}>
-              {units.map(unit => (
-                <div key={unit.label} style={{ background:'rgba(255,255,255,0.07)', border:'1px solid rgba(255,255,255,0.09)', borderRadius:6, padding:'16px 10px', textAlign:'center' }}>
-                  <div className="serif" style={{ color:ORANGE, fontSize:'clamp(28px,5vw,40px)', fontWeight:800, lineHeight:1 }}>{unit.label === 'Days' ? unit.value : String(unit.value).padStart(2,'0')}</div>
-                  <div style={{ marginTop:6, color:'rgba(255,255,255,0.48)', fontSize:9, fontWeight:800, letterSpacing:'0.12em', textTransform:'uppercase' }}>{unit.label}</div>
-                </div>
-              ))}
-            </div>
-            )}
-            <a href={STUDENT_FORM_URL} style={{ width:'100%', background:ORANGE, color:NAVY, borderRadius:5, padding:'13px 18px', fontSize:12, fontWeight:800, letterSpacing:'0.08em', textTransform:'uppercase', textDecoration:'none', display:'inline-flex', justifyContent:'center', alignItems:'center' }}>Reserve Your Spot Now →</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ── CALENDAR VISUAL ────────────────────────── */
-function CalendarVisual() {
-  const colorMap = { orange:ORANGE, sky:SKY, ink:NAVY, bio:BIO };
-  return (
-    <section className="home-calendar-visual" style={{ background:NAVY2, padding:'88px 0', overflowX:'hidden' }}>
-      <div style={{ maxWidth:1200, margin:'0 auto', padding:'0 32px' }}>
-        <div style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-end', gap:24, flexWrap:'wrap', marginBottom:34 }}>
-          <div>
-            <div style={{ fontSize:11, fontWeight:700, color:ORANGE, letterSpacing:'0.14em', textTransform:'uppercase', marginBottom:14 }}>Summer 2026 Calendar</div>
-            <h2 className="serif" style={{ fontSize:52, fontWeight:800, color:WHITE, lineHeight:1.08 }}>Eight Weeks,<br /><em style={{ color:ORANGE, fontStyle:'italic' }}>Sixteen Cohorts.</em></h2>
-          </div>
-        </div>
-
-        <div style={{ background:WHITE, borderRadius:8, borderTop:`4px solid ${ORANGE}`, boxShadow:'0 22px 50px rgba(0,0,0,0.2)', overflow:'hidden' }}>
-          <div style={{ overflowX:'auto' }}>
-            <div style={{ minWidth:920, display:'grid', gridTemplateColumns:'170px repeat(8, minmax(86px, 1fr))' }}>
-              <div style={{ padding:'14px 14px', background:NAVY, color:'rgba(255,255,255,0.6)', fontSize:10, fontWeight:800, letterSpacing:'0.12em', textTransform:'uppercase' }}>Cohort</div>
-              {CALENDAR_WEEKS.map(week => (
-                <div key={week} style={{ padding:'14px 8px', background:NAVY, color:'rgba(255,255,255,0.6)', fontSize:10, fontWeight:800, letterSpacing:'0.08em', textAlign:'center', borderLeft:'1px solid rgba(255,255,255,0.08)' }}>{week}</div>
-              ))}
-              {CALENDAR_ROWS.map((row, rowIndex) => (
-                <React.Fragment key={row.label}>
-                  <div style={{ padding:'11px 14px', display:'flex', alignItems:'center', gap:8, background:'rgba(245,240,232,0.62)', borderBottom:rowIndex<CALENDAR_ROWS.length-1?'1px solid rgba(17,29,60,0.1)':'none', fontSize:12, fontWeight:800, color:NAVY }}>
-                    <span style={{ width:9, height:9, borderRadius:'50%', background:colorMap[row.color], flexShrink:0 }} />
-                    {row.label}
-                  </div>
-                  {CALENDAR_WEEKS.map((week, weekIndex) => (
-                    <div key={`${row.label}-${week}`} style={{ height:36, position:'relative', borderLeft:'1px solid rgba(17,29,60,0.1)', borderBottom:rowIndex<CALENDAR_ROWS.length-1?'1px solid rgba(17,29,60,0.1)':'none' }}>
-                      {weekIndex === row.start && (
-                        <div style={{ position:'absolute', left:8, top:'50%', transform:'translateY(-50%)', width:`calc(${row.span * 100}% - 16px)`, height:11, borderRadius:999, background:colorMap[row.color], boxShadow:'0 6px 14px rgba(17,29,60,0.16)' }} />
-                      )}
-                    </div>
-                  ))}
-                </React.Fragment>
-              ))}
-            </div>
-          </div>
-          <div style={{ display:'flex', gap:20, flexWrap:'wrap', padding:'14px 18px', borderTop:'1px solid rgba(17,29,60,0.08)', color:'rgba(17,29,60,0.58)', fontSize:10, fontWeight:800, letterSpacing:'0.1em', textTransform:'uppercase' }}>
-            <div style={{ display:'flex', alignItems:'center', gap:8 }}><span style={{ width:9, height:9, borderRadius:'50%', background:ORANGE }} />Beginner · Level 1</div>
-            <div style={{ display:'flex', alignItems:'center', gap:8 }}><span style={{ width:9, height:9, borderRadius:'50%', background:NAVY }} />Intermediate</div>
-            <div style={{ display:'flex', alignItems:'center', gap:8 }}><span style={{ width:9, height:9, borderRadius:'50%', background:BIO }} />Bioethics</div>
-            <div style={{ display:'flex', alignItems:'center', gap:8 }}><span style={{ width:9, height:9, borderRadius:'50%', background:SKY }} />Advanced · L3 / PF</div>
-          </div>
-        </div>
-        <div style={{ textAlign:'center', marginTop:28 }}>
-          <a href="pages/calendar.html" style={{ background:ORANGE, color:NAVY, border:'none', borderRadius:5, padding:'13px 24px', fontFamily:'DM Sans,sans-serif', fontWeight:800, fontSize:12, cursor:'pointer', letterSpacing:'0.08em', textTransform:'uppercase', textDecoration:'none', display:'inline-flex', alignItems:'center', justifyContent:'center' }}>View Full Calendar →</a>
-        </div>
-      </div>
-    </section>
-  );
-}
 /* ── LEARNING PROOF STRIP ───────────────────── */
 function LearningInAction() {
   const [isCompact, setIsCompact] = React.useState(() => window.innerWidth < 860);
@@ -918,7 +774,6 @@ function Programs({ setPage }) {
           </div>
           <div style={{ display:'flex', gap:10, flexWrap:'wrap' }}>
             <a href={STUDENT_FORM_URL} style={{ background:NAVY, color:WHITE, border:'none', borderRadius:5, padding:'13px 22px', fontFamily:'DM Sans,sans-serif', fontWeight:800, fontSize:12, cursor:'pointer', letterSpacing:'0.08em', textTransform:'uppercase', flexShrink:0, textDecoration:'none', display:'inline-flex', alignItems:'center' }}>Apply for Placement</a>
-            <a href="../../pages/calendar.html" style={{ background:'rgba(17,29,60,0.08)', color:NAVY, border:'1.5px solid rgba(17,29,60,0.18)', borderRadius:5, padding:'13px 22px', fontFamily:'DM Sans,sans-serif', fontWeight:700, fontSize:12, cursor:'pointer', letterSpacing:'0.08em', textTransform:'uppercase', flexShrink:0, textDecoration:'none', display:'inline-flex', alignItems:'center' }}>View Dates</a>
           </div>
         </div>
         <div style={{ display:'grid', gridTemplateColumns:isCompact ? '1fr' : 'repeat(2,1fr)', gap:16 }}>
@@ -1134,7 +989,7 @@ function App() {
 
   const renderPage=()=>{
     switch(page){
-      case 'home': return (<><Hero setPage={navigate}/><FirstClassCountdown/><HowToJoinMini/><Programs setPage={navigate}/><CalendarVisual/><StatsBar/><LearningInAction/><Credibility/><GlobalMap/><MissionCards/><Skills/><CTABand setPage={navigate}/></>);
+      case 'home': return (<><Hero setPage={navigate}/><HowToJoinMini/><Programs setPage={navigate}/><StatsBar/><LearningInAction/><Credibility/><GlobalMap/><MissionCards/><Skills/><CTABand setPage={navigate}/></>);
       default: return <PageStub title={page.replace(/-/g,' ').replace(/\b\w/g,c=>c.toUpperCase())} setPage={navigate}/>;
     }
   };

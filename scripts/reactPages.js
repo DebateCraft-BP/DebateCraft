@@ -34,7 +34,7 @@
       langHref: pageId.replace(/^cn/, "") ? `${pageId.replace(/^cn/, "")}.html` : "../index.html",
       cta: "免費申請 →",
     },
-    footerSummary: "為 3 至 12 年級學生提供免費辯論與科學課程，連結全球 12+ 國家學生。",
+    footerSummary: "由學生主導，提供免費辯論、溝通及生物倫理學習。",
   };
 
   const en = {
@@ -50,7 +50,7 @@
       langHref: pageId === "even-if" ? "../cnindex.html" : `cn${pageId}.html`,
       cta: "Apply Free →",
     },
-    footerSummary: "Free debate and science programs for Grades 3-12 across 12+ countries.",
+    footerSummary: "Student-led, free learning in debate, communication, and bioethics.",
   };
 
   const t = isZh ? cn : en;
@@ -121,9 +121,9 @@
   };
 
   const pageDescriptions = {
-    about: "Learn how DebateCraft gives students free access to debate, advocacy, public speaking, and science ethics education.",
-    story: "Explore DebateCraft's student-run nonprofit mission, global reach, and expanded summer course offerings.",
-    team: "Meet the student leaders, competitive debaters, coaches, and science instructors behind DebateCraft.",
+    about: "Learn how DebateCraft expands access to free, rigorous learning in debate, communication, and bioethics.",
+    story: "Explore DebateCraft's student-led nonprofit mission, access-first approach, and learning philosophy.",
+    team: "Meet DebateCraft's student-led community of mentors, coaches, and collaborators supporting young people's learning.",
     offerings: "Compare DebateCraft's free debate courses, from beginner PEEL argumentation to PF, WSDC, BP, and advanced debate seminars.",
     biology: "A free Bioethics course on genetics, CRISPR, AI in healthcare, medical decision-making, and final expert panel projects.",
     partnership: "Partner with DebateCraft to bring free debate coaching and public speaking education to students and communities.",
@@ -137,9 +137,9 @@
     mannernew: "Explore DebateCraft's React resource library for debate frameworks, guides, and practice drills.",
     "even-if": "Train mitigation and turn responses through DebateCraft's Even If debate practice game.",
     others: "Preview additional DebateCraft public speaking, research, and interdisciplinary programs in development.",
-    cnabout: "了解 DebateCraft 如何為學生免費提供辯論、倡議、公開演說和科學倫理教育。",
-    cnstory: "了解 DebateCraft 學生營運非牟利使命、全球學生社群和今年夏天的新課程。",
-    cnteam: "認識 DebateCraft 背後的學生領袖、競技辯手、教練和科學導師。",
+    cnabout: "了解 DebateCraft 如何擴闊免費而嚴謹嘅辯論、溝通同生物倫理學習機會。",
+    cnstory: "了解 DebateCraft 由學生主導嘅非牟利使命、學習機會優先嘅方向同學習理念。",
+    cnteam: "認識 DebateCraft 由學生主導嘅導師、教練同協作夥伴社群。",
     cnofferings: "比較 DebateCraft 免費辯論課程，由初學 PEEL 立論到 PF、WSDC、BP 和高階辯論訓練。",
     cncourses: "比較 DebateCraft 免費辯論課程，由初學 PEEL 立論到 PF、WSDC、BP 和高階辯論訓練。",
     cnbiology: "免費生物倫理課程，討論遺傳學、CRISPR、AI 醫療、醫療決策和專家評審項目。",
@@ -1432,27 +1432,25 @@
   function MissionPage() {
     const missionParagraphs = isZh
       ? [
-          "由第一日起，DebateCraft 就係一個由學生營運嘅非牟利項目，目標係賦能中學生，培養佢哋喺論證、倡議同公開演說上嘅核心能力。",
-          "我哋希望為資源不足、代表性不足嘅學生提供高質素教育，幫助佢哋喺學術同人生中都能更有信心地表達、分析同領導。",
-          "為咗擴闊學生創造正面改變嘅能力，我哋相信課程應覆蓋由九歲初學者到大學一年級學生，讓更多人掌握辯論技巧。",
-          "同時，生物學正快速發展，並且喺學術以外越來越具社會影響力。因此我哋今年夏天首次推出生物倫理課程，由出色嘅生物導師團隊帶領。",
+          "DebateCraft 係一個由學生主導嘅非牟利組織，致力令更多年輕人更容易接觸免費而嚴謹嘅學習。",
+          "我哋相信，學生能夠提出困難問題、認真聆聽，同時細心發展自己想法時，學得最好。",
+          "我哋嘅課程連結辯論、溝通、科學、倫理，同埋身邊世界正在面對嘅問題。",
         ]
       : [
-          "From day one, DebateCraft has been a student-run nonprofit initiative designed to empower middle and high school students. Our focus is on equipping them with essential skills in argumentation, advocacy, and public speaking.",
-          "We aim to provide high-quality education to under-resourced and underrepresented students, empowering them to excel academically and in life.",
-          "To expand students' ability to create positive change in the world, we believe our student base benefits from expanded offerings that serve learners from age nine through their first year of university and equip them with the craft of debate.",
-          "Similarly, biology is a rapidly expanding field that is becoming increasingly relevant beyond academic contexts. This summer, we are offering Bioethics for the first time under the instruction of our decorated Biology instructor team.",
+          "DebateCraft is a student-led nonprofit that makes free, rigorous learning more accessible to young people.",
+          "We believe students learn best when they can ask difficult questions, listen seriously, and develop their own ideas with care.",
+          "Our programmes connect debate and communication with science, ethics, and the questions shaping the world around us.",
         ];
-    const summerCards = isZh
+    const learningCards = isZh
       ? [
-          ["辯論課程全面升級", "過去一年，我哋持續優化辯論課程架構同內容，確保唔同程度嘅學生都能被放喺最合適嘅學習路徑。教練同課程開發者定期分析學生回饋，提升課堂參與度同內容保留率。", ORANGE],
-          ["世界級課程顧問", "為建立世界級團隊，Sandeep Chulani（前香港校際辯論及公共演講社群主席、亞太地區前十評審）同 Angga Djovanka（現任摩洛哥國家辯論隊教練）都協助我哋打造更有參與感、更有效嘅辯論課程。", SKY],
-          ["首次推出生物倫理", "生物倫理係全新課程。我哋多次迭代課綱，並參考前 DebateCraft 學生焦點小組意見，刻意設計成能補足辯論教育、同時聚焦近期生物科技發展嘅課程。", "#0d9488"],
+          ["辯論與溝通", "學生練習清晰推理、認真聆聽同有說服力嘅溝通。", ORANGE],
+          ["顧問與 Team HK 經驗", "DebateCraft 獲顧問 Sandeep Chulani 支持；我哋嘅學習社群亦包括具高水平國際辯論經驗嘅 Team HK WSDC 成員。", SKY],
+          ["科學與倫理", "生物倫理將科學問題同倫理反思連結起來。", "#0d9488"],
         ]
       : [
-          ["Debate Courses, Rebuilt", "Over the last year, we refined and upgraded our debate course structure and content to place students at every level more effectively. Coaches and curriculum developers met regularly to analyze student feedback and improve engagement and content retention.", ORANGE],
-          ["World-Class Curriculum Support", "Sandeep Chulani, former chair of the Hong Kong Schools Debating and Public Speaking Community and a top-ten judge in the Asia-Pacific region, and Angga Djovanka, current coach of the Moroccan national debate team, helped us build a debate curriculum that is uniquely engaging and effective.", SKY],
-          ["Bioethics Launch", "For our completely new Bioethics course, we iterated the curriculum numerous times with consultation from former DebateCraft student focus groups. The result is designed to complement debate education with a topical focus on recent biological advancements.", "#0d9488"],
+          ["Debate & Communication", "Students practise clear reasoning, careful listening, and persuasive communication.", ORANGE],
+          ["Advisory & Team HK Experience", "DebateCraft benefits from guidance by adviser Sandeep Chulani and from a learning community that includes Team HK WSDC members with high-level international debate experience.", SKY],
+          ["Science & Ethics", "Bioethics connects scientific questions with ethical reflection.", "#0d9488"],
         ];
 
     return h(
@@ -1462,13 +1460,13 @@
         eyebrow: isZh ? "我哋相信" : "What We Stand For",
         title: isZh ? "每位學生都值得擁有" : "Every Student Deserves",
         emphasis: isZh ? "發聲機會。" : "a Voice.",
-        subtitle: isZh ? "DebateCraft 由學生營運，為全球學生提供免費辯論教育。" : "DebateCraft turns quiet ideas into commanding voices, led entirely by students for students across the world.",
+        subtitle: isZh ? "由學生主導，提供免費而嚴謹嘅辯論、溝通同生物倫理學習。" : "Student-led, free, rigorous learning in debate, communication, and bioethics.",
       }),
       h(
         Section,
         null,
         h("div", { className: "grid grid-2", style: { alignItems: "start" } },
-          h(TitleBlock, { eyebrow: isZh ? "使命宣言" : "Our Mission", title: isZh ? "學生賦能" : "Students Empowering", emphasis: isZh ? "學生。" : "Students.", lead: isZh ? "DebateCraft 將多年國際辯論、教練同課程設計經驗濃縮成清晰、免費、可持續嘅訓練，幫學生建立論證、倡議同公開演說能力。" : "DebateCraft makes rigorous debate education accessible while expanding into science and ethics education that helps students think clearly about the world they will inherit." }),
+          h(TitleBlock, { eyebrow: isZh ? "我哋嘅使命" : "Our Mission", title: isZh ? "學生賦予" : "Students Empowering", emphasis: isZh ? "學生力量。" : "Students.", lead: isZh ? "DebateCraft 幫助年輕人建立清晰推理、認真對話同自信表達嘅習慣。" : "DebateCraft helps young people build the habits of clear reasoning, thoughtful dialogue, and confident expression." }),
           h("div", { className: "card", style: { "--accent": ORANGE } }, missionParagraphs.map((paragraph) => h("p", { key: paragraph, style: { marginBottom: 14 } }, paragraph)))
         )
       ),
@@ -1483,11 +1481,11 @@
       h(
         Section,
         { cream: true },
-        h(TitleBlock, { eyebrow: isZh ? "今年夏天" : "What Is New This Summer?", title: isZh ? "課程更精準，" : "A Sharper", emphasis: isZh ? "內容更深入。" : "Summer Offering.", center: true }),
+        h(TitleBlock, { eyebrow: isZh ? "有目標嘅學習" : "Learning With Purpose", title: isZh ? "培養有自信嘅" : "Education That Builds", emphasis: isZh ? "思考者。" : "Confident Thinkers.", center: true }),
         h(
           "div",
           { className: "grid grid-3" },
-          summerCards.map(([title, text, accent]) => h(InfoCard, { key: title, title, text, accent }))
+          learningCards.map(([title, text, accent]) => h(InfoCard, { key: title, title, text, accent }))
         )
       ),
       h(StatsBand, { stats: commonStats }),
@@ -1702,8 +1700,8 @@
         .then(setMembers)
         .catch(() =>
           setMembers([
-            { name: "Adrian C", role: isZh ? "執行總監" : "Executive Director", image: "Images/Adrian.png", categories: ["executive", "coaching"], bio: isZh ? "DebateCraft 創辦成員之一。" : "One of DebateCraft's student leaders." },
-            { name: "Gavin Z", role: isZh ? "執行總監" : "Executive Director", image: "Images/Gavin.png", categories: ["executive", "PF"], bio: isZh ? "負責營運、PF 同中文外展。" : "Leads operations, PF, and Chinese outreach." },
+            { name: "Adrian C", role: "", image: "Images/Adrian.png", categories: ["executive", "coaching"], bio: isZh ? "DebateCraft 創辦成員之一。" : "One of DebateCraft's student leaders." },
+            { name: "Gavin Z", role: "", image: "Images/Gavin.png", categories: ["executive", "PF"], bio: isZh ? "DebateCraft 學生團隊成員。" : "A DebateCraft student team member." },
           ])
         );
     }, []);
@@ -1742,9 +1740,12 @@
       };
     }, [active]);
 
+    const publicRole = (member) => {
+      if (member.name !== "Sandeep Chulani") return null;
+      return isZh ? "DebateCraft 顧問" : "Adviser to DebateCraft";
+    };
     const filters = [
       ["all", isZh ? "全部" : "All"],
-      ["executive", isZh ? "核心團隊" : "Executive"],
       ["coaching", isZh ? "教練" : "Coaching"],
       ["private", isZh ? "私人教練" : "Private"],
       ["PF", "PF"],
@@ -1757,11 +1758,11 @@
     return h(
       React.Fragment,
       null,
-      h(PageHeader, { eyebrow: isZh ? "團隊" : "Team", title: isZh ? "我哋嘅學生導師" : "Meet the Team", emphasis: isZh ? "團隊。" : "Behind DebateCraft.", subtitle: isZh ? "由國際辯手、教練、研究者同學生領袖組成。" : "A global team of competitive debaters, coaches, researchers, and student leaders." }),
+      h(PageHeader, { eyebrow: isZh ? "團隊" : "Team", title: isZh ? "認識陪伴學生學習嘅" : "Meet the People Helping", emphasis: isZh ? "團隊。" : "Students Learn.", subtitle: isZh ? "由學生主導嘅導師、教練同協作夥伴社群，陪伴年輕人以自信同好奇心學習。" : "A student-led community of mentors, coaches, and collaborators helping young people learn with confidence and curiosity." }),
       h(
         Section,
         null,
-        h(TitleBlock, { eyebrow: isZh ? "加入我哋" : "Join Our Team", title: isZh ? "一齊建立免費" : "Help Build Free", emphasis: isZh ? "教育。" : "Education.", lead: isZh ? "如果你熱衷辯論、教學或外展，我哋歡迎你加入。" : "If you care about debate, teaching, or outreach, we are always looking for dedicated instructors.", center: true }),
+        h(TitleBlock, { eyebrow: isZh ? "參與其中" : "Take Part", title: isZh ? "一齊支持" : "Help Support", emphasis: isZh ? "學習。" : "Learning.", lead: isZh ? "如果你關心辯論、教學或學習機會，我哋歡迎你了解更多。" : "If you care about debate, teaching, or access to learning, we welcome you to learn more.", center: true }),
         h("div", { style: { textAlign: "center" } }, h(Button, { href: "https://form.jotform.com/253297599452473" }, isZh ? "申請加入 →" : "Join Us →"))
       ),
       h(
@@ -1796,7 +1797,7 @@
                 "div",
                 { className: "team-card-body", style: { padding: "22px 20px 26px" } },
                 h("h3", null, displayName(m.name)),
-                h("div", { style: { fontSize: 12, fontWeight: 700, color: ORANGE, letterSpacing: ".08em", textTransform: "uppercase", marginBottom: 8 } }, m.role),
+                publicRole(m) && h("div", { style: { fontSize: 12, fontWeight: 700, color: ORANGE, letterSpacing: ".08em", textTransform: "uppercase", marginBottom: 8 } }, publicRole(m)),
                 m.badge && h("div", { className: "team-badge" }, m.badge),
                 m.school && h("p", { style: { fontWeight: 700, marginBottom: 10 } }, m.school),
                 hasAch && h("ul", { className: "team-achievements" }, m.achievements.map((a, i) => h("li", { key: i }, a))),
@@ -1816,7 +1817,7 @@
             h("button", { type: "button", className: "bio-modal-close", onClick: () => setActive(null), "aria-label": isZh ? "關閉" : "Close" }, "×"),
             active.image && h("img", { className: "bio-modal-img", src: `../${active.image}`, alt: active.name, onError: (e) => (e.currentTarget.style.display = "none") }),
             h("h3", { className: "serif", style: { fontSize: 26, marginBottom: 4 } }, displayName(active.name)),
-            h("div", { style: { fontSize: 12, fontWeight: 700, color: ORANGE, letterSpacing: ".08em", textTransform: "uppercase", marginBottom: 8 } }, active.role),
+            publicRole(active) && h("div", { style: { fontSize: 12, fontWeight: 700, color: ORANGE, letterSpacing: ".08em", textTransform: "uppercase", marginBottom: 8 } }, publicRole(active)),
             active.badge && h("div", { className: "team-badge", style: { marginBottom: 10 } }, active.badge),
             active.school && h("p", { style: { fontWeight: 700, marginBottom: 14 } }, active.school),
             Array.isArray(active.achievements) && active.achievements.length > 0 && h("ul", { className: "team-achievements" }, active.achievements.map((a, i) => h("li", { key: i }, a))),
@@ -1826,7 +1827,7 @@
               h(
                 "div",
                 { className: "teaching-block" },
-                h("div", { className: "teaching-label" }, isZh ? "本季任教課程" : "Teaching this summer"),
+                h("div", { className: "teaching-label" }, isZh ? "教學範疇" : "Teaching areas"),
                 h(
                   "div",
                   { className: "teaching-chips" },

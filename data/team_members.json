@@ -1,7 +1,7 @@
 [
   {
     "name": "Adrian C",
-    "role": "Executive Director",
+    "role": "",
     "school": "Phillips Exeter Academy, US",
     "image": "Images/Adrian.png",
     "categories": [
@@ -25,7 +25,7 @@
   },
   {
     "name": "Gavin Z",
-    "role": "Executive Director",
+    "role": "",
     "school": "Phillips Exeter Academy, US",
     "image": "Images/Gavin.png",
     "categories": [
@@ -45,7 +45,7 @@
   },
   {
     "name": "Sandeep Chulani",
-    "role": "Advisor to DebateCraft and Head Curriculumn Developer",
+    "role": "Adviser to DebateCraft",
     "image": "Images/Sandeep.png",
     "categories": [
       "executive",
@@ -61,7 +61,7 @@
   },
   {
     "name": "Matthew W",
-    "role": "Head of Programs",
+    "role": "",
     "school": "Columbia University, US",
     "image": "Images/Matthew.png",
     "categories": [
@@ -81,7 +81,7 @@
   },
   {
     "name": "Bella C",
-    "role": "Head of Operations",
+    "role": "",
     "image": "Images/Bella.png",
     "categories": [
       "executive",
@@ -100,7 +100,7 @@
   },
   {
     "name": "Raul L",
-    "role": "Head Coach",
+    "role": "",
     "school": "Winchester College, UK",
     "image": "Images/Raul.png",
     "categories": [
@@ -116,7 +116,7 @@
   },
   {
     "name": "Valmik D",
-    "role": "Head Coach",
+    "role": "",
     "school": "Phillips Exeter Academy, US",
     "image": "Images/Valmik.png",
     "categories": [
@@ -137,7 +137,7 @@
   },
   {
     "name": "Arthur Z",
-    "role": "Head PF Coach",
+    "role": "",
     "school": "Winchester College, UK",
     "image": "Images/Arthur.png",
     "categories": [
@@ -155,7 +155,7 @@
   },
   {
     "name": "Aarohan S",
-    "role": "Head of Outreach",
+    "role": "",
     "image": "Images/Aarohan.png",
     "categories": [
       "coaching",
@@ -171,7 +171,7 @@
   },
   {
     "name": "Kevin C",
-    "role": "Head of Design",
+    "role": "",
     "school": "Phillips Exeter Academy, US",
     "image": "Images/Kevin.png",
     "categories": [
@@ -182,7 +182,7 @@
   },
   {
     "name": "Alston G",
-    "role": "Head of Human Resources",
+    "role": "",
     "image": "Images/Alston.png",
     "categories": [
       "coaching",
@@ -200,7 +200,7 @@
   },
   {
     "name": "Isaac Y",
-    "role": "Head Administrator",
+    "role": "",
     "image": "Images/Issac.png",
     "categories": [
       "coaching",
@@ -540,7 +540,7 @@
   },
   {
     "name": "Aloysius Y",
-    "role": "Program Scheduler",
+    "role": "",
     "school": "Epsom College, UK",
     "image": "Images/Aloy.png",
     "categories": [
@@ -550,7 +550,7 @@
   },
   {
     "name": "Andrew C",
-    "role": "Administrator",
+    "role": "",
     "school": "Phillips Exeter Academy, US",
     "image": "Images/Andrew.png",
     "categories": [
@@ -562,7 +562,7 @@
   },
   {
     "name": "Ana T",
-    "role": "Administrator",
+    "role": "",
     "image": "Images/Ana.png",
     "categories": [
       "outreach",
@@ -572,7 +572,7 @@
   },
   {
     "name": "Theo O",
-    "role": "Outreach Coordinator",
+    "role": "",
     "school": "Winchester College, UK",
     "image": "Images/Theo.png",
     "categories": [
@@ -582,7 +582,7 @@
   },
   {
     "name": "Max L",
-    "role": "Social Media Designer",
+    "role": "",
     "school": "Phillips Exeter Academy, US",
     "image": "Images/Max.png",
     "categories": [
@@ -592,7 +592,7 @@
   },
   {
     "name": "Vivien S",
-    "role": "Social Media Designer",
+    "role": "",
     "school": "Phillips Exeter Academy, US",
     "image": "Images/Vivien.png",
     "categories": [
@@ -602,7 +602,7 @@
   },
   {
     "name": "Sophia C",
-    "role": "Social Media Designer",
+    "role": "",
     "school": "Phillips Exeter Academy, US",
     "image": "Images/Sophia.png",
     "categories": [
@@ -612,7 +612,7 @@
   },
   {
     "name": "Andy L",
-    "role": "Social Media Designer",
+    "role": "",
     "school": "Phillips Exeter Academy, US",
     "image": "Images/Andy.png",
     "categories": [

@@ -5,21 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="Images/Logo.png">
   <link rel="apple-touch-icon" href="Images/Logo.png">
-  <title>DebateCraft | 免費辯論及生物倫理課程</title>
-  <meta name="description" content="DebateCraft 是由學生營運的非牟利教育項目，為三至十二年級學生提供免費辯論及生物倫理課程，連結 12+ 國家和地區學生。" />
+  <title>DebateCraft | 免費辯論、溝通與生物倫理教育</title>
+  <meta name="description" content="由學生主導嘅非牟利組織，為世界各地年輕人提供免費網上辯論、溝通及生物倫理教育。" />
   <link rel="canonical" href="https://debatecraft.org/cnindex.html" />
   <link rel="alternate" hreflang="en" href="https://debatecraft.org/" />
   <link rel="alternate" hreflang="zh-HK" href="https://debatecraft.org/cnindex.html" />
   <link rel="alternate" hreflang="x-default" href="https://debatecraft.org/" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="DebateCraft | 免費辯論及生物倫理課程" />
-  <meta property="og:description" content="由學生營運、費用全免的辯論及生物倫理課程，服務三至十二年級學生。" />
+  <meta property="og:title" content="DebateCraft | 免費辯論、溝通與生物倫理教育" />
+  <meta property="og:description" content="由學生主導嘅非牟利組織，為世界各地年輕人提供免費網上辯論、溝通及生物倫理教育。" />
   <meta property="og:url" content="https://debatecraft.org/cnindex.html" />
   <meta property="og:site_name" content="DebateCraft" />
   <meta property="og:image" content="https://debatecraft.org/Images/Logo-white-transparent.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="DebateCraft | 免費辯論及生物倫理課程" />
-  <meta name="twitter:description" content="免費、學生營運、全球 12+ 國家和地區的辯論及生物倫理教育。" />
+  <meta name="twitter:title" content="DebateCraft | 免費辯論、溝通與生物倫理教育" />
+  <meta name="twitter:description" content="由學生主導嘅非牟利組織，為世界各地年輕人提供免費網上辯論、溝通及生物倫理教育。" />
   <meta name="twitter:image" content="https://debatecraft.org/Images/Logo-white-transparent.png" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" integrity="sha384-DGyLxAyjq0f9SPpVevD6IgztCFlnMF6oW/XQGmfe+IsZ8TqEiDrcHkMLKI6fiB/Z" crossorigin="anonymous"></script>
@@ -138,9 +138,9 @@ const SKILLS = [
 ];
 
 const TRUST_SIGNALS = [
-  { title:'學生營運非牟利項目', desc:'DebateCraft 由有辯論、教練、研究和課程設計經驗嘅學生共同建立及教授。' },
-  { title:'世界級辯論課程支援', desc:'課程設計曾獲 Sandeep Chulani 和 Angga Djovanka 等資深教練支援和建議。' },
-  { title:'生物倫理導師深度', desc:'生物倫理課程由 Phillips Exeter 學生帶領，包括 USABO 表現優秀者、醫學期刊作者和寫作獎項入圍者。' },
+  { title:'學生主導學習', desc:'學生同重視辯論、探究同清晰溝通嘅同儕一齊學習。' },
+  { title:'認真提問', desc:'我哋為仔細推理、真誠討論同倫理反思留下空間。' },
+  { title:'學習機會優先', desc:'免費網上學習令更多學生無論由邊度開始，都有機會參與。' },
 ];
 
 const HOME_PROOF_IMAGES = [
@@ -416,13 +416,13 @@ function Hero({ setPage }) {
         <div>
           <div style={{ display:'flex', alignItems:'center', gap:12, marginBottom:20, opacity:vis?1:0, animation:vis?'fadeUp 0.55s ease both':'none' }}>
             <div style={{ width:28, height:2, background:ORANGE, flexShrink:0 }}></div>
-            <span style={{ fontSize:11, fontWeight:700, color:ORANGE, letterSpacing:'0.14em', textTransform:'uppercase' }}>2026 夏季 · 免費申請開放</span>
+            <span style={{ fontSize:11, fontWeight:700, color:ORANGE, letterSpacing:'0.14em', textTransform:'uppercase' }}>學生賦予學生力量</span>
           </div>
           <h1 className="serif" style={{ fontSize:isCompact ? 44 : 72, fontWeight:800, color:WHITE, lineHeight:isCompact ? 1.12 : 1.0, marginBottom:22, opacity:vis?1:0, animation:vis?'fadeUp 0.6s ease 0.08s both':'none' }}>
-            今個夏天<br />加入免費小班<br /><em style={{ color:ORANGE, fontStyle:'italic' }}>趁名額未滿。</em>
+            找到你嘅聲音。<br />清晰思考。<br /><em style={{ color:ORANGE, fontStyle:'italic' }}>塑造下一步。</em>
           </h1>
           <p style={{ fontSize:16, color:'rgba(255,255,255,0.62)', lineHeight:1.72, maxWidth:480, marginBottom:24, opacity:vis?1:0, animation:vis?'fadeUp 0.6s ease 0.16s both':'none' }}>
-            免費網上辯論及生物倫理暑期課程。幾分鐘完成申請，我哋會按年齡、經驗和目標安排合適小班。
+            為希望提出更好問題、建立更有力論點，同世界認真互動嘅年輕人而設嘅免費網上學習。
           </p>
           <div style={{ display:'flex', gap:0, marginBottom:32, borderTop:'1px solid rgba(255,255,255,0.1)', borderBottom:'1px solid rgba(255,255,255,0.1)', opacity:vis?1:0, animation:vis?'fadeUp 0.6s ease 0.22s both':'none' }}>
             {[['5–10人小班','更多練習和回饋'],['費用全免','無需試鏡或文章'],['網上授課','隨時隨地學習']].map(([heading,sub],i) => (
@@ -433,7 +433,7 @@ function Hero({ setPage }) {
             ))}
           </div>
           <div style={{ display:'flex', gap:12, flexWrap:'wrap', opacity:vis?1:0, animation:vis?'fadeUp 0.6s ease 0.3s both':'none' }}>
-            <a href={STUDENT_FORM_URL} style={{ background:ORANGE, color:NAVY, border:'none', borderRadius:5, padding:'13px 26px', fontFamily:'DM Sans,sans-serif', fontWeight:800, fontSize:13, cursor:'pointer', letterSpacing:'0.06em', textTransform:'uppercase', boxShadow:`0 8px 28px rgba(247,162,52,0.35)`, textDecoration:'none', display:'inline-flex', alignItems:'center' }}>申請夏季免費名額 →</a>
+            <a href={STUDENT_FORM_URL} style={{ background:ORANGE, color:NAVY, border:'none', borderRadius:5, padding:'13px 26px', fontFamily:'DM Sans,sans-serif', fontWeight:800, fontSize:13, cursor:'pointer', letterSpacing:'0.06em', textTransform:'uppercase', boxShadow:`0 8px 28px rgba(247,162,52,0.35)`, textDecoration:'none', display:'inline-flex', alignItems:'center' }}>申請學習 →</a>
           </div>
         </div>
         <div style={{ display:isCompact ? 'none' : 'flex', alignItems:'center', justifyContent:'center', opacity:vis?1:0, animation:vis?'fadeIn 1s ease 0.4s both':'none' }}>
@@ -459,16 +459,16 @@ function HowToJoinMini() {
     return () => window.removeEventListener('resize', onResize);
   }, []);
   const steps=[
-    {title:'免費申請',desc:'趁夏季班別仍在安排時提交簡短表格。'},
-    {title:'配對班級',desc:'我哋按程度、賽制和時間安排合適小班。'},
+    {title:'免費申請',desc:'填寫簡短表格，分享你嘅學習目標。'},
+    {title:'探索方向',desc:'我哋幫你了解合適嘅程度同學習模式。'},
     {title:'開始上課',desc:'加入 Zoom 小班，按清晰功課和練習節奏學習。'},
   ];
   return (
     <section style={{ background:WHITE, padding:'42px 0' }}>
       <div style={{ maxWidth:1200, margin:'0 auto', padding:'0 32px', display:'grid', gridTemplateColumns:isCompact ? '1fr' : '220px 1fr auto', gap:24, alignItems:'center' }}>
         <div>
-          <div style={{ fontSize:11, fontWeight:700, color:ORANGE, letterSpacing:'0.14em', textTransform:'uppercase', marginBottom:8 }}>夏季加入流程</div>
-          <h2 className="serif" style={{ fontSize:32, lineHeight:1.1, color:NAVY }}>低門檻，按程度安排。</h2>
+          <div style={{ fontSize:11, fontWeight:700, color:ORANGE, letterSpacing:'0.14em', textTransform:'uppercase', marginBottom:8 }}>你嘅學習旅程</div>
+          <h2 className="serif" style={{ fontSize:32, lineHeight:1.1, color:NAVY }}>由好奇心開始。</h2>
         </div>
         <div style={{ display:'grid', gridTemplateColumns:isCompact ? '1fr' : 'repeat(3,1fr)', gap:14 }}>
           {steps.map((s,i)=>(
@@ -560,7 +560,7 @@ function LearningInAction() {
       <div style={{ maxWidth:1200, margin:'0 auto', padding:'0 32px' }}>
         <div style={{ textAlign:'center', maxWidth:760, margin:'0 auto 38px' }}>
           <div style={{ fontSize:11, fontWeight:700, color:ORANGE, letterSpacing:'0.14em', textTransform:'uppercase', marginBottom:12 }}>課堂實況</div>
-          <h2 className="serif" style={{ fontSize:44, fontWeight:800, lineHeight:1.08, color:NAVY, marginBottom:14 }}>真實小班，<em style={{ color:ORANGE, fontStyle:'italic' }}>真實練習。</em></h2>
+          <h2 className="serif" style={{ fontSize:44, fontWeight:800, lineHeight:1.08, color:NAVY, marginBottom:14 }}>真實學習，<em style={{ color:ORANGE, fontStyle:'italic' }}>真實練習。</em></h2>
           <p style={{ fontSize:15, lineHeight:1.7, color:'rgba(17,29,60,0.62)' }}>透過實時網上課堂、引導式練習和學生進度畫面，展示 DebateCraft 的學習方式。</p>
         </div>
         <div style={{ display:'grid', gridTemplateColumns:isCompact ? '1fr' : 'repeat(3, 1fr)', gap:20 }}>
@@ -722,9 +722,9 @@ function Programs({ setPage }) {
       <div style={{ maxWidth:1200, margin:'0 auto', padding:'0 32px' }}>
         <div style={{ display:'flex', alignItems:'flex-end', justifyContent:'space-between', marginBottom:52, flexWrap:'wrap', gap:20 }}>
           <div>
-            <div style={{ fontSize:11, fontWeight:700, color:ORANGE, letterSpacing:'0.14em', textTransform:'uppercase', marginBottom:14 }}>2026 夏季課程</div>
-            <h2 className="serif" style={{ fontSize:52, fontWeight:800, color:NAVY, lineHeight:1.08 }}>選擇方向，<br /><em style={{ color:ORANGE, fontStyle:'italic' }}>或者由我哋配對。</em></h2>
-            <p style={{ maxWidth:610, marginTop:14, fontSize:15, lineHeight:1.7, color:'rgba(17,29,60,0.62)' }}>唔肯定學生適合 Level 1、Level 2、PF、WSDC、BP 定生物倫理？先免費申請，我哋會建議最合適嘅夏季小班。</p>
+            <div style={{ fontSize:11, fontWeight:700, color:ORANGE, letterSpacing:'0.14em', textTransform:'uppercase', marginBottom:14 }}>探索我哋嘅課程</div>
+            <h2 className="serif" style={{ fontSize:52, fontWeight:800, color:NAVY, lineHeight:1.08 }}>選擇方向，<br /><em style={{ color:ORANGE, fontStyle:'italic' }}>然後繼續成長。</em></h2>
+            <p style={{ maxWidth:610, marginTop:14, fontSize:15, lineHeight:1.7, color:'rgba(17,29,60,0.62)' }}>探索為唔同興趣、經驗同目標而設嘅辯論同生物倫理學習。</p>
           </div>
           <div style={{ display:'flex', gap:10, flexWrap:'wrap' }}>
             <a href={STUDENT_FORM_URL} style={{ background:NAVY, color:WHITE, border:'none', borderRadius:5, padding:'13px 22px', fontFamily:'DM Sans,sans-serif', fontWeight:800, fontSize:12, cursor:'pointer', letterSpacing:'0.08em', textTransform:'uppercase', flexShrink:0, textDecoration:'none', display:'inline-flex', alignItems:'center' }}>申請配對班級</a>
@@ -804,9 +804,9 @@ function CalendarVisual() {
 /* ── 使命卡 ───────────────────────────── */
 function MissionCards() {
   const items=[
-    {title:'賦予學生力量',     desc:'我哋嘅使命核心係學生賦予學生力量 — 培養自信、自我表達同批判思考。'},
-    {title:'增加普及性',desc:'我哋致力讓辯論教育普及化，尤其係幫助來自弱勢背景嘅學生。'},
-    {title:'超越辯論比賽',    desc:'辯論技巧嘅影響遠超辯論場，能夠提升學業表現，培養自信嘅新一代。'},
+    {title:'自信思考',         desc:'建立論點、認真聆聽，同時以關懷方式溝通。'},
+    {title:'擴闊學習機會',     desc:'令原本未必有機會接觸嚴謹學習嘅學生，更容易參與。'},
+    {title:'超越辯論場嘅學習', desc:'連結辯論、公開演說、科學同倫理問題。'},
   ];
   return (
     <section style={{ background:WHITE, padding:'88px 0' }}>
@@ -837,8 +837,8 @@ function Credibility() {
     <section style={{ background:NAVY2, padding:'88px 0' }}>
       <div style={{ maxWidth:1200, margin:'0 auto', padding:'0 32px' }}>
         <div style={{ textAlign:'center', marginBottom:56 }}>
-          <div style={{ fontSize:11, fontWeight:700, color:ORANGE, letterSpacing:'0.14em', textTransform:'uppercase', marginBottom:14 }}>點解可以信任 DebateCraft</div>
-          <h2 className="serif" style={{ fontSize:48, fontWeight:800, color:WHITE, lineHeight:1.1 }}>由有實戰經驗嘅學生<em style={{ color:SKY, fontStyle:'italic' }}>建立。</em></h2>
+          <div style={{ fontSize:11, fontWeight:700, color:ORANGE, letterSpacing:'0.14em', textTransform:'uppercase', marginBottom:14 }}>有目標嘅學習</div>
+          <h2 className="serif" style={{ fontSize:48, fontWeight:800, color:WHITE, lineHeight:1.1 }}>學生賦予<em style={{ color:SKY, fontStyle:'italic' }}>學生力量。</em></h2>
           <p style={{ maxWidth:720, margin:'18px auto 0', color:'rgba(255,255,255,0.58)', fontSize:15, lineHeight:1.7 }}>內容基於 DebateCraft 目前課程架構、教練支援和導師資歷等已知資料。</p>
         </div>
         <div style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:20 }}>
@@ -861,8 +861,8 @@ function CTABand({ setPage }) {
     <section style={{ background:ORANGE, padding:'64px 0' }}>
       <div style={{ maxWidth:1200, margin:'0 auto', padding:'0 32px', display:'grid', gridTemplateColumns:'1fr auto', gap:40, alignItems:'center' }}>
         <div>
-          <h2 className="serif" style={{ fontSize:42, fontWeight:800, color:NAVY, marginBottom:10, lineHeight:1.1 }}>夏季名額按<em style={{ fontStyle:'italic' }}>適合度</em>安排。</h2>
-          <p style={{ fontSize:15, color:'rgba(17,29,60,0.72)', lineHeight:1.65 }}>免費申請，提供學生背景，由 DebateCraft 在暑期時段額滿前建議最合適小班。</p>
+          <h2 className="serif" style={{ fontSize:42, fontWeight:800, color:NAVY, marginBottom:10, lineHeight:1.1 }}>由你而家嘅位置開始，<em style={{ fontStyle:'italic' }}>慢慢成長。</em></h2>
+          <p style={{ fontSize:15, color:'rgba(17,29,60,0.72)', lineHeight:1.65 }}>無論你係剛接觸辯論，定係準備深入學習，DebateCraft 都提供一個練習有心溝通嘅地方。</p>
         </div>
         <div style={{ display:'flex', gap:12, flexShrink:0 }}>
           <a href={STUDENT_FORM_URL} style={{ background:NAVY, color:WHITE, border:'none', borderRadius:5, padding:'14px 28px', fontFamily:'DM Sans,sans-serif', fontWeight:800, fontSize:13, cursor:'pointer', letterSpacing:'0.07em', textTransform:'uppercase', whiteSpace:'nowrap', textDecoration:'none', display:'inline-flex', alignItems:'center' }}>免費申請 →</a>
@@ -910,7 +910,7 @@ function Footer({ setPage }) {
               <div style={{ fontSize:10, fontWeight:600, color:'rgba(255,255,255,0.32)', letterSpacing:'0.12em', textTransform:'uppercase', marginTop:2 }}>學生賦予學生力量</div>
             </div>
           </a>
-          <div style={{ fontSize:13, color:'rgba(255,255,255,0.32)', maxWidth:320, textAlign:'right', lineHeight:1.6 }}>為三至十二年級學生提供免費辯論及科學課程，覆蓋全球12多個國家同地區。</div>
+          <div style={{ fontSize:13, color:'rgba(255,255,255,0.32)', maxWidth:320, textAlign:'right', lineHeight:1.6 }}>由學生主導，提供免費辯論、溝通及生物倫理學習。</div>
         </div>
       </div>
       <div style={{ maxWidth:1200, margin:'0 auto' }}>

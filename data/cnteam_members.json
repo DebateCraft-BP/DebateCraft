@@ -1,7 +1,7 @@
 [
   {
     "name": "Adrian C",
-    "role": "執行總監",
+    "role": "",
     "school": "Phillips Exeter Academy, 美國",
     "image": "Images/Adrian.png",
     "categories": [
@@ -25,7 +25,7 @@
   },
   {
     "name": "Gavin Z",
-    "role": "執行總監",
+    "role": "",
     "school": "Phillips Exeter Academy, 美國",
     "image": "Images/Gavin.png",
     "categories": [
@@ -45,7 +45,7 @@
   },
   {
     "name": "Sandeep Chulani",
-    "role": "DebateCraft 顧問兼首席課程開發者",
+    "role": "DebateCraft 顧問",
     "image": "Images/Sandeep.png",
     "categories": [
       "executive",
@@ -61,7 +61,7 @@
   },
   {
     "name": "Matthew W",
-    "role": "項目總監",
+    "role": "",
     "school": "Columbia University, 美國",
     "image": "Images/Matthew.png",
     "categories": [
@@ -79,7 +79,7 @@
   },
   {
     "name": "Bella C",
-    "role": "營運總監",
+    "role": "",
     "image": "Images/Bella.png",
     "categories": [
       "executive",
@@ -98,7 +98,7 @@
   },
   {
     "name": "Raul L",
-    "role": "總教練",
+    "role": "",
     "school": "Winchester College, 英國",
     "image": "Images/Raul.png",
     "categories": [
@@ -114,7 +114,7 @@
   },
   {
     "name": "Valmik D",
-    "role": "總教練",
+    "role": "",
     "school": "Phillips Exeter Academy, 美國",
     "image": "Images/Valmik.png",
     "categories": [
@@ -135,7 +135,7 @@
   },
   {
     "name": "Arthur Z",
-    "role": "公共論壇 (PF) 總教練",
+    "role": "",
     "school": "Winchester College, 英國",
     "image": "Images/Arthur.png",
     "categories": [
@@ -153,7 +153,7 @@
   },
   {
     "name": "Aarohan S",
-    "role": "外展總監",
+    "role": "",
     "image": "Images/Aarohan.png",
     "categories": [
       "coaching",
@@ -170,7 +170,7 @@
   },
   {
     "name": "Kevin C",
-    "role": "設計總監",
+    "role": "",
     "school": "Phillips Exeter Academy, 美國",
     "image": "Images/Kevin.png",
     "categories": [
@@ -181,7 +181,7 @@
   },
   {
     "name": "Alston G",
-    "role": "人力資源總監",
+    "role": "",
     "image": "Images/Alston.png",
     "categories": [
       "coaching",
@@ -199,7 +199,7 @@
   },
   {
     "name": "Isaac Y",
-    "role": "行政總監",
+    "role": "",
     "image": "Images/Issac.png",
     "categories": [
       "coaching",
@@ -538,7 +538,7 @@
   },
   {
     "name": "Aloysius Y",
-    "role": "項目排程員",
+    "role": "",
     "school": "Epsom College, 英國",
     "image": "Images/Aloy.png",
     "categories": [
@@ -548,7 +548,7 @@
   },
   {
     "name": "Andrew C",
-    "role": "行政人員",
+    "role": "",
     "school": "Phillips Exeter Academy, 美國",
     "image": "Images/Andrew.png",
     "categories": [
@@ -560,7 +560,7 @@
   },
   {
     "name": "Ana T",
-    "role": "行政人員",
+    "role": "",
     "image": "Images/Ana.png",
     "categories": [
       "outreach",
@@ -570,7 +570,7 @@
   },
   {
     "name": "Theo O",
-    "role": "外展統籌",
+    "role": "",
     "school": "Winchester College, 英國",
     "image": "Images/Theo.png",
     "categories": [
@@ -580,7 +580,7 @@
   },
   {
     "name": "Max L",
-    "role": "社交媒體設計師",
+    "role": "",
     "school": "Phillips Exeter Academy, 美國",
     "image": "Images/Max.png",
     "categories": [
@@ -590,7 +590,7 @@
   },
   {
     "name": "Vivien S",
-    "role": "社交媒體設計師",
+    "role": "",
     "school": "Phillips Exeter Academy, 美國",
     "image": "Images/Vivien.png",
     "categories": [
@@ -600,7 +600,7 @@
   },
   {
     "name": "Sophia C",
-    "role": "社交媒體設計師",
+    "role": "",
     "school": "Phillips Exeter Academy, 美國",
     "image": "Images/Sophia.png",
     "categories": [
@@ -610,7 +610,7 @@
   },
   {
     "name": "Andy L",
-    "role": "社交媒體設計師",
+    "role": "",
     "school": "Phillips Exeter Academy, 美國",
     "image": "Images/Andy.png",
     "categories": [

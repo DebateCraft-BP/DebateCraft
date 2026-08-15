@@ -1652,11 +1652,11 @@
         h(TitleBlock, { eyebrow: isZh ? "評判與培訓視角" : "Judging and Training Perspective", title: isZh ? "教練知道評判" : "Coaching Informed by", emphasis: isZh ? "點樣判一場辯論。" : "How Rounds Are Judged.", lead: isZh ? "除咗競賽成績，DebateCraft 亦將高水平評判同培訓經驗帶入課綱、練習賽同賽後檢討。" : "Competition results matter. So does understanding how adjudicators evaluate framing, contribution, comparison, and team strategy.", dark: true }),
         h("div", { className: "grid grid-3" }, [
           ["Mr. Sandeep Chulani", isZh ? "DebateCraft 顧問；曾任 Team HK 教練及選拔人；前香港學校辯論及演講社區主席；HKBPDC 聯合創辦人。" : "DebateCraft adviser; former Coach and Selector of Team HK; former Chair of Hong Kong Schools Debating and Public Speaking Community; HKBPDC co-founder."],
-          ["Adrian C", isZh ? "2026年 IIUM IDC 及 HKEDO 評判；將評判標準轉化成清晰練習同賽後行動。" : "Judge at IIUM IDC 2026 and HKEDO; translates adjudication standards into drills and post-round actions."],
+          ["Adrian Chan", isZh ? "2026年 IIUM IDC 及 HKEDO 評判；將評判標準轉化成清晰練習同賽後行動。" : "Judge at IIUM IDC 2026 and HKEDO; translates adjudication standards into drills and post-round actions."],
           ["Theodore W", isZh ? "2024年重慶 WSDC 工作坊導師及 2025年南京 WSDC 評判，兼具培訓同賽場視角。" : "Trainer at Chongqing WSDC Workshop 2024 and judge at Nanjing WSDC 2025, bringing both training and adjudication perspective."],
-          ["Matthew W", isZh ? "曾帶領 Winchester College 辯論社訓練校隊；具 BP、評判及執教經驗。" : "Led Winchester College's Debate Society; brings BP, adjudication, and coaching experience."],
-          ["Rachel R", isZh ? "帶領德瑞國際學校辯論隊；2026年香港初中學校辯論比賽準決賽及第七名最佳辯手。" : "Leads the German Swiss International School Debate Team; 2026 Hong Kong Junior Schools semifinalist and 7th best speaker."],
-          ["Valmik D", isZh ? "香港代表隊發展梯隊成員；2026年美國全國賽公開組第二名最佳辯手、牛津 WSDC U17 冠軍，並已教授 DebateCraft 超過50小時。" : "Team Hong Kong Development Squad member; 2nd open speaker at US Nationals 2026, Oxford WSDC U17 winner, and 50+ DebateCraft teaching hours."],
+          ["Matthew Wong", isZh ? "曾帶領 Winchester College 辯論社訓練校隊；具 BP、評判及執教經驗。" : "Led Winchester College's Debate Society; brings BP, adjudication, and coaching experience."],
+          ["Rachel Rhodes", isZh ? "帶領德瑞國際學校辯論隊；2026年香港初中學校辯論比賽準決賽及第七名最佳辯手。" : "Leads the German Swiss International School Debate Team; 2026 Hong Kong Junior Schools semifinalist and 7th best speaker."],
+          ["Valmik Dagayach", isZh ? "香港代表隊發展梯隊成員；2026年美國全國賽公開組第二名最佳辯手、牛津 WSDC U17 冠軍，並已教授 DebateCraft 超過50小時。" : "Team Hong Kong Development Squad member; 2nd open speaker at US Nationals 2026, Oxford WSDC U17 winner, and 50+ DebateCraft teaching hours."],
         ].map(([title, text]) => h(InfoCard, { key: title, title, text, dark: true })))
       ),
       h(CTA)
@@ -2260,7 +2260,7 @@
     ["m22", "THW prioritize climate adaptation over climate mitigation in developing countries.", "本院會要求發展中國家優先處理氣候適應，而非氣候減緩。", "Hard", "WSDC", "Environment"],
   ].map(([id, motion, zhMotion, difficulty, format, theme]) => ({ id, motion, zhMotion, difficulty, format, theme }));
 
-  const headCoachKeys = ["Valmik", "Matthew W", "Arthur", "Gavin"];
+  const headCoachKeys = ["Valmik", "Matthew Wong", "Arthur", "Gavin"];
   const cleanCoachName = (name = "") => name.replace(/\?$/, "").trim();
   const isHeadCoach = (name = "") => headCoachKeys.includes(cleanCoachName(name));
   const cohort = (nameEn, nameZh, datesEn, datesZh, time, teachers, backup, capacity) => {
@@ -2291,7 +2291,7 @@
         cohort("Level 1 A", null, "13 Jul → 31 Jul", "7月13日 → 7月31日", "15:00 – 16:00", ["Hirannya", "Raul"], ["TBC"], "7/8"),
         cohort("Level 1 B", null, "20 Jul → 07 Aug", "7月20日 → 8月7日", "10:00 – 11:00", ["Piers", "Tanvi"], ["Cici"], "7/8"),
         cohort("Level 1 C", null, "20 Jul → 07 Aug", "7月20日 → 8月7日", "16:00 – 17:00", ["Cici", "Hirannya"], ["Vera"], "4/8"),
-        cohort("Level 1 D", null, "27 Jul → 14 Aug", "7月27日 → 8月14日", "11:00 – 12:00", ["Matthew W", "Tanvi"], ["TBC"], "8/8"),
+        cohort("Level 1 D", null, "27 Jul → 14 Aug", "7月27日 → 8月14日", "11:00 – 12:00", ["Matthew Wong", "Tanvi"], ["TBC"], "8/8"),
         cohort("Level 1 E", null, "27 Jul → 14 Aug", "7月27日 → 8月14日", "16:00 – 17:00", ["Cheryl", "Sanaya", "Eric"], ["Cici"], "5/8"),
       ],
     },
@@ -2333,7 +2333,7 @@
       blurb: isZh
         ? "訓練快速批判思考、五分鐘演講、extensions 同 Points of Information。"
         : "Trains rapid critical thinking and five-minute speech delivery, with mastery of extensions and Points of Information.",
-      cohorts: [cohort("Level 3 BP", null, "20 Jul → 31 Jul", "7月20日 → 7月31日", "17:00 – 19:00", ["Matthew W", "Raul"], ["Cici"], "5/8")],
+      cohorts: [cohort("Level 3 BP", null, "20 Jul → 31 Jul", "7月20日 → 7月31日", "17:00 – 19:00", ["Matthew Wong", "Raul"], ["Cici"], "5/8")],
     },
     {
       tone: "specialty",

@@ -1,7 +1,7 @@
 [
   {
     "name": "Adrian C",
-    "role": "",
+    "role": "Executive Director, Global",
     "school": "Phillips Exeter Academy, US",
     "image": "Images/Adrian.png",
     "categories": [
@@ -9,10 +9,13 @@
       "coaching",
       "epi",
       "outreach"
+      ,"hk"
     ],
     "achievements": [
       "Semifinalist and Top 10 Speaker, WOSO (2026)",
       "Best Speaker, Stanford Invitational (2026)",
+      "Judge, IIUM IDC (2026)",
+      "Judge, HKEDO(2026)",
       "Drexel Open (2026)",
       "3rd Best Speaker, Team Canada Fundraiser (2025)",
       "3rd Place, Carroll College Fundraiser (2025)",
@@ -21,17 +24,17 @@
     "classes": [
       "Bioethics A"
     ],
-    "bio": "An experienced educator with over five years of international debate experience. Adrian is an ICYD International Finalist (2023), broke Oxford Schools (2025), and was the 3rd Best Speaker at the Team Canada Fundraiser (2025). He has condensed his debate knowledge into a debate accelerator used by over 100 debaters in Hong Kong, the UK, and the US."
+    "bio": "Adrian has more than five years of international debate experience. He judged IIUM IDC 2026 and HKEDO, reached the ICYD international final, broke at Oxford Schools, and won Best Speaker at the Stanford Invitational. More than 100 debaters in Hong Kong, the UK, and the US have used his debate accelerator."
   },
   {
     "name": "Gavin Z",
-    "role": "",
+    "role": "Executive Director, Global",
     "school": "Phillips Exeter Academy, US",
     "image": "Images/Gavin.png",
     "categories": [
       "executive",
       "coaching",
-      "PF"
+      "prepared"
     ],
     "achievements": [
       "Qualified for Tournament of Champions (TOC) in 2022 and 2023",
@@ -39,9 +42,8 @@
       "Nationally ranked on the China Public Forum circuit"
     ],
     "classes": [
-      "PF A"
     ],
-    "bio": "A nationally ranked Public Forum debater with a strong track record on the China PF circuit and five years of experience. Gavin reached Tournament of Champions(TOC) in both 2022 and 2023, and competed at Oxford Schools 2025. In his role as Executive Director, Gavin co-leads the team’s operations, spearheads the web development, and Chinese Outreach."
+    "bio": "Gavin has five years of Public Forum experience and a national ranking on the China circuit. He qualified for the Tournament of Champions in 2022 and 2023 and competed at Oxford Schools in 2025. As Executive Director, he co-leads operations, web development, and Chinese-language outreach."
   },
   {
     "name": "Sandeep Chulani",
@@ -51,17 +53,19 @@
       "executive",
       "coaching",
       "advisor"
+      ,"hk"
     ],
     "achievements": [
       "Ranked Top 10 judge in Asia at multiple Asian British Parliamentary Championships",
-      "Co-founder, HKBPDC",
-      "Former Chair, Hong Kong Schools Debating and Public Speaking Community"
+      "Former Coach and Selector, Team HK",
+      "Former Chair, Hong Kong Schools Debating and Public Speaking Community",
+      "Co-founder, Hong Kong British Parliamentary Debating Championships (HKBPDC)"
     ],
-    "bio": "Sandeep Chulani, a Hong Kong-based debate coach and educator with over 20 years of debating, coaching and judging experience, has been ranked among the Top 10 judges in Asia at multiple Asian British Parliamentary Championships, and co-founded the HKBPDC. Formerly the chair of Hong Kong Schools Debating and Public Speaking Community, he has led students onto the Hong Kong national squad and to WSDC, WIDPSC, and Oxford Schools."
+    "bio": "Sandeep Chulani, a Hong Kong-based debate coach and educator, was formerly Coach and Selector of Team HK. He has over 20 years of debating, coaching, and judging experience and has been ranked among the Top 10 judges in Asia at multiple Asian British Parliamentary Championships. He co-founded HKBPDC, formerly chaired Hong Kong Schools Debating and Public Speaking Community, captained The University of Hong Kong English Debate Team, and served as Chief Adjudicator of HKBPDC 2014. He has led students onto the Hong Kong national squad and to WSDC, WIDPSC, and Oxford Schools."
   },
   {
     "name": "Matthew W",
-    "role": "",
+    "role": "Coaching Director, Global",
     "school": "Columbia University, US",
     "image": "Images/Matthew.png",
     "categories": [
@@ -77,11 +81,11 @@
       "Level 1 D",
       "Level 3 BP"
     ],
-    "bio": "A competitive debater with four years of BP debating and adjudication experience. Matthew has competed at ICYD and Cambridge Schools, and currently serves as a Debate Society captain at Winchester. He brings over two years of coaching experience and extensive politics, economics, and international relations experience."
+    "bio": "Matthew led Winchester College's Debate Society. He has four years of BP debating and adjudication experience and more than two years of coaching experience. He competed at ICYD and Cambridge Schools. His coaching covers politics, economics, and international relations motions."
   },
   {
     "name": "Bella C",
-    "role": "",
+    "role": "Operations Director, Global",
     "image": "Images/Bella.png",
     "categories": [
       "executive",
@@ -96,11 +100,54 @@
       "Grand Champion, 40th Stanford Invitational (2026)",
       "Finalist, UBC Spring HST (2026)"
     ],
-    "bio": "Winning the 40th Stanford Invitational 2026 with her team and a UBC Spring HST 2026 finalist,Bella brings a strong competitive background and expertise in coaching students. "
+    "bio": "Bella won the 40th Stanford Invitational with her team in 2026 and reached the UBC Spring HST final that year. She coaches students using her tournament experience."
   },
   {
+    "name": "Valmik D",
+    "role": "Programs Director, Asia",
+    "school": "Phillips Exeter Academy, US",
+    "image": "Images/Valmik.png",
+    "categories": [
+      "coaching",
+      "private"
+      ,"hk"
+    ],
+    "badge": "Hong Kong WSDC Development Team",
+    "achievements": [
+      "2nd best open speaker US Nationals 2026",
+      "Youngest member, Team Hong Kong Development Squad",
+      "Won U17 Finals, Oxford WSDC (2025)",
+      "13th Best Speaker, Hong Kong Debate Open"
+    ],
+    "classes": [
+      "Level 2B WSDC"
+    ],
+    "bio": "Valmik is the youngest member of the Team Hong Kong Development Squad and competes in BP and WSDC. He placed second among open speakers at US Nationals 2026, won the U17 division at Oxford WSDC 2025, and ranked 13th among speakers at the Hong Kong Debate Open. He has taught more than 50 hours through DebateCraft."
+  },
+    {
+    "name": "Rachel R",
+    "role": "Operations Director, Asia",
+    "school": "German Swiss International School, Hong Kong",
+    "image": "Images/Rachel.png",
+    "categories": [
+      "coaching",
+      "private"
+      ,"hk"
+    ],
+    "achievements": [
+      "Captain, German Swiss International School Debate Team",
+      "Semifinalist & 7th Best Speaker, Hong Kong Junior Schools Debating Competition (2026)",
+      "Open Quarterfinalist, Indo-Pacific WSDO (2025)",
+      "U14 Champion, Indo-Pacific WSDO (2024)"
+    ],
+    "classes": [
+      "L3 WSDC B"
+    ],
+    "bio": "Rachel leads the German Swiss International School Debate Team. She reached the 2026 Hong Kong Junior Schools Debating Competition semifinal and ranked seventh among speakers, reached the 2025 Indo-Pacific WSDO open quarterfinal, and won the 2024 Indo-Pacific WSDO U14 division."
+  },
+    {
     "name": "Raul L",
-    "role": "",
+    "role": "Programs Director, Europe",
     "school": "Winchester College, UK",
     "image": "Images/Raul.png",
     "categories": [
@@ -112,46 +159,24 @@
       "Level 2 C",
       "Level 3 BP"
     ],
-    "bio": "An accomplished BP debater with experience at ICYD and Imperial Schools. Raul has been a finalist in multiple intra-school tournaments and mentors younger debaters."
-  },
-  {
-    "name": "Valmik D",
-    "role": "",
-    "school": "Phillips Exeter Academy, US",
-    "image": "Images/Valmik.png",
-    "categories": [
-      "coaching",
-      "private"
-    ],
-    "badge": "HK WSDC Development Team",
-    "achievements": [
-      "2nd best open speaker US Nationals 2026",
-      "Youngest member, Team Hong Kong Development Squad",
-      "Won U17 Finals, Oxford WSDC (2025)",
-      "13th Best Speaker, Hong Kong Debate Open"
-    ],
-    "classes": [
-      "Level 2B WSDC"
-    ],
-    "bio": "The youngest member of the Team Hong Kong Development Squad, with experience in both BP and WSDC formats. He recently won the U17 finals of Oxford WSDC 2025 and was the 13th-best speaker in the Hong Kong Debate Open."
+    "bio": "Raul has competed in BP at ICYD and Imperial Schools, reached several intra-school finals, and mentors younger debaters."
   },
   {
     "name": "Arthur Z",
-    "role": "",
+    "role": "Programs Director, Prepared Debate",
     "school": "Winchester College, UK",
     "image": "Images/Arthur.png",
     "categories": [
       "coaching",
-      "PF"
+      "prepared"
     ],
     "achievements": [
       "2nd Place Team & Top Speaker, Harvard International PF Tournament Open Division (2023)",
       "NSDA Global Excellent Debater (2020)"
     ],
     "classes": [
-      "PF B"
     ],
-    "bio": "A top-performing PF debater: 2nd Place Team and Top Speaker at the 2023 Harvard International PF Tournament (Open Division), with past top finishes in 2022 and 2021. NSDA Global Excellent Debater (2020) and 1st Place at Winchester College’s Inter-boarding house Debating Competition(Yaw Pot). Arthur brings his wealth of experience to lead our upcoming Public Forum course."
+    "bio": "Arthur placed second as a team and won Top Speaker in the 2023 Harvard International PF Open Division. He was named an NSDA Global Excellent Debater in 2020 and won Winchester College's inter-boarding-house Yaw Pot. He coaches prepared debate."
   },
   {
     "name": "Aarohan S",
@@ -167,7 +192,7 @@
       "Grand Finals, 2/75+ teams, 3rd Open Speaker, 2nd Open Break, McMaster HST (2026)",
       "Grand Finals, 3/30+ teams, 2nd Open Speaker, 3rd Open Break, EDS Spring Capital Cup (2026)",
       "Semifinals, 6/45 teams, 10th Open Speaker, 6th Open Break, Queen's HST (2026)"],
-    "bio": "Aarohan is a highly accomplished competitor with results spanning Asia Pre-WSDC, McMaster HST, EDS Spring Capital Cup, Queen's HST, EDC, Ridge, SEED, QHST, UBC Summer HST, and HHWO. As Head of Outreach, he combines strong competitive credentials with a drive to expand DebateCraft's reach to new students and schools."
+    "bio": "Aarohan has broken at Asia Pre-WSDC, McMaster HST, EDS Spring Capital Cup, Queen's HST, EDC, Ridge, SEED, QHST, UBC Summer HST, and HHWO. He also leads outreach to students and schools."
   },
   {
     "name": "Kevin C",
@@ -178,7 +203,7 @@
       "outreach"
     ],
     "achievements": [],
-    "bio": "Works on digital outreach and debate content creation, helping expand our online presence. He brings experience from his web design role on the Exonian Web Board."
+    "bio": "Kevin creates debate content and works on digital outreach. He also served as a web designer on the Exonian Web Board."
   },
   {
     "name": "Alston G",
@@ -196,7 +221,7 @@
       "Open Semifinalist, Vietnam InterVarsity Debate Championships(2026)",
       "Open Grand Finalist, Hart House Summer Open (2025)"
     ],
-    "bio": "As Open Grand Champion, 2nd Open Speaker at South Asia Schools BP 2026, Open Grand Finalist, 2025 Hart House Summer Open, and McMaster High School BP Tournament, Alston brings a wealth of debating competitiveness success and expert round vision that can support our most advanced debaters to reach the next level of their debating careers."
+    "bio": "Alston won South Asia Schools BP 2026 and ranked second among open speakers. He also reached the Hart House Summer Open 2025 grand final and competed at McMaster High School BP. He coaches advanced students on round strategy and comparison."
   },
   {
     "name": "Isaac Y",
@@ -211,7 +236,7 @@
       "Representing Canada at US Nationals (2026)",
       "Junior Champion at Western Winter HST Oxford Qualifier (2025)"
     ],
-    "bio": "Representing Canada at US Nationals 2026, Issac is a internationally recognized debater with a consistent record of reaching the top of speaker rankings. He can support students aiming for the highest levels of debating success, and has experience in both coaching and administration."
+    "bio": "Isaac represented Canada at US Nationals in 2026 and won the junior division at the 2025 Western Winter HST Oxford Qualifier. He has coaching and programme administration experience."
   },
   {
     "name": "Cici C",
@@ -222,8 +247,9 @@
       "coaching",
       "outreach",
       "private"
+      ,"hk"
     ],
-    "badge": "HK WSDC Development Team",
+    "badge": "Hong Kong WSDC Development Team",
     "achievements": [
       "Team Hong Kong WSDC Development Team member",
       "Quarterfinalist, Stanford Invitational (2026)"
@@ -232,55 +258,37 @@
       "Level 1 C",
       "L3 WSDC B"
     ],
-    "bio": "A member of the Team Hong Kong WSDC Development Team and Advanced Debate Team at Phillips Exeter Academy, she has had numerous successes across Asian circuits and brings a wealth of debate knowledge."
+    "bio": "Cici is a Team Hong Kong WSDC Development Team member and competes with Phillips Exeter Academy's Advanced Debate Team. She also coaches DebateCraft cohorts."
   },
   {
     "name": "Piers K",
     "role": "Senior Coach",
-    "school": "Hong Kong International School，HK",
+    "school": "Hong Kong International School, Hong Kong",
     "image": "Images/Piers.png",
     "categories": [
       "coaching"
+      ,"hk"
     ],
-    "badge": "HK WSDC Development Team",
+    "badge": "Hong Kong WSDC Development Team",
     "achievements": [
-      "Team HK WSDC Development Team member",
+      "Hong Kong WSDC Development Team member",
       "16th Breaking Team, Vietnam Asian Schools Debating Championships (2026)"
     ],
     "classes": [
       "Level 1 B",
       "Level 2 A"
     ],
-    "bio": "Member of Team HK WSDC Development team and author of a daily current affairs newsletter"
-  },
-  {
-    "name": "Rachel R",
-    "role": "Senior Coach",
-    "school": "German Swiss International School，HK",
-    "image": "Images/Rachel.png",
-    "categories": [
-      "coaching",
-      "private"
-    ],
-    "achievements": [
-      "Captain, German Swiss International School Debate Team",
-      "Semifinalist & 7th Best Speaker, Hong Kong Junior Schools Debating Competition (2026)",
-      "Open Quarterfinalist, Indo-Pacific WSDO (2025)",
-      "U14 Champion, Indo-Pacific WSDO (2024)"
-    ],
-    "classes": [
-      "L3 WSDC B"
-    ],
-    "bio": "The captain of the German Swiss International School Debate Team, Rachel brings both individual and team successes most recently semifinalist at the Hong Kong Junior Schools Debating Competition 2026, individually the seventh best speaker, open-quarterfinalist in Indo-Pacific WSDO 2025, and U14 Champion in Indo-Pacific WSDO 2024. She  "
+    "bio": "Piers is a member of the Hong Kong WSDC Development Team and writes a daily current-affairs newsletter."
   },
   {
     "name": "Theodore W",
     "role": "Level 4 Coach",
-    "school": "Hong Kong International School, HK",
+    "school": "Hong Kong International School, Hong Kong",
     "image": "Images/TheoW.png",
     "categories": [
       "coaching",
       "private"
+      ,"hk"
     ],
     "achievements": [
       "Trainer, Chongqing WSDC Workshop (2024)",
@@ -291,7 +299,7 @@
       "Level 2 C",
       "Level 3 WSDC A"
     ],
-    "bio": "Trainer at Chongqing WSDC workshop 2024, Judged at Nanjing WSDC 2025,3rd best speaker at the 2025 Vietnam Asian Schools Debating Championships, and consistently broken at several other tournaments."
+    "bio": "Theodore trained students at the 2024 Chongqing WSDC Workshop and judged Nanjing WSDC in 2025. He ranked third among speakers at the 2025 Vietnam Asian Schools Debating Championships and has broken at several other tournaments."
   },
   {
     "name": "Andre C",
@@ -306,7 +314,7 @@
     "classes": [
       "Level 2B WSDC"
     ],
-    "bio": "A seasoned debater with experience in both WSDC and BP formats. Andre contributes to curriculum design and training with his 4+ years of experience."
+    "bio": "Andre has more than four years of WSDC and BP experience. He helps design curriculum and run training."
   },
   {
     "name": "Hirannya K",
@@ -324,17 +332,18 @@
       "Level 1 A",
       "Level 1 C"
     ],
-    "bio": "Grand finalist of Qatar Prep Schools Debate League and octofinalist in international competitions"
+    "bio": "Hirannya reached the Qatar Prep Schools Debate League grand final and the octofinals of international competitions."
   },
   {
     "name": "Larissa V",
     "role": "Level 3 Coach",
-    "school": "German Swiss International School，HK",
+    "school": "German Swiss International School, Hong Kong",
     "image": "Images/Larissa.png",
     "categories": [
       "coaching",
       "private"
     ],
+    "categories": ["coaching", "hk"],
     "achievements": [
       "CISWSDC Grand Champion & U16 Best Speaker",
       "1st Break (U16), MIWSDC (2024)",
@@ -343,17 +352,18 @@
     "classes": [
       "Level 2 A"
     ],
-    "bio": "Running and captaining training sessions for the GSIS junior school team, Larissa's record includes being the CISWSDC Grand Champion and U16 Best Speaker. She broke 1st (U16) at MIWSDC 2024 and was a semifinalist at both the Asia Pacific WSDC and the 2026 Junior Schools Debating Championship."
+    "bio": "Larissa runs and captains training for the German Swiss International School junior school team. She won CISWSDC and its U16 Best Speaker award, broke first in the U16 division at MIWSDC 2024, and reached the semifinals of Asia Pacific WSDC and the 2026 Junior Schools Debating Championship."
   },
   {
     "name": "Sanaya S",
     "role": "Level 3 Coach",
-    "school": "German Swiss International School，HK",
+    "school": "German Swiss International School, Hong Kong",
     "image": "Images/Sanaya.png",
     "categories": [
       "coaching",
       "outreach",
       "private"
+      ,"hk"
     ],
     "achievements": [
       "4th Best Team, Junior Schools Debating Championships (2026)",
@@ -363,7 +373,7 @@
       "Level 1 E",
       "Level 2B WSDC"
     ],
-    "bio": "A German Swiss International School Debate Club Co-leader, Sanaya has competed at Junior Schools Debating Championships for the past three years and specialized in drilling micro-skills that students can apply in rounds."
+    "bio": "Sanaya co-leads the German Swiss International School Debate Club and has competed at the Junior Schools Debating Championships for three years. Her training uses short drills for skills students can apply in rounds."
   },
   {
     "name": "Tanvi M",
@@ -384,23 +394,24 @@
       "Level 1 B",
       "Level 1 D"
     ],
-    "bio": "Semifinalist for Hart House Debate Tournament 2025 and UBC Summer HST 2025 where she was the 9th place speaker. Finalist in YPC HST 2025 and Debateability Summer Championships 2025"
+    "bio": "Tanvi reached the semifinals of the 2025 Hart House Debate Tournament and UBC Summer HST, where she ranked ninth among speakers. She also reached the 2025 YPC HST and Debateability Summer Championships finals."
   },
   {
     "name": "Vera H",
     "role": "Level 3 Coach",
-    "school": "German Swiss International School，HK",
+    "school": "German Swiss International School, Hong Kong",
     "image": "Images/Vera.png",
     "categories": [
       "coaching",
       "private"
+      ,"hk"
     ],
     "achievements": [
       "Semifinalist & 8th Best Speaker, Hong Kong Junior Schools Debate Competition (2026)",
       "U14 Champion, Indo-Pacific WSDO (2025)",
       "Finalist & 2nd Best Speaker, World Forensics League WSDC Spring Qualifiers"
     ],
-    "bio": "An experienced WSDC debater, who recently was a semifinalist at the Hong Kong Junior Schools Debate Competition 2026, individually eighth best speaker, U14 Champion of the Indo-Pacific WSDO 2025, as well as a finalist and 2nd best speaker at the World Forensics League WSDC Spring Qualifiers."
+    "bio": "Vera reached the 2026 Hong Kong Junior Schools Debate Competition semifinal and ranked eighth among speakers. She won the 2025 Indo-Pacific WSDO U14 division and reached the World Forensics League WSDC Spring Qualifiers final, where she ranked second among speakers."
   },
   {
     "name": "Eric J",
@@ -418,7 +429,7 @@
     "classes": [
       "Level 1 E"
     ],
-    "bio": "A BP debater who recently placed 3rd at the Team Canada Fundraiser 2025 and at the Carroll College(University) Fundraiser 2025."
+    "bio": "Eric placed third at the 2025 Team Canada Fundraiser and the 2025 Carroll College Fundraiser."
   },
   {
     "name": "Calvin M",
@@ -427,7 +438,7 @@
     "categories": [
       "coaching"
     ],
-    "bio": "A BP debater who recently placed 3rd at the Team Canada Fundraiser 2025 and at the Carroll College(University) Fundraiser 2025."
+    "bio": "Calvin placed third at the 2025 Team Canada Fundraiser and the 2025 Carroll College Fundraiser."
   },
   {
     "name": "Winston C",
@@ -436,16 +447,17 @@
     "image": "Images/Winston.png",
     "categories": [
       "coaching"
+      ,"hk"
     ],
-    "bio": "Winston has debate and moot experience from both DBS and Winchester College. He specializes in helping new ESL debaters."
+    "bio": "Winston has debate and moot experience from Diocesan Boys' School and Winchester College. He works with new English as a Second Language debaters."
   },
   {
     "name": "Chelsea Z",
-    "role": "Public Forum Coach",
+    "role": "Prepared Debate Coach",
     "image": "Images/Chelsea.png",
     "categories": [
       "coaching",
-      "PF",
+      "prepared",
       "outreach"
     ],
     "achievements": [
@@ -453,23 +465,21 @@
       "6th Place, Lincoln-Douglas, DSDL 3"
     ],
     "classes": [
-      "PF B"
     ],
-    "bio": "A Quarterfinalist in JV Lincoln Douglas at Harvard National Speech and Debate Tournament, and coming 6th place in Lincoln Douglas at DSDL 3, Chelsea brings an exceptional background in prepared debate formats to the DebateCraft team."
+    "bio": "Chelsea reached the JV Lincoln-Douglas quarterfinals at the Harvard National Speech and Debate Tournament and placed sixth in Lincoln-Douglas at DSDL 3. She coaches prepared debate formats."
   },
   {
     "name": "Matthew H",
-    "role": "Public Forum Coach",
+    "role": "Prepared Debate Coach",
     "school": "Phillips Exeter Academy, US",
     "image": "Images/Hao.png",
     "categories": [
       "outreach",
-      "PF"
+      "prepared"
     ],
     "classes": [
-      "PF A"
     ],
-    "bio": "Matthew is a proficient PF debater regularly breaking quarterfinals and above in the NSDA China circuit."
+    "bio": "Matthew regularly reaches the quarterfinals or later in Public Forum competitions on the NSDA China circuit."
   },
   {
     "name": "Dowan K",
@@ -485,7 +495,7 @@
       "Bioethics B",
       "Bioethics C"
     ],
-    "bio": "Dowan has WSDC experience having competed in local WSDC competitions in Korea"
+    "bio": "Dowan has competed in local WSDC tournaments in Korea."
   },
   {
     "name": "Oliver C",
@@ -503,7 +513,7 @@
       "Bioethics B",
       "Bioethics C"
     ],
-    "bio": "A passionate biophysicist with published papers, Oliver regularly interacts with and discusses bioethical issues."
+    "bio": "Oliver studies biophysics, has published papers, and teaches bioethics discussions."
   },
   {
     "name": "Emmanuel Z",
@@ -513,14 +523,15 @@
     "categories": [
       "outreach",
       "epi"
+      ,"hk"
     ],
     "achievements": [
-      "Conducted cancer research at HKU"
+      "Conducted cancer research at The University of Hong Kong"
     ],
     "classes": [
       "Bioethics A"
     ],
-    "bio": "Emmanuel is a debater at Phillips Exeter Academy. He embodies the DebateCraft mission to democratize science research for all students after conducting cancer research at HKU."
+    "bio": "Emmanuel debates at Phillips Exeter Academy and has conducted cancer research at The University of Hong Kong. He teaches students how to discuss scientific evidence and research ethics."
   },
   {
     "name": "Jessica F",
@@ -530,13 +541,13 @@
     "categories": [
       "outreach",
       "epi",
-      "PF"
+      "prepared"
     ],
     "achievements": [
       "Silver Tournament of Champions, Public Forum",
       "USABO Semifinalist"
     ],
-    "bio": "Having reached silver Tournament of Champions for PF, and a USABO semifinalist, Jessica is a commited and knowledgable coach and epidemiology Instructor."
+    "bio": "Jessica earned Silver at the Public Forum Tournament of Champions and reached the USABO semifinals. She coaches debate and teaches epidemiology."
   },
   {
     "name": "Aloysius Y",
@@ -555,10 +566,10 @@
     "image": "Images/Andrew.png",
     "categories": [
       "outreach",
-      "PF",
+      "prepared",
       "epi"
     ],
-    "bio": "Andrew supports debate content creation and helps maintain communication with parents. He has his own PF debate experience, giving him an understanding of the practical needs students face while preparing and learning."
+    "bio": "Andrew creates debate content and communicates with parents. His Public Forum experience informs the practice materials he prepares for students."
   },
   {
     "name": "Ana T",
@@ -566,9 +577,9 @@
     "image": "Images/Ana.png",
     "categories": [
       "outreach",
-      "PF"
+      "prepared"
     ],
-    "bio": "A student leader with a year of Public Forum (PF) debate experience, she’s passionate about helping others learn and contributes to every team with focus, energy, and a steady drive to grow."
+    "bio": "Ana has one year of Public Forum experience and supports younger students during practice."
   },
   {
     "name": "Theo O",
@@ -578,7 +589,7 @@
     "categories": [
       "outreach"
     ],
-    "bio": "With a background in entrepreneurship and marketing, Theo drives the team’s outreach strategy and engagement efforts."
+    "bio": "Theo plans school outreach and communications using his entrepreneurship and marketing experience."
   },
   {
     "name": "Max L",
@@ -588,7 +599,7 @@
     "categories": [
       "outreach"
     ],
-    "bio": "Having multiple professional social media accounts, shot videos for the Exonian, and a talented hobbyist photographer, Max brings a wealth of experience to our social media content creation team."
+    "bio": "Max has managed professional social accounts, shot video for the Exonian, and works as a hobbyist photographer. He creates DebateCraft social media content."
   },
   {
     "name": "Vivien S",
@@ -598,7 +609,7 @@
     "categories": [
       "outreach"
     ],
-    "bio": "Creates engaging content across social media platforms to achieve our mission of democratizing access to debate through free content. Vivien spent the summer TAing students and has experience in both teaching and encouraging students."
+    "bio": "Vivien creates DebateCraft social media content and spent the summer as a teaching assistant."
   },
   {
     "name": "Sophia C",
@@ -608,7 +619,7 @@
     "categories": [
       "outreach"
     ],
-    "bio": "Through music-based outreach activities with elderly individuals and creating supply packages for community members for MLK Day, Sophia has develop strong communication skills by interacting with individuals seeking support and connection."
+    "bio": "Sophia has run music activities with older adults and prepared community supply packages for MLK Day. At DebateCraft, she works on outreach."
   },
   {
     "name": "Andy L",
@@ -618,6 +629,6 @@
     "categories": [
       "outreach"
     ],
-    "bio": "Works on digital outreach and visual media, helping reach new students. He brings experience from the Exonian Web Board."
+    "bio": "Andy creates visual media and works on digital outreach. He also served on the Exonian Web Board."
   }
 ]

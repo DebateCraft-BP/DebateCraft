@@ -16,21 +16,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&amp;family=Noto+Sans+HK:wght@400;500;600;700&amp;family=Source+Sans+3:wght@400;500;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/main.css">
+  <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"DebateCraft","url":"https://debatecraft.org/","logo":"https://debatecraft.org/Images/Logo-white-transparent.png","email":"info@debatecraft.org","sameAs":["https://www.instagram.com/debate_craft/","https://www.facebook.com/profile.php?id=61577761071956"]}</script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-59QCKK1FZC"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-59QCKK1FZC');</script>
 </head>
 <body class="home-page">
   <a class="skip-link" href="#main">跳到主要內容</a>
-  <header class="site-header"><div class="nav-shell">
-    <a class="brand" href="cnindex.html" aria-label="DebateCraft 主頁"><img src="Images/Logo-white-transparent.png" alt="" width="34" height="34"><span>DebateCraft</span></a>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="開啟導覽"><span></span><span></span><span></span></button>
-    <nav id="site-menu" class="site-menu" aria-label="主要導覽">
-      <details class="nav-group"><summary>關於我們</summary><div class="nav-group-menu"><a href="pages/cnabout.html">關於 DebateCraft</a><a href="pages/cnteam.html">教練與成績</a></div></details>
-      <details class="nav-group"><summary>學校</summary><div class="nav-group-menu"><a href="pages/cntraining-pathway.html">DebateCraft 校本方法</a><a href="pages/cnresources.html">辯論資源</a><a href="pages/cncontact.html">學校聯絡</a></div></details>
-      <details class="nav-group"><summary>競技訓練</summary><div class="nav-group-menu"><a href="pages/cncourses.html">網上小班</a><a href="pages/cnget-involved.html">報名參與</a></div></details>
-      <a class="language-link" href="index.html" lang="en">English</a><a class="button button-small" href="mailto:info@debatecraft.org?subject=School%20debate%20programme">聯絡</a>
-    </nav>
-  </div></header>
+  <div id="root"></div>
 
   <main id="main">
     <section class="institutional-hero">
@@ -58,7 +51,7 @@
         <article><span>培訓</span><h3>Theodore W</h3><p>2024年重慶 WSDC 工作坊導師及 2025年南京 WSDC 評判。</p></article>
         <article><span>校隊領導</span><h3>Matthew Wong</h3><p>曾帶領溫徹斯特公學辯論社參加牛津學校辯論賽、劍橋學校辯論賽及 ICYD，並負責 BP 及國際關係辯題訓練。</p></article>
         <article><span>校隊領導</span><h3>Rachel Rhodes</h3><p>帶領德瑞國際學校辯論隊；2026年香港初中學校辯論比賽準決賽及第七名最佳辯手。</p></article>
-        <article><span>競賽及教學</span><h3>Valmik Dagayach</h3><p>香港代表隊發展梯隊成員；2026年美國全國賽公開組第二名最佳辯手、牛津 WSDC U17 冠軍，並已教授 DebateCraft 超過60小時。</p></article>
+        <article><span>競賽及教學</span><h3>Valmik Dagayach</h3><p>香港代表隊發展梯隊成員；2026年美國全國賽公開組第二名最佳辯手、牛津 WSDC U17 冠軍，並已教授 DebateCraft 超過50小時。</p></article>
       </div>
     </section>
 
@@ -97,6 +90,8 @@
   </main>
 
   <footer class="site-footer"><div class="footer-bottom"><span>© <span id="year">2026</span> DebateCraft</span><a href="mailto:info@debatecraft.org">info@debatecraft.org</a><a href="index.html" lang="en">English</a></div></footer>
-  <script>const toggle=document.querySelector('.nav-toggle'),menu=document.querySelector('.site-menu');toggle.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')==='true';toggle.setAttribute('aria-expanded',String(!open));menu.classList.toggle('open',!open)});document.getElementById('year').textContent=new Date().getFullYear();</script>
+  <script>window.DC_PAGE_ID = "cnhome";</script>
+  <script src="scripts/reactPages.js"></script>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>

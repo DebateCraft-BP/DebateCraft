@@ -12,12 +12,20 @@
   const pageId = window.DC_PAGE_ID || "about";
   const lang = pageId.startsWith("cn") ? "zh" : "en";
   const isZh = lang === "zh";
+  const isHome = pageId === "home" || pageId === "cnhome";
+  const assetPrefix = isHome ? "" : "../";
+  const localHref = (href = "") => {
+    if (!isHome || /^(?:https?:|mailto:|tel:|#)/.test(href)) return href;
+    if (href === "../index.html") return "index.html";
+    if (href === "../cnindex.html") return "cnindex.html";
+    return href.endsWith(".html") || href.includes(".html#") ? `pages/${href}` : href;
+  };
   const slugify = (value = "") => value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
   const displayName = (value = "") => value.trim();
 
   const cn = {
     nav: {
-      home: "../cnindex.html",
+      home: isHome ? "cnindex.html" : "../cnindex.html",
       about: "關於我們",
       programs: "小班課程",
       involved: "學校合作",
@@ -25,7 +33,7 @@
       search: "搜尋",
       searchPlaceholder: "搜尋課程、教練、指南……",
       lang: "English",
-      langHref: pageId.replace(/^cn/, "") ? `${pageId.replace(/^cn/, "")}.html` : "../index.html",
+      langHref: pageId === "cnhome" ? "index.html" : `${pageId.replace(/^cn/, "")}.html`,
       cta: "DebateCraft 方法 →",
     },
     footerSummary: "為香港及亞洲學校提供初中辯論隊訓練及校本辯論課程設計。",
@@ -33,7 +41,7 @@
 
   const en = {
     nav: {
-      home: "../index.html",
+      home: isHome ? "index.html" : "../index.html",
       about: "About",
       programs: "Group Classes",
       involved: "For Schools",
@@ -41,10 +49,10 @@
       search: "Search",
       searchPlaceholder: "Search courses, coaches, guides…",
       lang: "中文 (繁體)",
-      langHref: pageId === "even-if" ? "../cnindex.html" : `cn${pageId}.html`,
-      cta: "DebateCraft Method →",
+      langHref: pageId === "home" ? "cnindex.html" : pageId === "even-if" ? "../cnindex.html" : `cn${pageId}.html`,
+      cta: "DebateCraft Method for Schools →",
     },
-    footerSummary: "Junior-team training and school debate programme development across Hong Kong and Asia.",
+    footerSummary: "Junior-team training and school debate program development across Hong Kong and Asia.",
   };
 
   const t = isZh ? cn : en;
@@ -56,7 +64,7 @@
     offerings: "Group Debate Classes",
     cnofferings: "辯論小班課程",
     cncourses: "辯論小班課程",
-    "training-pathway": "DebateCraft Method in Schools",
+    "training-pathway": "DebateCraft Method for Schools",
     "cntraining-pathway": "DebateCraft 校本方法",
     biology: "Bioethics: Science and Future of Medicine",
     partnership: "School Partnerships",
@@ -84,7 +92,7 @@
 
   const SITE_URL = "https://debatecraft.org";
   const STUDENT_FORM_URL = "https://form.jotform.com/261003548067049";
-  const SCHOOL_CONTACT_URL = "mailto:info@debatecraft.org?subject=School%20debate%20programme";
+  const SCHOOL_CONTACT_URL = "mailto:info@debatecraft.org?subject=School%20debate%20program";
 
   const pageFileMap = {
     about: "about.html",
@@ -124,7 +132,7 @@
     story: "See how DebateCraft approaches curriculum, student progression, coaching, and school-team handover.",
     team: "Meet DebateCraft coaches, judges, and trainers with competitive results across Hong Kong, Asia, and global debate circuits.",
     offerings: "Compare DebateCraft live group classes in debate foundations, WSDC, BP, competition preparation, and bioethics.",
-    "training-pathway": "See how schools can use the DebateCraft Method for junior squad development, competition preparation, and handover.",
+    "training-pathway": "See how the DebateCraft Method for Schools supports junior squad development, competition preparation, and handover.",
     biology: "A free Bioethics course covering genetics, CRISPR, AI in healthcare, medical decision-making, and student research projects.",
     partnership: "Review DebateCraft's online coaching, assessment, and competition support for school debate teams.",
     "get-involved": "Apply as a student, become a coach, partner with DebateCraft, or support free debate education.",
@@ -273,7 +281,6 @@
     ::-webkit-scrollbar-track{background:${NAVY2}}
     ::-webkit-scrollbar-thumb{background:${ORANGE};border-radius:3px}
     .serif{font-family:'Playfair Display',Georgia,serif}
-    @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
     @keyframes countUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
     @keyframes pillPop{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:scale(1)}}
     .dc-shell{min-height:100vh;background:${CREAM}}
@@ -297,7 +304,7 @@
     .dc-divider{width:1px;height:16px;background:rgba(255,255,255,.12);margin:0 6px}
     .dc-lang{color:rgba(255,255,255,.35)!important;font-size:11px!important}
     .dc-top-cta{background:${ORANGE};color:${NAVY}!important;border-radius:5px;padding:8px 16px!important;font-weight:700!important;font-size:12px!important;letter-spacing:.07em!important;text-transform:uppercase;margin-left:6px}
-    .dc-search-overlay{position:fixed;inset:0;background:rgba(13,23,48,.62);display:flex;align-items:flex-start;justify-content:center;padding:12vh 24px 24px;z-index:500;animation:fadeUp .2s ease both}
+    .dc-search-overlay{position:fixed;inset:0;background:rgba(7,26,47,.62);display:flex;align-items:flex-start;justify-content:center;padding:12vh 24px 24px;z-index:500}
     .dc-search-panel{width:100%;max-width:620px;max-height:74vh;display:flex;flex-direction:column;background:${WHITE};border-radius:10px;border-top:4px solid ${ORANGE};box-shadow:0 30px 70px rgba(13,23,48,.4);overflow:hidden}
     .dc-search-input-row{display:flex;align-items:center;gap:10px;padding:16px 18px;border-bottom:1px solid rgba(17,29,60,.1);color:rgba(17,29,60,.4);flex-shrink:0}
     .dc-search-input{flex:1;border:0;outline:0;font-size:16px;color:${NAVY};background:transparent}
@@ -337,9 +344,9 @@
     .grid-2{grid-template-columns:repeat(2,1fr)}
     .grid-3{grid-template-columns:repeat(3,1fr)}
     .grid-4{grid-template-columns:repeat(4,1fr)}
-    .card{background:${WHITE};border-radius:4px;border-top:4px solid var(--accent,${ORANGE});padding:28px 24px;box-shadow:0 4px 14px rgba(17,29,60,.06);transition:transform .25s ease,box-shadow .25s ease}
+    .card{background:${WHITE};border-radius:4px;border:1px solid rgba(7,26,47,.16);padding:28px 24px;box-shadow:0 4px 14px rgba(17,29,60,.06);transition:transform .25s ease,box-shadow .25s ease}
     .card:hover{transform:translateY(-6px);box-shadow:0 16px 32px rgba(17,29,60,.12)}
-    .dark-card{background:${NAVY};color:${WHITE};border-top-color:var(--accent,${ORANGE})}
+    .dark-card{background:${NAVY};color:${WHITE}}
     .card h3{font-size:18px;font-weight:700;color:${NAVY};margin-bottom:10px}
     .dark-card h3{color:${WHITE}}
     .card p{font-size:14px;line-height:1.65;color:rgba(17,29,60,.62)}
@@ -359,7 +366,7 @@
     .stat span{font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;opacity:.72;line-height:1.5}
     .proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
     .proof-grid.two{grid-template-columns:repeat(2,1fr)}
-    .proof-card{background:${WHITE};border-radius:6px;border-top:4px solid var(--accent,${ORANGE});overflow:hidden;box-shadow:0 6px 18px rgba(17,29,60,.08);transition:transform .25s ease,box-shadow .25s ease}
+    .proof-card{background:${WHITE};border-radius:6px;border:1px solid rgba(7,26,47,.16);overflow:hidden;box-shadow:0 6px 18px rgba(17,29,60,.08);transition:transform .25s ease,box-shadow .25s ease}
     .proof-card:hover{transform:translateY(-5px);box-shadow:0 18px 38px rgba(17,29,60,.14)}
     .proof-frame{aspect-ratio:16/10;background:${NAVY2};display:flex;align-items:center;justify-content:center;overflow:hidden}
     .proof-frame img{width:100%;height:100%;object-fit:contain;display:block}
@@ -392,7 +399,7 @@
     .team-achievements li:before{content:"▸";position:absolute;left:0;color:${ORANGE};font-weight:700}
     .team-bio-btn{display:inline-block;border:0;background:transparent;padding:0;color:${ORANGE};font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;margin-top:auto;align-self:flex-start}
     .team-bio-btn:hover{text-decoration:underline}
-    .bio-modal-backdrop{position:fixed;inset:0;background:rgba(13,23,48,.6);display:flex;align-items:center;justify-content:center;z-index:400;padding:24px;animation:fadeUp .25s ease both}
+    .bio-modal-backdrop{position:fixed;inset:0;background:rgba(7,26,47,.6);display:flex;align-items:center;justify-content:center;z-index:400;padding:24px}
     .bio-modal{position:relative;background:${WHITE};max-width:560px;width:100%;max-height:88vh;overflow-y:auto;border-radius:8px;border-top:4px solid ${ORANGE};padding:32px 28px;box-shadow:0 30px 70px rgba(13,23,48,.35)}
     .bio-modal-close{position:absolute;top:14px;right:14px;width:32px;height:32px;border:0;border-radius:999px;background:${CREAM};color:${NAVY};font-size:20px;line-height:1;cursor:pointer}
     .bio-modal-close:hover{background:rgba(17,29,60,.12)}
@@ -424,7 +431,7 @@
     .search-input:focus,.select-input:focus,.practice-area:focus{border-color:${SKY};box-shadow:0 0 0 3px rgba(61,195,232,.16)}
     .practice-area{min-height:104px;resize:vertical;line-height:1.55}
     .resource-card-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-    .compact-card{background:${WHITE};border:1px solid rgba(17,29,60,.08);border-top:4px solid var(--accent,${ORANGE});border-radius:6px;padding:22px;box-shadow:0 4px 14px rgba(17,29,60,.05)}
+    .compact-card{background:${WHITE};border:1px solid rgba(7,26,47,.16);border-radius:6px;padding:22px;box-shadow:0 4px 14px rgba(17,29,60,.05)}
     .compact-card h3{font-size:18px;margin-bottom:8px;color:${NAVY}}
     .compact-card p{font-size:14px;line-height:1.65;color:rgba(17,29,60,.62)}
     .compact-meta{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:${ORANGE};margin-bottom:10px}
@@ -539,7 +546,7 @@
   document.head.insertAdjacentHTML("beforeend", `<style>${style}</style>`);
   const sharedStyles = document.createElement("link");
   sharedStyles.rel = "stylesheet";
-  sharedStyles.href = "../styles/main.css";
+  sharedStyles.href = `${assetPrefix}styles/main.css`;
   document.head.appendChild(sharedStyles);
 
   function extProps(href) {
@@ -589,8 +596,8 @@
       : "DebateCraft";
     return h(
       "a",
-      { className: "dc-brand", href: t.nav.home },
-      h("img", { src: "../Images/Logo-white-transparent.png", alt: isZh ? "DebateCraft 標誌" : "DebateCraft logo" }),
+      { className: "dc-brand", href: localHref(t.nav.home) },
+      h("img", { src: `${assetPrefix}Images/Logo-white-transparent.png`, alt: isZh ? "DebateCraft 標誌" : "DebateCraft logo" }),
       h("span", { className: "dc-wordmark" }, wordmark)
     );
   }
@@ -638,7 +645,7 @@
 
     useEffect(() => {
       if (!open) return;
-      fetch(`${isZh ? "../data/cnteam_members.json" : "../data/team_members.json"}?v=search`)
+      fetch(`${assetPrefix}${isZh ? "data/cnteam_members.json" : "data/team_members.json"}?v=search`)
         .then((r) => r.json())
         .then(setMembers)
         .catch(() => setMembers([]));
@@ -710,7 +717,7 @@
                   {
                     key: `${g.type}-${i}`,
                     className: "dc-search-result",
-                    href: item.href,
+                    href: localHref(item.href),
                     ...(item.external ? extProps(item.href) : { onClick: onClose }),
                   },
                   h("div", { className: "dc-search-result-title" }, item.title),
@@ -746,16 +753,14 @@
     }, []);
     const navCards = isZh
       ? [
-          { label: "關於我們", links: [["關於 DebateCraft", "cnabout.html"], ["教練與成績", "cnteam.html"]] },
+          { label: "關於我們", links: [["關於 DebateCraft", "cnabout.html"], ["教練與成績", "cnteam.html"], ["使命", "cnstory.html"], ["生物倫理", "cnbiology.html"]] },
           { label: "學校", links: [["DebateCraft 校本方法", "cntraining-pathway.html"], ["辯論資源", "cnresources.html"], ["學校聯絡", SCHOOL_CONTACT_URL]] },
           { label: "競技訓練", links: [["網上小班課程", "cncourses.html"], ["報名參與", "cnget-involved.html"]] },
-          { label: "DebateCraft", links: [["使命", "cnstory.html"], ["生物倫理", "cnbiology.html"]] },
         ]
       : [
-          { label: "About", links: [["About DebateCraft", "about.html"], ["Coaches and results", "team.html"]] },
-          { label: "School", links: [["DebateCraft Method", "training-pathway.html"], ["Debate resources", "resources.html"], ["School contact", SCHOOL_CONTACT_URL]] },
+          { label: "About", links: [["About DebateCraft", "about.html"], ["Coaches and results", "team.html"], ["Mission", "story.html"], ["Bioethics", "biology.html"]] },
+          { label: "School", links: [["DebateCraft Method for Schools", "training-pathway.html"], ["Debate resources", "resources.html"], ["School contact", SCHOOL_CONTACT_URL]] },
           { label: "Competitive Training", links: [["Group Classes", "offerings.html"], ["Sign up", "get-involved.html"]] },
-          { label: "DebateCraft", links: [["Mission", "story.html"], ["Bioethics", "biology.html"]] },
         ];
 
     useEffect(() => {
@@ -783,8 +788,8 @@
           h(
             "div",
             { className: "dc-right-links" },
-            h("a", { href: isZh ? "cnget-involved.html" : "get-involved.html" }, t.nav.involved),
-            h("a", { href: isZh ? "cncontact.html" : "contact.html" }, t.nav.contact),
+            h("a", { href: localHref(isZh ? "cnget-involved.html" : "get-involved.html") }, t.nav.involved),
+            h("a", { href: localHref(isZh ? "cncontact.html" : "contact.html") }, t.nav.contact),
             h("div", { className: "dc-divider" }),
             h("a", { className: "dc-lang", href: t.nav.langHref }, t.nav.lang),
             h("a", { className: "dc-top-cta", href: SCHOOL_CONTACT_URL }, t.nav.cta)
@@ -798,7 +803,7 @@
               "div",
               { className: "dc-nav-card", key: card.label },
               h("div", { className: "dc-nav-label" }, card.label),
-              card.links.map(([label, href]) => h("a", { key: label, href, ...extProps(href) }, h(Arrow), label))
+              card.links.map(([label, href]) => h("a", { key: label, href: localHref(href), ...extProps(href), onClick: () => setOpen(false) }, h(Arrow), label))
             )
           )
         )
@@ -816,11 +821,11 @@
         { className: "inner", style: { position: "relative", zIndex: 2 } },
         h(
           "h1",
-          { className: "serif", style: { fontSize: "clamp(42px, 8vw, 64px)", fontWeight: 800, color: WHITE, lineHeight: 1.05, marginBottom: 18, animation: "fadeUp .6s ease .08s both" } },
+          { className: "serif", style: { fontSize: "clamp(42px, 8vw, 64px)", fontWeight: 800, color: WHITE, lineHeight: 1.05, marginBottom: 18 } },
           title,
           emphasis && h("em", { style: { color: ORANGE, fontStyle: "italic" } }, ` ${emphasis}`)
         ),
-        subtitle && h("p", { style: { maxWidth: 720, margin: "0 auto", color: "rgba(255,255,255,.64)", fontSize: 17, lineHeight: 1.72, animation: "fadeUp .6s ease .16s both" } }, subtitle)
+        subtitle && h("p", { style: { maxWidth: 720, margin: "0 auto", color: "rgba(255,255,255,.72)", fontSize: 17, lineHeight: 1.72 } }, subtitle)
       )
     );
   }
@@ -846,8 +851,7 @@
   function InfoCard({ title, text, accent = ORANGE, tag, dark = false, children }) {
     return h(
       "article",
-      { className: `card${dark ? " dark-card" : ""}`, style: { "--accent": accent } },
-      tag && h("div", { className: "pill", style: { color: accent, background: `${accent}18` } }, tag),
+      { className: `card${dark ? " dark-card" : ""}` },
       h("h3", null, title),
       text && h("p", null, text),
       children
@@ -1196,7 +1200,6 @@
         h(
           "aside",
           { className: "finder-result", "aria-live": "polite" },
-          h("div", { className: "match-tag" }, match.primary.tag),
           h("h3", null, match.primary.title),
           h("p", null, match.reason),
           h("p", { style: { marginTop: 12 } }, match.primary.detail),
@@ -1274,7 +1277,7 @@
         {
           title: "Level 3 BP Competitive Track",
           tag: "Level 3 · British Parliamentary · Ages 13+ · 2+ years",
-          text: "Students practise five-minute BP speeches, extensions, POIs, rapid analysis, and receive individual feedback.",
+          text: "Students practice five-minute BP speeches, extensions, POIs, rapid analysis, and receive individual feedback.",
           accent: SKY,
           details: ["10 two-hour sessions", "Strict limit of 8 students per class", "Extensions and POI techniques", "Optional Saturday Lab for weekly summer BP practice against motivated peers"],
         },
@@ -1447,7 +1450,7 @@
           ["科學與倫理", "生物倫理將科學問題及倫理反思連結起來。", "#0d9488"],
         ]
       : [
-          ["Debate & Communication", "Students practise clear reasoning, careful listening, and persuasive communication.", ORANGE],
+          ["Debate & Communication", "Students practice clear reasoning, careful listening, and persuasive communication.", ORANGE],
           ["Hong Kong Leadership & Team HK", "Adviser Sandeep Chulani was Coach and Selector of Team HK and formerly chaired Hong Kong Schools Debating and Public Speaking Community. He also co-founded HKBPDC. Team includes Hong Kong WSDC Development Team members.", SKY],
           ["Science & Ethics", "Bioethics connects scientific questions with ethical reflection.", "#0d9488"],
         ];
@@ -1465,7 +1468,7 @@
         Section,
         null,
         h("div", { className: "grid grid-2", style: { alignItems: "start" } },
-          h(TitleBlock, { eyebrow: isZh ? "課程目標" : "Programme objectives", title: isZh ? "建立初中" : "Junior-team", emphasis: isZh ? "競技梯隊。" : "development.", lead: isZh ? "以課程內容、形成性回饋及評估記錄，支援學校提供通往賽事的有結構訓練。" : "Use curriculum content, formative feedback, and assessment records to support structured training towards competition." }),
+          h(TitleBlock, { eyebrow: isZh ? "課程目標" : "Program objectives", title: isZh ? "建立初中" : "Junior-team", emphasis: isZh ? "競技梯隊。" : "development.", lead: isZh ? "以課程內容、形成性回饋及評估記錄，支援學校提供通往賽事的有結構訓練。" : "Use curriculum content, formative feedback, and assessment records to support structured training towards competition." }),
           h("div", { className: "card", style: { "--accent": ORANGE } }, missionParagraphs.map((paragraph) => h("p", { key: paragraph, style: { marginBottom: 14 } }, paragraph)))
         )
       ),
@@ -1480,14 +1483,13 @@
       h(
         Section,
         { cream: true },
-        h(TitleBlock, { eyebrow: isZh ? "訓練內容" : "What Students Practise", title: isZh ? "分析、表達與" : "Reasoning, Speaking and", emphasis: isZh ? "賽後修正。" : "Round Review.", center: true }),
+        h(TitleBlock, { eyebrow: isZh ? "訓練內容" : "What Students Practice", title: isZh ? "分析、表達與" : "Reasoning, Speaking and", emphasis: isZh ? "賽後修正。" : "Round Review.", center: true }),
         h(
           "div",
           { className: "grid grid-3" },
           learningCards.map(([title, text, accent]) => h(InfoCard, { key: title, title, text, accent }))
         )
       ),
-      h(StatsBand, { stats: commonStats }),
       h(CTA)
     );
   }
@@ -1502,7 +1504,7 @@
         eyebrow: isZh ? "網上小班" : "Live Group Classes",
         title: isZh ? "按程度選擇" : "Choose the Right",
         emphasis: isZh ? "辯論課程。" : "Group Class.",
-        subtitle: isZh ? "為個別學生而設的小班課程，包括辯論基礎、WSDC、BP、賽事準備與生物倫理。學校如需要完整培訓體系，請查看校本培訓路線。" : "Small live cohorts for individual students in debate foundations, WSDC, BP, competition preparation, and bioethics. Schools seeking a full programme should use the School Training Pathway.",
+        subtitle: isZh ? "為個別學生而設的小班課程，包括辯論基礎、WSDC、BP、賽事準備與生物倫理。學校如需要完整培訓體系，請查看校本培訓路線。" : "Small live cohorts for individual students in debate foundations, WSDC, BP, competition preparation, and bioethics. Schools seeking a full program should use the DebateCraft Method for Schools.",
       }),
       h(StatsBand, { stats: commonStats }),
       h(CourseFinderSection),
@@ -1526,7 +1528,7 @@
               InfoCard,
               { key: program.title, title: program.title, tag: program.tag, text: program.text, accent: program.accent },
               h("ul", { className: "course-detail-list" }, program.details.map((detail) => h("li", { key: detail }, detail))),
-              h("div", { style: { marginTop: 20 } }, h(Button, { href: STUDENT_FORM_URL }, isZh ? "申請辯論 →" : "Apply for Debate →"))
+              h("div", { style: { marginTop: 20 } }, h(Button, { href: STUDENT_FORM_URL }, isZh ? "查詢課程 →" : "Inquiry Form →"))
             )
           )
         )
@@ -1534,7 +1536,7 @@
       h(
         Section,
         { cream: true },
-        h(TitleBlock, { eyebrow: isZh ? "小班訓練內容" : "Inside Each Class", title: isZh ? "學生實際練習" : "Students Practise", emphasis: isZh ? "三件事。" : "Three Things.", center: true }),
+        h(TitleBlock, { eyebrow: isZh ? "小班訓練內容" : "Inside Each Class", title: isZh ? "學生實際練習" : "Students Practice", emphasis: isZh ? "三件事。" : "Three Things.", center: true }),
         h(
           "div",
           { className: "grid grid-3" },
@@ -1611,15 +1613,15 @@
       React.Fragment,
       null,
       h(PageHeader, {
-        eyebrow: isZh ? "DebateCraft 校本方法" : "DebateCraft Method in Schools",
+        eyebrow: isZh ? "DebateCraft 校本方法" : "DebateCraft Method for Schools",
         title: isZh ? "學校需要" : "Schools need the",
-        emphasis: isZh ? "DebateCraft 方法。" : "DebateCraft Method.",
+        emphasis: isZh ? "DebateCraft 方法。" : "DebateCraft Method for Schools.",
         subtitle: isZh ? "為香港、馬來西亞及新加坡學校負責教師而設：以線上教練配合校曆、課外活動、賽制及教師可用時間。" : "Online coaching for school leads in Hong Kong, Malaysia, and Singapore, aligned to timetable, club structure, competition format, and staff capacity.",
       }),
       h(
         Section,
         null,
-        h(TitleBlock, { eyebrow: isZh ? "我們要解決甚麼？" : "What are we solving?", title: isZh ? "讓校隊不再" : "The problems behind", emphasis: isZh ? "每年重新開始。" : "a reset each year.", lead: isZh ? "DebateCraft 方法將學生進度、練習節奏、賽事準備及校內交接連成一套可延續的方法。" : "The DebateCraft Method connects student progression, coaching rhythm, competition preparation, and school handover into one repeatable method.", center: true }),
+        h(TitleBlock, { eyebrow: isZh ? "我們要解決甚麼？" : "What are we solving?", title: isZh ? "讓校隊不再" : "The problems behind", emphasis: isZh ? "每年重新開始。" : "a reset each year.", lead: isZh ? "DebateCraft 方法將學生進度、練習節奏、賽事準備及校內交接連成一套可延續的方法。" : "The DebateCraft Method for Schools connects student progression, coaching rhythm, competition preparation, and school handover into one repeatable method.", center: true }),
         h("div", { className: "pathway-problems" }, adminProblems.map(([title, text], index) => h("article", { key: title }, h("span", null, String(index + 1).padStart(2, "0")), h("h3", null, title), h("p", null, text))))
       ),
       h(
@@ -1805,7 +1807,10 @@
       const embedded = document.getElementById("dc-team-data");
       if (embedded) {
         try {
-          const data = JSON.parse(embedded.textContent || "[]");
+          const data = JSON.parse(embedded.textContent || "[]").map((member) => ({
+            ...member,
+            bio: typeof member.bio === "string" ? member.bio.replace("programme administration", "program administration") : member.bio,
+          }));
           if (Array.isArray(data) && data.length) {
             setMembers(data);
             return;
@@ -1964,12 +1969,12 @@
     return h(
       React.Fragment,
       null,
-      h(PageHeader, { eyebrow: isZh ? "香港學校校本課程" : "School programme", title: isZh ? "初中梯隊訓練及" : "Junior squad training", emphasis: isZh ? "課程建立。" : "curriculum delivery.", subtitle: isZh ? "按學生程度、校曆、賽制及教師聯絡安排線上教練、練習賽及進度評估。" : "Online coaching, practice rounds, and progress assessment aligned to student readiness, timetable, debate format, and teacher liaison." }),
+      h(PageHeader, { eyebrow: isZh ? "香港學校校本課程" : "School program", title: isZh ? "初中梯隊訓練及" : "Junior squad training", emphasis: isZh ? "課程建立。" : "curriculum delivery.", subtitle: isZh ? "按學生程度、校曆、賽制及教師聯絡安排線上教練、練習賽及進度評估。" : "Online coaching, practice rounds, and progress assessment aligned to student readiness, timetable, debate format, and teacher liaison." }),
       h(
         Section,
         null,
-        h(TitleBlock, { eyebrow: isZh ? "課程範圍" : "Programme scope", title: isZh ? "現有校隊訓練及" : "Existing-team training", emphasis: isZh ? "新課程建立。" : "new programme delivery.", center: true }),
-        h("div", { className: "grid grid-2" }, h(InfoCard, { title: isZh ? "初中梯隊訓練" : "Junior-Team Training", text: isZh ? "每週小隊訓練、練習賽回饋、角色分工與賽前集中訓練。" : "Weekly squad coaching, round feedback, role development, and focused preparation before competitions." }), h(InfoCard, { title: isZh ? "新辯論課程" : "New Debate Programme", text: isZh ? "由課程設計、招募初學者到進入比賽，並留下下一屆可沿用的課綱與評核。" : "Curriculum, beginner recruitment, coach delivery, and a route into competition, with a syllabus and assessment record for the next cohort.", accent: SKY }))
+        h(TitleBlock, { eyebrow: isZh ? "課程範圍" : "Program scope", title: isZh ? "現有校隊訓練及" : "Existing-team training", emphasis: isZh ? "新課程建立。" : "new program delivery.", center: true }),
+        h("div", { className: "grid grid-2" }, h(InfoCard, { title: isZh ? "初中梯隊訓練" : "Junior-Team Training", text: isZh ? "每週小隊訓練、練習賽回饋、角色分工與賽前集中訓練。" : "Weekly squad coaching, round feedback, role development, and focused preparation before competitions." }), h(InfoCard, { title: isZh ? "新辯論課程" : "New Debate Program", text: isZh ? "由課程設計、招募初學者到進入比賽，並留下下一屆可沿用的課綱與評核。" : "Curriculum, beginner recruitment, coach delivery, and a route into competition, with a syllabus and assessment record for the next cohort.", accent: SKY }))
       ),
       h(ProofGallerySection, {
         set: "partnership",
@@ -1977,7 +1982,7 @@
         eyebrow: isZh ? "交付及評估" : "Delivery and assessment",
         title: isZh ? "課程內容、練習及" : "Curriculum, practice, and",
         emphasis: isZh ? "進度記錄。" : "progress records.",
-        lead: isZh ? "線上小班、固定練習、練習賽檢討及清晰進度，配合現有校隊或新課程。" : "Online cohorts, fixed drills, practice-round review, and progress records for an existing team or new programme.",
+        lead: isZh ? "線上小班、固定練習、練習賽檢討及清晰進度，配合現有校隊或新課程。" : "Online cohorts, fixed drills, practice-round review, and progress records for an existing team or new program.",
       }),
       h(CTA)
     );
@@ -2022,7 +2027,7 @@
     {
       q: { en: "Can I get involved beyond taking a course?", zh: "除了上課，還可以如何參與？" },
       a: {
-        en: "Yes. Apply to coach, commission a school programme, or donate toward free classes.",
+        en: "Yes. Apply to coach, commission a school program, or donate toward free classes.",
         zh: "可以。你可以申請做教練、委託校本課程，或者捐款支持免費小班。"
       }
     }
@@ -2049,7 +2054,7 @@
   }
 
   function GetInvolvedPage() {
-    return h(React.Fragment, null, h(PageHeader, { eyebrow: isZh ? "參與 DebateCraft" : "Join DebateCraft", title: isZh ? "選擇你要做的" : "Choose a", emphasis: isZh ? "一件事。" : "Role.", subtitle: isZh ? "報讀小班、申請成為教練、或與學校合作，亦可捐款支持免費課程。" : "Apply for a class, coach younger debaters, commission a school programme, or fund free classes." }), h(Section, null, h("div", { className: "grid grid-4" }, [[isZh ? "成為學生" : "Apply as Student", isZh ? "報讀免費小班，按經驗分班。" : "Apply for a free group class and receive a placement.", STUDENT_FORM_URL], [isZh ? "成為教練" : "Become a Coach", isZh ? "帶領技巧訓練、練習賽與回饋。" : "Run skill drills, practice rounds, and feedback.", "https://docs.google.com/forms/d/e/1FAIpQLSfombgLTJ0oDbWfCaSumrnLAjkdvT_K9FW1KJakbr9ZAQxwnQ/viewform?usp=header"], [isZh ? "學校合作" : "Commission School Training", isZh ? "訓練現有隊伍，或者建立新學會。" : "Train an existing team or launch a new programme.", "partnership.html"], [isZh ? "捐款支持" : "Donate", isZh ? "支付教材、平台與免費課程成本。" : "Cover materials, platforms, and free-class costs.", "https://buymeacoffee.com/debatecraft"]].map(([title, text, href]) => h(InfoCard, { key: title, title, text }, h("div", { style: { marginTop: 20 } }, h(Button, { href }, isZh ? "前往 →" : "Start →")))))), h(StatsBand, { stats: commonStats }), h(FAQSection));
+    return h(React.Fragment, null, h(PageHeader, { eyebrow: isZh ? "參與 DebateCraft" : "Join DebateCraft", title: isZh ? "選擇你要做的" : "Choose a", emphasis: isZh ? "一件事。" : "Role.", subtitle: isZh ? "報讀小班、申請成為教練、或與學校合作，亦可捐款支持免費課程。" : "Apply for a class, coach younger debaters, commission a school program, or fund free classes." }), h(Section, null, h("div", { className: "grid grid-4" }, [[isZh ? "成為學生" : "Apply as Student", isZh ? "報讀免費小班，按經驗分班。" : "Apply for a free group class and receive a placement.", STUDENT_FORM_URL], [isZh ? "成為教練" : "Become a Coach", isZh ? "帶領技巧訓練、練習賽與回饋。" : "Run skill drills, practice rounds, and feedback.", "https://docs.google.com/forms/d/e/1FAIpQLSfombgLTJ0oDbWfCaSumrnLAjkdvT_K9FW1KJakbr9ZAQxwnQ/viewform?usp=header"], [isZh ? "學校合作" : "Commission School Training", isZh ? "訓練現有隊伍，或者建立新學會。" : "Train an existing team or launch a new program.", "partnership.html"], [isZh ? "捐款支持" : "Donate", isZh ? "支付教材、平台與免費課程成本。" : "Cover materials, platforms, and free-class costs.", "https://buymeacoffee.com/debatecraft"]].map(([title, text, href]) => h(InfoCard, { key: title, title, text }, h("div", { style: { marginTop: 20 } }, h(Button, { href }, isZh ? "前往 →" : "Start →")))))), h(StatsBand, { stats: commonStats }), h(FAQSection));
   }
 
   function DonatePage() {
@@ -2057,7 +2062,7 @@
   }
 
   function ContactPage() {
-    return h(React.Fragment, null, h(PageHeader, { eyebrow: isZh ? "校本課程查詢" : "School programme enquiry", title: isZh ? "提供課程資料" : "Send programme details", emphasis: isZh ? "開始討論。" : "for review.", subtitle: isZh ? "請提供學生人數、年級、賽制、校曆、每週時段、評估需要及目標賽事。" : "Send cohort size, year groups, debate format, timetable, weekly availability, assessment needs, and target competition." }), h(Section, null, h("div", { className: "grid grid-2" }, h(InfoCard, { title: isZh ? "聯絡 DebateCraft" : "Contact DebateCraft", text: "info@debatecraft.org" }, h("div", { style: { marginTop: 18 } }, h(Button, { href: SCHOOL_CONTACT_URL, dark: true }, isZh ? "發送電郵" : "Email DebateCraft"))), h(InfoCard, { title: isZh ? "先查看課程內容" : "Review programme content", text: isZh ? "查看課程範圍、評估證據、交付安排及教練經驗。" : "Review curriculum scope, assessment evidence, delivery arrangements, and coaching experience.", accent: SKY }, h("div", { style: { marginTop: 18 } }, h(Button, { href: isZh ? "cntraining-pathway.html" : "training-pathway.html" }, isZh ? "查看課程" : "View programme"))))));
+    return h(React.Fragment, null, h(PageHeader, { eyebrow: isZh ? "校本課程查詢" : "School program inquiry", title: isZh ? "提供課程資料" : "Send program details", emphasis: isZh ? "開始討論。" : "for review.", subtitle: isZh ? "請提供學生人數、年級、賽制、校曆、每週時段、評估需要及目標賽事。" : "Send cohort size, year groups, debate format, timetable, weekly availability, assessment needs, and target competition." }), h(Section, null, h("div", { className: "grid grid-2" }, h(InfoCard, { title: isZh ? "聯絡 DebateCraft" : "Contact DebateCraft", text: "info@debatecraft.org" }, h("div", { style: { marginTop: 18 } }, h(Button, { href: SCHOOL_CONTACT_URL, dark: true }, isZh ? "發送電郵" : "Email DebateCraft"))), h(InfoCard, { title: isZh ? "先查看課程內容" : "Review program content", text: isZh ? "查看課程範圍、評估證據、交付安排及教練經驗。" : "Review curriculum scope, assessment evidence, delivery arrangements, and coaching experience.", accent: SKY }, h("div", { style: { marginTop: 18 } }, h(Button, { href: isZh ? "cntraining-pathway.html" : "training-pathway.html" }, isZh ? "查看課程" : "View program"))))));
   }
 
   const guideResources = [
@@ -3158,9 +3163,9 @@
   }
   function CalendarPage() {
     const css = `
-      .calendar-poster { --cal-orange:#F7A234; --cal-sky:#3DC3E8; --cal-bio:#0d9488; --cal-navy:#111d3c; --cal-navy-deep:#0d1730; --cal-cream:#f5f0e8; --cal-white:#fff; --cal-hair:rgba(17,29,60,.12); --cal-muted:rgba(17,29,60,.62); --cal-shadow:0 18px 50px rgba(17,29,60,.10); background:var(--cal-cream); color:var(--cal-navy); overflow-x:hidden; }
+      .calendar-poster { --cal-orange:#ae9562; --cal-sky:#0d5ea6; --cal-bio:#0d5ea6; --cal-navy:#071a2f; --cal-navy-deep:#102b49; --cal-cream:#f4f3ee; --cal-white:#fff; --cal-hair:rgba(7,26,47,.12); --cal-muted:rgba(7,26,47,.62); --cal-shadow:0 18px 50px rgba(7,26,47,.10); background:var(--cal-cream); color:var(--cal-navy); overflow-x:hidden; }
       .calendar-poster * { box-sizing:border-box; }
-      .calendar-hero { position:relative; overflow:hidden; padding:92px 32px 84px; background:radial-gradient(circle at 78% 10%,rgba(61,195,232,.22),transparent 30%),radial-gradient(circle at 18% 24%,rgba(247,162,52,.18),transparent 28%),linear-gradient(135deg,var(--cal-navy) 0%,var(--cal-navy-deep) 100%); color:var(--cal-white); text-align:center; }
+      .calendar-hero { position:relative; overflow:hidden; padding:92px 32px 84px; background:var(--cal-navy); color:var(--cal-white); text-align:center; }
       .calendar-hero::after { content:""; position:absolute; right:max(32px,calc((100vw - 1200px)/2)); top:54px; width:220px; height:220px; border:18px solid rgba(247,162,52,.52); border-right-color:transparent; border-radius:50%; opacity:.55; pointer-events:none; }
       .calendar-title { position:relative; z-index:1; max-width:1100px; margin:0 auto 8px; font-family:'Playfair Display',Georgia,serif; font-size:clamp(52px,9vw,104px); font-weight:800; line-height:.98; letter-spacing:-.02em; }
       .calendar-title.sub { font-size:clamp(42px,6.5vw,78px); }
@@ -3194,7 +3199,7 @@
       .calendar-courses { width:min(100%,1200px); margin:0 auto; padding:8px 32px 66px; }
       .calendar-tier { margin-top:28px; background:var(--cal-white); border:1px solid var(--cal-hair); border-radius:8px; box-shadow:var(--cal-shadow); overflow-x:auto; }
       .calendar-tier:first-child { margin-top:0; }
-      .calendar-tier-head { padding:24px; border-bottom:1px solid var(--cal-hair); background:linear-gradient(180deg,var(--cal-white) 0%,rgba(245,240,232,.56) 100%); display:grid; grid-template-columns:minmax(0,1fr) auto; gap:7px 24px; }
+      .calendar-tier-head { padding:24px; border-bottom:1px solid var(--cal-hair); background:var(--cal-white); display:grid; grid-template-columns:minmax(0,1fr) auto; gap:7px 24px; }
       .calendar-tier-head.beginner { border-top:4px solid var(--cal-orange); }
       .calendar-tier-head.intermediate { border-top:4px solid var(--cal-navy); }
       .calendar-tier-head.specialty { border-top:4px solid var(--cal-bio); }
@@ -3222,7 +3227,7 @@
       .calendar-muted { color:rgba(17,29,60,.38); font-weight:800; }
       .calendar-head-note { margin-top:16px; border:1px solid rgba(247,162,52,.35); border-left:4px solid var(--cal-orange); border-radius:8px; background:rgba(247,162,52,.1); padding:14px 16px; color:rgba(17,29,60,.68); font-size:13px; line-height:1.65; }
       .calendar-head-note strong { color:var(--cal-navy); }
-      .calendar-cta { width:100%; padding:70px max(32px,calc((100vw - 1200px)/2 + 32px)); background:radial-gradient(circle at 80% 0%,rgba(61,195,232,.18),transparent 32%),linear-gradient(135deg,var(--cal-navy) 0%,var(--cal-navy-deep) 100%); color:var(--cal-white); display:grid; grid-template-columns:minmax(0,1fr) auto; gap:40px; align-items:center; }
+      .calendar-cta { width:100%; padding:70px max(32px,calc((100vw - 1200px)/2 + 32px)); background:var(--cal-navy); color:var(--cal-white); display:grid; grid-template-columns:minmax(0,1fr) auto; gap:40px; align-items:center; }
       .calendar-cta-title { font-family:'Playfair Display',Georgia,serif; color:var(--cal-white); font-size:clamp(40px,6vw,62px); font-weight:800; line-height:1.05; letter-spacing:-.01em; }
       .calendar-cta-title .accent { color:var(--cal-orange); font-style:italic; }
       .calendar-cta-sub { color:rgba(255,255,255,.65); margin-top:12px; font-size:15px; line-height:1.7; max-width:540px; }
@@ -3398,7 +3403,7 @@
           "section",
           { className: "calendar-hero" },
           h("h1", { className: "calendar-title" }, isZh ? "夏季 " : "Summer ", h("span", { className: "year" }, "2026")),
-          h("div", { className: "calendar-title sub", role: "heading", "aria-level": 2 }, isZh ? "課程日程" : "Programme Calendar"),
+          h("div", { className: "calendar-title sub", role: "heading", "aria-level": 2 }, isZh ? "課程日程" : "Program Calendar"),
           h("p", { className: "calendar-subtitle" }, isZh ? "十六個已排小班 · 辯論及生物倫理課程 · 八個星期 · 費用全免。" : "Sixteen scheduled cohorts · Debate and bioethics courses · Eight weeks · Entirely free."),
           h(
             "div",
@@ -3470,9 +3475,10 @@
   }
 
   function App() {
+    if (isHome) return h(Nav);
     return h("div", { className: "dc-shell" }, h(Nav), renderPage(), h(Footer));
   }
 
-  applyPageMeta();
+  if (!isHome) applyPageMeta();
   ReactDOM.createRoot(document.getElementById("root")).render(h(App));
 })();

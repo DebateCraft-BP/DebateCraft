@@ -146,7 +146,7 @@
   },
   {
     "name": "Alston G",
-    "role": "",
+    "role": "Head of HR, Global",
     "image": "Images/Alston.png",
     "categories": [
       "coaching",
@@ -164,7 +164,7 @@
   },
   {
     "name": "Isaac Y",
-    "role": "",
+    "role": "Head Administrator, Global",
     "image": "Images/Issac.png",
     "categories": [
       "coaching",
@@ -209,32 +209,6 @@
     "classes": [
     ],
     "bio": "Arthur placed second as a team and won Top Speaker in the 2023 Harvard International PF Open Division. He was named an NSDA Global Excellent Debater in 2020 and won Winchester College's inter-boarding-house Yaw Pot. He coaches prepared debate."
-  },
-  {
-    "name": "Aarohan S",
-    "role": "",
-    "image": "Images/Aarohan.png",
-    "categories": [
-      "coaching",
-      "outreach"
-    ],
-    "achievements": [
-      "1st/70 teams, Top Speaker, Semifinalist, Asia Pre-WSDC (2026)",
-      "Grand Finals, 2/75+ teams, 3rd Open Speaker, 2nd Open Break, McMaster HST (2026)",
-      "Grand Finals, 3/30+ teams, 2nd Open Speaker, 3rd Open Break, EDS Spring Capital Cup (2026)",
-      "Semifinals, 6/45 teams, 10th Open Speaker, 6th Open Break, Queen's HST (2026)"],
-    "bio": "Aarohan has broken at Asia Pre-WSDC, McMaster HST, EDS Spring Capital Cup, Queen's HST, EDC, Ridge, SEED, QHST, UBC Summer HST, and HHWO. He also leads outreach to students and schools."
-  },
-  {
-    "name": "Kevin C",
-    "role": "",
-    "school": "Phillips Exeter Academy, US",
-    "image": "Images/Kevin.png",
-    "categories": [
-      "outreach"
-    ],
-    "achievements": [],
-    "bio": "Kevin creates debate content and works on digital outreach. He also served as a web designer on the Exonian Web Board."
   },
   {
     "name": "Cici C",
@@ -299,7 +273,7 @@
   },
   {
     "name": "Andre C",
-    "role": "Level 4 Coach",
+    "role": "Level 3 Coach",
     "school": "Phillips Exeter Academy, US",
     "image": "Images/Andre.png",
     "categories": [
@@ -409,17 +383,6 @@
     "bio": "Eric placed third at the 2025 Team Canada Fundraiser and the 2025 Carroll College Fundraiser."
   },
   {
-    "name": "Winston C",
-    "role": "",
-    "school": "Winchester College, UK",
-    "image": "Images/Winston.png",
-    "categories": [
-      "outreach",
-      "hk"
-    ],
-    "bio": "Winston has debate and moot experience from Diocesan Boys' School and Winchester College. He works with new English as a Second Language debaters."
-  },
-  {
     "name": "Chelsea Z",
     "role": "PF Coach",
     "image": "Images/Chelsea.png",
@@ -447,6 +410,20 @@
     "classes": [
     ],
     "bio": "Matthew regularly reaches the quarterfinals or later in Public Forum competitions on the NSDA China circuit."
+  },
+  {
+    "name": "Jessica F",
+    "role": "PF Coach",
+    "school": "Phillips Exeter Academy, US",
+    "image": "Images/Jessica.png",
+    "categories": [
+      "prepared"
+    ],
+    "achievements": [
+      "Silver Tournament of Champions, Public Forum",
+      "USABO Semifinalist"
+    ],
+    "bio": "Jessica earned Silver at the Public Forum Tournament of Champions and reached the USABO semifinals. She coaches debate and teaches epidemiology."
   },
   {
     "name": "Dowan Kim",
@@ -499,19 +476,17 @@
     ],
     "bio": "Emmanuel debates at Phillips Exeter Academy and has conducted cancer research at The University of Hong Kong. He teaches students how to discuss scientific evidence and research ethics."
   },
-  {
-    "name": "Jessica F",
-    "role": "PF Coach",
+
+    {
+    "name": "Kevin C",
+    "role": "",
     "school": "Phillips Exeter Academy, US",
-    "image": "Images/Jessica.png",
+    "image": "Images/Kevin.png",
     "categories": [
-      "prepared"
+      "outreach"
     ],
-    "achievements": [
-      "Silver Tournament of Champions, Public Forum",
-      "USABO Semifinalist"
-    ],
-    "bio": "Jessica earned Silver at the Public Forum Tournament of Champions and reached the USABO semifinals. She coaches debate and teaches epidemiology."
+    "achievements": [],
+    "bio": "Kevin creates debate content and works on digital outreach. He also served as a web designer on the Exonian Web Board."
   },
   {
     "name": "Aloysius Y",
@@ -542,6 +517,17 @@
       "prepared"
     ],
     "bio": "Ana has one year of Public Forum experience and supports younger students during practice."
+  },
+  {
+    "name": "Winston C",
+    "role": "",
+    "school": "Winchester College, UK",
+    "image": "Images/Winston.png",
+    "categories": [
+      "outreach",
+      "hk"
+    ],
+    "bio": "Winston has debate and moot experience from Diocesan Boys' School and Winchester College. He works with new English as a Second Language debaters."
   },
   {
     "name": "Max L",

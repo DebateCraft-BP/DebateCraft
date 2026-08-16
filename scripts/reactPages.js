@@ -26,7 +26,7 @@
       searchPlaceholder: "搜尋課程、教練、指南……",
       lang: "English",
       langHref: pageId.replace(/^cn/, "") ? `${pageId.replace(/^cn/, "")}.html` : "../index.html",
-      cta: "校本課程 →",
+      cta: "DebateCraft 方法 →",
     },
     footerSummary: "為香港及亞洲學校提供初中辯論隊訓練及校本辯論課程設計。",
   };
@@ -42,7 +42,7 @@
       searchPlaceholder: "Search courses, coaches, guides…",
       lang: "中文 (繁體)",
       langHref: pageId === "even-if" ? "../cnindex.html" : `cn${pageId}.html`,
-      cta: "School programme →",
+      cta: "DebateCraft Method →",
     },
     footerSummary: "Junior-team training and school debate programme development across Hong Kong and Asia.",
   };
@@ -56,8 +56,8 @@
     offerings: "Group Debate Classes",
     cnofferings: "辯論小班課程",
     cncourses: "辯論小班課程",
-    "training-pathway": "School Training Pathway",
-    "cntraining-pathway": "校本辯論培訓路線",
+    "training-pathway": "DebateCraft Method in Schools",
+    "cntraining-pathway": "DebateCraft 校本方法",
     biology: "Bioethics: Science and Future of Medicine",
     partnership: "School Partnerships",
     "get-involved": "Get Involved",
@@ -124,7 +124,7 @@
     story: "See how DebateCraft approaches curriculum, student progression, coaching, and school-team handover.",
     team: "Meet DebateCraft coaches, judges, and trainers with competitive results across Hong Kong, Asia, and global debate circuits.",
     offerings: "Compare DebateCraft live group classes in debate foundations, WSDC, BP, competition preparation, and bioethics.",
-    "training-pathway": "Review DebateCraft's school debate curriculum: baseline assessment, foundations, junior squad development, competition preparation, and handover.",
+    "training-pathway": "See how schools can use the DebateCraft Method for junior squad development, competition preparation, and handover.",
     biology: "A free Bioethics course covering genetics, CRISPR, AI in healthcare, medical decision-making, and student research projects.",
     partnership: "Review DebateCraft's online coaching, assessment, and competition support for school debate teams.",
     "get-involved": "Apply as a student, become a coach, partner with DebateCraft, or support free debate education.",
@@ -140,9 +140,9 @@
     cnabout: "了解 DebateCraft 如何結合競賽成績及有結構的初中梯隊訓練，服務香港及亞洲學校。",
     cnstory: "了解 DebateCraft 如何規劃校本辯論課程、學生進度及初中梯隊交接。",
     cnteam: "認識具備香港、亞洲及全球賽事成績、評判及工作坊培訓經驗的 DebateCraft 教練。",
-    cnofferings: "比較 DebateCraft 網上辯論小班，由初學基礎到 WSDC、BP、高階賽事準備同生物倫理。",
-    cncourses: "比較 DebateCraft 網上辯論小班，由初學基礎到 WSDC、BP、高階賽事準備同生物倫理。",
-    "cntraining-pathway": "針對香港學校常見梯隊斷層、教師時間不足、新手流失及賽前臨時組隊問題的校本辯論培訓路線。",
+    cnofferings: "比較 DebateCraft 網上辯論小班，由初學基礎到 WSDC、BP、高階賽事準備與生物倫理。",
+    cncourses: "比較 DebateCraft 網上辯論小班，由初學基礎到 WSDC、BP、高階賽事準備與生物倫理。",
+    "cntraining-pathway": "了解 DebateCraft 校本方法如何支援香港、馬來西亞及新加坡學校的初中梯隊、賽事準備及校內交接。",
     cnbiology: "免費生物倫理課程，討論遺傳學、CRISPR、AI 醫療、醫療決策和專家評審項目。",
     cnpartnership: "了解 DebateCraft 線上教練路線是否適合貴校的初中梯隊或校本辯論課程。",
     "cnget-involved": "學生可以申請免費課程，教練、學校和支持者亦可以參與 DebateCraft。",
@@ -329,7 +329,6 @@
     .band-cream{background:${CREAM}}
     .band-dark{background:${NAVY2};color:${WHITE}}
     .inner{width:94%;max-width:1200px;margin:0 auto;padding:0 32px}
-    .eyebrow{font-size:11px;font-weight:700;color:${ORANGE};letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px}
     .title{font-family:'Playfair Display',Georgia,serif;font-size:52px;font-weight:800;line-height:1.08;color:${NAVY};margin-bottom:20px}
     .band-dark .title{color:${WHITE}}
     .lead{font-size:16px;line-height:1.75;color:rgba(17,29,60,.66);max-width:760px}
@@ -698,8 +697,8 @@
         h(
           "div",
           { className: "dc-search-results" },
-          !q && h("div", { className: "dc-search-hint" }, isZh ? "輸入關鍵字搜尋頁面、課程、教練、指南同常見問題。" : "Start typing to search pages, programs, coaches, guides, and FAQ."),
-          q && totalShown === 0 && h("div", { className: "dc-search-empty" }, isZh ? `搵唔到「${query}」嘅結果。` : `No results for "${query}".`),
+          !q && h("div", { className: "dc-search-hint" }, isZh ? "輸入關鍵字搜尋頁面、課程、教練、指南與常見問題。" : "Start typing to search pages, programs, coaches, guides, and FAQ."),
+          q && totalShown === 0 && h("div", { className: "dc-search-empty" }, isZh ? `尋找不到「${query}」的結果。` : `No results for "${query}".`),
           grouped.map((g) =>
             h(
               "div",
@@ -747,14 +746,16 @@
     }, []);
     const navCards = isZh
       ? [
-          { label: "香港學校", links: [["校本課程", "cntraining-pathway.html"], ["教練與成績", "cnteam.html"], ["聯絡", SCHOOL_CONTACT_URL]] },
-          { label: "競技訓練", links: [["網上小班課程", "cncourses.html"], ["教練與成績", "cnteam.html"], ["辯論資源", "cnresources.html"]] },
-          { label: "DebateCraft", links: [["使命", "cnstory.html"], ["生物倫理", "cnbiology.html"], ["學生免費課程", STUDENT_FORM_URL]] },
+          { label: "關於我們", links: [["關於 DebateCraft", "cnabout.html"], ["教練與成績", "cnteam.html"]] },
+          { label: "學校", links: [["DebateCraft 校本方法", "cntraining-pathway.html"], ["辯論資源", "cnresources.html"], ["學校聯絡", SCHOOL_CONTACT_URL]] },
+          { label: "競技訓練", links: [["網上小班課程", "cncourses.html"], ["報名參與", "cnget-involved.html"]] },
+          { label: "DebateCraft", links: [["使命", "cnstory.html"], ["生物倫理", "cnbiology.html"]] },
         ]
       : [
-          { label: "School programme", links: [["Programme", "training-pathway.html"], ["Coaches and results", "team.html"], ["Contact", SCHOOL_CONTACT_URL]] },
-          { label: "Competitive Training", links: [["Group Classes", "offerings.html"], ["Coaches & Results", "team.html"], ["Debate Resources", "resources.html"]] },
-          { label: "DebateCraft", links: [["Mission", "story.html"], ["Bioethics", "biology.html"], ["Free Student Courses", STUDENT_FORM_URL]] },
+          { label: "About", links: [["About DebateCraft", "about.html"], ["Coaches and results", "team.html"]] },
+          { label: "School", links: [["DebateCraft Method", "training-pathway.html"], ["Debate resources", "resources.html"], ["School contact", SCHOOL_CONTACT_URL]] },
+          { label: "Competitive Training", links: [["Group Classes", "offerings.html"], ["Sign up", "get-involved.html"]] },
+          { label: "DebateCraft", links: [["Mission", "story.html"], ["Bioethics", "biology.html"]] },
         ];
 
     useEffect(() => {
@@ -813,7 +814,6 @@
       h(
         "div",
         { className: "inner", style: { position: "relative", zIndex: 2 } },
-        eyebrow && h("div", { className: "eyebrow", style: { animation: "fadeUp .55s ease both" } }, eyebrow),
         h(
           "h1",
           { className: "serif", style: { fontSize: "clamp(42px, 8vw, 64px)", fontWeight: 800, color: WHITE, lineHeight: 1.05, marginBottom: 18, animation: "fadeUp .6s ease .08s both" } },
@@ -833,7 +833,6 @@
     return h(
       "div",
       { style: { textAlign: center ? "center" : "left", marginBottom: 46 } },
-      eyebrow && h("div", { className: "eyebrow" }, eyebrow),
       h("h2", { className: "title" }, title, emphasis && h("em", { style: { color: dark ? SKY : ORANGE, fontStyle: "italic" } }, ` ${emphasis}`)),
       lead && h("p", { className: "lead", style: { margin: center ? "0 auto" : 0 } }, lead)
     );
@@ -882,7 +881,7 @@
         },
         {
           title: "Team HK 與課程顧問",
-          text: "教學團隊包括香港 WSDC 成員；Sandeep Chulani 同 Angga Djovanka 曾提供課程意見。",
+          text: "教學團隊包括香港 WSDC 成員；Sandeep Chulani 與 Angga Djovanka 曾提供課程意見。",
           accent: SKY,
         },
         {
@@ -1073,7 +1072,7 @@
     ? [
         { key: "age", title: "學生年齡", options: [["under9", "9 歲以下"], ["9-12", "9-12 歲"], ["13-14", "13-14 歲"], ["15plus", "15 歲以上"]] },
         { key: "experience", title: "辯論經驗", options: [["none", "零經驗"], ["basic", "學過基本概念"], ["oneYear", "最多約一年"], ["twoPlus", "兩年以上"], ["fivePlus", "五年以上 / 有賽績"]] },
-        { key: "goal", title: "主要目標", options: [["confidence", "自信同表達"], ["competitive", "競技辯論"], ["research", "證據研究"], ["wsdc", "World Schools"], ["bp", "BP / 大學式辯論"], ["bioethics", "科學、醫學、倫理"]] },
+        { key: "goal", title: "主要目標", options: [["confidence", "自信與表達"], ["competitive", "競技辯論"], ["research", "證據研究"], ["wsdc", "World Schools"], ["bp", "BP / 大學式辯論"], ["bioethics", "科學、醫學、倫理"]] },
         { key: "format", title: "偏好格式", options: [["unsure", "未確定"], ["wsdc", "WSDC"], ["bp", "British Parliamentary"], ["bioethics", "Bioethics"]] },
         { key: "intensity", title: "課程強度", options: [["gentle", "循序漸進"], ["steady", "穩定進步"], ["intensive", "高強度訓練"]] },
       ]
@@ -1087,13 +1086,13 @@
 
   const finderCourses = isZh
     ? {
-        placement: { title: "申請後由團隊協助分班", tag: "Placement Review", detail: "適合需要更仔細評估年齡、目標或課程適配嘅學生。", cta: "免費申請分班 →" },
+        placement: { title: "申請後由團隊協助分班", tag: "Placement Review", detail: "適合需要更仔細評估年齡、目標或課程適配的學生。", cta: "免費申請分班 →" },
         level1: { title: "Level 1 Introduction to Debate", tag: "9歲以上 · 初學者", detail: "以 PEEL、邏輯、蘇格拉底式推理和公開演說自信作起點。", cta: "申請辯論 →" },
         level2: { title: "Level 2 Intermediate Debate", tag: "有基礎 / 約一年內", detail: "加快節奏，深化反駁、結構化論證和 motion analysis。", cta: "申請辯論 →" },
-        bioethics: { title: "Bioethics: Science and Future of Medicine", tag: "13歲以上 · 科學倫理", detail: "適合對醫學、法律、哲學、AI 醫療和基因科技有興趣嘅學生。", cta: "申請生物倫理 →" },
+        bioethics: { title: "Bioethics: Science and Future of Medicine", tag: "13歲以上 · 科學倫理", detail: "適合對醫學、法律、哲學、AI 醫療和基因科技有興趣的學生。", cta: "申請生物倫理 →" },
         wsdc: { title: "Level 3 WSDC Mastery", tag: "13歲以上 · 2年以上", detail: "為有經驗辯手訓練五分鐘演講、style、content 和國際賽策略。", cta: "申請辯論 →" },
         bp: { title: "Level 3 BP Competitive Track", tag: "13歲以上 · 2年以上", detail: "聚焦 extensions、POI、快速分析和大學式 British Parliamentary 辯論。", cta: "申請辯論 →" },
-        level4: { title: "Level 4 Advanced Debate Seminar", tag: "15歲以上 · 5年以上", detail: "為有賽事成績嘅高階辯手打磨 case-building、matter-loading 和 weighing。", cta: "申請辯論 →" },
+        level4: { title: "Level 4 Advanced Debate Seminar", tag: "15歲以上 · 5年以上", detail: "為有賽事成績的高階辯手打磨 case-building、matter-loading 和 weighing。", cta: "申請辯論 →" },
       }
     : {
         placement: { title: "Apply for placement review", tag: "Placement Review", detail: "Best when age, goals, or readiness need a closer placement decision by the team.", cta: "Apply for Placement →" },
@@ -1134,13 +1133,13 @@
 
     const reasonMap = isZh
       ? {
-          placement: "你嘅資料需要由團隊協助判斷最合適安排；呢個結果唔代表保證分班。",
-          level1: "你目前最需要一個清晰、低壓但有系統嘅辯論起點。",
-          level2: "你已經適合進入更快節奏，強化反駁、分析同論證結構。",
-          bioethics: "你嘅興趣集中喺科學、醫學同倫理，符合 Bioethics 課程方向。",
-          wsdc: "你已有足夠經驗，可集中訓練 World Schools 五分鐘演講同策略。",
-          bp: "你偏好快速分析、extensions 同 POI，適合 BP 競技訓練。",
-          level4: "你嘅年齡和經驗顯示已適合高階、賽事導向嘅訓練。",
+          placement: "你的資料需要由團隊協助判斷最合適安排；這個結果不代表保證分班。",
+          level1: "你目前最需要一個清晰、低壓但有系統的辯論起點。",
+          level2: "你已經適合進入更快節奏，強化反駁、分析與論證結構。",
+          bioethics: "你的興趣集中在科學、醫學與倫理，符合 Bioethics 課程方向。",
+          wsdc: "你已有足夠經驗，可集中訓練 World Schools 五分鐘演講與策略。",
+          bp: "你偏好快速分析、extensions 與 POI，適合 BP 競技訓練。",
+          level4: "你的年齡和經驗顯示已適合高階、賽事導向的訓練。",
         }
       : {
           placement: "Your answers need a closer team placement decision; this is guidance, not a guaranteed cohort assignment.",
@@ -1178,7 +1177,7 @@
           "div",
           null,
           h("div", { className: "compact-meta" }, isZh ? "課程配對" : "Course Finder"),
-          h("h2", { className: "serif", style: { fontSize: compact ? 34 : 42, lineHeight: 1.08, marginBottom: 12 } }, isZh ? "搵到最適合你嘅課程" : "Find Your Best-Fit Course"),
+          h("h2", { className: "serif", style: { fontSize: compact ? 34 : 42, lineHeight: 1.08, marginBottom: 12 } }, isZh ? "尋找到最適合你的課程" : "Find Your Best-Fit Course"),
           h("p", { style: { marginBottom: 22, color: "rgba(17,29,60,.64)", lineHeight: 1.7 } }, isZh ? "回答幾條問題，即時獲得建議課程。最終分班仍會由 DebateCraft 團隊確認。" : "Answer a few questions for an instant recommendation. Final placement is still confirmed by the DebateCraft team."),
           courseFinderQuestions.map((question) =>
             h(
@@ -1240,7 +1239,7 @@
           tag: "Level 3 · BP · 13歲以上 · 2年以上",
           text: "面向有至少兩年經驗的學生，訓練大學式 British Parliamentary 快節奏辯論和有衝擊力的五分鐘演講。",
           accent: SKY,
-          details: ["10 節兩小時課程", "每班最多 8 人", "密集訓練 extensions 和 POI 技巧", "另設 Saturday Lab，整個夏天每週與積極同儕練習 BP"],
+          details: ["10 節兩小時課程", "每班最多 8 人", "密集訓練 extensions 和 POI 技巧", "另設 Saturday Lab，整個夏天每週與積極的同儕練習 BP"],
         },
         {
           title: "Level 4 Advanced Debate Seminar",
@@ -1414,7 +1413,6 @@
           h(
             "div",
             null,
-            h("div", { className: "eyebrow" }, isZh ? "目前覆蓋" : "Current Reach"),
             h("h2", { className: "serif", style: { fontSize: "clamp(34px, 6vw, 44px)", fontWeight: 800, color: WHITE, lineHeight: 1.08 } }, isZh ? "學生來自" : "Students Join From ", h("em", { style: { color: SKY, fontStyle: "italic" } }, isZh ? "19 個國家及地區。" : "19 Countries."))
           ),
           h(
@@ -1445,7 +1443,7 @@
     const learningCards = isZh
       ? [
           ["辯論與溝通", "學生練習清晰推理、認真聆聽及具說服力的溝通。", ORANGE],
-          ["香港領導與 Team HK 經驗", "顧問 Sandeep Chulani 曾任 Team HK 教練及選拔人、香港學校辯論及演講社區主席，亦係 HKBPDC 聯合創辦人。團隊亦包括香港 WSDC 發展梯隊成員。", SKY],
+          ["香港領導與 Team HK 經驗", "顧問 Sandeep Chulani 曾任 Team HK 教練及選拔人、香港學校辯論及演講社區主席，亦是 HKBPDC 聯合創辦人。團隊亦包括香港 WSDC 發展梯隊成員。", SKY],
           ["科學與倫理", "生物倫理將科學問題及倫理反思連結起來。", "#0d9488"],
         ]
       : [
@@ -1477,12 +1475,12 @@
         eyebrow: isZh ? "訓練實況" : "Training in Action",
         title: isZh ? "由講解到" : "From Instruction",
         emphasis: isZh ? "實戰回饋。" : "to Round Review.",
-        lead: isZh ? "真實線上小班畫面，展示講解、限時練習、對賽同回饋點樣連成一套訓練。" : "Real cohort visuals showing instruction, timed drills, practice rounds, and feedback as one training system.",
+        lead: isZh ? "真實線上小班畫面，展示講解、限時練習、對賽與回饋如何連成一套訓練。" : "Real cohort visuals showing instruction, timed drills, practice rounds, and feedback as one training system.",
       }),
       h(
         Section,
         { cream: true },
-        h(TitleBlock, { eyebrow: isZh ? "訓練內容" : "What Students Practise", title: isZh ? "分析、表達同" : "Reasoning, Speaking and", emphasis: isZh ? "賽後修正。" : "Round Review.", center: true }),
+        h(TitleBlock, { eyebrow: isZh ? "訓練內容" : "What Students Practise", title: isZh ? "分析、表達與" : "Reasoning, Speaking and", emphasis: isZh ? "賽後修正。" : "Round Review.", center: true }),
         h(
           "div",
           { className: "grid grid-3" },
@@ -1504,7 +1502,7 @@
         eyebrow: isZh ? "網上小班" : "Live Group Classes",
         title: isZh ? "按程度選擇" : "Choose the Right",
         emphasis: isZh ? "辯論課程。" : "Group Class.",
-        subtitle: isZh ? "為個別學生而設嘅小班課程，包括辯論基礎、WSDC、BP、賽事準備同生物倫理。學校如需要完整培訓體系，請查看校本培訓路線。" : "Small live cohorts for individual students in debate foundations, WSDC, BP, competition preparation, and bioethics. Schools seeking a full programme should use the School Training Pathway.",
+        subtitle: isZh ? "為個別學生而設的小班課程，包括辯論基礎、WSDC、BP、賽事準備與生物倫理。學校如需要完整培訓體系，請查看校本培訓路線。" : "Small live cohorts for individual students in debate foundations, WSDC, BP, competition preparation, and bioethics. Schools seeking a full programme should use the School Training Pathway.",
       }),
       h(StatsBand, { stats: commonStats }),
       h(CourseFinderSection),
@@ -1519,7 +1517,7 @@
       h(
         Section,
         null,
-        h(TitleBlock, { eyebrow: isZh ? "現有小班" : "Available Classes", title: isZh ? "選擇適合你嘅" : "Find the Right", emphasis: isZh ? "班別。" : "Class.", center: true }),
+        h(TitleBlock, { eyebrow: isZh ? "現有小班" : "Available Classes", title: isZh ? "選擇適合你的" : "Find the Right", emphasis: isZh ? "班別。" : "Class.", center: true }),
         h(
           "div",
           { className: "grid grid-2" },
@@ -1541,9 +1539,9 @@
           "div",
           { className: "grid grid-3" },
           [
-            [isZh ? "演說" : "Speaking", isZh ? "每節都有計時演說同直接回饋。" : "Every session includes timed speeches and direct feedback."],
+            [isZh ? "演說" : "Speaking", isZh ? "每節都有計時演說與直接回饋。" : "Every session includes timed speeches and direct feedback."],
             [isZh ? "分析" : "Analysis", isZh ? "拆解辯題、找出假設，再建立完整論證。" : "Students break down motions, test assumptions, and build complete arguments."],
-            [isZh ? "知識" : "Subject Knowledge", isZh ? "辯題涵蓋國際關係、經濟、政策同倫理。" : "Motions cover international relations, economics, policy, and ethics."],
+            [isZh ? "知識" : "Subject Knowledge", isZh ? "辯題涵蓋國際關係、經濟、政策與倫理。" : "Motions cover international relations, economics, policy, and ethics."],
           ].map(([title, text]) => h(InfoCard, { key: title, title, text }))
         )
       ),
@@ -1556,10 +1554,10 @@
     const adminProblems = isZh
       ? [
           ["學生斷層", "資深辯手畢業後，學會無人帶新手，下一屆由零開始。"],
-          ["老師時間不足", "負責老師要兼顧課堂、行政同活動，無法逐場睇片或跟進每位學生。"],
-          ["新手流失", "招生活動人多，但無清晰分級、固定練習同上場路線，幾星期後開始流失。"],
+          ["老師時間不足", "負責老師要兼顧課堂、行政與活動，無法逐場查看片或跟進每位學生。"],
+          ["新手流失", "招生活動人多，但無清晰分級、固定練習與上場路線，幾星期後開始流失。"],
           ["外援無連貫", "不同外聘教練各自教一套，學生重複學概念，但能力無法逐年累積。"],
-          ["賽前先救火", "報名後先發現隊伍未齊、角色未定、即席準備同賽後檢討都未建立。"],
+          ["賽前先救火", "報名後先發現隊伍未齊、角色未定、即席準備與賽後檢討都未建立。"],
         ]
       : [
           ["Graduation resets the team", "Senior debaters leave. Junior students inherit no shared method, curriculum, or leadership pipeline."],
@@ -1570,11 +1568,11 @@
         ];
     const stages = isZh
       ? [
-          ["00", "現況審視", "第 1–2 週", "檢視學生人數、年級、經驗、校曆、現有比賽同老師可投入時間。", "分組基準、年度目標、教練責任表"],
-          ["01", "共同基礎", "8–12 週", "全體學生建立分析、立論、反駁、演說同有效回饋嘅共同語言。", "新手完成整篇演說；老師睇到清晰能力記錄"],
-          ["02", "初中梯隊", "一個學期", "按能力分組，以角色輪換、限時準備、練習賽同賽後檢討建立上場能力。", "穩定初中隊、替補名單、學生領袖梯隊"],
-          ["03", "賽事周期", "每項賽事前 6–10 週", "對準賽制、辯題類型、選手角色同實際賽程，集中處理最影響勝負嘅短板。", "選隊依據、賽前計劃、每場賽後行動項目"],
-          ["04", "校內延續", "每年檢討", "將課綱、評核、學生領袖工作同老師監察點留喺學校，而唔係只留喺某位教練。", "下一屆唔需要由零開始"],
+          ["00", "現況審視", "第 1–2 週", "檢視學生人數、年級、經驗、校曆、現有比賽與老師可投入時間。", "分組基準、年度目標、教練責任表"],
+          ["01", "共同基礎", "8–12 週", "全體學生建立分析、立論、反駁、演說與有效回饋的共同語言。", "新手完成整篇演說；老師查看到清晰能力記錄"],
+          ["02", "初中梯隊", "一個學期", "按能力分組，以角色輪換、限時準備、練習賽與賽後檢討建立上場能力。", "穩定初中隊、替補名單、學生領袖梯隊"],
+          ["03", "賽事周期", "每項賽事前 6–10 週", "對準賽制、辯題類型、選手角色與實際賽程，集中處理最影響勝負的短板。", "選隊依據、賽前計劃、每場賽後行動項目"],
+          ["04", "校內延續", "每年檢討", "將課綱、評核、學生領袖工作與老師監察點留在學校，而不是只留在某位教練。", "下一屆不需要由零開始"],
         ]
       : [
           ["00", "Baseline audit", "Weeks 1–2", "Map roster size, age, experience, school calendar, target competitions, and staff capacity.", "Placement bands, annual objectives, coach responsibility map"],
@@ -1585,11 +1583,11 @@
         ];
     const delivery = isZh
       ? [
-          ["每週教練節奏", "固定技巧教學、限時練習、對賽、個別回饋；每節有明確重點，唔靠即興工作坊。"],
-          ["老師只睇關鍵資料", "簡短出席、能力同下一步記錄，減少老師追問每位學生進度嘅行政負擔。"],
-          ["分級但保持流動", "學生按能力進入適合組別，達標後可以升級，避免永久標籤或資源只集中喺明星隊員。"],
-          ["線上優先", "5至10人直播小班，可按校曆安排每週課堂或隔週兩小時課堂；開課前確認時區、考試日期同平台。"],
-          ["交俾學校嘅資料", "出席、能力檢查、練習賽筆記、學生下一步同賽前計劃，方便負責老師掌握進度。"],
+          ["每週教練節奏", "固定技巧教學、限時練習、對賽、個別回饋；每節有明確重點，不靠即興工作坊。"],
+          ["老師只查看關鍵資料", "簡短出席、能力與下一步記錄，減少老師追問每位學生進度的行政負擔。"],
+          ["分級但保持流動", "學生按能力進入適合組別，達標後可以升級，避免永久標籤或資源只集中在明星隊員。"],
+          ["線上優先", "5至10人直播小班，可按校曆安排每週課堂或隔週兩小時課堂；開課前確認時區、考試日期與平台。"],
+          ["交給學校的資料", "出席、能力檢查、練習賽筆記、學生下一步與賽前計劃，方便負責老師掌握進度。"],
         ]
       : [
           ["Weekly coaching rhythm", "Skill instruction, timed drills, rounds, and individual feedback. Every session has a defined job."],
@@ -1600,32 +1598,28 @@
         ];
     const regionalFit = isZh
       ? [
-          ["香港", "對應課外活動及全方位學習：先列明學習目標、課堂時段、負責老師同可交俾學校嘅進度資料。"],
+          ["香港", "對應課外活動及全方位學習：先列明學習目標、課堂時段、負責老師與可交給學校的進度資料。"],
           ["新加坡", "按 CCA 方式規劃：負責老師、學期時段、出席、人數、試堂或選拔安排、目標賽事。"],
-          ["馬來西亞", "對準 WSDC、WIDPSC 或校際賽事：確認賽制、隊伍角色、選拔依據、訓練周期同賽前目標。"],
-          ["韓國", "配合課後活動及創意活動時段，以英文溝通、全球議題、寫作、演說及線上練習建立校隊。"],
-          ["東亞其他地區", "按學校課程、課外活動時段及賽事安排，提供英文辯論訓練、練習賽及進度記錄。"],
+          ["馬來西亞", "對準 WSDC、WIDPSC 或校際賽事：確認賽制、隊伍角色、選拔依據、訓練周期與賽前目標。"],
         ]
       : [
           ["Hong Kong", "Fit life-wide learning and co-curricular planning: state learning objectives, timetable, staff contact, and evidence the school can retain."],
           ["Singapore", "Use a CCA brief: teacher-in-charge, term slot, attendance, cohort size, trial or selection process, and target competition."],
           ["Malaysia", "Align to WSDC, WIDPSC, or school competitions: confirm format, speaker roles, selection evidence, training cycle, and tournament goal."],
-          ["Korea", "Fit after-school and creative-activity schedules. Use English communication, global issues, writing, speaking, and online rounds to develop the squad."],
-          ["East Asia", "Align coaching with each school's curriculum, activity schedule, and competition calendar. Provide English debate instruction, practice rounds, and progress records."],
         ];
     return h(
       React.Fragment,
       null,
       h(PageHeader, {
-        eyebrow: isZh ? "香港校本培訓路線" : "Asia School Training Pathway",
-        title: isZh ? "校本辯論課程的" : "A school debate",
-        emphasis: isZh ? "課程及評估。" : "curriculum and assessment.",
-        subtitle: isZh ? "為香港、馬來西亞、新加坡、韓國及東亞學校負責教師而設：以線上教練配合校曆、課外活動、賽制及教師可用時間。" : "For school leads in Hong Kong, Malaysia, Singapore, Korea, and East Asia who need online coaching aligned to timetable, club structure, competition format, and staff capacity.",
+        eyebrow: isZh ? "DebateCraft 校本方法" : "DebateCraft Method in Schools",
+        title: isZh ? "學校需要" : "Schools need the",
+        emphasis: isZh ? "DebateCraft 方法。" : "DebateCraft Method.",
+        subtitle: isZh ? "為香港、馬來西亞及新加坡學校負責教師而設：以線上教練配合校曆、課外活動、賽制及教師可用時間。" : "Online coaching for school leads in Hong Kong, Malaysia, and Singapore, aligned to timetable, club structure, competition format, and staff capacity.",
       }),
       h(
         Section,
         null,
-        h(TitleBlock, { eyebrow: isZh ? "課程需要" : "Programme requirements", title: isZh ? "由基線評估到" : "From baseline", emphasis: isZh ? "賽事檢討。" : "to round review.", lead: isZh ? "課程需要共同課綱、形成性回饋、能力記錄及下一屆交接安排。" : "A school programme needs a shared curriculum, formative feedback, skill records, and a handover process.", center: true }),
+        h(TitleBlock, { eyebrow: isZh ? "我們要解決甚麼？" : "What are we solving?", title: isZh ? "讓校隊不再" : "The problems behind", emphasis: isZh ? "每年重新開始。" : "a reset each year.", lead: isZh ? "DebateCraft 方法將學生進度、練習節奏、賽事準備及校內交接連成一套可延續的方法。" : "The DebateCraft Method connects student progression, coaching rhythm, competition preparation, and school handover into one repeatable method.", center: true }),
         h("div", { className: "pathway-problems" }, adminProblems.map(([title, text], index) => h("article", { key: title }, h("span", null, String(index + 1).padStart(2, "0")), h("h3", null, title), h("p", null, text))))
       ),
       h(
@@ -1637,23 +1631,23 @@
       h(
         Section,
         null,
-        h(TitleBlock, { eyebrow: isZh ? "交付及評估" : "Delivery and assessment", title: isZh ? "教師可以跟進" : "Records staff can", emphasis: isZh ? "學生進度。" : "use to track progress.", center: true }),
+        h(TitleBlock, { eyebrow: isZh ? "交付及評估" : "Delivery and assessment", title: isZh ? "可靠的" : "Proven", emphasis: isZh ? "交付記錄。" : "Delivery Record.", center: true }),
         h("div", { className: "grid grid-3" }, delivery.map(([title, text]) => h(InfoCard, { key: title, title, text })))
       ),
       h(
         Section,
         { cream: true },
-        h(TitleBlock, { eyebrow: isZh ? "學校負責人需要的資料" : "What School Leads Need", title: isZh ? "由學生資料到" : "A clear school", emphasis: isZh ? "賽後記錄。" : "record.", lead: isZh ? "開課前提供學生年級、語言背景、人數、時區、校曆、負責教師及目標賽事；課程期間收到可供學校使用的進度資料。" : "Before launch, share age range, language context, roster size, timezone, school calendar, staff contact, and target competition. During delivery, receive records the school can use.", center: true }),
-        h("div", { className: "grid grid-4" }, regionalFit.map(([title, text]) => h(InfoCard, { key: title, title, text })))
+        h(TitleBlock, { eyebrow: isZh ? "學校合作" : "School partnership", title: isZh ? "我們理解學校" : "We understand", emphasis: isZh ? "需要。" : "what you need.", lead: isZh ? "我們先了解學校的課外活動安排、學生組成、教師聯絡方式及目標賽事，再安排合適的線上教練及進度記錄。" : "We begin with your co-curricular structure, student profile, staff contact, and competition goals before setting the coaching and reporting arrangement.", center: true }),
+        h("div", { className: "grid grid-3" }, regionalFit.map(([title, text]) => h(InfoCard, { key: title, title, text })))
       ),
       h(
         Section,
         { dark: true },
-        h(TitleBlock, { eyebrow: isZh ? "評判與培訓視角" : "Judging and Training Perspective", title: isZh ? "教練知道評判" : "Coaching Informed by", emphasis: isZh ? "點樣判一場辯論。" : "How Rounds Are Judged.", lead: isZh ? "除咗競賽成績，DebateCraft 亦將高水平評判同培訓經驗帶入課綱、練習賽同賽後檢討。" : "Competition results matter. So does understanding how adjudicators evaluate framing, contribution, comparison, and team strategy.", dark: true }),
+        h(TitleBlock, { eyebrow: isZh ? "評判與培訓視角" : "Judging and Training Perspective", title: isZh ? "教練知道評判" : "Coaching Informed by", emphasis: isZh ? "如何判一場辯論。" : "How Rounds Are Judged.", lead: isZh ? "除了競賽成績，DebateCraft 亦將高水平評判與培訓經驗帶入課綱、練習賽與賽後檢討。" : "Competition results matter. So does understanding how adjudicators evaluate framing, contribution, comparison, and team strategy.", dark: true }),
         h("div", { className: "grid grid-3" }, [
           ["Mr. Sandeep Chulani", isZh ? "DebateCraft 顧問；曾任 Team HK 教練及選拔人；前香港學校辯論及演講社區主席；HKBPDC 聯合創辦人。" : "DebateCraft adviser; former Coach and Selector of Team HK; former Chair of Hong Kong Schools Debating and Public Speaking Community; HKBPDC co-founder."],
-          ["Adrian Chan", isZh ? "2026年 IIUM IDC 及 HKEDO 評判；將評判標準轉化成清晰練習同賽後行動。" : "Judge at IIUM IDC 2026 and HKEDO; translates adjudication standards into drills and post-round actions."],
-          ["Theodore W", isZh ? "2024年重慶 WSDC 工作坊導師及 2025年南京 WSDC 評判，兼具培訓同賽場視角。" : "Trainer at Chongqing WSDC Workshop 2024 and judge at Nanjing WSDC 2025, bringing both training and adjudication perspective."],
+          ["Adrian Chan", isZh ? "2026年 IIUM IDC 及 HKEDO 評判；將評判標準轉化成清晰練習與賽後行動。" : "Judge at IIUM IDC 2026 and HKEDO; translates adjudication standards into drills and post-round actions."],
+          ["Theodore W", isZh ? "2024年重慶 WSDC 工作坊導師及 2025年南京 WSDC 評判，兼具培訓與賽場視角。" : "Trainer at Chongqing WSDC Workshop 2024 and judge at Nanjing WSDC 2025, bringing both training and adjudication perspective."],
           ["Matthew Wong", isZh ? "曾帶領 Winchester College 辯論社訓練校隊；具 BP、評判及執教經驗。" : "Led Winchester College's Debate Society; brings BP, adjudication, and coaching experience."],
           ["Rachel Rhodes", isZh ? "帶領德瑞國際學校辯論隊；2026年香港初中學校辯論比賽準決賽及第七名最佳辯手。" : "Leads the German Swiss International School Debate Team; 2026 Hong Kong Junior Schools semifinalist and 7th best speaker."],
           ["Valmik Dagayach", isZh ? "香港代表隊發展梯隊成員；2026年美國全國賽公開組第二名最佳辯手、牛津 WSDC U17 冠軍，並已教授 DebateCraft 超過50小時。" : "Team Hong Kong Development Squad member; 2nd open speaker at US Nationals 2026, Oxford WSDC U17 winner, and 50+ DebateCraft teaching hours."],
@@ -1667,10 +1661,10 @@
     const courseTitle = isZh ? "生物倫理：科學與醫學未來" : "Bioethics: Science and Future of Medicine";
     const logistics = isZh
       ? [
-          ["教練團隊", "由 Phillips Exeter 學生帶領，包括 USABO 前約 500 名參賽者、醫學期刊作者同 Scholastic Writing Awards 決賽級寫作者。", ORANGE],
+          ["教練團隊", "由 Phillips Exeter 學生帶領，包括 USABO 前約 500 名參賽者、醫學期刊作者與 Scholastic Writing Awards 決賽級寫作者。", ORANGE],
           ["課程安排", "10 節一小時課程，處理科學家和醫療專業人士面對的倫理難題。", SKY],
           ["小班教學", "每班嚴格限制 10 人，確保每位學生都能深入參與討論。", "#0d9488"],
-          ["年齡要求", "專為 13 歲以上、對醫學、法律或哲學有興趣嘅學生設計。", "#764ba2"],
+          ["年齡要求", "專為 13 歲以上、對醫學、法律或哲學有興趣的學生設計。", "#764ba2"],
         ]
       : [
           ["Instructor Team", "Run by Phillips Exeter students: United States Biology Olympiad top performers, including students in roughly the top 500 out of 10,000, published medical journal authors, and experienced Scholastic Writing Awards finalists.", ORANGE],
@@ -1681,7 +1675,7 @@
     const outcomes = isZh
       ? [
           ["Harkness 討論", "學生用圓桌討論處理胚胎篩查、基因治療、AI 醫療和科學責任等真實案例。"],
-          ["研究與寫作", "課程訓練學生把科學概念轉化成清晰、有證據、有倫理框架嘅研究或評論文章。"],
+          ["研究與寫作", "課程訓練學生把科學概念轉化成清晰、有證據、有倫理框架的研究或評論文章。"],
           ["專家評審項目", "最後項目會向專家評審團進行 Panel Presentation，家長可旁聽，成果可進一步打磨提交比賽。"],
         ]
       : [
@@ -1696,7 +1690,7 @@
             lessons: [
               "Lesson 1: 細胞、DNA 和基因定義",
               "Lesson 2: 性狀遺傳，包括基因、突變、變異、自然選擇，並重點訓練實驗設計",
-              "Lesson 3: 兩場 Harkness 討論：「我哋應否檢測胚胎疾病？」及另一個由班級選定題目",
+              "Lesson 3: 兩場 Harkness 討論：「我們應否檢測胚胎疾病？」及另一個由班級選定題目",
             ],
           },
           {
@@ -1757,12 +1751,12 @@
     return h(
       React.Fragment,
       null,
-      h(PageHeader, { eyebrow: isZh ? "科學、倫理與未來醫學" : "Science, Ethics, and Future Medicine", title: courseTitle, subtitle: isZh ? "由 Phillips Exeter 學生帶領，訓練學生理解現代生物、遺傳學和醫療科技背後嘅倫理問題。" : "A discussion, writing, and research course on the ethical questions raised by modern biology, genetics, and medical technology." }),
+      h(PageHeader, { eyebrow: isZh ? "科學、倫理與未來醫學" : "Science, Ethics, and Future Medicine", title: courseTitle, subtitle: isZh ? "由 Phillips Exeter 學生帶領，訓練學生理解現代生物、遺傳學和醫療科技背後的倫理問題。" : "A discussion, writing, and research course on the ethical questions raised by modern biology, genetics, and medical technology." }),
       h(StatsBand, { stats: commonStats }),
       h(
         Section,
         null,
-        h(TitleBlock, { eyebrow: isZh ? "課程描述" : "Course Description", title: isZh ? "分析科學決定" : "Study Scientific", emphasis: isZh ? "同佢嘅後果。" : "Decisions.", lead: isZh ? "學生討論 gene editing、AI 醫療、醫療決策同科研責任。課堂採用 Phillips Exeter Academy 嘅 Harkness Discussion 方法，再將討論發展成寫作同最後項目。" : "Students discuss gene editing, AI in healthcare, medical decisions, and scientific responsibility. Classes use the Harkness Discussion method developed at Phillips Exeter Academy, then turn that discussion into writing and a final project." }),
+        h(TitleBlock, { eyebrow: isZh ? "課程描述" : "Course Description", title: isZh ? "分析科學決定" : "Study Scientific", emphasis: isZh ? "及其後果。" : "Decisions.", lead: isZh ? "學生討論基因編輯、人工智能醫療、醫療決策與科研責任。課堂採用 Phillips Exeter Academy 的 Harkness Discussion 方法，再將討論發展成寫作與最後項目。" : "Students discuss gene editing, AI in healthcare, medical decisions, and scientific responsibility. Classes use the Harkness Discussion method developed at Phillips Exeter Academy, then turn that discussion into writing and a final project." }),
         h("div", { className: "grid grid-3" }, logistics.map(([title, text, accent]) => h(InfoCard, { key: title, title, text, accent }))),
         h("div", { style: { textAlign: "center", marginTop: 34 } }, h(Button, { href: STUDENT_FORM_URL }, isZh ? "申請生物倫理 →" : "Apply for Bioethics →"))
       ),
@@ -1798,7 +1792,7 @@
   }
 
   function OtherProgramsPage() {
-    return h(React.Fragment, null, h(PageHeader, { eyebrow: isZh ? "即將推出" : "Coming Soon", title: isZh ? "更多學習路徑" : "More Programs", emphasis: isZh ? "籌備中。" : "In Development.", subtitle: isZh ? "我哋正設計更多公開演說、研究同跨學科課程。" : "We are developing additional public speaking, research, and interdisciplinary programs." }), h(Section, null, h("div", { className: "grid grid-3" }, [h(InfoCard, { key: 1, title: isZh ? "公開演說" : "Public Speaking", text: isZh ? "聲線、節奏、語氣同台風訓練。" : "Voice, pacing, tone, and presence training." }), h(InfoCard, { key: 2, title: isZh ? "研究工作坊" : "Research Workshops", text: isZh ? "搵資料、評估來源、整理證據。" : "Source discovery, evidence evaluation, and card cutting.", accent: SKY }), h(InfoCard, { key: 3, title: isZh ? "跨學科議題" : "Interdisciplinary Issues", text: isZh ? "連結倫理、科學、政策同社會議題。" : "Ethics, science, policy, and society.", accent: "#0d9488" })])), h(CTA));
+    return h(React.Fragment, null, h(PageHeader, { eyebrow: isZh ? "即將推出" : "Coming Soon", title: isZh ? "更多學習路徑" : "More Programs", emphasis: isZh ? "籌備中。" : "In Development.", subtitle: isZh ? "我們正設計更多公開演說、研究與跨學科課程。" : "We are developing additional public speaking, research, and interdisciplinary programs." }), h(Section, null, h("div", { className: "grid grid-3" }, [h(InfoCard, { key: 1, title: isZh ? "公開演說" : "Public Speaking", text: isZh ? "聲線、節奏、語氣與台風訓練。" : "Voice, pacing, tone, and presence training." }), h(InfoCard, { key: 2, title: isZh ? "研究工作坊" : "Research Workshops", text: isZh ? "尋找資料、評估來源、整理證據。" : "Source discovery, evidence evaluation, and card cutting.", accent: SKY }), h(InfoCard, { key: 3, title: isZh ? "跨學科議題" : "Interdisciplinary Issues", text: isZh ? "連結倫理、科學、政策與社會議題。" : "Ethics, science, policy, and society.", accent: "#0d9488" })])), h(CTA));
   }
 
   function TeamPage() {
@@ -1899,14 +1893,14 @@
         h(TitleBlock, { eyebrow: isZh ? "評判與培訓經驗" : "Judging and Training Experience", title: isZh ? "根據評判標準" : "Teach Through the", emphasis: isZh ? "改進辯論。" : "Ballot.", lead: isZh ? "評判經驗令課堂回饋更具體：哪個比較取勝、哪項貢獻改變賽果，以及下一場需要修正的地方。" : "Judging experience makes feedback specific: which comparison won, which contribution changed the round, and what must change next.", dark: true }),
         h("div", { className: "grid grid-3" }, [
           ["Mr. Sandeep Chulani", isZh ? "DebateCraft 顧問；曾任 Team HK 教練及選拔人；前香港學校辯論及演講社區主席；HKBPDC 聯合創辦人。" : "DebateCraft adviser; former Coach and Selector of Team HK; former Chair of Hong Kong Schools Debating and Public Speaking Community; HKBPDC co-founder."],
-          ["Adrian Chan", isZh ? "2026年 IIUM IDC 及 HKEDO 評判；將評判標準轉化成訓練同賽後行動。" : "Judge at IIUM IDC 2026 and HKEDO; translates ballot standards into drills and post-round actions."],
+          ["Adrian Chan", isZh ? "2026年 IIUM IDC 及 HKEDO 評判；將評判標準轉化成訓練與賽後行動。" : "Judge at IIUM IDC 2026 and HKEDO; translates ballot standards into drills and post-round actions."],
           ["Theodore W", isZh ? "2024年重慶 WSDC 工作坊導師及 2025年南京 WSDC 評判。" : "Trainer at Chongqing WSDC Workshop 2024 and judge at Nanjing WSDC 2025."],
         ].map(([title, text]) => h(InfoCard, { key: title, title, text, dark: true })))
       ),
         h(
         Section,
         { cream: true },
-        h(TitleBlock, { eyebrow: isZh ? "成員" : "Members", title: isZh ? "認識我哋嘅" : "Meet Our", emphasis: isZh ? "團隊。" : "Team.", center: true }),
+        h(TitleBlock, { eyebrow: isZh ? "成員" : "Members", title: isZh ? "認識我們的" : "Meet Our", emphasis: isZh ? "團隊。" : "Team.", center: true }),
         loadError && h("p", { style: { maxWidth: 680, margin: "0 auto 20px", color: "#d34a32", textAlign: "center" } }, isZh ? "團隊資料未能載入，以下顯示基本聯絡資料。" : "Team data could not be loaded. Showing basic contact records."),
         h(
           "div",
@@ -1921,7 +1915,7 @@
           })
         ),
         h("div", { className: "filter-row" }, filters.map(([key, label]) => h("button", { key, className: filter === key ? "active" : "", onClick: () => setFilter(key) }, label))),
-        !visible.length && h("p", { className: "no-members", style: { textAlign: "center", color: "rgba(17,29,60,.5)" } }, isZh ? "搵唔到相關成員。" : "No team members match your search."),
+        !visible.length && h("p", { className: "no-members", style: { textAlign: "center", color: "rgba(17,29,60,.5)" } }, isZh ? "尋找不到相關成員。" : "No team members match your search."),
         h(
           "div",
           { className: "grid grid-3 team-grid" },
@@ -1975,7 +1969,7 @@
         Section,
         null,
         h(TitleBlock, { eyebrow: isZh ? "課程範圍" : "Programme scope", title: isZh ? "現有校隊訓練及" : "Existing-team training", emphasis: isZh ? "新課程建立。" : "new programme delivery.", center: true }),
-        h("div", { className: "grid grid-2" }, h(InfoCard, { title: isZh ? "初中梯隊訓練" : "Junior-Team Training", text: isZh ? "每週小隊訓練、練習賽回饋、角色分工同賽前集中訓練。" : "Weekly squad coaching, round feedback, role development, and focused preparation before competitions." }), h(InfoCard, { title: isZh ? "新辯論課程" : "New Debate Programme", text: isZh ? "由課程設計、招募初學者到進入比賽，並留下下一屆可沿用嘅課綱同評核。" : "Curriculum, beginner recruitment, coach delivery, and a route into competition, with a syllabus and assessment record for the next cohort.", accent: SKY }))
+        h("div", { className: "grid grid-2" }, h(InfoCard, { title: isZh ? "初中梯隊訓練" : "Junior-Team Training", text: isZh ? "每週小隊訓練、練習賽回饋、角色分工與賽前集中訓練。" : "Weekly squad coaching, round feedback, role development, and focused preparation before competitions." }), h(InfoCard, { title: isZh ? "新辯論課程" : "New Debate Programme", text: isZh ? "由課程設計、招募初學者到進入比賽，並留下下一屆可沿用的課綱與評核。" : "Curriculum, beginner recruitment, coach delivery, and a route into competition, with a syllabus and assessment record for the next cohort.", accent: SKY }))
       ),
       h(ProofGallerySection, {
         set: "partnership",
@@ -1991,42 +1985,42 @@
 
   const FAQ_ITEMS = [
     {
-      q: { en: "Is DebateCraft really free?", zh: "DebateCraft 係咪真係免費？" },
+      q: { en: "Is DebateCraft really free?", zh: "DebateCraft 是咪真是免費？" },
       a: {
         en: "Yes. DebateCraft group classes have no fee, audition, essay, or hidden cost.",
-        zh: "係。DebateCraft 所有課程完全免費，無需試鏡、文章，亦無任何隱藏費用。"
+        zh: "是。DebateCraft 所有課程完全免費，無需試鏡、文章，亦無任何隱藏費用。"
       }
     },
     {
-      q: { en: "What ages and experience levels can join?", zh: "邊個年齡同程度可以參加？" },
+      q: { en: "What ages and experience levels can join?", zh: "邊個年齡與程度可以參加？" },
       a: {
         en: "Programs are open to students roughly Grades 3-12 (ages 8-18). Level 1 is designed for beginners with no prior experience, while WSDC, BP, advanced debate, and Bioethics tracks are for students 13+ with some debate background.",
-        zh: "課程適合大約 3 至 12 年級（8 至 18 歲）學生。Level 1 專為完全冇經驗嘅初學者而設，WSDC、BP、高階辯論同生物倫理課程則適合 13 歲以上、有一定辯論基礎嘅學生。"
+        zh: "課程適合大約 3 至 12 年級（8 至 18 歲）學生。Level 1 專為完全沒有經驗的初學者而設，WSDC、BP、高階辯論與生物倫理課程則適合 13 歲以上、有一定辯論基礎的學生。"
       }
     },
     {
-      q: { en: "How do classes work?", zh: "上堂形式係點㗎？" },
+      q: { en: "How do classes work?", zh: "上堂形式是點的？" },
       a: {
         en: "Classes run live online in small groups of 5-10 students, so every student gets real speaking practice and direct feedback from coaches.",
-        zh: "所有堂都係線上直播小班教學，每班 5 至 10 人，確保每個學生都有充分練習機會同教練直接嘅回饋。"
+        zh: "所有堂都是線上直播小班教學，每班 5 至 10 人，確保每個學生都有充分練習機會與教練直接的回饋。"
       }
     },
     {
-      q: { en: "When does the program run and how do I apply?", zh: "課程幾時開始？點樣申請？" },
+      q: { en: "When does the program run and how do I apply?", zh: "課程幾時開始？如何申請？" },
       a: {
         en: "Summer 2026 runs for eight weeks. New cohorts start most weeks from June through August. The two-minute interest form collects age, experience, and goals for placement.",
-        zh: "2026 夏季課程為期八星期，由 6 月到 8 月大部分星期都有新班。兩分鐘申請表會收集年齡、經驗同目標，用作分班。"
+        zh: "2026 夏季課程為期八星期，由 6 月到 8 月大部分星期都有新班。兩分鐘申請表會收集年齡、經驗與目標，用作分班。"
       }
     },
     {
-      q: { en: "Who teaches the courses?", zh: "邊個教呢啲課程？" },
+      q: { en: "Who teaches the courses?", zh: "哪些導師負責相關課程？" },
       a: {
         en: "Competitive debaters and coaches teach the courses. The instructor team includes Phillips Exeter students, while senior debate educators review parts of the curriculum.",
-        zh: "課程由經驗豐富嘅教練同競技辯手任教，包括嚟自 Phillips Exeter Academy 嘅學生，課程亦得到辯論界資深教練嘅支援。"
+        zh: "課程由經驗豐富的教練與競技辯手任教，包括來自 Phillips Exeter Academy 的學生，課程亦得到辯論界資深教練的支援。"
       }
     },
     {
-      q: { en: "Can I get involved beyond taking a course?", zh: "除咗上堂，仲可以點樣參與？" },
+      q: { en: "Can I get involved beyond taking a course?", zh: "除了上課，還可以如何參與？" },
       a: {
         en: "Yes. Apply to coach, commission a school programme, or donate toward free classes.",
         zh: "可以。你可以申請做教練、委託校本課程，或者捐款支持免費小班。"
@@ -2055,11 +2049,11 @@
   }
 
   function GetInvolvedPage() {
-    return h(React.Fragment, null, h(PageHeader, { eyebrow: isZh ? "參與 DebateCraft" : "Join DebateCraft", title: isZh ? "選擇你要做嘅" : "Choose a", emphasis: isZh ? "一件事。" : "Role.", subtitle: isZh ? "報讀小班、申請教練、同學校合作，或者捐款支持免費課程。" : "Apply for a class, coach younger debaters, commission a school programme, or fund free classes." }), h(Section, null, h("div", { className: "grid grid-4" }, [[isZh ? "成為學生" : "Apply as Student", isZh ? "報讀免費小班，按經驗分班。" : "Apply for a free group class and receive a placement.", STUDENT_FORM_URL], [isZh ? "成為教練" : "Become a Coach", isZh ? "帶領技巧訓練、練習賽同回饋。" : "Run skill drills, practice rounds, and feedback.", "https://docs.google.com/forms/d/e/1FAIpQLSfombgLTJ0oDbWfCaSumrnLAjkdvT_K9FW1KJakbr9ZAQxwnQ/viewform?usp=header"], [isZh ? "學校合作" : "Commission School Training", isZh ? "訓練現有隊伍，或者建立新學會。" : "Train an existing team or launch a new programme.", "partnership.html"], [isZh ? "捐款支持" : "Donate", isZh ? "支付教材、平台同免費課程成本。" : "Cover materials, platforms, and free-class costs.", "https://buymeacoffee.com/debatecraft"]].map(([title, text, href]) => h(InfoCard, { key: title, title, text }, h("div", { style: { marginTop: 20 } }, h(Button, { href }, isZh ? "前往 →" : "Start →")))))), h(StatsBand, { stats: commonStats }), h(FAQSection));
+    return h(React.Fragment, null, h(PageHeader, { eyebrow: isZh ? "參與 DebateCraft" : "Join DebateCraft", title: isZh ? "選擇你要做的" : "Choose a", emphasis: isZh ? "一件事。" : "Role.", subtitle: isZh ? "報讀小班、申請成為教練、或與學校合作，亦可捐款支持免費課程。" : "Apply for a class, coach younger debaters, commission a school programme, or fund free classes." }), h(Section, null, h("div", { className: "grid grid-4" }, [[isZh ? "成為學生" : "Apply as Student", isZh ? "報讀免費小班，按經驗分班。" : "Apply for a free group class and receive a placement.", STUDENT_FORM_URL], [isZh ? "成為教練" : "Become a Coach", isZh ? "帶領技巧訓練、練習賽與回饋。" : "Run skill drills, practice rounds, and feedback.", "https://docs.google.com/forms/d/e/1FAIpQLSfombgLTJ0oDbWfCaSumrnLAjkdvT_K9FW1KJakbr9ZAQxwnQ/viewform?usp=header"], [isZh ? "學校合作" : "Commission School Training", isZh ? "訓練現有隊伍，或者建立新學會。" : "Train an existing team or launch a new programme.", "partnership.html"], [isZh ? "捐款支持" : "Donate", isZh ? "支付教材、平台與免費課程成本。" : "Cover materials, platforms, and free-class costs.", "https://buymeacoffee.com/debatecraft"]].map(([title, text, href]) => h(InfoCard, { key: title, title, text }, h("div", { style: { marginTop: 20 } }, h(Button, { href }, isZh ? "前往 →" : "Start →")))))), h(StatsBand, { stats: commonStats }), h(FAQSection));
   }
 
   function DonatePage() {
-    return h(React.Fragment, null, h(PageHeader, { eyebrow: isZh ? "捐款用途" : "Where Donations Go", title: isZh ? "支付免費課堂" : "Fund Free Classes", emphasis: isZh ? "實際成本。" : "and Materials.", subtitle: isZh ? "捐款支付網站、教材、通訊工具同免費學生名額。" : "Donations pay for web hosting, teaching materials, communication tools, and free student places." }), h(Section, null, h("div", { className: "grid grid-3" }, h(InfoCard, { title: isZh ? "教材" : "Teaching Materials", text: isZh ? "製作講義、練習、題庫同課程資源。" : "Pays for handouts, drills, motion banks, and course resources." }), h(InfoCard, { title: isZh ? "平台" : "Platforms", text: isZh ? "支付網站、表格、通訊同線上工具。" : "Pays for the website, forms, communications, and online tools.", accent: SKY }), h(InfoCard, { title: isZh ? "免費名額" : "Free Places", text: isZh ? "為無法支付課程費用嘅學生提供名額。" : "Covers places for students who cannot pay course fees.", accent: "#0d9488" })), h("div", { style: { textAlign: "center", marginTop: 42 } }, h(Button, { href: "https://buymeacoffee.com/debatecraft" }, isZh ? "捐款 →" : "Donate →"))));
+    return h(React.Fragment, null, h(PageHeader, { eyebrow: isZh ? "捐款用途" : "Where Donations Go", title: isZh ? "支付免費課堂" : "Fund Free Classes", emphasis: isZh ? "實際成本。" : "and Materials.", subtitle: isZh ? "捐款支付網站、教材、通訊工具與免費學生名額。" : "Donations pay for web hosting, teaching materials, communication tools, and free student places." }), h(Section, null, h("div", { className: "grid grid-3" }, h(InfoCard, { title: isZh ? "教材" : "Teaching Materials", text: isZh ? "製作講義、練習、題庫與課程資源。" : "Pays for handouts, drills, motion banks, and course resources." }), h(InfoCard, { title: isZh ? "平台" : "Platforms", text: isZh ? "支付網站、表格、通訊與線上工具。" : "Pays for the website, forms, communications, and online tools.", accent: SKY }), h(InfoCard, { title: isZh ? "免費名額" : "Free Places", text: isZh ? "為無法支付課程費用的學生提供名額。" : "Covers places for students who cannot pay course fees.", accent: "#0d9488" })), h("div", { style: { textAlign: "center", marginTop: 42 } }, h(Button, { href: "https://buymeacoffee.com/debatecraft" }, isZh ? "捐款 →" : "Donate →"))));
   }
 
   function ContactPage() {
@@ -2241,21 +2235,21 @@
     ["m3", "THW ban homework for primary school students.", "本院會禁止小學生做功課。", "Easy", "General", "Education"],
     ["m4", "THBT professional athletes are overpaid.", "本院認為職業運動員薪酬過高。", "Easy", "General", "Economics"],
     ["m5", "THW make school uniforms compulsory in all schools.", "本院會要求所有學校強制穿校服。", "Easy", "General", "Education"],
-    ["m6", "THW ban advertisements for junk food targeted at children.", "本院會禁止針對兒童嘅垃圾食品廣告。", "Easy", "General", "Health"],
-    ["m7", "THBT voting in national elections should be compulsory.", "本院認為全國選舉投票應該係強制性。", "Easy", "WSDC", "Politics"],
+    ["m6", "THW ban advertisements for junk food targeted at children.", "本院會禁止針對兒童的垃圾食品廣告。", "Easy", "General", "Health"],
+    ["m7", "THBT voting in national elections should be compulsory.", "本院認為全國選舉投票應該是強制性。", "Easy", "WSDC", "Politics"],
     ["m8", "THBT social media has done more harm than good for society.", "本院認為社交媒體對社會弊多於利。", "Easy", "General", "Society"],
     ["m9", "THW implement a universal basic income.", "本院會實施全民基本收入。", "Medium", "WSDC", "Economics"],
     ["m10", "THW abolish private schools.", "本院會廢除私立學校。", "Medium", "WSDC", "Education"],
     ["m11", "THW ban for-profit prisons.", "本院會禁止牟利監獄。", "Medium", "General", "Justice"],
     ["m12", "THW allow and regulate the sale of human organs.", "本院會容許並規管人體器官買賣。", "Medium", "BP", "Health"],
-    ["m13", "THR the rise of cancel culture.", "本院遺憾 cancel culture 嘅興起。", "Medium", "BP", "Society"],
+    ["m13", "THR the rise of cancel culture.", "本院遺憾 cancel culture 的興起。", "Medium", "BP", "Society"],
     ["m14", "THBT developed countries should have open borders.", "本院認為已發展國家應該開放邊境。", "Medium", "WSDC", "Politics"],
     ["m15", "THW replace trial by jury with trial by professional judges.", "本院會以專業法官審訊取代陪審團審訊。", "Hard", "BP", "Justice"],
     ["m16", "THR the principle of absolute state sovereignty.", "本院遺憾絕對國家主權原則。", "Hard", "BP", "Politics"],
     ["m17", "THW allow parents to genetically enhance their unborn children.", "本院會容許父母對未出生子女進行基因增強。", "Hard", "Bioethics", "Science"],
     ["m18", "THBT nationalism is, on balance, destructive.", "本院認為民族主義整體而言具破壞性。", "Hard", "WSDC", "Politics"],
     ["m19", "THW ban lethal autonomous weapons.", "本院會禁止致命自主武器。", "Hard", "General", "Technology"],
-    ["m20", "THBT conscientious objection should not justify doctors refusing legal procedures.", "本院認為良心拒絕不應成為醫生拒絕合法程序嘅理由。", "Hard", "Bioethics", "Health"],
+    ["m20", "THBT conscientious objection should not justify doctors refusing legal procedures.", "本院認為良心拒絕不應成為醫生拒絕合法程序的理由。", "Hard", "Bioethics", "Health"],
     ["m21", "THW require social media platforms to verify all users' ages.", "本院會要求社交媒體平台核實所有用戶年齡。", "Medium", "General", "Technology"],
     ["m22", "THW prioritize climate adaptation over climate mitigation in developing countries.", "本院會要求發展中國家優先處理氣候適應，而非氣候減緩。", "Hard", "WSDC", "Environment"],
   ].map(([id, motion, zhMotion, difficulty, format, theme]) => ({ id, motion, zhMotion, difficulty, format, theme }));
@@ -2285,7 +2279,7 @@
       tagline: isZh ? "9歲以上 · 無需辯論經驗" : "Ages 9+ · No prior experience required",
       meta: isZh ? "5班 · 15節課 · 班級人數：8" : "5 cohorts · 15 sessions · Class Size: 8",
       blurb: isZh
-        ? "為年輕初學者設計嘅嚴謹入門課程，帶學生由邏輯同蘇格拉底式推理開始，透過適齡而高互動嘅模擬辯論掌握 PEEL 立論方法。"
+        ? "為年輕初學者設計的嚴謹入門課程，帶學生由邏輯與蘇格拉底式推理開始，透過適齡而高互動的模擬辯論掌握 PEEL 立論方法。"
         : "A rigorous introduction to logic and Socratic reasoning for younger beginners. Students master the PEEL argumentation method through high-energy mock debates on age-appropriate motions.",
       cohorts: [
         cohort("Level 1 A", null, "13 Jul → 31 Jul", "7月13日 → 7月31日", "15:00 – 16:00", ["Hirannya", "Raul"], ["TBC"], "7/8"),
@@ -2302,7 +2296,7 @@
       tagline: isZh ? "延續課程 · 約一年經驗或完成 Level 1" : "Continuing students · ~1 year experience or Level 1 completion",
       meta: isZh ? "2班 · 班級人數：10" : "2 cohorts · Class Size: 10",
       blurb: isZh
-        ? "適合完成 Level 1 或已有基礎嘅學生。課程節奏更快，深入訓練反駁、辯題分析同更嚴謹嘅邏輯。"
+        ? "適合完成 Level 1 或已有基礎的學生。課程節奏更快，深入訓練反駁、辯題分析與更嚴謹的邏輯。"
         : "For Level 1 graduates. Sessions move faster and spend more time on rebuttal and motion analysis.",
       cohorts: [
         cohort("Level 2 A", null, "22 Jun → 03 Jul", "6月22日 → 7月3日", "15:00 – 16:00", ["Piers", "Larissa"], ["Calvin"], "7/10"),
@@ -2316,7 +2310,7 @@
       tagline: isZh ? "13歲以上 · WSDC / 高階辯論訓練" : "Ages 13+ · WSDC and advanced World Schools training",
       meta: isZh ? "3班 · 班級人數：10" : "3 cohorts · Class Size: 10",
       blurb: isZh
-        ? "面向準備高階 World Schools 訓練嘅學生，集中訓練五分鐘演講、策略準備、style 同 content。"
+        ? "面向準備高階 World Schools 訓練的學生，集中訓練五分鐘演講、策略準備、style 與 content。"
         : "World Schools training in five-minute speeches, strategic preparation, style, and content.",
       cohorts: [
         cohort("Level 2B WSDC", null, "06 Jul → 17 Jul", "7月6日 → 7月17日", "16:00 – 18:00", ["Valmik", "Sanaya?", "Andre"], [], "6/10"),
@@ -2331,7 +2325,7 @@
       tagline: isZh ? "13歲以上 · 2年以上經驗 · 大學式辯論" : "Ages 13+ · 2+ years experience · University-style debate",
       meta: isZh ? "1班 · 10節兩小時課 · 班級人數：8" : "1 cohort · 10 × 2-hr sessions · Class Size: 8",
       blurb: isZh
-        ? "訓練快速批判思考、五分鐘演講、extensions 同 Points of Information。"
+        ? "訓練快速批判思考、五分鐘演講、extensions 與 Points of Information。"
         : "Trains rapid critical thinking and five-minute speech delivery, with mastery of extensions and Points of Information.",
       cohorts: [cohort("Level 3 BP", null, "20 Jul → 31 Jul", "7月20日 → 7月31日", "17:00 – 19:00", ["Matthew Wong", "Raul"], ["Cici"], "5/8")],
     },
@@ -2342,7 +2336,7 @@
       tagline: isZh ? "13歲以上 · 跨學科 · Harkness 討論方法" : "Ages 13+ · Interdisciplinary · Harkness method",
       meta: isZh ? "2班 · 10節一小時課 · 班級人數：8" : "2 cohorts · 10 × 1-hr sessions · Class Size: 8",
       blurb: isZh
-        ? "探索科學與倫理嘅交界，分析現代研究人員面對嘅道德困境。"
+        ? "探索科學與倫理的交界，分析現代研究人員面對的道德困境。"
         : "Where science meets ethics. Students confront moral dilemmas in modern research and medicine.",
       cohorts: [
         cohort("Bioethics A", "生物倫理 A", "13 Jul → 24 Jul", "7月13日 → 7月24日", "20:00 – 21:00", ["Adrian", "Dowan", "Emmanuel"], [], "0/8"),
@@ -2588,7 +2582,7 @@
         eyebrow: isZh ? "資源" : "Resources",
         title: isZh ? "辯論工具庫" : "Debate Resource Library",
         emphasis: isZh ? "練習。" : "For Practice.",
-        subtitle: isZh ? "指南、影片、練習工具、框架練習、表達方式訓練同 Even If 反駁遊戲，集中喺同一個 React 工具庫。" : "Guides, videos, the Practice Toolkit, framework drills, delivery practice, and the Even If mitigation game in one React resource hub.",
+        subtitle: isZh ? "指南、影片、練習工具、框架練習、表達方式訓練與 Even If 反駁遊戲，集中在與一個 React 工具庫。" : "Guides, videos, the Practice Toolkit, framework drills, delivery practice, and the Even If mitigation game in one React resource hub.",
       }),
       h(
         Section,
@@ -2636,11 +2630,11 @@
     return h(
       "div",
       null,
-      h("div", { className: "tool-head" }, h("div", null, h("h2", null, isZh ? "指南同影片庫" : "Guides and Video Library"), h("p", null, isZh ? "搜尋 DebateCraft 教練整理嘅 PDF、文件、工作坊影片同經典賽事。" : "Search DebateCraft PDFs, documents, workshop videos, and classic rounds curated for practice.")), h("div", { className: "segmented" }, [["guides", "Guides"], ["videos", "Videos"]].map(([id, label]) => h("button", { key: id, className: mode === id ? "active" : "", onClick: () => setMode(id) }, label)))),
+      h("div", { className: "tool-head" }, h("div", null, h("h2", null, isZh ? "指南與影片庫" : "Guides and Video Library"), h("p", null, isZh ? "搜尋 DebateCraft 教練整理的 PDF、文件、工作坊影片與經典賽事。" : "Search DebateCraft PDFs, documents, workshop videos, and classic rounds curated for practice.")), h("div", { className: "segmented" }, [["guides", "Guides"], ["videos", "Videos"]].map(([id, label]) => h("button", { key: id, className: mode === id ? "active" : "", onClick: () => setMode(id) }, label)))),
       h("input", { className: "search-input", value: query, onChange: (e) => setQuery(e.target.value), placeholder: isZh ? "搜尋指南或影片..." : "Search guides or videos..." }),
       mode === "guides"
         ? h("div", { className: "resource-card-grid", style: { marginTop: 22 } }, visibleGuides.map((item, i) => h("article", { key: item.title, className: "compact-card", style: { "--accent": [ORANGE, SKY, "#0d9488", "#764ba2"][i % 4] } }, h("div", { className: "compact-meta" }, item.group), h("h3", null, item.title), h("p", null, item.text), h("div", { style: { marginTop: 18 } }, h(Button, { href: item.href }, isZh ? "打開資源" : "Open Resource")))))
-        : h("div", { className: "video-shell", style: { marginTop: 22 } }, h("div", null, h("div", { className: "video-frame" }, h("iframe", { src: currentVideo.embed, title: currentVideo.title, allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share", referrerPolicy: "strict-origin-when-cross-origin", allowFullScreen: true })), h("div", { className: "compact-card", style: { marginTop: 16, "--accent": SKY } }, h("div", { className: "compact-meta" }, currentVideo.group), h("h3", null, currentVideo.title), h("p", null, currentVideo.text), currentVideo.transcript && h("div", { style: { marginTop: 18 } }, h(Button, { href: currentVideo.transcript }, isZh ? "睇逐字稿" : "Read Transcript")))), h("div", { className: "grid", style: { gap: 10 } }, visibleVideos.map((item) => h("button", { key: item.id, className: `option-card${activeVideo === item.id ? " selected" : ""}`, onClick: () => setActiveVideo(item.id), style: { color: NAVY, background: activeVideo === item.id ? "rgba(247,162,52,.16)" : WHITE, borderColor: activeVideo === item.id ? ORANGE : "rgba(17,29,60,.1)" } }, h("strong", null, item.title), h("div", { style: { fontSize: 12, color: "rgba(17,29,60,.55)", marginTop: 4 } }, item.group)))))
+        : h("div", { className: "video-shell", style: { marginTop: 22 } }, h("div", null, h("div", { className: "video-frame" }, h("iframe", { src: currentVideo.embed, title: currentVideo.title, allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share", referrerPolicy: "strict-origin-when-cross-origin", allowFullScreen: true })), h("div", { className: "compact-card", style: { marginTop: 16, "--accent": SKY } }, h("div", { className: "compact-meta" }, currentVideo.group), h("h3", null, currentVideo.title), h("p", null, currentVideo.text), currentVideo.transcript && h("div", { style: { marginTop: 18 } }, h(Button, { href: currentVideo.transcript }, isZh ? "查看逐字稿" : "Read Transcript")))), h("div", { className: "grid", style: { gap: 10 } }, visibleVideos.map((item) => h("button", { key: item.id, className: `option-card${activeVideo === item.id ? " selected" : ""}`, onClick: () => setActiveVideo(item.id), style: { color: NAVY, background: activeVideo === item.id ? "rgba(247,162,52,.16)" : WHITE, borderColor: activeVideo === item.id ? ORANGE : "rgba(17,29,60,.1)" } }, h("strong", null, item.title), h("div", { style: { fontSize: 12, color: "rgba(17,29,60,.55)", marginTop: 4 } }, item.group)))))
     );
   }
 
@@ -2669,7 +2663,7 @@
     return h(
       "div",
       null,
-      h("div", { className: "tool-head" }, h("div", null, h("h2", null, isZh ? "互動框架練習" : "Interactive Framework Drills"), h("p", null, isZh ? "由 motion type 到 POI、rebuttal、clash 同 weighing，將舊資源頁嘅練習整理成 React 互動頁。" : "Motion types, roles, CPR, PEEL, POIs, rebuttal, clashes, and weighing rebuilt as React practice tools."))),
+      h("div", { className: "tool-head" }, h("div", null, h("h2", null, isZh ? "互動框架練習" : "Interactive Framework Drills"), h("p", null, isZh ? "由 motion type 到 POI、rebuttal、clash 與 weighing，將舊資源頁的練習整理成 React 互動頁。" : "Motion types, roles, CPR, PEEL, POIs, rebuttal, clashes, and weighing rebuilt as React practice tools."))),
       h(
         "div",
         { className: "lesson-shell" },
@@ -2709,7 +2703,7 @@
     return h(
       "div",
       null,
-      h("div", { className: "tool-head" }, h("div", null, h("h2", null, isZh ? "Manner Matters 演說實驗室" : "Manner Matters Speaking Lab"), h("p", null, isZh ? "練習聲量、語氣、節奏、咬字、重音、自信、手勢同眼神接觸。" : "Practice volume, tone, pace, articulation, emphasis, certainty, gestures, and eye contact."))),
+      h("div", { className: "tool-head" }, h("div", null, h("h2", null, isZh ? "Manner Matters 演說實驗室" : "Manner Matters Speaking Lab"), h("p", null, isZh ? "練習聲量、語氣、節奏、咬字、重音、自信、手勢與眼神接觸。" : "Practice volume, tone, pace, articulation, emphasis, certainty, gestures, and eye contact."))),
       h("div", { className: "grid grid-2" }, h("article", { className: "lesson-box", style: { borderTopColor: ORANGE } }, h("div", { className: "compact-meta" }, "Emphasis"), h("h3", null, "The Power of Emphasis"), h("p", null, "Click each word to see how emphasis changes the sentence."), h("div", { className: "emphasis-sentence" }, emphasisWords.map(([word]) => h("button", { key: word, className: `emphasis-word${activeWord === word ? " active" : ""}`, onClick: () => setActiveWord(word) }, word)), h("span", null, ".")), h("div", { className: "answer-box" }, emphasisWords.find(([word]) => word === activeWord)?.[1])), h("article", { className: "lesson-box", style: { borderTopColor: SKY } }, h("div", { className: "compact-meta" }, "Spectrum"), h("h3", null, spectrum.label), h("p", null, spectrum.why), h("div", { className: "range-row" }, h("input", { className: "slider", type: "range", min: 1, max: 5, value: currentValue, onChange: (e) => updateValue(activeSpectrum, e.target.value) }), h("div", { className: "range-label" }, spectrum.levels[currentValue - 1])), h("div", { className: "analysis-list" }, h("div", { className: "analysis-item", style: { "--accent": ORANGE } }, `Example: ${currentAnalysis.ex}`), currentAnalysis.s.map((text) => h("div", { key: text, className: "analysis-item", style: { "--accent": "#0d9488" } }, text)), currentAnalysis.w.map((text) => h("div", { key: text, className: "analysis-item", style: { "--accent": "#dc2626" } }, text))))),
       h("div", { className: "grid grid-2", style: { marginTop: 20 } }, h("article", { className: "lesson-box" }, h("div", { className: "compact-meta" }, "Choose a Spectrum"), h("div", { className: "spectrum-buttons" }, keys.map((key) => h("button", { key, className: activeSpectrum === key ? "active" : "", onClick: () => setActiveSpectrum(key) }, deliverySpectrums[key].label))), h("h4", null, "Archetype Explorer"), h("div", { className: "grid", style: { gap: 8 } }, Object.entries(deliveryArchetypes).map(([name, profileValues]) => h("button", { key: name, className: "archetype-button", onClick: () => setValues(profileValues) }, name)))), h("article", { className: "lesson-box", style: { borderTopColor: "#0d9488" } }, h("div", { className: "compact-meta" }, "Profile Lab"), keys.map((key) => h("div", { key }, h("div", { className: "range-row" }, h("label", { style: { fontWeight: 800 } }, deliverySpectrums[key].label), h("div", { className: "range-label" }, deliverySpectrums[key].levels[values[key] - 1])), h("input", { className: "slider", type: "range", min: 1, max: 5, value: values[key], onChange: (e) => updateValue(key, e.target.value) }))), h("div", { className: "analysis-list" }, profile.strengths.map((text) => h("div", { key: text, className: "analysis-item", style: { "--accent": "#0d9488" } }, text)), profile.weaknesses.map((text) => h("div", { key: text, className: "analysis-item", style: { "--accent": "#dc2626" } }, text)))))
     );
@@ -2850,7 +2844,7 @@
 	          saved: "已收藏",
 	          noMotions: "沒有符合條件的辯題。",
 	          prepTitle: "備賽工作區",
-	          prepLead: "草擬模型、論點、反駁同 weighing。內容只會儲存在此瀏覽器。",
+	          prepLead: "草擬模型、論點、反駁與 weighing。內容只會儲存在此瀏覽器。",
 	          motion: "辯題",
 	          side: "立場",
 	          format: "格式",
@@ -2868,7 +2862,7 @@
 	          pause: "暫停",
 	          reset: "重設",
 	          timerTitle: "演講計時器",
-	          timerLead: "選擇演講格式，追蹤保護時間同 POI 時段。此工具不會播放聲音。",
+	          timerLead: "選擇演講格式，追蹤保護時間與 POI 時段。此工具不會播放聲音。",
 	          protected: "保護時間",
 	          poiOpen: "POI 時段開放",
 	          speechTime: "演講時間",
@@ -3144,7 +3138,7 @@
   }
 
   function BlogPage() {
-    return h(React.Fragment, null, h(PageHeader, { eyebrow: isZh ? "文章" : "Blog", title: isZh ? "DebateCraft 文章" : "DebateCraft Blog", emphasis: "", subtitle: isZh ? "辯論訓練、比賽同課程筆記。" : "Notes on debate training, tournaments, and teaching." }), h(Section, null, h("div", { className: "grid grid-2" }, h(InfoCard, { title: "Why I Debate", tag: "July 6, 2025 · Adrian Chan", text: "Debate sharpens arguments, but practice also teaches teammates to test controversial ideas without tearing each other down." }, h("div", { style: { marginTop: 20 } }, h(Button, { href: "https://debatecraft.substack.com/p/e79f3fbf-a404-402f-9702-6e962aa5660a?postPreview=paid&updated=2025-07-06T22%3A40%3A32.998Z&audience=everyone&free_preview=false&freemail=true" }, isZh ? "閱讀 →" : "Read More →"))), h(InfoCard, { title: isZh ? "訂閱更新" : "Subscribe", text: isZh ? "接收辯論技巧、課程時間同新教材。" : "Receive debate drills, class dates, and new teaching materials.", accent: SKY }, h("div", { style: { marginTop: 20 } }, h(Button, { href: "https://debatecraft.substack.com/subscribe" }, isZh ? "訂閱 →" : "Subscribe →"))))));
+    return h(React.Fragment, null, h(PageHeader, { eyebrow: isZh ? "文章" : "Blog", title: isZh ? "DebateCraft 文章" : "DebateCraft Blog", emphasis: "", subtitle: isZh ? "辯論訓練、比賽與課程筆記。" : "Notes on debate training, tournaments, and teaching." }), h(Section, null, h("div", { className: "grid grid-2" }, h(InfoCard, { title: "Why I Debate", tag: "July 6, 2025 · Adrian Chan", text: "Debate sharpens arguments, but practice also teaches teammates to test controversial ideas without tearing each other down." }, h("div", { style: { marginTop: 20 } }, h(Button, { href: "https://debatecraft.substack.com/p/e79f3fbf-a404-402f-9702-6e962aa5660a?postPreview=paid&updated=2025-07-06T22%3A40%3A32.998Z&audience=everyone&free_preview=false&freemail=true" }, isZh ? "閱讀 →" : "Read More →"))), h(InfoCard, { title: isZh ? "訂閱更新" : "Subscribe", text: isZh ? "接收辯論技巧、課程時間與新教材。" : "Receive debate drills, class dates, and new teaching materials.", accent: SKY }, h("div", { style: { marginTop: 20 } }, h(Button, { href: "https://debatecraft.substack.com/subscribe" }, isZh ? "訂閱 →" : "Subscribe →"))))));
   }
 
   function CTA() {
@@ -3445,7 +3439,7 @@
           h(
             "div",
             null,
-            h("div", { className: "calendar-cta-title" }, isZh ? "為你嘅小朋友報名" : "Register your child", h("br"), isZh ? "參加 " : "for ", h("span", { className: "accent" }, isZh ? "2026 夏季課程。" : "Summer 2026.")),
+            h("div", { className: "calendar-cta-title" }, isZh ? "為你的小朋友報名" : "Register your child", h("br"), isZh ? "參加 " : "for ", h("span", { className: "accent" }, isZh ? "2026 夏季課程。" : "Summer 2026.")),
             h("p", { className: "calendar-cta-sub" }, isZh ? "名額按申請次序安排，小班人數有限，熱門時段可能較快額滿。課程費用全免，亦不需要申請文章；報名表格約三分鐘即可完成。" : "Places are allocated on a first-come basis and small cohort sizes mean popular times fill quickly. There is no fee and no application essay: registration takes under three minutes."),
             h("div", { className: "calendar-actions" }, h("a", { className: "calendar-apply", href: STUDENT_FORM_URL, ...extProps(STUDENT_FORM_URL) }, isZh ? "免費申請 →" : "Apply Free →"), h("a", { className: "calendar-secondary", href: isZh ? "cncourses.html" : "offerings.html" }, isZh ? "瀏覽課程" : "Explore Courses"))
           ),

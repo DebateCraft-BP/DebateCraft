@@ -151,6 +151,10 @@
     others: "Preview additional DebateCraft public speaking, research, and interdisciplinary programs in development.",
     privacy: "How DebateCraft Academy collects, uses, and protects information for DebateCraft, BioCraft, and its other programs.",
     terms: "DebateCraft Academy's Student and Family Agreement, which governs enrollment in DebateCraft.",
+    wsdc: "Learn the World Schools format — motion types, definitions, and all five speaker roles — at beginner, intermediate, or advanced depth.",
+    bp: "Learn the British Parliamentary format — teams, Points of Information, motion types, and role fulfilment — at beginner, intermediate, or advanced depth.",
+    judging: "How to judge WSDC and British Parliamentary debates: the ordinary intelligent voter, clash resolution, persuasiveness, and deliberation.",
+    scorer: "A guided speaker-score calculator for WSDC and BP judges with limited experience, built from the official scoring criteria.",
     cnabout: "了解 DebateCraft 如何結合競賽成績及有結構的初中梯隊訓練，服務香港及亞洲學校。",
     cnstory: "了解 DebateCraft 如何規劃校本辯論課程、學生進度及初中梯隊交接。",
     cnteam: "認識具備香港、亞洲及全球賽事成績、評判及工作坊培訓經驗的 DebateCraft 教練。",
@@ -1849,22 +1853,12 @@
     const [active, setActive] = useState(null);
     const [loadError, setLoadError] = useState(false);
     useEffect(() => {
+      const clean = (data) => data.filter((member) => member.name !== "Aarohan S").map((member) => ({
+        ...member,
+        bio: typeof member.bio === "string" ? member.bio.replace("programme administration", "program administration") : member.bio,
+      }));
       const embedded = document.getElementById("dc-team-data");
-      if (embedded) {
-        try {
-          const data = JSON.parse(embedded.textContent || "[]").map((member) => ({
-            ...member,
-            bio: typeof member.bio === "string" ? member.bio.replace("programme administration", "program administration") : member.bio,
-          }));
-          if (Array.isArray(data) && data.length) {
-            setMembers(data);
-            return;
-          }
-        } catch (error) {
-          // Fall through to network data.
-        }
-      }
-      const dataUrl = `${isZh ? "../data/cnteam_members.json" : "../data/team_members.json"}?v=react-pages-2`;
+      const dataUrl = `${assetPrefix}${isZh ? "data/cnteam_members.json" : "data/team_members.json"}?v=team-20260817`;
       fetch(dataUrl)
         .then((r) => {
           if (!r.ok) throw new Error(`Team data request failed: ${r.status}`);
@@ -1872,10 +1866,19 @@
         })
         .then((data) => {
           if (!Array.isArray(data)) throw new Error("Team data is not an array");
-          setMembers(data);
+          setMembers(clean(data));
           setLoadError(false);
         })
         .catch(() => {
+          try {
+            const data = embedded ? JSON.parse(embedded.textContent || "[]") : [];
+            if (Array.isArray(data) && data.length) {
+              setMembers(clean(data));
+              return;
+            }
+          } catch {
+            // Use basic contact records below.
+          }
           setLoadError(true);
           setMembers([
             { name: "Adrian Chan", role: "", image: "Images/Adrian.png", categories: ["executive", "coaching"], bio: isZh ? "DebateCraft 創辦成員之一。" : "One of DebateCraft's student leaders." },

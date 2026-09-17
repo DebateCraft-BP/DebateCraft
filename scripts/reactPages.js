@@ -2,12 +2,12 @@
   const h = React.createElement;
   const { useEffect, useMemo, useRef, useState } = React;
 
-  const NAVY = "#071a2f";
-  const NAVY2 = "#102b49";
-  const ORANGE = "#ae9562";
-  const SKY = "#0d5ea6";
-  const CREAM = "#f4f3ee";
-  const WHITE = "#ffffff";
+  const NAVY = "#000000";
+  const NAVY2 = "#F8F3E7";
+  const ORANGE = "#DD573D";
+  const SKY = "#005FCC";
+  const CREAM = "#F7F1E2";
+  const WHITE = "#FFFFFF";
 
   const pageId = window.DC_PAGE_ID || "about";
   const lang = pageId.startsWith("cn") ? "zh" : "en";
@@ -22,6 +22,14 @@
   };
   const slugify = (value = "") => value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
   const displayName = (value = "") => value.trim();
+  const routePairs = {
+    about: "cnabout", story: "cnstory", team: "cnteam", offerings: "cncourses", calendar: "cncalendar",
+    "training-pathway": "cntraining-pathway", biology: "cnbiology", partnership: "cnpartnership",
+    "get-involved": "cnget-involved", donate: "cndonate", contact: "cncontact", resources: "cnresources", others: "cnothers",
+    cnabout: "about", cnstory: "story", cnteam: "team", cnofferings: "offerings", cncourses: "offerings", cncalendar: "calendar",
+    "cntraining-pathway": "training-pathway", cnbiology: "biology", cnpartnership: "partnership", "cnget-involved": "get-involved",
+    cndonate: "donate", cncontact: "contact", cnresources: "resources", cnothers: "others",
+  };
 
   const cn = {
     nav: {
@@ -33,7 +41,7 @@
       search: "搜尋",
       searchPlaceholder: "搜尋課程、教練、指南……",
       lang: "English",
-      langHref: pageId === "cnhome" ? "index.html" : `${pageId.replace(/^cn/, "")}.html`,
+      langHref: pageId === "cnhome" ? "index.html" : routePairs[pageId] ? `${routePairs[pageId]}.html` : "index.html",
       cta: "DebateCraft 方法 →",
     },
     footerSummary: "為香港及亞洲學校提供初中辯論隊訓練及校本辯論課程設計。",
@@ -49,7 +57,7 @@
       search: "Search",
       searchPlaceholder: "Search courses, coaches, guides…",
       lang: "中文 (繁體)",
-      langHref: pageId === "home" ? "cnindex.html" : pageId === "even-if" ? "../cnindex.html" : `cn${pageId}.html`,
+      langHref: pageId === "home" ? "cnindex.html" : routePairs[pageId] ? `${routePairs[pageId]}.html` : "../cnindex.html",
       cta: "DebateCraft Method for Schools →",
     },
     footerSummary: "Junior-team training and school debate program development across Hong Kong and Asia.",
@@ -62,8 +70,10 @@
     story: "Our Mission",
     team: "Coaches, Judges and Results",
     offerings: "Group Debate Classes",
+    calendar: "Course Calendar",
     cnofferings: "辯論小班課程",
     cncourses: "辯論小班課程",
+    cncalendar: "課程日程",
     "training-pathway": "DebateCraft Method for Schools",
     "cntraining-pathway": "DebateCraft 校本方法",
     biology: "Bioethics: Science and Future of Medicine",
@@ -101,6 +111,7 @@
     story: "story.html",
     team: "team.html",
     offerings: "offerings.html",
+    calendar: "calendar.html",
     "training-pathway": "training-pathway.html",
     biology: "biology.html",
     partnership: "partnership.html",
@@ -119,6 +130,7 @@
     cnteam: "cnteam.html",
     cnofferings: "cnofferings.html",
     cncourses: "cncourses.html",
+    cncalendar: "cncalendar.html",
     "cntraining-pathway": "cntraining-pathway.html",
     cnbiology: "cnbiology.html",
     cnpartnership: "cnpartnership.html",
@@ -136,6 +148,7 @@
     story: "See how DebateCraft approaches curriculum, student progression, coaching, and school-team handover.",
     team: "Meet DebateCraft coaches, judges, and trainers with competitive results across Hong Kong, Asia, and global debate circuits.",
     offerings: "Compare DebateCraft live group classes in debate foundations, WSDC, BP, competition preparation, and bioethics.",
+    calendar: "Review DebateCraft course dates, cohort status, and next steps for student registration.",
     "training-pathway": "See how the DebateCraft Method for Schools supports junior squad development, competition preparation, and handover.",
     biology: "A free Bioethics course covering genetics, CRISPR, AI in healthcare, medical decision-making, and student research projects.",
     partnership: "Review DebateCraft's online coaching, assessment, and competition support for school debate teams.",
@@ -160,6 +173,7 @@
     cnteam: "認識具備香港、亞洲及全球賽事成績、評判及工作坊培訓經驗的 DebateCraft 教練。",
     cnofferings: "比較 DebateCraft 網上辯論小班，由初學基礎到 WSDC、BP、高階賽事準備與生物倫理。",
     cncourses: "比較 DebateCraft 網上辯論小班，由初學基礎到 WSDC、BP、高階賽事準備與生物倫理。",
+    cncalendar: "查看 DebateCraft 課程日期、小班狀態和學生報名安排。",
     "cntraining-pathway": "了解 DebateCraft 校本方法如何支援香港、馬來西亞及新加坡學校的初中梯隊、賽事準備及校內交接。",
     cnbiology: "免費生物倫理課程，討論遺傳學、CRISPR、AI 醫療、醫療決策和專家評審項目。",
     cnpartnership: "了解 DebateCraft 線上教練路線是否適合貴校的初中梯隊或校本辯論課程。",
@@ -175,6 +189,7 @@
     story: "cnstory",
     team: "cnteam",
     offerings: "cncourses",
+    calendar: "cncalendar",
     "training-pathway": "cntraining-pathway",
     biology: "cnbiology",
     partnership: "cnpartnership",
@@ -188,6 +203,7 @@
     cnteam: "team",
     cnofferings: "offerings",
     cncourses: "offerings",
+    cncalendar: "calendar",
     "cntraining-pathway": "training-pathway",
     cnbiology: "biology",
     cnpartnership: "partnership",
@@ -246,9 +262,10 @@
       });
     }
 
-    document.documentElement.lang = isZh ? "zh-Hant" : "en";
+    document.documentElement.lang = isZh ? "zh-HK" : "en";
     document.title = title;
     document.head.querySelectorAll("[data-dc-meta]").forEach((node) => node.remove());
+    document.head.querySelectorAll('[data-dc-static-meta], meta[name="description"], meta[property^="og:"], meta[name^="twitter:"], link[rel="canonical"], link[rel="alternate"], script[type="application/ld+json"]').forEach((node) => node.remove());
     const tags = [
       ["meta", { name: "description", content: description }],
       ["meta", { property: "og:type", content: "website" }],
@@ -697,7 +714,7 @@
       if (!open) return;
       fetch(`${assetPrefix}${isZh ? "data/cnteam_members.json" : "data/team_members.json"}?v=search`)
         .then((r) => r.json())
-        .then(setMembers)
+        .then((data) => setMembers(data.filter((member) => !(member.categories || []).includes("retired"))))
         .catch(() => setMembers([]));
     }, [open]);
 
@@ -705,17 +722,13 @@
 
     useEffect(() => {
       if (!open) return;
-      setQuery("");
       const focusTimer = setTimeout(() => inputRef.current && inputRef.current.focus(), 60);
-      const prevOverflow = document.body.style.overflow;
-      document.body.style.overflow = "hidden";
       const onKey = (e) => {
         if (e.key === "Escape") onClose();
       };
       window.addEventListener("keydown", onKey);
       return () => {
         clearTimeout(focusTimer);
-        document.body.style.overflow = prevOverflow;
         window.removeEventListener("keydown", onKey);
       };
     }, [open]);
@@ -732,60 +745,27 @@
     const totalShown = grouped.reduce((sum, g) => sum + g.items.length, 0);
 
     return h(
-      "div",
-      { className: "dc-search-overlay", onClick: onClose },
+      "form",
+      { className: "dc-search-replacement", role: "search", "aria-label": t.nav.search, onSubmit: (e) => { e.preventDefault(); const first = grouped[0] && grouped[0].items[0]; if (first) window.location.href = localHref(first.href); } },
+      h("label", { htmlFor: "site-search", className: "sr-only" }, t.nav.search),
+      h("input", { id: "site-search", ref: inputRef, type: "search", placeholder: t.nav.searchPlaceholder, value: query, onChange: (e) => setQuery(e.target.value), "aria-controls": "site-search-results", "aria-expanded": Boolean(q) }),
+      h("button", { type: "button", onClick: onClose, "aria-label": isZh ? "關閉搜尋" : "Close search" }, isZh ? "關閉" : "Close"),
       h(
         "div",
-        { className: "dc-search-panel", role: "dialog", "aria-modal": "true", "aria-label": t.nav.search, onClick: (e) => e.stopPropagation() },
-        h(
-          "div",
-          { className: "dc-search-input-row" },
-          h(SearchIcon),
-          h("input", {
-            ref: inputRef,
-            type: "text",
-            className: "dc-search-input",
-            placeholder: t.nav.searchPlaceholder,
-            value: query,
-            onChange: (e) => setQuery(e.target.value),
-          }),
-          h("button", { type: "button", className: "dc-search-close", onClick: onClose, "aria-label": isZh ? "關閉" : "Close" }, "×")
-        ),
-        h(
-          "div",
-          { className: "dc-search-results" },
-          !q && h("div", { className: "dc-search-hint" }, isZh ? "輸入關鍵字搜尋頁面、課程、教練、指南與常見問題。" : "Start typing to search pages, programs, coaches, guides, and FAQ."),
-          q && totalShown === 0 && h("div", { className: "dc-search-empty" }, isZh ? `尋找不到「${query}」的結果。` : `No results for "${query}".`),
-          grouped.map((g) =>
-            h(
-              "div",
-              { className: "dc-search-group", key: g.type },
-              h("div", { className: "dc-search-group-label" }, g.label),
-              g.items.map((item, i) =>
-                h(
-                  "a",
-                  {
-                    key: `${g.type}-${i}`,
-                    className: "dc-search-result",
-                    href: localHref(item.href),
-                    ...(item.external ? extProps(item.href) : { onClick: onClose }),
-                  },
-                  h("div", { className: "dc-search-result-title" }, item.title),
-                  item.subtitle && h("div", { className: "dc-search-result-subtitle" }, item.subtitle)
-                )
-              )
-            )
-          )
-        )
+        { id: "site-search-results", className: "dc-search-results", "aria-live": "polite" },
+        !q && h("div", null, isZh ? "輸入關鍵字搜尋頁面、課程、教練、指南與常見問題。" : "Start typing to search pages, programs, coaches, guides, and FAQ."),
+        q && totalShown === 0 && h("div", null, isZh ? `尋找不到「${query}」的結果。` : `No results for "${query}".`),
+        grouped.map((g) => h("section", { className: "dc-search-group", key: g.type }, h("strong", null, g.label), g.items.map((item, i) => h("a", { key: `${g.type}-${i}`, href: localHref(item.href), ...(item.external ? extProps(item.href) : { onClick: onClose }) }, h("div", null, item.title), item.subtitle && h("small", null, item.subtitle)))))
       )
     );
   }
 
   function Nav() {
     const [open, setOpen] = useState(false);
-    const [navHeight, setNavHeight] = useState(60);
-    const navRef = useRef(null);
     const [searchOpen, setSearchOpen] = useState(false);
+    const triggerRef = useRef(null);
+    const closeRef = useRef(null);
+    const panelRef = useRef(null);
     useEffect(() => {
       const onKey = (e) => {
         const tag = (document.activeElement && document.activeElement.tagName) || "";
@@ -801,58 +781,74 @@
       window.addEventListener("keydown", onKey);
       return () => window.removeEventListener("keydown", onKey);
     }, []);
-    const navCards = isZh
-      ? [
-          { label: "關於我們", links: [["關於 DebateCraft", "cnabout.html"], ["教練與成績", "cnteam.html"], ["使命", "cnstory.html"], ["生物倫理", "cnbiology.html"]] },
-          { label: "學校", links: [["DebateCraft 校本方法", "cntraining-pathway.html"], ["辯論資源", "cnresources.html"], ["學校聯絡", SCHOOL_CONTACT_URL]] },
-          { label: "競技訓練", links: [["網上小班課程", "cncourses.html"], ["報名參與", "cnget-involved.html"]] },
-        ]
-      : [
-          { label: "About", links: [["About DebateCraft", "about.html"], ["Coaches and results", "team.html"], ["Mission", "story.html"], ["Bioethics", "biology.html"]] },
-          { label: "School", links: [["DebateCraft Method for Schools", "training-pathway.html"], ["Debate resources", "resources.html"], ["School contact", SCHOOL_CONTACT_URL]] },
-        ];
-
     useEffect(() => {
-      const updateHeight = () => {
-        if (!navRef.current) return;
-        setNavHeight(open ? navRef.current.scrollHeight : 60);
-      };
-      updateHeight();
-      window.addEventListener("resize", updateHeight);
-      return () => window.removeEventListener("resize", updateHeight);
+      if (open) closeRef.current && closeRef.current.focus();
     }, [open]);
+    useEffect(() => {
+      if (!open) return;
+      const onEscape = (event) => {
+        if (event.key === "Escape") { event.preventDefault(); setOpen(false); triggerRef.current && triggerRef.current.focus(); }
+      };
+      document.addEventListener("keydown", onEscape);
+      return () => document.removeEventListener("keydown", onEscape);
+    }, [open]);
+    useEffect(() => {
+      if (!open) return;
+      const onTab = (event) => {
+        if (event.key !== "Tab" || !panelRef.current) return;
+        const focusable = [...panelRef.current.querySelectorAll("button, a[href]")];
+        if (!focusable.length) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+        else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+      };
+      document.addEventListener("keydown", onTab);
+      return () => document.removeEventListener("keydown", onTab);
+    }, [open]);
+    const navCards = isZh ? [
+      { label: "關於", links: [["關於 DebateCraft", "cnabout.html"], ["使命與故事", "cnstory.html"], ["教練與成績", "cnteam.html"], ["參與我們", "cnget-involved.html"]] },
+      { label: "學校", links: [["校本方法", "cntraining-pathway.html"], ["合作夥伴", "cnpartnership.html"], ["聯絡我們", "cncontact.html"], ["資源", "cnresources.html"]] },
+      { label: "課程", links: [["小班課程", "cncourses.html"], ["課程日程", "cncalendar.html"], ["生物倫理", "cnbiology.html"], ["更多課程", "cnothers.html"]] },
+      { label: "練習", links: [["指南", "guides.html"], ["框架資源庫", "mannernew.html"], ["演說練習室", "manner.html"], ["反駁訓練", "even-if.html"]] },
+    ] : [
+      { label: "About", links: [["About DebateCraft", "about.html"], ["Mission and story", "story.html"], ["Coaches and results", "team.html"], ["Get involved", "get-involved.html"]] },
+      { label: "Schools", links: [["Method for Schools", "training-pathway.html"], ["Partnerships", "partnership.html"], ["Contact schools", "contact.html"], ["Resources", "resources.html"]] },
+      { label: "Programs", links: [["Group classes", "offerings.html"], ["Course calendar", "calendar.html"], ["Bioethics", "biology.html"], ["More programs", "others.html"]] },
+      { label: "Practice", links: [["Guides", "guides.html"], ["Framework library", "mannernew.html"], ["Speaking lab", "manner.html"], ["Mitigation trainer", "even-if.html"]] },
+    ];
 
     return h(
       "div",
       { className: "dc-nav-wrap" },
       h(
         "nav",
-        { className: `dc-nav${open ? " open" : ""}`, ref: navRef, style: { height: open ? navHeight : 60 } },
+        { className: `dc-nav${open ? " open" : ""}`, "aria-label": isZh ? "主要導覽" : "Primary navigation" },
         h(
           "div",
-          { className: "dc-nav-top" },
-          h("button", { className: "dc-burger", onClick: () => setOpen(!open), "aria-label": isZh ? "開關導覽選單" : "Toggle navigation", "aria-expanded": open }, h("span"), h("span"), h("span")),
+          { className: "dc-nav-top", inert: open ? true : undefined, "aria-hidden": open ? "true" : undefined },
           h(Brand),
-          h("button", { type: "button", className: "dc-search-btn", onClick: () => setSearchOpen(true), "aria-label": t.nav.search }, h(SearchIcon)),
+          h("button", { ref: triggerRef, className: "dc-burger", onClick: () => { setOpen(!open); setSearchOpen(false); }, "aria-label": isZh ? "開關導覽選單" : "Toggle navigation", "aria-expanded": open, "aria-controls": "site-nav-panel" }, "⌘"),
+          h("div", { className: "dc-nav-links", role: "navigation" }, h("a", { href: localHref(isZh ? "cncourses.html" : "offerings.html"), "aria-current": ["offerings", "cnofferings", "cncourses"].includes(pageId) ? "page" : undefined }, t.nav.programs), h("a", { href: localHref(isZh ? "cnpartnership.html" : "partnership.html"), "aria-current": ["partnership", "cnpartnership"].includes(pageId) ? "page" : undefined }, t.nav.involved)),
+          h("button", { type: "button", className: "dc-search-btn", onClick: () => { setOpen(false); setSearchOpen(true); }, "aria-label": t.nav.search }, h(SearchIcon)),
           h(
             "div",
             { className: "dc-right-links" },
-            h("a", { href: localHref(isZh ? "cnget-involved.html" : "get-involved.html") }, t.nav.involved),
             h("a", { href: localHref(isZh ? "cncontact.html" : "contact.html") }, t.nav.contact),
-            h("div", { className: "dc-divider" }),
             h("a", { className: "dc-lang", href: t.nav.langHref }, t.nav.lang),
             h("a", { className: "dc-top-cta", href: SCHOOL_CONTACT_URL }, t.nav.cta)
           )
         ),
         h(
           "div",
-          { className: "dc-nav-cards" },
+          { id: "site-nav-panel", ref: panelRef, className: "dc-nav-panel", role: open ? "dialog" : undefined, "aria-modal": open ? "true" : undefined },
+          h("button", { ref: closeRef, type: "button", onClick: () => { setOpen(false); triggerRef.current && triggerRef.current.focus(); }, "aria-label": isZh ? "關閉導覽" : "Close navigation" }, "×"),
           navCards.map((card) =>
             h(
               "div",
               { className: "dc-nav-card", key: card.label },
-              h("div", { className: "dc-nav-label" }, card.label),
-              card.links.map(([label, href]) => h("a", { key: label, href: localHref(href), ...extProps(href), onClick: () => setOpen(false) }, h(Arrow), label))
+              h("h3", null, card.label),
+              card.links.map(([label, href]) => h("a", { key: label, href: localHref(href), ...extProps(href), onClick: () => setOpen(false) }, label))
             )
           )
         )
@@ -1601,6 +1597,33 @@
     );
   }
 
+  function StoryPage() {
+    const chapters = isZh ? [
+      ["01", "由初中梯隊開始", "DebateCraft 先處理新手入門：分析、立論、反駁、演說，再把每次練習留下可檢視記錄。"],
+      ["02", "讓回饋成為習慣", "限時演說、練習賽與賽後檢討連成固定節奏，學生知道下一步，老師看得到進度。"],
+      ["03", "把方法留在學校", "課綱、評估、學生領袖與教師監察點形成校內交接，而不是每年重新開始。"],
+    ] : [
+      ["01", "Start with the junior bench", "DebateCraft begins with foundations: analysis, case construction, rebuttal, delivery, and visible records of practice."],
+      ["02", "Make feedback repeatable", "Timed speeches, practice rounds, and post-round review create a rhythm where every student knows the next move."],
+      ["03", "Leave the method at school", "Curriculum, assessment, student leadership, and staff checkpoints make handover possible instead of resetting each year."],
+    ];
+    return h("main", { className: "story-page" },
+      h(PageHeader, { eyebrow: isZh ? "我們的故事" : "Our Story", title: isZh ? "由一次練習" : "One Practice Round", emphasis: isZh ? "開始改變。" : "Can Change a Team.", subtitle: isZh ? "DebateCraft 將競賽經驗轉化成學校可以長期使用的訓練方法。" : "DebateCraft turns competition experience into a training method schools can keep using." }),
+      h(Section, null,
+        h("div", { className: "route-essay" },
+          h("div", null, h("div", { className: "kicker" }, isZh ? "方法" : "Method"), h("h2", { className: "title" }, isZh ? "一條可重複的" : "A repeatable", h("em", null, isZh ? "路線。" : "route."))),
+          h("div", null, chapters.map(([number, title, text]) => h("article", { key: number, className: "story-chapter" }, h("div", { className: "section-index" }, number), h("h3", null, title), h("p", null, text))))
+        )
+      ),
+      h(Section, { cream: true }, h(TitleBlock, { eyebrow: isZh ? "故事的下一章" : "The next chapter", title: isZh ? "把練習變成" : "Turn practice into", emphasis: isZh ? "制度。" : "institutional memory.", lead: isZh ? "如果學校需要從小班課程開始，或要建立完整校本路線，我們會先了解學生、校曆及賽事目標。" : "Whether a school starts with a small cohort or a full pathway, we begin with students, calendar, and competition goals." }), h(Button, { href: localHref(isZh ? "cncontact.html" : "contact.html") }, isZh ? "聯絡我們 →" : "Talk to DebateCraft →"))
+    );
+  }
+
+  function EnrollmentPage() {
+    const steps = isZh ? [["01", "選擇班別", "按程度、賽制及目標選擇合適小班。"], ["02", "提交資料", "提供學生年級、經驗、時區及可上課時間。"], ["03", "確認安排", "團隊確認班別、日期、平台及付款／免費名額安排。"]] : [["01", "Choose a cohort", "Select a class by level, format, and goal."], ["02", "Share context", "Tell us age, experience, timezone, and available times."], ["03", "Confirm the place", "We confirm cohort, dates, platform, and fee or free-place arrangement."]];
+    return h("main", { className: "enrollment-page" }, h(PageHeader, { eyebrow: isZh ? "報名" : "Enrollment", title: isZh ? "由清晰資料" : "Start with a clear", emphasis: isZh ? "開始。" : "brief.", subtitle: isZh ? "報名頁面只處理一件事：讓學生進入合適課程。" : "Enrollment does one job: place each student in the right class." }), h(Section, null, h("div", { className: "grid grid-3" }, steps.map(([number, title, text]) => h("article", { className: "card", key: number }, h("div", { className: "section-index" }, number), h("h3", null, title), h("p", null, text)))), h("div", { style: { marginTop: 32 } }, h(Button, { href: STUDENT_FORM_URL }, isZh ? "開始報名 →" : "Start application →"))), h(Section, { cream: true }, h(TitleBlock, { eyebrow: isZh ? "學校申請" : "School route", title: isZh ? "學校需要一套" : "Schools need a", emphasis: isZh ? "完整方法。" : "full method.", lead: isZh ? "如要安排校本課程、初中梯隊或賽事準備，請直接聯絡我們。" : "For school cohorts, junior squads, or competition preparation, contact the team directly." }), h(Button, { href: SCHOOL_CONTACT_URL }, isZh ? "聯絡學校團隊 →" : "Contact school team →")));
+  }
+
   function TrainingPathwayPage() {
     const adminProblems = isZh
       ? [
@@ -1857,7 +1880,6 @@
         ...member,
         bio: typeof member.bio === "string" ? member.bio.replace("programme administration", "program administration") : member.bio,
       }));
-      const embedded = document.getElementById("dc-team-data");
       const dataUrl = `${assetPrefix}${isZh ? "data/cnteam_members.json" : "data/team_members.json"}?v=team-20260817`;
       fetch(dataUrl)
         .then((r) => {
@@ -1870,15 +1892,6 @@
           setLoadError(false);
         })
         .catch(() => {
-          try {
-            const data = embedded ? JSON.parse(embedded.textContent || "[]") : [];
-            if (Array.isArray(data) && data.length) {
-              setMembers(clean(data));
-              return;
-            }
-          } catch {
-            // Use basic contact records below.
-          }
           setLoadError(true);
           setMembers([
             { name: "Adrian Chan", role: "", image: "Images/Adrian.png", categories: ["executive", "coaching"], bio: isZh ? "DebateCraft 創辦成員之一。" : "One of DebateCraft's student leaders." },
@@ -1893,7 +1906,7 @@
       const openFromHash = () => {
         const hash = window.location.hash.replace(/^#member-/, "");
         if (!hash) return;
-        const match = members.find((m) => slugify(m.name) === hash);
+        const match = members.find((m) => slugify(m.name) === hash && !(m.categories || []).includes("retired"));
         if (match) setActive(match);
       };
       openFromHash();
@@ -1926,13 +1939,18 @@
       return isZh ? "DebateCraft 顧問" : "Adviser to DebateCraft";
     };
     const roleFor = (member) => publicRole(member) || member.role || null;
+    const isRetired = (member) => (member.categories || []).includes("retired");
     const filters = [
       ["all", isZh ? "全部" : "All"],
+      ["executive", isZh ? "領導層" : "Leadership"],
       ["coaching", isZh ? "教練" : "Coaching"],
       ["hk", isZh ? "香港" : "Hong Kong"],
-      ["epi", isZh ? "生物倫理" : "Bioethics"],
+      ["bioethics", isZh ? "生物倫理" : "Bioethics"],
+      ["retired", isZh ? "退休成員" : "Retired"],
     ];
-    const byCategory = filter === "all" ? members : members.filter((m) => (m.categories || []).includes(filter));
+    const byCategory = filter === "retired"
+      ? members.filter(isRetired)
+      : members.filter((m) => !isRetired(m) && (filter === "all" || (m.categories || []).includes(filter)));
     const q = query.trim().toLowerCase();
     const visible = q ? byCategory.filter((m) => String(m.name || "").toLowerCase().includes(q)) : byCategory;
 
@@ -2115,7 +2133,7 @@
 
   /* ---------- Legal pages (Privacy Policy / Student and Family Agreement) ---------- */
 
-  function LegalPage({ eyebrow, title, emphasis, effective, note, intro, sections }) {
+  function LegalPage({ eyebrow, title, emphasis, effective, note, intro, sections, kind = "legal" }) {
     return h(
       React.Fragment,
       null,
@@ -2125,7 +2143,7 @@
         { cream: true },
         h(
           "div",
-          { className: "legal-wrap" },
+          { className: `legal-wrap ${kind}` },
           note && h("div", { className: "legal-note", dangerouslySetInnerHTML: { __html: note } }),
           intro && h("div", { className: "legal-intro", dangerouslySetInnerHTML: { __html: intro } }),
           h("nav", { className: "legal-toc", "aria-label": "Sections" }, sections.map((s) => h("a", { key: s.id, href: `#${s.id}` }, s.label))),
@@ -2305,6 +2323,7 @@
 
   function PrivacyPage() {
     return h(LegalPage, {
+      kind: "privacy",
       eyebrow: "Privacy Policy",
       title: "Privacy",
       emphasis: "Policy.",
@@ -2657,6 +2676,7 @@
 
   function TermsPage() {
     return h(LegalPage, {
+      kind: "terms",
       eyebrow: "Terms of Service",
       title: "Student and Family",
       emphasis: "Agreement.",
@@ -3030,7 +3050,7 @@
       });
     });
 
-    members.forEach((m) => {
+    members.filter((m) => !(m.categories || []).includes("retired")).forEach((m) => {
       records.push({
         type: "person",
         title: displayName(m.name),
@@ -3733,15 +3753,19 @@
   }
 
   function GuidesPage() {
-    return h(ResourceHubPage, { initialTool: "guides" });
+    return h("main", { className: "guides-page" }, h(PageHeader, { eyebrow: isZh ? "指南" : "Guides", title: isZh ? "由一個問題" : "Start with one", emphasis: isZh ? "開始。" : "good question.", subtitle: isZh ? "按辯題、賽制及技能尋找可立即使用的練習。" : "Find a usable drill by motion, format, or speaking skill." }), h(Section, null, h(ResourceHubPage, { initialTool: "guides" })));
+  }
+
+  function FrameworkPage() {
+    return h("main", { className: "framework-page" }, h(PageHeader, { eyebrow: isZh ? "框架資源庫" : "Framework Library", title: isZh ? "找到一個" : "Find a", emphasis: isZh ? "可用框架。" : "usable frame.", subtitle: isZh ? "用辯題、角色及練習類型整理框架。" : "Frameworks organised by motion, role, and drill." }), h(Section, null, h(ResourceHubPage, { initialTool: "learn" })));
   }
 
   function MannerPage() {
-    return h(ResourceHubPage, { initialTool: "manner" });
+    return h("main", { className: "manner-page" }, h(PageHeader, { eyebrow: isZh ? "演說練習室" : "Speaking Lab", title: isZh ? "先聽見" : "Hear the", emphasis: isZh ? "自己的聲音。" : "difference.", subtitle: isZh ? "用計時、重讀和語氣練習改善表達。" : "Use timing, emphasis, and replay to improve delivery." }), h(Section, null, h(ResourceHubPage, { initialTool: "manner" })));
   }
 
   function MitigationPage() {
-    return h(ResourceHubPage, { initialTool: "mitigation" });
+    return h("main", { className: "mitigation-page" }, h(PageHeader, { eyebrow: "Even If", title: isZh ? "把反駁" : "Practice the", emphasis: isZh ? "變成回應。" : "turn.", subtitle: isZh ? "逐步練習承認、限制及比較對方論點。" : "Practice conceding, limiting, and comparing an opposing claim." }), h(Section, null, h(ResourceHubPage, { initialTool: "mitigation" })));
   }
 
   function BlogPage() {
@@ -3766,6 +3790,13 @@
     );
   }
   function CalendarPage() {
+    return h("main", { className: "calendar-page" },
+      h(PageHeader, { eyebrow: isZh ? "課程日程" : "Course Calendar", title: isZh ? "先看日期" : "See the dates", emphasis: isZh ? "再選班別。" : "then choose a cohort.", subtitle: isZh ? "按日期、程度及小班狀態查看課程安排。" : "Review dates, level, and cohort status before applying." }),
+      h(Section, null,
+        h("div", { className: "agenda-row" }, h("div", { className: "agenda-date" }, isZh ? "22 Jun – 14 Aug 2026" : "22 Jun – 14 Aug 2026"), h("div", null, h("strong", null, isZh ? "Summer 2026" : "Summer 2026"), h("p", null, isZh ? "多個辯論及生物倫理小班。" : "Debate, WSDC, BP, and bioethics cohorts.")), h("div", null, isZh ? "資料存檔" : "Archive")),
+        h("div", { className: "agenda-row" }, h("div", { className: "agenda-date" }, isZh ? "下一步" : "Next step"), h("div", null, h("strong", null, isZh ? "提交報名資料" : "Share your brief"), h("p", null, isZh ? "團隊會按程度、賽制和時間確認合適班別。" : "The team confirms class by level, format, and availability.")), h(Button, { href: STUDENT_FORM_URL }, isZh ? "報名 →" : "Apply →"))
+      )
+    );
     const css = `
       .calendar-poster { --cal-orange:#ae9562; --cal-sky:#0d5ea6; --cal-bio:#0d5ea6; --cal-navy:#071a2f; --cal-navy-deep:#102b49; --cal-cream:#f4f3ee; --cal-white:#fff; --cal-hair:rgba(7,26,47,.12); --cal-muted:rgba(7,26,47,.62); --cal-shadow:0 18px 50px rgba(7,26,47,.10); background:var(--cal-cream); color:var(--cal-navy); overflow-x:hidden; }
       .calendar-poster * { box-sizing:border-box; }
@@ -3905,7 +3936,7 @@
         .then((r) => r.json())
         .then((members) => {
           const byClass = {};
-          members.forEach((member) => {
+          members.filter((member) => !(member.categories || []).includes("retired")).forEach((member) => {
             (member.classes || []).forEach((classId) => {
               if (!byClass[classId]) byClass[classId] = [];
               byClass[classId].push({ name: member.name, role: member.role });
@@ -4058,8 +4089,10 @@
   }
 
   function renderPage() {
-    if (["about", "story", "cnabout", "cnstory"].includes(pageId)) return h(MissionPage);
-    if (["offerings", "cnofferings", "cncourses"].includes(pageId)) return h(ProgramsPage);
+    if (["about", "cnabout"].includes(pageId)) return h(MissionPage);
+    if (["story", "cnstory"].includes(pageId)) return h(StoryPage);
+    if (["offerings", "cnofferings"].includes(pageId)) return h(ProgramsPage);
+    if (pageId === "cncourses") return h(EnrollmentPage);
     if (["training-pathway", "cntraining-pathway"].includes(pageId)) return h(TrainingPathwayPage);
     if (["biology", "cnbiology"].includes(pageId)) return h(ProgramsPage, { biology: true });
     if (["others", "cnothers"].includes(pageId)) return h(ProgramsPage, { other: true });
@@ -4069,9 +4102,9 @@
     if (["donate", "cndonate"].includes(pageId)) return h(DonatePage);
     if (["contact", "cncontact"].includes(pageId)) return h(ContactPage);
     if (["resources", "cnresources"].includes(pageId)) return h(ResourcesPage);
-    if (["calendar", "cncalendar"].includes(pageId)) return h(ProgramsPage);
-    if (pageId === "mannernew") return h(ResourceHubPage, { initialTool: "learn" });
-    if (pageId === "guides") return h(GuidesPage);
+    if (["calendar", "cncalendar"].includes(pageId)) return h(CalendarPage);
+    if (pageId === "mannernew") return h(FrameworkPage);
+    if (["guides", "cnguides"].includes(pageId)) return h(GuidesPage);
     if (pageId === "blog") return h(BlogPage);
     if (pageId === "manner") return h(MannerPage);
     if (pageId === "even-if") return h(MitigationPage);

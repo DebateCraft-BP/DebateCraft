@@ -3,12 +3,10 @@
     "name": "Adrian Chan",
     "role": "Executive Director, Global",
     "school": "Phillips Exeter Academy, US",
-    "image": "Images/Adrian.png",
+    "image": "Images/Adrian",
     "categories": [
       "executive",
-      "coaching",
-      "epi",
-      "outreach",
+      "bioethics",
       "hk"
     ],
     "achievements": [
@@ -21,9 +19,6 @@
       "3rd Place, Carroll College Fundraiser (2025)",
       "Broke at Oxford Schools (2025)"
     ],
-    "classes": [
-      "Bioethics A"
-    ],
     "bio": "Adrian has more than five years of international debate experience. He judged IIUM IDC 2026 and HKEDO, reached the ICYD international final, broke at Oxford Schools, and won Best Speaker at the Stanford Invitational. More than 100 debaters in Hong Kong, the UK, and the US have used his debate accelerator."
   },
   {
@@ -32,16 +27,12 @@
     "school": "Phillips Exeter Academy, US",
     "image": "Images/Gavin.png",
     "categories": [
-      "executive",
-      "coaching",
-      "prepared"
+      "executive"
     ],
     "achievements": [
       "Qualified for Tournament of Champions (TOC) in 2022 and 2023",
       "Competed at Oxford Schools 2025",
       "Nationally ranked on the China Public Forum circuit"
-    ],
-    "classes": [
     ],
     "bio": "Gavin has five years of Public Forum experience and a national ranking on the China circuit. He qualified for the Tournament of Champions in 2022 and 2023 and competed at Oxford Schools in 2025. As Executive Director, he co-leads operations, web development, and Chinese-language outreach."
   },
@@ -51,8 +42,6 @@
     "image": "Images/Sandeep.png",
     "categories": [
       "executive",
-      "coaching",
-      "advisor",
       "hk"
     ],
     "achievements": [
@@ -65,7 +54,7 @@
   },
   {
     "name": "Matthew Wong",
-    "role": "Coaching Director, Global",
+    "role": "Programs Director, Global",
     "school": "Columbia University, US",
     "image": "Images/Matthew.png",
     "categories": [
@@ -76,10 +65,7 @@
       "4 years of BP debating in the UK (IONA) circuit",
       "2 years of coaching students to reach Oxford and Cambridge Schools Finals Day"
     ],
-    "classes": [
-      "Level 1 D",
-      "Level 3 BP"
-    ],
+
     "bio": "Matthew led Winchester College's Debate Society. He has four years of BP debating and adjudication experience and more than two years of coaching experience. He competed at ICYD and Cambridge Schools. His coaching covers politics, economics, and international relations motions."
   },
   {
@@ -117,9 +103,6 @@
       "Won U17 Finals, Oxford WSDC (2025)",
       "13th Best Speaker, Hong Kong Debate Open"
     ],
-    "classes": [
-      "Level 2B WSDC"
-    ],
     "bio": "Valmik is the youngest member of the Team Hong Kong Development Squad and competes in BP and WSDC. He placed second among open speakers at US Nationals 2026, won the U17 division at Oxford WSDC 2025, and ranked 13th among speakers at the Hong Kong Debate Open. He has taught more than 50 hours through DebateCraft."
   },
     {
@@ -139,10 +122,35 @@
       "Open Quarterfinalist, Indo-Pacific WSDO (2025)",
       "U14 Champion, Indo-Pacific WSDO (2024)"
     ],
-    "classes": [
-      "L3 WSDC B"
-    ],
     "bio": "Rachel leads the German Swiss International School Debate Team. She reached the 2026 Hong Kong Junior Schools Debating Competition semifinal and ranked seventh among speakers, reached the 2025 Indo-Pacific WSDO open quarterfinal, and won the 2024 Indo-Pacific WSDO U14 division."
+  },
+  {
+    "name": "Oliver Choi",
+    "role": "Head of Bioethics, Global",
+    "school": "Phillips Exeter Academy, US",
+    "image": "Images/OC.png",
+    "categories": [
+      "executive",
+      "outreach",
+      "bioethics"
+    ],
+     "achievements": [
+      "Summer Research Academies, University of California, Santa Barbara",
+      "GenBioDesign Lab, Sungkyunkwan University",
+      "Laboratory Medicine, Gyeongsang National University Changwon Hospital",
+      "HMS MEDscience, Harvard Medical School"
+    ],
+    "bio": "Oliver studies biophysics, has published papers, and teaches bioethics discussions."
+  },
+  {
+      "name": "Dowan Kim",
+    "role": "Head of Bioethics, Global",
+    "school": "Phillips Exeter Academy, US",
+    "image": "Images/Dowan.png",
+    "categories": [
+      "bioethics"
+    ],
+    "bio": "Dowan has competed in local WSDC tournaments in Korea."
   },
   {
     "name": "Alston G",
@@ -183,13 +191,7 @@
     "school": "Winchester College, UK",
     "image": "Images/Raul.png",
     "categories": [
-      "coaching",
-      "private"
-    ],
-    "classes": [
-      "Level 1 A",
-      "Level 2 C",
-      "Level 3 BP"
+      "retired"
     ],
     "bio": "Raul has competed in BP at ICYD and Imperial Schools, reached several intra-school finals, and mentors younger debaters."
   },
@@ -206,13 +208,12 @@
       "2nd Place Team & Top Speaker, Harvard International PF Tournament Open Division (2023)",
       "NSDA Global Excellent Debater (2020)"
     ],
-    "classes": [
-    ],
+
     "bio": "Arthur placed second as a team and won Top Speaker in the 2023 Harvard International PF Open Division. He was named an NSDA Global Excellent Debater in 2020 and won Winchester College's inter-boarding-house Yaw Pot. He coaches prepared debate."
   },
   {
     "name": "Cici C",
-    "role": "Senior Coach",
+    "role": "Coach",
     "school": "Phillips Exeter Academy, US",
     "image": "Images/Cici.png",
     "categories": [
@@ -223,15 +224,11 @@
       "Team Hong Kong WSDC Development Team member",
       "Quarterfinalist, Stanford Invitational (2026)"
     ],
-    "classes": [
-      "Level 1 C",
-      "L3 WSDC B"
-    ],
     "bio": "Cici is a Team Hong Kong WSDC Development Team member and competes with Phillips Exeter Academy's Advanced Debate Team. She also coaches DebateCraft cohorts."
   },
   {
     "name": "Piers K",
-    "role": "Senior Coach",
+    "role": "Coach",
     "school": "Phillips Academy Andover, US",
     "image": "Images/Piers.png",
     "categories": [
@@ -244,15 +241,12 @@
       "Hong Kong WSDC Development Team member",
       "16th Breaking Team, Vietnam Asian Schools Debating Championships (2026)"
     ],
-    "classes": [
-      "Level 1 B",
-      "Level 2 A"
-    ],
+
     "bio": "Piers is a member of the Hong Kong WSDC Development Team and writes a daily current-affairs newsletter."
   },
   {
     "name": "Theodore W",
-    "role": "Level 4 Coach",
+    "role": "Coach",
     "school": "Hong Kong International School, Hong Kong",
     "image": "Images/TheoW.png",
     "categories": [
@@ -265,30 +259,23 @@
       "Judge, Nanjing WSDC (2025)",
       "3rd Best Speaker, Vietnam Asian Schools Debating Championships (2025)"
     ],
-    "classes": [
-      "Level 2 C",
-      "Level 3 WSDC A"
-    ],
     "bio": "Theodore trained students at the 2024 Chongqing WSDC Workshop and judged Nanjing WSDC in 2025. He ranked third among speakers at the 2025 Vietnam Asian Schools Debating Championships and has broken at several other tournaments."
   },
   {
     "name": "Andre C",
-    "role": "Level 3 Coach",
+    "role": "Coach",
     "school": "Phillips Exeter Academy, US",
     "image": "Images/Andre.png",
     "categories": [
       "coaching",
       "private"    ],
     "achievements": [],
-    "classes": [
-      "Level 2B WSDC"
-    ],
     "bio": "Andre has more than four years of WSDC and BP experience. He helps design curriculum and run training."
   },
 
   {
     "name": "Larissa V",
-    "role": "Level 3 Coach",
+    "role": "Coach",
     "school": "German Swiss International School, Hong Kong",
     "image": "Images/Larissa.png",
     "categories": [
@@ -296,20 +283,16 @@
       "private",
       "hk"
     ],
-    "categories": ["coaching", "hk"],
     "achievements": [
       "CISWSDC Grand Champion & U16 Best Speaker",
       "1st Break (U16), MIWSDC (2024)",
       "Semifinalist, Asia Pacific WSDC and Junior Schools Debating Championship (2026)"
     ],
-    "classes": [
-      "Level 2 A"
-    ],
     "bio": "Larissa runs and captains training for the German Swiss International School junior school team. She won CISWSDC and its U16 Best Speaker award, broke first in the U16 division at MIWSDC 2024, and reached the semifinals of Asia Pacific WSDC and the 2026 Junior Schools Debating Championship."
   },
   {
     "name": "Sanaya S",
-    "role": "Level 3 Coach",
+    "role": "Coach",
     "school": "German Swiss International School, Hong Kong",
     "image": "Images/Sanaya.png",
     "categories": [
@@ -321,15 +304,11 @@
       "4th Best Team, Junior Schools Debating Championships (2026)",
       "13th Best Team, Junior Schools Debating Championships (2024)"
     ],
-    "classes": [
-      "Level 1 E",
-      "Level 2B WSDC"
-    ],
     "bio": "Sanaya co-leads the German Swiss International School Debate Club and has competed at the Junior Schools Debating Championships for three years. Her training uses short drills for skills students can apply in rounds."
   },
   {
     "name": "Tanvi M",
-    "role": "Level 3 Coach",
+    "role": "Debate Coach",
     "image": "Images/Tanvi.png",
     "categories": [
       "coaching",
@@ -341,15 +320,12 @@
       "9th Best Speaker, UBC Summer HST (2025)",
       "Finalist, YPC HST and Debateability Summer Championships (2025)"
     ],
-    "classes": [
-      "Level 1 B",
-      "Level 1 D"
-    ],
+
     "bio": "Tanvi reached the semifinals of the 2025 Hart House Debate Tournament and UBC Summer HST, where she ranked ninth among speakers. She also reached the 2025 YPC HST and Debateability Summer Championships finals."
   },
   {
     "name": "Vera H",
-    "role": "Level 3 Coach",
+    "role": "Debate Coach",
     "school": "German Swiss International School, Hong Kong",
     "image": "Images/Vera.png",
     "categories": [
@@ -366,7 +342,7 @@
   },
   {
     "name": "Eric J",
-    "role": "Level 3 Coach",
+    "role": "Debate Coach",
     "school": "Phillips Exeter Academy, US",
     "image": "Images/Eric.png",
     "categories": [
@@ -376,9 +352,6 @@
       "Drexel Open (2026)",
       "3rd Place, Team Canada Fundraiser (2025)",
       "3rd Place, Carroll College Fundraiser (2025)"
-    ],
-    "classes": [
-      "Level 1 E"
     ],
     "bio": "Eric placed third at the 2025 Team Canada Fundraiser and the 2025 Carroll College Fundraiser."
   },
@@ -395,8 +368,6 @@
       "Quarterfinalist, JV Lincoln-Douglas, Harvard National Speech and Debate Tournament",
       "6th Place, Lincoln-Douglas, DSDL 3"
     ],
-    "classes": [
-    ],
     "bio": "Chelsea reached the JV Lincoln-Douglas quarterfinals at the Harvard National Speech and Debate Tournament and placed sixth in Lincoln-Douglas at DSDL 3. She coaches prepared debate formats."
   },
   {
@@ -406,8 +377,6 @@
     "image": "Images/Hao.png",
     "categories": [
       "prepared"
-    ],
-    "classes": [
     ],
     "bio": "Matthew regularly reaches the quarterfinals or later in Public Forum competitions on the NSDA China circuit."
   },
@@ -420,44 +389,8 @@
       "prepared"
     ],
     "achievements": [
-      "Silver Tournament of Champions, Public Forum",
-      "USABO Semifinalist"
-    ],
-    "bio": "Jessica earned Silver at the Public Forum Tournament of Champions and reached the USABO semifinals. She coaches debate and teaches epidemiology."
-  },
-  {
-    "name": "Dowan Kim",
-    "role": "Bioethics Instructor",
-    "school": "Phillips Exeter Academy, US",
-    "image": "Images/Dowan.png",
-    "categories": [
-      "epi"
-    ],
-    "classes": [
-      "Bioethics A",
-      "Bioethics B",
-      "Bioethics C"
-    ],
-    "bio": "Dowan has competed in local WSDC tournaments in Korea."
-  },
-  {
-    "name": "Oliver Choi",
-    "role": "Bioethics Instructor",
-    "school": "Phillips Exeter Academy, US",
-    "image": "Images/OC.png",
-    "categories": [
-      "executive",
-      "outreach",
-      "epi"
-    ],
-    "achievements": [
-      "Published biophysics research papers"
-    ],
-    "classes": [
-      "Bioethics B",
-      "Bioethics C"
-    ],
-    "bio": "Oliver studies biophysics, has published papers, and teaches bioethics discussions."
+      "Silver Tournament of Champions, Public Forum"
+    ]
   },
   {
     "name": "Emmanuel Z",
@@ -465,7 +398,7 @@
     "school": "Phillips Exeter Academy, US",
     "image": "Images/Emmanuel.png",
     "categories": [
-      "epi",
+      "bioethics",
       "hk"
     ],
     "achievements": [

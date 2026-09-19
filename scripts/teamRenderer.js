@@ -7,10 +7,8 @@ export function renderTeamGrid(members, category = null) {
 
   const normalizedCategory = category ? String(category).toLowerCase() : null;
 
-  const filteredMembers = members.filter((m) => {
-        const isRetired = Array.isArray(m.categories) && m.categories.includes('retired');
-        if (!normalizedCategory) return !isRetired;
-        if (normalizedCategory === 'retired') return isRetired;
+  const filteredMembers = normalizedCategory
+    ? members.filter((m) => {
         // Prefer `categories` (array)
         if (Array.isArray(m.categories)) {
           return m.categories.some(
@@ -22,7 +20,8 @@ export function renderTeamGrid(members, category = null) {
           return String(m.category).toLowerCase() === normalizedCategory;
         }
         return false;
-      });
+      })
+    : members;
 
   if (!filteredMembers.length) {
     grid.insertAdjacentHTML(

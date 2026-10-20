@@ -1857,7 +1857,6 @@
         ...member,
         bio: typeof member.bio === "string" ? member.bio.replace("programme administration", "program administration") : member.bio,
       }));
-      const embedded = document.getElementById("dc-team-data");
       const dataUrl = `${assetPrefix}${isZh ? "data/cnteam_members.json" : "data/team_members.json"}?v=team-20260817`;
       fetch(dataUrl)
         .then((r) => {
@@ -1870,18 +1869,9 @@
           setLoadError(false);
         })
         .catch(() => {
-          try {
-            const data = embedded ? JSON.parse(embedded.textContent || "[]") : [];
-            if (Array.isArray(data) && data.length) {
-              setMembers(clean(data));
-              return;
-            }
-          } catch {
-            // Use basic contact records below.
-          }
           setLoadError(true);
           setMembers([
-            { name: "Adrian Chan", role: "", image: "Images/Adrian.png", categories: ["executive", "coaching"], bio: isZh ? "DebateCraft 創辦成員之一。" : "One of DebateCraft's student leaders." },
+            { name: "Adrian Chan", role: "", image: "Images/Adrian.jpg", categories: ["executive", "coaching"], bio: isZh ? "DebateCraft 創辦成員之一。" : "One of DebateCraft's student leaders." },
             { name: "Gavin Zhao", role: "", image: "Images/Gavin.png", categories: ["executive", "prepared"], bio: isZh ? "DebateCraft 學生團隊成員。" : "A DebateCraft student team member." },
           ]);
         });
@@ -1893,7 +1883,7 @@
       const openFromHash = () => {
         const hash = window.location.hash.replace(/^#member-/, "");
         if (!hash) return;
-        const match = members.find((m) => slugify(m.name) === hash);
+        const match = members.find((m) => slugify(m.name) === hash && !(m.categories || []).includes("retired"));
         if (match) setActive(match);
       };
       openFromHash();
@@ -1926,13 +1916,18 @@
       return isZh ? "DebateCraft 顧問" : "Adviser to DebateCraft";
     };
     const roleFor = (member) => publicRole(member) || member.role || null;
+    const isRetired = (member) => (member.categories || []).includes("retired");
     const filters = [
       ["all", isZh ? "全部" : "All"],
+      ["executive", isZh ? "領導層" : "Leadership"],
       ["coaching", isZh ? "教練" : "Coaching"],
       ["hk", isZh ? "香港" : "Hong Kong"],
-      ["epi", isZh ? "生物倫理" : "Bioethics"],
+      ["bioethics", isZh ? "生物倫理" : "Bioethics"],
+      ["retired", isZh ? "退休成員" : "Retired"],
     ];
-    const byCategory = filter === "all" ? members : members.filter((m) => (m.categories || []).includes(filter));
+    const byCategory = filter === "retired"
+      ? members.filter(isRetired)
+      : members.filter((member) => !isRetired(member) && (filter === "all" || (member.categories || []).includes(filter)));
     const q = query.trim().toLowerCase();
     const visible = q ? byCategory.filter((m) => String(m.name || "").toLowerCase().includes(q)) : byCategory;
 
@@ -3030,7 +3025,7 @@
       });
     });
 
-    members.forEach((m) => {
+    members.filter((m) => !(m.categories || []).includes("retired")).forEach((m) => {
       records.push({
         type: "person",
         title: displayName(m.name),
@@ -3905,7 +3900,7 @@
         .then((r) => r.json())
         .then((members) => {
           const byClass = {};
-          members.forEach((member) => {
+          members.filter((member) => !(member.categories || []).includes("retired")).forEach((member) => {
             (member.classes || []).forEach((classId) => {
               if (!byClass[classId]) byClass[classId] = [];
               byClass[classId].push({ name: member.name, role: member.role });

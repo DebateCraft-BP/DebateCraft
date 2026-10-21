@@ -10,7 +10,7 @@ test('desktop and mobile headers show Who We Are, What We Do and How We Work in 
   const desktop = within(screen.getByRole('navigation', { name: 'Primary navigation' })).getAllByRole('link');
   expect(desktop.map(link => link.textContent)).toEqual(expected);
   expect(desktop.map(link => link.getAttribute('href'))).toEqual([
-    '/#impact', '/#programs', '/#method', '/#resources', '/pages/team.html', '/pages/contact.html',
+    '/#impact', '/#programs', '/#method', '/pages/resources.html', '/pages/team.html', '/pages/contact.html',
   ]);
   await user.click(screen.getByRole('button', { name: 'Menu' }));
   const mobile = within(screen.getByRole('navigation', { name: 'Mobile navigation' })).getAllByRole('link');

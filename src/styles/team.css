@@ -1,0 +1,43 @@
+/* Source card dimensions come from reference.css; controls and palette are DebateCraft's. */
+.team-page { background: var(--color-bg); }
+.team-intro { display: grid; grid-template-columns: repeat(var(--columns), minmax(0, 1fr)); column-gap: var(--gutter); padding: 10.8rem 0 8rem; text-align: center; }
+.team-intro h1 { text-wrap: balance; }
+.team-intro > p { grid-column: 8 / span 10; margin-top: 3.2rem; font-size: var(--font-size-lead-size); line-height: var(--font-size-lead-lh); }
+.team-tools { display: flex; flex-direction: column; align-items: center; gap: 2.4rem; padding-bottom: 9.6rem; }
+.team-search { display: block; width: min(50rem, 100%); }
+.team-search > span { display: block; margin: 0 2.4rem 1.2rem; font-size: var(--font-size-small-size); }
+.team-search input { width: 100%; padding: 1.6rem 2.4rem; border: 1px solid #bdcbdc; border-radius: var(--border-radius-xl); background: var(--color-surface); color: var(--color-primary); font: inherit; }
+.team-search input::placeholder { color: #737373; }
+.team-filters { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.2rem; }
+.team-filters button { min-height: 4.8rem; padding: 1.4rem 2.4rem; border: 1px solid #bdcbdc; border-radius: var(--border-radius-xl); background: transparent; color: var(--color-primary); cursor: pointer; }
+.team-filters button[aria-pressed="true"] { border-color: var(--color-primary); background: var(--color-primary); color: white; }
+.team-filters button:hover:not([aria-pressed="true"]) { background: var(--color-surface); }
+.team-state { padding: 0 var(--margin) var(--spacing-default); text-align: center; }
+.team-state .button { margin-top: 2.4rem; }
+.team-card__trigger { position: static; color: inherit; text-align: left; cursor: pointer; }
+.team-card__trigger::after { content: ''; position: absolute; inset: 0; border-radius: var(--border-radius-l); }
+.team-card__trigger:focus-visible { outline: none; }
+.team-card__trigger:focus-visible::after { outline: 3px solid #32579d; outline-offset: -4px; }
+.team-page .leaders-about__item-role, .team-page .members-about__item-role, .team-dialog__content-role { text-transform: none; }
+.team-initials { display: grid; width: 100%; height: 100%; place-items: center; background: var(--color-surface-blue-soft); color: #32579d; font: 200 8rem/1 'PP Editorial New', serif; }
+.team-retired .members-about__item { height: auto; }
+.team-dialog { max-width: none; max-height: none; margin: 0; padding: 0; border: 0; color: var(--color-primary); overflow: hidden; }
+.team-dialog::backdrop { background: white; }
+.team-dialog__container { height: 100%; overflow-y: auto; overscroll-behavior: contain; }
+.team-dialog__content { min-height: 100%; }
+.team-dialog__content-bio p + p { margin-top: 2.4rem; }
+.team-bio__school { color: #737373; }
+.team-bio__heading { margin-top: 3.2rem; font-weight: 500; }
+.team-bio__achievements { margin-top: 1.6rem; padding-left: 2rem; list-style: disc; }
+.team-bio__achievements li + li { margin-top: .8rem; }
+.team-dialog__close { cursor: pointer; }
+.team-dialog__close::after { content: ''; position: absolute; inset: -9px; }
+@media (max-width: 767px) {
+  .team-intro { padding: 6.5rem 0 4rem; }
+  .team-intro > p { grid-column: 1 / -1; margin-top: 2.4rem; }
+  .team-tools { padding-bottom: 6.4rem; }
+  .team-filters { gap: .8rem; }
+  .team-filters button { min-height: 4.4rem; padding: 1.2rem 1.8rem; font-size: 1.4rem; }
+  .team-card__trigger::after { border-radius: var(--border-radius-m); }
+  .team-dialog__content { min-height: 0; }
+}

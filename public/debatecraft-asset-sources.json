@@ -1,0 +1,50 @@
+{
+  "description": "Original DebateCraft assets copied without alteration from the preserved website.",
+  "assets": [
+    {
+      "file": "public/media/debatecraft/Image1.jpeg",
+      "source": "legacy/Images/Image1.jpeg",
+      "sha256": "9a2654bfef0e3a5e5e108c48742e153164bd8f2517a43d708184d413f1be73c9"
+    },
+    {
+      "file": "public/media/debatecraft/Image2.jpeg",
+      "source": "legacy/Images/Image2.jpeg",
+      "sha256": "b7984bdbbdc09f80a1958570f79efd145bd6f2e92a80051f7eb371241d860d66"
+    },
+    {
+      "file": "public/media/debatecraft/Image3.png",
+      "source": "legacy/Images/Image3.png",
+      "sha256": "3155891a0ecca9116b066ab7fae977832efbb446eab52ea42db7d36d631d27c9"
+    },
+    {
+      "file": "public/media/debatecraft/Image4.png",
+      "source": "legacy/Images/Image4.png",
+      "sha256": "2b04b3108f12c638cb30decdc476b8793c1641c49fdc2d8a53ba44cd988b667e"
+    },
+    {
+      "file": "public/media/debatecraft/Image5.png",
+      "source": "legacy/Images/Image5.png",
+      "sha256": "b0e23516f5142bd78d671467d00a987412bb5eb9809958a671de5d3e25c334f0"
+    },
+    {
+      "file": "public/media/debatecraft/Image6.png",
+      "source": "legacy/Images/Image6.png",
+      "sha256": "0b59bc1be374dc26d9231c46afd79dfbe26a82de4bafdf7d4333a6ea5fbf4d41"
+    },
+    {
+      "file": "public/media/debatecraft/Image7.png",
+      "source": "legacy/Images/Image7.png",
+      "sha256": "b08553ce246470637bc63f67f755e069a88ffbc1c0f30a6e5118f28f3ecb2cc9"
+    },
+    {
+      "file": "public/media/debatecraft/Logo.png",
+      "source": "legacy/Images/Logo.png",
+      "sha256": "8112b8d50bf7a867dfbe2c277afefaaf65ad2b7f49f5108e1be3095038b57962"
+    },
+    {
+      "file": "public/media/debatecraft/Logo-white-transparent.png",
+      "source": "legacy/Images/Logo-white-transparent.png",
+      "sha256": "ab8ebbe2d3d8f425d0cb416811a808fbf4b16a9631ab6e6a565a69f827c69ac0"
+    }
+  ]
+}

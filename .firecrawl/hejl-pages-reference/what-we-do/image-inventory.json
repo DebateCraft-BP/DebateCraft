@@ -1,0 +1,484 @@
+{
+  "returnedImages": [
+    "https://www.hejlfoundation.org/app/uploads/2024/05/arts-04-3-2560x1440.webp",
+    "https://www.hejlfoundation.org/app/uploads/2024/05/image-71-2048x1152.webp",
+    "https://www.hejlfoundation.org/app/uploads/2024/05/image-74-2560x1440.webp",
+    "https://www.hejlfoundation.org/app/uploads/2024/05/1523e9a2fdf28d39656553f132dae1c6-jpeg.webp",
+    "https://www.hejlfoundation.org/app/uploads/2024/05/5136760269dd771d0754e0c85175dfd3-jpeg.webp",
+    "https://www.hejlfoundation.org/app/uploads/2024/05/faq-4-jpg.webp",
+    "https://www.hejlfoundation.org/app/uploads/2024/05/image-74-2048x1152.webp",
+    "https://www.hejlfoundation.org/app/uploads/2024/05/arts-04-3-2048x1152.webp",
+    "https://www.hejlfoundation.org/app/uploads/2024/05/areas-bubble-1-jpg.webp",
+    "https://www.hejlfoundation.org/app/uploads/2024/05/4babaa1e49e44e8696414414bc9cfab8-jpeg.webp",
+    "https://www.hejlfoundation.org/app/uploads/2024/05/image-71-2560x1440.webp",
+    "https://www.hejlfoundation.org/app/uploads/2024/06/cdc-ehwsgs4t2ui-unsplash-1-jpg.webp",
+    "https://www.hejlfoundation.org/app/uploads/2024/05/e6fe7c3e25140bffb7288f84f0eba3ac-jpeg.webp",
+    "https://www.hejlfoundation.org/app/uploads/2024/05/collage-05-4-2048x1153.webp",
+    "https://www.hejlfoundation.org/app/uploads/2024/05/image006.png",
+    "https://www.hejlfoundation.org/app/uploads/2024/05/collage-05-4-2560x1441.webp"
+  ],
+  "htmlImages": [
+    {
+      "src": "https://www.hejlfoundation.org/app/uploads/2024/05/areas-bubble-1-jpg.webp",
+      "srcset": null,
+      "alt": "",
+      "width": "1000",
+      "height": "667",
+      "ancestry": [
+        {
+          "tag": "FIGURE",
+          "class": "media__figure"
+        },
+        {
+          "tag": "DIV",
+          "class": "media media--image media--custom heading-bubbles__media"
+        },
+        {
+          "tag": "DIV",
+          "class": "heading-bubbles__bubble heading-bubbles__bubble--1 ovee-component is-in-viewport"
+        },
+        {
+          "tag": "DIV",
+          "class": "hero-areas__bubbles heading-bubbles ovee-component"
+        },
+        {
+          "tag": "DIV",
+          "class": "hero-areas__container"
+        },
+        {
+          "tag": "SECTION",
+          "class": "section hero-areas ovee-component is-in-viewport"
+        }
+      ]
+    },
+    {
+      "src": "https://www.hejlfoundation.org/app/uploads/2024/05/image006.png",
+      "srcset": null,
+      "alt": "",
+      "width": "722",
+      "height": "471",
+      "ancestry": [
+        {
+          "tag": "FIGURE",
+          "class": "media__figure"
+        },
+        {
+          "tag": "DIV",
+          "class": "media media--image media--custom heading-bubbles__media"
+        },
+        {
+          "tag": "DIV",
+          "class": "heading-bubbles__bubble heading-bubbles__bubble--1 ovee-component is-in-viewport"
+        },
+        {
+          "tag": "DIV",
+          "class": "hero-areas__bubbles heading-bubbles ovee-component"
+        },
+        {
+          "tag": "DIV",
+          "class": "hero-areas__container"
+        },
+        {
+          "tag": "SECTION",
+          "class": "section hero-areas ovee-component is-in-viewport"
+        }
+      ]
+    },
+    {
+      "src": "https://www.hejlfoundation.org/app/uploads/2024/06/cdc-ehwsgs4t2ui-unsplash-1-jpg.webp",
+      "srcset": null,
+      "alt": "",
+      "width": "1280",
+      "height": "960",
+      "ancestry": [
+        {
+          "tag": "FIGURE",
+          "class": "media__figure"
+        },
+        {
+          "tag": "DIV",
+          "class": "media media--image media--custom heading-bubbles__media"
+        },
+        {
+          "tag": "DIV",
+          "class": "heading-bubbles__bubble heading-bubbles__bubble--1 ovee-component is-in-viewport"
+        },
+        {
+          "tag": "DIV",
+          "class": "hero-areas__bubbles heading-bubbles ovee-component"
+        },
+        {
+          "tag": "DIV",
+          "class": "hero-areas__container"
+        },
+        {
+          "tag": "SECTION",
+          "class": "section hero-areas ovee-component is-in-viewport"
+        }
+      ]
+    },
+    {
+      "src": "https://www.hejlfoundation.org/app/uploads/2024/05/arts-04-3-2048x1152.webp",
+      "srcset": null,
+      "alt": "",
+      "width": "2560",
+      "height": "1440",
+      "ancestry": [
+        {
+          "tag": "FIGURE",
+          "class": "media__figure"
+        },
+        {
+          "tag": "DIV",
+          "class": "media media--image media--auto areas-areas__item-image"
+        },
+        {
+          "tag": "LI",
+          "class": "areas-areas__item ovee-component is-in-viewport"
+        },
+        {
+          "tag": "UL",
+          "class": "areas-areas__list"
+        },
+        {
+          "tag": "SECTION",
+          "class": "section areas-areas"
+        },
+        {
+          "tag": "ARTICLE",
+          "class": "page-areas"
+        }
+      ]
+    },
+    {
+      "src": "https://www.hejlfoundation.org/app/uploads/2024/05/image-71-2048x1152.webp",
+      "srcset": null,
+      "alt": "",
+      "width": "2560",
+      "height": "1440",
+      "ancestry": [
+        {
+          "tag": "FIGURE",
+          "class": "media__figure"
+        },
+        {
+          "tag": "DIV",
+          "class": "media media--image media--auto areas-areas__item-image"
+        },
+        {
+          "tag": "LI",
+          "class": "areas-areas__item ovee-component is-in-viewport"
+        },
+        {
+          "tag": "UL",
+          "class": "areas-areas__list"
+        },
+        {
+          "tag": "SECTION",
+          "class": "section areas-areas"
+        },
+        {
+          "tag": "ARTICLE",
+          "class": "page-areas"
+        }
+      ]
+    },
+    {
+      "src": "https://www.hejlfoundation.org/app/uploads/2024/05/image-74-2048x1152.webp",
+      "srcset": null,
+      "alt": "",
+      "width": "2560",
+      "height": "1440",
+      "ancestry": [
+        {
+          "tag": "FIGURE",
+          "class": "media__figure"
+        },
+        {
+          "tag": "DIV",
+          "class": "media media--image media--auto areas-areas__item-image"
+        },
+        {
+          "tag": "LI",
+          "class": "areas-areas__item ovee-component is-in-viewport"
+        },
+        {
+          "tag": "UL",
+          "class": "areas-areas__list"
+        },
+        {
+          "tag": "SECTION",
+          "class": "section areas-areas"
+        },
+        {
+          "tag": "ARTICLE",
+          "class": "page-areas"
+        }
+      ]
+    },
+    {
+      "src": "https://www.hejlfoundation.org/app/uploads/2024/05/collage-05-4-2048x1153.webp",
+      "srcset": null,
+      "alt": "",
+      "width": "2560",
+      "height": "1441",
+      "ancestry": [
+        {
+          "tag": "FIGURE",
+          "class": "media__figure"
+        },
+        {
+          "tag": "DIV",
+          "class": "media media--image media--auto areas-areas__item-image"
+        },
+        {
+          "tag": "LI",
+          "class": "areas-areas__item ovee-component is-in-viewport"
+        },
+        {
+          "tag": "UL",
+          "class": "areas-areas__list"
+        },
+        {
+          "tag": "SECTION",
+          "class": "section areas-areas"
+        },
+        {
+          "tag": "ARTICLE",
+          "class": "page-areas"
+        }
+      ]
+    },
+    {
+      "src": "https://www.hejlfoundation.org/app/uploads/2024/05/4babaa1e49e44e8696414414bc9cfab8-jpeg.webp",
+      "srcset": null,
+      "alt": "",
+      "width": "480",
+      "height": "320",
+      "ancestry": [
+        {
+          "tag": "FIGURE",
+          "class": "media__figure"
+        },
+        {
+          "tag": "DIV",
+          "class": "media media--image media--landscape scrolling-heading__media"
+        },
+        {
+          "tag": "DIV",
+          "class": "scrolling-heading__image ovee-component is-in-viewport"
+        },
+        {
+          "tag": "DIV",
+          "class": "scrolling-heading__item"
+        },
+        {
+          "tag": "DIV",
+          "class": "scrolling-heading__wrapper"
+        },
+        {
+          "tag": "SCROLLING-HEADING",
+          "class": "scrolling-heading headings-areas__scrolling-heading ovee-component"
+        }
+      ]
+    },
+    {
+      "src": "https://www.hejlfoundation.org/app/uploads/2024/05/5136760269dd771d0754e0c85175dfd3-jpeg.webp",
+      "srcset": null,
+      "alt": "",
+      "width": "320",
+      "height": "480",
+      "ancestry": [
+        {
+          "tag": "FIGURE",
+          "class": "media__figure"
+        },
+        {
+          "tag": "DIV",
+          "class": "media media--image media--landscape scrolling-heading__media"
+        },
+        {
+          "tag": "DIV",
+          "class": "scrolling-heading__image ovee-component is-in-viewport"
+        },
+        {
+          "tag": "DIV",
+          "class": "scrolling-heading__item"
+        },
+        {
+          "tag": "DIV",
+          "class": "scrolling-heading__wrapper"
+        },
+        {
+          "tag": "SCROLLING-HEADING",
+          "class": "scrolling-heading headings-areas__scrolling-heading ovee-component"
+        }
+      ]
+    },
+    {
+      "src": "https://www.hejlfoundation.org/app/uploads/2024/05/faq-4-jpg.webp",
+      "srcset": null,
+      "alt": "",
+      "width": "364",
+      "height": "204",
+      "ancestry": [
+        {
+          "tag": "FIGURE",
+          "class": "media__figure"
+        },
+        {
+          "tag": "DIV",
+          "class": "media media--image media--landscape scrolling-heading__media"
+        },
+        {
+          "tag": "DIV",
+          "class": "scrolling-heading__image ovee-component is-in-viewport"
+        },
+        {
+          "tag": "DIV",
+          "class": "scrolling-heading__item"
+        },
+        {
+          "tag": "DIV",
+          "class": "scrolling-heading__wrapper"
+        },
+        {
+          "tag": "SCROLLING-HEADING",
+          "class": "scrolling-heading headings-areas__scrolling-heading ovee-component"
+        }
+      ]
+    },
+    {
+      "src": "https://www.hejlfoundation.org/app/uploads/2024/05/e6fe7c3e25140bffb7288f84f0eba3ac-jpeg.webp",
+      "srcset": null,
+      "alt": "",
+      "width": "480",
+      "height": "320",
+      "ancestry": [
+        {
+          "tag": "FIGURE",
+          "class": "media__figure"
+        },
+        {
+          "tag": "DIV",
+          "class": "media media--image media--landscape scrolling-heading__media"
+        },
+        {
+          "tag": "DIV",
+          "class": "scrolling-heading__image ovee-component is-in-viewport"
+        },
+        {
+          "tag": "DIV",
+          "class": "scrolling-heading__item"
+        },
+        {
+          "tag": "DIV",
+          "class": "scrolling-heading__wrapper"
+        },
+        {
+          "tag": "SCROLLING-HEADING",
+          "class": "scrolling-heading headings-areas__scrolling-heading ovee-component"
+        }
+      ]
+    },
+    {
+      "src": "https://www.hejlfoundation.org/app/uploads/2024/05/faq-4-jpg.webp",
+      "srcset": null,
+      "alt": "",
+      "width": "364",
+      "height": "204",
+      "ancestry": [
+        {
+          "tag": "FIGURE",
+          "class": "media__figure"
+        },
+        {
+          "tag": "DIV",
+          "class": "media media--image media--landscape scrolling-heading__media"
+        },
+        {
+          "tag": "DIV",
+          "class": "scrolling-heading__image ovee-component is-in-viewport"
+        },
+        {
+          "tag": "DIV",
+          "class": "scrolling-heading__item"
+        },
+        {
+          "tag": "DIV",
+          "class": "scrolling-heading__wrapper"
+        },
+        {
+          "tag": "SCROLLING-HEADING",
+          "class": "scrolling-heading headings-areas__scrolling-heading ovee-component"
+        }
+      ]
+    },
+    {
+      "src": "https://www.hejlfoundation.org/app/uploads/2024/05/1523e9a2fdf28d39656553f132dae1c6-jpeg.webp",
+      "srcset": null,
+      "alt": "",
+      "width": "480",
+      "height": "324",
+      "ancestry": [
+        {
+          "tag": "FIGURE",
+          "class": "media__figure"
+        },
+        {
+          "tag": "DIV",
+          "class": "media media--image media--landscape scrolling-heading__media"
+        },
+        {
+          "tag": "DIV",
+          "class": "scrolling-heading__image ovee-component is-in-viewport"
+        },
+        {
+          "tag": "DIV",
+          "class": "scrolling-heading__item"
+        },
+        {
+          "tag": "DIV",
+          "class": "scrolling-heading__wrapper"
+        },
+        {
+          "tag": "SCROLLING-HEADING",
+          "class": "scrolling-heading headings-areas__scrolling-heading ovee-component"
+        }
+      ]
+    },
+    {
+      "src": "https://www.hejlfoundation.org/app/uploads/2024/05/4babaa1e49e44e8696414414bc9cfab8-jpeg.webp",
+      "srcset": null,
+      "alt": "",
+      "width": "480",
+      "height": "320",
+      "ancestry": [
+        {
+          "tag": "FIGURE",
+          "class": "media__figure"
+        },
+        {
+          "tag": "DIV",
+          "class": "media media--image media--landscape scrolling-heading__media"
+        },
+        {
+          "tag": "DIV",
+          "class": "scrolling-heading__image ovee-component is-in-viewport"
+        },
+        {
+          "tag": "DIV",
+          "class": "scrolling-heading__item"
+        },
+        {
+          "tag": "DIV",
+          "class": "scrolling-heading__wrapper"
+        },
+        {
+          "tag": "SCROLLING-HEADING",
+          "class": "scrolling-heading headings-areas__scrolling-heading ovee-component"
+        }
+      ]
+    }
+  ]
+}

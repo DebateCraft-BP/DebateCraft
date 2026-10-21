@@ -1,0 +1,176 @@
+[
+  {
+    "name": "Adrian Chan",
+    "file": "/Images/Adrian.jpg",
+    "source": "legacy/Images/Adrian.jpg",
+    "sha256": "32b90f8a2af371b1781d33e6248b04c0f2c032961423750bd2077514b91cc7ae"
+  },
+  {
+    "name": "Gavin Zhao",
+    "file": "/Images/Gavin.png",
+    "source": "legacy/Images/Gavin.png",
+    "sha256": "8faac3bfe70ef830e6097ce5c2359cb82e415a5b0c4e5d691798b57cb5e1aabe"
+  },
+  {
+    "name": "Sandeep Chulani",
+    "file": "/Images/Sandeep.png",
+    "source": "legacy/Images/Sandeep.png",
+    "sha256": "96a62550fd5eab785e342fd724bd1f2ff5a007033bc1d1d5d65f33eafb92f7fc"
+  },
+  {
+    "name": "Matthew Wong",
+    "file": "/Images/Matthew.png",
+    "source": "legacy/Images/Matthew.png",
+    "sha256": "285b26a818d7ccba0e65632af2bbb483e36bd7666ab34fcc0e8db853d14ebe9c"
+  },
+  {
+    "name": "Bella Cai",
+    "file": "/Images/Bella.png",
+    "source": "legacy/Images/Bella.png",
+    "sha256": "845cd0c091f7baf4c55030de45d9ec646a7866ffe16cefca13bd5b0115215804"
+  },
+  {
+    "name": "Valmik Dagayach",
+    "file": "/Images/Valmik.png",
+    "source": "legacy/Images/Valmik.png",
+    "sha256": "e330ed5393560bc85c3b1f7f1056f85228df1b51c2a9f250c004b561af97589b"
+  },
+  {
+    "name": "Rachel Rhodes",
+    "file": "/Images/Rachel.png",
+    "source": "legacy/Images/Rachel.png",
+    "sha256": "7437c3161a734e1cfaa3c4923d9d7f87ba0ee0cb99b8fdfe5126e841c0cfd589"
+  },
+  {
+    "name": "Oliver Choi",
+    "file": "/Images/OC.png",
+    "source": "legacy/Images/OC.png",
+    "sha256": "2f3ca2c6f5b86b8f4035ee916a89e103f3d8bc7cb73a58b670801e37d5339a59"
+  },
+  {
+    "name": "Dowan Kim",
+    "file": "/Images/Dowan.png",
+    "source": "legacy/Images/Dowan.png",
+    "sha256": "6caa75c7bb8f8c06d5c36cd19d2cea17b0d5f4c520f25463243b7166684b137c"
+  },
+  {
+    "name": "Alston G",
+    "file": "/Images/Alston.png",
+    "source": "legacy/Images/Alston.png",
+    "sha256": "9367649e1cd50a01a894ae8f3e06af66e86b314f2ead3b9b45b88c8ffffee0f0"
+  },
+  {
+    "name": "Isaac Y",
+    "file": "/Images/Issac.png",
+    "source": "legacy/Images/Issac.png",
+    "sha256": "e5c64e0c9d73d866c733280cfda284cadd4751fd77fe0299f0ea8f2c796a10f1"
+  },
+  {
+    "name": "Arthur Z",
+    "file": "/Images/Arthur.png",
+    "source": "legacy/Images/Arthur.png",
+    "sha256": "45e0bcde90a4f9e7765231bea1bed121fc9eaedfe08329aee9e080f86ec0cb4e"
+  },
+  {
+    "name": "Cici C",
+    "file": "/Images/Cici.png",
+    "source": "legacy/Images/Cici.png",
+    "sha256": "e3917d2bd4c8a627f815828f81544d13009e1f7bfb65df898857d1c98cc91401"
+  },
+  {
+    "name": "Piers K",
+    "file": "/Images/Piers.png",
+    "source": "legacy/Images/Piers.png",
+    "sha256": "e53328859ef5355faa3919fc4df72eb5d97e5e85b65c1022b2b969eb553155df"
+  },
+  {
+    "name": "Theodore W",
+    "file": "/Images/TheoW.png",
+    "source": "legacy/Images/TheoW.png",
+    "sha256": "f1a23460777710dcc9eaa2033440686586b53b5a46693bc617df8bdec4e7c4a7"
+  },
+  {
+    "name": "Larissa V",
+    "file": "/Images/Larissa.png",
+    "source": "legacy/Images/Larissa.png",
+    "sha256": "948fb4da9f735222cc2047b0fd6052dbba447de26baa098f65ca6dd4e2c47c6c"
+  },
+  {
+    "name": "Tanvi M",
+    "file": "/Images/Tanvi.png",
+    "source": "legacy/Images/Tanvi.png",
+    "sha256": "e1e9c47278414f3042b75605a1adb48be3b5c95afd1f41f8923ac9ad6c71fcd4"
+  },
+  {
+    "name": "Vera H",
+    "file": "/Images/Vera.png",
+    "source": "legacy/Images/Vera.png",
+    "sha256": "556291c311b8ab2be8d96ff7c301ce55817029f37adc245a7c5c3837011f3b01"
+  },
+  {
+    "name": "Chelsea Z",
+    "file": "/Images/Chelsea.png",
+    "source": "legacy/Images/Chelsea.png",
+    "sha256": "3613213885dd7ec961c498f4343b4c25012bf4214eacb2c3be207dc180ab2a19"
+  },
+  {
+    "name": "Sanaya S",
+    "file": "/Images/Sanaya.png",
+    "source": "legacy/Images/Sanaya.png",
+    "sha256": "e541c30427b7cfaa41b18f41bc011e14cdb4c51d403a1da455bce008dfa8f840"
+  },
+  {
+    "name": "Matthew H",
+    "file": "/Images/Hao.png",
+    "source": "legacy/Images/Hao.png",
+    "sha256": "d888e0d710c1dd73dc27a1395f7bdda9bad5a899f4fb1ab4e7dc08da852573ce"
+  },
+  {
+    "name": "Andre C",
+    "file": "/Images/Andre.png",
+    "source": "legacy/Images/Andre.png",
+    "sha256": "7b6281fca5bd6a10c6199162ef2ee4208ef23a2ed152c63781ef17c3a6372ba4"
+  },
+  {
+    "name": "Emmanuel Z",
+    "file": "/Images/Emmanuel.png",
+    "source": "legacy/Images/Emmanuel.png",
+    "sha256": "9d6a77b44c056ee88296237965f89e558186d34dd4e21f15a118956457cfedc1"
+  },
+  {
+    "name": "Kevin C",
+    "file": "/Images/Kevin.png",
+    "source": "legacy/Images/Kevin.png",
+    "sha256": "28b71537bb2c176fae2056a20d2663eade4d7b116c98f017001f2b84142f1e59"
+  },
+  {
+    "name": "Aloysius Y",
+    "file": "/Images/Aloy.png",
+    "source": "legacy/Images/Aloy.png",
+    "sha256": "e4ba94ca688b8b9c880fc863063c5b24cb35635b1e560850fce5c876820c654e"
+  },
+  {
+    "name": "Andrew C",
+    "file": "/Images/Andrew.png",
+    "source": "legacy/Images/Andrew.png",
+    "sha256": "f3b03304b9f2affa828365b6a4824e8629ec79ec35bc9f907cbdae2eb237f335"
+  },
+  {
+    "name": "Ana T",
+    "file": "/Images/Ana.png",
+    "source": "legacy/Images/Ana.png",
+    "sha256": "d7ad49531daf3f6ec975db614811dd1f105614f4f93d7869931ebf754556663c"
+  },
+  {
+    "name": "Winston C",
+    "file": "/Images/Winston.png",
+    "source": "legacy/Images/Winston.png",
+    "sha256": "016bec52478508a3113f49d50b1920ec860e14b12d54fdb6db939b7059e796c3"
+  },
+  {
+    "name": "Andy L",
+    "file": "/Images/Andy.png",
+    "source": "legacy/Images/Andy.png",
+    "sha256": "81f6eee8a52962a2c8fa0342a5ace76df8fb3f25a8490618d262d815bb43052c"
+  }
+]

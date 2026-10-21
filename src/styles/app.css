@@ -1,0 +1,78 @@
+/* React-owned interaction states supplement the captured reference stylesheet. */
+:root {
+  --color-bg: #f2f7fe;
+  --color-surface: #fff;
+  --color-surface-blue: #eaf0f7;
+  --color-surface-blue-soft: #e2effa;
+  --color-surface-blue-strong: #9cbfd7;
+}
+body.page-template-page-about-us { background-color: var(--color-bg); }
+.grant-database-home__shape::before { background-color: var(--color-surface-blue-soft); }
+.blog-post { --background: var(--color-surface-blue); }
+.blog-post:nth-of-type(8n+1) { --background: var(--color-surface-blue-strong); }
+#root { min-height: 100vh; }
+.overall { isolation: isolate; }
+.hero-home { isolation: isolate; }
+.hero-home__thumbnail { background: #252622; }
+.hero-home__container .media::after { opacity: 1; background: linear-gradient(90deg, #0a0a0ab3, #0a0a0a26); }
+.header__logo { width: 27.3rem; height: 6.8rem; }
+.brand-lockup { display: inline-flex; gap: 1.2rem; align-items: center; white-space: nowrap; }
+.brand-symbol { width: 5.2rem; height: 5.2rem; object-fit: contain; filter: brightness(0); }
+.header-light .brand-symbol { filter: none; }
+.brand-name { font-family: 'PP Editorial New', serif; font-size: 3.4rem; font-weight: 200; }
+.footer-brand { display: flex; align-items: center; justify-content: center; gap: 1rem; width: 100%; height: 100%; border-radius: 9rem; color: #0a0a0a; background: white; font: 200 3rem/1 'PP Editorial New', serif; }
+.footer-brand img { width: 4rem; height: 4rem; object-fit: contain; }
+.footer-email { display: inline-block; margin-top: 1.2rem; font-size: var(--font-size-small-size); }
+.hero-home__heading { text-wrap: initial; }
+.grant-database-home { isolation: isolate; }
+.grant-database-home__shape, .grant-database-home__gallery { pointer-events: none; }
+.grant-database-home__shape::before { transform: scale(1); }
+.grant-database-home__heading em { font-style: italic; }
+.our-programs-home__text p + p { margin-top: 1lh; }
+.programs-card__desc { font-size: var(--font-size-default-size); line-height: var(--font-size-default-lh); }
+.footer { position: relative; }
+.recreation-socials { display: block; }
+.form--newsletter .form__field::after { transform: scaleX(1); }
+.newsletter-status { margin-top: 1.2rem; font-size: var(--font-size-small-size); }
+.cookies { display: block; color: var(--color-primary); }
+.cookies__dialog { visibility: visible; opacity: 1; }
+.cookies__content p { font-size: var(--font-size-default-size); line-height: var(--font-size-default-lh); }
+.consent-preferences { position: absolute; bottom: 2rem; left: 9.6rem; color: #fff; opacity: 0; font-size: 1.2rem; cursor: pointer; pointer-events: none; }
+.consent-preferences:focus-visible, .footer:hover .consent-preferences { opacity: .8; pointer-events: auto; }
+.consent-preferences:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
+.consent-settings { width: min(69.4rem, calc(100vw - 3.2rem)); max-height: 90svh; margin: auto; padding: 3.2rem; overflow: auto; color: var(--color-primary); border: 0; border-radius: 1.6rem; background: #fff; }
+.consent-settings::backdrop { background: #0a0a0a66; }
+.consent-settings > p { margin-top: 1.2rem; }
+.consent-options { margin: 2.4rem 0; border-top: 1px solid #ddd; }
+.consent-option { display: flex; align-items: center; justify-content: space-between; margin: 2.4rem 0 1.2rem; }
+.consent-option input { appearance: auto; width: 2rem; height: 2rem; accent-color: #842b27; }
+.consent-options p { font-size: var(--font-size-small-size); }
+.mobile-menu { position: fixed; inset: 0; height: 100dvh; overflow: auto; padding: 12rem var(--margin) 6.3rem; background: var(--color-bg); color: var(--color-primary); z-index: 10; }
+.mobile-menu nav a { display: block; width: fit-content; margin-bottom: 2.4rem; font: 200 var(--font-size-1-size)/var(--font-size-1-lh) 'PP Editorial New', serif; }
+.mobile-socials { display: flex; gap: 2.4rem; margin-top: 4rem; }
+.menu-close { position: absolute; top: var(--header-top); right: var(--margin); width: 4.8rem; height: 4.8rem; border-radius: 50%; background: white; font-size: 3rem; cursor: pointer; }
+.skip-link { position: fixed; top: 1rem; left: 1rem; z-index: 20000; padding: 1rem; background: white; color: black; transform: translateY(-200%); }
+.skip-link:focus { transform: none; }
+:focus-visible { outline: 2px solid var(--focus-color); outline-offset: 4px; }
+@media (min-width: 768px) { .header__burger { display: none; } }
+@media (min-width: 768px) and (pointer: fine) { .programs-card { touch-action: none; cursor: grab; } .programs-card:active { cursor: grabbing; } }
+@media (min-width: 1280px) {
+  .recreation-socials .socials__item:nth-child(1) { top: 12rem; left: 8.5rem; transform: translate(-50%, -50%) rotate(0deg); }
+  .recreation-socials .socials__item:nth-child(2) { top: 15rem; left: 25rem; transform: translate(-50%, -50%) rotate(-20deg); }
+  .recreation-socials .socials__item:nth-child(3) { top: 5.8rem; left: 18rem; transform: translate(-50%, -50%) rotate(20deg); }
+}
+@media (max-width: 767px) {
+  .nav { background-color: var(--color-bg); }
+  .header__logo { width: 22rem; height: 4.8rem; }
+  .brand-symbol { width: 3.6rem; height: 3.6rem; }
+  .brand-name { font-size: 2.8rem; }
+  .footer-brand { font-size: 2.5rem; }
+  .footer-brand img { width: 3.4rem; height: 3.4rem; }
+  .desktop-nav { display: none; }
+  .header__burger { display: flex; }
+  .consent-preferences { left: var(--margin); font-size: 1rem; }
+  .footer__newsletter-description { padding-bottom: .2em; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}

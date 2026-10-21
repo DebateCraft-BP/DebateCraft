@@ -1,0 +1,103 @@
+{
+  "src": "https://www.hejlfoundation.org/app/uploads/2024/06/james-lee-nnl-exyot2u-unsplash-min-2048x1365.webp",
+  "currentSrc": "https://www.hejlfoundation.org/app/uploads/2024/06/james-lee-nnl-exyot2u-unsplash-min-512x341.webp",
+  "complete": true,
+  "naturalWidth": 390,
+  "ancestors": [
+    {
+      "tag": "IMG",
+      "class": "media__image ovee-component is-in-viewport loaded",
+      "opacity": "1",
+      "visibility": "visible",
+      "display": "block",
+      "transform": "matrix(1.0001, 0, 0, 1.0001, 0, 0)",
+      "zIndex": "auto",
+      "rect": {
+        "x": 15.982101440429688,
+        "y": 367.97821044921875,
+        "width": 358.0357666015625,
+        "height": 436.0904541015625,
+        "top": 367.97821044921875,
+        "right": 374.0178680419922,
+        "bottom": 804.0686645507812,
+        "left": 15.982101440429688
+      }
+    },
+    {
+      "tag": "FIGURE",
+      "class": "media__figure",
+      "opacity": "1",
+      "visibility": "visible",
+      "display": "block",
+      "transform": "none",
+      "zIndex": "auto",
+      "rect": {
+        "x": 16,
+        "y": 368,
+        "width": 358,
+        "height": 436.046875,
+        "top": 368,
+        "right": 374,
+        "bottom": 804.046875,
+        "left": 16
+      }
+    },
+    {
+      "tag": "DIV",
+      "class": "media media--image media--custom slider-gallery__media",
+      "opacity": "1",
+      "visibility": "visible",
+      "display": "block",
+      "transform": "none",
+      "zIndex": "auto",
+      "rect": {
+        "x": 16,
+        "y": 368,
+        "width": 358,
+        "height": 436.046875,
+        "top": 368,
+        "right": 374,
+        "bottom": 804.046875,
+        "left": 16
+      }
+    },
+    {
+      "tag": "DIV",
+      "class": "slider-gallery__slide swiper-slide slider__slide",
+      "opacity": "1",
+      "visibility": "visible",
+      "display": "block",
+      "transform": "none",
+      "zIndex": "auto",
+      "rect": {
+        "x": 16,
+        "y": 368,
+        "width": 358,
+        "height": 436.046875,
+        "top": 368,
+        "right": 374,
+        "bottom": 804.046875,
+        "left": 16
+      }
+    },
+    {
+      "tag": "DIV",
+      "class": "slider-gallery__swiper-wrapper swiper-wrapper",
+      "opacity": "1",
+      "visibility": "visible",
+      "display": "flex",
+      "transform": "matrix(1, 0, 0, 1, 0, 0)",
+      "zIndex": "1",
+      "rect": {
+        "x": 16,
+        "y": 368,
+        "width": 358,
+        "height": 436.046875,
+        "top": 368,
+        "right": 374,
+        "bottom": 804.046875,
+        "left": 16
+      }
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "captured": "2026-10-20",
+  "assets": [
+    {
+      "file": "public/media/grant-athletes.webp",
+      "source": "https://www.hejlfoundation.org/app/uploads/2024/06/pexels-pixabay-33703-1-jpg.webp",
+      "bytes": 76274,
+      "sha256": "47223e7865b38e91b85aee28f2cbf8fefb388fc25c238b2a8aaf0ef80caf1fed"
+    },
+    {
+      "file": "public/media/grant-opera.webp",
+      "source": "https://www.hejlfoundation.org/app/uploads/2024/06/opera4-e1635375200792-jpg.webp",
+      "bytes": 73274,
+      "sha256": "9bfeaf70995c158e0c7347d18de90854c18bdf94e2d6e30f3025cec2f59cf568"
+    },
+    {
+      "file": "public/media/grant-student.webp",
+      "source": "https://www.hejlfoundation.org/app/uploads/2024/06/ben-mullins-je240kkjiua-unsplash-2-jpg.webp",
+      "bytes": 81518,
+      "sha256": "ee899f89aeea6c5fa69af42ccf68364ed9cea3531d6e67703b6436d85abfa373"
+    },
+    {
+      "file": "public/media/grant-health.webp",
+      "source": "https://www.hejlfoundation.org/app/uploads/2024/06/cdc-n6z8c6nugfe-unsplash-1-jpg.webp",
+      "bytes": 203888,
+      "sha256": "f98aaf46c0dc7d84b14a805613258ed02fdb77e527dcce7dab6920ad3adfc8d8"
+    },
+    {
+      "file": "public/media/program-arts.webp",
+      "source": "https://www.hejlfoundation.org/app/uploads/2024/06/img-program-02-jpg.webp",
+      "bytes": 139930,
+      "sha256": "17af2f0509ea62da315a901a713b5b18f86e278b6c3021410564bd08f4f234d1"
+    },
+    {
+      "file": "public/media/program-education.webp",
+      "source": "https://www.hejlfoundation.org/app/uploads/2024/06/img-program-01-jpg.webp",
+      "bytes": 170436,
+      "sha256": "d01a0a7cdacc4d17468cba60fba52bf5a2d89643889418cd08921bd10737528e"
+    },
+    {
+      "file": "public/media/program-health.webp",
+      "source": "https://www.hejlfoundation.org/app/uploads/2024/06/img-program-03-jpg.webp",
+      "bytes": 133284,
+      "sha256": "c38f0fa2e2feb07b87ce487777e5a7d86b08c35249f55a859bb4a4ff028be7ac"
+    },
+    {
+      "file": "public/media/program-policy.webp",
+      "source": "https://www.hejlfoundation.org/app/uploads/2024/06/img-program-04-jpg.webp",
+      "bytes": 141238,
+      "sha256": "8df075ebd60ab481796b8d6b50c3a2227a0694dff05f2091b6a6a53bb6d8dc11"
+    },
+    {
+      "file": "public/media/story-opera.webp",
+      "source": "https://www.hejlfoundation.org/app/uploads/2024/05/2p5a6000-1-2560x1707.webp",
+      "bytes": 103112,
+      "sha256": "86b7382e0d2a728793d463378486b1e75d56a2c2a309b8b78fdbe9b1a27c4d2e"
+    },
+    {
+      "file": "public/media/story-kayaking.webp",
+      "source": "https://www.hejlfoundation.org/app/uploads/2024/05/445488144-775096791396346-874272943882493083-n-jpg.webp",
+      "bytes": 191484,
+      "sha256": "dab1e15baed41053f268350bfe0ab87eda407d17b1738d5b8947bed9f33a46c7"
+    },
+    {
+      "file": "public/media/hero.mp4",
+      "source": "https://www.hejlfoundation.org/app/uploads/2024/06/8160133-uhd-3840-2160-25fps-1.mp4",
+      "bytes": 24914683,
+      "sha256": "2ba16caa01e3da91da841f099948f26f0190ac0815ba4e65e2e9987e70fc5932"
+    },
+    {
+      "file": "public/fonts/Inter-Regular.woff2",
+      "source": "https://www.hejlfoundation.org/app/themes/hejl-foundation/_/dist/Inter-Regular.woff2",
+      "bytes": 99808,
+      "sha256": "d159867237e01505e63cbf54cd877e25badb9c4c3cc1039d3a2d3ed2c0447085"
+    },
+    {
+      "file": "public/fonts/Inter-Medium.woff2",
+      "source": "https://www.hejlfoundation.org/app/themes/hejl-foundation/_/dist/Inter-Medium.woff2",
+      "bytes": 107816,
+      "sha256": "76f810d32d84c2aaf2d777d0950764a4976bddaa22ba81c2de26c171767c9c54"
+    },
+    {
+      "file": "public/fonts/PPEditorialNew-Ultralight.woff2",
+      "source": "https://www.hejlfoundation.org/app/themes/hejl-foundation/_/dist/PPEditorialNew-Ultralight.woff2",
+      "bytes": 36780,
+      "sha256": "4701a413bc4022367316e54dd7ece609348596a907213b10c5b099f530ba2788"
+    },
+    {
+      "file": "public/fonts/PPEditorialNew-UltralightItalic.woff2",
+      "source": "https://www.hejlfoundation.org/app/themes/hejl-foundation/_/dist/PPEditorialNew-UltralightItalic.woff2",
+      "bytes": 37436,
+      "sha256": "42a5236b48e420d395cb2d9541c84e4d7f385473af884de0912a266a0d2dd34b"
+    },
+    {
+      "file": "public/favicon.png",
+      "source": "https://www.hejlfoundation.org/app/themes/hejl-foundation/favicon.png",
+      "bytes": 383,
+      "sha256": "d5ee09516fd320d661af88700607d28fb558a912feae3874c3b9b73185c99e7a"
+    }
+  ],
+  "derived": [
+    {
+      "file": "public/media/hero-poster.jpg",
+      "source": "public/media/hero.mp4",
+      "frameSeconds": 0.4,
+      "sha256": "1832f8a9d345ea066c757a7a4533ade890220cd87f9d949ee0c85fcc8aeffe6e"
+    }
+  ]
+}

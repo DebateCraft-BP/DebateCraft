@@ -1,0 +1,116 @@
+{
+  "capturedAt": "2026-10-20T23:50:38.288Z",
+  "mode": "UI design-system reference",
+  "fresh": true,
+  "pages": [
+    {
+      "name": "what-we-do",
+      "url": "https://www.hejlfoundation.org/what-we-do/",
+      "metadata": {
+        "og:site_name": "Hejl Foundation",
+        "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+        "Copyright": "Copyright © Hejl Foundation 2026. All Rights Reserved.",
+        "twitter:card": "summary_large_image",
+        "viewport": "width=device-width, initial-scale=1",
+        "article:modified_time": "2024-06-18T21:30:40+00:00",
+        "og:locale": "en_US",
+        "og:title": "What We Do - Hejl Foundation",
+        "ogSiteName": "Hejl Foundation",
+        "ogUrl": "https://www.hejlfoundation.org/what-we-do/",
+        "language": "en-US",
+        "ogLocale": "en_US",
+        "modifiedTime": "2024-06-18T21:30:40+00:00",
+        "generator": [
+          "WordPress 6.5.13",
+          "Performance Lab 2.9.0; modules: images/dominant-color-images, images/webp-support, images/webp-uploads; plugins: "
+        ],
+        "og:url": "https://www.hejlfoundation.org/what-we-do/",
+        "ogTitle": "What We Do - Hejl Foundation",
+        "og:type": "article",
+        "title": "What We Do - Hejl Foundation",
+        "favicon": "https://www.hejlfoundation.org/app/themes/hejl-foundation/favicon.png",
+        "scrapeId": "01a15bb8-a6d3-74d2-bf3d-f39cf761c2ac",
+        "sourceURL": "https://www.hejlfoundation.org/what-we-do/",
+        "url": "https://www.hejlfoundation.org/what-we-do/",
+        "statusCode": 200,
+        "contentType": "text/html; charset=UTF-8",
+        "timezone": "America/New_York",
+        "proxyUsed": "basic",
+        "indexId": "37f35717-03cf-48c9-8952-cf1e4f4ee84a",
+        "creditsUsed": 1,
+        "concurrencyLimited": false
+      },
+      "stylesheetURLs": [
+        "https://www.hejlfoundation.org/app/themes/hejl-foundation/_/dist/styles.css?ver=1718970371"
+      ],
+      "formats": {
+        "markdown": true,
+        "html": true,
+        "rawHtml": true,
+        "branding": true,
+        "images": true,
+        "screenshot": true
+      },
+      "cliScreenshot": ".firecrawl/design-reference.png",
+      "imageCount": 14
+    },
+    {
+      "name": "how-we-work",
+      "url": "https://www.hejlfoundation.org/how-we-work/",
+      "metadata": {
+        "og:locale": "en_US",
+        "Copyright": "Copyright © Hejl Foundation 2026. All Rights Reserved.",
+        "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+        "article:modified_time": "2024-07-23T17:57:56+00:00",
+        "ogSiteName": "Hejl Foundation",
+        "language": "en-US",
+        "generator": [
+          "WordPress 6.5.13",
+          "Performance Lab 2.9.0; modules: images/dominant-color-images, images/webp-support, images/webp-uploads; plugins: "
+        ],
+        "title": "How We Work - Hejl Foundation",
+        "ogUrl": "https://www.hejlfoundation.org/how-we-work/",
+        "modifiedTime": "2024-07-23T17:57:56+00:00",
+        "ogTitle": "How We Work - Hejl Foundation",
+        "viewport": "width=device-width, initial-scale=1",
+        "ogLocale": "en_US",
+        "og:type": "article",
+        "og:site_name": "Hejl Foundation",
+        "twitter:card": "summary_large_image",
+        "og:url": "https://www.hejlfoundation.org/how-we-work/",
+        "og:title": "How We Work - Hejl Foundation",
+        "favicon": "https://www.hejlfoundation.org/app/themes/hejl-foundation/favicon.png",
+        "scrapeId": "01a15bb8-a4e1-73a0-ac65-f839ee5b3e1a",
+        "sourceURL": "https://www.hejlfoundation.org/how-we-work/",
+        "url": "https://www.hejlfoundation.org/how-we-work/",
+        "statusCode": 200,
+        "contentType": "text/html; charset=UTF-8",
+        "timezone": "America/New_York",
+        "proxyUsed": "basic",
+        "indexId": "72229f55-97ea-416e-8a16-45ff87e69599",
+        "creditsUsed": 1,
+        "concurrencyLimited": false
+      },
+      "stylesheetURLs": [
+        "https://www.hejlfoundation.org/app/themes/hejl-foundation/_/dist/styles.css?ver=1718970371"
+      ],
+      "formats": {
+        "markdown": true,
+        "html": true,
+        "rawHtml": true,
+        "branding": true,
+        "images": true,
+        "screenshot": true
+      },
+      "cliScreenshot": ".firecrawl/design-reference.png",
+      "imageCount": 15
+    }
+  ],
+  "stylesheets": [
+    {
+      "url": "https://www.hejlfoundation.org/app/themes/hejl-foundation/_/dist/styles.css?ver=1718970371",
+      "file": "styles.source.css",
+      "sha256": "c2953c1d31674aa42b5a51b49e435715721cf281d9e7af3d8c8d388c0a1d4948"
+    }
+  ]
+}

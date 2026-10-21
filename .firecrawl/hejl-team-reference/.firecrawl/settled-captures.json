@@ -1,0 +1,212 @@
+[
+  {
+    "name": "desktop",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "url": "https://www.hejlfoundation.org/who-we-are/",
+    "screenshot": "desktop-settled.png",
+    "metrics": {
+      "height": 5023,
+      "background": "rgb(247, 235, 234)",
+      "elements": {
+        ".hero-about": {
+          "x": 20,
+          "y": 78.328125,
+          "width": 1400,
+          "height": 838.234375,
+          "font": "15px / 21px Inter, sans-serif",
+          "borderRadius": "0px",
+          "clipPath": "none"
+        },
+        ".hero-about__heading": {
+          "x": 313.75,
+          "y": 168.328125,
+          "width": 812.5,
+          "height": 117.3125,
+          "font": "200 53.3333px / 58.6667px \"PP Editorial New\", serif",
+          "borderRadius": "0px",
+          "clipPath": "none"
+        },
+        ".about-about": {
+          "x": 20,
+          "y": 916.5625,
+          "width": 1400,
+          "height": 506.140625,
+          "font": "15px / 21px Inter, sans-serif",
+          "borderRadius": "0px",
+          "clipPath": "none"
+        },
+        ".mission-about": {
+          "x": 20,
+          "y": 1422.703125,
+          "width": 1400,
+          "height": 685,
+          "font": "15px / 21px Inter, sans-serif",
+          "borderRadius": "0px",
+          "clipPath": "none"
+        },
+        ".areas-about": {
+          "x": 20,
+          "y": 2107.703125,
+          "width": 1400,
+          "height": 760.28125,
+          "font": "15px / 21px Inter, sans-serif",
+          "borderRadius": "0px",
+          "clipPath": "none"
+        },
+        ".leaders-about": {
+          "x": 20,
+          "y": 2867.984375,
+          "width": 1400,
+          "height": 878.34375,
+          "font": "15px / 21px Inter, sans-serif",
+          "borderRadius": "0px",
+          "clipPath": "none"
+        },
+        ".leaders-about__item": {
+          "x": 137.5,
+          "y": 3029.796875,
+          "width": 361.671875,
+          "height": 556.53125,
+          "font": "15px / 21px Inter, sans-serif",
+          "borderRadius": "0px",
+          "clipPath": "inset(0px round 20px)"
+        },
+        ".members-about": {
+          "x": 20,
+          "y": 3746.328125,
+          "width": 1400,
+          "height": 778.421875,
+          "font": "15px / 21px Inter, sans-serif",
+          "borderRadius": "0px",
+          "clipPath": "none"
+        },
+        ".members-about__item": {
+          "x": 137.5,
+          "y": 3908.140625,
+          "width": 275.828125,
+          "height": 456.609375,
+          "font": "15px / 21px Inter, sans-serif",
+          "borderRadius": "0px",
+          "clipPath": "inset(0px round 20px)"
+        }
+      }
+    },
+    "bio": {
+      "screenshot": "bio-desktop.png",
+      "heading": "Jakub Hejl",
+      "closeControl": {
+        "tag": "BUTTON",
+        "label": null
+      },
+      "escapeClosed": true
+    }
+  },
+  {
+    "name": "mobile",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "url": "https://www.hejlfoundation.org/who-we-are/",
+    "screenshot": "mobile-settled.png",
+    "metrics": {
+      "height": 9518,
+      "background": "rgb(247, 235, 234)",
+      "elements": {
+        ".hero-about": {
+          "x": 16,
+          "y": 72,
+          "width": 358,
+          "height": 827.046875,
+          "font": "16px / 22px Inter, sans-serif",
+          "borderRadius": "0px",
+          "clipPath": "none"
+        },
+        ".hero-about__heading": {
+          "x": 16,
+          "y": 137,
+          "width": 358,
+          "height": 192,
+          "font": "200 40px / 48px \"PP Editorial New\", serif",
+          "borderRadius": "0px",
+          "clipPath": "none"
+        },
+        ".about-about": {
+          "x": 16,
+          "y": 899.046875,
+          "width": 358,
+          "height": 587.1875,
+          "font": "16px / 22px Inter, sans-serif",
+          "borderRadius": "0px",
+          "clipPath": "none"
+        },
+        ".mission-about": {
+          "x": 16,
+          "y": 1486.234375,
+          "width": 358,
+          "height": 1265.171875,
+          "font": "16px / 22px Inter, sans-serif",
+          "borderRadius": "0px",
+          "clipPath": "none"
+        },
+        ".areas-about": {
+          "x": 16,
+          "y": 2751.40625,
+          "width": 358,
+          "height": 1803.1875,
+          "font": "16px / 22px Inter, sans-serif",
+          "borderRadius": "0px",
+          "clipPath": "none"
+        },
+        ".leaders-about": {
+          "x": 16,
+          "y": 4554.59375,
+          "width": 358,
+          "height": 1819.75,
+          "font": "16px / 22px Inter, sans-serif",
+          "borderRadius": "0px",
+          "clipPath": "none"
+        },
+        ".leaders-about__item": {
+          "x": 16,
+          "y": 4675.78125,
+          "width": 358,
+          "height": 518.1875,
+          "font": "16px / 22px Inter, sans-serif",
+          "borderRadius": "0px",
+          "clipPath": "inset(0px round 16px)"
+        },
+        ".members-about": {
+          "x": 16,
+          "y": 6374.34375,
+          "width": 358,
+          "height": 2361.1875,
+          "font": "16px / 22px Inter, sans-serif",
+          "borderRadius": "0px",
+          "clipPath": "none"
+        },
+        ".members-about__item": {
+          "x": 16,
+          "y": 6495.53125,
+          "width": 358,
+          "height": 518,
+          "font": "16px / 22px Inter, sans-serif",
+          "borderRadius": "0px",
+          "clipPath": "inset(0px round 16px)"
+        }
+      }
+    },
+    "bio": {
+      "screenshot": "bio-mobile.png",
+      "heading": "Jakub Hejl",
+      "closeControl": {
+        "tag": "BUTTON",
+        "label": null
+      },
+      "escapeClosed": true
+    }
+  }
+]

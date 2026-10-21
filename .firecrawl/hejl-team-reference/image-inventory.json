@@ -1,0 +1,611 @@
+[
+  {
+    "url": "https://www.hejlfoundation.org/app/uploads/2024/06/james-lee-nnl-exyot2u-unsplash-min-2048x1365.webp",
+    "renderedSrc": "https://www.hejlfoundation.org/app/uploads/2024/06/james-lee-nnl-exyot2u-unsplash-min-2048x1365.webp",
+    "width": "2560",
+    "height": "1707",
+    "alt": "",
+    "ancestors": [
+      {
+        "tag": "div",
+        "class": "slider-gallery__swiper swiper"
+      },
+      {
+        "tag": "div",
+        "class": "slider-gallery__swiper-wrapper swiper-wrapper"
+      },
+      {
+        "tag": "div",
+        "class": "slider-gallery__slide swiper-slide slider__slide"
+      },
+      {
+        "tag": "div",
+        "class": "media media--image media--custom slider-gallery__media"
+      },
+      {
+        "tag": "figure",
+        "class": "media__figure"
+      }
+    ]
+  },
+  {
+    "url": "https://www.hejlfoundation.org/app/uploads/2024/06/sebastianstrong-oscar-at-35-mile-ride-2.jpg",
+    "renderedSrc": "https://www.hejlfoundation.org/app/uploads/2024/06/sebastianstrong-oscar-at-35-mile-ride-2.jpg",
+    "width": "1316",
+    "height": "988",
+    "alt": "",
+    "ancestors": [
+      {
+        "tag": "section",
+        "class": "about-about"
+      },
+      {
+        "tag": "teleport-to",
+        "class": "ovee-component"
+      },
+      {
+        "tag": "div",
+        "class": "about-about__image"
+      },
+      {
+        "tag": "div",
+        "class": "media media--image media--auto "
+      },
+      {
+        "tag": "figure",
+        "class": "media__figure"
+      }
+    ]
+  },
+  {
+    "url": "https://www.hejlfoundation.org/app/uploads/2024/04/image-mission.png",
+    "renderedSrc": "https://www.hejlfoundation.org/app/uploads/2024/04/image-mission.png",
+    "width": "1281",
+    "height": "1920",
+    "alt": "",
+    "ancestors": [
+      {
+        "tag": "article",
+        "class": "page-about-us"
+      },
+      {
+        "tag": "section",
+        "class": "mission-about"
+      },
+      {
+        "tag": "div",
+        "class": "mission-about__wrapper"
+      },
+      {
+        "tag": "div",
+        "class": "media media--image media--auto mission-about__image"
+      },
+      {
+        "tag": "figure",
+        "class": "media__figure"
+      }
+    ]
+  },
+  {
+    "url": "https://www.hejlfoundation.org/app/uploads/2024/05/image-76-2048x2048.webp",
+    "renderedSrc": "https://www.hejlfoundation.org/app/uploads/2024/05/image-76-2048x2048.webp",
+    "width": "2161",
+    "height": "2161",
+    "alt": "",
+    "ancestors": [
+      {
+        "tag": "section",
+        "class": "areas-about"
+      },
+      {
+        "tag": "ul",
+        "class": "cards areas-about__cards"
+      },
+      {
+        "tag": "li",
+        "class": "card ovee-component is-in-viewport"
+      },
+      {
+        "tag": "div",
+        "class": "media media--image media--auto card__image"
+      },
+      {
+        "tag": "figure",
+        "class": "media__figure"
+      }
+    ]
+  },
+  {
+    "url": "https://www.hejlfoundation.org/app/uploads/2024/05/image-53-2048x2048.webp",
+    "renderedSrc": "https://www.hejlfoundation.org/app/uploads/2024/05/image-53-2048x2048.webp",
+    "width": "2161",
+    "height": "2161",
+    "alt": "",
+    "ancestors": [
+      {
+        "tag": "section",
+        "class": "areas-about"
+      },
+      {
+        "tag": "ul",
+        "class": "cards areas-about__cards"
+      },
+      {
+        "tag": "li",
+        "class": "card ovee-component is-in-viewport"
+      },
+      {
+        "tag": "div",
+        "class": "media media--image media--auto card__image"
+      },
+      {
+        "tag": "figure",
+        "class": "media__figure"
+      }
+    ]
+  },
+  {
+    "url": "https://www.hejlfoundation.org/app/uploads/2024/05/image-61-2048x2048.webp",
+    "renderedSrc": "https://www.hejlfoundation.org/app/uploads/2024/05/image-61-2048x2048.webp",
+    "width": "2161",
+    "height": "2161",
+    "alt": "",
+    "ancestors": [
+      {
+        "tag": "section",
+        "class": "areas-about"
+      },
+      {
+        "tag": "ul",
+        "class": "cards areas-about__cards"
+      },
+      {
+        "tag": "li",
+        "class": "card ovee-component is-in-viewport"
+      },
+      {
+        "tag": "div",
+        "class": "media media--image media--auto card__image"
+      },
+      {
+        "tag": "figure",
+        "class": "media__figure"
+      }
+    ]
+  },
+  {
+    "url": "https://www.hejlfoundation.org/app/uploads/2024/05/engaged-04-1-2048x2048.webp",
+    "renderedSrc": "https://www.hejlfoundation.org/app/uploads/2024/05/engaged-04-1-2048x2048.webp",
+    "width": "2161",
+    "height": "2160",
+    "alt": "",
+    "ancestors": [
+      {
+        "tag": "section",
+        "class": "areas-about"
+      },
+      {
+        "tag": "ul",
+        "class": "cards areas-about__cards"
+      },
+      {
+        "tag": "li",
+        "class": "card ovee-component is-in-viewport"
+      },
+      {
+        "tag": "div",
+        "class": "media media--image media--auto card__image"
+      },
+      {
+        "tag": "figure",
+        "class": "media__figure"
+      }
+    ]
+  },
+  {
+    "url": "https://www.hejlfoundation.org/app/uploads/2024/04/img-4602-1.jpg",
+    "renderedSrc": "https://www.hejlfoundation.org/app/uploads/2024/04/img-4602-1.jpg",
+    "width": "320",
+    "height": "480",
+    "alt": "",
+    "ancestors": [
+      {
+        "tag": "section",
+        "class": "leaders-about"
+      },
+      {
+        "tag": "ul",
+        "class": "leaders-about__list"
+      },
+      {
+        "tag": "li",
+        "class": "leaders-about__item ovee-component"
+      },
+      {
+        "tag": "div",
+        "class": "media media--image media--auto "
+      },
+      {
+        "tag": "figure",
+        "class": "media__figure"
+      }
+    ]
+  },
+  {
+    "url": "https://www.hejlfoundation.org/app/uploads/2024/04/img-3674-jpg-e1773242942300.webp",
+    "renderedSrc": "https://www.hejlfoundation.org/app/uploads/2024/04/img-3674-jpg-e1773242942300.webp",
+    "width": "320",
+    "height": "390",
+    "alt": "",
+    "ancestors": [
+      {
+        "tag": "section",
+        "class": "leaders-about"
+      },
+      {
+        "tag": "ul",
+        "class": "leaders-about__list"
+      },
+      {
+        "tag": "li",
+        "class": "leaders-about__item ovee-component"
+      },
+      {
+        "tag": "div",
+        "class": "media media--image media--auto "
+      },
+      {
+        "tag": "figure",
+        "class": "media__figure"
+      }
+    ]
+  },
+  {
+    "url": "https://www.hejlfoundation.org/app/uploads/2024/04/photo-2-jpg.webp",
+    "renderedSrc": "https://www.hejlfoundation.org/app/uploads/2024/04/photo-2-jpg.webp",
+    "width": "320",
+    "height": "408",
+    "alt": "",
+    "ancestors": [
+      {
+        "tag": "section",
+        "class": "leaders-about"
+      },
+      {
+        "tag": "ul",
+        "class": "leaders-about__list"
+      },
+      {
+        "tag": "li",
+        "class": "leaders-about__item ovee-component"
+      },
+      {
+        "tag": "div",
+        "class": "media media--image media--auto "
+      },
+      {
+        "tag": "figure",
+        "class": "media__figure"
+      }
+    ]
+  },
+  {
+    "url": "https://www.hejlfoundation.org/app/uploads/2024/04/photo-3-jpg.webp",
+    "renderedSrc": "https://www.hejlfoundation.org/app/uploads/2024/04/photo-3-jpg.webp",
+    "width": "320",
+    "height": "420",
+    "alt": "",
+    "ancestors": [
+      {
+        "tag": "section",
+        "class": "members-about"
+      },
+      {
+        "tag": "ul",
+        "class": "members-about__list"
+      },
+      {
+        "tag": "li",
+        "class": "members-about__item ovee-component"
+      },
+      {
+        "tag": "div",
+        "class": "media media--image media--auto "
+      },
+      {
+        "tag": "figure",
+        "class": "media__figure"
+      }
+    ]
+  },
+  {
+    "url": "https://www.hejlfoundation.org/app/uploads/2024/04/photo-4-jpg.webp",
+    "renderedSrc": "https://www.hejlfoundation.org/app/uploads/2024/04/photo-4-jpg.webp",
+    "width": "320",
+    "height": "420",
+    "alt": "",
+    "ancestors": [
+      {
+        "tag": "section",
+        "class": "members-about"
+      },
+      {
+        "tag": "ul",
+        "class": "members-about__list"
+      },
+      {
+        "tag": "li",
+        "class": "members-about__item ovee-component"
+      },
+      {
+        "tag": "div",
+        "class": "media media--image media--auto "
+      },
+      {
+        "tag": "figure",
+        "class": "media__figure"
+      }
+    ]
+  },
+  {
+    "url": "https://www.hejlfoundation.org/app/uploads/2024/04/img-3674-jpg-e1773242942300.webp",
+    "renderedSrc": "https://www.hejlfoundation.org/app/uploads/2024/04/img-3674-jpg-e1773242942300.webp",
+    "width": "320",
+    "height": "390",
+    "alt": "",
+    "ancestors": [
+      {
+        "tag": "section",
+        "class": "members-about"
+      },
+      {
+        "tag": "ul",
+        "class": "members-about__list"
+      },
+      {
+        "tag": "li",
+        "class": "members-about__item ovee-component"
+      },
+      {
+        "tag": "div",
+        "class": "media media--image media--auto "
+      },
+      {
+        "tag": "figure",
+        "class": "media__figure"
+      }
+    ]
+  },
+  {
+    "url": "https://www.hejlfoundation.org/app/uploads/2024/04/photo-2-jpg.webp",
+    "renderedSrc": "https://www.hejlfoundation.org/app/uploads/2024/04/photo-2-jpg.webp",
+    "width": "320",
+    "height": "408",
+    "alt": "",
+    "ancestors": [
+      {
+        "tag": "section",
+        "class": "members-about"
+      },
+      {
+        "tag": "ul",
+        "class": "members-about__list"
+      },
+      {
+        "tag": "li",
+        "class": "members-about__item ovee-component"
+      },
+      {
+        "tag": "div",
+        "class": "media media--image media--auto "
+      },
+      {
+        "tag": "figure",
+        "class": "media__figure"
+      }
+    ]
+  },
+  {
+    "url": "https://www.hejlfoundation.org/app/uploads/2024/04/img-4602-1.jpg",
+    "renderedSrc": "https://www.hejlfoundation.org/app/uploads/2024/04/img-4602-1.jpg",
+    "width": "320",
+    "height": "480",
+    "alt": "",
+    "ancestors": [
+      {
+        "tag": "div",
+        "class": "team-dialog dialog "
+      },
+      {
+        "tag": "div",
+        "class": "team-dialog__container"
+      },
+      {
+        "tag": "div",
+        "class": "team-dialog__content"
+      },
+      {
+        "tag": "div",
+        "class": "media media--image media--auto team-dialog__content-image"
+      },
+      {
+        "tag": "figure",
+        "class": "media__figure"
+      }
+    ]
+  },
+  {
+    "url": "https://www.hejlfoundation.org/app/uploads/2024/04/img-3674-jpg-e1773242942300.webp",
+    "renderedSrc": "https://www.hejlfoundation.org/app/uploads/2024/04/img-3674-jpg-e1773242942300.webp",
+    "width": "320",
+    "height": "390",
+    "alt": "",
+    "ancestors": [
+      {
+        "tag": "div",
+        "class": "team-dialog dialog "
+      },
+      {
+        "tag": "div",
+        "class": "team-dialog__container"
+      },
+      {
+        "tag": "div",
+        "class": "team-dialog__content"
+      },
+      {
+        "tag": "div",
+        "class": "media media--image media--auto team-dialog__content-image"
+      },
+      {
+        "tag": "figure",
+        "class": "media__figure"
+      }
+    ]
+  },
+  {
+    "url": "https://www.hejlfoundation.org/app/uploads/2024/04/photo-2-jpg.webp",
+    "renderedSrc": "https://www.hejlfoundation.org/app/uploads/2024/04/photo-2-jpg.webp",
+    "width": "320",
+    "height": "408",
+    "alt": "",
+    "ancestors": [
+      {
+        "tag": "div",
+        "class": "team-dialog dialog "
+      },
+      {
+        "tag": "div",
+        "class": "team-dialog__container"
+      },
+      {
+        "tag": "div",
+        "class": "team-dialog__content"
+      },
+      {
+        "tag": "div",
+        "class": "media media--image media--auto team-dialog__content-image"
+      },
+      {
+        "tag": "figure",
+        "class": "media__figure"
+      }
+    ]
+  },
+  {
+    "url": "https://www.hejlfoundation.org/app/uploads/2024/04/photo-3-jpg.webp",
+    "renderedSrc": "https://www.hejlfoundation.org/app/uploads/2024/04/photo-3-jpg.webp",
+    "width": "320",
+    "height": "420",
+    "alt": "",
+    "ancestors": [
+      {
+        "tag": "div",
+        "class": "team-dialog dialog "
+      },
+      {
+        "tag": "div",
+        "class": "team-dialog__container"
+      },
+      {
+        "tag": "div",
+        "class": "team-dialog__content"
+      },
+      {
+        "tag": "div",
+        "class": "media media--image media--auto team-dialog__content-image"
+      },
+      {
+        "tag": "figure",
+        "class": "media__figure"
+      }
+    ]
+  },
+  {
+    "url": "https://www.hejlfoundation.org/app/uploads/2024/04/photo-4-jpg.webp",
+    "renderedSrc": "https://www.hejlfoundation.org/app/uploads/2024/04/photo-4-jpg.webp",
+    "width": "320",
+    "height": "420",
+    "alt": "",
+    "ancestors": [
+      {
+        "tag": "div",
+        "class": "team-dialog dialog "
+      },
+      {
+        "tag": "div",
+        "class": "team-dialog__container"
+      },
+      {
+        "tag": "div",
+        "class": "team-dialog__content"
+      },
+      {
+        "tag": "div",
+        "class": "media media--image media--auto team-dialog__content-image"
+      },
+      {
+        "tag": "figure",
+        "class": "media__figure"
+      }
+    ]
+  },
+  {
+    "url": "https://www.hejlfoundation.org/app/uploads/2024/04/img-3674-jpg-e1773242942300.webp",
+    "renderedSrc": "https://www.hejlfoundation.org/app/uploads/2024/04/img-3674-jpg-e1773242942300.webp",
+    "width": "320",
+    "height": "390",
+    "alt": "",
+    "ancestors": [
+      {
+        "tag": "div",
+        "class": "team-dialog dialog "
+      },
+      {
+        "tag": "div",
+        "class": "team-dialog__container"
+      },
+      {
+        "tag": "div",
+        "class": "team-dialog__content"
+      },
+      {
+        "tag": "div",
+        "class": "media media--image media--auto team-dialog__content-image"
+      },
+      {
+        "tag": "figure",
+        "class": "media__figure"
+      }
+    ]
+  },
+  {
+    "url": "https://www.hejlfoundation.org/app/uploads/2024/04/photo-2-jpg.webp",
+    "renderedSrc": "https://www.hejlfoundation.org/app/uploads/2024/04/photo-2-jpg.webp",
+    "width": "320",
+    "height": "408",
+    "alt": "",
+    "ancestors": [
+      {
+        "tag": "div",
+        "class": "team-dialog dialog "
+      },
+      {
+        "tag": "div",
+        "class": "team-dialog__container"
+      },
+      {
+        "tag": "div",
+        "class": "team-dialog__content"
+      },
+      {
+        "tag": "div",
+        "class": "media media--image media--auto team-dialog__content-image"
+      },
+      {
+        "tag": "figure",
+        "class": "media__figure"
+      }
+    ]
+  }
+]

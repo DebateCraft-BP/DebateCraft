@@ -1,0 +1,380 @@
+[
+  {
+    "file": ".firecrawl/css-evidence.json",
+    "bytes": 102480,
+    "sha256": "6f68c8e01aa55a3938314c1ab73e4f6f2c3c7dc6cd412a85179cbd82542044f8"
+  },
+  {
+    "file": ".firecrawl/html-evidence.json",
+    "bytes": 175933,
+    "sha256": "9549cd7bc110f625a987fcfa49f10fdf951ca355fb2d8fb368a96bc61e04d827"
+  },
+  {
+    "file": ".firecrawl/settled-captures.json",
+    "bytes": 355528,
+    "sha256": "6b931a6247545facbb4aef440f7150e43e02d093399e603d37cc5c15a1c641fe"
+  },
+  {
+    "file": ".firecrawl/source-context.json",
+    "bytes": 4676,
+    "sha256": "88e4b3124c11fd1958fb701559f98c0149e8b15483f1e9e3a81752efebd4c923"
+  },
+  {
+    "file": "DESIGN.md",
+    "bytes": 24475,
+    "sha256": "bfcb8bda85465eced6079b567797e59bb0e739d6ed2dd39862f81a1763db037e"
+  },
+  {
+    "file": "capture-states.mjs",
+    "bytes": 9306,
+    "sha256": "995e9b8032da2e29536662fe5e936f3ad3b5c8439f2e024b3f2823b16f271ca1"
+  },
+  {
+    "file": "how-we-work/.firecrawl/design-reference.json",
+    "bytes": 565407,
+    "sha256": "6886b0c8b4ac7390e9bc076715e3a4973623f969857be8f30ffa13049adcd17c"
+  },
+  {
+    "file": "how-we-work/.firecrawl/design-reference.png",
+    "bytes": 2556327,
+    "sha256": "24c3d40a7a0f7bf17f5055e2159e7a6315ec8a888de28550386e7451fe277861",
+    "width": 1920,
+    "height": 7998
+  },
+  {
+    "file": "how-we-work/.firecrawl/desktop-metrics.json",
+    "bytes": 105985,
+    "sha256": "4d6fdbee1b231d918170442b1ae2f8ab863c35b1a33f51e3cc247fe8f8da73dd"
+  },
+  {
+    "file": "how-we-work/.firecrawl/desktop-states.json",
+    "bytes": 107021,
+    "sha256": "83fd757f2744f11c014b24030a0ec42b9631034788305a1b87a116ae153b7a2c"
+  },
+  {
+    "file": "how-we-work/.firecrawl/mobile-metrics.json",
+    "bytes": 102305,
+    "sha256": "a0b63c1199f2a3c9ccb9a4b7eb279f20d7581c9b97122d0185c462c5a618ce08"
+  },
+  {
+    "file": "how-we-work/.firecrawl/mobile-states.json",
+    "bytes": 103341,
+    "sha256": "6fb8cfdb43a8d7cb6b567c2740dbc01fa52fa0d9d9dc51bcebc8ba41e2a9b96c"
+  },
+  {
+    "file": "how-we-work/desktop-approach.png",
+    "bytes": 525599,
+    "sha256": "7e56dd0717b56c3647f1cafeafeea33d24f2dd8d8105310a0570a84d3234218a",
+    "width": 1440,
+    "height": 889
+  },
+  {
+    "file": "how-we-work/desktop-cards.png",
+    "bytes": 220242,
+    "sha256": "d0b3556de432a094613e1726fd86688a2c82314ce17c575895d2dbdf773e0947",
+    "width": 1440,
+    "height": 664
+  },
+  {
+    "file": "how-we-work/desktop-clean.png",
+    "bytes": 1675968,
+    "sha256": "eb2da2f92c795723aed94044cdc7527ee1e41f55b2d7f68bf0846ca953ead8e4",
+    "width": 1440,
+    "height": 6229
+  },
+  {
+    "file": "how-we-work/desktop-faq-closed.png",
+    "bytes": 125979,
+    "sha256": "17bf5c461d9864bf5cfc60013f8d2f5818a4ed8f55d0db90239a5d8067597b03",
+    "width": 1440,
+    "height": 885
+  },
+  {
+    "file": "how-we-work/desktop-faq-open.html",
+    "bytes": 181868,
+    "sha256": "0e04de48f805d2c34f126a53b6df4b693e70c9fd22892716adc3192ffbffe415"
+  },
+  {
+    "file": "how-we-work/desktop-faq-open.png",
+    "bytes": 150878,
+    "sha256": "713b8ff32a8b12a93a50371a03aeef12031580f44b083e2900977643bf1d5780",
+    "width": 1440,
+    "height": 1004
+  },
+  {
+    "file": "how-we-work/desktop-gallery-1.png",
+    "bytes": 347080,
+    "sha256": "d56bc646bef483fb9bfcbe414d587a246c4f781fe25de0f70869d19e9537cc95",
+    "width": 1440,
+    "height": 439
+  },
+  {
+    "file": "how-we-work/desktop-gallery-2.png",
+    "bytes": 267441,
+    "sha256": "d2fa8110494a4c8891e54b3dafe619e6ae2e2a978c05165a0fe7c8f3059101f5",
+    "width": 1440,
+    "height": 439
+  },
+  {
+    "file": "how-we-work/desktop-hero.png",
+    "bytes": 134804,
+    "sha256": "c5e70e06a5680a339e0d0ba21805dd0b5ae0175db024a355b203f6b1efb72368",
+    "width": 1440,
+    "height": 1000
+  },
+  {
+    "file": "how-we-work/desktop-settled.png",
+    "bytes": 1742366,
+    "sha256": "90c6ce0ab3a8bf82e428b561cc0e57a9edc3141dc0c514c64660fb5f046072eb",
+    "width": 1440,
+    "height": 6229
+  },
+  {
+    "file": "how-we-work/desktop-video-poster.png",
+    "bytes": 236620,
+    "sha256": "9885760b3d0fd7aa9f1c6430d30304c9399e5d14591736a56385489178c326a5",
+    "width": 1440,
+    "height": 791
+  },
+  {
+    "file": "how-we-work/image-inventory.json",
+    "bytes": 14851,
+    "sha256": "2a1e426ab52a98f3a14d9ae99370c34d7bb8f5032f9f3621564a7b8fb5185401"
+  },
+  {
+    "file": "how-we-work/mobile-approach.png",
+    "bytes": 312155,
+    "sha256": "a800577eda6a566efd918b010511d1c65ebf63497f68450d2f48197fb2d18a78",
+    "width": 390,
+    "height": 1421
+  },
+  {
+    "file": "how-we-work/mobile-cards.png",
+    "bytes": 195463,
+    "sha256": "d639237539c6e4438cb81c850ecb2a66a8bed87e157b0937d198d6146d667140",
+    "width": 390,
+    "height": 1840
+  },
+  {
+    "file": "how-we-work/mobile-clean.png",
+    "bytes": 1089310,
+    "sha256": "7a1ad5f86ee358ac56fa57aadf89bb512dd62076b986b6f00101a845af5df4da",
+    "width": 390,
+    "height": 7800
+  },
+  {
+    "file": "how-we-work/mobile-faq-closed.png",
+    "bytes": 119237,
+    "sha256": "34c173d1f33295ac7e76fa32a922c88ddae2175a3eec5a5e144cf4328327934a",
+    "width": 390,
+    "height": 1576
+  },
+  {
+    "file": "how-we-work/mobile-faq-open.html",
+    "bytes": 181868,
+    "sha256": "6f167a424375fd0e08a0d07d46bf39e9f573dc0351742b3f251aa82f47dabf7e"
+  },
+  {
+    "file": "how-we-work/mobile-faq-open.png",
+    "bytes": 143703,
+    "sha256": "0cf9f7005655ada44be2cd470e843e1d4d834a1fcd7b5d5b36da5b030e3f63b2",
+    "width": 390,
+    "height": 1816
+  },
+  {
+    "file": "how-we-work/mobile-gallery-1.png",
+    "bytes": 185842,
+    "sha256": "aff68646b4077b3ab72e994ace4ae671c4d7df5aa6dc44aee32113e126811c3e",
+    "width": 390,
+    "height": 475
+  },
+  {
+    "file": "how-we-work/mobile-gallery-2.png",
+    "bytes": 108893,
+    "sha256": "ce793a86b2a32bd290bfea11aee5f8c2950ae1ed1e035684fe194cd3406d4fd8",
+    "width": 390,
+    "height": 475
+  },
+  {
+    "file": "how-we-work/mobile-hero.png",
+    "bytes": 204176,
+    "sha256": "5f1111034d881d7993cc4fead3fb66a85a3a39e29df4505f5968b4db2db25360",
+    "width": 390,
+    "height": 844
+  },
+  {
+    "file": "how-we-work/mobile-settled.png",
+    "bytes": 989520,
+    "sha256": "56f9761c74a3323d06b608bf016e8c4589e357d834f6380497f8e2ec81dbd697",
+    "width": 390,
+    "height": 7800
+  },
+  {
+    "file": "how-we-work/mobile-video-poster.png",
+    "bytes": 86071,
+    "sha256": "b675894defc6e5b317423761e07b5b8758326819a0bd81cbf43c3b52342a3d46",
+    "width": 390,
+    "height": 557
+  },
+  {
+    "file": "how-we-work/page.html",
+    "bytes": 248566,
+    "sha256": "a103d944eca324ed936886730419e534c60ec11b5ce22ca30b4be9597a6cb9a9"
+  },
+  {
+    "file": "how-we-work/page.md",
+    "bytes": 9483,
+    "sha256": "0d82e691ab8f7db4e8f00768bdf91c7e79b92ed8eccdb1a613948dc79561108d"
+  },
+  {
+    "file": "how-we-work/page.raw.html",
+    "bytes": 266889,
+    "sha256": "d2bc2bc73a992f7b2f5f7998df3b43f488213654a5675de0d09cf30099ff8ad4"
+  },
+  {
+    "file": "prepare-captures.mjs",
+    "bytes": 3050,
+    "sha256": "b8b669337b74381f9f3b5e2233802ffec7683164debd608f9be46b0284abfbd7"
+  },
+  {
+    "file": "styles.source.css",
+    "bytes": 237307,
+    "sha256": "c2953c1d31674aa42b5a51b49e435715721cf281d9e7af3d8c8d388c0a1d4948"
+  },
+  {
+    "file": "what-we-do/.firecrawl/design-reference.json",
+    "bytes": 191478,
+    "sha256": "426f8c1595402521597a992f51199a744d5104970e9bd6251959382c8dfb4b81"
+  },
+  {
+    "file": "what-we-do/.firecrawl/design-reference.png",
+    "bytes": 725492,
+    "sha256": "e6bf47d9bcc53b80df8f5b6ac5aca970f9ed204218cb89a416d6d1f710c9dca8",
+    "width": 1920,
+    "height": 5785
+  },
+  {
+    "file": "what-we-do/.firecrawl/desktop-metrics.json",
+    "bytes": 63549,
+    "sha256": "3df167727241eed600f912df7f7cdd5d95f3ca6d17198c079c421f395f9c5e54"
+  },
+  {
+    "file": "what-we-do/.firecrawl/desktop-states.json",
+    "bytes": 63692,
+    "sha256": "625664fe469277d18bccaf6d4e4b6bf4ad512fde8475dc9b9bef5d39042680db"
+  },
+  {
+    "file": "what-we-do/.firecrawl/mobile-metrics.json",
+    "bytes": 61853,
+    "sha256": "8c8e62dee01cdec9c9cf6cbc5fb0eb142505488e7b16e71ab804dfa7b6c7a013"
+  },
+  {
+    "file": "what-we-do/.firecrawl/mobile-states.json",
+    "bytes": 61996,
+    "sha256": "845a1d6d1f4a9a681f0a9908be9a561198158ad15efb1386e517ac887cb09b49"
+  },
+  {
+    "file": "what-we-do/desktop-clean.png",
+    "bytes": 1703450,
+    "sha256": "5e628e3e42bc53f9a1e994a2ff71afc0473d918ff4c7a0cee5d1c98809efac7c",
+    "width": 1440,
+    "height": 4373
+  },
+  {
+    "file": "what-we-do/desktop-hero.png",
+    "bytes": 113460,
+    "sha256": "867578ebec270dc314eaa6966a9248c83b35679451d60ced9db539011224c6c0",
+    "width": 1440,
+    "height": 1000
+  },
+  {
+    "file": "what-we-do/desktop-marquee.png",
+    "bytes": 125856,
+    "sha256": "2e5284b63c01dd59bea4a5491f0cac9ea10a362d79149fc0f540d038cd0423fb",
+    "width": 1440,
+    "height": 299
+  },
+  {
+    "file": "what-we-do/desktop-program-1.png",
+    "bytes": 333138,
+    "sha256": "d9e1c822754b89ddd5958cb65a6b312556aa246a630d57c0a3c8fa5990f44c03",
+    "width": 1166,
+    "height": 436
+  },
+  {
+    "file": "what-we-do/desktop-program-2.png",
+    "bytes": 367122,
+    "sha256": "24916bc74912b375dd0d59f199f85afea396adfeb1beca16a02597309c8c1afa",
+    "width": 1166,
+    "height": 457
+  },
+  {
+    "file": "what-we-do/desktop-settled.png",
+    "bytes": 1726440,
+    "sha256": "822e11c71f5ae5eaebf8d4d94ed6760335f619f809d58a438ff1ce0808d9da2e",
+    "width": 1440,
+    "height": 4373
+  },
+  {
+    "file": "what-we-do/image-inventory.json",
+    "bytes": 13482,
+    "sha256": "e371f13e4ee24694d155b35afc73a55b3b4f90252d6b29519bd65d09361602cd"
+  },
+  {
+    "file": "what-we-do/mobile-clean.png",
+    "bytes": 1109471,
+    "sha256": "41047a276b66b32c713fccabf769b31836b30ca3a7ab4d4f5c4cf51f6ab25aaa",
+    "width": 390,
+    "height": 6028
+  },
+  {
+    "file": "what-we-do/mobile-hero.png",
+    "bytes": 76127,
+    "sha256": "7b7c58f8f379466f2c37515492460a1434eeec02be0087ed118828020fe55c7f",
+    "width": 390,
+    "height": 844
+  },
+  {
+    "file": "what-we-do/mobile-marquee.png",
+    "bytes": 25567,
+    "sha256": "d7a4d8aac70b6c6658ffd63431bc81f92334d5a94bfe5b910d7114472923cd26",
+    "width": 390,
+    "height": 209
+  },
+  {
+    "file": "what-we-do/mobile-program-1.png",
+    "bytes": 225926,
+    "sha256": "ea17746253494908e42e72a58f30fa4cad95eec70e4da11bf16fe67e1c25a9a5",
+    "width": 358,
+    "height": 1023
+  },
+  {
+    "file": "what-we-do/mobile-program-2.png",
+    "bytes": 268712,
+    "sha256": "04016e2947e7ae4a6a7755c21e0bddfabd16b05826e9347674955e8119a16a04",
+    "width": 358,
+    "height": 1068
+  },
+  {
+    "file": "what-we-do/mobile-settled.png",
+    "bytes": 1118000,
+    "sha256": "97b07391bedf4977fe1d0928973a5941f4d0dc47bdc6ed0e9c87737ec2278ff0",
+    "width": 390,
+    "height": 6028
+  },
+  {
+    "file": "what-we-do/page.html",
+    "bytes": 67657,
+    "sha256": "943aa19312d6845d9e531110b0dc360f6d3a4af77febfc72676b09f24d91b77e"
+  },
+  {
+    "file": "what-we-do/page.md",
+    "bytes": 6977,
+    "sha256": "722698835a064c448b900cb5ce5d8cd401a8118e327175472b8e2f0fe5b8b6ad"
+  },
+  {
+    "file": "what-we-do/page.raw.html",
+    "bytes": 85943,
+    "sha256": "b6247fd6c8611b54c652a1773d1ff06302d16fc032a9dd907c28ece55e3e0dba"
+  }
+]

@@ -3,5 +3,6 @@ import App from './App';
 import './styles/reference.css';
 import './styles/app.css';
 import './styles/team.css';
+import './styles/contact.css';
 
 createRoot(document.getElementById('root')).render(<App />);

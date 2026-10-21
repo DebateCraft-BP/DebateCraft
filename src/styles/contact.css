@@ -1,0 +1,24 @@
+/* Underline-style fields on the DebateCraft palette; labels stay visible for accessibility. */
+.contact-page { background: var(--color-bg); }
+.contact-intro { max-width: 69rem; padding: 10.8rem 0 6.4rem; }
+.contact-intro h1 { align-items: flex-start; text-align: left; text-wrap: balance; }
+.contact-intro > p { margin-top: 3.2rem; font-size: var(--font-size-lead-size); line-height: var(--font-size-lead-lh); }
+.contact-intro a, .contact-form__error a { text-decoration: underline; text-underline-offset: .3em; }
+.contact-form { display: grid; gap: 2.8rem; max-width: 69rem; padding-bottom: 12rem; }
+.contact-form__row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3.2rem; }
+.contact-field { display: flex; flex-direction: column; gap: .4rem; }
+.contact-field__label { color: #545454; font-size: var(--font-size-small-size); letter-spacing: .01em; }
+.contact-field input, .contact-field textarea { width: 100%; padding: 1rem 0; border: 0; border-bottom: 1px solid #545454; border-radius: 0; background: transparent; color: var(--color-primary); font: inherit; font-size: var(--font-size-large-size); transition: border-color .4s ease; }
+.contact-field textarea { min-height: 12rem; resize: vertical; }
+.contact-field input:user-invalid, .contact-field textarea:user-invalid { border-bottom-color: #b3261e; }
+.contact-form__actions { display: flex; flex-direction: row-reverse; align-items: center; justify-content: space-between; gap: 2.4rem; margin-top: 2rem; }
+.contact-form__submit { min-width: 18.4rem; background: #0a0a0a; color: #fff; }
+.contact-form__submit:disabled { opacity: .6; cursor: progress; }
+.contact-form__status { color: #1c6b3a; font-size: var(--font-size-small-size); }
+.contact-form__error { color: #b3261e; font-size: var(--font-size-small-size); }
+@media (max-width: 767px) {
+  .contact-intro { padding: 6.5rem 0 4rem; }
+  .contact-form__row { grid-template-columns: 1fr; gap: 2.8rem; }
+  .contact-form__actions { flex-direction: column-reverse; align-items: stretch; }
+  .contact-form__submit { width: 100%; }
+}

@@ -11,6 +11,7 @@ body.page-template-page-about-us { background-color: var(--color-bg); }
 .blog-post { --background: var(--color-surface-blue); }
 .blog-post:nth-of-type(8n+1) { --background: var(--color-surface-blue-strong); }
 #root { min-height: 100vh; }
+#impact, #method, #programs, #resources { scroll-margin-top: 10rem; }
 .overall { isolation: isolate; }
 .hero-home { isolation: isolate; }
 .hero-home__thumbnail { background: #252622; }

@@ -1,7 +1,13 @@
-export const origin = 'https://debatecraft.org';
-export const links = Object.fromEntries(Object.entries({ about: 'about', programs: 'offerings', schools: 'training-pathway', resources: 'resources', guides: 'guides', team: 'team', contact: 'contact', blog: 'blog', privacy: 'privacy', terms: 'terms' }).map(([key, slug]) => [key, `${origin}/pages/${slug}.html`]));
-links.subscribe = 'https://debatecraft.substack.com/subscribe';
-links.team = '/pages/team.html';
+export const links = {
+  about: '/#impact',
+  programs: '/#programs',
+  schools: '/#method',
+  resources: '/#resources',
+  team: '/pages/team.html',
+  contact: '/pages/contact.html',
+  guides: 'https://debatecraft.substack.com/',
+  subscribe: 'https://debatecraft.substack.com/subscribe',
+};
 export const navigation = [['Who We Are', links.about], ['What We Do', links.programs], ['How We Work', links.schools], ['Resources', links.resources], ['Our Team', links.team], ['Contact', links.contact]];
 export const programs = [
   { title: 'Introduction to Debate', image: 'Image7.png', alt: 'An argument-building exercise in a DebateCraft class', description: 'Build a foundation in logic, clear reasoning and the PEEL method through guided practice and lively mock debates.' },

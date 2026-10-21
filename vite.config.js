@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   build: {
-    rollupOptions: { input: ['index.html', 'pages/team.html', 'pages/contact.html'] },
+    rollupOptions: { input: ['index.html', 'pages/team.html', 'pages/contact.html', 'pages/resources.html'] },
   },
   test: {
     environment: 'jsdom',

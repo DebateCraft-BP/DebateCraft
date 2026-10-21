@@ -2,7 +2,7 @@ export const links = {
   about: '/#impact',
   programs: '/#programs',
   schools: '/#method',
-  resources: '/#resources',
+  resources: '/pages/resources.html',
   team: '/pages/team.html',
   contact: '/pages/contact.html',
   guides: 'https://debatecraft.substack.com/',

@@ -9,7 +9,7 @@
     "preview": "vite preview --host 127.0.0.1",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:browser": "node tools/browser-check.mjs && node tools/team-browser-check.mjs"
+    "test:browser": "node tools/browser-check.mjs && node tools/team-browser-check.mjs && node tools/program-pages-browser-check.mjs && node tools/cantonese-browser-check.mjs"
   },
   "dependencies": {
     "react": "19.2.8",

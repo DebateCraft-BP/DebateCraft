@@ -14,6 +14,7 @@
       "Best Speaker, Stanford Invitational (2026)",
       "Judge, IIUM IDC (2026)",
       "Judge, HKEDO(2026)",
+      "Judge, Pre-WUDC Ottowa(2026)",
       "Drexel Open (2026)",
       "3rd Best Speaker, Team Canada Fundraiser (2025)",
       "3rd Place, Carroll College Fundraiser (2025)",
@@ -38,7 +39,7 @@
   },
   {
     "name": "Sandeep Chulani",
-    "role": "Adviser to DebateCraft",
+    "role": "Advisor to DebateCraft",
     "image": "Images/Sandeep.png",
     "categories": [
       "executive",
@@ -400,7 +401,7 @@
   },
   {
     "name": "Kevin C",
-    "role": "",
+    "role": "Operations Team Member",
     "school": "Phillips Exeter Academy, US",
     "image": "Images/Kevin.png",
     "categories": [
@@ -410,7 +411,7 @@
   },
   {
     "name": "Aloysius Y",
-    "role": "",
+    "role": "Operations Team Member",
     "school": "Epsom College, UK",
     "image": "Images/Aloy.png",
     "categories": [
@@ -419,7 +420,7 @@
   },
   {
     "name": "Andrew C",
-    "role": "",
+    "role": "Operations Team Member",
     "school": "Phillips Exeter Academy, US",
     "image": "Images/Andrew.png",
     "categories": [
@@ -428,7 +429,7 @@
   },
   {
     "name": "Ana T",
-    "role": "",
+    "role": "Operations Team Member",
     "image": "Images/Ana.png",
     "categories": [
       "outreach",
@@ -437,7 +438,7 @@
   },
   {
     "name": "Winston C",
-    "role": "",
+    "role": "Operations Team Member",
     "school": "Winchester College, UK",
     "image": "Images/Winston.png",
     "categories": [
@@ -448,7 +449,7 @@
   },
   {
     "name": "Max L",
-    "role": "",
+    "role": "Operations Team Member",
     "school": "Phillips Exeter Academy, US",
     "categories": [
       "retired"
@@ -456,7 +457,7 @@
   },
   {
     "name": "Vivien S",
-    "role": "",
+    "role": "Operations Team Member",
     "school": "Phillips Exeter Academy, US",
     "categories": [
       "retired"
@@ -464,7 +465,7 @@
   },
   {
     "name": "Sophia C",
-    "role": "",
+    "role": "Operations Team Member",
     "school": "Phillips Exeter Academy, US",
     "categories": [
       "retired"
@@ -472,7 +473,7 @@
   },
   {
     "name": "Andy L",
-    "role": "",
+    "role": "Operations Team Member",
     "school": "Phillips Exeter Academy, US",
     "image": "Images/Andy.png",
     "categories": [

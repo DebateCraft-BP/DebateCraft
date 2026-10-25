@@ -1,3 +1,5 @@
+// i18n:render-copy
+import { t } from '../../i18n';
 import { useEffect, useMemo, useState } from 'react';
 import { mitigationDifficulties, mitigationGameData } from '../../resources/data';
 import { shuffle } from '../../resources/hooks';
@@ -70,33 +72,33 @@ export default function EvenIfGame() {
   const lastRound = round + 1 >= playlist.length;
 
   return <div>
-    <div className="tool-head"><div><h2>Even If Mitigation Game</h2><p>Choose turns or mitigations, avoid traps, and answer before the timer expires.</p></div></div>
-    <div className="segmented game-levels" role="group" aria-label="Difficulty">
-      {Object.entries(mitigationDifficulties).map(([key, item]) => <button type="button" key={key} aria-pressed={difficulty === key} onClick={() => start(key)}>{`${item.label} · ${item.time}s`}</button>)}
+    <div className="tool-head"><div><h2>{t("Even If Mitigation Game")}</h2><p>{t("Choose turns or mitigations, avoid traps, and answer before the timer expires.")}</p></div></div>
+    <div className="segmented game-levels" role="group" aria-label={t("Difficulty")}>
+      {t(Object.entries(mitigationDifficulties).map(([key, item]) => <button type="button" key={key} aria-pressed={difficulty === key} onClick={() => start(key)}>{t("{0} · {1}s", [t(item.label), t(item.time)])}</button>))}
     </div>
     <div className="game-shell">
       <dl className="game-hud">
-        <div className="hud-card"><dt>Score</dt><dd>{score.toLocaleString()}</dd></div>
-        <div className="hud-card"><dt>Health</dt><dd>{Math.max(0, health)}%</dd><div className="meter" aria-hidden="true"><div className="meter-fill" data-low={health < 35} style={{ '--fill': Math.max(0, health) / 100 }} /></div></div>
-        <div className="hud-card"><dt>Timer</dt><dd>{timeLeft}s</dd><div className="meter" aria-hidden="true"><div className="meter-fill" data-low={timeLeft < timeLimit / 3} style={{ '--fill': timeLeft / timeLimit }} /></div></div>
-        <div className="hud-card"><dt>Round</dt><dd>{`${Math.min(round + 1, playlist.length)}/${playlist.length}`}</dd></div>
+        <div className="hud-card"><dt>{t("Score")}</dt><dd>{t(score.toLocaleString())}</dd></div>
+        <div className="hud-card"><dt>{t("Defense health")}</dt><dd>{t(Math.max(0, health))}{t("%")}</dd><div className="meter" aria-hidden="true"><div className="meter-fill" data-low={health < 35} style={{ '--fill': Math.max(0, health) / 100 }} /></div></div>
+        <div className="hud-card"><dt>{t("Timer")}</dt><dd>{t(timeLeft)}{t("s")}</dd><div className="meter" aria-hidden="true"><div className="meter-fill" data-low={timeLeft < timeLimit / 3} style={{ '--fill': timeLeft / timeLimit }} /></div></div>
+        <div className="hud-card"><dt>{t("Round")}</dt><dd>{t("{0}/{1}", [t(Math.min(round + 1, playlist.length)), t(playlist.length)])}</dd></div>
       </dl>
-      {status === 'playing'
+      {t(status === 'playing'
         ? <>
-          <div className="game-argument"><p className="resource-card__meta">{mitigationDifficulties[difficulty].text}</p><h3>{current.t}</h3></div>
-          <ul className="game-options">{options.map(option => <li key={option.text}><button type="button" className="option-card" aria-pressed={selected?.text === option.text} disabled={!!selected} onClick={() => choose(option)}>{option.text}</button></li>)}</ul>
+          <div className="game-argument"><p className="resource-card__meta">{t(mitigationDifficulties[difficulty].text)}</p><h3>{t(current.t)}</h3></div>
+          <ul className="game-options">{t(options.map(option => <li key={option.text}><button type="button" className="option-card" aria-pressed={selected?.text === option.text} disabled={!!selected} onClick={() => choose(option)}>{t(option.text)}</button></li>))}</ul>
           {selected && <div className="feedback-card" role="status">
-            <h3>{selected.verdict}</h3><p>{selected.sub}</p>
-            {selected.points > 0 && <p className="feedback-card__points">{`+${selected.points.toLocaleString()} points`}</p>}
-            <button type="button" className="tool-button" onClick={next}>{lastRound ? 'Finish Game' : 'Next Round'}</button>
+            <h3>{t(selected.verdict)}</h3><p>{t(selected.sub)}</p>
+            {selected.points > 0 && <p className="feedback-card__points">{t("+{0} points", [t(selected.points.toLocaleString())])}</p>}
+            <button type="button" className="tool-button" onClick={next}>{t(lastRound ? 'Finish Game' : 'Next Round')}</button>
           </div>}
         </>
         : <div className="feedback-card" role="status">
-          <p className="resource-card__meta">{status === 'victory' ? 'Complete' : 'Defense Collapsed'}</p>
-          <h3>{status === 'victory' ? `Rank ${rank}` : 'Try Again'}</h3>
-          <p>{`Final score: ${score.toLocaleString()}. Best turn streak: ${maxStreak}.`}</p>
-          <button type="button" className="tool-button" onClick={() => start(difficulty)}>Restart</button>
-        </div>}
+          <p className="resource-card__meta">{t(status === 'victory' ? 'Complete' : 'Defense Collapsed')}</p>
+          <h3>{status === 'victory' ? t('Rank {0}', [rank]) : t('Try Again')}</h3>
+          <p>{t("Final score: {0}. Best turn streak: {1}.", [t(score.toLocaleString()), t(maxStreak)])}</p>
+          <button type="button" className="tool-button" onClick={() => start(difficulty)}>{t("Restart")}</button>
+        </div>)}
     </div>
   </div>;
 }

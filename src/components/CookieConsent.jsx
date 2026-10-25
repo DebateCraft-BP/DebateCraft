@@ -1,3 +1,5 @@
+// i18n:render-copy
+import { t } from '../i18n';
 import { useEffect, useRef, useState } from 'react';
 
 const storageKey = 'debatecraft-consent-v1';
@@ -36,21 +38,21 @@ export default function CookieConsent() {
   }
 
   return <>
-    {!saved && !manage && <aside className="cookies is-visible" aria-label="Cookie consent">
+    {!saved && !manage && <aside className="cookies is-visible" aria-label={t("Cookie consent")}>
       <div className="cookies__container"><div className="cookies__dialog cookies__dialog--basic">
-        <div className="cookies__content"><h2 className="cookies__heading">This website is using cookies</h2><p>{description}</p></div>
-        <div className="cookies__buttons"><button ref={opener} className="cookies__button" onClick={() => setManage(true)}>Manage Cookies</button><button className="cookies__button" data-button="accept" onClick={() => save(true)}>Accept &amp; Close</button></div>
+        <div className="cookies__content"><h2 className="cookies__heading">{t("This website is using cookies")}</h2><p>{t(description)}</p></div>
+        <div className="cookies__buttons"><button ref={opener} className="cookies__button" onClick={() => setManage(true)}>{t("Manage Cookies")}</button><button className="cookies__button" data-button="accept" onClick={() => save(true)}>{t("Accept & Close")}</button></div>
       </div></div>
     </aside>}
-    <button className="consent-preferences" onClick={() => setManage(true)}>Cookie preferences</button>
+    <button className="consent-preferences" onClick={() => setManage(true)}>{t("Cookie preferences")}</button>
     {manage && <dialog className="consent-settings" ref={dialog} aria-labelledby="cookies-title" onCancel={() => setManage(false)}>
-      <h2 id="cookies-title" className="cookies__heading">Manage Cookies</h2><p>{description}</p>
-      <div className="consent-options"><label className="consent-option"><span>Required (Always Active)</span><input type="checkbox" checked disabled /></label>
-        <p>These cookies are crucial for the basic functionality of our website. They allow you to navigate the site and use its features. Without these cookies, certain services you request may not be available.</p>
-        <label className="consent-option"><span>Analytics</span><input type="checkbox" checked={analytics} onChange={event => setAnalytics(event.target.checked)} /></label>
-        <p>We use analytical cookies to collect data on website usage, helping us enhance performance and user experience by tracking page visits and identifying issues. This information is anonymous and aggregated.</p>
+      <h2 id="cookies-title" className="cookies__heading">{t("Manage Cookies")}</h2><p>{t(description)}</p>
+      <div className="consent-options"><label className="consent-option"><span>{t("Required (Always Active)")}</span><input type="checkbox" checked disabled /></label>
+        <p>{t("These cookies are crucial for the basic functionality of our website. They allow you to navigate the site and use its features. Without these cookies, certain services you request may not be available.")}</p>
+        <label className="consent-option"><span>{t("Analytics")}</span><input type="checkbox" checked={analytics} onChange={event => setAnalytics(event.target.checked)} /></label>
+        <p>{t("We use analytical cookies to collect data on website usage, helping us enhance performance and user experience by tracking page visits and identifying issues. This information is anonymous and aggregated.")}</p>
       </div>
-      <div className="cookies__buttons"><button className="cookies__button" onClick={() => save(false)}>Deny</button><button className="cookies__button" data-button="accept" onClick={() => save(analytics)}>Allow Selected</button></div>
+      <div className="cookies__buttons"><button className="cookies__button" onClick={() => save(false)}>{t("Deny")}</button><button className="cookies__button" data-button="accept" onClick={() => save(analytics)}>{t("Allow Selected")}</button></div>
     </dialog>}
   </>;
 }

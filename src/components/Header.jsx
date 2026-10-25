@@ -1,5 +1,8 @@
+// i18n:render-copy
+import { t, localeHref } from '../i18n';
 import { useEffect, useRef, useState } from 'react';
 import { HeaderMark } from './Logo';
+import LanguageSwitch from './LanguageSwitch';
 import { navigation, socials } from '../content';
 
 export default function Header({ lightHero = true }) {
@@ -49,19 +52,19 @@ export default function Header({ lightHero = true }) {
     };
   }, [open]);
 
-  const links = () => navigation.map(([label, href]) => <li className="menu-item" key={href}><a href={href}>{label}</a></li>);
+  const links = () => navigation.map(([label, href]) => <li className="menu-item" key={href}><a href={localeHref(href)} aria-current={window.location.pathname === localeHref(href) ? 'page' : undefined}>{t(label)}</a></li>);
   return <header className={`header ${light && !open ? 'header-light' : ''}`}>
     <div className="header__container">
-      <a className="header__logo" href="/" aria-label="DebateCraft home"><HeaderMark /></a>
-      <button className="burger header__burger" ref={trigger} aria-label="Menu" aria-expanded={open} aria-controls="mobile-menu" onClick={() => setOpen(true)}>
-        <span className="burger__label">Menu</span><span className="burger__face burger__face--front"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.25 8.25h19.5v1.5H2.25zm0 6h19.5v1.5H2.25z" fill="currentColor" /></svg></span>
+      <div className="header__brand"><a className="header__logo" href={localeHref("/")} aria-label={t("DebateCraft home")}><HeaderMark /></a><LanguageSwitch /></div>
+      <button className="burger header__burger" ref={trigger} aria-label={t("Menu")} aria-expanded={open} aria-controls="mobile-menu" onClick={() => setOpen(true)}>
+        <span className="burger__label">{t("Menu")}</span><span className="burger__face burger__face--front"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.25 8.25h19.5v1.5H2.25zm0 6h19.5v1.5H2.25z" fill="currentColor" /></svg></span>
       </button>
-      <nav className="nav desktop-nav" aria-label="Primary navigation"><div className="nav__container"><ul className="nav__menu">{links()}</ul></div></nav>
+      <nav className="nav desktop-nav" aria-label={t("Primary navigation")}><div className="nav__container"><ul className="nav__menu">{t(links())}</ul></div></nav>
     </div>
-    {open && <div className="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Site navigation" ref={panel}>
-      <nav aria-label="Mobile navigation"><ul>{links()}</ul></nav>
-      <div className="mobile-socials">{socials.map(([label, href]) => <a key={href} href={href}>{label}</a>)}</div>
-      <button className="menu-close" aria-label="Close menu" onClick={() => setOpen(false)}>×</button>
+    {open && <div className="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label={t("Site navigation")} ref={panel}>
+      <nav aria-label={t("Mobile navigation")}><ul>{t(links())}</ul></nav>
+      <div className="mobile-socials">{t(socials.map(([label, href]) => <a key={href} href={localeHref(href)}>{t(label)}</a>))}</div>
+      <button className="menu-close" aria-label={t("Close menu")} onClick={() => setOpen(false)}>{t("×")}</button>
     </div>}
   </header>;
 }

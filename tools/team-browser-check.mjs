@@ -10,6 +10,11 @@ await mkdir(folder, { recursive: true });
 const roster = JSON.parse(await readFile('public/data/team_members.json', 'utf8'));
 const original = JSON.parse(await readFile('legacy/data/team_members.json', 'utf8'));
 assert.deepEqual(roster, original.map(member => {
+  member = { ...member, role: member.role?.trim().replace(/\bAdviser\b/g, 'Advisor') || 'Operations Team Member' };
+  if (member.name === 'Adrian Chan') {
+    member.achievements = [...member.achievements];
+    member.achievements.splice(member.achievements.indexOf('Judge, HKEDO(2026)') + 1, 0, 'Judge, Pre-WUDC Ottowa(2026)');
+  }
   if (!member.categories.includes('retired')) return member;
   const { image, ...text } = member;
   return text;
@@ -114,8 +119,8 @@ try {
     await search.fill('not-a-member');
     assert.equal(await page.getByRole('status').innerText(), 'No team members match your search.');
     await search.fill('');
-    await page.getByRole('button', { name: 'Retired', exact: true }).click();
-    const retired = page.getByRole('region', { name: 'Retired Members' });
+    await page.getByRole('button', { name: 'Alumni', exact: true }).click();
+    const retired = page.getByRole('region', { name: 'Alumni' });
     assert.equal(await retired.getByRole('listitem').count(), 6);
     assert.equal(await retired.locator('img,button,a,.media,.team-initials,[tabindex]').count(), 0);
     await retired.getByText('Raul L', { exact: true }).click();

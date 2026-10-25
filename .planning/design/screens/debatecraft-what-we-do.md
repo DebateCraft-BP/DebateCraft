@@ -1,6 +1,6 @@
 # DebateCraft What We Do screen
 
-Status: Proposed for combined approval; no application implementation started.
+Status: Approved, implemented and verified on 2026-10-21. The user’s subsequent email-only instruction supersedes the earlier form fallback.
 Specification: ../../specs/debatecraft-program-pages.md
 Source evidence: ../../../.firecrawl/hejl-pages-reference/DESIGN.md
 

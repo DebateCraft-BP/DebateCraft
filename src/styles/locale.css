@@ -1,0 +1,23 @@
+/* Locale-specific typography preserves the shared page structure and imagery. */
+.header__brand { display: flex; align-items: center; gap: 1.6rem; flex-shrink: 0; }
+.language-switch { display: inline-flex; align-items: center; min-height: 4.4rem; padding: .6rem 1rem; border: 1px solid currentColor; border-radius: 3rem; font: 400 1.5rem/1.3 Inter, 'PingFang TC', 'Microsoft JhengHei', sans-serif; white-space: nowrap; }
+.header-light .language-switch { color: white; }
+html[lang="zh-HK"] { --font-body-cjk: Inter, 'PingFang TC', 'Microsoft JhengHei', 'Noto Sans CJK TC', sans-serif; --font-heading-cjk: 'Songti TC', 'Noto Serif CJK TC', 'PMingLiU', serif; }
+html[lang="zh-HK"] body { font-family: var(--font-body-cjk); line-height: 1.65; }
+html[lang="zh-HK"] :is(button,input,textarea,select) { font-family: var(--font-body-cjk); }
+html[lang="zh-HK"] :is(.heading,.hero-home__heading,.hero-about__heading,.grant-database-home__heading,.our-programs-home__heading,.mission-about__content-heading,.about-about__heading,.leaders-about__heading,.members-about__heading,.team-dialog__content-name,.mobile-menu nav a) { font-family: var(--font-heading-cjk); font-weight: 400; line-height: 1.3; letter-spacing: 0; }
+html[lang="zh-HK"] .heading em { font-style: normal; }
+html[lang="zh-HK"] :is(.button,.label,.editorial-eyebrow,.nav__menu a,.resource-tab) { font-family: var(--font-body-cjk); letter-spacing: 0; line-height: 1.4; }
+html[lang="zh-HK"] :is(p,li,figcaption) { line-break: strict; }
+html[lang="zh-HK"] .hero-home__heading { font-size: 7.8rem; }
+html[lang="zh-HK"] :is(.programs-card__desc,.cookies__content p,.school-cards p,.editorial-page p) { line-height: 1.65; }
+html[lang="zh-HK"] .resource-tab { white-space: normal; }
+.resource-language { font-size: 1.3rem; color: #48637a; }
+@media (max-width: 767px) {
+ .header__brand { gap: .6rem; }
+ .header__brand .header__logo { width: 22rem; }
+ .language-switch { font-size: 1.3rem; padding: .5rem .8rem; }
+ html[lang="zh-HK"] .hero-home__heading { font-size: 4.7rem; }
+ html[lang="zh-HK"] .mobile-menu nav a { font-size: 4.8rem; margin-bottom: 1.8rem; }
+ html[lang="zh-HK"] .hero-about__heading { font-size: 4.4rem; }
+}

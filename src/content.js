@@ -1,14 +1,15 @@
 export const links = {
-  about: '/#impact',
-  programs: '/#programs',
-  schools: '/#method',
+  about: '/pages/who-we-are.html',
+  programs: '/pages/what-we-do.html',
+  method: '/pages/how-we-work.html',
+  schools: '/pages/schools.html',
   resources: '/pages/resources.html',
   team: '/pages/team.html',
   contact: '/pages/contact.html',
   guides: 'https://debatecraft.substack.com/',
   subscribe: 'https://debatecraft.substack.com/subscribe',
 };
-export const navigation = [['Who We Are', links.about], ['What We Do', links.programs], ['How We Work', links.schools], ['Resources', links.resources], ['Our Team', links.team], ['Contact', links.contact]];
+export const navigation = [['Who We Are', links.about], ['What We Do', links.programs], ['How We Work', links.method], ['Schools', links.schools], ['Resources', links.resources], ['Our Team', links.team], ['Contact', links.contact]];
 export const programs = [
   { title: 'Introduction to Debate', image: 'Image7.png', alt: 'An argument-building exercise in a DebateCraft class', description: 'Build a foundation in logic, clear reasoning and the PEEL method through guided practice and lively mock debates.' },
   { title: 'World Schools (WSDC)', image: 'Image3.png', alt: 'Timed speaking practice with DebateCraft students', description: 'Develop five-minute speeches, comparative weighing, speaker roles and strategic preparation for World Schools debate.' },

@@ -1,13 +1,13 @@
-# DebateCraft What We Do and How We Work
+# DebateCraft full editorial pages
 
-Status: Proposed; awaiting combined design and implementation-plan approval.
+Status: Implemented and verified on 2026-10-21; approved by the user’s request to implement the full pages.
 Date: 2026-10-20
 
 ## Purpose
 
-Create two English React/Vite pages using the captured Hejl What We Do and How We Work layouts, populated with DebateCraft's schools, holiday-program and bioethics information. Maintain the approved blue/white palette, local assets, shared header/footer and existing Team page behavior.
+Create three English React/Vite pages using the captured Hejl Who We Are, What We Do and How We Work layouts, populated with DebateCraft's schools, holiday-program and bioethics information. Maintain the approved blue/white palette, local assets, shared header/footer and existing Team page behavior.
 
-What We Do answers **what can I join or arrange?** How We Work answers **how will learning, feedback and progression happen?** Both give all three strands a clear place, with distinct school and student contact actions.
+Who We Are introduces the mission, values and people behind DebateCraft. What We Do answers **what can I join or arrange?** How We Work answers **how will learning, feedback and progression happen?** Both give all three strands a clear place, with distinct school and student contact actions.
 
 ## Sources and factual boundaries
 
@@ -25,6 +25,13 @@ What We Do answers **what can I join or arrange?** How We Work answers **how wil
 The course-specific age and session data take precedence over inconsistent generic FAQ summaries. Old schedules are historical source material, not verified future offerings. No new schedule is required to publish the proposed evergreen pages.
 
 ## Page scope
+
+### Who We Are — `/pages/who-we-are.html`
+
+- Centered editorial hero with DebateCraft identity, existing classroom imagery and blue/white decoration.
+- Mission, access to learning, four values and introduction to the people supporting the initiative.
+- Keep the complete roster on its separate Team page and link to it; link to the program and delivery pages.
+- Audience-specific email inquiry actions and shared footer.
 
 ### What We Do — `/pages/what-we-do.html`
 
@@ -49,16 +56,16 @@ The course-specific age and session data take precedence over inconsistent gener
 
 ## Navigation and compatibility
 
-- Header is Who We Are / What We Do / How We Work / Resources / Our Team / Contact, per the user's subsequent header instruction. Labels are implemented; What We Do and How We Work currently retain the existing offerings/training-pathway destinations until the new pages are built. During this feature, point them to the canonical new pages. Who We Are retains the existing About destination. Do not add more top-level items.
+- Header is Who We Are / What We Do / How We Work / Resources / Our Team / Contact. The first three now open their respective full canonical pages. Keep the separate Team, Resources and Contact pages.
 - Homepage Explore Our Programs and relevant course links target What We Do or the matching anchor. Keep Meet Our Team unchanged.
 - Preserve prominent Schools entry points through the first What We Do jump link, its first numbered section and school-specific contact actions on both pages.
-- Add static-build-compatible aliases: `/pages/offerings.html` → What We Do; `/pages/biology.html` → What We Do `#bioethics`; `/pages/training-pathway.html` and `/pages/partnership.html` → How We Work `#schools`. Each must work on direct visit/reload without hosting-specific redirect configuration. Keep canonical metadata pointed at the new pages.
+- Add static-build-compatible aliases: `/pages/about.html` → Who We Are; `/pages/offerings.html` → What We Do; `/pages/biology.html` → What We Do `#bioethics`; `/pages/training-pathway.html` and `/pages/partnership.html` → How We Work `#schools`. Each must work on direct visit/reload without hosting-specific redirect configuration. Keep canonical metadata pointed at the new pages.
 - School delivery anchors are `/pages/how-we-work.html#schools`, holiday `#holiday`, bioethics `#bioethics`. What We Do uses the same section-ID vocabulary. Keep separate course facts and each CTA's purpose explicit.
 - Do not redirect the historical 2026 calendar to a fictional current schedule or migrate the full calendar in this feature.
 
 ## Acceptance criteria
 
-1. Both new pages and the four compatibility URLs load directly from a production build, with correct canonical destinations and anchors.
+1. All three new pages and the five compatibility URLs load directly from a production build, with correct canonical destinations and anchors.
 2. Schools, Holiday Programs and Bioethics are equally discoverable on What We Do and have distinct delivery panels on How We Work. No fabricated fourth strand is added to match the source's count.
 3. Course-specific ages, caps, session formats and school progression survive the migration. Old Summer 2026 dates are not shown as upcoming; no unsupported holiday dates or program availability are invented.
 4. Source layouts retain their distinct hero sizing, desktop/mobile composition and imagery treatment; both pages use the existing `#F2F7FE` background, white surfaces, fonts and DebateCraft assets.
@@ -71,8 +78,22 @@ The course-specific age and session data take precedence over inconsistent gener
 
 Affected: new React page modules/content, small shared visual modules where actually reused, page-specific CSS, route selection, `src/content.js`, homepage CTA links, Vite HTML inputs, compatibility entry files, tests, browser checks and documentation.
 
-Reuse installed React/Vite/native CSS and existing dependencies. Keep archived `legacy/` files intact. Do not rebuild unrelated About, Resources, guides, Contact, legal or Chinese pages; do not change Team membership, add a booking backend, send inquiries, submit third-party forms, commit or deploy.
+Reuse installed React/Vite/native CSS and existing dependencies. Keep archived `legacy/` files intact. Do not rebuild unrelated Resources, guides, Contact, legal or Chinese pages; do not change Team membership, add a booking backend, send inquiries, submit third-party forms, commit or deploy.
 
 ## Approval scope
 
-One approval covers this specification, the two screen designs and the ordered implementation plan through testing, visual repairs and review. Routine implementation decisions can be resolved within that scope. New live-cohort dates, a different holiday product or an enrollment/backend change requires specific supporting information and a scope decision.
+One approval covers this specification, the three screen designs and the ordered implementation plan through testing, visual repairs and review. Routine implementation decisions can be resolved within that scope. New live-cohort dates, a different holiday product or an enrollment/backend change requires specific supporting information and a scope decision.
+
+## Approved scope extension — 2026-10-21
+
+The user explicitly requested three full pages: Who We Are, What We Do and How We Work. Add `/pages/who-we-are.html` with mission, identity, values and a Team link, using the captured Who We Are design. Connect all three header links to full pages; preserve Contact and Resources. Add `/pages/about.html` compatibility entry. Rename the Team filter/heading to Alumni, preserve text-only noninteractive entries, and assign Operations Team Member to every missing title while preserving existing titles and roster membership.
+
+Verification: shared navigation, direct built-page entry/reload, metadata/sitemap, three program anchors, gallery keyboard controls, independent disclosures, Home/Team/Contact/Resources regressions, desktop/mobile screenshots. No deployment or form submission.
+
+## Final inquiry instruction
+
+The user explicitly required email inquiries instead of Google Forms. All school/student actions on the three new pages use `mailto:info@debatecraft.org` with audience-specific subjects. No Google Forms, Jotform, registration form or iframe is linked or embedded in these pages. The existing Contact page remains a separate, preserved page. The old Jotform was inspected only as evidence; its Summer 2026 wording was not used as an active intake.
+
+## Delivery evidence
+
+See `../verification/debatecraft-program-pages.md` for tests, production build, four-width browser checks, screenshots and deliberate reference adaptations. All acceptance checks passed.

@@ -1,0 +1,49 @@
+/* School-specific composition reuses editorial.css and the shared design tokens. */
+.schools-page .statement-hero__action { margin-top: 3.2rem; }
+.schools-page .statement-hero__content { width: min(100%, 94rem); }
+.schools-page .statement-hero__intro { max-width: 65rem; }
+.school-overview__intro { display: grid; grid-template-columns: 1fr 1fr; gap: 8.4rem; align-items: center; }
+.school-overview h2 { font-size: 6.4rem; line-height: 1.1; margin-bottom: 4rem; text-wrap: balance; }
+.school-overview__intro p + p { margin-top: 2.4rem; }
+.school-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gutter); }
+.school-overview .school-cards { margin-top: 6.4rem; }
+.school-cards > li { padding: 4rem 3.2rem; background: white; border-radius: 1.6rem; }
+.school-cards h3 { font-size: 3.2rem; line-height: 1.2; margin-bottom: 2.4rem; text-wrap: balance; }
+.school-pathway-section, .school-delivery { margin-block: 19.2rem; }
+.schools-page [id] { scroll-margin-top: 13rem; }
+.school-pathway-section .editorial-section-title > p:last-child { margin-top: 3.2rem; }
+.school-pathway { display: flex; flex-direction: column; gap: 2.4rem; }
+.school-pathway > li { display: grid; grid-template-columns: 6rem minmax(0, .85fr) minmax(0, 1.15fr); gap: 4rem; padding: 4.8rem; background: white; border-radius: 1.6rem; }
+.school-step-number { color: #536273; font: 200 4.8rem/1.1 'PP Editorial New', serif; }
+.school-step-timing { display: inline-block; padding: .8rem 1.2rem; margin-bottom: 2.4rem; border-radius: 3rem; background: var(--color-surface-blue-soft); font-size: 1.6rem; }
+.school-step-heading h3 { font-size: 3.8rem; line-height: 1.15; text-wrap: balance; }
+.school-step-copy p + p { margin-top: 2.4rem; }
+.school-step-copy strong { display: block; font-size: 1.4rem; font-weight: 500; margin-bottom: 1.2rem; color: #536273; }
+.school-team-link { margin-top: 4rem; text-align: center; }
+.school-team-link a { margin-top: 1.6rem; }
+.school-inquiries__layout { display: grid; grid-template-columns: 1.15fr 1fr; gap: 8rem; margin-top: 4.8rem; }
+.school-inquiries__layout ul { list-style: disc; padding-left: 2.4rem; margin-top: 2.4rem; }
+.school-inquiries__layout li + li { margin-top: 1.2rem; }
+.school-inquiries__layout .editorial-text-link { display: block; width: fit-content; margin-top: 2.4rem; }
+@media (max-width: 767px) {
+  .schools-page .statement-hero { padding-top: 14rem; padding-bottom: 8rem; }
+  .schools-page .statement-hero__action { margin-top: 2.4rem; }
+  .school-overview__intro { grid-template-columns: 1fr; gap: 4rem; }
+  .school-overview h2 { font-size: 3.6rem; line-height: 1.2; margin-bottom: 2.4rem; }
+  .school-cards { grid-template-columns: 1fr; gap: 1.2rem; }
+  .school-cards > li { padding: 3.2rem 2.4rem; }
+  .school-cards h3 { font-size: 2.8rem; line-height: 1.2; margin-bottom: 1.6rem; }
+  .school-overview .school-cards { margin-top: 4rem; }
+  .school-pathway-section, .school-delivery { margin-block: 9.6rem; }
+  .schools-page [id] { scroll-margin-top: 10rem; }
+  .school-pathway-section .editorial-section-title > p:last-child { margin-top: 2.4rem; }
+  .school-pathway { gap: 1.6rem; }
+  .school-pathway > li { grid-template-columns: 4.4rem minmax(0, 1fr); gap: 2rem 1.6rem; padding: 3.2rem 2.4rem; }
+  .school-step-number { font-size: 3.2rem; }
+  .school-step-timing { margin-bottom: 1.6rem; font-size: 1.4rem; }
+  .school-step-heading h3 { font-size: 3.2rem; }
+  .school-step-copy { grid-column: 1 / -1; }
+  .school-step-copy strong { font-size: 1.2rem; }
+  .school-team-link { text-align: left; }
+  .school-inquiries__layout { grid-template-columns: 1fr; gap: 3.2rem; margin-top: 3.2rem; }
+}

@@ -3,6 +3,7 @@ import userEvent from '@testing-library/user-event';
 import { afterEach, expect, test, vi } from 'vitest';
 import App from '../src/App';
 import roster from '../legacy/data/team_members.json';
+import currentRoster from '../public/data/team_members.json';
 
 function loadRoster(data = roster) {
   vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: true, json: async () => data }));
@@ -69,13 +70,13 @@ test('the original category buttons keep their matching behavior and combine wit
   expect(screen.queryByRole('heading', { level: 3 })).not.toBeInTheDocument();
 });
 
-test('Retired shows six text-only entries with no portrait, initials, profile controls or click action', async () => {
+test('Alumni shows six text-only entries with no portrait, initials, profile controls or click action', async () => {
   const user = userEvent.setup();
   loadRoster();
   renderTeam();
   await screen.findByRole('region', { name: 'Leadership' });
-  await user.click(screen.getByRole('button', { name: 'Retired', exact: true }));
-  const retired = screen.getByRole('region', { name: 'Retired Members' });
+  await user.click(screen.getByRole('button', { name: 'Alumni', exact: true }));
+  const retired = screen.getByRole('region', { name: 'Alumni' });
   expect(within(retired).getAllByRole('listitem')).toHaveLength(6);
   expect(within(retired).queryByRole('img')).not.toBeInTheDocument();
   expect(within(retired).queryByRole('button')).not.toBeInTheDocument();
@@ -90,12 +91,12 @@ test('Retired shows six text-only entries with no portrait, initials, profile co
 
 test('a current member card opens their real biography without website or LinkedIn buttons', async () => {
   const user = userEvent.setup();
-  loadRoster();
+  loadRoster(currentRoster);
   renderTeam();
   const trigger = await screen.findByRole('button', { name: 'View biography for Adrian Chan' });
   await user.click(trigger);
   const dialog = screen.getByRole('dialog', { name: 'Adrian Chan' });
-  const member = roster.find(member => member.name === 'Adrian Chan');
+  const member = currentRoster.find(member => member.name === 'Adrian Chan');
   expect(within(dialog).getByText(member.bio)).toBeInTheDocument();
   expect(within(dialog).getByText(member.role)).toBeInTheDocument();
   expect(within(dialog).getByText(member.school)).toBeInTheDocument();
@@ -171,4 +172,20 @@ test('malformed profile details show the roster error rather than exposing a bro
   renderTeam();
   expect(await screen.findByRole('alert')).toHaveTextContent('We couldn’t load the team.');
   expect(screen.queryByRole('button', { name: 'View biography for Invalid profile' })).not.toBeInTheDocument();
+});
+
+test('missing titles become Operations Team Member in current cards, biographies and alumni entries', async () => {
+  const user = userEvent.setup();
+  loadRoster([
+    { name: 'Current Person', categories: ['hk'], role: '   ', bio: 'Our operations.' },
+    { name: 'Former Person', categories: ['retired'] },
+  ]);
+  renderTeam();
+  const trigger = await screen.findByRole('button', { name: 'View biography for Current Person' });
+  expect(screen.getByText('Operations Team Member')).toBeInTheDocument();
+  await user.click(trigger);
+  expect(within(screen.getByRole('dialog')).getByText('Operations Team Member')).toBeInTheDocument();
+  await user.keyboard('{Escape}');
+  await user.click(screen.getByRole('button', { name: 'Alumni', exact: true }));
+  expect(within(screen.getByRole('region', { name: 'Alumni' })).getByText('Operations Team Member')).toBeInTheDocument();
 });

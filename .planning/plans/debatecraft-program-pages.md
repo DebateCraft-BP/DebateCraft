@@ -1,9 +1,9 @@
 # DebateCraft program pages implementation plan
 
-Status: Proposed; awaiting one combined approval.
+Status: Complete and verified on 2026-10-21.
 Date: 2026-10-20
 Specification: ../specs/debatecraft-program-pages.md
-Designs: ../design/screens/debatecraft-what-we-do.md and ../design/screens/debatecraft-how-we-work.md
+Designs: ../design/screens/debatecraft-who-we-are.md, ../design/screens/debatecraft-what-we-do.md and ../design/screens/debatecraft-how-we-work.md
 
 ## Decisions proposed for approval
 
@@ -65,3 +65,17 @@ Review changed files against the approved acceptance criteria, repair in-scope f
 Highest priority: factual separation of all three offerings; no stale holiday dates; course-specific eligibility/logistics; correct school/student actions; direct routes/aliases; gallery controls; independent disclosures and keyboard access; Home/Team regressions. The remaining layout work is checked through structural review and browser screenshots.
 
 The user's AGENTS.md requires one approval of the combined specification/design/plan before substantial implementation. Approval covers the full sequence through verification and review, without further phase-by-phase permission prompts.
+
+## Approved scope extension — 2026-10-21
+
+The user explicitly requested three full pages: Who We Are, What We Do and How We Work. Add `/pages/who-we-are.html` with mission, identity, values and a Team link, using the captured Who We Are design. Connect all three header links to full pages; preserve Contact and Resources. Add `/pages/about.html` compatibility entry. Rename the Team filter/heading to Alumni, preserve text-only noninteractive entries, and assign Operations Team Member to every missing title while preserving existing titles and roster membership.
+
+Verification: shared navigation, direct built-page entry/reload, metadata/sitemap, three program anchors, gallery keyboard controls, independent disclosures, Home/Team/Contact/Resources regressions, desktop/mobile screenshots. No deployment or form submission.
+
+## Execution result
+
+All seven stages completed. Added the three canonical full pages, five static compatibility redirects, shared navigation/current-page state, metadata and sitemap entries. Applied the Alumni/title corrections without altering membership or profile restrictions. Used email-only inquiry actions per the user’s follow-up. Contact and Resources remain intact.
+
+Incremental failures were observed before the matching navigation, page-routing, disclosure, gallery, FAQ, Alumni and missing-role implementations. Production browser checks also exposed an initial React fragment-scroll issue; section scrolling now waits for mounting and local fonts. Reveal animations respect changes to reduced-motion preference.
+
+Validation: 60 tests in 10 files; production build; Home/Team/new-page browser suite at 390, 900, 1440 and 1920 pixels; final new-page rerun after FAQ visual polish; screenshot inspection; source review and whitespace checks. Details: `../verification/debatecraft-program-pages.md`. No deployment, commit, form submission or inquiry was performed.

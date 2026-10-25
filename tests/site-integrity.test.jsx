@@ -2,9 +2,10 @@ import { existsSync, readFileSync } from 'node:fs';
 import { cleanup, render, screen } from '@testing-library/react';
 import { afterEach, expect, test } from 'vitest';
 import App from '../src/App';
+import {localePairs} from '../src/i18n';
 
 const origin = 'https://debatecraft.org';
-const pages = ['/', '/pages/team.html', '/pages/resources.html', '/pages/contact.html'];
+const pages = ['/', '/pages/team.html', '/pages/resources.html', '/pages/contact.html', '/pages/who-we-are.html', '/pages/what-we-do.html', '/pages/how-we-work.html', '/pages/schools.html', ...localePairs.map(([,cn])=>cn)];
 const htmlFor = path => (path === '/' ? 'index.html' : path.slice(1));
 const parse = file => new DOMParser().parseFromString(readFileSync(file, 'utf8'), 'text/html');
 afterEach(() => { cleanup(); window.history.pushState(null, '', '/'); });

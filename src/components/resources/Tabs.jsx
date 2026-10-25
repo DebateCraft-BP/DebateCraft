@@ -1,3 +1,5 @@
+// i18n:render-copy
+import { t } from '../../i18n';
 import { useRef } from 'react';
 
 export default function Tabs({ label, items, value, onChange, idPrefix, orientation = 'horizontal', className = '' }) {
@@ -17,12 +19,12 @@ export default function Tabs({ label, items, value, onChange, idPrefix, orientat
     refs.current[items[target].id]?.focus();
   }
 
-  return <div role="tablist" aria-label={label} aria-orientation={orientation} className={className} onKeyDown={onKeyDown}>
-    {items.map(item => <button
+  return <div role="tablist" aria-label={t(label)} aria-orientation={orientation} className={className} onKeyDown={onKeyDown}>
+    {t(items.map(item => <button
       type="button" role="tab" key={item.id} id={`${idPrefix}-tab-${item.id}`}
       ref={node => { refs.current[item.id] = node; }}
       aria-selected={value === item.id} aria-controls={`${idPrefix}-panel`} tabIndex={value === item.id ? 0 : -1}
       className={`resource-tab${value === item.id ? ' active' : ''}`} onClick={() => onChange(item.id)}
-    >{item.label}{item.meta && <span>{item.meta}</span>}</button>)}
+    >{t(item.label)}{item.meta && <span>{t(item.meta)}</span>}</button>))}
   </div>;
 }

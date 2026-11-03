@@ -6,7 +6,7 @@ const cantonese = { ...common, ...pages, ...team, ...resources };
 
 export const localePairs = [
   ['/', '/cnindex.html'],
-  ...['who-we-are', 'what-we-do', 'how-we-work', 'schools', 'resources', 'team', 'contact'].map(page => [`/pages/${page}.html`, `/pages/cn${page}.html`]),
+  ...['who-we-are', 'what-we-do', 'how-we-work', 'schools', 'resources', 'team', 'contact', 'donate'].map(page => [`/pages/${page}.html`, `/pages/cn${page}.html`]),
 ];
 export function isChinese() {
   return typeof window !== 'undefined' && localePairs.some(([, chinese]) => chinese === window.location.pathname);

@@ -13,6 +13,7 @@ import WhatWeDo from './components/WhatWeDo';
 import HowWeWork from './components/HowWeWork';
 import WhoWeAre from './components/WhoWeAre';
 import Schools from './components/Schools';
+import Support from './components/Support';
 
 const subpages = {
   '/pages/who-we-are.html': WhoWeAre,
@@ -22,6 +23,7 @@ const subpages = {
   '/pages/team.html': Team,
   '/pages/contact.html': Contact,
   '/pages/resources.html': Resources,
+  '/pages/donate.html': Support,
 };
 
 export default function App() {

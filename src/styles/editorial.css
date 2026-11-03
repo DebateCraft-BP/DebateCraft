@@ -13,6 +13,7 @@
 .statement-hero h1 { font-size: 6.4rem; line-height: 1.1; text-wrap: balance; }
 .statement-hero h1 em { font-style: italic; }
 .statement-hero__intro { max-width: 63rem; margin: 3.2rem auto 0; font-size: 2rem; line-height: 1.4; text-wrap: balance; }
+.statement-hero__action { margin-top: var(--gap-default); }
 .statement-bubble { display: inline-block; width: 1em; height: 1em; margin-inline: .06em; vertical-align: -.08em; overflow: hidden; border-radius: 50%; }
 .statement-bubble img { width: 100%; height: 100%; object-fit: cover; }
 .statement-bubble--wide { width: 1.9em; border-radius: 1em; }
